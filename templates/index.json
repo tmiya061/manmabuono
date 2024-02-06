@@ -41,6 +41,7 @@
     },
     "featured_collection": {
       "type": "featured-collection",
+      "disabled": true,
       "settings": {
         "title": "Featured products",
         "heading_size": "h2",
@@ -72,6 +73,7 @@
       "blocks": {
         "ff31c7fa-9203-40e3-9dc1-4ffe53d1fc5c": {
           "type": "shopify:\/\/apps\/leeep-ugc\/blocks\/list-widget\/d2efb67d-fe03-4476-a386-d4a4160b094c",
+          "disabled": true,
           "settings": {
             "tagid": "1193132774240833539"
           }
