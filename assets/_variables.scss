@@ -1,0 +1,56 @@
+//color
+$text-color: #3C3C3C; 
+$base-color: #FF7B5E;
+$bg-color: #fff;
+$white: #ffffff;
+
+
+//$breakpoint: 769px;
+
+$breakpoints: (
+    //キー : 値
+    'small': "screen and (max-width: 639px)", //スマホサイズ
+    'sp': "screen and (max-width: 749px)", //スマホサイズ
+    'pc': "(min-width: 750px)", 
+    'large': "(min-width: 990px)", 
+) !default;
+
+@mixin mq($breakpoint: sp) {
+    @media #{map-get($breakpoints, $breakpoint)} {
+        @content;
+    }
+}
+@function vw($arg) {
+	@return calc($arg / 1512 * 100vw);
+}
+@function vw-sp($arg) {
+	@return calc($arg / 375 * 100vw);
+}
+
+.sp {
+    @include mq(pc) {
+        display: none;
+    }
+}
+.pc {
+    @include mq(sp) {
+        display: none;
+    }
+}
+
+img,
+video,
+iframe {
+  max-width: 100%;
+  height: auto;
+  vertical-align: bottom;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+h1, h2, h3, h4, h5 {
+    margin: 0;
+    padding: 0;
+}

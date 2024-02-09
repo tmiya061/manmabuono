@@ -1,4 +1,4 @@
-{{ 'c_topFv.css' | asset_url | stylesheet_tag }}
+{{ 'c_topFv.min.css' | asset_url | stylesheet_tag }}
 
 {%- style -%}
   #shopify-section-{{ section.id }} {
@@ -14,19 +14,30 @@
   }
 {%- endstyle -%}
 
-<div class="c_topFv page-width">
-  <h2>{{ section.settings.title }}</h2>
+<div class="c_topFv">
+  <img class="pc" src="{{ 'fv.webp' | file_url }}" alt="犬と猫の画像" width="1397">
+  <img class="sp" src="{{ 'fv_sp.webp' | file_url }}" alt="犬と猫の画像" width="354">
+  <h1 class="c_topFv-title">
+    <span>{{ section.settings.title1 }}</span><br>
+    <span>{{ section.settings.title2 }}</span>
+  </h1>
 </div>
 
 {% schema %}
 {
-  "name": "c_topFv",
+  "name": "ファーストビュー",
   "settings": [
     {
       "type": "text",
-      "id": "title",
-      "label": "見出し",
-      "default": "見出し"
+      "id": "title1",
+      "label": "見出し1",
+      "default": "見出し1"
+    },
+    {
+      "type": "text",
+      "id": "title2",
+      "label": "見出し2",
+      "default": "見出し2"
     },
     {
       "type": "header",
@@ -75,7 +86,7 @@
   ],
   "presets":[
     {
-      "name" : "c_topFv",
+      "name" : "ファーストビュー",
       "category": "カスタムパーツ"
     }
   ]

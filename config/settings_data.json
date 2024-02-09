@@ -1,11 +1,11 @@
 {
   "current": {
     "logo_width": 90,
-    "type_header_font": "assistant_n4",
+    "type_header_font": "zen_kaku_gothic_new_n4",
     "heading_scale": 100,
-    "type_body_font": "assistant_n4",
+    "type_body_font": "zen_kaku_gothic_new_n4",
     "body_scale": 100,
-    "page_width": 1200,
+    "page_width": 1100,
     "spacing_sections": 0,
     "spacing_grid_horizontal": 8,
     "spacing_grid_vertical": 8,

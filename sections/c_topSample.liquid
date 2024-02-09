@@ -1,0 +1,140 @@
+{{ 'c_topSample.min.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+    #shopify-section-{{ section.id }} {
+        padding-top: {{ section.settings.padding_top }}px;
+        padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+
+    @media screen and (max-width: 750px) {
+        #shopify-section-{{ section.id }} {
+        padding-top: {{ section.settings.padding_top_sp }}px;
+        padding-bottom: {{ section.settings.padding_bottom_sp }}px;
+        }
+    }
+{%- endstyle -%}
+
+<div class="c_topSample">
+    <div class="c_topSample__bg">
+        <img src="{{ 'sample-bg.webp' | file_url }}" alt="猫の写真" width="1514" class="pc">
+        <img src="{{ 'sample-bg_sp.webp' | file_url }}" alt="猫の写真" width="375" class="sp">
+    </div>
+    <div class="c_topSample__container page-width">
+        <h2 class="c_topSample__title">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
+                <path d="M29 29L1 1" stroke="white"/>
+                <path d="M18 29L4 15" stroke="white"/>
+            </svg>
+            <span>
+                {{ section.settings.title }}
+            </span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
+                <path d="M1 29L29 1" stroke="white"/>
+                <path d="M12 29L26 15" stroke="white"/>
+            </svg>
+        </h2>
+        <p class="c_topSample__text">{{ section.settings.text }}</p>
+        <div class="c_topSample__wrap">
+            <div class="c_topSample__item">
+                <p class="c_topSample__item-head"><span>犬用</span><br class="sp">お試しセット</p>
+                <div class="c_topSample__item-img">
+                    {{ section.settings.sample-img1 | image_url: width: 229 , height: 178 | image_tag: alt: section.settings.sample-img1, loading: "lazy" }}
+                </div>
+                <a href="" class="c_topSample__item-btn">詳細</a>
+            </div>
+            <svg class="pc" xmlns="http://www.w3.org/2000/svg" width="2" height="292" viewBox="0 0 2 292" fill="none">
+                <path d="M1 0L0.999985 292" stroke="#3C3C3C" stroke-dasharray="2 4"/>
+            </svg>
+            <svg class="sp" xmlns="http://www.w3.org/2000/svg" width="2" height="292" viewBox="0 0 2 292" fill="none">
+                <path d="M1 0L0.999985 292" stroke="#3C3C3C" stroke-dasharray="2 4"/>
+            </svg>
+            <div class="c_topSample__item">
+                <p class="c_topSample__item-head"><span>猫用</span><br class="sp">お試しセット</p>
+                <div class="c_topSample__item-img">
+                    {{ section.settings.sample-img2 | image_url: width: 229 , height: 178 | image_tag: alt: section.settings.sample-img2, loading: "lazy" }}
+                </div>
+                <a href="" class="c_topSample__item-btn">詳細</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% schema %}
+{
+    "name": "お試しセット",
+    "settings": [
+        {
+        "type": "textarea",
+        "id": "title",
+        "label": "見出し",
+        "default": "見出し"
+        },
+        {
+        "type": "textarea",
+        "id": "text",
+        "label": "テキスト",
+        "default": "テキスト"
+        },
+        {
+        "type": "image_picker",
+        "id": "sample-img1",
+        "label": "犬用お試しセット画像"
+        },
+        {
+        "type": "image_picker",
+        "id": "sample-img2",
+        "label": "猫用お試しセット画像"
+        },
+        {
+        "type": "header",
+        "content": "上下の余白"
+        },
+        {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 200,
+        "step": 2,
+        "unit": "px",
+        "label": "上部の余白（pc）",
+        "default": 32
+        },
+        {
+        "type": "range",
+        "id": "padding_bottom",
+        "min": 0,
+        "max": 200,
+        "step": 2,
+        "unit": "px",
+        "label": "下部の余白（PC)",
+        "default": 32
+        },
+        {
+        "type": "range",
+        "id": "padding_top_sp",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "上部の余白",
+        "default": 32
+        },
+        {
+        "type": "range",
+        "id": "padding_bottom_sp",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "下部の余白",
+        "default": 32
+        }
+    ],
+    "presets":[
+        {
+        "name" : "お試しセット",
+        "category": "カスタムパーツ"
+        }
+    ]
+}
+{% endschema %}

@@ -1,111 +1,100 @@
 {
   "sections": {
-    "image_banner": {
-      "type": "image-banner",
+    "c_top_fv_VDwRay": {
+      "type": "c_topFv",
+      "settings": {
+        "title1": "健康寿命を延ばす",
+        "title2": "ペットのごはんのお手伝い",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_top_sp": 24,
+        "padding_bottom_sp": 0
+      }
+    },
+    "c_top_banner_qhyMTD": {
+      "type": "c_topBanner",
       "blocks": {
-        "heading": {
-          "type": "heading",
+        "banner_AWPth4": {
+          "type": "banner",
           "settings": {
-            "heading": "Browse our latest products",
-            "heading_size": "h0"
+            "banner-img": "shopify:\/\/shop_images\/banner-sample.png",
+            "banner-link": "https:\/\/manmabuono.jp\/"
           }
         },
-        "button": {
-          "type": "buttons",
+        "banner_tE3qLM": {
+          "type": "banner",
           "settings": {
-            "button_label_1": "Shop all",
-            "button_link_1": "shopify:\/\/collections\/all",
-            "button_style_secondary_1": true,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
+            "banner-img": "shopify:\/\/shop_images\/banner-sample.png",
+            "banner-link": "https:\/\/manmabuono.jp\/"
+          }
+        },
+        "banner_eKtP9c": {
+          "type": "banner",
+          "settings": {
+            "banner-img": "shopify:\/\/shop_images\/banner-sample.png",
+            "banner-link": "https:\/\/manmabuono.jp\/"
+          }
+        },
+        "banner_kgztzW": {
+          "type": "banner",
+          "settings": {
+            "banner-img": "shopify:\/\/shop_images\/banner-sample.png",
+            "banner-link": ""
           }
         }
       },
       "block_order": [
-        "heading",
-        "button"
+        "banner_AWPth4",
+        "banner_tE3qLM",
+        "banner_eKtP9c",
+        "banner_kgztzW"
       ],
       "settings": {
-        "image_overlay_opacity": 40,
-        "image_height": "large",
-        "desktop_content_position": "bottom-center",
-        "show_text_box": false,
-        "desktop_content_alignment": "center",
-        "color_scheme": "inverse",
-        "image_behavior": "none",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": false,
-        "show_text_below": false
+        "title": "見出し",
+        "padding_top": 42,
+        "padding_bottom": 32,
+        "padding_top_sp": 0,
+        "padding_bottom_sp": 47
       }
     },
-    "featured_collection": {
-      "type": "featured-collection",
-      "disabled": true,
+    "c_top_food_Wkhkza": {
+      "type": "c_topFood",
       "settings": {
-        "title": "Featured products",
-        "heading_size": "h2",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "collection": "all",
-        "products_to_show": 8,
-        "columns_desktop": 4,
-        "full_width": false,
-        "show_view_all": true,
-        "view_all_style": "solid",
-        "enable_desktop_slider": false,
-        "color_scheme": "background-1",
-        "image_ratio": "adapt",
-        "image_shape": "default",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "enable_quick_add": false,
-        "columns_mobile": "2",
-        "swipe_on_mobile": false,
-        "padding_top": 44,
-        "padding_bottom": 36
+        "title": "見出し",
+        "padding_top": 32,
+        "padding_bottom": 32,
+        "padding_top_sp": 32,
+        "padding_bottom_sp": 0
       }
     },
-    "17045838984e13f335": {
-      "type": "apps",
-      "blocks": {
-        "ff31c7fa-9203-40e3-9dc1-4ffe53d1fc5c": {
-          "type": "shopify:\/\/apps\/leeep-ugc\/blocks\/list-widget\/d2efb67d-fe03-4476-a386-d4a4160b094c",
-          "settings": {
-            "tagid": "1193132774240833539"
-          }
-        }
-      },
-      "block_order": [
-        "ff31c7fa-9203-40e3-9dc1-4ffe53d1fc5c"
-      ],
+    "c_top_sample_itkDRk": {
+      "type": "c_topSample",
       "settings": {
-        "include_margins": true
+        "title": "マンマボーノから<br>\nお試しセットが登場！",
+        "text": "テキストが入ります。テキストが入ります。<br>\nテキストが入ります。テキストが入ります。<br>\nテキストが入ります。テキストが入ります。テキストが入ります。<br>\nテキストが入ります。",
+        "sample-img1": "shopify:\/\/shop_images\/banner-sample.png",
+        "sample-img2": "shopify:\/\/shop_images\/banner-sample.png",
+        "padding_top": 32,
+        "padding_bottom": 32,
+        "padding_top_sp": 0,
+        "padding_bottom_sp": 32
       }
     },
-    "170659141059bdabaa": {
-      "type": "apps",
-      "blocks": {
-        "socialwidget_instagram_feed_base_widget_aRUWGw": {
-          "type": "shopify:\/\/apps\/socialwidget-instagram-feed\/blocks\/base-widget\/508b8d5b-b176-4dc6-a0ba-2b222db6eb79",
-          "settings": {
-          }
-        }
-      },
-      "block_order": [
-        "socialwidget_instagram_feed_base_widget_aRUWGw"
-      ],
+    "c_top_product_K8kaQt": {
+      "type": "c_topProduct",
       "settings": {
-        "include_margins": true
+        "padding_top": 32,
+        "padding_bottom": 32,
+        "padding_top_sp": 32,
+        "padding_bottom_sp": 32
       }
     }
   },
   "order": [
-    "image_banner",
-    "featured_collection",
-    "17045838984e13f335",
-    "170659141059bdabaa"
+    "c_top_fv_VDwRay",
+    "c_top_banner_qhyMTD",
+    "c_top_food_Wkhkza",
+    "c_top_sample_itkDRk",
+    "c_top_product_K8kaQt"
   ]
 }

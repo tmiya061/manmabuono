@@ -1,0 +1,124 @@
+{{ 'c_topBanner.min.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+    #shopify-section-{{ section.id }} {
+        padding-top: {{ section.settings.padding_top }}px;
+        padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+
+    @media screen and (max-width: 750px) {
+        #shopify-section-{{ section.id }} {
+        padding-top: {{ section.settings.padding_top_sp }}px;
+        padding-bottom: {{ section.settings.padding_bottom_sp }}px;
+        }
+    }
+{%- endstyle -%}
+
+<div class="c_topBanner">
+    <div class="swiper-container --topBanner">
+        <div class="swiper --topBanner">
+            <div class="swiper-wrapper">
+                {% for block in section.blocks %}
+                {%- case block.type -%}
+                {%- when 'banner' -%}
+                    <div class="swiper-slide">
+                        <a href="{{ block.settings.banner-link }}" target="_blank">
+                            {{ block.settings.banner-img | image_url: width: 270 , height: 135 | image_tag: alt: block.settings.banner-img, loading: "lazy", class: "pc" }}
+                            {{ block.settings.banner-img | image_url: width: 400 , height: 200 | image_tag: alt: block.settings.banner-img, loading: "lazy", class: "sp" }}
+                        </a>
+                    </div>
+                {% endcase %}
+                {% endfor %}
+            </div>
+        </div>
+        <div class="pagination-wrap">
+            <div class="swiper-pagination --topBanner"></div>
+            <div class="swiper-button-prev --topBanner"></div>
+            <div class="swiper-button-next --topBanner"></div>
+        </div>
+    </div>
+</div>
+
+
+
+{% schema %}
+    {
+    "name": "バナー",
+    "settings": [
+        {
+        "type": "text",
+        "id": "title",
+        "label": "見出し",
+        "default": "見出し"
+        },
+        {
+        "type": "header",
+        "content": "上下の余白"
+        },
+        {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 200,
+        "step": 2,
+        "unit": "px",
+        "label": "上部の余白（pc）",
+        "default": 32
+        },
+        {
+        "type": "range",
+        "id": "padding_bottom",
+        "min": 0,
+        "max": 200,
+        "step": 2,
+        "unit": "px",
+        "label": "下部の余白（PC)",
+        "default": 32
+        },
+        {
+        "type": "range",
+        "id": "padding_top_sp",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "上部の余白",
+        "default": 32
+        },
+        {
+        "type": "range",
+        "id": "padding_bottom_sp",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "下部の余白",
+        "default": 32
+        }
+    ],
+    "blocks" : [
+    {
+        "type": "banner",
+        "name": "バナー画像",
+        "settings": [
+            {
+                "type": "image_picker",
+                "id": "banner-img",
+                "label": "バナー画像"
+            },
+            {
+                "type": "url",
+                "id": "banner-link",
+                "label": "バナーのリンク先"
+            }
+        ]
+    }
+],
+    "presets":[
+        {
+        "name" : "バナー",
+        "category": "カスタムパーツ"
+        }
+    ]
+}
+{% endschema %}

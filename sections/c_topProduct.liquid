@@ -1,0 +1,120 @@
+{{ 'c_topProduct.min.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+    #shopify-section-{{ section.id }} {
+        padding-top: {{ section.settings.padding_top }}px;
+        padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+
+    @media screen and (max-width: 750px) {
+        #shopify-section-{{ section.id }} {
+        padding-top: {{ section.settings.padding_top_sp }}px;
+        padding-bottom: {{ section.settings.padding_bottom_sp }}px;
+        }
+    }
+{%- endstyle -%}
+
+<div class="c_topProduct page-width">
+    <h2 class="c_topProduct__title">犬用おすすめ商品</h2>
+    <p class="c_topProduct__text">RECOMMEND FOR DOGS</p>
+    <div class="c_topProduct__wrap">
+        {% assign collection_handle = 'dog-all' %}
+        {% assign collection = collections[collection_handle] %}
+        {% for product in collection.products limit:4 %}
+            <!-- 商品情報の表示 -->
+            <div class="c_topProduct__item">
+                <!-- 画像 -->
+                <img class="c_topProduct__item-img" src="{{ product.featured_image | img_url: 'medium' }}" alt="{{ product.title }}" />
+                <!-- タイトル -->
+                <p class="c_topProduct__item-title">{{ product.title }}</p>
+                <!-- 値段 -->
+                <p class="c_topProduct__item-price">
+                    {{ product.price | money }}
+                    <span>(税込)</span>
+                </p>
+            </div>
+        {% endfor %}
+    </div>
+    <h2 class="c_topProduct__title --cat">猫おすすめ商品</h2>
+    <p class="c_topProduct__text">RECOMMEND FOR CATS</p>
+    <div class="c_topProduct__wrap">
+        {% assign collection_handle = 'cat-all' %}
+        {% assign collection = collections[collection_handle] %}
+        {% for product in collection.products limit:4 %}
+            <!-- 商品情報の表示 -->
+            <div class="c_topProduct__item">
+                <!-- 画像 -->
+                <img class="c_topProduct__item-img" src="{{ product.featured_image | img_url: 'medium' }}" alt="{{ product.title }}" />
+                <!-- タイトル -->
+                <p class="c_topProduct__item-title">{{ product.title }}</p>
+                <!-- 値段 -->
+                <p class="c_topProduct__item-price">
+                    {{ product.price | money }}
+                    <span>(税込)</span>
+                </p>
+            </div>
+        {% endfor %}
+    </div>
+    
+
+</div>
+
+
+
+{% schema %}
+{
+    "name": "おすすめ商品",
+    "settings": [
+        {
+        "type": "header",
+        "content": "上下の余白"
+        },
+        {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 200,
+        "step": 2,
+        "unit": "px",
+        "label": "上部の余白（pc）",
+        "default": 32
+        },
+        {
+        "type": "range",
+        "id": "padding_bottom",
+        "min": 0,
+        "max": 200,
+        "step": 2,
+        "unit": "px",
+        "label": "下部の余白（PC)",
+        "default": 32
+        },
+        {
+        "type": "range",
+        "id": "padding_top_sp",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "上部の余白",
+        "default": 32
+        },
+        {
+        "type": "range",
+        "id": "padding_bottom_sp",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "下部の余白",
+        "default": 32
+        }
+    ],
+    "presets":[
+        {
+        "name" : "おすすめ商品",
+        "category": "カスタムパーツ"
+        }
+    ]
+}
+{% endschema %}

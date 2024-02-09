@@ -1,0 +1,128 @@
+@import "variables";
+
+.c_topFood.page-width {
+    @include mq(sp) {
+        width: calc(100%);
+        max-width: unset;
+        padding: 0;
+    }
+}
+
+.c_topFood__wrap {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 16px;
+    @include mq(sp) {
+        display: block;
+    }
+}
+
+.c_topFood__item {
+    background: #F5F5F5;
+    border-radius: 0 0 60px 0;
+    padding: 66px 0 56px;
+    position: relative;
+    @include mq(sp) {
+        &:nth-of-type(1) {
+            margin-bottom: 70px;
+        }        
+    }
+
+    .up {
+        position: absolute;
+        z-index: 2;
+        top: -100px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 203px;
+        height: auto;
+        aspect-ratio: 1;
+        background: #F5F5F5;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: start;
+        padding-top: 34px;
+        @include mq(sp) {
+            width: 153px;
+            padding-top: 23px;
+            top: -37px;
+        }
+        img {
+            width: 128px;
+            height: auto;
+            @include mq(sp) {
+                width: 87px;
+            }
+        }
+        &.--dog {
+            @include mq(sp) {
+                top: -56px;
+            }
+            img {
+                width: 98px;
+                @include mq(sp) {
+                    width: 80px;
+                }
+            }
+        }
+    }
+}
+.c_topFood__title {
+    position: relative;
+    z-index: 3;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 149.1%; /* 35.784px */
+    letter-spacing: 3.84px;
+    text-align: center;
+    margin: 0;
+    margin-bottom: 6px;
+}
+.c_topFood__subtitle {
+    color: #FF7B5E;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 140%; /* 21px */
+    letter-spacing: 4.5px;
+    text-align: center;
+    margin: 0;
+    margin-bottom: 30px;
+}
+.c_topFood__btn {
+    display: block;
+    margin: auto;
+    padding: 16px;
+    color: #3C3C3C;
+    text-align: center;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 149.1%; /* 20.874px */
+    letter-spacing: 0.56px;
+    border-radius: 70px;
+    border: 1px solid #3c3c3c;
+    background: #fff;
+    width: 332px;
+    @media screen and (max-width: 1000px) {
+        width: 90%;
+    }
+    @include mq(sp) {
+        width: calc(100% - 40px);
+        max-width: 400px;
+        margin: auto;
+    }
+    text-decoration: none;
+    transition: all  0.3s ease;
+
+    @media(hover: hover) {
+        &:hover {
+            background: #3c3c3c;
+            color: #fff
+        }
+    }
+}
+
+

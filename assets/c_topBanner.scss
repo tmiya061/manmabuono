@@ -1,0 +1,75 @@
+@import "variables";
+
+.swiper-container.--topBanner {
+    padding-bottom: 60px;
+    position: relative;
+    div:empty {
+        display: block;
+    }
+    span:empty {
+        display: block;
+    }
+}
+
+.swiper.--topBanner {
+    .swiper-slide {
+        width: 100%;
+    }
+    a {
+        display: block;
+        width: 100%;
+    }
+    img {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 2 / 1;
+    }
+}
+
+
+// ============================
+//     pagination について
+// ============================
+
+//色と大きさ指定
+.swiper-pagination-bullet {
+    opacity: 1;
+    background: gray;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%; //円にする
+}
+.swiper-pagination-bullet.swiper-pagination-bullet-active {
+    background: red;
+}
+//paginationの余白指定
+.swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+    margin: 0 10px;
+}
+//paginationの位置
+.swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction {
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+// ==============================
+//     navigation について
+// ==============================
+
+.swiper-button-prev {
+    //位置はここで指定
+    // top: 50%;
+    // transform: translateY(-50%);
+    &::after {
+        content: ''; //デフォルトの削除
+    }
+}
+
+.swiper-button-next {
+    //位置はここで指定
+    // top: 50%;
+    // transform: translateY(-50%);
+    &::after {
+        content: ''; //デフォルトの削除
+    }
+}
