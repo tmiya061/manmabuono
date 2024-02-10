@@ -1,5 +1,5 @@
 {{ 'c_common.min.css' | asset_url | stylesheet_tag }}
-{{ 'c_topFv.min.css' | asset_url | stylesheet_tag }}
+{{ 'c_topNews.min.css' | asset_url | stylesheet_tag }}
 
 {%- style -%}
   #shopify-section-{{ section.id }} {
@@ -15,30 +15,45 @@
   }
 {%- endstyle -%}
 
-<div class="c_topFv">
-  <img class="pc" src="{{ 'fv.webp' | file_url }}" alt="犬と猫の画像" width="1397">
-  <img class="sp" src="{{ 'fv_sp.webp' | file_url }}" alt="犬と猫の画像" width="354">
-  <h1 class="c_topFv-title">
-    <span>{{ section.settings.title1 }}</span><br>
-    <span>{{ section.settings.title2 }}</span>
-  </h1>
+<div class="c_topNews page-width">
+    <div class="c_topNews__container">
+        <div class="c_topNews__title-wrap">
+            <h2 class="c_common__title --left_pc">お知らせ</h2>
+            <p class="c_common__text --left_pc">NEWS</p>
+        </div>
+        <div class="c_topNews__wrap">
+            {% for article in blogs['news'].articles limit:3 %}
+            <div class="c_topNews__item">
+                <div class="c_topNews__item-date">
+                    <p>{{ article.published_at | date: "%Y.%m" }}</p>
+                    <p>{{ article.published_at | date: "%d" }}</p>
+                </div>
+                <div class="c_topNews__item-wrap">
+                    <p class="c_topNews__item-tag">
+                        {% for tag in article.tags %}
+                            {{ tag }}
+                        {% endfor %}
+                    </p>
+                    <p class="c_topNews__item-title">{{ article.title }}</p>
+                </div>
+            </div>
+            {% endfor %}
+            <a href="" class="c_common__btn --left_pc --topNews">
+                過去のお知らせはこちら
+            </a>
+        </div>
+    </div>
 </div>
 
 {% schema %}
 {
-  "name": "ファーストビュー",
+  "name": "ニュース",
   "settings": [
     {
       "type": "text",
-      "id": "title1",
-      "label": "見出し1",
-      "default": "見出し1"
-    },
-    {
-      "type": "text",
-      "id": "title2",
-      "label": "見出し2",
-      "default": "見出し2"
+      "id": "title",
+      "label": "見出し",
+      "default": "見出し"
     },
     {
       "type": "header",
@@ -87,7 +102,7 @@
   ],
   "presets":[
     {
-      "name" : "ファーストビュー",
+      "name" : "ニュース",
       "category": "カスタムパーツ"
     }
   ]

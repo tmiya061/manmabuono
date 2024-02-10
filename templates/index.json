@@ -88,6 +88,87 @@
         "padding_top_sp": 32,
         "padding_bottom_sp": 32
       }
+    },
+    "c_top_about_HKAHmz": {
+      "type": "c_topAbout",
+      "settings": {
+        "about_text": "テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。<br>\nテキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。",
+        "about_text_side": "<span>健康寿命<\/span>を伸ばす<br>\nごはんのお手伝いを<br>\nいたします",
+        "padding_top": 32,
+        "padding_bottom": 32,
+        "padding_top_sp": 32,
+        "padding_bottom_sp": 32
+      }
+    },
+    "c_top_voices_cTGqWC": {
+      "type": "c_topVoices",
+      "blocks": {
+        "voices_erfDM8": {
+          "type": "voices",
+          "settings": {
+            "voices_img": "shopify:\/\/shop_images\/voices_img.png",
+            "voices_text": "テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。",
+            "voices_name": "たまちゃん（ Y・K 様 ）"
+          }
+        },
+        "voices_wAGjBU": {
+          "type": "voices",
+          "settings": {
+            "voices_img": "shopify:\/\/shop_images\/voices_img.png",
+            "voices_text": "テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。",
+            "voices_name": "テキストが入ります"
+          }
+        },
+        "voices_JdYpLH": {
+          "type": "voices",
+          "settings": {
+            "voices_img": "shopify:\/\/shop_images\/voices_img.png",
+            "voices_text": "テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。",
+            "voices_name": "たまちゃん（ Y・K 様 ）"
+          }
+        }
+      },
+      "block_order": [
+        "voices_erfDM8",
+        "voices_wAGjBU",
+        "voices_JdYpLH"
+      ],
+      "settings": {
+        "padding_top": 32,
+        "padding_bottom": 32,
+        "padding_top_sp": 32,
+        "padding_bottom_sp": 32
+      }
+    },
+    "c_top_news_PhkhgL": {
+      "type": "c_topNews",
+      "settings": {
+        "title": "見出し",
+        "padding_top": 32,
+        "padding_bottom": 32,
+        "padding_top_sp": 32,
+        "padding_bottom_sp": 32
+      }
+    },
+    "1707571247d74eef14": {
+      "type": "apps",
+      "blocks": {
+        "instafeed_app_block_kN9tNy": {
+          "type": "shopify:\/\/apps\/instafeed\/blocks\/app-block\/c447db20-095d-4a10-9725-b5977662c9d5",
+          "settings": {
+            "title": "",
+            "title_color": "",
+            "alignment": "center",
+            "html_area": ""
+          }
+        }
+      },
+      "block_order": [
+        "instafeed_app_block_kN9tNy"
+      ],
+      "settings": {
+        "include_margins": true
+      }
     }
   },
   "order": [
@@ -95,6 +176,10 @@
     "c_top_banner_qhyMTD",
     "c_top_food_Wkhkza",
     "c_top_sample_itkDRk",
-    "c_top_product_K8kaQt"
+    "c_top_product_K8kaQt",
+    "c_top_about_HKAHmz",
+    "c_top_voices_cTGqWC",
+    "c_top_news_PhkhgL",
+    "1707571247d74eef14"
   ]
 }

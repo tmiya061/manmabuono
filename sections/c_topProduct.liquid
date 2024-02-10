@@ -1,3 +1,4 @@
+{{ 'c_common.min.css' | asset_url | stylesheet_tag }}
 {{ 'c_topProduct.min.css' | asset_url | stylesheet_tag }}
 
 {%- style -%}
@@ -15,9 +16,9 @@
 {%- endstyle -%}
 
 <div class="c_topProduct page-width">
-    <h2 class="c_topProduct__title">犬用おすすめ商品</h2>
-    <p class="c_topProduct__text">RECOMMEND FOR DOGS</p>
-    <div class="c_topProduct__wrap">
+    <h2 class="c_common__title">犬用おすすめ商品</h2>
+    <p class="c_common__text">RECOMMEND FOR DOGS</p>
+    <div class="c_topProduct__wrap --dog">
         {% assign collection_handle = 'dog-all' %}
         {% assign collection = collections[collection_handle] %}
         {% for product in collection.products limit:4 %}
@@ -35,8 +36,8 @@
             </div>
         {% endfor %}
     </div>
-    <h2 class="c_topProduct__title --cat">猫おすすめ商品</h2>
-    <p class="c_topProduct__text">RECOMMEND FOR CATS</p>
+    <h2 class="c_common__title">猫おすすめ商品</h2>
+    <p class="c_common__text">RECOMMEND FOR CATS</p>
     <div class="c_topProduct__wrap">
         {% assign collection_handle = 'cat-all' %}
         {% assign collection = collections[collection_handle] %}

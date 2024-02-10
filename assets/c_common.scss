@@ -1,0 +1,125 @@
+@import "variables";
+
+
+.sp {
+    @include mq(pc) {
+        display: none;
+    }
+}
+.pc {
+    @include mq(sp) {
+        display: none;
+    }
+}
+
+img,
+video,
+iframe {
+    max-width: 100%;
+    height: auto;
+    vertical-align: bottom;
+}
+
+div {
+    box-sizing: border-box;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+h1, h2, h3, h4, h5 {
+    margin: 0;
+    padding: 0;
+}
+
+.c_common__btn {
+    display: block;
+    margin: auto;
+    padding: 16px;
+    color: #3C3C3C;
+    text-align: center;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 149.1%; /* 20.874px */
+    letter-spacing: 0.56px;
+    border-radius: 70px;
+    border: 1px solid #3c3c3c;
+    background: #fff;
+    width: 332px;
+    @media screen and (max-width: 1000px) {
+        width: 90%;
+    }
+    @include mq(sp) {
+        width: calc(100% - 40px);
+        max-width: 400px;
+        margin: auto;
+        &.--topNews {
+            width: 100%;
+        }
+    }
+    text-decoration: none;
+    transition: all  0.3s ease;
+
+    @include mq(pc) {
+        &.--left_pc {
+            margin-left: 0;
+        }
+    }
+
+    @media(hover: hover) {
+        &:hover {
+            background: #3c3c3c;
+            color: #fff
+        }
+    }
+}
+
+.c_common__title {
+    white-space: nowrap;
+    text-align: center;
+    color: #3C3C3C;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 149.1%; /* 44.73px */
+    letter-spacing: 4.8px;
+    margin-bottom: 6px;
+    @include mq(sp) {
+        color: #3C3C3C;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 149.1%; /* 35.784px */
+        letter-spacing: 3.84px;
+    }
+    @include mq(pc) {
+        &.--left_pc {
+            text-align: left;
+        }        
+    }
+}
+
+.c_common__text {
+    white-space: nowrap;
+    text-align: center;
+    color: #FF7B5E;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 140%; /* 21px */
+    letter-spacing: 4.5px;
+    @include mq(sp) {
+        font-size: 15px;
+        font-style: normal;
+        font-weight: 800;
+        line-height: 140%; /* 21px */
+        letter-spacing: 4.5px;
+    }
+    @include mq(pc) {
+        &.--left_pc {
+            text-align: left;
+        }        
+    }
+}

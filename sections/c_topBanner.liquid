@@ -1,3 +1,4 @@
+{{ 'c_common.min.css' | asset_url | stylesheet_tag }}
 {{ 'c_topBanner.min.css' | asset_url | stylesheet_tag }}
 
 {%- style -%}
@@ -23,8 +24,8 @@
                 {%- when 'banner' -%}
                     <div class="swiper-slide">
                         <a href="{{ block.settings.banner-link }}" target="_blank">
-                            {{ block.settings.banner-img | image_url: width: 270 , height: 135 | image_tag: alt: block.settings.banner-img, loading: "lazy", class: "pc" }}
-                            {{ block.settings.banner-img | image_url: width: 400 , height: 200 | image_tag: alt: block.settings.banner-img, loading: "lazy", class: "sp" }}
+                            {{ block.settings.banner-img | image_url: width: 270 , height: 135 | image_tag: alt: block.settings.banner-img, class: "pc" }}
+                            {{ block.settings.banner-img | image_url: width: 400 , height: 200 | image_tag: alt: block.settings.banner-img, class: "sp" }}
                         </a>
                     </div>
                 {% endcase %}

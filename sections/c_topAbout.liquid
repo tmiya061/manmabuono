@@ -1,0 +1,116 @@
+{{ 'c_common.min.css' | asset_url | stylesheet_tag }}
+{{ 'c_topAbout.min.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  #shopify-section-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+
+  @media screen and (max-width: 750px) {
+    #shopify-section-{{ section.id }} {
+      padding-top: {{ section.settings.padding_top_sp }}px;
+      padding-bottom: {{ section.settings.padding_bottom_sp }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="c_topAbout">
+    <img class="c_topAbout__img --left pc" src="{{ 'about_bg-left.webp' | file_url }}" alt="犬と猫の写真" width="420">
+    <img class="c_topAbout__img --right pc" src="{{ 'about_bg-right.webp' | file_url }}" alt="犬と猫の写真" width="441">
+    <div class="c_topAbout__wrap page-width">
+        <h2 class="c_common__title">マンマボーノについて</h2>
+        <p class="c_common__text">RECOMMEND FOR CATS</p>
+        <div class="c_topAbout__side sp">
+            <p>
+                {{ section.settings.about_text_side }}
+            </p>
+            <img class="c_topAbout__img --img1 sp" src="{{ 'about_bg1_sp.png' | file_url }}" alt="犬と猫の写真" width="84">
+            <img class="c_topAbout__img --img2 sp" src="{{ 'about_bg2_sp.png' | file_url }}" alt="犬と猫の写真" width="112">
+        </div>
+        <div class="c_topAbout__text-wrap">
+            <p class="c_topAbout__side pc">
+                {{ section.settings.about_text_side }}
+            </p>
+            <div class="c_topAbout__img--sp">
+                <img src="{{ 'about_bg3_sp.png' | file_url }}" alt="犬と猫の写真" width="258">
+            </div>
+            <p class="c_topAbout__text">
+                {{ section.settings.about_text }}
+            </p>
+            <a href="" class="c_common__btn c_topAbout__btn">
+                さらに詳しいこだわりはこちら
+            </a>
+        </div>
+    </div>
+</div>
+
+{% schema %}
+{
+  "name": "マンマボーノについて",
+  "settings": [
+    {
+    "type": "textarea",
+    "id": "about_text",
+    "label": "テキスト",
+    "default": "テキストが入ります。"
+    },
+    {
+    "type": "textarea",
+    "id": "about_text_side",
+    "label": "左側の縦書きテキスト",
+    "default": "テキストが入ります。"
+    },
+    {
+      "type": "header",
+      "content": "上下の余白"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "上部の余白（pc）",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "下部の余白（PC)",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "padding_top_sp",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "上部の余白",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_sp",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "下部の余白",
+      "default": 32
+    }
+  ],
+  "presets":[
+    {
+      "name" : "マンマボーノについて",
+      "category": "カスタムパーツ"
+    }
+  ]
+}
+{% endschema %}

@@ -45,27 +45,18 @@ if ( window.document.body.id === 'top' ) {
             },
         }
     });
-    
-    /* =================================================== 
-    ※1 effectについて
-    slide：左から次のスライドが流れてくる
-    fade：次のスライドがふわっと表示
-    ■ fadeの場合は下記を記述
-        fadeEffect: {
-            crossFade: true
+
+    const topVoices = new Swiper('.swiper.--topVoices', { //名前を変える
+        loop: true, //最後→最初に戻るループ再生を有効に
+        speed: 1000, //表示切り替えのスピード
+        effect: "slide", //切り替えのmotion (※1)
+        //centeredSlides: true, //中央寄せ
+        navigation: {
+            prevEl: ".swiper-button-prev.--topVoices", //戻るボタンのclass
+            nextEl: ".swiper-button-next.--topVoices" //進むボタンのclass
         },
-    cube：スライドが立方体になり、3D回転を繰り返す
-    coverflow：写真やアルバムジャケットをめくるようなアニメーション
-    flip：平面が回転するようなアニメーション
-    cards：カードを順番にみていくようなアニメーション
-    creative：カスタマイズしたアニメーションを使うときに使用します
-    
-    =======================================================
-    ※2 paginationのタイプ
-    bullet：スライド枚数と同じ数のドットが表示
-    fraction：分数で表示（例：1 / 3）
-    progressbar：スライドの進捗に応じてプログレスバーが伸びる
-    custom：自由にカスタマイズ
-    
-    =====================================================*/
+        allowTouchMove: true, // スワイプで表示の切り替えを無効に
+        slidesPerView: 1, // 一度に表示する枚数
+        spaceBetween: 30,
+    });
 }

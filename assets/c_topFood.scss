@@ -91,38 +91,6 @@
     margin: 0;
     margin-bottom: 30px;
 }
-.c_topFood__btn {
-    display: block;
-    margin: auto;
-    padding: 16px;
-    color: #3C3C3C;
-    text-align: center;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 149.1%; /* 20.874px */
-    letter-spacing: 0.56px;
-    border-radius: 70px;
-    border: 1px solid #3c3c3c;
-    background: #fff;
-    width: 332px;
-    @media screen and (max-width: 1000px) {
-        width: 90%;
-    }
-    @include mq(sp) {
-        width: calc(100% - 40px);
-        max-width: 400px;
-        margin: auto;
-    }
-    text-decoration: none;
-    transition: all  0.3s ease;
 
-    @media(hover: hover) {
-        &:hover {
-            background: #3c3c3c;
-            color: #fff
-        }
-    }
-}
 
 
