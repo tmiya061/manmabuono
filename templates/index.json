@@ -3,8 +3,8 @@
     "c_top_fv_VDwRay": {
       "type": "c_topFv",
       "settings": {
-        "title1": "見出し1",
-        "title2": "見出し2",
+        "title1": "健康寿命を延ばす",
+        "title2": "ペットのごはんのお手伝い",
         "padding_top": 0,
         "padding_bottom": 0,
         "padding_top_sp": 24,
@@ -167,7 +167,64 @@
         "instafeed_app_block_kN9tNy"
       ],
       "settings": {
-        "include_margins": true
+        "include_margins": true,
+        "padding_top": 32,
+        "padding_bottom": 32,
+        "padding_top_sp": 32,
+        "padding_bottom_sp": 32
+      }
+    },
+    "c_picture_x6h77q": {
+      "type": "c_picture",
+      "blocks": {
+        "picture_JLcNf7": {
+          "type": "picture",
+          "settings": {
+            "picture_img": "shopify:\/\/shop_images\/picture1.webp",
+            "size": "large"
+          }
+        },
+        "picture_dVVBnW": {
+          "type": "picture",
+          "settings": {
+            "picture_img": "shopify:\/\/shop_images\/picture2.webp",
+            "size": "middle"
+          }
+        },
+        "picture_TnHyyC": {
+          "type": "picture",
+          "settings": {
+            "picture_img": "shopify:\/\/shop_images\/picture4.webp",
+            "size": "small"
+          }
+        },
+        "picture_BxgeVp": {
+          "type": "picture",
+          "settings": {
+            "picture_img": "shopify:\/\/shop_images\/picture3.webp",
+            "size": "large2"
+          }
+        },
+        "picture_YJDkxN": {
+          "type": "picture",
+          "settings": {
+            "picture_img": "shopify:\/\/shop_images\/picture5.webp",
+            "size": "small"
+          }
+        }
+      },
+      "block_order": [
+        "picture_JLcNf7",
+        "picture_dVVBnW",
+        "picture_TnHyyC",
+        "picture_BxgeVp",
+        "picture_YJDkxN"
+      ],
+      "settings": {
+        "padding_top": 32,
+        "padding_bottom": 32,
+        "padding_top_sp": 32,
+        "padding_bottom_sp": 32
       }
     }
   },
@@ -176,6 +233,11 @@
     "c_top_banner_qhyMTD",
     "c_top_food_Wkhkza",
     "c_top_sample_itkDRk",
-    "c_top_product_K8kaQt"
+    "c_top_product_K8kaQt",
+    "c_top_about_HKAHmz",
+    "c_top_voices_cTGqWC",
+    "c_top_news_PhkhgL",
+    "1707571247d74eef14",
+    "c_picture_x6h77q"
   ]
 }

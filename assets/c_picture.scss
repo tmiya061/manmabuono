@@ -1,0 +1,14 @@
+@import "variables";
+
+.swiper.--topPicture {
+    .swiper-wrapper{
+        transition-timing-function: linear;
+    }
+    .swiper-slide {
+        padding-right: 40px;
+        width: auto;
+        @include mq(sp) {
+            padding-right: 23px;
+        }
+    }
+}

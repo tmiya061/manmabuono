@@ -1,12 +1,44 @@
+{{ 'c_common.min.css' | asset_url | stylesheet_tag }}
+{{ 'c_insta.min.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  #shopify-section-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+
+  @media screen and (max-width: 750px) {
+    #shopify-section-{{ section.id }} {
+      padding-top: {{ section.settings.padding_top_sp }}px;
+      padding-bottom: {{ section.settings.padding_bottom_sp }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="c_insta__title">
+  <h2 class="c_common__title">インスタグラム</h2>
+  <p class="c_common__text">INSTAGRAM</p>
+</div>
+
+
 <div class="{% if section.settings.include_margins %}page-width{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
   {%- for block in section.blocks -%}
     {% render block %}
   {%- endfor -%}
 </div>
 
+<div class="c_insta__btn">
+  <a href="" class="c_common__btn" target="_blank">
+    投稿をもっとみる
+  </a>
+</div>
+
+
+
+
 {% schema %}
 {
-  "name": "t:sections.apps.name",
+  "name": "インスタグラム",
   "tag": "section",
   "class": "section",
   "settings": [
@@ -15,6 +47,50 @@
       "id": "include_margins",
       "default": true,
       "label": "t:sections.apps.settings.include_margins.label"
+    },
+    {
+      "type": "header",
+      "content": "上下の余白"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "上部の余白（pc）",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "下部の余白（PC)",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "padding_top_sp",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "上部の余白",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_sp",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "下部の余白",
+      "default": 32
     }
   ],
   "blocks": [
@@ -22,9 +98,10 @@
       "type": "@app"
     }
   ],
-  "presets": [
+  "presets":[
     {
-      "name": "t:sections.apps.presets.name"
+      "name" : "インスタグラム",
+      "category": "カスタムパーツ"
     }
   ]
 }

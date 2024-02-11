@@ -1,0 +1,136 @@
+{{ 'c_picture.min.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+    #shopify-section-{{ section.id }} {
+        padding-top: {{ section.settings.padding_top }}px;
+        padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+
+    @media screen and (max-width: 750px) {
+        #shopify-section-{{ section.id }} {
+        padding-top: {{ section.settings.padding_top_sp }}px;
+        padding-bottom: {{ section.settings.padding_bottom_sp }}px;
+        }
+    }
+{%- endstyle -%}
+
+<div class="c_picture">
+    <div class="swiper-container">
+        <div class="swiper --topPicture">
+            <div class="swiper-wrapper">
+                {% for block in section.blocks %}
+                    {%- case block.type -%}
+                        {%- when 'picture' -%}
+                            <div class="swiper-slide">
+                                {% assign width = 450 %}
+                                {% assign height = 483 %}
+                                {% assign width2 = 225 %}
+                                {% assign height2 = 241 %}
+                                {% case block.settings.size %}
+                                    {%- when 'large2' -%}
+                                        {% assign width = 305 %}
+                                        {% assign height = 418 %}
+                                        {% assign width2 = 149 %}
+                                        {% assign height2 = 204 %}
+                                    {%- when 'middle' -%}
+                                        {% assign width = 330 %}
+                                        {% assign height = 316 %}
+                                        {% assign width2 = 161 %}
+                                        {% assign height2 = 154 %}
+                                    {%- when 'small' -%}
+                                        {% assign width = 178 %}
+                                        {% assign height = 259 %}
+                                        {% assign width2 = 87 %}
+                                        {% assign height2 = 126 %}
+                                {% endcase %}
+                                {{ block.settings.picture_img | image_url: width: width, height: height | image_tag: alt: block.settings.picture_img, class: "pc" }}
+                                {{ block.settings.picture_img | image_url: width: width2, height: height2 | image_tag: alt: block.settings.picture_img, class: "sp" }}
+                            </div>
+                    {% endcase %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% schema %}
+{
+    "name": "写真のスライダー",
+    "settings": [
+        {
+        "type": "header",
+        "content": "上下の余白"
+        },
+        {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 200,
+        "step": 2,
+        "unit": "px",
+        "label": "上部の余白（pc）",
+        "default": 32
+        },
+        {
+        "type": "range",
+        "id": "padding_bottom",
+        "min": 0,
+        "max": 200,
+        "step": 2,
+        "unit": "px",
+        "label": "下部の余白（PC)",
+        "default": 32
+        },
+        {
+        "type": "range",
+        "id": "padding_top_sp",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "上部の余白",
+        "default": 32
+        },
+        {
+        "type": "range",
+        "id": "padding_bottom_sp",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "下部の余白",
+        "default": 32
+        }
+    ],
+    "blocks" : [
+        {
+            "type": "picture",
+            "name": "スライダー画像",
+            "settings": [
+                {
+                    "type": "image_picker",
+                    "id": "picture_img",
+                    "label": "画像"
+                },
+                {
+                    "type": "select",
+                    "id": "size",
+                    "label": "画像サイズ",
+                    "options": [
+                        { "value": "large", "label": "大" },
+                        { "value": "large2", "label": "大2" },
+                        { "value": "middle", "label": "中" },
+                        { "value": "small", "label": "小" }
+                    ]
+                }
+            ]
+        }
+    ],
+    "presets":[
+        {
+        "name" : "写真のスライダー",
+        "category": "カスタムパーツ"
+        }
+    ]
+}
+{% endschema %}
