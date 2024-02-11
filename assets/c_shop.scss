@@ -1,0 +1,58 @@
+@import "variables";
+
+.c_shop__top-text {
+    margin-bottom: 24px;
+    @include mq(pc) {
+        margin-bottom: 32px;
+    }
+}
+
+.c_shop__main {
+    margin-top: 66px;
+    @include mq(pc) {
+        margin-top: 80px;
+    }
+}
+
+.c_shop__btn-wrap {
+    display: flex;
+    column-gap: 10px;
+    align-items: center;
+    margin-top: 14px;
+    @include mq(pc) {
+        column-gap: 20px;
+        margin-top: 20px;
+    }
+
+    a {
+        display: flex;
+        column-gap: 8px;
+        align-items: center;
+        color: #3C3C3C;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 180%; /* 25.2px */
+        letter-spacing: 0.56px;
+        padding: 5px 21px;
+        border-radius: 60px;
+        border: 1px solid #3c3c3c;
+        text-decoration: none;
+        @include mq(pc) {
+            font-size: 20px;
+        }
+        transition: all  0.3s ease;
+        svg {
+            transition: all  0.3s ease;
+        }
+        @media(hover: hover) {
+            &:hover {
+                background: #3c3c3c;
+                color: $white;
+                svg path {
+                    stroke: $white;
+                }
+            }
+        }
+    }
+}

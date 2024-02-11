@@ -1,0 +1,209 @@
+@import "variables";
+
+.c_underFv {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 375 / 311;
+    position: relative;
+    @include mq(pc) {
+        aspect-ratio: 1500 / 800;
+    }
+    &::after {
+        content: '';
+        z-index: 0;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-color: transparent transparent #ff7b5e transparent;
+        // border-width: 0px 0px 66.13333% 78.778%;
+        border-width: 0px 0px vw-sp(245) vw-sp(248);
+        @include mq(pc) {
+            border-width: 0px 0px vw(700) vw(800);
+        }
+    }
+}
+
+.c_underFv__img {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 84.26666%;
+    height: auto;
+    aspect-ratio: 316 / 220;
+    @include mq(pc) {
+        width: 80%;
+        border-radius: 0 80px 0 0;
+        aspect-ratio: 1500 / 800;
+    }
+    img {
+        border-radius: 0 40px 0 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.c_underFv__text {
+    position: absolute;
+    z-index: 1;
+    bottom: -55px;
+    left: 20px;
+    width: fit-content;
+    height: auto;
+    @include mq(pc) {
+        bottom: -90px;
+        left: 50px;
+    }
+}
+
+.c_underFv__title--en {
+    color: #3C3C3C;
+    font-size: 46px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 140%; /* 64.4px */
+    letter-spacing: 3.68px;
+    margin-bottom: 1px;
+    @include mq(pc) {
+        font-size: 80px;
+    }
+}
+
+.c_underFv__title--jp {
+    color: #3C3C3C;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 140%; /* 22.4px */
+    letter-spacing: 2.56px;
+    @include mq(pc) {
+        margin-top: -20px;
+        font-size: 40px;
+    }
+}
+
+.c_underFv__breadcrumb {
+    position: absolute;
+    z-index: 4;
+    top: 0;
+    right: 20px;
+    writing-mode: vertical-rl;
+    text-orientation: sideways;
+    display: flex;
+    align-items: center;
+    @include mq(pc) {
+        right: 50px;
+    }
+    a {
+        display: inline-block;
+        margin-right: 2px;
+        text-decoration: none;
+        color: #3C3C3C;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 140%; /* 16.8px */
+        letter-spacing: 0.48px;
+        @include mq(pc) {
+            font-size: 24px;
+        }
+    }
+    span {
+        @include mq(pc) {
+            svg {
+                width: 10px;
+                height: auto;
+                margin-left: 2px;
+            }
+        }
+        color: #3C3C3C;
+        font-size: 11px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 140%; /* 15.4px */
+        letter-spacing: 0.44px;
+        @include mq(pc) {
+            font-size: 20px;
+        }
+    }
+}
+
+.c_under__head {
+    color: #FF7B5E;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 140%; /* 28px */
+    letter-spacing: 3.2px;
+    padding-bottom: 16.5px;
+    border-bottom: 1px solid rgba(197, 197, 197, 1);
+    @include mq(pc) {
+        font-size: 30px;
+        padding-bottom: 20px;
+    }
+}
+
+.c_under__head + .c_shop__main-item {
+    margin-top: 24px;
+    @include mq(pc) {
+        margin-top: 30px;
+    }
+}
+
+.c_shop__main-item + .c_shop__main-item {
+    margin-top: 36px;
+    @include mq(pc) {
+        margin-top: 45px;
+    }
+}
+
+.c_shop__main-wrap + .c_shop__main-wrap {
+    margin-top: 56px;
+}
+
+.c_under__sub-head {
+    color: #3C3C3C;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 140%; /* 22.4px */
+    letter-spacing: 2.56px;
+    padding-left: 13px;
+    position: relative;
+    margin-bottom: 14px;
+    &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+        width: 5px;
+        height: calc(100% - 3px);
+        background: $base-color;
+    }
+    @include mq(pc) {
+        font-size: 24px;
+        padding-left: 20px;
+        margin-bottom: 20px;
+        &::after {
+            width: 6px;
+        }
+    }
+}
+
+
+.c_under__text {
+    color: #3C3C3C;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 180%;
+    letter-spacing: 0.56px;
+    @include mq(pc) {
+        font-size: 18px;
+    }
+}

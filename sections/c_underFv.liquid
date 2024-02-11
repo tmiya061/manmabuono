@@ -1,0 +1,118 @@
+{{ 'c_common.min.css' | asset_url | stylesheet_tag }}
+{{ 'c_under.min.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  #shopify-section-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+
+  @media screen and (max-width: 750px) {
+    #shopify-section-{{ section.id }} {
+      padding-top: {{ section.settings.padding_top_sp }}px;
+      padding-bottom: {{ section.settings.padding_bottom_sp }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="c_underFv">
+    <div class="c_underFv__img">
+        {{ section.settings.img | image_url: width: 1200 , height: 810 | image_tag: alt: section.settings.img, class: "pc" }}
+        {{ section.settings.img_sp | image_url: width: 316 , height: 220 | image_tag: alt: section.settings.img, class: "sp" }}
+        <div class="c_underFv__text">
+            <h1 class="c_underFv__title--en">{{ section.settings.title_en }}</h1>
+            <h2 class="c_underFv__title--jp">{{ section.settings.title_jp }}</h2>
+        </div>
+    </div>
+    <div class="c_underFv__breadcrumb">
+        <a href="/">TOP</a>
+        <span>
+            &nbsp;
+            <svg xmlns="http://www.w3.org/2000/svg" width="5" height="4" viewBox="0 0 5 4" fill="none">
+                <path d="M4.5 1L2.5 3L0.5 1" stroke="#3C3C3C"/>
+            </svg>
+            &nbsp;
+        </span>
+        <span>{{ section.settings.title_jp }}</span>
+    </div>
+</div>
+
+{% schema %}
+{
+    "name": "下層ファーストビュー",
+    "settings": [
+        {
+        "type": "textarea",
+        "id": "title_en",
+        "label": "タイトル(英語)",
+        "default": "英語のタイトルが入ります"
+        },
+        {
+        "type": "textarea",
+        "id": "title_jp",
+        "label": "タイトル(日本語)",
+        "default": "日本語のタイトルが入ります"
+        },
+        {
+        "type": "image_picker",
+        "id": "img",
+        "label": "トップ画像(PC)"
+        },
+        {
+        "type": "image_picker",
+        "id": "img_sp",
+        "label": "トップ画像(SP)"
+        },
+        {
+        "type": "header",
+        "content": "上下の余白"
+        },
+        {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 200,
+        "step": 2,
+        "unit": "px",
+        "label": "上部の余白（pc）",
+        "default": 32
+        },
+        {
+        "type": "range",
+        "id": "padding_bottom",
+        "min": 0,
+        "max": 200,
+        "step": 2,
+        "unit": "px",
+        "label": "下部の余白（PC)",
+        "default": 32
+        },
+        {
+        "type": "range",
+        "id": "padding_top_sp",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "上部の余白",
+        "default": 32
+        },
+        {
+        "type": "range",
+        "id": "padding_bottom_sp",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "下部の余白",
+        "default": 32
+        }
+    ],
+    "presets":[
+        {
+        "name" : "下層ファーストビュー",
+        "category": "カスタムパーツ"
+        }
+    ]
+}
+{% endschema %}
