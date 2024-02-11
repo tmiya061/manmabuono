@@ -1,0 +1,154 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "c_under_fv_MeHJLn": {
+      "type": "c_underFv",
+      "settings": {
+        "title_en": "SHOP LIST",
+        "title_jp": "取り扱い店舗一覧",
+        "img": "shopify:\/\/shop_images\/shop_fv.png",
+        "img_sp": "shopify:\/\/shop_images\/shop_fv.png",
+        "padding_top": 22,
+        "padding_bottom": 32,
+        "padding_top_sp": 10,
+        "padding_bottom_sp": 35
+      }
+    },
+    "c_shop_xRm6Xz": {
+      "type": "c_shop",
+      "blocks": {
+        "shop_kyoto_UMFt4m": {
+          "type": "shop_kyoto",
+          "settings": {
+            "kyoto_head": "グランドキヨスク京都",
+            "kyoto_address": "京都市下京区東塩小路高倉町8-3<br>\nJR京都駅2F新幹線改札構内エリア<br>\nグランドキヨスク京都<br>\nTEL：075-693-8332",
+            "kyoto_link_web": "",
+            "kyoto_link_google": ""
+          }
+        },
+        "shop_kyoto_4a8dpj": {
+          "type": "shop_kyoto",
+          "settings": {
+            "kyoto_head": "Art Cafe ナナイロ",
+            "kyoto_address": "京都府京都市中京区西ノ京船塚町10番地<br>\nTEL：075-823-7716",
+            "kyoto_link_web": "",
+            "kyoto_link_google": ""
+          }
+        },
+        "shop_kyoto_rFGnjy": {
+          "type": "shop_kyoto",
+          "settings": {
+            "kyoto_head": "山科みやこ動物病院",
+            "kyoto_address": "京都市山科区西野山射庭ノ上町27-1 ロイヤルハイツ秀1階<br>\nTEL：075-630-8880",
+            "kyoto_link_web": "",
+            "kyoto_link_google": ""
+          }
+        },
+        "shop_kyoto_AJ97be": {
+          "type": "shop_kyoto",
+          "settings": {
+            "kyoto_head": "らん布袋",
+            "kyoto_address": "京都市中京区上瓦町64 京都三条会商店街内<br>\nTEL：075-801-0790",
+            "kyoto_link_web": "",
+            "kyoto_link_google": ""
+          }
+        },
+        "shop_kyoto_cxgHwh": {
+          "type": "shop_kyoto",
+          "settings": {
+            "kyoto_head": "ペットライフサポーターBATON",
+            "kyoto_address": "京都府 京都市山科区東野舞台町88-1\nINSIGHT REPOS 山科椥辻<br>\nTEL：075-366-9788",
+            "kyoto_link_web": "",
+            "kyoto_link_google": ""
+          }
+        },
+        "shop_kyoto_i7UPYp": {
+          "type": "shop_kyoto",
+          "settings": {
+            "kyoto_head": "Cafe&Bar Chill’s Kyoto",
+            "kyoto_address": "京都市北区上賀茂御薗口町57-3<br>\nTEL：070-8336-4310",
+            "kyoto_link_web": "",
+            "kyoto_link_google": ""
+          }
+        },
+        "shop_kyoto_PBHbV7": {
+          "type": "shop_kyoto",
+          "settings": {
+            "kyoto_head": "自然食品店 ポケットくらぶ",
+            "kyoto_address": "京都府京都市北区北区北区小山西大野町58-1<br>\nTEL：075-415-1333",
+            "kyoto_link_web": "",
+            "kyoto_link_google": ""
+          }
+        },
+        "shop_osaka_mhEDxi": {
+          "type": "shop_osaka",
+          "settings": {
+            "osaka_head": "dogcafe&run douxgarden",
+            "osaka_address": "大阪府大阪狭山市山本東407-1<br>\nTEL：080-7499-3358",
+            "osaka_link_web": "",
+            "osaka_link_google": ""
+          }
+        },
+        "shop_siga_cYQPLt": {
+          "type": "shop_siga",
+          "settings": {
+            "siga_head": "Trattoria Maatanto",
+            "siga_address": "滋賀県大津市横木1-12-28<br>\nTEL：077-522-8868",
+            "siga_link_web": "",
+            "siga_link_google": ""
+          }
+        },
+        "shop_tokyo_fzanw4": {
+          "type": "shop_tokyo",
+          "settings": {
+            "tokyo_head": "Cafe Peanuts",
+            "tokyo_address": "東京都台東区浅草3丁目5-4<br>\nTEL：03-6802-4123",
+            "tokyo_link_web": "",
+            "tokyo_link_google": ""
+          }
+        },
+        "shop_tokyo_mdcipw": {
+          "type": "shop_tokyo",
+          "settings": {
+            "tokyo_head": "The Dog",
+            "tokyo_address": "東京都目黒区八雲4-5-2リストレジデンス八雲1F<br>\nTEL：03-6421-4903",
+            "tokyo_link_web": "",
+            "tokyo_link_google": ""
+          }
+        }
+      },
+      "block_order": [
+        "shop_kyoto_UMFt4m",
+        "shop_kyoto_4a8dpj",
+        "shop_kyoto_rFGnjy",
+        "shop_kyoto_AJ97be",
+        "shop_kyoto_cxgHwh",
+        "shop_kyoto_i7UPYp",
+        "shop_kyoto_PBHbV7",
+        "shop_osaka_mhEDxi",
+        "shop_siga_cYQPLt",
+        "shop_tokyo_fzanw4",
+        "shop_tokyo_mdcipw"
+      ],
+      "settings": {
+        "top_text": "マンマボーノでは、わんちゃん、猫ちゃんの健康寿命を延ばすお手伝いをご一緒頂ける動物病院、ペットカフェ、ペットサロン、 観光地の皆様と協業しております。<br>\nご新規でのお申込みやオリジナル商品などのお問合せはマンマボーノのお問合せにお気軽にお声がけ下さい。",
+        "padding_top": 32,
+        "padding_bottom": 32,
+        "padding_top_sp": 32,
+        "padding_bottom_sp": 32
+      }
+    }
+  },
+  "order": [
+    "main",
+    "c_under_fv_MeHJLn",
+    "c_shop_xRm6Xz"
+  ]
+}
