@@ -50,13 +50,24 @@
 .c_underFv__text {
     position: absolute;
     z-index: 1;
-    bottom: -55px;
+    bottom: -40px;
     left: 20px;
     width: fit-content;
     height: auto;
     @include mq(pc) {
-        bottom: -90px;
+        bottom: -80px;
         left: 50px;
+    }
+    &.--privacy {
+        bottom: -80px;
+        @include mq(pc) {
+            bottom: -70px;
+        }
+        .c_underFv__title--en {
+            @include mq(pc) {
+                font-size: 60px;
+            }
+        }
     }
 }
 
@@ -65,10 +76,11 @@
     font-size: 46px;
     font-style: normal;
     font-weight: 600;
-    line-height: 140%; /* 64.4px */
+    line-height: 90%; /* 64.4px */
     letter-spacing: 3.68px;
-    margin-bottom: 1px;
+    margin-bottom: 10px;
     @include mq(pc) {
+        line-height: 120%;
         font-size: 80px;
     }
 }
@@ -78,9 +90,10 @@
     font-size: 16px;
     font-style: normal;
     font-weight: 700;
-    line-height: 140%; /* 22.4px */
+    line-height: 90%; /* 22.4px */
     letter-spacing: 2.56px;
     @include mq(pc) {
+        line-height: 120%;
         margin-top: -20px;
         font-size: 40px;
     }
@@ -147,11 +160,16 @@
     }
 }
 
-.c_under__head + .c_shop__main-item {
+.c_under__head + .c_shop__main-item,
+.c_under__head + .c_under__sub-head {
     margin-top: 24px;
     @include mq(pc) {
         margin-top: 30px;
     }
+}
+
+.c_under__text + .c_under__sub-head {
+    margin-top: 23px;
 }
 
 .c_shop__main-item + .c_shop__main-item {

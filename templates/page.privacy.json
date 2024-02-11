@@ -1,0 +1,39 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "c_under_fv_MeHJLn": {
+      "type": "c_underFv",
+      "settings": {
+        "title_en": "PRIVACY<br class=\"sp\">POLICY",
+        "title_jp": "プライバシーポリシー",
+        "img": "shopify:\/\/shop_images\/contact_fv.png",
+        "img_sp": "shopify:\/\/shop_images\/contact_fv.png",
+        "padding_top": 22,
+        "padding_bottom": 32,
+        "padding_top_sp": 10,
+        "padding_bottom_sp": 35
+      }
+    },
+    "c_privacy_EkUc6w": {
+      "type": "c_privacy",
+      "settings": {
+        "padding_top": 32,
+        "padding_bottom": 88,
+        "padding_top_sp": 32,
+        "padding_bottom_sp": 46
+      }
+    }
+  },
+  "order": [
+    "main",
+    "c_under_fv_MeHJLn",
+    "c_privacy_EkUc6w"
+  ]
+}

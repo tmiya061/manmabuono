@@ -1,0 +1,34 @@
+@import "variables";
+
+.c_under__text.--privacyTop {
+    margin-bottom: 37px;
+    a {
+        color: #333;
+    }
+    @include mq(pc) {
+        margin-bottom: 45px;
+    }
+}
+
+
+.c_under__head + .c_under__text {
+    margin-top: 14px;
+}
+
+.c_privacy__wrap + .c_privacy__wrap {
+    margin-top: 52px;
+}
+
+.c_under__text + .c_under__text {
+    margin-top: 14px;
+    @include mq(pc) {
+        padding-top: 16px;
+    }
+}
+
+.c_guide__table {
+    margin-bottom: 22px;
+    @include mq(pc) {
+        margin-bottom: 30px;
+    }
+}

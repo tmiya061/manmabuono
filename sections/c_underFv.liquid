@@ -19,7 +19,7 @@
     <div class="c_underFv__img">
         {{ section.settings.img | image_url: width: 1200 , height: 810 | image_tag: alt: section.settings.img, class: "pc" }}
         {{ section.settings.img_sp | image_url: width: 316 , height: 220 | image_tag: alt: section.settings.img, class: "sp" }}
-        <div class="c_underFv__text">
+        <div class="c_underFv__text {% if page.handle == 'privacy' %}--privacy{% endif %}">
             <h1 class="c_underFv__title--en">{{ section.settings.title_en }}</h1>
             <h2 class="c_underFv__title--jp">{{ section.settings.title_jp }}</h2>
         </div>

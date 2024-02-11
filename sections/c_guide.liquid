@@ -1,0 +1,203 @@
+{{ 'c_common.min.css' | asset_url | stylesheet_tag }}
+{{ 'c_under.min.css' | asset_url | stylesheet_tag }}
+{{ 'c_guide.min.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  #shopify-section-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+
+  @media screen and (max-width: 750px) {
+    #shopify-section-{{ section.id }} {
+      padding-top: {{ section.settings.padding_top_sp }}px;
+      padding-bottom: {{ section.settings.padding_bottom_sp }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="c_guide page-width">
+    <div class="c_guide__wrap">
+        <h3 class="c_under__head">配送・送料について</h3>
+        <p class="c_under__sub-head">佐川急便</p>
+        <p class="c_under__text">
+            送料は全国一律880円（税込）頂いております。<br>1回のお買い上げ商品の合計金額が5,000円以上、送料無料商品は送料が無料となります。
+        </p>
+    </div>
+    <div class="c_guide__wrap">
+        <h3 class="c_under__head">支払い方法について</h3>
+        <p class="c_under__sub-head">クレジット</p>
+        <p class="c_under__text">
+            納品書・領収書の必要な方は購入後の配送設定の入力の際、備考欄に記載ください。
+        </p>
+        <div class="c_guide__pay">
+            <img src="{{ 'guide_pay.png' | file_url }}" alt="支払い方法" width="280">
+        </div>
+        <p class="c_under__sub-head">代金引換</p>
+        <p class="c_under__text">
+            代金引換手数料はお客様負担とさせて頂きます。<br>一律330円（税込）です。
+        </p>
+        <p class="c_under__sub-head">その他</p>
+        <p class="c_under__text">
+            その他楽天Pay、LINE Pay、PayPay、Amazon Payをご利用いただけます。
+        </p>
+    </div>
+    <div class="c_guide__wrap">
+        <h3 class="c_under__head">返品について</h3>
+        <div class="c_guide__table">
+            <div class="c_guide__table-row">
+                <p class="c_guide__table-head">不良品</p>
+                <p class="c_guide__table-data">
+                    商品到着後速やかにご連絡ください。商品に欠陥がある場合を除き、返品には応じかねますのでご了承ください。
+                </p>
+            </div>
+            <div class="c_guide__table-row">
+                <p class="c_guide__table-head">返品期限</p>
+                <p class="c_guide__table-data">
+                    商品到着後７日以内とさせていただきます。
+                </p>
+            </div>
+            <div class="c_guide__table-row">
+                <p class="c_guide__table-head">返品送料</p>
+                <p class="c_guide__table-data">
+                    お客様都合による返品につきましてはお客様のご負担とさせていただきます。不良品に該当する場合は当方で負担いたします。
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="c_guide__wrap">
+        <h3 class="c_under__head">特定商取引法に基づく表記</h3>
+        <div class="c_guide__table">
+            <div class="c_guide__table-row">
+                <p class="c_guide__table-head">販売業者</p>
+                <p class="c_guide__table-data">
+                    株式会社大洋ロジスティックスパートナー マンマボーノ
+                </p>
+            </div>
+            <div class="c_guide__table-row">
+                <p class="c_guide__table-head">運営統括<br class="sp">責任者名</p>
+                <p class="c_guide__table-data">
+                    藤岡 譲
+                </p>
+            </div>
+            <div class="c_guide__table-row">
+                <p class="c_guide__table-head">住所</p>
+                <p class="c_guide__table-data">
+                    613-0022 京都府久世郡久御山町市田北浦57-1
+                </p>
+            </div>
+            <div class="c_guide__table-row">
+                <p class="c_guide__table-head">商品代金以外<br class="sp">の料金の説明</p>
+                <p class="c_guide__table-data">
+                    送料は全国一律880円頂いております。1回のお買い上げ商品の合計金額が5,000円以上、送料無料商品は送料が無料となります。
+                </p>
+            </div>
+            <div class="c_guide__table-row">
+                <p class="c_guide__table-head">販売数量</p>
+                <p class="c_guide__table-data">
+                    各商品ページにてご確認ください。
+                </p>
+            </div>
+            <div class="c_guide__table-row">
+                <p class="c_guide__table-head">引渡し<br class="sp">時期</p>
+                <p class="c_guide__table-data">
+                    ご注文を受けてから7日以内に発送いたします。。
+                </p>
+            </div>
+            <div class="c_guide__table-row">
+                <p class="c_guide__table-head">お支払い<br class="sp">方法</p>
+                <p class="c_guide__table-data">
+                    クレジットカード、代金引換、Amazon Pay、楽天ペイ、LINE Pay、PayPayでのお支払いが可能です。定期購入はクレジットカードのみお支払が可能です。
+                </p>
+            </div>
+            <div class="c_guide__table-row">
+                <p class="c_guide__table-head">サービス名</p>
+                <p class="c_guide__table-data">
+                    MANMA BOUNO KYOTO JAPAN
+                </p>
+            </div>
+            <div class="c_guide__table-row">
+                <p class="c_guide__table-head">TEL</p>
+                <p class="c_guide__table-data">
+                    0774-79-3003
+                </p>
+            </div>
+            <div class="c_guide__table-row">
+                <p class="c_guide__table-head">e-mail</p>
+                <p class="c_guide__table-data">
+                    info@manmabuono.jp
+                </p>
+            </div>
+            <div class="c_guide__table-row">
+                <p class="c_guide__table-head">HP</p>
+                <p class="c_guide__table-data">
+                    https://manmabuono.jp/
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% schema %}
+{
+  "name": "ご利用ガイド",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "見出し",
+      "default": "見出し"
+    },
+    {
+      "type": "header",
+      "content": "上下の余白"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "上部の余白（pc）",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "下部の余白（PC)",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "padding_top_sp",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "上部の余白",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_sp",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "下部の余白",
+      "default": 32
+    }
+  ],
+  "presets":[
+    {
+      "name" : "ご利用ガイド",
+      "category": "カスタムパーツ"
+    }
+  ]
+}
+{% endschema %}
