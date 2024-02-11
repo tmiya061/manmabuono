@@ -3,8 +3,8 @@
     "c_top_fv_VDwRay": {
       "type": "c_topFv",
       "settings": {
-        "title1": "健康寿命を延ばす",
-        "title2": "ペットのごはんのお手伝い",
+        "title1": "見出し1",
+        "title2": "見出し2",
         "padding_top": 0,
         "padding_bottom": 0,
         "padding_top_sp": 24,
@@ -176,10 +176,6 @@
     "c_top_banner_qhyMTD",
     "c_top_food_Wkhkza",
     "c_top_sample_itkDRk",
-    "c_top_product_K8kaQt",
-    "c_top_about_HKAHmz",
-    "c_top_voices_cTGqWC",
-    "c_top_news_PhkhgL",
-    "1707571247d74eef14"
+    "c_top_product_K8kaQt"
   ]
 }
