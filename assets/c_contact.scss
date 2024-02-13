@@ -1,0 +1,197 @@
+@import "variables";
+
+.c_contact__item {
+    margin-bottom: 36px;
+    &.--first {
+        margin-bottom: 24px;
+    }
+}
+
+.field.contact-kind,
+.field.contact-acceptance {
+    display: block;
+    &::after {
+        display: none;
+    }
+
+    .field__label {
+        position: relative;
+        top: unset;
+        left: unset;
+        transform: translate(0, 0);
+        pointer-events: all;
+    }
+}
+
+.field__input {
+    padding: 8px 16px !important;
+    background: #DEDEDE;
+    &:focus {
+        box-shadow: none !important;
+    }
+} 
+.contact .field {
+    &::before {
+        display: none !important;
+    }
+    &::after {
+        display: none !important;
+    }
+}
+
+.c_contact__head {
+    color: #3C3C3C;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 140%; /* 19.6px */
+    letter-spacing: 2.24px;
+    margin-bottom: 12px;
+    @include mq(pc) {
+        font-size: 20px;
+        margin-bottom: 16px;
+    }
+    span {
+        display: inline-block;
+        position: relative;
+        &::after {
+            content: '必須';
+            position: absolute;
+            padding: 2px 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            left: calc(100% + 9px);
+            width: fit-content;
+            height: auto;
+            white-space: nowrap;
+            color: #FFF;
+            font-size: 11px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 140%; /* 15.4px */
+            letter-spacing: 1.76px;
+            background: $base-color;
+            @include mq(pc) {
+                font-size: 13px;
+                padding: 4px 16px;
+                left: calc(100% + 12px);
+            }
+        }
+    }
+}
+
+.c_contact__item textarea {
+    height: 170px;
+    resize: vertical;
+    @include mq(pc) {
+        height: 220px;
+    }
+}
+
+
+
+.c_contact__checkbox {
+    input[type=checkbox] {
+        display: none;
+    }
+
+    span {
+        position: relative;
+        padding-left: 24px;
+        color: #3C3C3C;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 140%; /* 19.6px */
+        letter-spacing: 2.24px;
+        @include mq(pc) {
+            font-size: 16px;
+        }
+        &::before {
+            content: '';
+            top: 50%;
+            transform: translateY(-50%);
+            left: 0;
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            background: #D9D9D9;
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            top: calc(50% - 1px);
+            transform: translateY(-50%) rotate(45deg);
+            left: 4px;
+            width: 8px;
+            height: 12px;
+            border-right: 2px solid #3c3c3c;
+            border-bottom: 2px solid #3c3c3c;
+            opacity: 0;
+        }
+    }
+
+    input[type=checkbox]:checked + span::after {
+        opacity: 1;
+    }
+}
+
+.c_contact__acceptance-link {
+    display: flex;
+    align-items: center;
+    column-gap: 4px;
+    color: #3C3C3C;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 180%; /* 25.2px */
+    letter-spacing: 0.56px;
+    margin-bottom: 12px;
+    text-decoration: none;
+    @include mq(pc) {
+        font-size: 15px;
+    }
+    span {
+        position: relative;
+        display: inline-block;
+        &::after {
+            content: '';
+            position: absolute;
+            top: calc(100% - 6px);
+            left: 0;
+            width: calc(100% + 16px);
+            height: 1px;
+            background: #3c3c3c;
+        }
+    }
+}
+
+.contact__button {
+    button {
+        width: 100%;
+        background: $base-color;
+        padding: 16px;
+        border-radius: 70px;
+        color: #FFF;
+        text-align: center;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 149.1%; /* 20.874px */
+        letter-spacing: 0.56px;
+        border: 1px solid $base-color;
+        &::before {
+            display: none;
+        }
+        &::after {
+            display: none;
+        }
+        transition: all  0.3s ease;
+        @media(hover: hover) {
+            &:hover {
+                background: transparent;
+                color: $base-color;
+            }
+        }
+    }
+}

@@ -3,17 +3,16 @@
 {{ 'c_guide.min.css' | asset_url | stylesheet_tag }}
 
 {%- style -%}
-  #shopify-section-{{ section.id }} {
-    padding-top: {{ section.settings.padding_top }}px;
-    padding-bottom: {{ section.settings.padding_bottom }}px;
-  }
-
-  @media screen and (max-width: 750px) {
     #shopify-section-{{ section.id }} {
-      padding-top: {{ section.settings.padding_top_sp }}px;
-      padding-bottom: {{ section.settings.padding_bottom_sp }}px;
+        padding-top: {{ section.settings.padding_top }}px;
+        padding-bottom: {{ section.settings.padding_bottom }}px;
     }
-  }
+    @media screen and (max-width: 750px) {
+        #shopify-section-{{ section.id }} {
+        padding-top: {{ section.settings.padding_top_sp }}px;
+        padding-bottom: {{ section.settings.padding_bottom_sp }}px;
+        }
+    }
 {%- endstyle -%}
 
 <div class="c_guide page-width">
