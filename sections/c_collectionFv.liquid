@@ -2,26 +2,36 @@
 {{ 'c_under.min.css' | asset_url | stylesheet_tag }}
 
 {%- style -%}
-  #shopify-section-{{ section.id }} {
-    padding-top: {{ section.settings.padding_top }}px;
-    padding-bottom: {{ section.settings.padding_bottom }}px;
-  }
-
-  @media screen and (max-width: 750px) {
     #shopify-section-{{ section.id }} {
-      padding-top: {{ section.settings.padding_top_sp }}px;
-      padding-bottom: {{ section.settings.padding_bottom_sp }}px;
+        padding-top: {{ section.settings.padding_top }}px;
+        padding-bottom: {{ section.settings.padding_bottom }}px;
     }
-  }
+
+    @media screen and (max-width: 750px) {
+        #shopify-section-{{ section.id }} {
+        padding-top: {{ section.settings.padding_top_sp }}px;
+        padding-bottom: {{ section.settings.padding_bottom_sp }}px;
+        }
+    }
 {%- endstyle -%}
 <div class="c_underFv-wrap">
     <div class="c_underFv">
         <div class="c_underFv__img">
-            {{ section.settings.img | image_url: width: 1200 , height: 810 | image_tag: alt: section.settings.img, class: "pc" }}
-            {{ section.settings.img_sp | image_url: width: 316 , height: 220 | image_tag: alt: section.settings.img, class: "sp" }}
-            <div class="c_underFv__text {% if page.handle == 'privacy' %}--privacy{% endif %}">
-                <h1 class="c_underFv__title--en">{{ section.settings.title_en }}</h1>
-                <h2 class="c_underFv__title--jp">{{ section.settings.title_jp }}</h2>
+            {% if collection.handle contains 'cat' %}
+                <img class="pc" src="{{ 'collection_dog_pc.png' | file_url }}" alt="犬と猫の写真" width="1200">
+                <img class="sp" src="{{ 'collection_dog.png' | file_url }}" alt="犬と猫の写真" width="316">
+            {% else %}
+                <img class="pc" src="{{ 'collection_dog_pc.png' | file_url }}" alt="犬と猫の写真" width="1200">
+                <img class="sp" src="{{ 'collection_dog.png' | file_url }}" alt="犬と猫の写真" width="316">
+            {% endif %}
+            <div class="c_underFv__text">
+                {% if collection.handle contains 'cat' %}
+                    <h1 class="c_underFv__title--en">FOR CAT</h1>
+                    <h2 class="c_underFv__title--jp">猫用ごはん</h2>
+                {% else %}
+                    <h1 class="c_underFv__title--en">FOR DOG</h1>
+                    <h2 class="c_underFv__title--jp">犬用ごはん</h2>
+                {% endif %}
             </div>
         </div>
     </div>
@@ -34,36 +44,21 @@
             </svg>
             &nbsp;
         </span>
-        <span>{{ section.settings.title_jp }}</span>
+        <span>
+            {% if collection.handle contains 'cat' %}
+                <span>猫用ごはん</span>
+            {% else %}
+                <span>犬用ごはん</span>
+            {% endif %}
+        </span>
     </div>
 </div>
 
+
 {% schema %}
 {
-    "name": "下層ファーストビュー",
+    "name": "商品一覧ページ ファーストビュー",
     "settings": [
-        {
-        "type": "textarea",
-        "id": "title_en",
-        "label": "タイトル(英語)",
-        "default": "英語のタイトルが入ります"
-        },
-        {
-        "type": "textarea",
-        "id": "title_jp",
-        "label": "タイトル(日本語)",
-        "default": "日本語のタイトルが入ります"
-        },
-        {
-        "type": "image_picker",
-        "id": "img",
-        "label": "トップ画像(PC)"
-        },
-        {
-        "type": "image_picker",
-        "id": "img_sp",
-        "label": "トップ画像(SP)"
-        },
         {
         "type": "header",
         "content": "上下の余白"
@@ -111,7 +106,7 @@
     ],
     "presets":[
         {
-        "name" : "下層ファーストビュー",
+        "name" : "商品一覧ページ ファーストビュー",
         "category": "カスタムパーツ"
         }
     ]

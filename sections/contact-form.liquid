@@ -61,9 +61,10 @@
             autocomplete="name"
             type="text"
             id="ContactForm-name"
-            name="contact[{{ 'templates.contact.form.name' | t }}]"
+            name="contact[name]"
             value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}"
-          >
+            required
+            >
         </div>
       </div>
       <div class="c_contact__item">
@@ -83,6 +84,7 @@
               aria-invalid="true"
               aria-describedby="ContactForm-email-error"
             {% endif %}
+            required
           >
           {%- if form.errors contains 'email' -%}
             <small class="contact__field-error" id="ContactForm-email-error">
@@ -109,6 +111,7 @@
               id="ContactForm-kind1"
               name="contact[kind1]"
               value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}"
+              required
             >
             <span>商品について</span>
             </label>
@@ -122,6 +125,7 @@
               id="ContactForm-kind2"
               name="contact[kind2]"
               value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}"
+              required
             >
             <span>取扱い店舗について</span>
             </label>
@@ -135,6 +139,7 @@
               id="ContactForm-kind3"
               name="contact[kind3]"
               value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}"
+              required
             >
             <span>その他</span>
             </label>
@@ -149,6 +154,7 @@
             id="ContactForm-body"
             class="text-area field__input"
             name="contact[{{ 'templates.contact.form.comment' | t }}]"
+            required
           >
             {{- form.body -}}
           </textarea>
@@ -174,9 +180,14 @@
               id="ContactForm-acceptance"
               name="contact[acceptance]"
               value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}"
+              required
             >
             <span>個人情報保護方針に同意する</span>
             </label>
+            {% if form.errors contains 'acceptance' %}
+              aria-invalid="true"
+              aria-describedby="ContactForm-name-error"
+            {% endif %}      
           </div>
         </div>
       </div>

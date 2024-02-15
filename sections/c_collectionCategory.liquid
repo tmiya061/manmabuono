@@ -1,0 +1,106 @@
+{{ 'c_common.min.css' | asset_url | stylesheet_tag }}
+{{ 'c_collectionCat.min.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+    #shopify-section-{{ section.id }} {
+        padding-top: {{ section.settings.padding_top }}px;
+        padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+
+    @media screen and (max-width: 750px) {
+        #shopify-section-{{ section.id }} {
+        padding-top: {{ section.settings.padding_top_sp }}px;
+        padding-bottom: {{ section.settings.padding_bottom_sp }}px;
+        }
+    }
+{%- endstyle -%}
+
+<ul class="c_collectionCategory__wrap page-width">
+{% if collection.handle contains 'cat' %}
+    {% for collection in collections %}
+        {% if collection.handle contains 'cat' %}
+            <li class="c_collectionCategory__item">
+                <a href="/collections/{{ collection.handle }}">
+                    {{ collection.title | split: '-' | last }}
+                </a>
+            </li>
+        {% endif %}
+    {% endfor %}
+{% elsif collection.handle contains 'dog' %}
+    {% for collection in collections %}
+        {% if collection.handle contains 'dog' %}
+            <li class="c_collectionCategory__item">
+                <a href="/collections/{{ collection.handle }}">
+                    {{ collection.title | split: '-' | last }}
+                </a>
+            </li>
+        {% endif %}
+    {% endfor %}
+{% endif %}
+</ul>
+
+<div class="c_collectionCategory__title-wrap page-width">
+    <h2 class="c_collectionCategory__title">{{ collection.title | split: '-' | last }}</h2>
+    <svg class="c_collectionCategory__icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+        <path d="M16 2L2 16" stroke="#FF7B5E" stroke-width="3"/>
+    </svg>
+</div>
+
+
+{% schema %}
+{
+    "name": "コレクションカテゴリ",
+    "settings": [
+        {
+        "type": "header",
+        "content": "上下の余白"
+        },
+        {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 200,
+        "step": 2,
+        "unit": "px",
+        "label": "上部の余白（pc）",
+        "default": 32
+        },
+        {
+        "type": "range",
+        "id": "padding_bottom",
+        "min": 0,
+        "max": 200,
+        "step": 2,
+        "unit": "px",
+        "label": "下部の余白（PC)",
+        "default": 32
+        },
+        {
+        "type": "range",
+        "id": "padding_top_sp",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "上部の余白",
+        "default": 32
+        },
+        {
+        "type": "range",
+        "id": "padding_bottom_sp",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "下部の余白",
+        "default": 32
+        }
+    ],
+    "presets":[
+        {
+        "name" : "コレクションカテゴリ",
+        "category": "カスタムパーツ"
+        }
+    ]
+}
+{% endschema %}

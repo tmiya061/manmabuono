@@ -93,6 +93,7 @@
             {% else %}
               {{ compare_at_price | money }}
             {% endif %}
+            <span>(税込)</span>
           </s>
         </span>
       {%- endunless -%}
@@ -125,4 +126,5 @@
       {{ 'products.product.sold_out' | t }}
     </span>
   {%- endif -%}
+  <span class="c_collection__taxin">(税込)</span>
 </div>
