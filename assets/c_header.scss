@@ -1,0 +1,225 @@
+@import "variables";
+
+body.no-scroll {
+    overflow: hidden;
+}
+
+.header {
+    padding: 0 0 0 34px !important;
+}
+
+.header__icon {
+    width: 80px;
+    height: auto;
+    aspect-ratio: 1;
+    &--cart {
+        background: #3c3c3c;
+    }
+    svg {
+        mix-blend-mode: difference;
+    }
+    &.header__icon--account {
+        svg {
+            mix-blend-mode: normal;
+        }
+    }
+}
+
+.header__icon--account {
+    background: $base-color;
+}
+
+.header__search {
+    display: none !important;
+}
+
+.header--middle-left {
+    grid-template-columns: auto 1fr auto;
+    .header__inline-menu {
+        ul {
+            width: 100%;
+            justify-content: center;
+        }
+    }
+}
+
+// .c_header__item.--main {
+//     position: relative;
+// }
+
+div:empty.c_header__subMenu--bg {
+    position: fixed;
+    z-index: 99;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(#000, 0.3);
+    display: none;
+    &.js-open {
+        display: block;
+    }
+}
+.c_header__subMenu {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    height: auto;
+    padding: 34px 0 80px;
+    background: #fff;
+    border-radius: 0 0 40px 40px;
+    &.js-open {
+        display: block;
+    }
+}
+
+.c_header__subMenu-head {
+    color: #FF7B5E;
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 180%; /* 46.8px */
+    letter-spacing: 1.04px;
+    padding-bottom: 14.5px;
+    border-bottom: 1px solid #dfdfdf;
+}
+
+.c_header__subMenu-item {
+    margin-top: 26.5px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px 40px;
+    a {
+        display: flex;
+        align-items: center;
+        column-gap: 8px;
+        text-decoration: none;
+        svg {
+            width: 18px;
+            height: auto;
+            aspect-ratio: 1;
+            transition: all  0.3s ease;
+            circle {
+                transition: all  0.3s ease;
+            }
+            path {
+                transition: all  0.3s ease;
+            }
+        }
+        span {
+            color: #3C3C3C;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 140%; /* 22.4px */
+            letter-spacing: 0.64px;
+            transition: all  0.3s ease;
+        }
+        @media(hover: hover) {
+            &:hover {
+                svg {
+                    circle {
+                        stroke: $base-color;
+                    }
+                    path {
+                        stroke: $base-color;
+                    }
+                }
+                span {
+                    color: $base-color;
+                }
+            }
+        }
+    }
+}
+
+.c_header__item {
+    color: #3C3C3C;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 180%; /* 25.2px */
+    letter-spacing: 0.56px;
+    margin-right: 40px;
+    a {
+        color: #3C3C3C;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 180%; /* 25.2px */
+        letter-spacing: 0.56px;
+        text-decoration: none;
+        transition: all  0.3s ease;
+        @media(hover: hover) {
+            &:hover {
+                color: $base-color;
+            }
+        }
+    }
+}
+
+/*----------------------------------
+    レスポンシブ
+-----------------------------------*/
+@media screen and (max-width: 1350px) {
+    .header {
+        padding-left: 14px !important;
+    }
+    .header__icon {
+        width: 60px;
+        height: 80px;
+    }
+
+    .header__heading {
+        width: 180px;
+    }
+    .c_header__item {
+        margin-right: 20px;
+    }
+    .c_header__item a {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 990px) {
+    .header {
+        height: 72px !important;
+        padding-left: 0 !important;
+    }
+    header-drawer {
+        grid-area: c;
+        margin-left: 0 !important;
+    }
+    .header--middle-left {
+        grid-template-columns: 1fr 72px 72px;
+        grid-template-areas:
+        "a b c";
+    }
+    .header__heading {
+        display: inline-block;
+        width: 187px;
+        justify-self: start;
+        margin-left: 20px;
+        grid-area: a;
+        a {
+            padding: 0;
+        }
+    }
+    .header__icons {
+        grid-area: b;
+        width: 72px;
+        height: 72px;
+    }
+
+    .header__icon {
+        width: 72px;
+        height: 72px;
+        background: #fff;
+    }
+    .header__icon--menu {
+        background: #3c3c3c;
+    }
+}

@@ -1,0 +1,24 @@
+@import "variables";
+
+.menu-drawer {
+    transform: translateX(100%);
+    padding-top: 80px;
+    top: 0;
+    left: unset;
+    right: 0;
+    width: 321px;
+    height: 100vh;
+    height: 100svh;
+    z-index: 200;
+}
+
+.c_drawer__icon {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+}
+
+.menu-drawer__navigation {
+    padding: 0;
+}
+

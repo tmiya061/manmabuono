@@ -71,31 +71,30 @@ if ( window.document.body.id === 'top' ) {
         allowTouchMove: true, // スワイプで表示の切り替えを無効に
         slidesPerView: "auto",
         spaceBetween: 0,
-        // breakpoints: { //画面幅による表示枚数と余白の指定
-        //     320: {
-        //         slidesPerView: 1,
-        //         spaceBetween: 0,
-        //     },
-        //     375: {
-        //         slidesPerView: 1.4,
-        //         spaceBetween: 0,
-        //     },
-        //     750: {
-        //         slidesPerView: 2.5,
-        //         spaceBetween: 0,
-        //     },
-        //     1025: {
-        //         slidesPerView: 3.4,
-        //         spaceBetween: 0,
-        //     },
-        //     1300: {
-        //         slidesPerView: 3.8,
-        //         spaceBetween: 0,
-        //     },
-        //     1500: {
-        //         slidesPerView: 4,
-        //     },
-        // }
     });
 }
+
+
+
+jQuery(function($) {
+    $('.c_header__item a').on('click', function () {
+        $('.c_header__subMenu').removeClass('js-open');
+        $($(this).attr('href')).addClass('js-open');
+        $('.c_header__subMenu--bg').addClass('js-open');
+        $('body').addClass('no-scroll');
+        return false;
+    });
+
+    $('.c_header__subMenu--bg').on('click', function () {
+        $('.c_header__subMenu').removeClass('js-open');
+        $(this).removeClass('js-open');
+        $('body').removeClass('no-scroll');
+        return false;
+    });
+
+    $('.c_drawer__icon').on('click', function () {
+        
+        return false;
+    });
+});
 
