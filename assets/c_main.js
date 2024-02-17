@@ -105,9 +105,5 @@ jQuery(function($) {
         return false;
     });
 
-    $('').on('click', function () {
-        
-        return false;
-    });
 });
 
