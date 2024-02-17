@@ -5,6 +5,8 @@
   {% render 'header-drawer' %}
 {% endcomment %}
 
+
+
 <header-drawer data-breakpoint="{% if section.settings.menu_type_desktop == 'drawer' %}desktop{% else %}tablet{% endif %}">
   <details id="Details-menu-drawer-container" class="menu-drawer-container">
     <summary
@@ -21,109 +23,134 @@
         <div class="menu-drawer__navigation-container">
           <nav class="menu-drawer__navigation">
             <ul class="menu-drawer__menu has-submenu list-menu" role="list">
-              {%- for link in section.settings.menu.links -%}
-                <li>
-                  {%- if link.links != blank -%}
-                    <details id="Details-menu-drawer-menu-item-{{ forloop.index }}">
-                      <summary
-                        id="HeaderDrawer-{{ link.handle }}"
-                        class="menu-drawer__menu-item list-menu__item link link--text focus-inset{% if link.child_active %} menu-drawer__menu-item--active{% endif %}"
-                      >
-                        {{ link.title | escape }}
-                        {% render 'icon-arrow' %}
-                        {% render 'icon-caret' %}
-                      </summary>
-                      <div
-                        id="link-{{ link.handle | escape }}"
-                        class="menu-drawer__submenu has-submenu gradient motion-reduce"
-                        tabindex="-1"
-                      >
-                        <div class="menu-drawer__inner-submenu">
-                          <button class="menu-drawer__close-button link link--text focus-inset" aria-expanded="true">
-                            {% render 'icon-arrow' %}
-                            {{ link.title | escape }}
-                          </button>
-                          <ul class="menu-drawer__menu list-menu" role="list" tabindex="-1">
-                            {%- for childlink in link.links -%}
-                              <li>
-                                {%- if childlink.links == blank -%}
-                                  <a
-                                    id="HeaderDrawer-{{ link.handle }}-{{ childlink.handle }}"
-                                    href="{{ childlink.url }}"
-                                    class="menu-drawer__menu-item link link--text list-menu__item focus-inset{% if childlink.current %} menu-drawer__menu-item--active{% endif %}"
-                                    {% if childlink.current %}
-                                      aria-current="page"
-                                    {% endif %}
-                                  >
-                                    {{ childlink.title | escape }}
-                                  </a>
-                                {%- else -%}
-                                  <details id="Details-menu-drawer-{{ link.handle }}-{{ childlink.handle }}">
-                                    <summary
-                                      id="HeaderDrawer-{{ link.handle }}-{{ childlink.handle }}"
-                                      class="menu-drawer__menu-item link link--text list-menu__item focus-inset"
-                                    >
-                                      {{ childlink.title | escape }}
-                                      {% render 'icon-arrow' %}
-                                      {% render 'icon-caret' %}
-                                    </summary>
-                                    <div
-                                      id="childlink-{{ childlink.handle | escape }}"
-                                      class="menu-drawer__submenu has-submenu gradient motion-reduce"
-                                    >
-                                      <button
-                                        class="menu-drawer__close-button link link--text focus-inset"
-                                        aria-expanded="true"
-                                      >
-                                        {% render 'icon-arrow' %}
-                                        {{ childlink.title | escape }}
-                                      </button>
-                                      <ul
-                                        class="menu-drawer__menu list-menu"
-                                        role="list"
-                                        tabindex="-1"
-                                      >
-                                        {%- for grandchildlink in childlink.links -%}
-                                          <li>
-                                            <a
-                                              id="HeaderDrawer-{{ link.handle }}-{{ childlink.handle }}-{{ grandchildlink.handle }}"
-                                              href="{{ grandchildlink.url }}"
-                                              class="menu-drawer__menu-item link link--text list-menu__item focus-inset{% if grandchildlink.current %} menu-drawer__menu-item--active{% endif %}"
-                                              {% if grandchildlink.current %}
-                                                aria-current="page"
-                                              {% endif %}
-                                            >
-                                              {{ grandchildlink.title | escape }}
-                                            </a>
-                                          </li>
-                                        {%- endfor -%}
-                                      </ul>
-                                    </div>
-                                  </details>
-                                {%- endif -%}
-                              </li>
-                            {%- endfor -%}
-                          </ul>
-                        </div>
-                      </div>
-                    </details>
-                  {%- else -%}
-                    <a
-                      id="HeaderDrawer-{{ link.handle }}"
-                      href="{{ link.url }}"
-                      class="menu-drawer__menu-item list-menu__item link link--text focus-inset{% if link.current %} menu-drawer__menu-item--active{% endif %}"
-                      {% if link.current %}
-                        aria-current="page"
-                      {% endif %}
-                    >
-                      {{ link.title | escape }}
+              <!-- <li class="c_header__item --main">
+                <p class="c_header__subMenu-main">
+                  <span>猫用商品</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                    <path d="M0 7.25H13.5" stroke="#FF7B5E" stroke-width="3"/>
+                    <path d="M6.75 0.5L6.75 14" stroke="#FF7B5E" stroke-width="3"/>
+                  </svg>                  
+                </p>
+                <p class="c_header__subMenu-item">
+                  {% for collection in collections %}
+                    {% if collection.handle contains 'dog' %}
+                      <a href="/collections/{{ collection.handle }}">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                          <circle cx="9" cy="9" r="8.5" fill="white" stroke="#3C3C3C"/>
+                          <path d="M7.19995 5.39999L10.8 9.00001L7.19995 12.6" stroke="#3C3C3C"/>
+                        </svg>
+                        <span>{{ collection.title | split: '-' | last }}</span>
+                      </a>
+                    {% endif %}
+                  {% endfor %}
+                </p>
+              </li>
+              <li class="c_header__item">
+                <a href="/pages/about">マンマボーノについて</a>
+              </li> -->
+              <li class="c_drawer__item">
+                <p class="c_drawer__head">
+                  <span>犬用商品</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <path d="M0.5 8H16" stroke="#FF7B5E" stroke-width="2"/>
+                    <path d="M8.25 15.75L8.25 0.25" stroke="#FF7B5E" stroke-width="2"/>
+                  </svg>
+                </p>
+                <div class="c_drawer__downMenu">
+                  {% for collection in collections %}
+                  {% if collection.handle contains 'dog' %}
+                    <a href="/collections/{{ collection.handle }}">
+                      <span>{{ collection.title | split: '-' | last }}</span>
                     </a>
-                  {%- endif -%}
-                </li>
-              {%- endfor -%}
+                  {% endif %}
+                {% endfor %}
+                </div>
+              </li>
+              <li class="c_drawer__item">
+                <p class="c_drawer__head">
+                  <span>猫用商品</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <path d="M0.5 8H16" stroke="#FF7B5E" stroke-width="2"/>
+                    <path d="M8.25 15.75L8.25 0.25" stroke="#FF7B5E" stroke-width="2"/>
+                  </svg>
+                </p>
+                <div class="c_drawer__downMenu">
+                  {% for collection in collections %}
+                  {% if collection.handle contains 'cat' %}
+                    <a href="/collections/{{ collection.handle }}">
+                      <span>{{ collection.title | split: '-' | last }}</span>
+                    </a>
+                  {% endif %}
+                {% endfor %}
+                </div>
+              </li>
+              <li class="c_drawer__item">
+                <a
+                  href="/pages/about"
+                >
+                  マンマボーノとは
+                </a>
+              </li>
+              <li class="c_drawer__item">
+                  <a
+                    href="/pages/shop"
+                  >
+                    取扱店舗一覧
+                  </a>
+              </li>
+              <li class="c_drawer__item">
+                  <a
+                    href="/pages/guide"
+                  >
+                    ご利用ガイド
+                  </a>
+              </li>
+              <li class="c_drawer__item">
+                  <a
+                    href="/pages/contact"
+                  >
+                    お問い合わせ
+                  </a>
+              </li>
+            </ul>
+            <div class="c_drawer__navHead">USER MENU</div>
+            <ul class="menu-drawer__menu has-submenu list-menu" role="list">
+              <li class="c_drawer__underItem --first">
+                <a href="">マイアカウント</a>
+              </li>
+              <li class="c_drawer__underItem">
+                <a href="">新規会員登録</a>
+              </li>
+              <li class="c_drawer__underItem">
+                <a href="">ログイン</a>
+              </li>
+              <li class="c_drawer__underItem">
+                <a href="">カートをみる</a>
+              </li>
+              <li class="c_drawer__underItem">
+                <a href="">定期購入を管理</a>
+              </li>
+            </ul>
+            <div class="c_drawer__navHead">SHOPPING GUIDE</div>
+            <ul class="menu-drawer__menu has-submenu list-menu" role="list">
+              <li class="c_drawer__underItem --first">
+                <a href="">配送・送料について</a>
+              </li>
+              <li class="c_drawer__underItem">
+                <a href="">返品について</a>
+              </li>
+              <li class="c_drawer__underItem">
+                <a href="">お支払い方法について</a>
+              </li>
+              <li class="c_drawer__underItem">
+                <a href="">特定商取引法に基づく表記</a>
+              </li>
+              <li class="c_drawer__underItem">
+                <a href="">プライバシーポリシー</a>
+              </li>
             </ul>
           </nav>
-          <div class="menu-drawer__utility-links">
+          <!-- <div class="menu-drawer__utility-links">
             {%- if shop.customer_accounts_enabled -%}
               <a
                 href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}"
@@ -138,8 +165,8 @@
                   endif
                 -%}
               </a>
-            {%- endif -%}
-            {%- if localization.available_countries or localization.available_languages -%}
+            {%- endif -%} -->
+            <!-- {%- if localization.available_countries or localization.available_languages -%}
               <div class="menu-drawer__localization header-localization">
                 {%- if localization.available_countries and localization.available_countries.size > 1 -%}
                   <noscript>
@@ -228,8 +255,8 @@
                   </localization-form>
                 {%- endif -%}
               </div>
-            {%- endif -%}
-            <ul class="list list-social list-unstyled" role="list">
+            {%- endif -%} -->
+            <!-- <ul class="list list-social list-unstyled" role="list">
               {%- if settings.social_twitter_link != blank -%}
                 <li class="list-social__item">
                   <a href="{{ settings.social_twitter_link }}" class="list-social__link link">
@@ -302,8 +329,8 @@
                   </a>
                 </li>
               {%- endif -%}
-            </ul>
-          </div>
+            </ul> -->
+          <!-- </div> -->
         </div>
       </div>
     </div>

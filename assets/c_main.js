@@ -77,6 +77,13 @@ if ( window.document.body.id === 'top' ) {
 
 
 jQuery(function($) {
+    var windowWidth = $(window).width();
+    var windowSm = 767; //breakpoint
+    if (windowWidth <= windowSm) {
+        //767px以下の時(sp版)だけにjsが当たる
+    } else {
+        //768px以上の時(pc版)だけにjsが当たる
+    }
     $('.c_header__item a').on('click', function () {
         $('.c_header__subMenu').removeClass('js-open');
         $($(this).attr('href')).addClass('js-open');
@@ -92,7 +99,13 @@ jQuery(function($) {
         return false;
     });
 
-    $('.c_drawer__icon').on('click', function () {
+    $('.c_drawer__head').on('click', function () {
+        $(this).next('.c_drawer__downMenu').slideToggle();
+        $(this).toggleClass('js-open');
+        return false;
+    });
+
+    $('').on('click', function () {
         
         return false;
     });

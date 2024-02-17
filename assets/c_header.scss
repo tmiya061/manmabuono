@@ -184,7 +184,7 @@ div:empty.c_header__subMenu--bg {
     }
 }
 
-@media screen and (max-width: 990px) {
+@media screen and (max-width: 989px) {
     .header {
         height: 72px !important;
         padding-left: 0 !important;
@@ -195,8 +195,18 @@ div:empty.c_header__subMenu--bg {
     }
     .header--middle-left {
         grid-template-columns: 1fr 72px 72px;
-        grid-template-areas:
-        "a b c";
+        grid-template-areas: "a b c";
+    }
+    .header__heading-link {
+        grid-area: a;
+        display: inline-block;
+        width: 187px;
+        justify-self: start;
+        margin-left: 20px;
+        grid-area: a;
+        a {
+            padding: 0;
+        }
     }
     .header__heading {
         display: inline-block;
