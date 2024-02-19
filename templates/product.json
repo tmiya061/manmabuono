@@ -19,8 +19,8 @@
           "type": "shopify:\/\/apps\/mikawaya-subscription\/blocks\/selling-plans-block\/04a0ae95-7461-4a48-956f-6840757b6670",
           "settings": {
             "use_form_id": false,
-            "form_id": "599130173",
-            "widget_version": "V3",
+            "form_id": "",
+            "widget_version": "V1",
             "one_time_purchase_label": "",
             "subscription_purchase_label": "",
             "default_subscription_select": false
