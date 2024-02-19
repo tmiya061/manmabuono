@@ -85,10 +85,18 @@ jQuery(function($) {
         //768px以上の時(pc版)だけにjsが当たる
     }
     $('.c_header__item a').on('click', function () {
-        $('.c_header__subMenu').removeClass('js-open');
-        $($(this).attr('href')).addClass('js-open');
-        $('.c_header__subMenu--bg').addClass('js-open');
-        $('body').addClass('no-scroll');
+        var targetSubMenu = $($(this).attr('href'));
+    
+        if (targetSubMenu.hasClass('js-open')) {
+            targetSubMenu.removeClass('js-open');
+            $('.c_header__subMenu--bg').removeClass('js-open');
+            $('body').removeClass('no-scroll');
+        } else {
+            $('.c_header__subMenu').removeClass('js-open');
+            targetSubMenu.addClass('js-open');
+            $('.c_header__subMenu--bg').addClass('js-open');
+            $('body').addClass('no-scroll');
+        }
         return false;
     });
 
@@ -97,6 +105,11 @@ jQuery(function($) {
         $(this).removeClass('js-open');
         $('body').removeClass('no-scroll');
         return false;
+    });
+    
+    $('.c_drawer__icon').on('click', function () {
+        var menuIcon = document.querySelector('.header__icon--menu');
+        menuIcon.click();
     });
 
     $('.c_drawer__head').on('click', function () {

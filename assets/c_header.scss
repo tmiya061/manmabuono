@@ -81,7 +81,7 @@ div:empty.c_header__subMenu--bg {
     font-size: 26px;
     font-style: normal;
     font-weight: 700;
-    line-height: 180%; /* 46.8px */
+    line-height: 180%;
     letter-spacing: 1.04px;
     padding-bottom: 14.5px;
     border-bottom: 1px solid #dfdfdf;
@@ -173,7 +173,7 @@ div:empty.c_header__subMenu--bg {
         height: 80px;
     }
 
-    .header__heading {
+    .header__heading-link {
         width: 180px;
     }
     .c_header__item {
@@ -202,7 +202,6 @@ div:empty.c_header__subMenu--bg {
         display: inline-block;
         width: 187px;
         justify-self: start;
-        margin-left: 20px;
         grid-area: a;
         a {
             padding: 0;
@@ -232,4 +231,10 @@ div:empty.c_header__subMenu--bg {
     .header__icon--menu {
         background: #3c3c3c;
     }
+}
+
+.cart-count-bubble {
+    top: 15px;
+    right: 20px;
+    left: inherit;
 }
