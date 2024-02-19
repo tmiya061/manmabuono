@@ -118,5 +118,23 @@ jQuery(function($) {
         return false;
     });
 
+    // let lastScrollTop = 0;
+
+    // window.addEventListener('scroll', function() {
+    //     var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        
+    //     if (scrollTop > lastScrollTop) {
+    //         console.log('下にスクロールしました');
+    //     } else if (scrollTop < lastScrollTop) {
+    //         console.log('上にスクロールしました');
+    //     } else {
+    //         console.log('スクロールしていません');
+    //     }
+        
+    //     lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // スクロール位置が0以下になった場合は0に設定
+    // });
+    
+    
 });
+
 
