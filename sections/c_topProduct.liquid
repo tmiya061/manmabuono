@@ -23,7 +23,7 @@
         {% assign collection = collections[collection_handle] %}
         {% for product in collection.products limit:4 %}
             <!-- 商品情報の表示 -->
-            <div class="c_topProduct__item">
+            <a class="c_topProduct__item" href="{{ product.url }}">
                 <!-- 画像 -->
                 <img class="c_topProduct__item-img" src="{{ product.featured_image | img_url: 'medium' }}" alt="{{ product.title }}" />
                 <!-- タイトル -->
@@ -33,7 +33,7 @@
                     {{ product.price | money }}
                     <span>(税込)</span>
                 </p>
-            </div>
+            </a>
         {% endfor %}
     </div>
     <h2 class="c_common__title">猫おすすめ商品</h2>
@@ -43,7 +43,7 @@
         {% assign collection = collections[collection_handle] %}
         {% for product in collection.products limit:4 %}
             <!-- 商品情報の表示 -->
-            <div class="c_topProduct__item">
+            <a class="c_topProduct__item" href="{{ product.url }}">
                 <!-- 画像 -->
                 <img class="c_topProduct__item-img" src="{{ product.featured_image | img_url: 'medium' }}" alt="{{ product.title }}" />
                 <!-- タイトル -->
@@ -53,7 +53,7 @@
                     {{ product.price | money }}
                     <span>(税込)</span>
                 </p>
-            </div>
+            </a>
         {% endfor %}
     </div>
     
