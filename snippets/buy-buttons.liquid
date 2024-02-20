@@ -106,36 +106,36 @@
           
           <div id="mikawaya-product-page-widget-container" class="mikawaya-hidden mikawaya-product-page-widget-container">
           {% if show_fieldset %}
-            <fieldset id="mikawaya-fieldset">
-              <legend>
-                  購入オプション
-              </legend>
+            <div id="mikawaya-fieldset">
           {% endif %}
           
           {% unless product.requires_selling_plan == true %}
             <div
-              class="mikawaya-selling-plan-group-container"
+              class="mikawaya-selling-plan-group-container c_mikawaya-selling-nomal"
             >
-              <input 
-                type="radio" 
-                name="purchase_option" 
-                {% if current_selling_plan_allocation == nil %} checked {% endif %}
-                value="one-time"
-                onchange="window.MIKAWAYA.handleSellingPlanGroupChange(event)"
-                class="mikawaya-radio-button"
-                id="one-time-purchase-option"
-              >
-              通常の購入
-              &nbsp;&nbsp;&nbsp;
-              {% for variant in product.variants %}
-                <span 
-                  name="one-time-variant-price" 
-                  data-variant-id="{{ variant.id }}"
-                  {% unless product.selected_or_first_available_variant.id == variant.id %} 
-                    class="mikawaya-hidden"
-                  {% endunless %}
-                  >{{ variant.price | money }}</span>
-              {% endfor %}
+              <label class="c_radio-button">
+                <input 
+                  type="radio" 
+                  name="purchase_option" 
+                  {% if current_selling_plan_allocation == nil %} checked {% endif %}
+                  value="one-time"
+                  onchange="window.MIKAWAYA.handleSellingPlanGroupChange(event)"
+                  class="mikawaya-radio-button"
+                  id="one-time-purchase-option"
+                >
+                  <span class="c_mikawaya-selling-nomal__title">通常の購入</span>
+              </label>
+              <div class="c_mikawaya-selling-nomal__price">
+                {% for variant in product.variants %}
+                  <span 
+                    name="one-time-variant-price" 
+                    data-variant-id="{{ variant.id }}"
+                    {% unless product.selected_or_first_available_variant.id == variant.id %} 
+                      class="mikawaya-hidden"
+                    {% endunless %}
+                    >{{ variant.price | money }}</span><span class="c_in-tax">（税込）</span>
+                {% endfor %}
+              </div>
             </div>
             {% endunless %}
             
@@ -158,19 +158,36 @@
               <div
                 name="selling-plan-group-container"
                 data-group-id="{{ group.id }}"
-                class="mikawaya-selling-plan-group-container mikawaya-hidden"
+                class="mikawaya-selling-plan-group-container mikawaya-hidden c_mikawaya-selling-plan-subscription"
               >
                 <div>
-                <input 
-                  type="radio" 
-                  value="{{ group.id }}" 
-                  name="purchase_option"
-                  onchange="window.MIKAWAYA.handleSellingPlanGroupChange(event)"
-                  class="mikawaya-radio-button"
-                  {% if group.id == current_selling_plan_allocation.selling_plan.group_id %} checked {% endif %}
-                  {% if product.requires_selling_plan and current_selling_plan_allocation == nil and forloop.first %} checked {% endif %}
-                  >
-                <span>{{ group.name }}&nbsp;&nbsp;&nbsp;<span name="group-inline-price" data-group-id="{{ group.id }}"></span></span>
+                  <label class="c_radio-button">
+                    <input 
+                    type="radio" 
+                    value="{{ group.id }}" 
+                    name="purchase_option"
+                    onchange="window.MIKAWAYA.handleSellingPlanGroupChange(event)"
+                    class="mikawaya-radio-button"
+                    {% if group.id == current_selling_plan_allocation.selling_plan.group_id %} checked {% endif %}
+                    {% if product.requires_selling_plan and current_selling_plan_allocation == nil and forloop.first %} checked {% endif %}
+                    >
+                    <span class="c_mikawaya-selling-plan-subscription__title">{{ group.name }}<span class="c_mikawaya-selling-plan-subscription__title--bg"></span></span>
+                  </label>
+                  {% for selling_plan in group.selling_plans %}
+                    <p 
+                      name="selling-plan-description" 
+                      data-group-id="{{ group.id }}"
+                      data-selling-plan-id="{{ selling_plan.id }}"
+                      {% if forloop.first %} 
+                        class="mikawaya-selling-plan-description" 
+                      {% else %}
+                        class="mikawaya-selling-plan-description mikawaya-hidden"
+                      {% endif %}
+                    >{{ selling_plan.description }}</p>
+                  {% endfor %}
+
+                  <div class="c_price-text">1カ月分</div>
+                  <span class="c_price" name ="group-inline-price" data-group-id="{{ group.id }}"></span><span class="c_in-tax">（税込）</span>
                 </div>
                 <select 
                   name="select-selling-plan"
@@ -183,22 +200,10 @@
                     <option value="{{ selling_plan.id }}">{{ selling_plan.name }}</option>
                   {% endfor %}
                 </select>
-                {% for selling_plan in group.selling_plans %}
-                  <p 
-                    name="selling-plan-description" 
-                    data-group-id="{{ group.id }}"
-                    data-selling-plan-id="{{ selling_plan.id }}"
-                    {% if forloop.first %} 
-                      class="mikawaya-selling-plan-description" 
-                    {% else %}
-                      class="mikawaya-selling-plan-description mikawaya-hidden"
-                    {% endif %}
-                  >{{ selling_plan.description }}</p>
-                {% endfor %}
               </div>
             {% endfor %}
           {% if show_fieldset %}
-            </fieldset>
+            </div>
           {% endif %}
           <input 
             type="hidden" 
@@ -217,9 +222,6 @@
         {% endif %}
 
       {% endif %}
-
-
-
 
         <input
           type="hidden"
@@ -247,10 +249,6 @@
           {% # theme-check-enable %}
           <label class="quantity__label form__label" for="Quantity-{{ section.id }}">
             {{ 'products.product.quantity.label' | t }}
-            <span class="quantity__rules-cart no-js-hidden{% if cart_qty == 0 %} hidden{% endif %}">
-              {%- render 'loading-spinner' -%}
-              <span>({{- 'products.product.quantity.in_cart_html' | t: quantity: cart_qty -}})</span>
-            </span>
           </label>
           <div class="price-per-item__container">
             <quantity-input class="quantity" data-url="{{ product.url }}" data-section="{{ section.id }}">
@@ -431,6 +429,7 @@
               disabled
             {% endif %}
           >
+
             <span>
               {%- if product.selected_or_first_available_variant.available == false or quantity_rule_soldout -%}
                 {{ 'products.product.sold_out' | t }}
@@ -438,7 +437,23 @@
                 {{ 'products.product.add_to_cart' | t }}
               {%- endif -%}
             </span>
-            {%- render 'loading-spinner' -%}
+            <span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="22" viewBox="0 0 25 22" fill="none">
+                <g clip-path="url(#clip0_4506_789)">
+                  <path d="M10.4669 17.1468C9.15481 17.1468 8.0918 18.1984 8.0918 19.4882C8.0918 20.7781 9.15853 21.8297 10.4669 21.8297C11.7752 21.8297 12.8419 20.7781 12.8419 19.4882C12.8419 18.1984 11.7752 17.1468 10.4669 17.1468ZM10.4669 20.7341C9.77181 20.7341 9.20685 20.1771 9.20685 19.4919C9.20685 18.8067 9.77181 18.2497 10.4669 18.2497C11.1619 18.2497 11.7269 18.8067 11.7269 19.4919C11.7269 20.1771 11.1619 20.7341 10.4669 20.7341Z" fill="white"/>
+                  <path d="M19.774 17.1468C18.4619 17.1468 17.3989 18.1984 17.3989 19.4882C17.3989 20.7781 18.4657 21.8297 19.774 21.8297C21.0823 21.8297 22.149 20.7781 22.149 19.4882C22.149 18.1984 21.0823 17.1468 19.774 17.1468ZM19.774 20.7341C19.0789 20.7341 18.514 20.1771 18.514 19.4919C18.514 18.8067 19.0789 18.2497 19.774 18.2497C20.469 18.2497 21.034 18.8067 21.034 19.4919C21.034 20.1771 20.469 20.7341 19.774 20.7341Z" fill="white"/>
+                  <path d="M24.6876 4.4135H6.70553L5.89526 1.15233L0.981605 0.177638C0.676824 0.11901 0.383194 0.309551 0.323725 0.610019C0.264256 0.906822 0.457531 1.1963 0.762311 1.25859L4.98464 2.09404L8.44129 16.0145H21.5952C21.9037 16.0145 22.1527 15.769 22.1527 15.4649C22.1527 15.1607 21.9037 14.9152 21.5952 14.9152H9.31103L8.72377 12.5408H22.6247L24.6913 4.41717L24.6876 4.4135ZM8.54536 11.4379C8.51563 11.4379 8.48589 11.4415 8.45616 11.4452L6.98429 5.50911H23.264L21.7587 11.4342H8.54536V11.4379Z" fill="white"/>
+                </g>
+                <defs>
+                  <clipPath id="clip0_4506_789">
+                    <rect width="24.375" height="21.6667" fill="white" transform="translate(0.3125 0.166687)"/>
+                  </clipPath>
+                </defs>
+              </svg>
+            </span>
+            <span class="quantity__rules-cart no-js-hidden{% if cart_qty == 0 %} hidden{% endif %}">
+              {%- render 'loading-spinner' -%}
+            </span>
           </button>
           {%- if show_dynamic_checkout -%}
             {{ form | payment_button }}

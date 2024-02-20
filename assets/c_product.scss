@@ -1,0 +1,456 @@
+@import "variables";
+
+/* ==================================================
+    画像
+===================================================*/
+.c_product-slider {
+    position: relative;
+}
+
+.slider-thumbnail .swiper-slide {
+    opacity: .5;
+    transition: opacity .5s;
+}
+.slider-thumbnail .swiper-slide.swiper-slide-thumb-active {
+    opacity: 1;
+}
+
+/* arrowボタン */
+.swiper-button-prev,
+.swiper-button-next {
+    display: block!important;
+    height: 46px;
+    width: 46px;
+}
+.swiper-button-prev::after,
+.swiper-button-next::after {
+    display: block;
+    background-repeat: no-repeat;
+    background-size: contain;
+    content: "";
+    height: 46px;
+    margin: auto;
+    width: 46px;
+}
+
+.swiper-button-prev {
+    left: -23px;
+}
+.swiper-button-prev::after {
+    background-image: url("https://cdn.shopify.com/s/files/1/0589/6591/7757/files/arrow-2.png?v=1708437671");
+}
+
+.swiper-button-next {
+    right: -23px;
+}
+.swiper-button-next::after {
+    background-image: url("https://cdn.shopify.com/s/files/1/0589/6591/7757/files/arrow.png?v=1708437554");
+}
+
+.swiper-slide img {
+    height: auto;
+    width: 100%;
+}
+
+.slider-thumbnail {
+    opacity: .8;
+}
+
+.slider-thumbnails {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    margin-top: 14px;
+}
+
+.slider-thumbnail {
+    aspect-ratio: 1 / 1;
+}
+
+.slider-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.thumb-media-active {
+    opacity: 1;
+}
+
+/* ==================================================
+    商品詳細
+===================================================*/
+.product {
+    display: flex;
+    gap: 72px!important;
+
+    @media screen and (max-width: 990px) {
+        gap: 32px!important;
+    }
+
+    @media screen and (max-width: 750px) {
+        flex-direction: column;
+    }
+}
+
+
+.product__media-wrapper {
+    width: 47.5%!important;
+    @media screen and (max-width: 750px) {
+        width: 100%!important;
+    }
+}
+
+.product__info-wrapper  {
+    max-width: 100%!important;
+    width: calc(100% - 47.5% - 72px)!important;
+    padding-left: 0!important;
+    @media screen and (max-width: 750px) {
+        width: 100%!important;
+    }
+}
+
+.product__info-container .product-form {
+    margin-top: 24px;
+    margin-bottom: 24px;
+}
+
+/* サブスクアプリ */
+/* ラジオボタン */
+.c_radio-button input[type=radio] {
+    appearance: none;
+}
+
+.c_radio-button {
+    position: relative;
+}
+
+.c_radio-button .c_mikawaya-selling-nomal__title::before {
+    content: '';
+    position: absolute;
+    display: block; 
+    border-radius: 50%; 
+    background-color: #fff;
+    width: 16px;
+    height: 16px;
+    top: 50%;
+    left: -12px;
+    transform: translateY(-50%);
+    border: 1px solid #C6C6C6;
+}
+
+.c_radio-button .c_mikawaya-selling-plan-subscription__title::before {
+    content: '';
+    position: absolute;
+    display: block; 
+    border-radius: 50%; 
+    background-color: #fff;
+    width: 16px;
+    height: 16px;
+    top: 50%;
+    left: -12px;
+    transform: translateY(-50%);
+}
+
+.c_radio-button input[type=radio]:checked +.c_mikawaya-selling-nomal__title::after,
+.c_radio-button input[type=radio]:checked +.c_mikawaya-selling-plan-subscription__title::after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 8px;
+    height: 8px;
+    background-color: #FF7B5E;
+    top: 50%;
+    left: -8px;
+    border-radius: 50%;
+    transform: translateY(-50%);
+}
+
+.c_mikawaya-selling-plan-subscription__title--bg {
+    position: absolute;
+    display: block!important;
+    width: 57px;
+    height: 57px;
+    background: url("https://cdn.shopify.com/s/files/1/0589/6591/7757/files/price10-off.png?v=1708444248")no-repeat center center;
+    background-size: contain;
+    bottom: 4px;
+    right: -70px;
+}
+
+.mikawaya-selling-plan-select {
+    display: none;
+}
+
+.c_mikawaya-selling-nomal {
+    border-radius: 7px;
+    border: 1px solid #C9C9C9;
+    background: #FFF;
+    padding: 24px;
+}
+
+.c_mikawaya-selling-nomal__title {
+    position: relative;
+    color: #3C3C3C;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 160%;
+    letter-spacing: 0.64px;
+    padding-left: 10px;
+}
+
+.c_mikawaya-selling-nomal__price {
+    color: #3C3C3C;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 170%;
+    letter-spacing: 0.96px;
+}
+
+.c_mikawaya-selling-nomal__price .c_in-tax {
+    color: #C2C2C2;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 170%;
+    letter-spacing: 0.52px;
+}
+
+/* 定期購買 */
+.c_mikawaya-selling-plan-subscription {
+    border-radius: 7px;
+    background: #FF7B5E;
+    padding: 24px;
+    color: #fff;
+    margin-bottom: 30px!important;
+    @media screen and (max-width: 750px) {
+        margin-bottom: 20px!important;
+    }
+}
+.c_mikawaya-selling-plan-subscription__title {
+    position: relative;
+    color: #FFF;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 160%;
+    letter-spacing: 0.64px;
+    padding-left: 10px;
+}
+
+.c_mikawaya-selling-plan-subscription__title::after {
+    position: absolute;
+    content: "";
+    background: url("");
+}
+
+.c_mikawaya-selling-plan-subscription__title + p {
+    color: #FFF;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 160%;
+    letter-spacing: 0.56px;
+}
+
+.c_mikawaya-selling-plan-subscription svg {
+    width: 100%;
+}
+
+.c_price-text {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 160%;
+    letter-spacing: 0.56px;
+    border-top: 2px solid #F55E3D;
+    padding-top: 13px;
+    margin-top: 20px;
+    @media screen and (max-width: 750px) {
+        padding-top: 13px;
+        margin-top: 13px;
+        width: 100%!important;
+    }
+}
+
+.c_mikawaya-selling-plan-subscription .c_price {
+    color: #FFF;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 170%;
+    letter-spacing: 0.96px;
+}
+
+.c_mikawaya-selling-plan-subscription .c_in-tax {
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 170%;
+    letter-spacing: 0.52px;
+}
+
+.product__title h1 {
+    color: #3C3C3C;
+    font-family: var(--font-body-family);
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 160%;
+    letter-spacing: 0.88px;
+}
+
+/* 数量セレクター */
+.product-form__quantity {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
+    @media screen and (max-width: 750px) {
+        margin-bottom: 20px;
+    }
+}
+
+.product-form__quantity .form__label {
+    color: #3C3C3C;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 170%;
+    letter-spacing: 0.56px;
+    margin-bottom: 0;
+}
+
+.quantity:after {
+    border-radius: 40px;
+    border: 1px solid #C5C5C5;
+    box-shadow: none;
+}
+
+/* 購入ボタン */
+.product-form__submit {
+    border-radius: 70px;
+    background: #FF7B5E;
+    height: 68px;
+    max-width: 334px;
+    transition: all .3s;
+    @media screen and (max-width: 750px) {
+        max-width: 400px;
+    }
+}
+
+.product-form__submit::after {
+    content: none;
+}
+
+.product-form__submit:hover {
+    background: #fff;
+    color: #FF7B5E;
+    border: 1px solid #FF7B5E;
+}
+
+.product-form__submit svg path {
+    transition: all .3s;
+}
+
+.product-form__submit:hover svg path {
+    fill: #FF7B5E;
+}
+
+/* shareボタン */
+.c_share__wrapper {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.c_share__text {
+    color: #000;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 180%;
+    letter-spacing: 0.56px;
+}
+
+.c_share__wrapper a {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+}
+
+/* 商品説明 */
+.c_product__description {
+    max-width: 630px;
+    margin: auto;
+    margin-top: 78px;
+    margin-bottom: 84px;
+    @media screen and (max-width: 750px) {
+        margin-bottom: 32px;
+    }
+}
+
+.rte {
+    color: #000;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 180%;
+    letter-spacing: 0.64px;
+    @media screen and (max-width: 750px) {
+        font-size: 14px;
+        letter-spacing: 0.56px;
+    }
+}
+
+.rte p {
+    color: #000;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 180%;
+    letter-spacing: 0.64px;
+    margin: 78px 0;
+    @media screen and (max-width: 750px) {
+        font-size: 14px;
+        letter-spacing: 0.56px;
+        margin: 20px 0;
+    }
+}
+
+.rte img {
+    width: 100%;
+}
+
+.c_product__table {
+    margin-top: 78px;
+    margin-bottom: 78px;
+    @media screen and (max-width: 750px) {
+        margin: 40px 0;
+    }
+}
+
+.c_product__table th {
+    background: #FFEADB;
+    width: 100px;
+}
+
+table:not([class]) {
+    box-shadow: none;
+    border-top: 1px solid #C5C5C5;
+    border-bottom: 1px solid #C5C5C5;
+}
+
+table:not([class]) td, table:not([class]) th {
+    border: none;
+    border-bottom: 1px solid #C5C5C5;
+    box-shadow: none;
+    color: #000;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 180%;
+    letter-spacing: 0.56px;
+    padding: 16px;
+}

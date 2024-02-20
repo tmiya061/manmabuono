@@ -1,0 +1,69 @@
+<!-- スライダー -->
+<div class="c_product-slider">
+  <div class="swiper slider">
+    <div class="swiper-wrapper">
+      {% for image in product.images %}
+      <div class="swiper-slide">
+        {%- if image != blank -%}
+        <img src="{{ image | image_url: width: 1920 }}" width="1920" height="800" alt="{{ image.alt }}" loading="lazy">
+        {%- endif -%}
+      </div>
+    {% endfor %}
+    </div>
+  </div>
+  <!-- 前後の矢印 -->
+  <div class="swiper-button-next"></div>
+  <div class="swiper-button-prev"></div>
+</div>
+
+<!-- サムネイル -->
+<div class="slider-thumbnails">
+  {% for image in product.images %}
+    <div class="slider-thumbnail {% if forloop.index == 1 %}thumb-media-active{% endif %}">
+      {%- if image != blank -%}
+      <img src="{{ image | image_url: width: 1920 }}" width="1920" height="800" alt="{{ image.alt }}" loading="lazy">
+      {%- endif -%}
+    </div>
+  {% endfor %}
+</div>
+
+<style>
+
+</style>
+
+<script>
+  window.addEventListener('DOMContentLoaded',function(){
+    // サムネイル
+    const thumb = document.querySelectorAll('.slider-thumbnail');
+
+    const switchThumb = (index) => {
+      document.querySelector('.slider-thumbnails .thumb-media-active').classList.remove('thumb-media-active');
+      thumb[index].classList.add('thumb-media-active');
+    }
+
+    // スライダー
+    const slider = new Swiper(".slider", {
+    loop: true,
+    // 前後の矢印
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+
+    on: {
+      afterInit: (swiper) => {
+        thumb[swiper.realIndex].classList.add('thumb-media-active');
+        for (let i = 0; i < thumb.length; i++) {
+          thumb[i].onclick = () => {
+            swiper.slideTo(i + 1);
+          };
+        }
+      },
+      slideChange: (swiper) => {
+        switchThumb(swiper.realIndex);
+      },
+    }
+    });
+  })
+      
+</script>

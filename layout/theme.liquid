@@ -253,6 +253,10 @@
       }
     {% endstyle %}
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+
     {{ 'base.css' | asset_url | stylesheet_tag }}
     <link rel="stylesheet" href="{{ 'swiper-bundle.min.css' | asset_url }}">
 
@@ -297,7 +301,10 @@
     {% sections 'header-group' %}
 
     <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
+      {% render 'c_bredcrumb' %}
+
       {{ content_for_layout }}
+
     </main>
 
     {% sections 'footer-group' %}

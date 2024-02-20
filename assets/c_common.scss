@@ -124,12 +124,7 @@ h1, h2, h3, h4, h5 {
     }
 }
 
-/* 商品画像 */
-// .thumbnail-slider .thumbnail-list.slider--tablet-up {
-//     flex-wrap: wrap;
-// }
-
-/* サブスクアプリ */
-.mikawaya-selling-plan-select {
-    display: none;
+:root {
+    --font-body-family: "Outfit", "Zen Kaku Gothic New", sans-serif;
+    --font-heading-family: "Outfit", "Zen Kaku Gothic New", sans-serif;
 }
