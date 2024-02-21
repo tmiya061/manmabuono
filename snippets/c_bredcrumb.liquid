@@ -63,13 +63,13 @@
       <span>{{ page.title }}</span>
 
     {% elsif template contains 'product' %}
-      {% if collection.url %}
+      {% if product.collections %}
       <span class="c_breadcrumb__slash">
         <svg xmlns="http://www.w3.org/2000/svg" width="5" height="4" viewBox="0 0 5 4" fill="none">
         <path d="M4.5 1L2.5 3L0.5 1" stroke="#3C3C3C"/>
         </svg>
       </span>
-      {{ collection.title | link_to: collection.url }}
+      {{ product.collections[0].title | link_to: product.collections[0].url }}
       {% endif %}
       <span class="c_breadcrumb__slash">
         <svg xmlns="http://www.w3.org/2000/svg" width="5" height="4" viewBox="0 0 5 4" fill="none">
