@@ -103,6 +103,7 @@
     //位置はここで指定
     top: calc(50% + 20px);
     transform: translateY(-50%);
+    z-index: 2;
     left: 0;
     width: 86px;
     height: auto;
@@ -128,6 +129,7 @@
 
 .swiper-button-next.--topVoices {
     //位置はここで指定
+    z-index: 2;
     right: 0;
     top: calc(50% + 20px);
     transform: translateY(-50%);

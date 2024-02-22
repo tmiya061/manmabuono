@@ -46,6 +46,9 @@ if ( window.document.body.id === 'top' ) {
         }
     });
 
+
+
+
     const topVoices = new Swiper('.swiper.--topVoices', { //名前を変える
         loop: true, //最後→最初に戻るループ再生を有効に
         speed: 1000, //表示切り替えのスピード
@@ -133,7 +136,7 @@ jQuery(function($) {
         
     //     lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // スクロール位置が0以下になった場合は0に設定
     // });
-    
+
     
 });
 
