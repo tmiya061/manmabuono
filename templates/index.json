@@ -8,7 +8,7 @@
         "padding_top": 0,
         "padding_bottom": 0,
         "padding_top_sp": 24,
-        "padding_bottom_sp": 5
+        "padding_bottom_sp": 40
       }
     },
     "c_top_banner_qhyMTD": {
@@ -21,40 +21,40 @@
             "banner-link": "https:\/\/manmabuono.jp\/"
           }
         },
-        "banner_tE3qLM": {
+        "banner_ER3tiE": {
           "type": "banner",
           "settings": {
-            "banner-img": "shopify:\/\/shop_images\/banner-sample.png",
-            "banner-link": "https:\/\/manmabuono.jp\/"
+            "banner-img": "shopify:\/\/shop_images\/dog1.jpg",
+            "banner-link": ""
           }
         },
-        "banner_eKtP9c": {
+        "banner_7NcNkX": {
           "type": "banner",
           "settings": {
-            "banner-img": "shopify:\/\/shop_images\/banner-sample.png",
-            "banner-link": "https:\/\/manmabuono.jp\/"
+            "banner-img": "shopify:\/\/shop_images\/collection_dog.png",
+            "banner-link": ""
           }
         },
-        "banner_kgztzW": {
+        "banner_VQbGNw": {
           "type": "banner",
           "settings": {
-            "banner-img": "shopify:\/\/shop_images\/banner-sample.png",
+            "banner-img": "shopify:\/\/shop_images\/contact_fv.png",
             "banner-link": ""
           }
         }
       },
       "block_order": [
         "banner_AWPth4",
-        "banner_tE3qLM",
-        "banner_eKtP9c",
-        "banner_kgztzW"
+        "banner_ER3tiE",
+        "banner_7NcNkX",
+        "banner_VQbGNw"
       ],
       "settings": {
         "title": "見出し",
         "padding_top": 42,
         "padding_bottom": 32,
         "padding_top_sp": 0,
-        "padding_bottom_sp": 100
+        "padding_bottom_sp": 60
       }
     },
     "c_top_food_Wkhkza": {

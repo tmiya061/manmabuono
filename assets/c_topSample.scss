@@ -67,6 +67,7 @@
     font-weight: 700;
     line-height: 180%; /* 28.8px */
     letter-spacing: 0.64px;
+    margin-top: 33px;
     @include mq(sp) {
         font-size: 13px;
         font-style: normal;

@@ -1,1 +1,1 @@
-.swiper.--topPicture .swiper-wrapper{-webkit-transition-timing-function:linear;transition-timing-function:linear}.swiper.--topPicture .swiper-slide{padding-right:40px;width:auto}@media screen and (max-width: 749px){.swiper.--topPicture .swiper-slide{padding-right:23px}}
+.swiper.--topPicture .swiper-wrapper{transition-timing-function:linear}.swiper.--topPicture .swiper-slide{padding-right:40px;width:auto}@media screen and (max-width: 749px){.swiper.--topPicture .swiper-slide{padding-right:23px}}
