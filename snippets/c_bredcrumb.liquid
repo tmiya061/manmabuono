@@ -11,7 +11,7 @@
   }
 
   .c_bredcrumb__wrapper {
-    position: fixed;
+    position: absolute;
     right: 38px;
     top: 120px;
     text-orientation: sideways;
@@ -21,7 +21,8 @@
 
   @media screen and (max-width: 750px) {
     .c_bredcrumb__wrapper {
-      display: none;
+      top: 85px;
+      right: 20px;
     }
   }
   
@@ -50,6 +51,7 @@
   }
 </style>
 
+{% if template != 'index' %}
 <div class="c_bredcrumb__wrapper">
   <nav class="c_breadcrumb" role="navigation" aria-label="breadcrumbs">
     <a href="/" title="Home">TOP</a>
@@ -139,3 +141,4 @@
     {% endif %}
   </nav>
 </div>
+{% endif %}

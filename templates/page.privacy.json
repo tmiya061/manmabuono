@@ -15,19 +15,19 @@
         "title_jp": "プライバシーポリシー",
         "img": "shopify:\/\/shop_images\/contact_fv.png",
         "img_sp": "shopify:\/\/shop_images\/contact_fv.png",
-        "padding_top": 22,
-        "padding_bottom": 32,
+        "padding_top": 0,
+        "padding_bottom": 0,
         "padding_top_sp": 10,
-        "padding_bottom_sp": 35
+        "padding_bottom_sp": 0
       }
     },
     "c_privacy_EkUc6w": {
       "type": "c_privacy",
       "settings": {
-        "padding_top": 32,
-        "padding_bottom": 88,
-        "padding_top_sp": 32,
-        "padding_bottom_sp": 46
+        "padding_top": 0,
+        "padding_bottom": 120,
+        "padding_top_sp": 45,
+        "padding_bottom_sp": 56
       }
     }
   },

@@ -8,7 +8,7 @@
         "padding_top": 0,
         "padding_bottom": 0,
         "padding_top_sp": 24,
-        "padding_bottom_sp": 0
+        "padding_bottom_sp": 5
       }
     },
     "c_top_banner_qhyMTD": {
@@ -54,16 +54,16 @@
         "padding_top": 42,
         "padding_bottom": 32,
         "padding_top_sp": 0,
-        "padding_bottom_sp": 47
+        "padding_bottom_sp": 100
       }
     },
     "c_top_food_Wkhkza": {
       "type": "c_topFood",
       "settings": {
         "title": "見出し",
-        "padding_top": 32,
-        "padding_bottom": 32,
-        "padding_top_sp": 32,
+        "padding_top": 160,
+        "padding_bottom": 90,
+        "padding_top_sp": 38,
         "padding_bottom_sp": 0
       }
     },
@@ -74,19 +74,19 @@
         "text": "テキストが入ります。テキストが入ります。<br>\nテキストが入ります。テキストが入ります。<br>\nテキストが入ります。テキストが入ります。テキストが入ります。<br>\nテキストが入ります。",
         "sample-img1": "shopify:\/\/shop_images\/banner-sample.png",
         "sample-img2": "shopify:\/\/shop_images\/banner-sample.png",
-        "padding_top": 32,
-        "padding_bottom": 32,
+        "padding_top": 0,
+        "padding_bottom": 0,
         "padding_top_sp": 0,
-        "padding_bottom_sp": 32
+        "padding_bottom_sp": 0
       }
     },
     "c_top_product_K8kaQt": {
       "type": "c_topProduct",
       "settings": {
-        "padding_top": 32,
-        "padding_bottom": 32,
-        "padding_top_sp": 32,
-        "padding_bottom_sp": 32
+        "padding_top": 70,
+        "padding_bottom": 90,
+        "padding_top_sp": 70,
+        "padding_bottom_sp": 95
       }
     },
     "c_top_about_HKAHmz": {
@@ -94,10 +94,10 @@
       "settings": {
         "about_text": "テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。<br>\nテキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。",
         "about_text_side": "<span>健康寿命<\/span>を伸ばす<br>\nごはんのお手伝いを<br>\nいたします",
-        "padding_top": 32,
-        "padding_bottom": 32,
-        "padding_top_sp": 32,
-        "padding_bottom_sp": 32
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_top_sp": 0,
+        "padding_bottom_sp": 0
       }
     },
     "c_top_voices_cTGqWC": {
@@ -134,20 +134,20 @@
         "voices_JdYpLH"
       ],
       "settings": {
-        "padding_top": 32,
-        "padding_bottom": 32,
-        "padding_top_sp": 32,
-        "padding_bottom_sp": 32
+        "padding_top": 94,
+        "padding_bottom": 110,
+        "padding_top_sp": 57,
+        "padding_bottom_sp": 63
       }
     },
     "c_top_news_PhkhgL": {
       "type": "c_topNews",
       "settings": {
         "title": "見出し",
-        "padding_top": 32,
-        "padding_bottom": 32,
-        "padding_top_sp": 32,
-        "padding_bottom_sp": 32
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_top_sp": 0,
+        "padding_bottom_sp": 0
       }
     },
     "1707571247d74eef14": {
@@ -168,10 +168,10 @@
       ],
       "settings": {
         "include_margins": true,
-        "padding_top": 32,
-        "padding_bottom": 32,
-        "padding_top_sp": 32,
-        "padding_bottom_sp": 32
+        "padding_top": 110,
+        "padding_bottom": 120,
+        "padding_top_sp": 67,
+        "padding_bottom_sp": 78
       }
     },
     "c_picture_x6h77q": {
@@ -221,10 +221,10 @@
         "picture_YJDkxN"
       ],
       "settings": {
-        "padding_top": 32,
-        "padding_bottom": 32,
-        "padding_top_sp": 32,
-        "padding_bottom_sp": 32
+        "padding_top": 0,
+        "padding_bottom": 120,
+        "padding_top_sp": 0,
+        "padding_bottom_sp": 80
       }
     }
   },

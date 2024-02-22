@@ -6,7 +6,9 @@
       "type": "footer",
       "settings": {
         "padding_top": 0,
-        "padding_bottom": 0
+        "padding_bottom": 0,
+        "padding_top_sp": 0,
+        "padding_bottom_sp": 32
       }
     }
   },

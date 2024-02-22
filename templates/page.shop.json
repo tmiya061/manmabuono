@@ -15,10 +15,10 @@
         "title_jp": "取り扱い店舗一覧",
         "img": "shopify:\/\/shop_images\/shop_fv.png",
         "img_sp": "shopify:\/\/shop_images\/shop_fv.png",
-        "padding_top": 22,
-        "padding_bottom": 32,
+        "padding_top": 0,
+        "padding_bottom": 0,
         "padding_top_sp": 10,
-        "padding_bottom_sp": 35
+        "padding_bottom_sp": 0
       }
     },
     "c_shop_xRm6Xz": {
@@ -140,9 +140,9 @@
       "settings": {
         "top_text": "マンマボーノでは、わんちゃん、猫ちゃんの健康寿命を延ばすお手伝いをご一緒頂ける動物病院、ペットカフェ、ペットサロン、 観光地の皆様と協業しております。<br>\nご新規でのお申込みやオリジナル商品などのお問合せはマンマボーノのお問合せにお気軽にお声がけ下さい。",
         "padding_top": 32,
-        "padding_bottom": 32,
-        "padding_top_sp": 32,
-        "padding_bottom_sp": 32
+        "padding_bottom": 120,
+        "padding_top_sp": 56,
+        "padding_bottom_sp": 68
       }
     }
   },

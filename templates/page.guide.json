@@ -15,10 +15,10 @@
         "title_jp": "ご利用ガイド",
         "img": "shopify:\/\/shop_images\/guide_fv.png",
         "img_sp": "shopify:\/\/shop_images\/guide_fv.png",
-        "padding_top": 22,
-        "padding_bottom": 32,
+        "padding_top": 0,
+        "padding_bottom": 0,
         "padding_top_sp": 10,
-        "padding_bottom_sp": 35
+        "padding_bottom_sp": 0
       }
     },
     "c_guide_DeQVbB": {
@@ -26,9 +26,9 @@
       "settings": {
         "title": "見出し",
         "padding_top": 32,
-        "padding_bottom": 108,
-        "padding_top_sp": 32,
-        "padding_bottom_sp": 61
+        "padding_bottom": 120,
+        "padding_top_sp": 56,
+        "padding_bottom_sp": 67
       }
     }
   },
