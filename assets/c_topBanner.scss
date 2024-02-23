@@ -102,3 +102,35 @@
 //         content: ''; //デフォルトの削除
 //     }
 // }
+
+
+.c_topBanner__wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 20px;
+    position: relative;
+    z-index: 1;
+    .c_topBanner__img {
+        width: 400px;
+        max-width: 100%;
+        height: auto;
+    }
+    a {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    @include mq(sp) {
+        display: block;
+        .c_topBanner__img {
+            margin: auto;
+            margin-bottom: 20px;
+        }
+    }
+}

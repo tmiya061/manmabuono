@@ -14,11 +14,7 @@
   }
 {%- endstyle -%}
 
-<div style="margin-bottom: 20px">
-  <a class="ui-button btn btn--subdued btn--size-small" href="/apps/floor-s">
-  サブスクリプションを管理
-  </a>
-</div>
+
 
 <div class="customer account section-{{ section.id }}-padding">
   <div>
@@ -29,6 +25,11 @@
       </svg>
       {{ 'customer.log_out' | t }}
     </a>
+    <div class="c_common__account-subscription" style="margin: 20px">
+      <a class="ui-button btn btn--subdued btn--size-small" href="/apps/floor-s">
+        定期購入を管理
+      </a>
+    </div>
   </div>
 
   <div>
@@ -187,3 +188,4 @@
   ]
 }
 {% endschema %}
+

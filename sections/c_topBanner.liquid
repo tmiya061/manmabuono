@@ -16,26 +16,43 @@
 {%- endstyle -%}
 
 <div class="c_topBanner">
-    <div class="swiper-container --topBanner">
-        <div class="swiper --topBanner">
-            <div class="swiper-wrapper">
-                {% for block in section.blocks %}
-                {%- case block.type -%}
-                {%- when 'banner' -%}
-                    <div class="swiper-slide">
-                        <a href="{{ block.settings.banner-link }}" target="_blank">
-                            {{ block.settings.banner-img | image_url: width: 270 , height: 135 | image_tag: alt: block.settings.banner-img, class: "pc" }}
-                            {{ block.settings.banner-img | image_url: width: 400 , height: 200 | image_tag: alt: block.settings.banner-img, class: "sp" }}
-                        </a>
-                    </div>
-                {% endcase %}
-                {% endfor %}
+    {% assign block_count = section.blocks.size %}
+    {% if block_count >= 3 %}
+        <div class="swiper-container --topBanner">
+            <div class="swiper --topBanner">
+                <div class="swiper-wrapper">
+                    {% for block in section.blocks %}
+                    {%- case block.type -%}
+                    {%- when 'banner' -%}
+                        <div class="swiper-slide">
+                            <a href="{{ block.settings.banner-link }}" target="_blank">
+                                {{ block.settings.banner-img | image_url: width: 270 , height: 135 | image_tag: alt: block.settings.banner-img, class: "pc" }}
+                                {{ block.settings.banner-img | image_url: width: 400 , height: 200 | image_tag: alt: block.settings.banner-img, class: "sp" }}
+                            </a>
+                        </div>
+                    {% endcase %}
+                    {% endfor %}
+                </div>
             </div>
+            <div class="swiper-pagination --topBanner"></div>
+            <div class="swiper-button-prev --topBanner"></div>
+            <div class="swiper-button-next --topBanner"></div>
         </div>
-        <div class="swiper-pagination --topBanner"></div>
-        <div class="swiper-button-prev --topBanner"></div>
-        <div class="swiper-button-next --topBanner"></div>
-    </div>
+    {% else %}
+        <div class="c_topBanner__wrap">
+            {% for block in section.blocks %}
+            {%- case block.type -%}
+            {%- when 'banner' -%}
+                <div class="c_topBanner__img">
+                    <a href="{{ block.settings.banner-link }}" target="_blank">
+                        {{ block.settings.banner-img | image_url: width: 270 , height: 135 | image_tag: alt: block.settings.banner-img, class: "pc" }}
+                        {{ block.settings.banner-img | image_url: width: 400 , height: 200 | image_tag: alt: block.settings.banner-img, class: "sp" }}
+                    </a>
+                </div>
+            {% endcase %}
+            {% endfor %}
+        </div>
+    {% endif %}
 </div>
 
 

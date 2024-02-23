@@ -350,6 +350,8 @@
     height: 68px;
     max-width: 334px;
     transition: all .3s;
+    border: 1px solid #FF7B5E;
+    color: #fff;
     @media screen and (max-width: 750px) {
         max-width: 400px;
     }

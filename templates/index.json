@@ -14,20 +14,6 @@
     "c_top_banner_qhyMTD": {
       "type": "c_topBanner",
       "blocks": {
-        "banner_AWPth4": {
-          "type": "banner",
-          "settings": {
-            "banner-img": "shopify:\/\/shop_images\/banner-sample.png",
-            "banner-link": "https:\/\/manmabuono.jp\/"
-          }
-        },
-        "banner_ER3tiE": {
-          "type": "banner",
-          "settings": {
-            "banner-img": "shopify:\/\/shop_images\/dog1.jpg",
-            "banner-link": ""
-          }
-        },
         "banner_7NcNkX": {
           "type": "banner",
           "settings": {
@@ -44,8 +30,6 @@
         }
       },
       "block_order": [
-        "banner_AWPth4",
-        "banner_ER3tiE",
         "banner_7NcNkX",
         "banner_VQbGNw"
       ],

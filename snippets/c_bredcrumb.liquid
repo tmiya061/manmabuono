@@ -71,14 +71,14 @@
         <path d="M4.5 1L2.5 3L0.5 1" stroke="#3C3C3C"/>
         </svg>
       </span>
-      {{ product.collections[0].title | link_to: product.collections[0].url }}
+      {{ product.collections[0].title | split: '-' | first | link_to: product.collections[0].url }}
       {% endif %}
       <span class="c_breadcrumb__slash">
         <svg xmlns="http://www.w3.org/2000/svg" width="5" height="4" viewBox="0 0 5 4" fill="none">
         <path d="M4.5 1L2.5 3L0.5 1" stroke="#3C3C3C"/>
         </svg>
       </span>
-      <span>{{ product.title }}</span>
+      <span>{{ product.title | split: '-' | last }}</span>
 
     {% elsif template contains 'collection' and collection.handle %}
       <span class="c_breadcrumb__slash">
@@ -96,7 +96,12 @@
       </span>
       <span>{{ current_tags | join: " + " }}</span>
       {% else %}
-      <span>{{ collection.title }}</span>
+      {% if collection.handle contains 'cat' %}
+        <span>猫用ごはん</span>
+      {% else %}
+        <span>犬用ごはん</span>
+      {% endif %}
+      <!-- <span>{{ collection.title | split: '-' | last }}</span> -->
       {% endif %}
 
     {% elsif template == 'blog' %}
