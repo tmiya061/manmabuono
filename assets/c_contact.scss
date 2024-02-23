@@ -200,3 +200,19 @@
         }
     }
 }
+
+.c_contact__text {
+    text-align: center;
+    @include mq(sp) {
+        text-align: left;
+    }
+    a {
+        color: #3c3c3c;
+        transition: all  0.3s ease;
+        @media(hover: hover) {
+            &:hover {
+                opacity: .7;
+            }
+        }
+    }
+}

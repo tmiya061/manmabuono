@@ -258,6 +258,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
 
     {{ 'base.css' | asset_url | stylesheet_tag }}
+
     <link rel="stylesheet" href="{{ 'swiper-bundle.min.css' | asset_url }}">
 
     {%- unless settings.type_body_font.system? -%}
@@ -306,6 +307,10 @@
       {{ content_for_layout }}
 
     </main>
+
+    <div class="c_common__about-link">
+      <img src="{{ 'about-link.png' | file_url }}" alt="マンマボーノとは" width="109">
+    </div>
 
     {% sections 'footer-group' %}
 

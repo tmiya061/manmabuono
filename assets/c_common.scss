@@ -128,3 +128,39 @@ h1, h2, h3, h4, h5 {
     --font-body-family: "Outfit", "Zen Kaku Gothic New", sans-serif;
     --font-heading-family: "Outfit", "Zen Kaku Gothic New", sans-serif;
 }
+
+.c_common__about-link{
+    display: block;
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    z-index: 1;
+    width: vw(120);
+    height: auto;
+    aspect-ratio: 1;
+    @media screen and (max-width: 990px) {
+        width: 100px;
+    }
+    @include mq(sp) {
+        width: 106px;
+        bottom: 0px;
+        left: 0px;
+    }
+    img {
+        width: 100%;
+        height: 100%;
+    }
+    transition: all  0.3s ease;
+    @media(hover: hover) {
+        &:hover {
+            opacity: .7;
+        }
+    }
+
+    opacity: 0;
+    visibility: hidden;
+    &.js-show {
+        opacity: 1;
+        visibility: visible;
+    }
+}

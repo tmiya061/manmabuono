@@ -24,6 +24,28 @@
     cursor: pointer;
 }
 
+.c_drawer__item-head {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    a {
+        display: block;
+        width: 118px;
+        padding: 8px 0;
+        text-align: center;
+        background: $base-color;
+        color: #FFF;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 140%; /* 16.8px */
+        letter-spacing: 0.48px;
+        border-radius: 17px;
+        text-decoration: none;
+    }
+}
+
+
 .menu-drawer__navigation {
     padding: 0;
 }

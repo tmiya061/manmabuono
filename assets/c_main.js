@@ -141,3 +141,13 @@ jQuery(function($) {
 });
 
 
+window.addEventListener('scroll', function() {
+    var topFv = document.querySelector('.c_topFv');
+    var aboutLink = document.querySelector('.c_common__about-link');
+
+    if (topFv.getBoundingClientRect().bottom < -300) {
+        aboutLink.classList.add('js-show');
+    } else {
+        aboutLink.classList.remove('js-show');
+    }
+});

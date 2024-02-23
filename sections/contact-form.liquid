@@ -99,6 +99,8 @@
         </div>
       </div>
 
+      <div id="error-message" style="display: none;">少なくとも1つの項目を選択してください。</div>
+
       <div class="c_contact__item">
         <p class="c_contact__head"><span>お問い合わせ項目</span></p>
         <div class="field contact-kind">
@@ -111,7 +113,6 @@
               id="ContactForm-kind1"
               name="contact[kind1]"
               value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}"
-              required
             >
             <span>商品について</span>
             </label>
@@ -125,7 +126,6 @@
               id="ContactForm-kind2"
               name="contact[kind2]"
               value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}"
-              required
             >
             <span>取扱い店舗について</span>
             </label>
@@ -139,7 +139,6 @@
               id="ContactForm-kind3"
               name="contact[kind3]"
               value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}"
-              required
             >
             <span>その他</span>
             </label>
@@ -162,8 +161,9 @@
       </div>
 
       <div class="c_contact__item">
-        <p class="c_contact__head"><span>同意事項</span></p>
-        <a class="c_contact__acceptance-link" href="/pages/privacy" target="_blank">
+        <!-- <p class="c_contact__head"><span>同意事項</span></p> -->
+        <p class="c_contact__text"><a href="/pages/privacy">個人情報保護方針</a>をご確認の上、送信ボタンを押してください。</p>
+        <!-- <a class="c_contact__acceptance-link" href="/pages/privacy" target="_blank">
           <span>個人情報保護方針はこちら</span>
           <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 11 11" fill="none">
             <path d="M1 9.99998L7.42857 3.57141" stroke="#3C3C3C"/>
@@ -189,7 +189,7 @@
               aria-describedby="ContactForm-name-error"
             {% endif %}      
           </div>
-        </div>
+        </div> -->
       </div>
 
       <div class="c_contact__btn">
@@ -202,6 +202,31 @@
     {%- endform -%}
   </div>
 </div>
+
+<!-- <script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var checkboxes = document.querySelectorAll('.field__label input[type="checkbox"]');
+    var errorMessage = document.getElementById('error-message');
+
+    function validateCheckbox() {
+      var isChecked = false;
+      checkboxes.forEach(function(checkbox) {
+        if (checkbox.checked) {
+          isChecked = true;
+        }
+      });
+      if (!isChecked) {
+        errorMessage.style.display = 'block';
+      } else {
+        errorMessage.style.display = 'none';
+      }
+    }
+
+    checkboxes.forEach(function(checkbox) {
+      checkbox.addEventListener('change', validateCheckbox);
+    });
+  });
+</script> -->
 
 
 {% schema %}

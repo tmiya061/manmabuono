@@ -110,10 +110,11 @@
           {% endif %}
           
           {% unless product.requires_selling_plan == true %}
+            <label class="c_radio-button" for="one-time-purchase-option">
             <div
               class="mikawaya-selling-plan-group-container c_mikawaya-selling-nomal"
             >
-              <label class="c_radio-button">
+              
                 <input 
                   type="radio" 
                   name="purchase_option" 
@@ -124,7 +125,6 @@
                   id="one-time-purchase-option"
                 >
                   <span class="c_mikawaya-selling-nomal__title">通常の購入</span>
-              </label>
               <div class="c_mikawaya-selling-nomal__price">
                 {% for variant in product.variants %}
                   <span 
@@ -137,6 +137,7 @@
                 {% endfor %}
               </div>
             </div>
+            </label>
             {% endunless %}
             
             {% for variant in product.variants %}
@@ -155,24 +156,26 @@
             
             <!-- Selling plan groups -->
             {% for group in product.selling_plan_groups %}
+              <label class="c_radio-button" for="c_mikawata-radio">
               <div
                 name="selling-plan-group-container"
                 data-group-id="{{ group.id }}"
                 class="mikawaya-selling-plan-group-container mikawaya-hidden c_mikawaya-selling-plan-subscription"
               >
                 <div>
-                  <label class="c_radio-button">
+                  
                     <input 
                     type="radio" 
                     value="{{ group.id }}" 
                     name="purchase_option"
                     onchange="window.MIKAWAYA.handleSellingPlanGroupChange(event)"
                     class="mikawaya-radio-button"
+                    id="c_mikawata-radio"
                     {% if group.id == current_selling_plan_allocation.selling_plan.group_id %} checked {% endif %}
                     {% if product.requires_selling_plan and current_selling_plan_allocation == nil and forloop.first %} checked {% endif %}
                     >
                     <span class="c_mikawaya-selling-plan-subscription__title">{{ group.name }}<span class="c_mikawaya-selling-plan-subscription__title--bg"></span></span>
-                  </label>
+                  
                   {% for selling_plan in group.selling_plans %}
                     <p 
                       name="selling-plan-description" 
@@ -201,6 +204,7 @@
                   {% endfor %}
                 </select>
               </div>
+              </label>
             {% endfor %}
           {% if show_fieldset %}
             </div>
