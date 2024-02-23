@@ -11,8 +11,16 @@
   <div class="c_header__subMenu-wrap page-width">
     <p class="c_header__subMenu-head">犬用商品</p>
     <p class="c_header__subMenu-item">
+      <a href="/collections/dog-all">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="9" r="8.5" fill="white" stroke="#3C3C3C"/>
+          <path d="M7.19995 5.39999L10.8 9.00001L7.19995 12.6" stroke="#3C3C3C"/>
+        </svg>
+        <span>全ての商品</span>
+      </a>
       {% for collection in collections %}
         {% if collection.handle contains 'dog' %}
+          {% unless collection.handle contains 'all' %}
           <a href="/collections/{{ collection.handle }}">
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
               <circle cx="9" cy="9" r="8.5" fill="white" stroke="#3C3C3C"/>
@@ -20,6 +28,7 @@
             </svg>
             <span>{{ collection.title | split: '-' | last }}</span>
           </a>
+          {% endunless %}
         {% endif %}
       {% endfor %}
     </p>
@@ -30,8 +39,16 @@
   <div class="c_header__subMenu-wrap page-width">
     <p class="c_header__subMenu-head">猫用商品</p>
     <p class="c_header__subMenu-item">
+      <a href="/collections/cat-all">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="9" r="8.5" fill="white" stroke="#3C3C3C"/>
+          <path d="M7.19995 5.39999L10.8 9.00001L7.19995 12.6" stroke="#3C3C3C"/>
+        </svg>
+        <span>{{ collection.title | split: '-' | last }}</span>
+      </a>
       {% for collection in collections %}
         {% if collection.handle contains 'cat' %}
+        {% unless collection.handle contains 'all' %}
           <a href="/collections/{{ collection.handle }}">
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
               <circle cx="9" cy="9" r="8.5" fill="white" stroke="#3C3C3C"/>
@@ -39,6 +56,7 @@
             </svg>
             <span>{{ collection.title | split: '-' | last }}</span>
           </a>
+          {% endunless %}
         {% endif %}
       {% endfor %}
     </p>

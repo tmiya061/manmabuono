@@ -34,9 +34,19 @@
                     {% endfor %}
                 </div>
             </div>
-            <div class="swiper-pagination --topBanner"></div>
-            <div class="swiper-button-prev --topBanner"></div>
-            <div class="swiper-button-next --topBanner"></div>
+            <div class="swiper-pagination-wrap">
+                <div class="swiper-button-prev --topBanner">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="7" height="12" viewBox="0 0 7 12" fill="none">
+                        <path d="M6 1L1 6L6 11" stroke="#3C3C3C"/>
+                    </svg>
+                </div>
+                <div class="swiper-pagination --topBanner"></div>
+                <div class="swiper-button-next --topBanner">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="7" height="12" viewBox="0 0 7 12" fill="none">
+                        <path d="M1 1L6 6L1 11" stroke="#3C3C3C"/>
+                    </svg>
+                </div>
+            </div>
         </div>
     {% else %}
         <div class="c_topBanner__wrap">

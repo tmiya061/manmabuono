@@ -27,11 +27,19 @@
             "banner-img": "shopify:\/\/shop_images\/contact_fv.png",
             "banner-link": ""
           }
+        },
+        "banner_fLKFQA": {
+          "type": "banner",
+          "settings": {
+            "banner-img": "shopify:\/\/shop_images\/dog1.jpg",
+            "banner-link": ""
+          }
         }
       },
       "block_order": [
         "banner_7NcNkX",
-        "banner_VQbGNw"
+        "banner_VQbGNw",
+        "banner_fLKFQA"
       ],
       "settings": {
         "title": "見出し",
@@ -45,7 +53,7 @@
       "type": "c_topFood",
       "settings": {
         "title": "見出し",
-        "padding_top": 160,
+        "padding_top": 140,
         "padding_bottom": 90,
         "padding_top_sp": 38,
         "padding_bottom_sp": 0

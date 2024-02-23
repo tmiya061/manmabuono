@@ -17,23 +17,37 @@
 
 <ul class="c_collectionCategory__wrap page-width">
 {% if collection.handle contains 'cat' %}
+    <li class="c_collectionCategory__item">
+        <a href="/collections/dog-all">
+            全ての商品
+        </a>
+    </li>
     {% for collection in collections %}
         {% if collection.handle contains 'cat' %}
+            {% unless collection.handle contains 'all' %}
             <li class="c_collectionCategory__item">
                 <a href="/collections/{{ collection.handle }}">
                     {{ collection.title | split: '-' | last }}
                 </a>
             </li>
+            {% endunless %}
         {% endif %}
     {% endfor %}
 {% elsif collection.handle contains 'dog' %}
+    <li class="c_collectionCategory__item">
+        <a href="/collections/dog-all">
+            全ての商品
+        </a>
+    </li>
     {% for collection in collections %}
         {% if collection.handle contains 'dog' %}
-            <li class="c_collectionCategory__item">
-                <a href="/collections/{{ collection.handle }}">
-                    {{ collection.title | split: '-' | last }}
-                </a>
-            </li>
+        {% unless collection.handle contains 'all' %}
+        <li class="c_collectionCategory__item">
+            <a href="/collections/{{ collection.handle }}">
+                {{ collection.title | split: '-' | last }}
+            </a>
+        </li>
+        {% endunless %}
         {% endif %}
     {% endfor %}
 {% endif %}

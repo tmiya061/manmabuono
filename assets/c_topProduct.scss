@@ -36,6 +36,7 @@
 }
 
 .c_topProduct__item-title {
+    font-family: var(--font-jp-family);
     padding-right: 17px;
     color: #3C3C3C;
     font-size: 16px;
@@ -44,6 +45,8 @@
     line-height: 160%; /* 25.6px */
     letter-spacing: 0.64px;
     min-height: 52px;
+    margin-top: 14px;
+    margin-bottom: 32px;
     @include mq(sp) {
         font-size: 13px;
         font-style: normal;
@@ -70,6 +73,7 @@
         font-weight: 700;
         line-height: 170%; /* 22.1px */
         letter-spacing: 0.52px;
+        font-family: var(--font-jp-family);
     }
 }
 

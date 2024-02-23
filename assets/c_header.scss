@@ -238,3 +238,7 @@ div:empty.c_header__subMenu--bg {
     right: 20px;
     left: inherit;
 }
+
+.c_header__item svg {
+    display: inline-block !important;
+}

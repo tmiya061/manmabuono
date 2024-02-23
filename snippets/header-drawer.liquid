@@ -61,11 +61,16 @@
                   </svg>
                 </p>
                 <div class="c_drawer__downMenu">
+                  <a href="/collections/dog-all">
+                    <span>全ての商品</span>
+                  </a>
                   {% for collection in collections %}
                   {% if collection.handle contains 'dog' %}
+                    {% unless collection.handle contains 'all' %}
                     <a href="/collections/{{ collection.handle }}">
                       <span>{{ collection.title | split: '-' | last }}</span>
                     </a>
+                    {% endunless %}
                   {% endif %}
                 {% endfor %}
                 </div>
@@ -79,11 +84,16 @@
                   </svg>
                 </p>
                 <div class="c_drawer__downMenu">
+                  <a href="/collections/cat-all">
+                    <span>全ての商品</span>
+                  </a>
                   {% for collection in collections %}
                   {% if collection.handle contains 'cat' %}
+                    {% unless collection.handle contains 'all' %}
                     <a href="/collections/{{ collection.handle }}">
                       <span>{{ collection.title | split: '-' | last }}</span>
                     </a>
+                    {% endunless %}
                   {% endif %}
                 {% endfor %}
                 </div>

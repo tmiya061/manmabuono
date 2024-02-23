@@ -127,6 +127,7 @@ h1, h2, h3, h4, h5 {
 :root {
     --font-body-family: "Outfit", "Zen Kaku Gothic New", sans-serif;
     --font-heading-family: "Outfit", "Zen Kaku Gothic New", sans-serif;
+    --font-jp-family: "Zen Kaku Gothic New", sans-serif;
 }
 
 .c_common__about-link{
@@ -169,3 +170,16 @@ h1, h2, h3, h4, h5 {
     color: #3c3c3c;
 }
 
+
+#mikawaya-subscription-list-no-subscription {
+    margin-bottom: 120px;
+    @include mq(sp) {
+        margin-bottom: 60px;
+    }
+}
+
+.cart-item__details {
+    a {
+        font-family: var(--font-jp-family) !important;
+    }
+}

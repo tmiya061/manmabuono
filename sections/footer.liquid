@@ -26,13 +26,20 @@
                     <span>犬用商品一覧</span>
                 </p>
                 <ul>
+                    <li>
+                        <a href="/collections/dog-all">
+                            <span>全ての商品</span>
+                        </a>
+                    </li>
                     {% for collection in collections %}
                     {% if collection.handle contains 'dog' %}
+                        {% unless collection.handle contains 'all' %}
                         <li>
                             <a href="/collections/{{ collection.handle }}">
                                 <span>{{ collection.title | split: '-' | last }}</span>
                             </a>
                         </li>
+                        {% endunless %}
                     {% endif %}
                     {% endfor %}
                 </ul>
@@ -46,13 +53,20 @@
                     <span>猫用商品一覧</span>
                 </p>
                 <ul>
+                    <li>
+                        <a href="/collections/cat-all">
+                            <span>全ての商品</span>
+                        </a>
+                    </li>
                     {% for collection in collections %}
                     {% if collection.handle contains 'cat' %}
+                        {% unless collection.handle contains 'all' %}
                         <li>
                             <a href="/collections/{{ collection.handle }}">
                                 <span>{{ collection.title | split: '-' | last }}</span>
                             </a>
                         </li>
+                        {% endunless %}
                     {% endif %}
                     {% endfor %}
                 </ul>

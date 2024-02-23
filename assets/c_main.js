@@ -1,5 +1,7 @@
 
 if ( window.document.body.id === 'top' ) {
+
+document.addEventListener("DOMContentLoaded", function() {
     const topBanner = new Swiper('.swiper.--topBanner', { //名前を変える
         loop: true, //最後→最初に戻るループ再生を有効に
         autoplay: { 
@@ -11,7 +13,7 @@ if ( window.document.body.id === 'top' ) {
         pagination: {
             el: ".swiper-pagination.--topBanner", //paginationのclass
             clickable: true, //クリックでの切り替えを有効に
-            type: "bullet" //paginationのタイプ (※2)
+            //type: "bullet" //paginationのタイプ (※2)
         },
         navigation: {
             prevEl: ".swiper-button-prev.--topBanner", //戻るボタンのclass
@@ -45,6 +47,8 @@ if ( window.document.body.id === 'top' ) {
             },
         }
     });
+});
+
 
 
 

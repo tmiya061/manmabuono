@@ -16,15 +16,18 @@
 
 
 .swiper-container.--topBanner {
-    padding-bottom: 60px;
+    padding-bottom: 80px;
     position: relative;
     z-index: 1;
-    div:empty {
-        display: block;
+    @include mq(sp) {
+        padding-bottom: 50px;
     }
-    span:empty {
-        display: block;
-    }
+    // div:empty {
+    //     display: block;
+    // }
+    // span:empty {
+    //    display: inline-block;
+    // }
 }
 
 .swiper.--topBanner {
@@ -51,57 +54,71 @@
     position: relative;
 }
 
-// .pagination-wrap {
-//     width: 100%;
-//     position: absolute;
-//     bottom: 30px;
-//     left: 50%;
-//     transform: translateX(-50%);
-//     width: fit-content;
-// }
+.swiper-pagination-wrap {
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 33px;
+    .swiper-button-prev,
+    .swiper-pagination,
+    .swiper-button-next {
+        position: relative !important;
+        top: unset !important;
+        left: unset !important;
+    }
+    .swiper-pagination {
+        width: fit-content !important;
+    }
+}
 
 // //色と大きさ指定
-// .swiper-pagination-bullet {
-//     opacity: 1;
-//     background: gray;
-//     width: 10px;
-//     height: 10px;
-//     border-radius: 50%; //円にする
-// }
-// .swiper-pagination-bullet.swiper-pagination-bullet-active {
-//     background: red;
-// }
-// //paginationの余白指定
-// .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
-//     margin: 0 10px;
-// }
-// //paginationの位置
-// .swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction {
-//     bottom: 0;
-//     left: 50%;
-//     transform: translateX(-50%);
-// }
+.swiper-pagination-bullet {
+    opacity: 1;
+    background: transparent;
+    border: 1px solid #D9D9D9;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%; //円にする
+}
+.swiper-pagination-bullet.swiper-pagination-bullet-active {
+    background: #3C3C3C;
+}
+//paginationの余白指定
+.swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+    margin: 0 7px;
+}
+.swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction {
+    bottom: 14px !important;
+}
 // ==============================
 //     navigation について
 // ==============================
 
-// .swiper-button-prev {
-//     //位置はここで指定
-//     // top: 50%;
-//     // transform: translateY(-50%);
-//     &::after {
-//         content: ''; //デフォルトの削除
-//     }
-// }
 
-// .swiper-button-next {
-//     //位置はここで指定
-//     // top: 50%;
-//     // transform: translateY(-50%);
-//     &::after {
-//         content: ''; //デフォルトの削除
-//     }
-// }
+
+.swiper-button-prev {
+    //位置はここで指定
+    // top: 50%;
+    // transform: translateY(-50%);
+    &::after {
+        content: ''; //デフォルトの削除
+    }
+}
+
+.swiper-button-next {
+    //位置はここで指定
+    // top: 50%;
+    // transform: translateY(-50%);
+    &::after {
+        content: ''; //デフォルトの削除
+    }
+}
 
 
 .c_topBanner__wrap {
