@@ -1,9 +1,9 @@
 <div class="c_share__wrapper">
   <span class="c_share__text">この商品をシェアする</span>
   <a href="https://twitter.com/share?url={{ shop.url }}{{ product.url }}" rel="nofollow noopener" target="_blank">
-    <img src="https://cdn.shopify.com/s/files/1/0589/6591/7757/files/icon-x.png?v=1708445720" width="50" height="50" alt="X" loading="lazy">
+    <img src="{{ 'x-icon.png' | file_url }}" alt="xのアイコン" width="50">
   </a>
   <a href="http://line.me/R/msg/text/?{{ shop.url }}{{ product.url }}%0a{{ product.title }}" rel="nofollow noopener" target="_blank">
-    <img src="https://cdn.shopify.com/s/files/1/0589/6591/7757/files/icon-line.png?v=1708445720" width="50" height="50" alt="Line" loading="lazy">
+    <img src="{{ 'line-icon.png' | file_url }}" alt="lineのアイコン" width="50">
   </a>
 </div>

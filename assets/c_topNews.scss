@@ -61,12 +61,6 @@
     &:not(:first-of-type) {
         padding-top: 25px;
     }
-    &:last-of-type {
-        margin-bottom: 27px;
-        @include mq(sp) {
-            margin-bottom: 38px;
-        }
-    }
     @include mq(sp) {
         width: 100%;
     }
@@ -81,6 +75,7 @@
         font-weight: 600;
         line-height: 200%; /* 24px */
         letter-spacing: 0.24px;
+        margin-bottom: 4px;
         @include mq(sp) {
             font-size: 11px;
             letter-spacing: 0.22px;
@@ -94,6 +89,7 @@
         font-weight: 600;
         line-height: 100%; /* 39px */
         letter-spacing: 1.56px; 
+        text-align: center;
         @include mq(sp) {
             font-size: 36px;
             letter-spacing: 1.44px;

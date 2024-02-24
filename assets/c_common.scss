@@ -52,7 +52,7 @@ h1, h2, h3, h4, h5 {
         width: 90%;
     }
     @include mq(sp) {
-        width: calc(100% - 40px);
+        width: 100%;
         max-width: 400px;
         margin: auto;
         &.--topNews {
