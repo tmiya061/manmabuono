@@ -49,17 +49,18 @@
     }
 }
 .swiper-button-prev::after {
-    background-image: url("https://cdn.shopify.com/s/files/1/0589/6591/7757/files/arrow-2.png?v=1708437671");
+    background-image: url("https://cdn.shopify.com/s/files/1/0589/6591/7757/files/arrow1.png?v=1708998103");
 }
 
 .swiper-button-next {
     right: -23px;
     @media screen and (max-width: 750px) {
+        z-index: 3 !important;
         right: -21px;
     }
 }
 .swiper-button-next::after {
-    background-image: url("https://cdn.shopify.com/s/files/1/0589/6591/7757/files/arrow.png?v=1708437554");
+    background-image: url("https://cdn.shopify.com/s/files/1/0589/6591/7757/files/arrow2.png?v=1708998103");
 }
 
 .swiper-slide img {
@@ -405,6 +406,9 @@
     margin-bottom: 84px;
     @media screen and (max-width: 750px) {
         margin-bottom: 32px;
+    }
+    @include mq(sp) {
+        margin-top: 42px;
     }
 }
 

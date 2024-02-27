@@ -505,30 +505,42 @@
       <div class="c_product__table">
         <table>
           <tbody>
+              {% if product.metafields.custom.product_table1 != blank %}
               <tr>
                   <th>原材料名</th>
                   <td>{{ product.metafields.custom.product_table1 }}</td>
               </tr>
+              {% endif %}
+              {% if product.metafields.custom.product_table2 != blank %}
               <tr>
                   <th>賞味期限</th>
                   <td>{{ product.metafields.custom.product_table2 }}</td>
               </tr>
+              {% endif %}
+              {% if product.metafields.custom.product_table3 != blank %}
               <tr>
                   <th>与え方</th>
                   <td>{{ product.metafields.custom.product_table3 }}</td>
               </tr>
+              {% endif %}
+              {% if product.metafields.custom.product_table4 != blank %}
               <tr>
                   <th>保存方法</th>
                   <td>{{ product.metafields.custom.product_table4 }}</td>
               </tr>
+              {% endif %}
+              {% if product.metafields.custom.product_table5 != blank %}
               <tr>
                   <th>ご注意</th>
                   <td>{{ product.metafields.custom.product_table5 }}</td>
               </tr>
+              {% endif %}
+              {% if product.metafields.custom.product_table6 != blank %}
               <tr>
                   <th>栄養成分</th>
                   <td>{{ product.metafields.custom.product_table6 }}</td>
               </tr>
+              {% endif %}
           </tbody>
         </table>
       </div>

@@ -51,8 +51,10 @@
   }
 </style>
 
-{% if template != 'index' %}
-<div class="c_bredcrumb__wrapper">
+
+
+{% if template != 'index'  %}
+<div class="c_bredcrumb__wrapper" {% if template contains 'product' %} style="display: none;"{% endif %}>
   <nav class="c_breadcrumb" role="navigation" aria-label="breadcrumbs">
     <a href="/" title="Home">TOP</a>
 
@@ -63,22 +65,6 @@
         </svg>
       </span>
       <span>{{ page.title }}</span>
-
-    {% elsif template contains 'product' %}
-      {% if product.collections %}
-      <span class="c_breadcrumb__slash">
-        <svg xmlns="http://www.w3.org/2000/svg" width="5" height="4" viewBox="0 0 5 4" fill="none">
-        <path d="M4.5 1L2.5 3L0.5 1" stroke="#3C3C3C"/>
-        </svg>
-      </span>
-      {{ product.collections[0].title | split: '-' | first | link_to: product.collections[0].url }}
-      {% endif %}
-      <span class="c_breadcrumb__slash">
-        <svg xmlns="http://www.w3.org/2000/svg" width="5" height="4" viewBox="0 0 5 4" fill="none">
-        <path d="M4.5 1L2.5 3L0.5 1" stroke="#3C3C3C"/>
-        </svg>
-      </span>
-      <span>{{ product.title | split: '-' | last }}</span>
 
     {% elsif template contains 'collection' and collection.handle %}
       <span class="c_breadcrumb__slash">
@@ -147,3 +133,6 @@
   </nav>
 </div>
 {% endif %}
+
+
+

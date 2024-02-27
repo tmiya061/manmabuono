@@ -46,7 +46,7 @@
     letter-spacing: 0.64px;
     min-height: 52px;
     margin-top: 14px;
-    margin-bottom: 32px;
+    margin-bottom: 14px;
     @include mq(sp) {
         font-size: 13px;
         font-style: normal;
@@ -54,8 +54,8 @@
         line-height: 160%; /* 20.8px */
         letter-spacing: 0.52px;
         min-height: 42px;
-        padding-top: 14px;
-        padding-bottom: 14px;
+        margin-top: 14px;
+        margin-bottom: 14px;
     }
 }
 

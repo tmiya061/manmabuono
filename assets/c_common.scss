@@ -33,6 +33,26 @@ h1, h2, h3, h4, h5 {
     padding: 0;
 }
 
+h1 {
+    white-space: nowrap;
+    text-align: center;
+    color: #3C3C3C;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 149.1%; /* 44.73px */
+    letter-spacing: 4.8px;
+    margin-bottom: 6px;
+    @include mq(sp) {
+        color: #3C3C3C;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 149.1%; /* 35.784px */
+        letter-spacing: 3.84px;
+    }
+}
+
 .c_common__btn {
     display: block;
     margin: auto;
@@ -52,7 +72,7 @@ h1, h2, h3, h4, h5 {
         width: 90%;
     }
     @include mq(sp) {
-        width: 100%;
+        width: calc(100% - 40px);
         max-width: 400px;
         margin: auto;
         &.--topNews {
@@ -182,4 +202,9 @@ h1, h2, h3, h4, h5 {
     a {
         font-family: var(--font-jp-family) !important;
     }
+}
+
+
+.cart-count-bubble {
+    right: 12px;
 }

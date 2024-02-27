@@ -81,6 +81,8 @@
     margin-bottom: 6px;
 }
 .c_topFood__subtitle {
+    position: relative;
+    z-index: 3;
     color: #FF7B5E;
     font-size: 15px;
     font-style: normal;
