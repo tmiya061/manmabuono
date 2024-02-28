@@ -187,8 +187,8 @@
     display: block!important;
     width: 57px;
     height: 57px;
-    background: url("https://cdn.shopify.com/s/files/1/0589/6591/7757/files/price10-off.png?v=1708444248")no-repeat center center;
-    background-size: contain;
+    // background: url("https://cdn.shopify.com/s/files/1/0589/6591/7757/files/price10-off.png?v=1708444248")no-repeat center center;
+    // background-size: contain;
     bottom: 4px;
     right: -70px;
 }
@@ -315,6 +315,8 @@
     font-weight: 700;
     line-height: 160%;
     letter-spacing: 0.88px;
+    white-space: wrap;
+    text-align: left;
 }
 
 /* 数量セレクター */

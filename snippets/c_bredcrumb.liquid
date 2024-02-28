@@ -54,7 +54,10 @@
 
 
 {% if template != 'index'  %}
-<div class="c_bredcrumb__wrapper" {% if template contains 'product' %} style="display: none;"{% endif %}>
+<div class="c_bredcrumb__wrapper" 
+  {% if template contains 'product' %} style="display: none;"{% endif %}
+  {% if template contains 'cart' %} style="display: none;"{% endif %}
+  >
   <nav class="c_breadcrumb" role="navigation" aria-label="breadcrumbs">
     <a href="/" title="Home">TOP</a>
 
