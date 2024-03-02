@@ -1,6 +1,7 @@
 @import "variables";
 
 .menu-drawer {
+    position: fixed;
     transform: translateX(100%);
     padding-top: 80px;
     padding-bottom: 60px;
@@ -78,7 +79,9 @@
     width: 100%;
     a {
         border-bottom: 1px solid #c5c5c5;
-        display: block;
+        display: flex;
+        align-items: center;
+        column-gap: 4px;
         text-decoration: none;
         padding: 24px 0;
         color: #3C3C3C;
