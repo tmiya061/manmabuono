@@ -13,12 +13,6 @@
           "settings": {
           }
         },
-        "variant_picker_tfE7wf": {
-          "type": "variant_picker",
-          "settings": {
-            "picker_type": "button"
-          }
-        },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
@@ -42,7 +36,6 @@
       "block_order": [
         "title",
         "quantity_selector",
-        "variant_picker_tfE7wf",
         "buy_buttons",
         "share",
         "description"
