@@ -496,3 +496,12 @@ table:not([class]) td, table:not([class]) th {
     letter-spacing: 0.56px;
     padding: 16px;
 }
+
+.mikawaya-hidden + .c_in-tax {
+    display: none;
+}
+
+.product-form__input input[type=radio]:checked + label {
+    background: $base-color;
+    border: $base-color 1px solid;
+}
