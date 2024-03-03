@@ -5,6 +5,6 @@
 }
 
 .product-form__input input[type=radio]:checked + label {
-    background: $base-color;
-    border: $base-color 1px solid;
+    background: #FF7B5E;
+    border: #FF7B5E 1px solid;
 }
