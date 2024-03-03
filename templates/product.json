@@ -8,6 +8,12 @@
           "settings": {
           }
         },
+        "variant_picker_fx9CRj": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button"
+          }
+        },
         "quantity_selector": {
           "type": "quantity_selector",
           "settings": {
@@ -35,6 +41,7 @@
       },
       "block_order": [
         "title",
+        "variant_picker_fx9CRj",
         "quantity_selector",
         "buy_buttons",
         "share",
