@@ -22,34 +22,58 @@
             全ての商品
         </a>
     </li>
-    {% for collection in collections %}
+    {% assign sorted_collections = collections | sort: 'title' | reverse %}
+        {% for collection in sorted_collections %}
         {% if collection.handle contains 'cat' %}
             {% unless collection.handle contains 'all' %}
+            {% unless collection.handle contains 'make' %}
             <li class="c_collectionCategory__item">
                 <a href="/collections/{{ collection.handle }}">
-                    {{ collection.title | split: '-' | last }}
+                <span>{{ collection.title | split: '-' | last }}</span>
                 </a>
             </li>
             {% endunless %}
+            {% endunless %}
         {% endif %}
-    {% endfor %}
+        {% endfor %}
+        {% for collection in sorted_collections %}
+        {% if collection.handle contains 'cat-make' %}
+        <li class="c_collectionCategory__item">
+            <a href="/collections/{{ collection.handle }}">
+                <span>{{ collection.title | split: '-' | last }}</span>
+            </a>
+        </li>
+        {% endif %}
+    {% endfor %}  
 {% elsif collection.handle contains 'dog' %}
     <li class="c_collectionCategory__item">
         <a href="/collections/dog-all">
             全ての商品
         </a>
     </li>
-    {% for collection in collections %}
+    {% assign sorted_collections = collections | sort: 'title' | reverse %}
+        {% for collection in sorted_collections %}
         {% if collection.handle contains 'dog' %}
-        {% unless collection.handle contains 'all' %}
+            {% unless collection.handle contains 'all' %}
+            {% unless collection.handle contains 'make' %}
+            <li class="c_collectionCategory__item">
+                <a href="/collections/{{ collection.handle }}">
+                <span>{{ collection.title | split: '-' | last }}</span>
+                </a>
+            </li>
+            {% endunless %}
+            {% endunless %}
+        {% endif %}
+        {% endfor %}
+        {% for collection in sorted_collections %}
+        {% if collection.handle contains 'dog-make' %}
         <li class="c_collectionCategory__item">
             <a href="/collections/{{ collection.handle }}">
-                {{ collection.title | split: '-' | last }}
+                <span>{{ collection.title | split: '-' | last }}</span>
             </a>
         </li>
-        {% endunless %}
         {% endif %}
-    {% endfor %}
+    {% endfor %}  
 {% endif %}
 </ul>
 
