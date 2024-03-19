@@ -30,8 +30,7 @@
     "product-grid": {
       "type": "main-collection-product-grid",
       "settings": {
-        "products_per_page": 12,
-        "columns_desktop": 1,
+        "products_per_page": 24,
         "color_scheme": "background-1",
         "image_ratio": "adapt",
         "image_shape": "default",
