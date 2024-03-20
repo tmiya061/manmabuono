@@ -42,6 +42,15 @@
             "kyoto_link_google": "https:\/\/www.kiosk.co.jp\/eki_map\/kyoto\/index\/"
           }
         },
+        "shop_kyoto_UDRyQn": {
+          "type": "shop_kyoto",
+          "settings": {
+            "kyoto_head": "DOGRUN&CAFE MONT",
+            "kyoto_address": "京都市左京区孫橋町8-4<br>\nTEL 075-205-5151",
+            "kyoto_link_web": "https:\/\/www.mont-kyoto.com\/",
+            "kyoto_link_google": "https:\/\/maps.app.goo.gl\/5Qto2C8ScymR9Peq6"
+          }
+        },
         "shop_kyoto_4a8dpj": {
           "type": "shop_kyoto",
           "settings": {
@@ -136,6 +145,7 @@
       "block_order": [
         "shop_kyoto_UMFt4m",
         "shop_kyoto_FNwC9F",
+        "shop_kyoto_UDRyQn",
         "shop_kyoto_4a8dpj",
         "shop_kyoto_rFGnjy",
         "shop_kyoto_AJ97be",
