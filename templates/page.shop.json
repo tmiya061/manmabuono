@@ -33,6 +33,15 @@
             "kyoto_link_google": ""
           }
         },
+        "shop_kyoto_FNwC9F": {
+          "type": "shop_kyoto",
+          "settings": {
+            "kyoto_head": "ベルマート京都",
+            "kyoto_address": "京都市下京区東塩小路高倉町8-3 JR京都駅構内ASTYロード1階<br>\nTEL 075-693-3465",
+            "kyoto_link_web": "https:\/\/www.kiosk.co.jp\/store_detail\/558\/",
+            "kyoto_link_google": "https:\/\/www.kiosk.co.jp\/eki_map\/kyoto\/index\/"
+          }
+        },
         "shop_kyoto_4a8dpj": {
           "type": "shop_kyoto",
           "settings": {
@@ -126,6 +135,7 @@
       },
       "block_order": [
         "shop_kyoto_UMFt4m",
+        "shop_kyoto_FNwC9F",
         "shop_kyoto_4a8dpj",
         "shop_kyoto_rFGnjy",
         "shop_kyoto_AJ97be",
