@@ -220,3 +220,17 @@ h1 {
     transform: translate(-50%, -50%);
   }
 }
+.chakra-modal__body {
+  .css-4juwgx {
+    justify-content: center;
+    margin-top: 5px;
+    padding-bottom: 50px;
+  }
+  .chakra-button__group {
+    button {
+      width: 50px;
+      height: 50px;
+      margin: 0 10px;
+    }
+  }
+}
