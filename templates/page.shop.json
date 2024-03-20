@@ -123,6 +123,15 @@
             "siga_link_google": ""
           }
         },
+        "shop_siga_UrnQaB": {
+          "type": "shop_siga",
+          "settings": {
+            "siga_head": "R café",
+            "siga_address": "滋賀県大津市北比良９３４－１<br>\nTEL 077-596-1355",
+            "siga_link_web": "https:\/\/www.r-cafe.net\/",
+            "siga_link_google": "https:\/\/maps.app.goo.gl\/upwVmriKuocw18gU9\/"
+          }
+        },
         "shop_tokyo_fzanw4": {
           "type": "shop_tokyo",
           "settings": {
@@ -154,6 +163,7 @@
         "shop_kyoto_PBHbV7",
         "shop_osaka_mhEDxi",
         "shop_siga_cYQPLt",
+        "shop_siga_UrnQaB",
         "shop_tokyo_fzanw4",
         "shop_tokyo_mdcipw"
       ],
