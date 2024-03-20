@@ -114,15 +114,6 @@
             "osaka_link_google": ""
           }
         },
-        "shop_siga_cYQPLt": {
-          "type": "shop_siga",
-          "settings": {
-            "siga_head": "Trattoria Maatanto",
-            "siga_address": "滋賀県大津市横木1-12-28<br>\nTEL：077-522-8868",
-            "siga_link_web": "",
-            "siga_link_google": ""
-          }
-        },
         "shop_siga_UrnQaB": {
           "type": "shop_siga",
           "settings": {
@@ -130,6 +121,24 @@
             "siga_address": "滋賀県大津市北比良９３４－１<br>\nTEL 077-596-1355",
             "siga_link_web": "https:\/\/www.r-cafe.net\/",
             "siga_link_google": "https:\/\/maps.app.goo.gl\/upwVmriKuocw18gU9\/"
+          }
+        },
+        "shop_siga_G6DJhg": {
+          "type": "shop_siga",
+          "settings": {
+            "siga_head": "パインズドッグラン",
+            "siga_address": "滋賀県蒲生郡竜王町薬師 字砂山1178-694 三井アウトレット滋賀竜王 ベリーガーデン内<br>\nTEL 070-7779-1515",
+            "siga_link_web": "https:\/\/www.instagram.com\/pines_dogrun\/",
+            "siga_link_google": "https:\/\/maps.app.goo.gl\/ZJonk5vmfCg3spjQ9"
+          }
+        },
+        "shop_siga_cYQPLt": {
+          "type": "shop_siga",
+          "settings": {
+            "siga_head": "Trattoria Maatanto",
+            "siga_address": "滋賀県大津市横木1-12-28<br>\nTEL：077-522-8868",
+            "siga_link_web": "",
+            "siga_link_google": ""
           }
         },
         "shop_tokyo_fzanw4": {
@@ -162,8 +171,9 @@
         "shop_kyoto_i7UPYp",
         "shop_kyoto_PBHbV7",
         "shop_osaka_mhEDxi",
-        "shop_siga_cYQPLt",
         "shop_siga_UrnQaB",
+        "shop_siga_G6DJhg",
+        "shop_siga_cYQPLt",
         "shop_tokyo_fzanw4",
         "shop_tokyo_mdcipw"
       ],
