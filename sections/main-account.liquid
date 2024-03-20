@@ -1,4 +1,5 @@
 {{ 'customer.css' | asset_url | stylesheet_tag }}
+{{ 'c_account.min.css' | asset_url | stylesheet_tag }}
 
 {%- style -%}
   .section-{{ section.id }}-padding {
@@ -26,7 +27,7 @@
       {{ 'customer.log_out' | t }}
     </a>
     <div class="c_common__account-subscription" style="margin-top: 20px">
-      <a class="ui-button btn btn--subdued btn--size-small" href="/apps/floor-s">
+      <a class="ui-button btn btn--subdued btn--size-small c_common__btn" href="/apps/floor-s">
         定期購入を管理
       </a>
     </div>

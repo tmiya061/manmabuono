@@ -32,7 +32,8 @@
 .c_topProduct__item-img {
     width: 100%;
     height: auto;
-    aspect-ratio: 235 / 182;
+    aspect-ratio: 235 / 200;
+    object-fit: cover;
 }
 
 .c_topProduct__item-title {
