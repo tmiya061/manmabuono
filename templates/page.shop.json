@@ -39,10 +39,12 @@
           "settings": {
             "kyoto_head": "グランドキヨスク京都",
             "kyoto_address": "京都市下京区東塩小路高倉町8-3<br>\nJR京都駅2F新幹線改札構内エリア<br>\nグランドキヨスク京都<br>\nTEL：075-693-8332",
-            "kyoto_link_web": "",
+            "link": "",
             "btn_label": "",
-            "kyoto_link_google": "",
-            "btn_label2": ""
+            "link2": "",
+            "btn_label2": "",
+            "link3": "",
+            "btn_label3": ""
           }
         },
         "shop_kyoto_ehQEge": {
@@ -50,10 +52,12 @@
           "settings": {
             "kyoto_head": "Art Cafe ナナイロ",
             "kyoto_address": "京都府京都市中京区西ノ京船塚町10番地<br>\nTEL：075-823-7716",
-            "kyoto_link_web": "https:\/\/www.kyoto7716.com\/",
+            "link": "https:\/\/www.kyoto7716.com\/",
             "btn_label": "Web Site",
-            "kyoto_link_google": "https:\/\/www.google.com\/maps\/place\/10+Nishinoky%C5%8D+Funazukach%C5%8D,+Nakagyo+Ward,+Kyoto,+604-8426\/@35.0120527,135.7335964,17z\/data=!3m1!4b1!4m6!3m5!1s0x600107c91d82a077:0xd972baaa9793ce39!8m2!3d35.0120483!4d135.7361713!16s%2Fg%2F11cllyz06_?entry=ttu",
-            "btn_label2": "Google Map"
+            "link2": "https:\/\/www.google.com\/maps\/place\/Art+Cafe+%E3%83%8A%E3%83%8A%E3%82%A4%E3%83%AD\/@35.012065,135.73617,16z\/data=!4m5!3m4!1s0x0:0x5700d8d05e9c832e!8m2!3d35.0120647!4d135.7361698?hl=ja-JP",
+            "btn_label2": "Google Map",
+            "link3": "",
+            "btn_label3": ""
           }
         },
         "shop_kyoto_pHgyhe": {
@@ -61,10 +65,12 @@
           "settings": {
             "kyoto_head": "山科みやこ動物病院",
             "kyoto_address": "京都市山科区西野山射庭ノ上町27-1 ロイヤルハイツ秀1階<br>\nTEL：075-630-8880",
-            "kyoto_link_web": "",
+            "link": "",
             "btn_label": "",
-            "kyoto_link_google": "",
-            "btn_label2": ""
+            "link2": "",
+            "btn_label2": "",
+            "link3": "",
+            "btn_label3": ""
           }
         },
         "shop_kyoto_aDQd3t": {
@@ -72,10 +78,12 @@
           "settings": {
             "kyoto_head": "らん布袋",
             "kyoto_address": "京都市中京区上瓦町64 京都三条会商店街内<br>\nTEL：075-801-0790",
-            "kyoto_link_web": "",
+            "link": "",
             "btn_label": "",
-            "kyoto_link_google": "",
-            "btn_label2": ""
+            "link2": "",
+            "btn_label2": "",
+            "link3": "",
+            "btn_label3": ""
           }
         },
         "shop_kyoto_PBVfGm": {
@@ -83,10 +91,12 @@
           "settings": {
             "kyoto_head": "ペットライフサポーターBATON",
             "kyoto_address": "京都府 京都市山科区東野舞台町88-1<br>\nINSIGHT REPOS 山科椥辻<br>\nTEL：075-366-9788",
-            "kyoto_link_web": "",
+            "link": "",
             "btn_label": "",
-            "kyoto_link_google": "",
-            "btn_label2": ""
+            "link2": "",
+            "btn_label2": "",
+            "link3": "",
+            "btn_label3": ""
           }
         },
         "shop_kyoto_ATXFkQ": {
@@ -94,10 +104,12 @@
           "settings": {
             "kyoto_head": "Cafe&Bar Chill’s Kyoto",
             "kyoto_address": "京都市北区上賀茂御薗口町57-3<br>\nTEL：070-8336-4310",
-            "kyoto_link_web": "",
+            "link": "",
             "btn_label": "",
-            "kyoto_link_google": "",
-            "btn_label2": ""
+            "link2": "",
+            "btn_label2": "",
+            "link3": "",
+            "btn_label3": ""
           }
         },
         "shop_kyoto_bq4WXm": {
@@ -105,10 +117,12 @@
           "settings": {
             "kyoto_head": "自然食品店 ポケットくらぶ",
             "kyoto_address": "京都府京都市北区北区北区小山西大野町58-1<br>\nTEL：075-415-1333",
-            "kyoto_link_web": "",
+            "link": "",
             "btn_label": "",
-            "kyoto_link_google": "",
-            "btn_label2": ""
+            "link2": "",
+            "btn_label2": "",
+            "link3": "",
+            "btn_label3": ""
           }
         }
       },
@@ -137,10 +151,12 @@
           "settings": {
             "kyoto_head": "dogcafe&run douxgarden",
             "kyoto_address": "大阪府大阪狭山市山本東407-1<br>\nTEL：080-7499-3358",
-            "kyoto_link_web": "",
+            "link": "",
             "btn_label": "",
-            "kyoto_link_google": "",
-            "btn_label2": ""
+            "link2": "",
+            "btn_label2": "",
+            "link3": "",
+            "btn_label3": ""
           }
         }
       },
@@ -163,10 +179,12 @@
           "settings": {
             "kyoto_head": "Trattoria Maatanto",
             "kyoto_address": "滋賀県大津市横木1-12-28<br>\nTEL：077-522-8868",
-            "kyoto_link_web": "",
+            "link": "",
             "btn_label": "",
-            "kyoto_link_google": "",
-            "btn_label2": ""
+            "link2": "",
+            "btn_label2": "",
+            "link3": "",
+            "btn_label3": ""
           }
         }
       },
@@ -189,10 +207,12 @@
           "settings": {
             "kyoto_head": "Cafe Peanuts",
             "kyoto_address": "東京都台東区浅草3丁目5-4<br>\nTEL：03-6802-4123",
-            "kyoto_link_web": "",
+            "link": "",
             "btn_label": "",
-            "kyoto_link_google": "",
-            "btn_label2": ""
+            "link2": "",
+            "btn_label2": "",
+            "link3": "",
+            "btn_label3": ""
           }
         },
         "shop_kyoto_xVydBE": {
@@ -200,10 +220,12 @@
           "settings": {
             "kyoto_head": "The Dog",
             "kyoto_address": "東京都目黒区八雲4-5-2リストレジデンス八雲1F<br>\nTEL：03-6421-4903",
-            "kyoto_link_web": "",
+            "link": "",
             "btn_label": "",
-            "kyoto_link_google": "",
-            "btn_label2": ""
+            "link2": "",
+            "btn_label2": "",
+            "link3": "",
+            "btn_label3": ""
           }
         }
       },
