@@ -27,13 +27,8 @@
 
 <div class="c_shop__main page-width">
     <div class="c_shop__main-wrap">
-      {% for block in section.blocks %}
-        {%- case block.type -%}
-        {%- when 'shop_title' -%}
-        <h3 class="c_under__head">{{ blocks.settings.shop_prefecture }}</h3>
-        {% endcase %}
-        {% endfor %}
-        {% for block in section.blocks %}
+        <h3 class="c_under__head">京都府</h3>
+            {% for block in section.blocks %}
         {%- case block.type -%}
         {%- when 'shop_kyoto' -%}
         <div class="c_shop__main-item">
