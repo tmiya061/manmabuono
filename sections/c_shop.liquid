@@ -39,8 +39,8 @@
                 {{ block.settings.kyoto_address }}
             </p>
             <div class="c_shop__btn-wrap">
-              {% if block.settings.kyoto_web_link != blank %}
-                <a href="{{ block.settings.kyoto_web_link }}">
+              {% if block.settings.kyoto_link_web != blank %}
+                <a href="{{ block.settings.kyoto_link_web }}" target="_blank" rel="nofollow noopener">
                     <span>Web site</span>
                     <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 11 11" fill="none">
                         <path d="M1 9.99998L7.42857 3.57141" stroke="#3C3C3C"/>
@@ -48,8 +48,8 @@
                     </svg>
                 </a>
               {% endif %}
-              {% if block.settings.kyoto_google_link != blank %}
-                <a href="{{ block.settings.kyoto_google_link }}">
+              {% if block.settings.kyoto_link_google != blank %}
+                <a href="{{ block.settings.kyoto_link_google }}" target="_blank" rel="nofollow noopener">
                     <span>Google Map</span>
                     <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 11 11" fill="none">
                         <path d="M1 9.99998L7.42857 3.57141" stroke="#3C3C3C"/>
