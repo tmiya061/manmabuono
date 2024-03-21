@@ -41,7 +41,7 @@
             <div class="c_shop__btn-wrap">
               {% if block.settings.kyoto_link_web != blank %}
                 <a href="{{ block.settings.kyoto_link_web }}" target="_blank" rel="nofollow noopener">
-                    <span>Web site</span>
+                    <span>{{ block.settings.btn_label }}</span>
                     <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 11 11" fill="none">
                         <path d="M1 9.99998L7.42857 3.57141" stroke="#3C3C3C"/>
                         <path d="M1 1H10V10" stroke="#3C3C3C"/>
@@ -50,7 +50,7 @@
               {% endif %}
               {% if block.settings.kyoto_link_google != blank %}
                 <a href="{{ block.settings.kyoto_link_google }}" target="_blank" rel="nofollow noopener">
-                    <span>Google Map</span>
+                    <span>{{ block.settings.btn_label2 }}</span>
                     <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 11 11" fill="none">
                         <path d="M1 9.99998L7.42857 3.57141" stroke="#3C3C3C"/>
                         <path d="M1 1H10V10" stroke="#3C3C3C"/>
@@ -237,12 +237,22 @@
             {
                 "type": "url",
                 "id": "kyoto_link_web",
-                "label": "webサイトのリンク先"
+                "label": "リンク先"
+            },
+            {
+                "type": "text",
+                "id": "btn_labe",
+                "label": "ボタンのラベル"
             },
             {
                 "type": "url",
                 "id": "kyoto_link_google",
-                "label": "Google Mapのリンク先"
+                "label": "リンク先"
+            },
+           {
+                "type": "text",
+                "id": "btn_labe2",
+                "label": "ボタンのラベル"
             }
             ]
         },
