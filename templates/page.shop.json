@@ -128,12 +128,105 @@
         "padding_bottom_sp": 32,
         "shop_prefecture": "京都府"
       }
+    },
+    "c_shop_main_HbdUxw": {
+      "type": "c_shop-main",
+      "blocks": {
+        "shop_kyoto_QRik6D": {
+          "type": "shop_kyoto",
+          "settings": {
+            "kyoto_head": "dogcafe&run douxgarden",
+            "kyoto_address": "大阪府大阪狭山市山本東407-1<br>\nTEL：080-7499-3358",
+            "kyoto_link_web": "",
+            "btn_label": "",
+            "kyoto_link_google": "",
+            "btn_label2": ""
+          }
+        }
+      },
+      "block_order": [
+        "shop_kyoto_QRik6D"
+      ],
+      "settings": {
+        "padding_top": 0,
+        "padding_bottom": 32,
+        "padding_top_sp": 0,
+        "padding_bottom_sp": 32,
+        "shop_prefecture": "大阪府"
+      }
+    },
+    "c_shop_main_dUzfYK": {
+      "type": "c_shop-main",
+      "blocks": {
+        "shop_kyoto_GQtrqc": {
+          "type": "shop_kyoto",
+          "settings": {
+            "kyoto_head": "Trattoria Maatanto",
+            "kyoto_address": "滋賀県大津市横木1-12-28<br>\nTEL：077-522-8868",
+            "kyoto_link_web": "",
+            "btn_label": "",
+            "kyoto_link_google": "",
+            "btn_label2": ""
+          }
+        }
+      },
+      "block_order": [
+        "shop_kyoto_GQtrqc"
+      ],
+      "settings": {
+        "padding_top": 32,
+        "padding_bottom": 32,
+        "padding_top_sp": 32,
+        "padding_bottom_sp": 32,
+        "shop_prefecture": "滋賀県"
+      }
+    },
+    "c_shop_main_iyVEKp": {
+      "type": "c_shop-main",
+      "blocks": {
+        "shop_kyoto_Aijm3p": {
+          "type": "shop_kyoto",
+          "settings": {
+            "kyoto_head": "Cafe Peanuts",
+            "kyoto_address": "東京都台東区浅草3丁目5-4<br>\nTEL：03-6802-4123",
+            "kyoto_link_web": "",
+            "btn_label": "",
+            "kyoto_link_google": "",
+            "btn_label2": ""
+          }
+        },
+        "shop_kyoto_xVydBE": {
+          "type": "shop_kyoto",
+          "settings": {
+            "kyoto_head": "The Dog",
+            "kyoto_address": "東京都目黒区八雲4-5-2リストレジデンス八雲1F<br>\nTEL：03-6421-4903",
+            "kyoto_link_web": "",
+            "btn_label": "",
+            "kyoto_link_google": "",
+            "btn_label2": ""
+          }
+        }
+      },
+      "block_order": [
+        "shop_kyoto_Aijm3p",
+        "shop_kyoto_xVydBE"
+      ],
+      "settings": {
+        "padding_top": 32,
+        "padding_bottom": 32,
+        "padding_top_sp": 32,
+        "padding_bottom_sp": 32,
+        "shop_prefecture": "東京都"
+      }
     }
   },
   "order": [
     "main",
     "c_under_fv_MeHJLn",
     "c_shop_xRm6Xz",
-    "c_shop_main_AYpLwV"
+    "c_shop_main_AYpLwV",
+    "c_shop_main_HbdUxw",
+    "c_shop_main_dUzfYK",
+    "c_shop_main_iyVEKp"
   ]
 }
