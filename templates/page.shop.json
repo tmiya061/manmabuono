@@ -50,9 +50,9 @@
           "settings": {
             "kyoto_head": "Art Cafe ナナイロ",
             "kyoto_address": "京都府京都市中京区西ノ京船塚町10番地<br>\nTEL：075-823-7716",
-            "kyoto_link_web": "",
+            "kyoto_link_web": "https:\/\/www.kyoto7716.com\/",
             "btn_label": "Web Site",
-            "kyoto_link_google": "",
+            "kyoto_link_google": "https:\/\/www.google.com\/maps\/place\/10+Nishinoky%C5%8D+Funazukach%C5%8D,+Nakagyo+Ward,+Kyoto,+604-8426\/@35.0120527,135.7335964,17z\/data=!3m1!4b1!4m6!3m5!1s0x600107c91d82a077:0xd972baaa9793ce39!8m2!3d35.0120483!4d135.7361713!16s%2Fg%2F11cllyz06_?entry=ttu",
             "btn_label2": "Google Map"
           }
         },
