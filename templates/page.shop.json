@@ -77,13 +77,25 @@
             "kyoto_link_google": "",
             "btn_label2": ""
           }
+        },
+        "shop_kyoto_PBVfGm": {
+          "type": "shop_kyoto",
+          "settings": {
+            "kyoto_head": "ペットライフサポーターBATON",
+            "kyoto_address": "京都府 京都市山科区東野舞台町88-1<br>\nINSIGHT REPOS 山科椥辻<br>\nTEL：075-366-9788",
+            "kyoto_link_web": "",
+            "btn_label": "",
+            "kyoto_link_google": "",
+            "btn_label2": ""
+          }
         }
       },
       "block_order": [
         "shop_kyoto_iBtdAA",
         "shop_kyoto_ehQEge",
         "shop_kyoto_pHgyhe",
-        "shop_kyoto_aDQd3t"
+        "shop_kyoto_aDQd3t",
+        "shop_kyoto_PBVfGm"
       ],
       "settings": {
         "padding_top": 32,
