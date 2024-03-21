@@ -27,7 +27,15 @@
                     <div class="swiper-slide">
                         <div class="c_topVoice__item">
                             <div class="c_topVoices__img">
-                                {{ block.settings.voices_img | image_url: width: 474 , height: 272 | image_tag: alt: block.settings.voices_img }}
+                              {{
+                                     block.settings.voices_img
+                                    | video_tag:
+                                        image_size: '474x',
+                                        loop: true,
+                                        controls: false,
+                                        autoplay: true,
+                                        muted: true
+                                }}
                             </div>
                             <div class="c_topVoices__text-wrap">
                                 <p class="c_topVoices__text">
