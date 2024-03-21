@@ -24,18 +24,12 @@
     "c_shop_xRm6Xz": {
       "type": "c_shop",
       "blocks": {
-        "shop_title_7XTbin": {
-          "type": "shop_title",
-          "settings": {
-            "shop_prefecture": "京都府"
-          }
-        },
         "shop_kyoto_UMFt4m": {
           "type": "shop_kyoto",
           "settings": {
             "kyoto_head": "グランドキヨスク京都",
             "kyoto_address": "京都市下京区東塩小路高倉町8-3<br>\nJR京都駅2F新幹線改札構内エリア<br>\nグランドキヨスク京都<br>\nTEL：075-693-8332",
-            "kyoto_link_web": "",
+            "kyoto_link_web": "https:\/\/masizime.com\/blog\/2020-03-03.html",
             "kyoto_link_google": ""
           }
         },
@@ -167,7 +161,6 @@
         }
       },
       "block_order": [
-        "shop_title_7XTbin",
         "shop_kyoto_UMFt4m",
         "shop_kyoto_FNwC9F",
         "shop_kyoto_UDRyQn",
