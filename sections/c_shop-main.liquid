@@ -30,8 +30,8 @@
                 {{ block.settings.kyoto_address }}
             </p>
             <div class="c_shop__btn-wrap">
-              {% if block.settings.kyoto_link_web != blank %}
-                <a href="{{ block.settings.kyoto_link_web }}" target="_blank" rel="nofollow noopener">
+              {% if block.settings.link != blank %}
+                <a href="{{ block.settings.link }}" target="_blank" rel="nofollow noopener">
                     <span>{{ block.settings.btn_label }}</span>
                     <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 11 11" fill="none">
                         <path d="M1 9.99998L7.42857 3.57141" stroke="#3C3C3C"/>
@@ -39,9 +39,18 @@
                     </svg>
                 </a>
               {% endif %}
-              {% if block.settings.kyoto_link_google != blank %}
-                <a href="{{ block.settings.kyoto_link_google }}" target="_blank" rel="nofollow noopener">
+              {% if block.settings.link2 != blank %}
+                <a href="{{ block.settings.link2 }}" target="_blank" rel="nofollow noopener">
                     <span>{{ block.settings.btn_label2 }}</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 11 11" fill="none">
+                        <path d="M1 9.99998L7.42857 3.57141" stroke="#3C3C3C"/>
+                        <path d="M1 1H10V10" stroke="#3C3C3C"/>
+                    </svg>
+                </a>
+              {% endif %}
+              {% if block.settings.link3 != blank %}
+                <a href="{{ block.settings.link3 }}" target="_blank" rel="nofollow noopener">
+                    <span>{{ block.settings.btn_label3 }}</span>
                     <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 11 11" fill="none">
                         <path d="M1 9.99998L7.42857 3.57141" stroke="#3C3C3C"/>
                         <path d="M1 1H10V10" stroke="#3C3C3C"/>
@@ -128,7 +137,7 @@
             },
             {
                 "type": "url",
-                "id": "kyoto_link_web",
+                "id": "link",
                 "label": "リンク先"
             },
             {
@@ -138,12 +147,22 @@
             },
             {
                 "type": "url",
-                "id": "kyoto_link_google",
+                "id": "link2",
                 "label": "リンク先"
             },
            {
                 "type": "text",
                 "id": "btn_label2",
+                "label": "ボタンのラベル"
+            },
+             {
+                "type": "url",
+                "id": "link3",
+                "label": "リンク先"
+            },
+            {
+                "type": "text",
+                "id": "btn_label3",
                 "label": "ボタンのラベル"
             }
             ]
