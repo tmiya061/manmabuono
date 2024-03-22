@@ -39,8 +39,9 @@
             <div class="c_topSample__item">
                 <p class="c_topSample__item-head"><span>犬用</span><br class="sp">お試しセット</p>
                 <div class="c_topSample__item-img">
-                    {{ section.settings.sample-img1 | image_url: width: 229 , height: 178 | image_tag: alt: section.settings.sample-img1, loading: "lazy" }}
+                    {{ section.settings.sample-img1 | img_url: '458x356' | image_tag: alt: section.settings.sample-img1.alt, width:229, height:178 , loading: "lazy" }}
                 </div>
+                  
                 <a href="/products/dog-trial-set" class="c_topSample__item-btn">詳細</a>
             </div>
             <svg class="pc" xmlns="http://www.w3.org/2000/svg" width="2" height="292" viewBox="0 0 2 292" fill="none">
@@ -59,6 +60,11 @@
         </div>
     </div>
 </div>
+<!-- 元の画像サイズが小さい場合 -->
+<img src="{{ product.featured_image | img_url: '1000x1000' }}" alt="{{ product.title }}">
+
+<!-- 表示サイズを半分にする -->
+<img src="{{ product.featured_image | img_url: '1000x1000' }}" width="229" height="178" alt="{{ product.title }}">
 
 {% schema %}
 {
