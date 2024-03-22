@@ -65,11 +65,6 @@
         </div>
     </div>
 </div>
-<!-- 元の画像サイズが小さい場合 -->
-<img src="{{ product.featured_image | img_url: '1000x1000' }}" alt="{{ product.title }}">
-
-<!-- 表示サイズを半分にする -->
-<img src="{{ product.featured_image | img_url: '1000x1000' }}" width="229" height="178" alt="{{ product.title }}">
 
 {% schema %}
 {
