@@ -38,9 +38,12 @@
         <div class="c_topSample__wrap">
             <div class="c_topSample__item">
                 <p class="c_topSample__item-head"><span>犬用</span><br class="sp">お試しセット</p>
+
                 <div class="c_topSample__item-img">
-                    {{ section.settings.sample-img1 | img_url: '458x356' | image_tag: alt: section.settings.sample-img1.alt, width:229, height:178 , loading: "lazy" }}
-                </div>
+                    {% assign img_url = section.settings.sample-img1 | img_url: '458x356' %}
+                    <img src="{{ img_url }}" alt="{{ section.settings.sample-img1.alt }}" width="229" height="178" loading="lazy">
+                  </div>
+                  
                   
                 <a href="/products/dog-trial-set" class="c_topSample__item-btn">詳細</a>
             </div>
@@ -53,9 +56,11 @@
             <div class="c_topSample__item">
                 <p class="c_topSample__item-head"><span>猫用</span><br class="sp">お試しセット</p>
                 <div class="c_topSample__item-img">
-                    {{ section.settings.sample-img2 | image_url: width: 229 , height: 178 | image_tag: alt: section.settings.sample-img2, loading: "lazy" }}
-                </div>
-                <a href="/products/dog-trial-set" class="c_topSample__item-btn">詳細</a>
+                    {% assign img_url = section.settings.sample-img2 | img_url: '458x356' %}
+                    <img src="{{ img_url }}" alt="{{ section.settings.sample-img2.alt }}" width="229" height="178" loading="lazy">
+                  </div>
+                  
+                <a href="/products/cat-trial-set" class="c_topSample__item-btn">詳細</a>
             </div>
         </div>
     </div>
