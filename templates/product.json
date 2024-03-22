@@ -8,6 +8,11 @@
           "settings": {
           }
         },
+        "price_XaMAVh": {
+          "type": "price",
+          "settings": {
+          }
+        },
         "variant_picker_fx9CRj": {
           "type": "variant_picker",
           "settings": {
@@ -41,6 +46,7 @@
       },
       "block_order": [
         "title",
+        "price_XaMAVh",
         "variant_picker_fx9CRj",
         "quantity_selector",
         "buy_buttons",
