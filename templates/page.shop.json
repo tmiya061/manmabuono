@@ -39,10 +39,10 @@
           "settings": {
             "kyoto_head": "グランドキヨスク京都",
             "kyoto_address": "京都市下京区東塩小路高倉町8-3<br>\nJR京都駅2F新幹線改札構内エリア<br>\nグランドキヨスク京都<br>\nTEL：075-693-8332",
-            "link": "",
-            "btn_label": "",
-            "link2": "",
-            "btn_label2": "",
+            "link": "https:\/\/www.asty-kyoto.co.jp\/asty_kyoto\/store\/405\/",
+            "btn_label": "Web Site",
+            "link2": "https:\/\/www.kiosk.co.jp\/eki_map\/kyoto\/index\/",
+            "btn_label2": "Map",
             "link3": "",
             "btn_label3": ""
           }
