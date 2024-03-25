@@ -47,6 +47,32 @@
             "btn_label3": ""
           }
         },
+        "shop_kyoto_tNhPLi": {
+          "type": "shop_kyoto",
+          "settings": {
+            "kyoto_head": "ベルマート京都",
+            "kyoto_address": "京都市下京区東塩小路高倉町8-3 JR京都駅構内ASTYロード1階<br>\nTEL 075-693-3465",
+            "link": "https:\/\/www.kiosk.co.jp\/store_detail\/558\/",
+            "btn_label": "Web Site",
+            "link2": "https:\/\/www.kiosk.co.jp\/eki_map\/kyoto\/index\/",
+            "btn_label2": "Map",
+            "link3": "",
+            "btn_label3": ""
+          }
+        },
+        "shop_kyoto_dymQDz": {
+          "type": "shop_kyoto",
+          "settings": {
+            "kyoto_head": "DOGRUN&CAFE MONT",
+            "kyoto_address": "京都市左京区孫橋町8-4<br>\nTEL 075-205-5151",
+            "link": "https:\/\/www.mont-kyoto.com\/",
+            "btn_label": "Web Site",
+            "link2": "https:\/\/maps.app.goo.gl\/5Qto2C8ScymR9Peq6",
+            "btn_label2": "Map",
+            "link3": "",
+            "btn_label3": ""
+          }
+        },
         "shop_kyoto_ehQEge": {
           "type": "shop_kyoto",
           "settings": {
@@ -54,7 +80,7 @@
             "kyoto_address": "京都府京都市中京区西ノ京船塚町10番地<br>\nTEL：075-823-7716",
             "link": "https:\/\/www.kyoto7716.com\/",
             "btn_label": "Web Site",
-            "link2": "https:\/\/www.google.com\/maps\/place\/Art+Cafe+%E3%83%8A%E3%83%8A%E3%82%A4%E3%83%AD\/@35.012065,135.73617,16z\/data=!4m5!3m4!1s0x0:0x5700d8d05e9c832e!8m2!3d35.0120647!4d135.7361698?hl=ja-JP",
+            "link2": "https:\/\/www.kiosk.co.jp\/eki_map\/kyoto\/index\/",
             "btn_label2": "Google Map",
             "link3": "",
             "btn_label3": ""
@@ -65,10 +91,10 @@
           "settings": {
             "kyoto_head": "山科みやこ動物病院",
             "kyoto_address": "京都市山科区西野山射庭ノ上町27-1 ロイヤルハイツ秀1階<br>\nTEL：075-630-8880",
-            "link": "",
-            "btn_label": "",
-            "link2": "",
-            "btn_label2": "",
+            "link": "https:\/\/yamashinamiyako-ah.com\/",
+            "btn_label": "Web Site",
+            "link2": "https:\/\/manmabuono.jp\/?mode=f5#:~:text=Web%20Site-,Map,-%E3%82%89%E3%82%93%E5%B8%83%E8%A2%8B",
+            "btn_label2": "Map",
             "link3": "",
             "btn_label3": ""
           }
@@ -128,6 +154,8 @@
       },
       "block_order": [
         "shop_kyoto_iBtdAA",
+        "shop_kyoto_tNhPLi",
+        "shop_kyoto_dymQDz",
         "shop_kyoto_ehQEge",
         "shop_kyoto_pHgyhe",
         "shop_kyoto_aDQd3t",
