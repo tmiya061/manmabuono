@@ -106,17 +106,17 @@
         "voices_wAGjBU": {
           "type": "voices",
           "settings": {
-            "voices_img": "shopify:\/\/files\/videos\/sample.mp4",
-            "voices_text": "テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。",
-            "voices_name": "テキストが入ります"
+            "voices_img": "shopify:\/\/files\/videos\/haku.1026.mp4",
+            "voices_text": "最初から、カリカリ＋ウェットがセットになってるのは、珍しいですねぇ。お出汁の良い匂いがして、ハクもあっという間に平らげました！",
+            "voices_name": "ハク"
           }
         },
         "voices_JdYpLH": {
           "type": "voices",
           "settings": {
-            "voices_img": "shopify:\/\/files\/videos\/sample.mp4",
-            "voices_text": "テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。",
-            "voices_name": "たまちゃん（ Y・K 様 ）"
+            "voices_img": "shopify:\/\/files\/videos\/k.kira421.mp4",
+            "voices_text": "好き嫌いの激しいひまわりでも喜んでパクパクと食べてくれます🍚それほど美味しかったことかな~💕",
+            "voices_name": "ひまわり"
           }
         }
       },
