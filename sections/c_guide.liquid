@@ -26,18 +26,18 @@
   </div>
   <div class="c_guide__wrap" id="guide-pay">
     <h3 class="c_under__head">支払い方法について</h3>
-    <p class="c_under__sub-head">クレジット</p>
+    <p class="c_under__sub-head">クレジットカード</p>
     <p class="c_under__text">納品書・領収書の必要な方は購入後の配送設定の入力の際、備考欄に記載ください。</p>
-    <div class="c_guide__pay">
+    {% comment %} <div class="c_guide__pay">
       <img src="{{ 'guide_pay.png' | file_url }}" alt="支払い方法" width="280">
-    </div>
-    <p class="c_under__sub-head">代金引換</p>
+    </div> {% endcomment %}
+    {% comment %} <p class="c_under__sub-head">代金引換</p>
     <p class="c_under__text">
       代金引換手数料はお客様負担とさせて頂きます。<br>
       一律330円（税込）です。
-    </p>
+    </p> {% endcomment %}
     <p class="c_under__sub-head">その他</p>
-    <p class="c_under__text">その他楽天Pay、LINE Pay、PayPay、Amazon Payをご利用いただけます。</p>
+    <p class="c_under__text">Google Pay, Paypalをご利用いただけます。</p>
   </div>
   <div class="c_guide__wrap" id="guide-faq">
     <h3 class="c_under__head">よくあるご質問</h3>
@@ -119,8 +119,7 @@
           方法
         </p>
         <p class="c_guide__table-data">
-          クレジットカード、代金引換、Amazon Pay、楽天ペイ、LINE
-          Pay、PayPayでのお支払いが可能です。定期購入はクレジットカードのみお支払が可能です。
+          クレジットカード、Google Pay, Paypalでのお支払いが可能です。定期購入はクレジットカードのみお支払が可能です。
         </p>
       </div>
       <div class="c_guide__table-row">
