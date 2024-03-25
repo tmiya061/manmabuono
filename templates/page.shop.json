@@ -104,10 +104,10 @@
           "settings": {
             "kyoto_head": "らん布袋",
             "kyoto_address": "京都市中京区上瓦町64 京都三条会商店街内<br>\nTEL：075-801-0790",
-            "link": "",
-            "btn_label": "",
-            "link2": "",
-            "btn_label2": "",
+            "link": "https:\/\/ranhotei.com\/",
+            "btn_label": "Web Site",
+            "link2": "https:\/\/goo.gl\/maps\/fyfCeFh4CnBABAJb7",
+            "btn_label2": "Map",
             "link3": "",
             "btn_label3": ""
           }
