@@ -276,10 +276,10 @@
           "settings": {
             "kyoto_head": "The Dog",
             "kyoto_address": "東京都目黒区八雲4-5-2リストレジデンス八雲1F<br>\nTEL：03-6421-4903",
-            "link": "",
-            "btn_label": "",
-            "link2": "",
-            "btn_label2": "",
+            "link": "http:\/\/www.thedog.co.jp\/",
+            "btn_label": "Web Site",
+            "link2": "https:\/\/goo.gl\/maps\/NstLW5MiysajY9xHA",
+            "btn_label2": "Map",
             "link3": "",
             "btn_label3": ""
           }
