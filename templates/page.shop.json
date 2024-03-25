@@ -130,10 +130,10 @@
           "settings": {
             "kyoto_head": "Cafe&Bar Chill’s Kyoto",
             "kyoto_address": "京都市北区上賀茂御薗口町57-3<br>\nTEL：070-8336-4310",
-            "link": "",
-            "btn_label": "",
-            "link2": "",
-            "btn_label2": "",
+            "link": "https:\/\/sites.google.com\/4-side.com\/chillskyoto\/home",
+            "btn_label": "Web Site",
+            "link2": "https:\/\/goo.gl\/maps\/f3oRLCRfx8MfqgKMA",
+            "btn_label2": "Map",
             "link3": "",
             "btn_label3": ""
           }
