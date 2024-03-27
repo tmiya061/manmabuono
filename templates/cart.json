@@ -16,21 +16,21 @@
           "settings": {
           }
         },
-        "buttons": {
-          "type": "buttons",
+        "amp_delivery_datetime_9LVkJw": {
+          "type": "shopify:\/\/apps\/amp\/blocks\/delivery-datetime\/96f4dffc-26ce-430c-9359-005a406614b8",
           "settings": {
           }
         },
-        "amp_delivery_datetime_9LVkJw": {
-          "type": "shopify:\/\/apps\/amp\/blocks\/delivery-datetime\/96f4dffc-26ce-430c-9359-005a406614b8",
+        "buttons": {
+          "type": "buttons",
           "settings": {
           }
         }
       },
       "block_order": [
         "subtotal",
-        "buttons",
-        "amp_delivery_datetime_9LVkJw"
+        "amp_delivery_datetime_9LVkJw",
+        "buttons"
       ],
       "settings": {
         "color_scheme": "background-1",
