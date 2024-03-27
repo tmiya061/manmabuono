@@ -27,11 +27,13 @@
         {% if collection.handle contains 'cat' %}
             {% unless collection.handle contains 'all' %}
             {% unless collection.handle contains 'make' %}
+            {% unless collection.handle contains 'trial' %}
             <li class="c_collectionCategory__item">
                 <a href="/collections/{{ collection.handle }}">
                 <span>{{ collection.title | split: '-' | last }}</span>
                 </a>
             </li>
+            {% endunless %}
             {% endunless %}
             {% endunless %}
         {% endif %}
@@ -45,6 +47,11 @@
         </li>
         {% endif %}
     {% endfor %}  
+      <li class="c_collectionCategory__item">
+            <a href="/products/cat-trial-set">
+            <span>お試しセット</span>
+            </a>
+        </li>
 {% elsif collection.handle contains 'dog' %}
     <li class="c_collectionCategory__item">
         <a href="/collections/dog-all">
@@ -56,11 +63,13 @@
         {% if collection.handle contains 'dog' %}
             {% unless collection.handle contains 'all' %}
             {% unless collection.handle contains 'make' %}
+            {% unless collection.handle contains 'trial' %}
             <li class="c_collectionCategory__item">
                 <a href="/collections/{{ collection.handle }}">
                 <span>{{ collection.title | split: '-' | last }}</span>
                 </a>
             </li>
+            {% endunless %}
             {% endunless %}
             {% endunless %}
         {% endif %}
@@ -74,6 +83,11 @@
         </li>
         {% endif %}
     {% endfor %}  
+          <li class="c_collectionCategory__item">
+            <a href="/products/dog-trial-set">
+            <span>お試しセット</span>
+            </a>
+        </li>
 {% endif %}
 </ul>
 
