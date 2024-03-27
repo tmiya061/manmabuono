@@ -36,11 +36,13 @@
                     {% if collection.handle contains 'cat' %}
                       {% unless collection.handle contains 'all' %}
                       {% unless collection.handle contains 'make' %}
+                      {% unless collection.handle contains 'trial' %}
                       <li>
                           <a href="/collections/{{ collection.handle }}">
                             <span>{{ collection.title | split: '-' | last }}</span>
                           </a>
                       </li>
+                      {% endunless %}
                       {% endunless %}
                       {% endunless %}
                     {% endif %}
@@ -54,6 +56,11 @@
                     </li>
                     {% endif %}
                   {% endfor %}  
+                    <li>
+                        <a href="/products/dog-trial-set">
+                          <span>{{ collection.title | split: '-' | last }}</span>
+                        </a>
+                    </li>
                 </ul>
             </div>
             <div class="c_footerUp__list">
@@ -75,11 +82,13 @@
                       {% if collection.handle contains 'cat' %}
                         {% unless collection.handle contains 'all' %}
                         {% unless collection.handle contains 'make' %}
+                        {% unless collection.handle contains 'trial' %}
                         <li>
                             <a href="/collections/{{ collection.handle }}">
                               <span>{{ collection.title | split: '-' | last }}</span>
                             </a>
                         </li>
+                        {% endunless %}
                         {% endunless %}
                         {% endunless %}
                       {% endif %}
@@ -93,6 +102,11 @@
                       </li>
                       {% endif %}
                     {% endfor %}  
+                      <li>
+                        <a href="/products/dog-trial-set">
+                          <span>{{ collection.title | split: '-' | last }}</span>
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
