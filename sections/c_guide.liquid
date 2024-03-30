@@ -28,32 +28,30 @@
     <h3 class="c_under__head">支払い方法について</h3>
     <p class="c_under__sub-head">クレジットカード</p>
     <p class="c_under__text">納品書・領収書の必要な方は購入後の配送設定の入力の際、備考欄に記載ください。</p>
-    {% comment %} <div class="c_guide__pay">
-      <img src="{{ 'guide_pay.png' | file_url }}" alt="支払い方法" width="280">
-    </div> {% endcomment %}
-    {% comment %} <p class="c_under__sub-head">代金引換</p>
-    <p class="c_under__text">
-      代金引換手数料はお客様負担とさせて頂きます。<br>
-      一律330円（税込）です。
-    </p> {% endcomment %}
+    {% comment %}
+      <div class="c_guide__pay">
+        <img src="{{ 'guide_pay.png' | file_url }}" alt="支払い方法" width="280">
+      </div>
+    {% endcomment %}
+    {% comment %}
+      <p class="c_under__sub-head">代金引換</p>
+      <p class="c_under__text">
+        代金引換手数料はお客様負担とさせて頂きます。<br>
+        一律330円（税込）です。
+      </p>
+    {% endcomment %}
     <p class="c_under__sub-head">その他</p>
     <p class="c_under__text">Google Pay, Paypalをご利用いただけます。</p>
   </div>
   <div class="c_guide__wrap" id="guide-faq">
-    <h3 class="c_under__head">よくあるご質問</h3>
-    <p class="c_under__sub-head">質問内容が入ります。質問内容が入ります。</p>
-    <p class="c_under__text">
-      回答テキストが入ります。回答テキストが入ります。回答テキストが入ります。回答テキストが入ります。回答テキストが入ります。回答テキストが入ります。
-    </p>
-    <p class="c_under__sub-head">質問内容が入ります。質問内容が入ります。</p>
-    <p class="c_under__text">
-      回答テキストが入ります。回答テキストが入ります。回答テキストが入ります。回答テキストが入ります。回答テキストが入ります。回答テキストが入ります。
-    </p>
-    <p class="c_under__sub-head">質問内容が入ります。質問内容が入ります。</p>
-    <p class="c_under__text">
-      回答テキストが入ります。回答テキストが入ります。回答テキストが入ります。回答テキストが入ります。回答テキストが入ります。回答テキストが入ります。
-    </p>
+    <h3 class="c_under__head">{{ section.settings.title }}</h3>
+
+    {% for block in section.blocks %}
+      <p class="c_under__sub-head">{{ block.settings.question }}</p>
+      <p class="c_under__text">{{ block.settings.answer }}</p>
+    {% endfor %}
   </div>
+
   <div class="c_guide__wrap" id="guide-return">
     <h3 class="c_under__head">返品について</h3>
     <div class="c_guide__table">
@@ -195,6 +193,26 @@
       "unit": "px",
       "label": "下部の余白",
       "default": 32
+    }
+  ],
+  "blocks": [
+    {
+      "type": "faq",
+      "name": "FAQ項目",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "質問",
+          "default": "ここに質問を入力"
+        },
+        {
+          "type": "textarea",
+          "id": "answer",
+          "label": "回答",
+          "default": "ここに回答を入力"
+        }
+      ]
     }
   ],
   "presets": [
