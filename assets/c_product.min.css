@@ -10,5 +10,6 @@
 }
 
 .product__title h1 {
-  width: 100%;
+  width: 100% !important;
+  white-space: wrap !important;
 }
