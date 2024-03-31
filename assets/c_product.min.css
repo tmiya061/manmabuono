@@ -8,3 +8,7 @@
     background: #FF7B5E;
     border: #FF7B5E 1px solid;
 }
+
+.product__title h1 {
+  width: 100%;
+}
