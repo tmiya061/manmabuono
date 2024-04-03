@@ -369,7 +369,7 @@
   },
   "customer": {
     "account": {
-      "title": "アカウント",
+      "title": "マイページ",
       "details": "アカウントの詳細",
       "view_addresses": "住所を確認",
       "return": "アカウントの詳細に戻る"
