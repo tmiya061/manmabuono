@@ -38,6 +38,23 @@
   });
 </script>
 
+{%- style -%}
+  .c_product__quantity-label {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  .c_product__quantity-label span {
+    font-size: 14px;
+  }
+  .c_disableBtn_dog {
+    opacity: 0.6;
+    pointer-events: none;
+  }
+  .c_disableBtn_cat {
+    opacity: 0.6;
+    pointer-events: none;
+  }
+{%- endstyle -%}
 
 <div {{ block.shopify_attributes }}>
   {%- if product != blank -%}
@@ -281,6 +298,13 @@
         {%- endif -%}
 
         {%- comment -%}追記 数量セレクター{%- endcomment -%}
+
+        {% if product.handle contains 'trial' %}
+          <p class="c_product__quantity-label">
+            数量: 1 <br>
+            <span>この商品はおひとり様１つのみの購入となります。</span>
+          </p>
+        {% else %}
         <div
           id="Quantity-Form-{{ section.id }}"
           class="product-form__input product-form__quantity{% if settings.inputs_shadow_vertical_offset != 0 and settings.inputs_shadow_vertical_offset < 0 %} product-form__quantity-top{% endif %}"
@@ -452,7 +476,124 @@
             </volume-pricing>
           {%- endif -%}
         </div>
+        {% endif %}
 
+
+        {% for line_item in cart.items %}
+          {% if line_item.product.handle contains 'dog-trial' %}
+            {% assign variableDog = true %}
+          {% endif %}
+          {% if line_item.product.handle contains 'cat-trial' %}
+            {% assign variableCat = true %}
+          {% endif %}
+        {% endfor %}
+
+
+    <!-- 犬用お試し -->
+        {% if product.handle contains 'dog-trial'%} 
+        <div class="product-form__buttons">
+          {%- liquid
+            assign check_against_inventory = true
+            if product.selected_or_first_available_variant.inventory_management != 'shopify' or product.selected_or_first_available_variant.inventory_policy == 'continue'
+              assign check_against_inventory = false
+            endif
+            if product.selected_or_first_available_variant.quantity_rule.min > product.selected_or_first_available_variant.inventory_quantity and check_against_inventory
+              assign quantity_rule_soldout = true
+            endif
+          -%}
+          <button
+            id="ProductSubmitButton-{{ section_id }}"
+            type="submit"
+            name="add"
+            class="product-form__submit --dog {% if customer.tags contains 'bought-dog-trial' %}c_disableBtn_dog{% endif %} {% if variableDog %}c_disableBtn_dog{% endif %} button button--full-width {% if show_dynamic_checkout %}button--secondary{% else %}button--primary{% endif %}"
+            {% if product.selected_or_first_available_variant.available == false or quantity_rule_soldout %}
+              disabled
+            {% endif %}
+          >
+            <span>
+              {%- if product.selected_or_first_available_variant.available == false or quantity_rule_soldout -%}
+                {{ 'products.product.sold_out' | t }}
+              {%- else -%}
+                {{ 'products.product.add_to_cart' | t }}
+              {%- endif -%}
+            </span>
+            <span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="22" viewBox="0 0 25 22" fill="none">
+                <g clip-path="url(#clip0_4506_789)">
+                  <path d="M10.4669 17.1468C9.15481 17.1468 8.0918 18.1984 8.0918 19.4882C8.0918 20.7781 9.15853 21.8297 10.4669 21.8297C11.7752 21.8297 12.8419 20.7781 12.8419 19.4882C12.8419 18.1984 11.7752 17.1468 10.4669 17.1468ZM10.4669 20.7341C9.77181 20.7341 9.20685 20.1771 9.20685 19.4919C9.20685 18.8067 9.77181 18.2497 10.4669 18.2497C11.1619 18.2497 11.7269 18.8067 11.7269 19.4919C11.7269 20.1771 11.1619 20.7341 10.4669 20.7341Z" fill="white"/>
+                  <path d="M19.774 17.1468C18.4619 17.1468 17.3989 18.1984 17.3989 19.4882C17.3989 20.7781 18.4657 21.8297 19.774 21.8297C21.0823 21.8297 22.149 20.7781 22.149 19.4882C22.149 18.1984 21.0823 17.1468 19.774 17.1468ZM19.774 20.7341C19.0789 20.7341 18.514 20.1771 18.514 19.4919C18.514 18.8067 19.0789 18.2497 19.774 18.2497C20.469 18.2497 21.034 18.8067 21.034 19.4919C21.034 20.1771 20.469 20.7341 19.774 20.7341Z" fill="white"/>
+                  <path d="M24.6876 4.4135H6.70553L5.89526 1.15233L0.981605 0.177638C0.676824 0.11901 0.383194 0.309551 0.323725 0.610019C0.264256 0.906822 0.457531 1.1963 0.762311 1.25859L4.98464 2.09404L8.44129 16.0145H21.5952C21.9037 16.0145 22.1527 15.769 22.1527 15.4649C22.1527 15.1607 21.9037 14.9152 21.5952 14.9152H9.31103L8.72377 12.5408H22.6247L24.6913 4.41717L24.6876 4.4135ZM8.54536 11.4379C8.51563 11.4379 8.48589 11.4415 8.45616 11.4452L6.98429 5.50911H23.264L21.7587 11.4342H8.54536V11.4379Z" fill="white"/>
+                </g>
+                <defs>
+                  <clipPath id="clip0_4506_789">
+                    <rect width="24.375" height="21.6667" fill="white" transform="translate(0.3125 0.166687)"/>
+                  </clipPath>
+                </defs>
+              </svg>
+            </span>
+            <span class="quantity__rules-cart no-js-hidden{% if cart_qty == 0 %} hidden{% endif %}">
+              {%- render 'loading-spinner' -%}
+            </span>
+          </button>
+          {%- if show_dynamic_checkout -%}
+            {{ form | payment_button }}
+          {%- endif -%}
+        </div>
+    <!-- 猫用お試し -->
+        {% elsif product.handle contains 'cat-trial' %}
+        <div class="product-form__buttons">
+          {%- liquid
+            assign check_against_inventory = true
+            if product.selected_or_first_available_variant.inventory_management != 'shopify' or product.selected_or_first_available_variant.inventory_policy == 'continue'
+              assign check_against_inventory = false
+            endif
+            if product.selected_or_first_available_variant.quantity_rule.min > product.selected_or_first_available_variant.inventory_quantity and check_against_inventory
+              assign quantity_rule_soldout = true
+            endif
+          -%}
+          <button
+            id="ProductSubmitButton-{{ section_id }}"
+            type="submit"
+            name="add"
+            class="product-form__submit --cat {% if customer.tags contains 'bought-cat-trial' %}c_disableBtn_dog{% endif %} {% if variableCat %}c_disableBtn_cat{% endif %} button button--full-width {% if show_dynamic_checkout %}button--secondary{% else %}button--primary{% endif %}"
+            {% if product.selected_or_first_available_variant.available == false or quantity_rule_soldout %}
+              disabled
+            {% endif %}
+          >
+
+          
+            <span>
+              {%- if product.selected_or_first_available_variant.available == false or quantity_rule_soldout -%}
+                {{ 'products.product.sold_out' | t }}
+              {%- else -%}
+                {{ 'products.product.add_to_cart' | t }}
+              {%- endif -%}
+            </span>
+            <span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="22" viewBox="0 0 25 22" fill="none">
+                <g clip-path="url(#clip0_4506_789)">
+                  <path d="M10.4669 17.1468C9.15481 17.1468 8.0918 18.1984 8.0918 19.4882C8.0918 20.7781 9.15853 21.8297 10.4669 21.8297C11.7752 21.8297 12.8419 20.7781 12.8419 19.4882C12.8419 18.1984 11.7752 17.1468 10.4669 17.1468ZM10.4669 20.7341C9.77181 20.7341 9.20685 20.1771 9.20685 19.4919C9.20685 18.8067 9.77181 18.2497 10.4669 18.2497C11.1619 18.2497 11.7269 18.8067 11.7269 19.4919C11.7269 20.1771 11.1619 20.7341 10.4669 20.7341Z" fill="white"/>
+                  <path d="M19.774 17.1468C18.4619 17.1468 17.3989 18.1984 17.3989 19.4882C17.3989 20.7781 18.4657 21.8297 19.774 21.8297C21.0823 21.8297 22.149 20.7781 22.149 19.4882C22.149 18.1984 21.0823 17.1468 19.774 17.1468ZM19.774 20.7341C19.0789 20.7341 18.514 20.1771 18.514 19.4919C18.514 18.8067 19.0789 18.2497 19.774 18.2497C20.469 18.2497 21.034 18.8067 21.034 19.4919C21.034 20.1771 20.469 20.7341 19.774 20.7341Z" fill="white"/>
+                  <path d="M24.6876 4.4135H6.70553L5.89526 1.15233L0.981605 0.177638C0.676824 0.11901 0.383194 0.309551 0.323725 0.610019C0.264256 0.906822 0.457531 1.1963 0.762311 1.25859L4.98464 2.09404L8.44129 16.0145H21.5952C21.9037 16.0145 22.1527 15.769 22.1527 15.4649C22.1527 15.1607 21.9037 14.9152 21.5952 14.9152H9.31103L8.72377 12.5408H22.6247L24.6913 4.41717L24.6876 4.4135ZM8.54536 11.4379C8.51563 11.4379 8.48589 11.4415 8.45616 11.4452L6.98429 5.50911H23.264L21.7587 11.4342H8.54536V11.4379Z" fill="white"/>
+                </g>
+                <defs>
+                  <clipPath id="clip0_4506_789">
+                    <rect width="24.375" height="21.6667" fill="white" transform="translate(0.3125 0.166687)"/>
+                  </clipPath>
+                </defs>
+              </svg>
+            </span>
+            <span class="quantity__rules-cart no-js-hidden{% if cart_qty == 0 %} hidden{% endif %}">
+              {%- render 'loading-spinner' -%}
+            </span>
+          </button>
+          {%- if show_dynamic_checkout -%}
+            {{ form | payment_button }}
+          {%- endif -%}
+        </div>
+
+    <!-- その他の商品 -->
+        {% else %}
         <div class="product-form__buttons">
           {%- liquid
             assign check_against_inventory = true
@@ -502,6 +643,8 @@
             {{ form | payment_button }}
           {%- endif -%}
         </div>
+        {% endif %} 
+
       {%- endform -%}
     </product-form>
   {%- else -%}
@@ -552,3 +695,23 @@
     <script src="{{ 'pickup-availability.js' | asset_url }}" defer="defer"></script>
   {%- endif -%}
 </div>
+
+{% if product.handle contains 'trial' %}
+{% if product.handle contains 'dog-trial' %}
+<script>
+  const buyBtnDog = document.querySelector('.product-form__submit.--dog');
+  buyBtnDog.addEventListener('click', function() {
+    buyBtnDog.classList.add('c_disableBtn_dog');
+  });
+</script>
+{% endif %}
+
+{% if product.handle contains 'cat-trial' %}
+<script>
+  const buyBtnCat = document.querySelector('.product-form__submit.--cat');
+  buyBtnCat.addEventListener('click', function() {
+    buyBtnCat.classList.add('c_disableBtn_cat');
+  });
+</script>
+{% endif %}
+{% endif %}

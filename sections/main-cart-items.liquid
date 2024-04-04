@@ -15,7 +15,18 @@
     .section-{{ section.id }}-padding {
       padding-top: {{ section.settings.padding_top }}px;
       padding-bottom: {{ section.settings.padding_bottom }}px;
+      font-family: "Zen Kaku Gothic New", sans-serif;
+      font-weight: 600;
     }
+  }
+
+  .c_cart__quantity-trial {
+    width: 142px;
+    height: 47px;
+    border: 1px solid rgba(18, 18, 18, 0.55);
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 {%- endstyle -%}
 
@@ -229,6 +240,10 @@
                           <label class="visually-hidden" for="Quantity-{{ item.index | plus: 1 }}">
                             {{ 'products.product.quantity.label' | t }}
                           </label>
+
+                          {% if item.product.handle contains 'trial' %}
+                          <p class="c_cart__quantity-trial">1</p>
+                          {% else %}
                           <div class="quantity-popover-container{% if has_qty_rules or has_vol_pricing %} quantity-popover-container--hover{% endif %}">
                             {%- if has_qty_rules or has_vol_pricing -%}
                               <button
@@ -272,6 +287,8 @@
                               </button>
                             </quantity-input>
                           </div>
+                          {% endif %}
+
                           <cart-remove-button
                             id="Remove-{{ item.index | plus: 1 }}"
                             data-index="{{ item.index | plus: 1 }}"

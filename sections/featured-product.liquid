@@ -231,6 +231,7 @@
                       >
                     </span>
                   </label>
+
                   <div class="price-per-item__container">
                     <quantity-input class="quantity">
                       <button class="quantity__button no-js-hidden" name="minus" type="button">
@@ -348,6 +349,7 @@
                       </price-per-item>
                     {%- endif -%}
                   </div>
+
                   <div class="quantity__rules caption no-js-hidden" id="Quantity-Rules-{{ section.id }}">
                     {%- if product.selected_or_first_available_variant.quantity_rule.increment > 1 -%}
                       <span class="divider">
