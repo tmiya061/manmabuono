@@ -17,7 +17,7 @@
 
 <div class="c_topBanner">
     {% assign block_count = section.blocks.size %}
-    {% if block_count >= 3 %}
+    {% if block_count >= 4 %}
         <div class="swiper-container --topBanner">
             <div class="swiper --topBanner">
                 <div class="swiper-wrapper">
@@ -26,8 +26,8 @@
                     {%- when 'banner' -%}
                         <div class="swiper-slide">
                             <a href="{{ block.settings.banner-link }}" target="_blank">
-                                {{ block.settings.banner-img | image_url: width: 270 , height: 135 | image_tag: alt: block.settings.banner-img, class: "pc" }}
-                                {{ block.settings.banner-img | image_url: width: 400 , height: 200 | image_tag: alt: block.settings.banner-img, class: "sp" }}
+                                {{ block.settings.banner-img | image_url: width: 270 , height: 270 | image_tag: alt: block.settings.banner-img, class: "pc" }}
+                                {{ block.settings.banner-img | image_url: width: 400 , height: 400 | image_tag: alt: block.settings.banner-img, class: "sp" }}
                             </a>
                         </div>
                     {% endcase %}

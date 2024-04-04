@@ -505,3 +505,17 @@ table:not([class]) td, table:not([class]) th {
     background: $base-color;
     border: $base-color 1px solid;
 }
+
+.mikawaya-hidden + .c_in-tax {
+    display: none;
+}
+
+.product-form__input input[type=radio]:checked + label {
+    background: #FF7B5E;
+    border: #FF7B5E 1px solid;
+}
+
+.product__title h1 {
+  width: 100% !important;
+  white-space: unset !important;
+}
