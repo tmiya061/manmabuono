@@ -34,14 +34,23 @@
             "banner-img": "shopify:\/\/shop_images\/dog1.jpg",
             "banner-link": ""
           }
+        },
+        "banner_LVQmgp": {
+          "type": "banner",
+          "settings": {
+            "banner-img": "shopify:\/\/shop_images\/picture1.webp",
+            "banner-link": ""
+          }
         }
       },
       "block_order": [
         "banner_7NcNkX",
         "banner_VQbGNw",
-        "banner_fLKFQA"
+        "banner_fLKFQA",
+        "banner_LVQmgp"
       ],
       "settings": {
+        "enable_more_than_four": true,
         "title": "見出し",
         "padding_top": 42,
         "padding_bottom": 32,
