@@ -1,192 +1,188 @@
 @import "variables";
 
 .c_topBanner {
-    position: relative;
-    &::after {
-        content: '';
-        position: absolute;
-        z-index: 0;
-        width: 100%;
-        height: 53%;
-        top: -43px;
-        left: 0;
-        background: #F5F5F5;
-    }
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    width: 100%;
+    height: 53%;
+    top: -43px;
+    left: 0;
+    background: #f5f5f5;
+  }
 }
 
-
 .swiper-container.--topBanner {
-    padding-bottom: 80px;
-    position: relative;
-    z-index: 1;
-    @include mq(sp) {
-        padding-bottom: 50px;
-    }
-    // div:empty {
-    //     display: block;
-    // }
-    // span:empty {
-    //    display: inline-block;
-    // }
+  padding-bottom: 80px;
+  position: relative;
+  z-index: 1;
+  @include mq(sp) {
+    padding-bottom: 50px;
+  }
+  // div:empty {
+  //     display: block;
+  // }
+  // span:empty {
+  //    display: inline-block;
+  // }
 }
 
 .swiper.--topBanner {
-    .swiper-slide {
-        width: 100%;
-    }
-    a {
-        display: block;
-        width: 100%;
-    }
-    img {
-        width: 100%;
-        height: auto;
-        aspect-ratio: 2 / 1;
-    }
+  .swiper-slide {
+    width: 100%;
+  }
+  a {
+    display: block;
+    width: 100%;
+  }
+  img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 2 / 1;
+  }
 }
-
 
 // ============================
 //     pagination について
 // ============================
 
 .swiper-container.--topBanner {
-    position: relative;
+  position: relative;
 }
 
 .swiper-pagination-wrap {
-    position: absolute;
-    bottom: 0px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%;
-    height: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    column-gap: 33px;
-    .swiper-button-prev,
-    .swiper-pagination,
-    .swiper-button-next {
-        position: relative !important;
-        top: unset !important;
-        left: unset !important;
-    }
-    .swiper-pagination {
-        width: fit-content !important;
-    }
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 33px;
+  .swiper-button-prev,
+  .swiper-pagination,
+  .swiper-button-next {
+    position: relative !important;
+    top: unset !important;
+    left: unset !important;
+  }
+  .swiper-pagination {
+    width: fit-content !important;
+  }
 }
 
 // //色と大きさ指定
 .swiper-pagination-bullet {
-    opacity: 1;
-    background: transparent;
-    border: 1px solid #D9D9D9;
-    width: 8px;
-    height: 8px;
-    border-radius: 50%; //円にする
+  opacity: 1;
+  background: transparent;
+  border: 1px solid #d9d9d9;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%; //円にする
 }
 .swiper-pagination-bullet.swiper-pagination-bullet-active {
-    background: #3C3C3C;
+  background: #3c3c3c;
 }
 //paginationの余白指定
-.swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
-    margin: 0 7px;
+.swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
+.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+  margin: 0 7px;
 }
-.swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction {
-    bottom: 14px !important;
+.swiper-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal,
+.swiper-pagination-custom,
+.swiper-pagination-fraction {
+  bottom: 14px !important;
 }
 // ==============================
 //     navigation について
 // ==============================
 
-
-
 .swiper-button-prev {
-    //位置はここで指定
-    // top: 50%;
-    // transform: translateY(-50%);
-    &::after {
-        content: ''; //デフォルトの削除
-    }
+  //位置はここで指定
+  // top: 50%;
+  // transform: translateY(-50%);
+  &::after {
+    content: ""; //デフォルトの削除
+  }
 }
 
 .swiper-button-next {
-    //位置はここで指定
-    // top: 50%;
-    // transform: translateY(-50%);
-    &::after {
-        content: ''; //デフォルトの削除
-    }
+  //位置はここで指定
+  // top: 50%;
+  // transform: translateY(-50%);
+  &::after {
+    content: ""; //デフォルトの削除
+  }
 }
-
 
 .c_topBanner__wrap {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    column-gap: 20px;
-    position: relative;
-    z-index: 1;
-    .c_topBanner__img {
-        width: 400px;
-        max-width: 100%;
-        height: auto;
-    }
-    a {
-        display: block;
-        width: 100%;
-        height: 100%;
-    }
-    img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-    @include mq(sp) {
-        display: block;
-        .c_topBanner__img {
-            margin: auto;
-            margin-bottom: 20px;
-        }
-    }
-}
-
-
-.c_topBanner .swiper-slide {
-    width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 20px;
+  position: relative;
+  z-index: 1;
+  .c_topBanner__img {
+    width: 400px;
+    max-width: 100%;
     height: auto;
-    aspect-ratio: 1;
-}
-
-
-.c_topBanner .swiper-slide a {
+  }
+  a {
+    display: block;
     width: 100%;
     height: 100%;
+  }
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  @include mq(sp) {
+    display: none;
+    .c_topBanner__img {
+      margin: auto;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.c_topBanner .swiper-slide {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+}
+
+.c_topBanner .swiper-slide a {
+  width: 100%;
+  height: 100%;
 }
 
 .swiper.--topBanner img {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 1;
-    object-fit: cover;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: cover;
 }
 
 @media screen and (max-width: 750px) {
-    .c_topBanner__wrap .c_topBanner__img {
-        width: 250px;
-    }    
+  .c_topBanner__wrap .c_topBanner__img {
+    width: 250px;
+  }
 }
 
-
 .c_topBanner__wrap {
-    width: 100%;
-    max-width: 800px;
-    margin: auto;
+  width: 100%;
+  max-width: 800px;
+  margin: auto;
 }
 
 .c_topBanner__img {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 1;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
 }
