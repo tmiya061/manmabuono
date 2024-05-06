@@ -60,15 +60,15 @@
             "btn_label3": ""
           }
         },
-        "shop_kyoto_Dd36pJ": {
+        "shop_kyoto_ehQEge": {
           "type": "shop_kyoto",
           "settings": {
-            "kyoto_head": "",
-            "kyoto_address": "",
-            "link": "",
-            "btn_label": "",
-            "link2": "",
-            "btn_label2": "",
+            "kyoto_head": "Art Cafe ナナイロ",
+            "kyoto_address": "京都府京都市中京区西ノ京船塚町10番地<br>\nTEL：075-823-7716",
+            "link": "https:\/\/www.kyoto7716.com\/",
+            "btn_label": "Web Site",
+            "link2": "https:\/\/www.kiosk.co.jp\/eki_map\/kyoto\/index\/",
+            "btn_label2": "Google Map",
             "link3": "",
             "btn_label3": ""
           }
@@ -82,19 +82,6 @@
             "btn_label": "Web Site",
             "link2": "https:\/\/maps.app.goo.gl\/5Qto2C8ScymR9Peq6",
             "btn_label2": "Map",
-            "link3": "",
-            "btn_label3": ""
-          }
-        },
-        "shop_kyoto_ehQEge": {
-          "type": "shop_kyoto",
-          "settings": {
-            "kyoto_head": "Art Cafe ナナイロ",
-            "kyoto_address": "京都府京都市中京区西ノ京船塚町10番地<br>\nTEL：075-823-7716",
-            "link": "https:\/\/www.kyoto7716.com\/",
-            "btn_label": "Web Site",
-            "link2": "https:\/\/www.kiosk.co.jp\/eki_map\/kyoto\/index\/",
-            "btn_label2": "Google Map",
             "link3": "",
             "btn_label3": ""
           }
@@ -168,9 +155,8 @@
       "block_order": [
         "shop_kyoto_iBtdAA",
         "shop_kyoto_tNhPLi",
-        "shop_kyoto_Dd36pJ",
-        "shop_kyoto_dymQDz",
         "shop_kyoto_ehQEge",
+        "shop_kyoto_dymQDz",
         "shop_kyoto_pHgyhe",
         "shop_kyoto_aDQd3t",
         "shop_kyoto_PBVfGm",
