@@ -60,6 +60,19 @@
             "btn_label3": ""
           }
         },
+        "shop_kyoto_Dd36pJ": {
+          "type": "shop_kyoto",
+          "settings": {
+            "kyoto_head": "",
+            "kyoto_address": "",
+            "link": "",
+            "btn_label": "",
+            "link2": "",
+            "btn_label2": "",
+            "link3": "",
+            "btn_label3": ""
+          }
+        },
         "shop_kyoto_dymQDz": {
           "type": "shop_kyoto",
           "settings": {
@@ -155,6 +168,7 @@
       "block_order": [
         "shop_kyoto_iBtdAA",
         "shop_kyoto_tNhPLi",
+        "shop_kyoto_Dd36pJ",
         "shop_kyoto_dymQDz",
         "shop_kyoto_ehQEge",
         "shop_kyoto_pHgyhe",
