@@ -186,10 +186,24 @@
             "link3": "",
             "btn_label3": ""
           }
+        },
+        "shop_kyoto_crRKb3": {
+          "type": "shop_kyoto",
+          "settings": {
+            "kyoto_head": "ザ ファーム ユニバーサル 大阪",
+            "kyoto_address": "〒568-0095 大阪府茨木市佐保１９３−２\nTEL:072-649-5339",
+            "link": "https:\/\/the-farm.jp\/",
+            "btn_label": "Web　Site",
+            "link2": "https:\/\/www.google.com\/maps\/place\/%E3%82%B6+%E3%83%95%E3%82%A1%E3%83%BC%E3%83%A0+%E3%83%A6%E3%83%8B%E3%83%90%E3%83%BC%E3%82%B5%E3%83%AB+%E5%A4%A7%E9%98%AA\/@34.8642861,135.53154,15z\/data=!4m2!3m1!1s0x0:0x5eedc0ed2b9a92f9?sa=X&ved=1t:2428&ictx=111",
+            "btn_label2": "Map",
+            "link3": "",
+            "btn_label3": ""
+          }
         }
       },
       "block_order": [
-        "shop_kyoto_QRik6D"
+        "shop_kyoto_QRik6D",
+        "shop_kyoto_crRKb3"
       ],
       "settings": {
         "padding_top": 0,
