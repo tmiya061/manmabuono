@@ -150,6 +150,19 @@
             "link3": "",
             "btn_label3": ""
           }
+        },
+        "shop_kyoto_JTNxhL": {
+          "type": "shop_kyoto",
+          "settings": {
+            "kyoto_head": "ホテルリバーサイド嵐山",
+            "kyoto_address": "〒616-0004 京都府京都市西京区嵐山中尾下町１０",
+            "link": "https:\/\/riverside-arashiyama.jp\/",
+            "btn_label": "Web Site",
+            "link2": "https:\/\/www.google.com\/maps\/place\/%E3%83%9B%E3%83%86%E3%83%AB%E3%83%AA%E3%83%90%E3%83%BC%E3%82%B5%E3%82%A4%E3%83%89%E5%B5%90%E5%B1%B1\/@35.0105408,135.6795476,15z\/data=!4m2!3m1!1s0x0:0xddfdf725dcfc4a65?sa=X&ved=1t:2428&ictx=111",
+            "btn_label2": "Map",
+            "link3": "",
+            "btn_label3": ""
+          }
         }
       },
       "block_order": [
@@ -161,7 +174,8 @@
         "shop_kyoto_aDQd3t",
         "shop_kyoto_ATXFkQ",
         "shop_kyoto_bq4WXm",
-        "shop_kyoto_PBVfGm"
+        "shop_kyoto_PBVfGm",
+        "shop_kyoto_JTNxhL"
       ],
       "settings": {
         "padding_top": 0,
