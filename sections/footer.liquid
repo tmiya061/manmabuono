@@ -33,7 +33,7 @@
                     </li>
                 {% assign sorted_collections = collections | sort: 'title' | reverse %}
                   {% for collection in sorted_collections %}
-                    {% if collection.handle contains 'cat' %}
+                    {% if collection.handle contains 'dog' %}
                       {% unless collection.handle contains 'all' %}
                       {% unless collection.handle contains 'make' %}
                       {% unless collection.handle contains 'trial' %}
