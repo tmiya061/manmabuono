@@ -48,7 +48,7 @@
                     {% endif %}
                   {% endfor %}
                   {% for collection in sorted_collections %}
-                    {% if collection.handle contains 'cat-make' %}
+                    {% if collection.handle contains 'dog-make' %}
                     <li>
                         <a href="/collections/{{ collection.handle }}">
                           <span>{{ collection.title | split: '-' | last }}</span>
