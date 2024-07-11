@@ -1,3 +1,12 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
   "sections": {
     "main": {
@@ -163,6 +172,19 @@
             "link3": "",
             "btn_label3": ""
           }
+        },
+        "shop_kyoto_94EHtF": {
+          "type": "shop_kyoto",
+          "settings": {
+            "kyoto_head": "3テールズキッチン",
+            "kyoto_address": "京都市北区大宮東小野堀町１ エスカローナ玉田 102<br>\nTEL：070-1808-0030",
+            "link": "https:\/\/www.instagram.com\/3tails_kitchen?igsh=eDV6cGdlcHlqNXM2&utm_source=qr",
+            "btn_label": "Web Site",
+            "link2": "https:\/\/www.google.com\/maps\/dir\/\/%E3%80%92603-8406+%E4%BA%AC%E9%83%BD%E5%BA%9C%E4%BA%AC%E9%83%BD%E5%B8%82%E5%8C%97%E5%8C%BA%E5%A4%A7%E5%AE%AE%E6%9D%B1%E5%B0%8F%E9%87%8E%E5%A0%80%E7%94%BA%EF%BC%91+%E3%82%A8%E3%82%B9%E3%82%AB%E3%83%AD%E3%83%BC%E3%83%8A%E7%8E%89%E7%94%B0+102\/@35.052385,135.7388333,15.1z\/data=!4m8!4m7!1m0!1m5!1m1!1s0x6001a95fb3eed557:0x8866e60567571b49!2m2!1d135.7442369!2d35.0568854?entry=ttu",
+            "btn_label2": "Map",
+            "link3": "",
+            "btn_label3": ""
+          }
         }
       },
       "block_order": [
@@ -175,7 +197,8 @@
         "shop_kyoto_ATXFkQ",
         "shop_kyoto_bq4WXm",
         "shop_kyoto_PBVfGm",
-        "shop_kyoto_JTNxhL"
+        "shop_kyoto_JTNxhL",
+        "shop_kyoto_94EHtF"
       ],
       "settings": {
         "padding_top": 0,
