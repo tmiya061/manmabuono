@@ -185,6 +185,19 @@
             "link3": "",
             "btn_label3": ""
           }
+        },
+        "shop_kyoto_hKkaGe": {
+          "type": "shop_kyoto",
+          "settings": {
+            "kyoto_head": "",
+            "kyoto_address": "",
+            "link": "",
+            "btn_label": "",
+            "link2": "",
+            "btn_label2": "",
+            "link3": "",
+            "btn_label3": ""
+          }
         }
       },
       "block_order": [
@@ -198,7 +211,8 @@
         "shop_kyoto_bq4WXm",
         "shop_kyoto_PBVfGm",
         "shop_kyoto_JTNxhL",
-        "shop_kyoto_94EHtF"
+        "shop_kyoto_94EHtF",
+        "shop_kyoto_hKkaGe"
       ],
       "settings": {
         "padding_top": 0,
@@ -347,6 +361,34 @@
         "padding_bottom_sp": 60,
         "shop_prefecture": "東京都"
       }
+    },
+    "c_shop_main_69BDzN": {
+      "type": "c_shop-main",
+      "blocks": {
+        "shop_kyoto_e3ReMb": {
+          "type": "shop_kyoto",
+          "settings": {
+            "kyoto_head": "BUTCH",
+            "kyoto_address": "宮城県仙台市青葉区五橋2-4-13-2F<br>\nTEL：022-748-7487",
+            "link": "http:\/\/butch.shop-pro.jp\/",
+            "btn_label": "Web SitWeb Site",
+            "link2": "https:\/\/www.google.com\/maps\/place\/%E3%80%92980-0022+%E5%AE%AE%E5%9F%8E%E7%9C%8C%E4%BB%99%E5%8F%B0%E5%B8%82%E9%9D%92%E8%91%89%E5%8C%BA%E4%BA%94%E6%A9%8B%EF%BC%92%E4%B8%81%E7%9B%AE%EF%BC%94%E2%88%92%EF%BC%91%EF%BC%93+2f\/@38.2528164,140.8776005,18z\/data=!3m1!4b1!4m5!3m4!1s0x5f8a2813b42f6acf:0x5164bae0d5471dda!8m2!3d38.2528164!4d140.878349?entry=ttu",
+            "btn_label2": "Map",
+            "link3": "",
+            "btn_label3": ""
+          }
+        }
+      },
+      "block_order": [
+        "shop_kyoto_e3ReMb"
+      ],
+      "settings": {
+        "padding_top": 0,
+        "padding_bottom": 100,
+        "padding_top_sp": 0,
+        "padding_bottom_sp": 60,
+        "shop_prefecture": "宮城県"
+      }
     }
   },
   "order": [
@@ -356,6 +398,7 @@
     "c_shop_main_AYpLwV",
     "c_shop_main_HbdUxw",
     "c_shop_main_dUzfYK",
-    "c_shop_main_iyVEKp"
+    "c_shop_main_iyVEKp",
+    "c_shop_main_69BDzN"
   ]
 }
