@@ -323,19 +323,6 @@
     "c_shop_main_iyVEKp": {
       "type": "c_shop-main",
       "blocks": {
-        "shop_kyoto_Aijm3p": {
-          "type": "shop_kyoto",
-          "settings": {
-            "kyoto_head": "Cafe Peanuts",
-            "kyoto_address": "東京都台東区浅草3丁目5-4<br>\nTEL：03-6802-4123",
-            "link": "https:\/\/www.cafe-peanuts.com\/",
-            "btn_label": "Web Site",
-            "link2": "https:\/\/maps.app.goo.gl\/53DLCutzVYCCp6Ge8",
-            "btn_label2": "Map",
-            "link3": "",
-            "btn_label3": ""
-          }
-        },
         "shop_kyoto_xVydBE": {
           "type": "shop_kyoto",
           "settings": {
@@ -351,7 +338,6 @@
         }
       },
       "block_order": [
-        "shop_kyoto_Aijm3p",
         "shop_kyoto_xVydBE"
       ],
       "settings": {
