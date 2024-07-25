@@ -348,11 +348,25 @@
             "link3": "",
             "btn_label3": ""
           }
+        },
+        "shop_kyoto_KBfrFL": {
+          "type": "shop_kyoto",
+          "settings": {
+            "kyoto_head": "Paddy by WAFONA東京大丸店",
+            "kyoto_address": "東京都千代田区丸の内1-9-1\n大丸東京店5階\nTEL 03-3212-8011",
+            "link": "https:\/\/www.paddy-wafona.com\/?mode=f3",
+            "btn_label": "Web Site",
+            "link2": "https:\/\/www.google.com\/maps\/place\/%E6%9D%B1%E4%BA%AC%E9%A7%85\/@35.6813365,139.7672552,17z\/data=!3m1!5s0x60188bfbd91993eb:0xc9da05c5e162fa6a!4m15!1m8!3m7!1s0x60188bfebaa7df03:0x1b61338cc92c3b75!2z44CSMTAwLTAwMDUg5p2x5Lqs6YO95Y2D5Luj55Sw5Yy65Li444Gu5YaF77yR5LiB55uu77yZ4oiS77yR!3b1!8m2!3d35.6813365!4d139.7672552!16s%2Fg%2F11clrhrkbn!3m5!1s0x60188bfbd89f700b:0x277c49ba34ed38!8m2!3d35.6812362!4d139.7671248!16zL20vMDFfdnY3?entry=ttu",
+            "btn_label2": "Map",
+            "link3": "",
+            "btn_label3": ""
+          }
         }
       },
       "block_order": [
         "shop_kyoto_xVydBE",
-        "shop_kyoto_EiTjih"
+        "shop_kyoto_EiTjih",
+        "shop_kyoto_KBfrFL"
       ],
       "settings": {
         "padding_top": 0,
