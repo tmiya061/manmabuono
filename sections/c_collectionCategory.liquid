@@ -29,11 +29,15 @@
             {% unless collection.handle contains 'all' %}
             {% unless collection.handle contains 'make' %}
             {% unless collection.handle contains 'trial' %}
+            {% unless collection.handle contains 'osechi' %}
+            {% unless collection.handle contains 'soba' %}
             <li class="c_collectionCategory__item">
                 <a href="/collections/{{ collection.handle }}">
                 <span>{{ collection.title | split: '-' | last }}</span>
                 </a>
             </li>
+            {% endunless %}
+            {% endunless %}
             {% endunless %}
             {% endunless %}
             {% endunless %}
@@ -53,6 +57,16 @@
             <span>お試しセット</span>
             </a>
         </li>
+      <li class="c_collectionCategory__item">
+            <a href="/collections/osechi">
+            <span>おせち</span>
+            </a>
+        </li>
+      <li class="c_collectionCategory__item">
+            <a href="/collections/soba">
+            <span>年越しそば</span>
+            </a>
+        </li>
 {% elsif collection.handle contains 'dog' %}
     <li class="c_collectionCategory__item">
         <a href="/collections/dog-all">
@@ -65,11 +79,15 @@
             {% unless collection.handle contains 'all' %}
             {% unless collection.handle contains 'make' %}
             {% unless collection.handle contains 'trial' %}
+            {% unless collection.handle contains 'osechi' %}
+            {% unless collection.handle contains 'soba' %}
             <li class="c_collectionCategory__item">
                 <a href="/collections/{{ collection.handle }}">
                 <span>{{ collection.title | split: '-' | last }}</span>
                 </a>
             </li>
+            {% endunless %}
+            {% endunless %}
             {% endunless %}
             {% endunless %}
             {% endunless %}
@@ -87,6 +105,16 @@
           <li class="c_collectionCategory__item">
             <a href="/products/dog-trial-set">
             <span>お試しセット</span>
+            </a>
+        </li>
+          <li class="c_collectionCategory__item">
+            <a href="/collections/osechi">
+            <span>おせち</span>
+            </a>
+        </li>
+          <li class="c_collectionCategory__item">
+            <a href="/collections/soba">
+            <span>そば</span>
             </a>
         </li>
 {% endif %}
