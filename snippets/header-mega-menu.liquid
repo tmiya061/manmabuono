@@ -18,12 +18,14 @@
         </svg>
         <span>全ての商品</span>
       </a>
-      {% assign sorted_collections = collections | sort_natural: 'handle' %}
+      {% assign sorted_collections = collections | sort: 'title' | reverse %}
       {% for collection in sorted_collections %}
         {% if collection.handle contains 'dog' %}
           {% unless collection.handle contains 'all' %}
           {% unless collection.handle contains 'make' %}
             {% unless collection.handle contains 'trial' %}
+            {% unless collection.handle contains 'osechi' %}
+            {% unless collection.handle contains 'soba' %}
           <a href="/collections/{{ collection.handle }}">
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
               <circle cx="9" cy="9" r="8.5" fill="white" stroke="#3C3C3C"/>
@@ -31,6 +33,8 @@
             </svg>
             <span>{{ collection.title | split: '-' | last }}</span>
           </a>
+          {% endunless %}
+          {% endunless %}
           {% endunless %}
           {% endunless %}
           {% endunless %}
@@ -54,6 +58,20 @@
             </svg>
             <span>お試しセット</span>
           </a>
+        <a href="/products/dog-osechi">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+              <circle cx="9" cy="9" r="8.5" fill="white" stroke="#3C3C3C"/>
+              <path d="M7.19995 5.39999L10.8 9.00001L7.19995 12.6" stroke="#3C3C3C"/>
+            </svg>
+            <span>おせち</span>
+          </a>
+        <a href="/products/dog-soba">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+              <circle cx="9" cy="9" r="8.5" fill="white" stroke="#3C3C3C"/>
+              <path d="M7.19995 5.39999L10.8 9.00001L7.19995 12.6" stroke="#3C3C3C"/>
+            </svg>
+            <span>年越しそば</span>
+          </a>
     </p>
   </div>
 </div>
@@ -69,12 +87,14 @@
         </svg>
         <span>全ての商品</span>
       </a>
-      {% assign sorted_collections = collections | sort_natural: 'handle' %}
+      {% assign sorted_collections = collections | sort: 'title' | reverse %}
       {% for collection in sorted_collections %}
         {% if collection.handle contains 'cat' %}
           {% unless collection.handle contains 'all' %}
           {% unless collection.handle contains 'make' %}
             {% unless collection.handle contains 'trial' %}
+            {% unless collection.handle contains 'osechi' %}
+            {% unless collection.handle contains 'soba' %}
           <a href="/collections/{{ collection.handle }}">
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
               <circle cx="9" cy="9" r="8.5" fill="white" stroke="#3C3C3C"/>
@@ -82,6 +102,8 @@
             </svg>
             <span>{{ collection.title | split: '-' | last }}</span>
           </a>
+          {% endunless %}
+          {% endunless %}
           {% endunless %}
           {% endunless %}
           {% endunless %}
@@ -104,6 +126,20 @@
               <path d="M7.19995 5.39999L10.8 9.00001L7.19995 12.6" stroke="#3C3C3C"/>
             </svg>
             <span>お試しセット</span>
+          </a>
+        <a href="/products/cat-osechi">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+              <circle cx="9" cy="9" r="8.5" fill="white" stroke="#3C3C3C"/>
+              <path d="M7.19995 5.39999L10.8 9.00001L7.19995 12.6" stroke="#3C3C3C"/>
+            </svg>
+            <span>おせち</span>
+          </a>
+        <a href="/products/cat-soba">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+              <circle cx="9" cy="9" r="8.5" fill="white" stroke="#3C3C3C"/>
+              <path d="M7.19995 5.39999L10.8 9.00001L7.19995 12.6" stroke="#3C3C3C"/>
+            </svg>
+            <span>年越しそば</span>
           </a>
     </p>
   </div>
