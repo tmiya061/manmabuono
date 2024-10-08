@@ -18,7 +18,7 @@
         </svg>
         <span>全ての商品</span>
       </a>
-      {% assign sorted_collections = collections | sort: 'title' | reverse %}
+      {% assign sorted_collections = collections | sort_natural: 'handle' %}
       {% for collection in sorted_collections %}
         {% if collection.handle contains 'dog' %}
           {% unless collection.handle contains 'all' %}
