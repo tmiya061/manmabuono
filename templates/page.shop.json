@@ -173,26 +173,13 @@
             "btn_label3": ""
           }
         },
-        "shop_kyoto_hKkaGe": {
-          "type": "shop_kyoto",
-          "settings": {
-            "kyoto_head": "",
-            "kyoto_address": "",
-            "link": "",
-            "btn_label": "",
-            "link2": "",
-            "btn_label2": "",
-            "link3": "",
-            "btn_label3": ""
-          }
-        },
         "shop_kyoto_jFP3zG": {
           "type": "shop_kyoto",
           "settings": {
             "kyoto_head": "アイハート 出町店",
             "kyoto_address": "京都市上京区桝形通出町西入二神町１６７<br>TEL：075-744-0129",
             "link": "",
-            "btn_label": "",
+            "btn_label": "Web Site",
             "link2": "",
             "btn_label2": "",
             "link3": "",
@@ -211,7 +198,6 @@
         "shop_kyoto_bq4WXm",
         "shop_kyoto_PBVfGm",
         "shop_kyoto_94EHtF",
-        "shop_kyoto_hKkaGe",
         "shop_kyoto_jFP3zG"
       ],
       "settings": {
