@@ -211,19 +211,6 @@
     "c_shop_main_HbdUxw": {
       "type": "c_shop-main",
       "blocks": {
-        "shop_kyoto_QRik6D": {
-          "type": "shop_kyoto",
-          "settings": {
-            "kyoto_head": "Dog Cafe RUDI",
-            "kyoto_address": "大阪府大阪狭山市茱萸木（クミノキ）1丁目11-3<br>\nTEL：072-369-4314",
-            "link": "https://www.dog-cafe-rudi.com/",
-            "btn_label": "Web Site",
-            "link2": "https://www.google.co.jp/maps/place/%E3%80%92589-0013+%E5%A4%A7%E9%98%AA%E5%BA%9C%E5%A4%A7%E9%98%AA%E7%8B%AD%E5%B1%B1%E5%B8%82%E8%8C%B1%E8%90%B8%E6%9C%A8%EF%BC%91%E4%B8%81%E7%9B%AE%EF%BC%91%EF%BC%91%E2%88%92%EF%BC%93/@34.4985918,135.5467056,17z/data=!3m1!4b1!4m6!3m5!1s0x6000d71bd0f040cb:0xa8bb6b7312bf4a7c!8m2!3d34.4985874!4d135.5492805!16s%2Fg%2F11clnvfzsv?hl=ja&entry=ttu",
-            "btn_label2": "Map",
-            "link3": "",
-            "btn_label3": ""
-          }
-        },
         "shop_kyoto_crRKb3": {
           "type": "shop_kyoto",
           "settings": {
@@ -236,11 +223,24 @@
             "link3": "",
             "btn_label3": ""
           }
+        },
+        "shop_kyoto_QRik6D": {
+          "type": "shop_kyoto",
+          "settings": {
+            "kyoto_head": "Dog Cafe RUDI",
+            "kyoto_address": "大阪府大阪狭山市茱萸木（クミノキ）1丁目11-3<br>\nTEL：072-369-4314",
+            "link": "https://www.dog-cafe-rudi.com/",
+            "btn_label": "Web Site",
+            "link2": "https://www.google.co.jp/maps/place/%E3%80%92589-0013+%E5%A4%A7%E9%98%AA%E5%BA%9C%E5%A4%A7%E9%98%AA%E7%8B%AD%E5%B1%B1%E5%B8%82%E8%8C%B1%E8%90%B8%E6%9C%A8%EF%BC%91%E4%B8%81%E7%9B%AE%EF%BC%91%EF%BC%91%E2%88%92%EF%BC%93/@34.4985918,135.5467056,17z/data=!3m1!4b1!4m6!3m5!1s0x6000d71bd0f040cb:0xa8bb6b7312bf4a7c!8m2!3d34.4985874!4d135.5492805!16s%2Fg%2F11clnvfzsv?hl=ja&entry=ttu",
+            "btn_label2": "Map",
+            "link3": "",
+            "btn_label3": ""
+          }
         }
       },
       "block_order": [
-        "shop_kyoto_QRik6D",
-        "shop_kyoto_crRKb3"
+        "shop_kyoto_crRKb3",
+        "shop_kyoto_QRik6D"
       ],
       "settings": {
         "padding_top": 0,
