@@ -253,15 +253,15 @@
     "c_shop_main_dUzfYK": {
       "type": "c_shop-main",
       "blocks": {
-        "shop_kyoto_ztEVD3": {
+        "shop_kyoto_GQtrqc": {
           "type": "shop_kyoto",
           "settings": {
-            "kyoto_head": "R café",
-            "kyoto_address": "滋賀県大津市北比良９３４－１<br>\nTEL 077-596-1355",
-            "link": "https://www.r-cafe.net/",
-            "btn_label": "Web Site",
-            "link2": "https://maps.app.goo.gl/upwVmriKuocw18gU9/",
-            "btn_label2": "Map",
+            "kyoto_head": "Trattoria Maatanto",
+            "kyoto_address": "滋賀県大津市横木1-12-28<br>\nTEL：077-522-8868",
+            "link": "https://goo.gl/maps/KAwpxnHh3ZiHxMjC7",
+            "btn_label": "Map",
+            "link2": "",
+            "btn_label2": "",
             "link3": "",
             "btn_label3": ""
           }
@@ -279,24 +279,24 @@
             "btn_label3": ""
           }
         },
-        "shop_kyoto_GQtrqc": {
+        "shop_kyoto_ztEVD3": {
           "type": "shop_kyoto",
           "settings": {
-            "kyoto_head": "Trattoria Maatanto",
-            "kyoto_address": "滋賀県大津市横木1-12-28<br>\nTEL：077-522-8868",
-            "link": "https://goo.gl/maps/KAwpxnHh3ZiHxMjC7",
-            "btn_label": "Map",
-            "link2": "",
-            "btn_label2": "",
+            "kyoto_head": "R café",
+            "kyoto_address": "滋賀県大津市北比良９３４－１<br>\nTEL 077-596-1355",
+            "link": "https://www.r-cafe.net/",
+            "btn_label": "Web Site",
+            "link2": "https://maps.app.goo.gl/upwVmriKuocw18gU9/",
+            "btn_label2": "Map",
             "link3": "",
             "btn_label3": ""
           }
         }
       },
       "block_order": [
-        "shop_kyoto_ztEVD3",
+        "shop_kyoto_GQtrqc",
         "shop_kyoto_Y9Tmff",
-        "shop_kyoto_GQtrqc"
+        "shop_kyoto_ztEVD3"
       ],
       "settings": {
         "padding_top": 0,
