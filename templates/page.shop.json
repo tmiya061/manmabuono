@@ -1,12 +1,12 @@
 /*
-* ------------------------------------------------------------
-* IMPORTANT: The contents of this file are auto-generated.
-*
-* This file may be updated by the Shopify admin theme editor
-* or related systems. Please exercise caution as any changes
-* made to this file may be overwritten.
-* ------------------------------------------------------------
-*/
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
@@ -22,8 +22,8 @@
       "settings": {
         "title_en": "SHOP LIST",
         "title_jp": "取り扱い店舗一覧",
-        "img": "shopify:\/\/shop_images\/shop_fv.png",
-        "img_sp": "shopify:\/\/shop_images\/shop_fv.png",
+        "img": "shopify://shop_images/shop_fv.png",
+        "img_sp": "shopify://shop_images/shop_fv.png",
         "padding_top": 0,
         "padding_bottom": 0,
         "padding_top_sp": 10,
@@ -48,9 +48,9 @@
           "settings": {
             "kyoto_head": "グランドキヨスク京都",
             "kyoto_address": "京都市下京区東塩小路高倉町8-3<br>\nJR京都駅2F新幹線改札構内エリア<br>\nグランドキヨスク京都<br>\nTEL：075-693-8332",
-            "link": "https:\/\/www.asty-kyoto.co.jp\/asty_kyoto\/store\/405\/",
+            "link": "https://www.asty-kyoto.co.jp/asty_kyoto/store/405/",
             "btn_label": "Web Site",
-            "link2": "https:\/\/www.kiosk.co.jp\/eki_map\/kyoto\/index\/",
+            "link2": "https://www.kiosk.co.jp/eki_map/kyoto/index/",
             "btn_label2": "Map",
             "link3": "",
             "btn_label3": ""
@@ -61,9 +61,9 @@
           "settings": {
             "kyoto_head": "ベルマート京都",
             "kyoto_address": "京都市下京区東塩小路高倉町8-3 JR京都駅構内ASTYロード1階<br>\nTEL 075-693-3465",
-            "link": "https:\/\/www.kiosk.co.jp\/store_detail\/558\/",
+            "link": "https://www.kiosk.co.jp/store_detail/558/",
             "btn_label": "Web Site",
-            "link2": "https:\/\/www.kiosk.co.jp\/eki_map\/kyoto\/index\/",
+            "link2": "https://www.kiosk.co.jp/eki_map/kyoto/index/",
             "btn_label2": "Map",
             "link3": "",
             "btn_label3": ""
@@ -74,9 +74,9 @@
           "settings": {
             "kyoto_head": "Art Cafe ナナイロ",
             "kyoto_address": "京都府京都市中京区西ノ京船塚町10番地<br>\nTEL：075-823-7716",
-            "link": "https:\/\/www.kyoto7716.com\/",
+            "link": "https://www.kyoto7716.com/",
             "btn_label": "Web Site",
-            "link2": "https:\/\/www.kiosk.co.jp\/eki_map\/kyoto\/index\/",
+            "link2": "https://www.kiosk.co.jp/eki_map/kyoto/index/",
             "btn_label2": "Google Map",
             "link3": "",
             "btn_label3": ""
@@ -87,9 +87,9 @@
           "settings": {
             "kyoto_head": "DOGRUN&CAFE MONT",
             "kyoto_address": "京都市左京区孫橋町8-4<br>\nTEL 075-205-5151",
-            "link": "https:\/\/www.mont-kyoto.com\/",
+            "link": "https://www.mont-kyoto.com/",
             "btn_label": "Web Site",
-            "link2": "https:\/\/maps.app.goo.gl\/5Qto2C8ScymR9Peq6",
+            "link2": "https://maps.app.goo.gl/5Qto2C8ScymR9Peq6",
             "btn_label2": "Map",
             "link3": "",
             "btn_label3": ""
@@ -100,9 +100,9 @@
           "settings": {
             "kyoto_head": "山科みやこ動物病院",
             "kyoto_address": "京都市山科区西野山射庭ノ上町27-1 ロイヤルハイツ秀1階<br>\nTEL：075-630-8880",
-            "link": "https:\/\/yamashinamiyako-ah.com\/",
+            "link": "https://yamashinamiyako-ah.com/",
             "btn_label": "Web Site",
-            "link2": "https:\/\/manmabuono.jp\/?mode=f5#:~:text=Web%20Site-,Map,-%E3%82%89%E3%82%93%E5%B8%83%E8%A2%8B",
+            "link2": "https://manmabuono.jp/?mode=f5#:~:text=Web%20Site-,Map,-%E3%82%89%E3%82%93%E5%B8%83%E8%A2%8B",
             "btn_label2": "Map",
             "link3": "",
             "btn_label3": ""
@@ -113,9 +113,9 @@
           "settings": {
             "kyoto_head": "らん布袋",
             "kyoto_address": "京都市中京区上瓦町64 京都三条会商店街内<br>\nTEL：075-801-0790",
-            "link": "https:\/\/ranhotei.com\/",
+            "link": "https://ranhotei.com/",
             "btn_label": "Web Site",
-            "link2": "https:\/\/goo.gl\/maps\/fyfCeFh4CnBABAJb7",
+            "link2": "https://goo.gl/maps/fyfCeFh4CnBABAJb7",
             "btn_label2": "Map",
             "link3": "",
             "btn_label3": ""
@@ -126,9 +126,9 @@
           "settings": {
             "kyoto_head": "Cafe&Bar Chill’s Kyoto",
             "kyoto_address": "京都市北区上賀茂御薗口町57-3<br>\nTEL：070-8336-4310",
-            "link": "https:\/\/sites.google.com\/4-side.com\/chillskyoto\/home",
+            "link": "https://sites.google.com/4-side.com/chillskyoto/home",
             "btn_label": "Web Site",
-            "link2": "https:\/\/goo.gl\/maps\/f3oRLCRfx8MfqgKMA",
+            "link2": "https://goo.gl/maps/f3oRLCRfx8MfqgKMA",
             "btn_label2": "Map",
             "link3": "",
             "btn_label3": ""
@@ -139,7 +139,7 @@
           "settings": {
             "kyoto_head": "自然食品店 ポケットくらぶ",
             "kyoto_address": "京都府京都市北区北区北区小山西大野町58-1<br>\nTEL：075-415-1333",
-            "link": "https:\/\/goo.gl\/maps\/cejYfNDqxtcYZSEd6",
+            "link": "https://goo.gl/maps/cejYfNDqxtcYZSEd6",
             "btn_label": "Map",
             "link2": "",
             "btn_label2": "",
@@ -152,22 +152,9 @@
           "settings": {
             "kyoto_head": "ペットライフサポーターBATON",
             "kyoto_address": "京都府 京都市山科区東野舞台町88-1<br>\nINSIGHT REPOS 山科椥辻<br>\nTEL：075-366-9788",
-            "link": "https:\/\/plsbaton.com\/",
+            "link": "https://plsbaton.com/",
             "btn_label": "Web Site",
-            "link2": "https:\/\/goo.gl\/maps\/iKQNBy5r1xQiGaueA",
-            "btn_label2": "Map",
-            "link3": "",
-            "btn_label3": ""
-          }
-        },
-        "shop_kyoto_JTNxhL": {
-          "type": "shop_kyoto",
-          "settings": {
-            "kyoto_head": "ホテルリバーサイド嵐山",
-            "kyoto_address": "〒616-0004 京都府京都市西京区嵐山中尾下町１０",
-            "link": "https:\/\/riverside-arashiyama.jp\/",
-            "btn_label": "Web Site",
-            "link2": "https:\/\/www.google.com\/maps\/place\/%E3%83%9B%E3%83%86%E3%83%AB%E3%83%AA%E3%83%90%E3%83%BC%E3%82%B5%E3%82%A4%E3%83%89%E5%B5%90%E5%B1%B1\/@35.0105408,135.6795476,15z\/data=!4m2!3m1!1s0x0:0xddfdf725dcfc4a65?sa=X&ved=1t:2428&ictx=111",
+            "link2": "https://goo.gl/maps/iKQNBy5r1xQiGaueA",
             "btn_label2": "Map",
             "link3": "",
             "btn_label3": ""
@@ -178,9 +165,9 @@
           "settings": {
             "kyoto_head": "3テールズキッチン",
             "kyoto_address": "京都市北区大宮東小野堀町１ エスカローナ玉田 102<br>\nTEL：070-1808-0030",
-            "link": "https:\/\/www.instagram.com\/3tails_kitchen?igsh=eDV6cGdlcHlqNXM2&utm_source=qr",
+            "link": "https://www.instagram.com/3tails_kitchen?igsh=eDV6cGdlcHlqNXM2&utm_source=qr",
             "btn_label": "Web Site",
-            "link2": "https:\/\/www.google.com\/maps\/dir\/\/%E3%80%92603-8406+%E4%BA%AC%E9%83%BD%E5%BA%9C%E4%BA%AC%E9%83%BD%E5%B8%82%E5%8C%97%E5%8C%BA%E5%A4%A7%E5%AE%AE%E6%9D%B1%E5%B0%8F%E9%87%8E%E5%A0%80%E7%94%BA%EF%BC%91+%E3%82%A8%E3%82%B9%E3%82%AB%E3%83%AD%E3%83%BC%E3%83%8A%E7%8E%89%E7%94%B0+102\/@35.052385,135.7388333,15.1z\/data=!4m8!4m7!1m0!1m5!1m1!1s0x6001a95fb3eed557:0x8866e60567571b49!2m2!1d135.7442369!2d35.0568854?entry=ttu",
+            "link2": "https://www.google.com/maps/dir//%E3%80%92603-8406+%E4%BA%AC%E9%83%BD%E5%BA%9C%E4%BA%AC%E9%83%BD%E5%B8%82%E5%8C%97%E5%8C%BA%E5%A4%A7%E5%AE%AE%E6%9D%B1%E5%B0%8F%E9%87%8E%E5%A0%80%E7%94%BA%EF%BC%91+%E3%82%A8%E3%82%B9%E3%82%AB%E3%83%AD%E3%83%BC%E3%83%8A%E7%8E%89%E7%94%B0+102/@35.052385,135.7388333,15.1z/data=!4m8!4m7!1m0!1m5!1m1!1s0x6001a95fb3eed557:0x8866e60567571b49!2m2!1d135.7442369!2d35.0568854?entry=ttu",
             "btn_label2": "Map",
             "link3": "",
             "btn_label3": ""
@@ -190,6 +177,19 @@
           "type": "shop_kyoto",
           "settings": {
             "kyoto_head": "",
+            "kyoto_address": "",
+            "link": "",
+            "btn_label": "",
+            "link2": "",
+            "btn_label2": "",
+            "link3": "",
+            "btn_label3": ""
+          }
+        },
+        "shop_kyoto_jFP3zG": {
+          "type": "shop_kyoto",
+          "settings": {
+            "kyoto_head": "アイハート 出町店",
             "kyoto_address": "",
             "link": "",
             "btn_label": "",
@@ -210,9 +210,9 @@
         "shop_kyoto_ATXFkQ",
         "shop_kyoto_bq4WXm",
         "shop_kyoto_PBVfGm",
-        "shop_kyoto_JTNxhL",
         "shop_kyoto_94EHtF",
-        "shop_kyoto_hKkaGe"
+        "shop_kyoto_hKkaGe",
+        "shop_kyoto_jFP3zG"
       ],
       "settings": {
         "padding_top": 0,
@@ -230,9 +230,9 @@
           "settings": {
             "kyoto_head": "Dog Cafe RUDI",
             "kyoto_address": "大阪府大阪狭山市茱萸木（クミノキ）1丁目11-3<br>\nTEL：072-369-4314",
-            "link": "https:\/\/www.dog-cafe-rudi.com\/",
+            "link": "https://www.dog-cafe-rudi.com/",
             "btn_label": "Web Site",
-            "link2": "https:\/\/www.google.co.jp\/maps\/place\/%E3%80%92589-0013+%E5%A4%A7%E9%98%AA%E5%BA%9C%E5%A4%A7%E9%98%AA%E7%8B%AD%E5%B1%B1%E5%B8%82%E8%8C%B1%E8%90%B8%E6%9C%A8%EF%BC%91%E4%B8%81%E7%9B%AE%EF%BC%91%EF%BC%91%E2%88%92%EF%BC%93\/@34.4985918,135.5467056,17z\/data=!3m1!4b1!4m6!3m5!1s0x6000d71bd0f040cb:0xa8bb6b7312bf4a7c!8m2!3d34.4985874!4d135.5492805!16s%2Fg%2F11clnvfzsv?hl=ja&entry=ttu",
+            "link2": "https://www.google.co.jp/maps/place/%E3%80%92589-0013+%E5%A4%A7%E9%98%AA%E5%BA%9C%E5%A4%A7%E9%98%AA%E7%8B%AD%E5%B1%B1%E5%B8%82%E8%8C%B1%E8%90%B8%E6%9C%A8%EF%BC%91%E4%B8%81%E7%9B%AE%EF%BC%91%EF%BC%91%E2%88%92%EF%BC%93/@34.4985918,135.5467056,17z/data=!3m1!4b1!4m6!3m5!1s0x6000d71bd0f040cb:0xa8bb6b7312bf4a7c!8m2!3d34.4985874!4d135.5492805!16s%2Fg%2F11clnvfzsv?hl=ja&entry=ttu",
             "btn_label2": "Map",
             "link3": "",
             "btn_label3": ""
@@ -243,9 +243,9 @@
           "settings": {
             "kyoto_head": "ザ ファーム ユニバーサル 大阪",
             "kyoto_address": "〒568-0095 大阪府茨木市佐保１９３−２<br>\nTEL:072-649-5339",
-            "link": "https:\/\/the-farm.jp\/",
+            "link": "https://the-farm.jp/",
             "btn_label": "Web　Site",
-            "link2": "https:\/\/www.google.com\/maps\/place\/%E3%82%B6+%E3%83%95%E3%82%A1%E3%83%BC%E3%83%A0+%E3%83%A6%E3%83%8B%E3%83%90%E3%83%BC%E3%82%B5%E3%83%AB+%E5%A4%A7%E9%98%AA\/@34.8642861,135.53154,15z\/data=!4m2!3m1!1s0x0:0x5eedc0ed2b9a92f9?sa=X&ved=1t:2428&ictx=111",
+            "link2": "https://www.google.com/maps/place/%E3%82%B6+%E3%83%95%E3%82%A1%E3%83%BC%E3%83%A0+%E3%83%A6%E3%83%8B%E3%83%90%E3%83%BC%E3%82%B5%E3%83%AB+%E5%A4%A7%E9%98%AA/@34.8642861,135.53154,15z/data=!4m2!3m1!1s0x0:0x5eedc0ed2b9a92f9?sa=X&ved=1t:2428&ictx=111",
             "btn_label2": "Map",
             "link3": "",
             "btn_label3": ""
@@ -272,9 +272,9 @@
           "settings": {
             "kyoto_head": "R café",
             "kyoto_address": "滋賀県大津市北比良９３４－１<br>\nTEL 077-596-1355",
-            "link": "https:\/\/www.r-cafe.net\/",
+            "link": "https://www.r-cafe.net/",
             "btn_label": "Web Site",
-            "link2": "https:\/\/maps.app.goo.gl\/upwVmriKuocw18gU9\/",
+            "link2": "https://maps.app.goo.gl/upwVmriKuocw18gU9/",
             "btn_label2": "Map",
             "link3": "",
             "btn_label3": ""
@@ -285,9 +285,9 @@
           "settings": {
             "kyoto_head": "パインズドッグラン",
             "kyoto_address": "滋賀県蒲生郡竜王町薬師 字砂山1178-694 三井アウトレット滋賀竜王 ベリーガーデン内<br>\nTEL 070-7779-1515",
-            "link": "https:\/\/manmabuono.jp\/?mode=f5#:~:text=070%2D7779%2D1515-,Instagram,-Map",
+            "link": "https://manmabuono.jp/?mode=f5#:~:text=070%2D7779%2D1515-,Instagram,-Map",
             "btn_label": "Instagram",
-            "link2": "https:\/\/maps.app.goo.gl\/ZJonk5vmfCg3spjQ9",
+            "link2": "https://maps.app.goo.gl/ZJonk5vmfCg3spjQ9",
             "btn_label2": "Map",
             "link3": "",
             "btn_label3": ""
@@ -298,7 +298,7 @@
           "settings": {
             "kyoto_head": "Trattoria Maatanto",
             "kyoto_address": "滋賀県大津市横木1-12-28<br>\nTEL：077-522-8868",
-            "link": "https:\/\/goo.gl\/maps\/KAwpxnHh3ZiHxMjC7",
+            "link": "https://goo.gl/maps/KAwpxnHh3ZiHxMjC7",
             "btn_label": "Map",
             "link2": "",
             "btn_label2": "",
@@ -328,9 +328,9 @@
           "settings": {
             "kyoto_head": "The Dog",
             "kyoto_address": "東京都目黒区八雲4-5-2リストレジデンス八雲1F<br>\nTEL：03-6421-4903",
-            "link": "http:\/\/www.thedog.co.jp\/",
+            "link": "http://www.thedog.co.jp/",
             "btn_label": "Web Site",
-            "link2": "https:\/\/goo.gl\/maps\/NstLW5MiysajY9xHA",
+            "link2": "https://goo.gl/maps/NstLW5MiysajY9xHA",
             "btn_label2": "Map",
             "link3": "",
             "btn_label3": ""
@@ -341,9 +341,9 @@
           "settings": {
             "kyoto_head": "Paddy by WAFONA新宿伊勢丹店",
             "kyoto_address": "東京都新宿区新宿3-14-1\n伊勢丹新宿店本館５階 <br>\nTEL 03-3352-1111",
-            "link": "https:\/\/www.paddy-wafona.com\/?mode=f3",
+            "link": "https://www.paddy-wafona.com/?mode=f3",
             "btn_label": "Web Site",
-            "link2": "https:\/\/www.google.com\/maps\/dir\/\/%E3%80%92160-0022+%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%96%B0%E5%AE%BF%E5%8C%BA%E6%96%B0%E5%AE%BF%EF%BC%93%E4%B8%81%E7%9B%AE%EF%BC%91%EF%BC%94%E2%88%92%EF%BC%91\/@35.6920257,139.7015,16.47z\/data=!4m8!4m7!1m0!1m5!1m1!1s0x60188cdba56b3bf7:0x8b741cc73341edb5!2m2!1d139.7046466!2d35.691574?entry=ttu",
+            "link2": "https://www.google.com/maps/dir//%E3%80%92160-0022+%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%96%B0%E5%AE%BF%E5%8C%BA%E6%96%B0%E5%AE%BF%EF%BC%93%E4%B8%81%E7%9B%AE%EF%BC%91%EF%BC%94%E2%88%92%EF%BC%91/@35.6920257,139.7015,16.47z/data=!4m8!4m7!1m0!1m5!1m1!1s0x60188cdba56b3bf7:0x8b741cc73341edb5!2m2!1d139.7046466!2d35.691574?entry=ttu",
             "btn_label2": "Map",
             "link3": "",
             "btn_label3": ""
@@ -354,9 +354,9 @@
           "settings": {
             "kyoto_head": "Paddy by WAFONA東京大丸店",
             "kyoto_address": "東京都千代田区丸の内1-9-1\n大丸東京店5階<br>\nTEL 03-3212-8011",
-            "link": "https:\/\/www.paddy-wafona.com\/?mode=f3",
+            "link": "https://www.paddy-wafona.com/?mode=f3",
             "btn_label": "Web Site",
-            "link2": "https:\/\/www.google.com\/maps\/place\/%E6%9D%B1%E4%BA%AC%E9%A7%85\/@35.6813365,139.7672552,17z\/data=!3m1!5s0x60188bfbd91993eb:0xc9da05c5e162fa6a!4m15!1m8!3m7!1s0x60188bfebaa7df03:0x1b61338cc92c3b75!2z44CSMTAwLTAwMDUg5p2x5Lqs6YO95Y2D5Luj55Sw5Yy65Li444Gu5YaF77yR5LiB55uu77yZ4oiS77yR!3b1!8m2!3d35.6813365!4d139.7672552!16s%2Fg%2F11clrhrkbn!3m5!1s0x60188bfbd89f700b:0x277c49ba34ed38!8m2!3d35.6812362!4d139.7671248!16zL20vMDFfdnY3?entry=ttu",
+            "link2": "https://www.google.com/maps/place/%E6%9D%B1%E4%BA%AC%E9%A7%85/@35.6813365,139.7672552,17z/data=!3m1!5s0x60188bfbd91993eb:0xc9da05c5e162fa6a!4m15!1m8!3m7!1s0x60188bfebaa7df03:0x1b61338cc92c3b75!2z44CSMTAwLTAwMDUg5p2x5Lqs6YO95Y2D5Luj55Sw5Yy65Li444Gu5YaF77yR5LiB55uu77yZ4oiS77yR!3b1!8m2!3d35.6813365!4d139.7672552!16s%2Fg%2F11clrhrkbn!3m5!1s0x60188bfbd89f700b:0x277c49ba34ed38!8m2!3d35.6812362!4d139.7671248!16zL20vMDFfdnY3?entry=ttu",
             "btn_label2": "Map",
             "link3": "",
             "btn_label3": ""
@@ -384,9 +384,9 @@
           "settings": {
             "kyoto_head": "BUTCH",
             "kyoto_address": "宮城県仙台市青葉区五橋2-4-13-2F<br>\nTEL：022-748-7487",
-            "link": "http:\/\/butch.shop-pro.jp\/",
+            "link": "http://butch.shop-pro.jp/",
             "btn_label": "Web SitWeb Site",
-            "link2": "https:\/\/www.google.com\/maps\/place\/%E3%80%92980-0022+%E5%AE%AE%E5%9F%8E%E7%9C%8C%E4%BB%99%E5%8F%B0%E5%B8%82%E9%9D%92%E8%91%89%E5%8C%BA%E4%BA%94%E6%A9%8B%EF%BC%92%E4%B8%81%E7%9B%AE%EF%BC%94%E2%88%92%EF%BC%91%EF%BC%93+2f\/@38.2528164,140.8776005,18z\/data=!3m1!4b1!4m5!3m4!1s0x5f8a2813b42f6acf:0x5164bae0d5471dda!8m2!3d38.2528164!4d140.878349?entry=ttu",
+            "link2": "https://www.google.com/maps/place/%E3%80%92980-0022+%E5%AE%AE%E5%9F%8E%E7%9C%8C%E4%BB%99%E5%8F%B0%E5%B8%82%E9%9D%92%E8%91%89%E5%8C%BA%E4%BA%94%E6%A9%8B%EF%BC%92%E4%B8%81%E7%9B%AE%EF%BC%94%E2%88%92%EF%BC%91%EF%BC%93+2f/@38.2528164,140.8776005,18z/data=!3m1!4b1!4m5!3m4!1s0x5f8a2813b42f6acf:0x5164bae0d5471dda!8m2!3d38.2528164!4d140.878349?entry=ttu",
             "btn_label2": "Map",
             "link3": "",
             "btn_label3": ""
