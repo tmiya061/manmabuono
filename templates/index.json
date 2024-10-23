@@ -51,7 +51,7 @@
         "banner_pDkKKM"
       ],
       "settings": {
-        "enable_more_than_four": false,
+        "enable_more_than_four": true,
         "title": "見出し",
         "padding_top": 42,
         "padding_bottom": 32,
