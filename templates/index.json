@@ -36,19 +36,11 @@
             "banner-img": "shopify://shop_images/1_3x-8.png",
             "banner-link": "shopify://collections/dog-soba"
           }
-        },
-        "banner_pDkKKM": {
-          "type": "banner",
-          "settings": {
-            "banner-img": "shopify://shop_images/1_3x-8.png",
-            "banner-link": ""
-          }
         }
       },
       "block_order": [
         "banner_7NcNkX",
-        "banner_VQbGNw",
-        "banner_pDkKKM"
+        "banner_VQbGNw"
       ],
       "settings": {
         "enable_more_than_four": true,
