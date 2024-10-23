@@ -42,6 +42,9 @@
         "banner_7NcNkX",
         "banner_VQbGNw"
       ],
+      "custom_css": [
+        ".swiper-pagination-wrap {height: 40px;}"
+      ],
       "settings": {
         "enable_more_than_four": true,
         "title": "見出し",
