@@ -26,7 +26,7 @@
         "banner_7NcNkX": {
           "type": "banner",
           "settings": {
-            "banner-img": "shopify://shop_images/1_1_3x-8.png",
+            "banner-img": "shopify://shop_images/4ee7cb909ed62aaca59072a367e6fb95.jpg",
             "banner-link": "shopify://collections/dog-osechi"
           }
         },
@@ -36,11 +36,19 @@
             "banner-img": "shopify://shop_images/1_3x-8.png",
             "banner-link": "shopify://collections/dog-soba"
           }
+        },
+        "banner_pDkKKM": {
+          "type": "banner",
+          "settings": {
+            "banner-img": "shopify://shop_images/1_3x-8.png",
+            "banner-link": ""
+          }
         }
       },
       "block_order": [
         "banner_7NcNkX",
-        "banner_VQbGNw"
+        "banner_VQbGNw",
+        "banner_pDkKKM"
       ],
       "settings": {
         "enable_more_than_four": false,
