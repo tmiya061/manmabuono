@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "c_top_fv_VDwRay": {
@@ -17,37 +26,21 @@
         "banner_7NcNkX": {
           "type": "banner",
           "settings": {
-            "banner-img": "shopify:\/\/shop_images\/collection_dog.png",
-            "banner-link": ""
+            "banner-img": "shopify://shop_images/1_1_3x-8.png",
+            "banner-link": "shopify://collections/dog-osechi"
           }
         },
         "banner_VQbGNw": {
           "type": "banner",
           "settings": {
-            "banner-img": "shopify:\/\/shop_images\/contact_fv.png",
-            "banner-link": ""
-          }
-        },
-        "banner_fLKFQA": {
-          "type": "banner",
-          "settings": {
-            "banner-img": "shopify:\/\/shop_images\/dog1.jpg",
-            "banner-link": ""
-          }
-        },
-        "banner_LVQmgp": {
-          "type": "banner",
-          "settings": {
-            "banner-img": "shopify:\/\/shop_images\/picture1.webp",
-            "banner-link": ""
+            "banner-img": "shopify://shop_images/1_3x-8.png",
+            "banner-link": "shopify://collections/dog-soba"
           }
         }
       },
       "block_order": [
         "banner_7NcNkX",
-        "banner_VQbGNw",
-        "banner_fLKFQA",
-        "banner_LVQmgp"
+        "banner_VQbGNw"
       ],
       "settings": {
         "enable_more_than_four": true,
@@ -73,8 +66,8 @@
       "settings": {
         "title": "マンマボーノから<br>\nお試しセットが登場！",
         "text": "愛するペットのために特別に選ばれた、<br>栄養豊富で健康的なお試しセットです。",
-        "sample-img1": "shopify:\/\/shop_images\/Mask_group.jpg",
-        "sample-img2": "shopify:\/\/shop_images\/Group_128.jpg",
+        "sample-img1": "shopify://shop_images/Mask_group.jpg",
+        "sample-img2": "shopify://shop_images/Group_128.jpg",
         "padding_top": 0,
         "padding_bottom": 0,
         "padding_top_sp": 0,
@@ -94,7 +87,7 @@
       "type": "c_topAbout",
       "settings": {
         "about_text": "皆さんの愛犬の健康のために必要な要素は、大きく3つ。それはごはんと運動、生育環境におけるストレスを回避することです。このバランスが保たれていることで健康寿命が延びます。マンマボーノでは、ドライフードとウェットフードの良さを引き出した、健康寿命を延ばすごはんのお手伝いをいたします。",
-        "about_text_side": "<span>健康寿命<\/span>を伸ばす<br>\nごはんのお手伝いを<br>\nいたします",
+        "about_text_side": "<span>健康寿命</span>を伸ばす<br>\nごはんのお手伝いを<br>\nいたします",
         "padding_top": 0,
         "padding_bottom": 0,
         "padding_top_sp": 0,
@@ -107,7 +100,7 @@
         "voices_erfDM8": {
           "type": "voices",
           "settings": {
-            "voices_img": "shopify:\/\/files\/videos\/maple_tiramisu.mp4",
+            "voices_img": "shopify://files/videos/maple_tiramisu.mp4",
             "voices_text": "ドライフードにおかずをトッピングするのですが「地鶏一番だしそぼろ煮」は昆布と削り節の香りが豊かでいつも私が食べたくなるお味🎶",
             "voices_name": "maple(@maple_tiramisu)"
           }
@@ -115,7 +108,7 @@
         "voices_wAGjBU": {
           "type": "voices",
           "settings": {
-            "voices_img": "shopify:\/\/files\/videos\/haku.1026.mp4",
+            "voices_img": "shopify://files/videos/haku.1026.mp4",
             "voices_text": "最初から、カリカリ＋ウェットがセットになってるのは、珍しいですねぇ。お出汁の良い匂いがして、ハクもあっという間に平らげました！",
             "voices_name": "ハク"
           }
@@ -123,7 +116,7 @@
         "voices_JdYpLH": {
           "type": "voices",
           "settings": {
-            "voices_img": "shopify:\/\/files\/videos\/k.kira421.mp4",
+            "voices_img": "shopify://files/videos/k.kira421.mp4",
             "voices_text": "好き嫌いの激しいひまわりでも喜んでパクパクと食べてくれます🍚それほど美味しかったことかな~💕",
             "voices_name": "ひまわり"
           }
@@ -155,11 +148,12 @@
       "type": "apps",
       "blocks": {
         "instafeed_app_block_kN9tNy": {
-          "type": "shopify:\/\/apps\/instafeed\/blocks\/app-block\/c447db20-095d-4a10-9725-b5977662c9d5",
+          "type": "shopify://apps/instafeed/blocks/app-block/c447db20-095d-4a10-9725-b5977662c9d5",
           "settings": {
             "title": "",
             "title_color": "",
             "alignment": "center",
+            "background_color": "",
             "html_area": ""
           }
         }
@@ -181,35 +175,35 @@
         "picture_JLcNf7": {
           "type": "picture",
           "settings": {
-            "picture_img": "shopify:\/\/shop_images\/picture1.webp",
+            "picture_img": "shopify://shop_images/picture1.webp",
             "size": "large"
           }
         },
         "picture_dVVBnW": {
           "type": "picture",
           "settings": {
-            "picture_img": "shopify:\/\/shop_images\/picture2.webp",
+            "picture_img": "shopify://shop_images/picture2.webp",
             "size": "middle"
           }
         },
         "picture_TnHyyC": {
           "type": "picture",
           "settings": {
-            "picture_img": "shopify:\/\/shop_images\/picture4.webp",
+            "picture_img": "shopify://shop_images/picture4.webp",
             "size": "small"
           }
         },
         "picture_BxgeVp": {
           "type": "picture",
           "settings": {
-            "picture_img": "shopify:\/\/shop_images\/picture3.webp",
+            "picture_img": "shopify://shop_images/picture3.webp",
             "size": "large2"
           }
         },
         "picture_YJDkxN": {
           "type": "picture",
           "settings": {
-            "picture_img": "shopify:\/\/shop_images\/picture5.webp",
+            "picture_img": "shopify://shop_images/picture5.webp",
             "size": "small"
           }
         }
