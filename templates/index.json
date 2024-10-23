@@ -43,7 +43,7 @@
         "banner_VQbGNw"
       ],
       "custom_css": [
-        ".swiper-pagination-wrap {height: 40px;}"
+        ".c_topBanner .swiper-slide {aspect-ratio: unset;}"
       ],
       "settings": {
         "enable_more_than_four": true,
