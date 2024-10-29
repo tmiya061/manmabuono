@@ -305,12 +305,26 @@
             "link3": "",
             "btn_label3": ""
           }
+        },
+        "shop_kyoto_iqq6NT": {
+          "type": "shop_kyoto",
+          "settings": {
+            "kyoto_head": "FARM KEI",
+            "kyoto_address": "滋賀県蒲生郡三十坪2158<br>TEL:090-5671-9645",
+            "link": "https://farmkeiwebshop.stores.jp/news/5f51edb81829cd7d0a5cda7d",
+            "btn_label": "Web Site",
+            "link2": "https://www.google.com/maps/place/%E3%80%92529-1653+%E6%BB%8B%E8%B3%80%E7%9C%8C%E8%92%B2%E7%94%9F%E9%83%A1%E6%97%A5%E9%87%8E%E7%94%BA%E4%B8%89%E5%8D%81%E5%9D%AA%EF%BC%92%EF%BC%91%EF%BC%95%EF%BC%98/@35.0170395,136.2167137,17z/data=!4m15!1m8!3m7!1s0x6003df7afb341b11:0x82aad2d57529e30!2z44CSNTI5LTE2NTMg5ruL6LOA55yM6JKy55Sf6YOh5pel6YeO55S65LiJ5Y2B5Z2q77yS77yR77yV77yY!3b1!8m2!3d35.0170395!4d136.2167137!16s%2Fg%2F11wb1pt9bn!3m5!1s0x6003df7afb4b2055:0x611134457b57e05a!8m2!3d35.0170328!4d136.2166889!16s%2Fg%2F11rd32lw69?entry=ttu&g_ep=EgoyMDI0MTAyNy4wIKXMDSoASAFQAw%3D%3D",
+            "btn_label2": "Map",
+            "link3": "",
+            "btn_label3": ""
+          }
         }
       },
       "block_order": [
         "shop_kyoto_GQtrqc",
         "shop_kyoto_Y9Tmff",
-        "shop_kyoto_ztEVD3"
+        "shop_kyoto_ztEVD3",
+        "shop_kyoto_iqq6NT"
       ],
       "settings": {
         "padding_top": 0,
