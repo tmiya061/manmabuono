@@ -185,6 +185,19 @@
             "link3": "",
             "btn_label3": ""
           }
+        },
+        "shop_kyoto_3zDaWL": {
+          "type": "shop_kyoto",
+          "settings": {
+            "kyoto_head": "enjoy care Salon Sunny",
+            "kyoto_address": "京都市右京区橋詰町36 2F<br>TEL:075-600-9224",
+            "link": "https://dog-salon-sunny.jp/",
+            "btn_label": "Web Site",
+            "link2": "https://www.google.com/maps/place/enjoy+care+Salon+Sunny/@34.9846969,135.717509,15.7z/data=!4m15!1m8!3m7!1s0x6001065c08e290c7:0xef8c5d1506e04c98!2z44CSNjE1LTA4MzMg5Lqs6YO95bqc5Lqs6YO95biC5Y-z5Lqs5Yy66KW_5Lqs5qW15qmL6Kmw55S677yT77yWIOOCq-ODqeOCquOCseWWq-iMtumHjuOBsOOCiQ!3b1!8m2!3d34.9843299!4d135.7196888!16s%2Fg%2F12j6pf7f9!3m5!1s0x6001070675c307a1:0xa636cbde25d0de3!8m2!3d34.9843299!4d135.7196888!16s%2Fg%2F11t6ttm__p?entry=ttu&g_ep=EgoyMDI0MTAyNy4wIKXMDSoASAFQAw%3D%3D",
+            "btn_label2": "Map",
+            "link3": "",
+            "btn_label3": ""
+          }
         }
       },
       "block_order": [
@@ -198,7 +211,8 @@
         "shop_kyoto_bq4WXm",
         "shop_kyoto_PBVfGm",
         "shop_kyoto_94EHtF",
-        "shop_kyoto_jFP3zG"
+        "shop_kyoto_jFP3zG",
+        "shop_kyoto_3zDaWL"
       ],
       "settings": {
         "padding_top": 0,
