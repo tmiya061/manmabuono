@@ -203,7 +203,7 @@
           "type": "shop_kyoto",
           "settings": {
             "kyoto_head": "マルシェノグチ",
-            "kyoto_address": "京都府京都市中京区西ノ京職司町69　TEL:075-432-7243",
+            "kyoto_address": "京都府京都市中京区西ノ京職司町69<br>TEL:075-432-7243",
             "link": "https://www.marche-noguchi.com/",
             "btn_label": "Web Site",
             "link2": "",
