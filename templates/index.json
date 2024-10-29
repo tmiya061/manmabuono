@@ -36,11 +36,19 @@
             "banner-img": "shopify://shop_images/1_3x-8.png",
             "banner-link": "shopify://products/京都笠置産-鹿肉の年越しそば"
           }
+        },
+        "banner_qfKAYt": {
+          "type": "banner",
+          "settings": {
+            "banner-img": "shopify://shop_images/bnr3.png",
+            "banner-link": "https://www.youtube.com/watch?v=rXCvWq6IQuQ"
+          }
         }
       },
       "block_order": [
         "banner_7NcNkX",
-        "banner_VQbGNw"
+        "banner_VQbGNw",
+        "banner_qfKAYt"
       ],
       "custom_css": [
         ".c_topBanner .swiper-slide {aspect-ratio: unset;}"
