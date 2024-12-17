@@ -294,12 +294,12 @@
         "shop_kyoto_qJGkWb": {
           "type": "shop_kyoto",
           "settings": {
-            "kyoto_head": "",
-            "kyoto_address": "",
-            "link": "",
-            "btn_label": "",
-            "link2": "",
-            "btn_label2": "",
+            "kyoto_head": "89cafe",
+            "kyoto_address": "大阪府大阪市中央区谷町6丁目15-21-B1",
+            "link": "https://www.instagram.com/89ca_fe/",
+            "btn_label": "Web Site",
+            "link2": "https://www.google.com/maps/place/%E3%80%92542-0012+%E5%A4%A7%E9%98%AA%E5%BA%9C%E5%A4%A7%E9%98%AA%E5%B8%82%E4%B8%AD%E5%A4%AE%E5%8C%BA%E8%B0%B7%E7%94%BA%EF%BC%96%E4%B8%81%E7%9B%AE%EF%BC%91%EF%BC%95%E2%88%92%EF%BC%92%EF%BC%91+b1/data=!4m2!3m1!1s0x6000e738424adfa7:0x7202b9ca7e4dd0bd?sa=X&ved=1t:242&ictx=111",
+            "btn_label2": "Map",
             "link3": "",
             "btn_label3": ""
           }
