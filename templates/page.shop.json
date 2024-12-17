@@ -281,12 +281,12 @@
         "shop_kyoto_tfqH3q": {
           "type": "shop_kyoto",
           "settings": {
-            "kyoto_head": "",
-            "kyoto_address": "",
-            "link": "",
-            "btn_label": "",
-            "link2": "",
-            "btn_label2": "",
+            "kyoto_head": "URU PURS+",
+            "kyoto_address": "大阪府大阪市天王寺区大道2丁目11-4",
+            "link": "https://www.instagram.com/uru_plus/",
+            "btn_label": "Web Site",
+            "link2": "https://www.google.com/maps/place/%E3%80%92543-0052+%E5%A4%A7%E9%98%AA%E5%BA%9C%E5%A4%A7%E9%98%AA%E5%B8%82%E5%A4%A9%E7%8E%8B%E5%AF%BA%E5%8C%BA%E5%A4%A7%E9%81%93%EF%BC%92%E4%B8%81%E7%9B%AE%EF%BC%91%EF%BC%91%E2%88%92%EF%BC%94+%E3%82%B3%E3%83%B3%E3%83%95%E3%82%A9%E3%83%BC%E3%83%88ZEN/data=!4m2!3m1!1s0x6000ddfa2c9dac73:0x18db3af3c15c3470?sa=X&ved=1t:242&ictx=111",
+            "btn_label2": "Map",
             "link3": "",
             "btn_label3": ""
           }
