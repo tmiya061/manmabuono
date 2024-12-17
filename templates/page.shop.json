@@ -264,11 +264,53 @@
             "link3": "",
             "btn_label3": ""
           }
+        },
+        "shop_kyoto_JhVGnT": {
+          "type": "shop_kyoto",
+          "settings": {
+            "kyoto_head": "SHIKI",
+            "kyoto_address": "大阪府高槻市城南町一丁目23-12",
+            "link": "https://www.instagram.com/shiki._.official/",
+            "btn_label": "Web Site",
+            "link2": "https://www.google.com/maps/place/%E3%80%92569-0056+%E5%A4%A7%E9%98%AA%E5%BA%9C%E9%AB%98%E6%A7%BB%E5%B8%82%E5%9F%8E%E5%8D%97%E7%94%BA%EF%BC%91%E4%B8%81%E7%9B%AE%EF%BC%92%EF%BC%93%E2%88%92%EF%BC%91%EF%BC%92+%E3%82%B9%E3%82%A6%E3%82%A3%E3%83%BC%E3%83%88%E3%83%8F%E3%82%A4%E3%83%84/data=!4m2!3m1!1s0x60011d37f620d873:0xb3622bda38d0ad31?sa=X&ved=1t:242&ictx=111",
+            "btn_label2": "Map",
+            "link3": "",
+            "btn_label3": ""
+          }
+        },
+        "shop_kyoto_tfqH3q": {
+          "type": "shop_kyoto",
+          "settings": {
+            "kyoto_head": "",
+            "kyoto_address": "",
+            "link": "",
+            "btn_label": "",
+            "link2": "",
+            "btn_label2": "",
+            "link3": "",
+            "btn_label3": ""
+          }
+        },
+        "shop_kyoto_qJGkWb": {
+          "type": "shop_kyoto",
+          "settings": {
+            "kyoto_head": "",
+            "kyoto_address": "",
+            "link": "",
+            "btn_label": "",
+            "link2": "",
+            "btn_label2": "",
+            "link3": "",
+            "btn_label3": ""
+          }
         }
       },
       "block_order": [
         "shop_kyoto_crRKb3",
-        "shop_kyoto_QRik6D"
+        "shop_kyoto_QRik6D",
+        "shop_kyoto_JhVGnT",
+        "shop_kyoto_tfqH3q",
+        "shop_kyoto_qJGkWb"
       ],
       "settings": {
         "padding_top": 0,
