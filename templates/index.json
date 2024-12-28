@@ -23,20 +23,6 @@
     "c_top_banner_qhyMTD": {
       "type": "c_topBanner",
       "blocks": {
-        "banner_7NcNkX": {
-          "type": "banner",
-          "settings": {
-            "banner-img": "shopify://shop_images/1_1_3x-8.png",
-            "banner-link": "shopify://collections/dog-osechi"
-          }
-        },
-        "banner_VQbGNw": {
-          "type": "banner",
-          "settings": {
-            "banner-img": "shopify://shop_images/1_3x-8.png",
-            "banner-link": "shopify://products/京都笠置産-鹿肉の年越しそば"
-          }
-        },
         "banner_qfKAYt": {
           "type": "banner",
           "settings": {
@@ -46,8 +32,6 @@
         }
       },
       "block_order": [
-        "banner_7NcNkX",
-        "banner_VQbGNw",
         "banner_qfKAYt"
       ],
       "custom_css": [
@@ -165,6 +149,7 @@
             "title_color": "",
             "alignment": "center",
             "background_color": "",
+            "feed_id": "",
             "html_area": ""
           }
         }
