@@ -82,6 +82,19 @@
             "btn_label3": ""
           }
         },
+        "shop_kyoto_Awgkb3": {
+          "type": "shop_kyoto",
+          "settings": {
+            "kyoto_head": "",
+            "kyoto_address": "",
+            "link": "",
+            "btn_label": "",
+            "link2": "",
+            "btn_label2": "",
+            "link3": "",
+            "btn_label3": ""
+          }
+        },
         "shop_kyoto_dymQDz": {
           "type": "shop_kyoto",
           "settings": {
@@ -211,12 +224,26 @@
             "link3": "",
             "btn_label3": ""
           }
+        },
+        "shop_kyoto_VXxkdn": {
+          "type": "shop_kyoto",
+          "settings": {
+            "kyoto_head": "Bow wow",
+            "kyoto_address": "京都市山科区西野楳本町60-29 1F<br>\nTEL:075-591-8899",
+            "link": "https://bowwow2007.jp/",
+            "btn_label": "Web Site",
+            "link2": "https://www.google.com/maps/place/%E3%80%92607-8358+%E4%BA%AC%E9%83%BD%E5%BA%9C%E4%BA%AC%E9%83%BD%E5%B8%82%E5%B1%B1%E7%A7%91%E5%8C%BA%E8%A5%BF%E9%87%8E%E6%A5%B3%E6%9C%AC%E7%94%BA%EF%BC%96%EF%BC%90%E2%88%92%EF%BC%92%EF%BC%99+1f/@34.9840138,135.8009162,16z/data=!3m1!4b1!4m5!3m4!1s0x60010ec31e5dfae9:0x4a6b8855a023df9!8m2!3d34.9840138!4d135.8009162?entry=ttu&g_ep=EgoyMDI1MDEwNi4xIKXMDSoASAFQAw%3D%3D",
+            "btn_label2": "Msp",
+            "link3": "",
+            "btn_label3": ""
+          }
         }
       },
       "block_order": [
         "shop_kyoto_iBtdAA",
         "shop_kyoto_tNhPLi",
         "shop_kyoto_ehQEge",
+        "shop_kyoto_Awgkb3",
         "shop_kyoto_dymQDz",
         "shop_kyoto_pHgyhe",
         "shop_kyoto_aDQd3t",
@@ -226,7 +253,8 @@
         "shop_kyoto_94EHtF",
         "shop_kyoto_jFP3zG",
         "shop_kyoto_3zDaWL",
-        "shop_kyoto_crFicj"
+        "shop_kyoto_crFicj",
+        "shop_kyoto_VXxkdn"
       ],
       "settings": {
         "padding_top": 0,
