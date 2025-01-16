@@ -23,6 +23,13 @@
     "c_top_banner_qhyMTD": {
       "type": "c_topBanner",
       "blocks": {
+        "banner_eUfkeb": {
+          "type": "banner",
+          "settings": {
+            "banner-img": "shopify://shop_images/1_1.png",
+            "banner-link": ""
+          }
+        },
         "banner_qfKAYt": {
           "type": "banner",
           "settings": {
@@ -32,6 +39,7 @@
         }
       },
       "block_order": [
+        "banner_eUfkeb",
         "banner_qfKAYt"
       ],
       "custom_css": [
