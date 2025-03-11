@@ -158,6 +158,7 @@
         },
         "voices_erfDM8": {
           "type": "voices",
+          "disabled": true,
           "settings": {
             "voices_img": "shopify://files/videos/maple_tiramisu.mp4",
             "voices_text": "ドライフードにおかずをトッピングするのですが「地鶏一番だしそぼろ煮」は昆布と削り節の香りが豊かでいつも私が食べたくなるお味🎶",
@@ -166,6 +167,7 @@
         },
         "voices_wAGjBU": {
           "type": "voices",
+          "disabled": true,
           "settings": {
             "voices_img": "shopify://files/videos/haku.1026.mp4",
             "voices_text": "最初から、カリカリ＋ウェットがセットになってるのは、珍しいですねぇ。お出汁の良い匂いがして、ハクもあっという間に平らげました！",
@@ -174,6 +176,7 @@
         },
         "voices_JdYpLH": {
           "type": "voices",
+          "disabled": true,
           "settings": {
             "voices_img": "shopify://files/videos/k.kira421.mp4",
             "voices_text": "好き嫌いの激しいひまわりでも喜んでパクパクと食べてくれます🍚それほど美味しかったことかな~💕",
