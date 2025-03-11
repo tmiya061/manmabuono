@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
@@ -13,8 +22,8 @@
       "settings": {
         "title_en": "GUIDE",
         "title_jp": "ご利用ガイド",
-        "img": "shopify:\/\/shop_images\/guide_fv.png",
-        "img_sp": "shopify:\/\/shop_images\/guide_fv.png",
+        "img": "shopify://shop_images/guide_fv.png",
+        "img_sp": "shopify://shop_images/guide_fv.png",
         "padding_top": 0,
         "padding_bottom": 0,
         "padding_top_sp": 10,
@@ -35,7 +44,7 @@
           "type": "faq",
           "settings": {
             "question": "定期購入で商品を追加したい",
-            "answer": "現在の定期購入に商品を追加したい場合、「マイページ」→「定期購入を管理」→商品を追加したい定期購入商品の「詳細の変更・確認」→「追加で商品を購入する」から、追加したい商品を選択すると商品を追加することができます。"
+            "answer": "現在の定期購入に商品を追加したい場合、「マイページ」→「定期購入を管理」→商品を追加したい定期購入商品の「詳細の変更・確認」→「追加で商品を購入する」から、追加したい商品を選択すると商品を追加することができます。商品追加の変更は決済日の5日前までに行う必要がありますので、ご注意ください。"
           }
         },
         "faq_dQeg3U": {
