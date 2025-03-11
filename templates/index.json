@@ -108,6 +108,54 @@
             "voices_name": "小次郎くん"
           }
         },
+        "voices_9qptiA": {
+          "type": "voices",
+          "settings": {
+            "voices_image": "shopify://shop_images/pt02.jpg",
+            "voices_text": "手作りごはんに切り替えたのは、ドライフードをなかなか食べてくれず、色々なフードを探しましたがどれも全然食べてくれませんでした。そこで鶏肉を茹でて少しフードに混ぜてあげたら、バクバク食べてくれたんです！そんな時にマンマボーノの手作りフードに出会い、毎食あげるように。今はすっかりごはんの時間を楽しみにしてくれる子になりました。",
+            "voices_name": "リリィちゃん"
+          }
+        },
+        "voices_qib9yd": {
+          "type": "voices",
+          "settings": {
+            "voices_image": "shopify://shop_images/pt03.jpg",
+            "voices_text": "手作りごはんに切欠は、添加物や酸化した油脂を摂取させず、健康に長生きをして欲しいと思ったから。マンマボーノさんのお料理教室にも通い、私たちのごはんを作るのと同じように旬の食材を使い様子を見ながらあげるようにすると意外に簡単で、ドライフードだけよりも喜んで食べてくれます。体調の変化も目で見て変わっていくので楽しくなってきます",
+            "voices_name": "ちゅっぱちゃぷすちゃん"
+          }
+        },
+        "voices_azkQNN": {
+          "type": "voices",
+          "settings": {
+            "voices_image": "shopify://shop_images/pt4.jpg",
+            "voices_text": "２年前にマンマボーノさんのお試しをさせてもらって以来、１度も飽きずに毎食完食しています。お出汁の匂いがすると叫び出すくらい(笑)お腹が弱かったキャバリア達も、今はお腹を壊すこともなく安定した毎日を送っています。２年経ってもおねだりが止まらないので相当美味しいんだと思っています。これからもどうぞよろしくお願いいたします。",
+            "voices_name": "アメジストちゃん"
+          }
+        },
+        "voices_8xT7LR": {
+          "type": "voices",
+          "settings": {
+            "voices_image": "shopify://shop_images/pt6.jpg",
+            "voices_text": "マンマボーノさんとはお料理教室で出会い、手作りご飯を学ぶきっかけになりました。しろは偏食でお野菜が苦手だと思い込んでいましたが、お料理教室で野菜スープを完食！しろの笑顔が幸せそうでした。シニアちゃんになっても毎日のごはんを楽しみに生きてほしい！健康で長生きできるようなご飯作りを猛勉強していきたいです！",
+            "voices_name": "しろちゃん"
+          }
+        },
+        "voices_npRJg6": {
+          "type": "voices",
+          "settings": {
+            "voices_image": "shopify://shop_images/pt07.jpg",
+            "voices_text": "涙焼けが酷く数時間毎に涙を拭いて朝昼晩と毎日病院から貰った目薬を指していましたが効果は得られず… マンマボーノさんのご飯に変えて1ヶ月経った頃から涙が少なくなり、2ヶ月目には涙焼けがほとんど無くなりました！ そして、ご飯を変えてから体調が悪くなったことも1度もありません。 これからもずっとお世話になりたいと思います！",
+            "voices_name": "ロズちゃん"
+          }
+        },
+        "voices_6hPzkN": {
+          "type": "voices",
+          "settings": {
+            "voices_image": "shopify://shop_images/pt8.jpg",
+            "voices_text": "3年前、マンマボーノさんが誕生する際にモデルをさせていただいたことがきっかけ。撮影の際に飼い主も試食をさせていただいたのですが、ドライフードもウェットも美味しくて、これは絶対、ワンコも夢中になるはずと確信!!今年で15歳になりますが、美味しいご飯でこれからも元気に過ごしてほしいです。",
+            "voices_name": "メイプルちゃん"
+          }
+        },
         "voices_erfDM8": {
           "type": "voices",
           "settings": {
@@ -135,6 +183,12 @@
       },
       "block_order": [
         "voices_gDXx87",
+        "voices_9qptiA",
+        "voices_qib9yd",
+        "voices_azkQNN",
+        "voices_8xT7LR",
+        "voices_npRJg6",
+        "voices_6hPzkN",
         "voices_erfDM8",
         "voices_wAGjBU",
         "voices_JdYpLH"
