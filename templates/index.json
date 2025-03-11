@@ -100,6 +100,14 @@
     "c_top_voices_cTGqWC": {
       "type": "c_topVoices",
       "blocks": {
+        "voices_gDXx87": {
+          "type": "voices",
+          "settings": {
+            "voices_image": "shopify://shop_images/pt01.jpg",
+            "voices_text": "飼い主もペットも食べることは生きる上でとても重要です。シニア期を前にドッグフードの在り方と食事の内容について考え始めた時「犬にも薬膳」に出会い、わんこご飯を猛勉強。日々わが子達が美味しく食べて健康になるように安心安全な食材は必然！そんな中マンマボーノさんのフードや食材は大事なサポーターになりました♪",
+            "voices_name": "小次郎くん"
+          }
+        },
         "voices_erfDM8": {
           "type": "voices",
           "settings": {
@@ -126,6 +134,7 @@
         }
       },
       "block_order": [
+        "voices_gDXx87",
         "voices_erfDM8",
         "voices_wAGjBU",
         "voices_JdYpLH"
