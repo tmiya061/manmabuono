@@ -44,9 +44,10 @@
   }
 
   .c_topVoices__img {
-    width: 474px;
+    width: 272px;
+    flex-shrink: 0;
     height: auto;
-    aspect-ratio: 474 / 272;
+    aspect-ratio: 1 / 1;
     @include mq(pc) {
       height: 272px;
     }
@@ -55,6 +56,7 @@
     }
     img {
       width: 100%;
+      object-fit: cover;
       height: 100%;
     }
     video {
@@ -65,7 +67,7 @@
   }
 
   .c_topVoices__text-wrap {
-    width: 360px;
+    width: 100%;
     @include mq(sp) {
       margin-top: 20px;
       width: 100%;
