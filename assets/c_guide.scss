@@ -1,76 +1,82 @@
 @import "variables";
 
 .c_guide__pay {
-    margin-top: 18px;
-    margin-bottom: 23px;
+  margin-top: 18px;
+  margin-bottom: 23px;
+  @include mq(pc) {
+    margin-top: 24px;
+    margin-bottom: 30px;
+  }
+  img {
+    width: 280px;
+    height: auto;
     @include mq(pc) {
-        margin-top: 24px;
-        margin-bottom: 30px;
+      width: 40%;
+      height: auto;
     }
-    img {
-        width: 280px;
-        height: auto;
-        @include mq(pc) {
-            width: 40%;
-            height: auto;
-        }
-    }
+  }
 }
 
 .c_guide__wrap:first-of-type {
-    margin-top: -48px;
-    padding-top: 96px;
+  margin-top: -48px;
+  padding-top: 96px;
 }
 
 .c_guide__wrap + .c_guide__wrap {
-    margin-top: -48px;
-    padding-top: 96px;
+  margin-top: -48px;
+  padding-top: 96px;
 }
 
 .c_guide__table {
-    margin-top: 20px;    
-    border-top: 1px solid #C5C5C5;
-    @include mq(pc) {
-        margin-top: 30px;
-    }
+  margin-top: 20px;
+  border-top: 1px solid #c5c5c5;
+  @include mq(pc) {
+    margin-top: 30px;
+  }
 }
 
 .c_guide__table-row {
-    display: flex;
-    border-bottom: 1px solid #C5C5C5;
+  display: flex;
+  border-bottom: 1px solid #c5c5c5;
 }
 
 .c_guide__table-head {
-    width: 33%;
-    background: #FFEADB;
-    padding: 14px;
-    padding-right: 0;
-    color: #333;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 180%; /* 25.2px */
-    letter-spacing: 0.56px;
-    @include mq(pc) {
-        width: 20%;
-        font-size: 16px;
-        padding-right: 16px;
-    }
+  width: 33%;
+  background: #ffeadb;
+  padding: 14px;
+  padding-right: 0;
+  color: #333;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 180%; /* 25.2px */
+  letter-spacing: 0.56px;
+  @include mq(pc) {
+    width: 20%;
+    font-size: 16px;
+    padding-right: 16px;
+  }
 }
 
 .c_guide__table-data {
-    width: 67%;
-    padding: 16px;
-    padding-right: 0;
-    color: #333;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 180%; /* 25.2px */
-    letter-spacing: 0.56px;
-    @include mq(pc) {
-        width: 80%;
-        font-size: 16px;
-        padding-right: 16px;
-    }
+  width: 67%;
+  padding: 16px;
+  padding-right: 0;
+  color: #333;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 180%; /* 25.2px */
+  letter-spacing: 0.56px;
+  @include mq(pc) {
+    width: 80%;
+    font-size: 16px;
+    padding-right: 16px;
+  }
+}
+.c_guide__faq-note {
+  font-size: 15px;
+  @include mq(sp) {
+    font-size: 13px;
+  }
 }
