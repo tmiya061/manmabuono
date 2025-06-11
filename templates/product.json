@@ -51,7 +51,7 @@
             "widget_version": "V1",
             "one_time_purchase_label": "",
             "subscription_purchase_label": "",
-            "default_subscription_select": false,
+            "default_subscription_select": true,
             "show_price_before_discount": false,
             "use_shop_currency": false,
             "button_frame_color": "#3e66f8",
