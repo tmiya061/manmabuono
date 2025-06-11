@@ -45,6 +45,7 @@
         },
         "mikawaya_subscription_selling_plans_block_WfPyi6": {
           "type": "shopify://apps/mikawaya-subscription/blocks/selling-plans-block/04a0ae95-7461-4a48-956f-6840757b6670",
+          "disabled": true,
           "settings": {
             "use_form_id": true,
             "form_id": "",
