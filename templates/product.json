@@ -43,24 +43,6 @@
             "share_label": "Share"
           }
         },
-        "mikawaya_subscription_selling_plans_block_HUAY4T": {
-          "type": "shopify://apps/mikawaya-subscription/blocks/selling-plans-block/04a0ae95-7461-4a48-956f-6840757b6670",
-          "settings": {
-            "use_form_id": false,
-            "form_id": "",
-            "widget_version": "V1",
-            "one_time_purchase_label": "",
-            "subscription_purchase_label": "",
-            "default_subscription_select": true,
-            "show_price_before_discount": false,
-            "use_shop_currency": false,
-            "button_frame_color": "#3e66f8",
-            "button_bg_color": "#ffffff",
-            "button_text_color": "#3e66f8",
-            "block_bg_color": "#f6f6f6",
-            "frame_border_thickness": 3
-          }
-        },
         "description": {
           "type": "description",
           "disabled": true,
@@ -74,7 +56,6 @@
         "quantity_selector",
         "buy_buttons",
         "share",
-        "mikawaya_subscription_selling_plans_block_HUAY4T",
         "description"
       ],
       "settings": {
