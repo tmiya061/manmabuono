@@ -43,12 +43,12 @@
         <a href="{{ block.settings.banner-link }}" target="_blank">
           {{
             block.settings['banner-img']
-            | image_url: width: 270, height: 135
+            | image_url: width: 270, height: 270
             | image_tag: alt: block.settings['banner-img'], class: 'pc'
           }}
           {{
             block.settings['banner-img']
-            | image_url: width: 400, height: 200
+            | image_url: width: 400, height: 400
             | image_tag: alt: block.settings['banner-img'], class: 'sp'
           }}
         </a>
