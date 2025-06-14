@@ -15,30 +15,51 @@
   }
 {%- endstyle -%}
 
+{%- assign banner_blocks = section.blocks | where: 'type', 'banner' -%}
+{%- assign banner_count = banner_blocks.size -%}
+
 <div class="c_topBanner">
   <style>
     .c_topBanner__wrap {
-        display: {% if section.settings.enable_more_than_four %}none{% else %}flex{% endif %};
-      }
-      @media screen and (max-width: 750px) {
-        .c_topBanner__wrap {
-          display: none;
-        }
-      }
-    .swiper-container.--topBanner {
-        display: {% if section.settings.enable_more_than_four %}block{% else %}none{% endif %};
+      display: {% if section.settings.enable_more_than_four and banner_count > 2 %}none{% else %}flex{% endif %};
     }
     @media screen and (max-width: 750px) {
-        .swiper-container.--topBanner {
-          display: block;
-        }
+      .c_topBanner__wrap {
+        display: {% if section.settings.enable_more_than_four and banner_count > 2 %}none{% else %}flex{% endif %};
       }
+    }
+    .swiper-container.--topBanner {
+      display: {% if section.settings.enable_more_than_four and banner_count > 2 %}block{% else %}none{% endif %};
+    }
+    @media screen and (max-width: 750px) {
+      .swiper-container.--topBanner {
+        display: {% if section.settings.enable_more_than_four and banner_count > 2 %}block{% else %}none{% endif %};
+      }
+    }
   </style>
   <div class="c_topBanner__wrap">
-    {% for block in section.blocks %}
-      {%- case block.type -%}
-        {%- when 'banner' -%}
-          <div class="c_topBanner__img">
+    {% for block in banner_blocks %}
+      <div class="c_topBanner__img">
+        <a href="{{ block.settings.banner-link }}" target="_blank">
+          {{
+            block.settings['banner-img']
+            | image_url: width: 270, height: 135
+            | image_tag: alt: block.settings['banner-img'], class: 'pc'
+          }}
+          {{
+            block.settings['banner-img']
+            | image_url: width: 400, height: 200
+            | image_tag: alt: block.settings['banner-img'], class: 'sp'
+          }}
+        </a>
+      </div>
+    {% endfor %}
+  </div>
+  <div class="swiper-container --topBanner">
+    <div class="swiper --topBanner">
+      <div class="swiper-wrapper">
+        {% for block in banner_blocks %}
+          <div class="swiper-slide">
             <a href="{{ block.settings.banner-link }}" target="_blank">
               {{
                 block.settings['banner-img']
@@ -52,31 +73,6 @@
               }}
             </a>
           </div>
-      {% endcase %}
-    {% endfor %}
-  </div>
-  {% comment %} {% else %} {% endcomment %}
-  <div class="swiper-container --topBanner">
-    <div class="swiper --topBanner">
-      <div class="swiper-wrapper">
-        {% for block in section.blocks %}
-          {%- case block.type -%}
-            {%- when 'banner' -%}
-              <div class="swiper-slide">
-                <a href="{{ block.settings.banner-link }}" target="_blank">
-                  {{
-                    block.settings['banner-img']
-                    | image_url: width: 270, height: 270
-                    | image_tag: alt: block.settings['banner-img'], class: 'pc'
-                  }}
-                  {{
-                    block.settings['banner-img']
-                    | image_url: width: 400, height: 400
-                    | image_tag: alt: block.settings['banner-img'], class: 'sp'
-                  }}
-                </a>
-              </div>
-          {% endcase %}
         {% endfor %}
       </div>
     </div>
@@ -103,7 +99,7 @@
     {
       "type": "checkbox",
       "id": "enable_more_than_four",
-      "label": "スライダーを使用",
+      "label": "スライダーを使用（3枚以上で有効）",
       "default": false
     },
     {
