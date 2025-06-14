@@ -38,7 +38,7 @@
         ".c_topBanner .swiper-slide {aspect-ratio: unset;}"
       ],
       "settings": {
-        "enable_more_than_four": true,
+        "enable_more_than_four": false,
         "title": "見出し",
         "padding_top": 42,
         "padding_bottom": 32,
