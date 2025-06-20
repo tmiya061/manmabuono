@@ -237,6 +237,71 @@
             "link3": "",
             "btn_label3": ""
           }
+        },
+        "shop_kyoto_dxFwVD": {
+          "type": "shop_kyoto",
+          "settings": {
+            "kyoto_head": "Wanliebe",
+            "kyoto_address": "京都市右京区嵯峨北堀町20-102 アドニス嵯峨T110<br>\nTEL:090-1020-9661",
+            "link": "https://bowwow2007.jp/",
+            "btn_label": "Web Site",
+            "link2": "https://www.google.co.jp/maps/place/Wanliebe(%E3%83%AF%E3%83%B3%E3%83%AA%E3%83%BC%E3%81%B9)/@35.0169804,135.6845054,19.25z/data=!4m14!1m7!4m6!1m0!1m3!2m2!1d135.6857594!2d35.017094!3e0!3m5!1s0x60010552b52f5c01:0x37641b39407a2b9f!8m2!3d35.0170889!4d135.6857384!16s%2Fg%2F11vyc68c25?hl=ja&entry=ttu&g_ep=EgoyMDI1MDYxNy4wIKXMDSoASAFQAw%3D%3D",
+            "btn_label2": "Msp",
+            "link3": "",
+            "btn_label3": ""
+          }
+        },
+        "shop_kyoto_hMyDaB": {
+          "type": "shop_kyoto",
+          "settings": {
+            "kyoto_head": "日本料理　縁結",
+            "kyoto_address": "京都市南区西九条比永城町６０−２　２F<br>\nTEL:090-6054-5978",
+            "link": "https://kyoto-yuen.com/",
+            "btn_label": "Web Site",
+            "link2": "https://www.google.com/maps/dir//%E3%80%92601-8437+%E4%BA%AC%E9%83%BD%E5%BA%9C%E4%BA%AC%E9%83%BD%E5%B8%82%E5%8D%97%E5%8C%BA%E8%A5%BF%E4%B9%9D%E6%9D%A1%E6%AF%94%E6%B0%B8%E5%9F%8E%E7%94%BA%EF%BC%96%EF%BC%90%E2%88%92%EF%BC%92+%E6%97%A5%E6%9C%AC%E6%96%99%E7%90%86+%E7%B5%90%E7%B8%81/@34.9791681,135.7480634,17.71z/data=!3m1!5s0x600106010f0def21:0xc66d5c1aacadc420!4m9!4m8!1m0!1m5!1m1!1s0x6001072106764cad:0xd8c784d591eb7758!2m2!1d135.7493508!2d34.9787026!3e0?entry=ttu&g_ep=EgoyMDI1MDYxNy4wIKXMDSoASAFQAw%3D%3D",
+            "btn_label2": "Msp",
+            "link3": "",
+            "btn_label3": ""
+          }
+        },
+        "shop_kyoto_aEA3wf": {
+          "type": "shop_kyoto",
+          "settings": {
+            "kyoto_head": "こくふマーケット",
+            "kyoto_address": "京都市北区鞍馬口通室町東入小山町２２６協同組合烏丸マート内<br>\nTEL:075-431-6755",
+            "link": "https://kokufu-market.raku-uru.jp/",
+            "btn_label": "Web Site",
+            "link2": "https://www.google.com/maps/dir/%E9%9E%8D%E6%A5%BD%E3%83%8F%E3%82%A6%E3%83%87%E3%82%A3%E3%80%81%E3%80%92603-8152+%E4%BA%AC%E9%83%BD%E5%BA%9C%E4%BA%AC%E9%83%BD%E5%B8%82%E5%8C%97%E5%8C%BA%E5%B0%8F%E5%B1%B1%E7%94%BA%EF%BC%92%EF%BC%92%EF%BC%96/%E9%9E%8D%E6%A5%BD%E3%83%8F%E3%82%A6%E3%83%87%E3%82%A3/@35.0375191,135.7581033,19z/data=!4m14!4m13!1m5!1m1!1s0x6001080c2dd43029:0x4b6afcccfd35d02f!2m2!1d135.7589324!2d35.0375879!1m5!1m1!1s0x6001080c2dd43029:0x4b6afcccfd35d02f!2m2!1d135.7589324!2d35.0375879!3e0?entry=ttu&g_ep=EgoyMDI1MDYxNy4wIKXMDSoASAFQAw%3D%3D",
+            "btn_label2": "Msp",
+            "link3": "",
+            "btn_label3": ""
+          }
+        },
+        "shop_kyoto_PyMVyc": {
+          "type": "shop_kyoto",
+          "settings": {
+            "kyoto_head": "SmileDogs",
+            "kyoto_address": "京都市上京区北町2丁目６２２−１<br>\nTEL:090-9169-4458",
+            "link": "https://www.instagram.com/smiledogs_salon/",
+            "btn_label": "Web Site",
+            "link2": "https://www.google.com/maps/place/%E7%8A%AC%E3%81%AE%E3%83%88%E3%83%AA%E3%83%9F%E3%83%B3%E3%82%B0%E3%82%B5%E3%83%AD%E3%83%B3+SmileDogs+%E3%82%B9%E3%83%9E%E3%82%A4%E3%83%AB%E3%83%89%E3%83%83%E3%82%B0%E3%82%B9/@35.0336755,135.7356216,20.29z/data=!4m6!3m5!1s0x600107a008e4fc7f:0x2954bb8d5cbca55e!8m2!3d35.0335979!4d135.7358841!16s%2Fg%2F11lyvj4pjy?entry=ttu&g_ep=EgoyMDI1MDYxNy4wIKXMDSoASAFQAw%3D%3D",
+            "btn_label2": "Msp",
+            "link3": "",
+            "btn_label3": ""
+          }
+        },
+        "shop_kyoto_UNPXBK": {
+          "type": "shop_kyoto",
+          "settings": {
+            "kyoto_head": "ペットサロンアイリー山科店",
+            "kyoto_address": "京都市山科区西野山射庭ノ上町 射場ノ上町24-1ロイヤルハイツ秀1F<br>\nTEL:075-581-2955",
+            "link": "https://www.instagram.com/trimmingsalon_illy/?hl=ja",
+            "btn_label": "Web Site",
+            "link2": "https://www.google.com/maps/place/%E3%83%9A%E3%83%83%E3%83%88%E3%82%B5%E3%83%AD%E3%83%B3ILLY(%E3%82%A2%E3%82%A4%E3%83%AA%E3%83%BC)/@34.9710972,135.7958195,19.54z/data=!4m6!3m5!1s0x600109173694e1d7:0x101bcd4053a8db1d!8m2!3d34.9711105!4d135.7968012!16s%2Fg%2F11h7_snzs8?entry=ttu&g_ep=EgoyMDI1MDYxNy4wIKXMDSoASAFQAw%3D%3D",
+            "btn_label2": "Msp",
+            "link3": "",
+            "btn_label3": ""
+          }
         }
       },
       "block_order": [
@@ -254,7 +319,12 @@
         "shop_kyoto_jFP3zG",
         "shop_kyoto_3zDaWL",
         "shop_kyoto_crFicj",
-        "shop_kyoto_VXxkdn"
+        "shop_kyoto_VXxkdn",
+        "shop_kyoto_dxFwVD",
+        "shop_kyoto_hMyDaB",
+        "shop_kyoto_aEA3wf",
+        "shop_kyoto_PyMVyc",
+        "shop_kyoto_UNPXBK"
       ],
       "settings": {
         "padding_top": 0,
@@ -323,10 +393,36 @@
           "type": "shop_kyoto",
           "settings": {
             "kyoto_head": "89cafe",
-            "kyoto_address": "大阪府大阪市中央区谷町6丁目15-21-B1",
+            "kyoto_address": "大阪府大阪市中央区谷町6丁目15-21-B1<br>\nTEL:080-5336-6194",
             "link": "https://www.instagram.com/89ca_fe/",
             "btn_label": "Web Site",
             "link2": "https://www.google.com/maps/place/%E3%80%92542-0012+%E5%A4%A7%E9%98%AA%E5%BA%9C%E5%A4%A7%E9%98%AA%E5%B8%82%E4%B8%AD%E5%A4%AE%E5%8C%BA%E8%B0%B7%E7%94%BA%EF%BC%96%E4%B8%81%E7%9B%AE%EF%BC%91%EF%BC%95%E2%88%92%EF%BC%92%EF%BC%91+b1/data=!4m2!3m1!1s0x6000e738424adfa7:0x7202b9ca7e4dd0bd?sa=X&ved=1t:242&ictx=111",
+            "btn_label2": "Map",
+            "link3": "",
+            "btn_label3": ""
+          }
+        },
+        "shop_kyoto_fmwzLL": {
+          "type": "shop_kyoto",
+          "settings": {
+            "kyoto_head": "NIIMA CAFE et SALON",
+            "kyoto_address": "大阪市北区東天満２丁目２−１５ 第６新興ビル 1階<br>\nTEL:06-6356-2020",
+            "link": "https://niima.jp/",
+            "btn_label": "Web Site",
+            "link2": "https://www.google.com/maps/place/NIIMA+CAFE+et+SALON/@34.6976661,135.5159785,19z/data=!3m2!4b1!5s0x6000e6d08ebad30f:0xd51697f31e3c8f9a!4m6!3m5!1s0x6000e724daaff5d1:0xfa7e6385d1f4f9a7!8m2!3d34.697665!4d135.5166222!16s%2Fg%2F11fk17klnp?entry=ttu&g_ep=EgoyMDI1MDYxNy4wIKXMDSoASAFQAw%3D%3D",
+            "btn_label2": "Map",
+            "link3": "",
+            "btn_label3": ""
+          }
+        },
+        "shop_kyoto_9mAYMJ": {
+          "type": "shop_kyoto",
+          "settings": {
+            "kyoto_head": "能勢のとりこ",
+            "kyoto_address": "大阪府豊能郡能勢町山辺７５１<br>\nTEL:072-703-6815",
+            "link": "https://crystal-flamingo-2h99c2.mystrikingly.com/",
+            "btn_label": "Web Site",
+            "link2": "https://www.google.com/maps/place/%E8%83%BD%E5%8B%A2%E3%81%AE%E3%81%A8%E3%82%8A%E3%81%93/@34.9792645,135.3881797,17z/data=!3m1!4b1!4m6!3m5!1s0x60005bd2006db739:0x5c9f517404e8d447!8m2!3d34.9792601!4d135.3907546!16s%2Fg%2F11kpjgv7jj?entry=ttu&g_ep=EgoyMDI1MDYxNy4wIKXMDSoASAFQAw%3D%3D",
             "btn_label2": "Map",
             "link3": "",
             "btn_label3": ""
@@ -338,7 +434,9 @@
         "shop_kyoto_QRik6D",
         "shop_kyoto_JhVGnT",
         "shop_kyoto_tfqH3q",
-        "shop_kyoto_qJGkWb"
+        "shop_kyoto_qJGkWb",
+        "shop_kyoto_fmwzLL",
+        "shop_kyoto_9mAYMJ"
       ],
       "settings": {
         "padding_top": 0,
@@ -416,6 +514,34 @@
         "padding_top_sp": 0,
         "padding_bottom_sp": 0,
         "shop_prefecture": "滋賀県"
+      }
+    },
+    "c_shop_main_68aNey": {
+      "type": "c_shop-main",
+      "blocks": {
+        "shop_kyoto_wzNmzy": {
+          "type": "shop_kyoto",
+          "settings": {
+            "kyoto_head": "HARENOHI",
+            "kyoto_address": "名古屋市西区貴生町23−3 アートプレイスT2 1F,2F<br>TEL:052-502-0358",
+            "link": "https://www.milucoco.jp/",
+            "btn_label": "Web Site",
+            "link2": "",
+            "btn_label2": "Map",
+            "link3": "",
+            "btn_label3": ""
+          }
+        }
+      },
+      "block_order": [
+        "shop_kyoto_wzNmzy"
+      ],
+      "settings": {
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_top_sp": 0,
+        "padding_bottom_sp": 0,
+        "shop_prefecture": "愛知県"
       }
     },
     "c_shop_main_iyVEKp": {
@@ -510,6 +636,7 @@
     "c_shop_main_AYpLwV",
     "c_shop_main_HbdUxw",
     "c_shop_main_dUzfYK",
+    "c_shop_main_68aNey",
     "c_shop_main_iyVEKp",
     "c_shop_main_69BDzN"
   ]
