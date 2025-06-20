@@ -92,12 +92,12 @@
     "c_top_voices_cTGqWC": {
       "type": "c_topVoices",
       "blocks": {
-        "voices_gDXx87": {
+        "voices_npRJg6": {
           "type": "voices",
           "settings": {
-            "voices_image": "shopify://shop_images/pt01_04f0f904-0f68-47ba-87db-52b89c175a9f.jpg",
-            "voices_text": "飼い主もペットも食べることは生きる上でとても重要です。シニア期を前にドッグフードの在り方と食事の内容について考え始めた時「犬にも薬膳」に出会い、わんこご飯を猛勉強。日々わが子達が美味しく食べて健康になるように安心安全な食材は必然！そんな中マンマボーノさんのフードや食材は大事なサポーターになりました♪",
-            "voices_name": "小次郎くん"
+            "voices_image": "shopify://shop_images/pt07.jpg",
+            "voices_text": "涙焼けが酷く数時間毎に涙を拭いて朝昼晩と毎日病院から貰った目薬を指していましたが効果は得られず… マンマボーノさんのご飯に変えて1ヶ月経った頃から涙が少なくなり、2ヶ月目には涙焼けがほとんど無くなりました！ そして、ご飯を変えてから体調が悪くなったことも1度もありません。 これからもずっとお世話になりたいと思います！",
+            "voices_name": "ロズちゃん"
           }
         },
         "voices_9qptiA": {
@@ -132,12 +132,12 @@
             "voices_name": "しろちゃん"
           }
         },
-        "voices_npRJg6": {
+        "voices_gDXx87": {
           "type": "voices",
           "settings": {
-            "voices_image": "shopify://shop_images/pt07.jpg",
-            "voices_text": "涙焼けが酷く数時間毎に涙を拭いて朝昼晩と毎日病院から貰った目薬を指していましたが効果は得られず… マンマボーノさんのご飯に変えて1ヶ月経った頃から涙が少なくなり、2ヶ月目には涙焼けがほとんど無くなりました！ そして、ご飯を変えてから体調が悪くなったことも1度もありません。 これからもずっとお世話になりたいと思います！",
-            "voices_name": "ロズちゃん"
+            "voices_image": "shopify://shop_images/pt01_04f0f904-0f68-47ba-87db-52b89c175a9f.jpg",
+            "voices_text": "飼い主もペットも食べることは生きる上でとても重要です。シニア期を前にドッグフードの在り方と食事の内容について考え始めた時「犬にも薬膳」に出会い、わんこご飯を猛勉強。日々わが子達が美味しく食べて健康になるように安心安全な食材は必然！そんな中マンマボーノさんのフードや食材は大事なサポーターになりました♪",
+            "voices_name": "小次郎くん"
           }
         },
         "voices_6hPzkN": {
@@ -177,12 +177,12 @@
         }
       },
       "block_order": [
-        "voices_gDXx87",
+        "voices_npRJg6",
         "voices_9qptiA",
         "voices_qib9yd",
         "voices_azkQNN",
         "voices_8xT7LR",
-        "voices_npRJg6",
+        "voices_gDXx87",
         "voices_6hPzkN",
         "voices_erfDM8",
         "voices_wAGjBU",
