@@ -454,10 +454,10 @@
           "settings": {
             "kyoto_head": "Trattoria Maatanto",
             "kyoto_address": "滋賀県大津市横木1-12-28<br>\nTEL：077-522-8868",
-            "link": "https://goo.gl/maps/KAwpxnHh3ZiHxMjC7",
-            "btn_label": "Map",
-            "link2": "",
-            "btn_label2": "",
+            "link": "https://maatanto.jp/maatanto/",
+            "btn_label": "Web Site",
+            "link2": "https://goo.gl/maps/KAwpxnHh3ZiHxMjC7",
+            "btn_label2": "Map",
             "link3": "",
             "btn_label3": ""
           }
