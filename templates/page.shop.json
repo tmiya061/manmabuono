@@ -82,19 +82,6 @@
             "btn_label3": ""
           }
         },
-        "shop_kyoto_Awgkb3": {
-          "type": "shop_kyoto",
-          "settings": {
-            "kyoto_head": "",
-            "kyoto_address": "",
-            "link": "",
-            "btn_label": "",
-            "link2": "",
-            "btn_label2": "",
-            "link3": "",
-            "btn_label3": ""
-          }
-        },
         "shop_kyoto_dymQDz": {
           "type": "shop_kyoto",
           "settings": {
@@ -302,13 +289,25 @@
             "link3": "",
             "btn_label3": ""
           }
+        },
+        "shop_kyoto_Awgkb3": {
+          "type": "shop_kyoto",
+          "settings": {
+            "kyoto_head": "",
+            "kyoto_address": "",
+            "link": "",
+            "btn_label": "",
+            "link2": "",
+            "btn_label2": "",
+            "link3": "",
+            "btn_label3": ""
+          }
         }
       },
       "block_order": [
         "shop_kyoto_iBtdAA",
         "shop_kyoto_tNhPLi",
         "shop_kyoto_ehQEge",
-        "shop_kyoto_Awgkb3",
         "shop_kyoto_dymQDz",
         "shop_kyoto_pHgyhe",
         "shop_kyoto_aDQd3t",
@@ -324,7 +323,8 @@
         "shop_kyoto_hMyDaB",
         "shop_kyoto_aEA3wf",
         "shop_kyoto_PyMVyc",
-        "shop_kyoto_UNPXBK"
+        "shop_kyoto_UNPXBK",
+        "shop_kyoto_Awgkb3"
       ],
       "settings": {
         "padding_top": 0,
