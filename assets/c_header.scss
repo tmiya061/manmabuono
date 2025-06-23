@@ -248,6 +248,9 @@ div:empty.c_header__subMenu--bg {
   }
   .header__icon--menu {
     background: #3c3c3c;
+    svg {
+      top: 0;
+    }
   }
 }
 
