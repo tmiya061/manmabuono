@@ -69,19 +69,6 @@
             "btn_label3": ""
           }
         },
-        "shop_kyoto_ehQEge": {
-          "type": "shop_kyoto",
-          "settings": {
-            "kyoto_head": "Art Cafe ナナイロ",
-            "kyoto_address": "京都府京都市中京区西ノ京船塚町10番地<br>\nTEL：075-823-7716",
-            "link": "",
-            "btn_label": "",
-            "link2": "",
-            "btn_label2": "",
-            "link3": "",
-            "btn_label3": ""
-          }
-        },
         "shop_kyoto_dymQDz": {
           "type": "shop_kyoto",
           "settings": {
@@ -307,7 +294,6 @@
       "block_order": [
         "shop_kyoto_iBtdAA",
         "shop_kyoto_tNhPLi",
-        "shop_kyoto_ehQEge",
         "shop_kyoto_dymQDz",
         "shop_kyoto_pHgyhe",
         "shop_kyoto_aDQd3t",
