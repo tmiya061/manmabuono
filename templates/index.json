@@ -92,6 +92,30 @@
     "c_top_voices_cTGqWC": {
       "type": "c_topVoices",
       "blocks": {
+        "voices_EWc9qX": {
+          "type": "voices",
+          "settings": {
+            "voices_image": "shopify://shop_images/pt11.jpg",
+            "voices_text": "グルメなパグ・きなこもマンマボーノには夢中。初めて口にした日から食いつきがよく、快便快眠で健康そのものです。今では毎日の食事が楽しみな時間になっています。安心できる素材で体調も安定し、元気な毎日をサポートしてくれています。これからも、マンマボーノのごはんを続けていきたいと思います",
+            "voices_name": "きなこちゃん"
+          }
+        },
+        "voices_xU4GMA": {
+          "type": "voices",
+          "settings": {
+            "voices_image": "shopify://shop_images/pt10.jpg",
+            "voices_text": "好き嫌いや偏食が激しく、食べずに胃液を吐く事もよくあり、困っていた時にマンマボーノさんのお料理教室に出会いました。ハロの特性を理解して手作りご飯を取り入れることで、今では少しずつ食べれるものが増えてきてます。今後もハロと私のペースで無理なく手作りご飯を取り入れていきたいと思います",
+            "voices_name": "ハロちゃん"
+          }
+        },
+        "voices_rrqMga": {
+          "type": "voices",
+          "settings": {
+            "voices_image": "shopify://shop_images/pt9.jpg",
+            "voices_text": "我が家の５シーズー達はアレルギー、少食、涙やけなどそれぞれに悩みが。健康な身体を作るにはやはり食事で腸内環境を整えていく必要があると思い、そんなフードを探していた時に、その願いを叶えてくれるフードに出会えました！ 作り手の愛情とこだわりがぎっしり詰まったフードで、しかも味も絶品です！",
+            "voices_name": "紅蘭(こうらん)ちゃん"
+          }
+        },
         "voices_npRJg6": {
           "type": "voices",
           "settings": {
@@ -177,6 +201,9 @@
         }
       },
       "block_order": [
+        "voices_EWc9qX",
+        "voices_xU4GMA",
+        "voices_rrqMga",
         "voices_npRJg6",
         "voices_9qptiA",
         "voices_qib9yd",
