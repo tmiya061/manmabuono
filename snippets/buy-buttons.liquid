@@ -99,173 +99,317 @@
         data-type: 'add-to-cart-form'
       -%}
 
+<!-- Mikawaya 商品ページウィジェット ver:3 (merged themed version) -->
+{% if product.selling_plan_groups.size > 0 %}
+  <style>
+    .mikawaya-hidden { display: none }
+    .product__price { display: none }
+    .product-single__price { display: none }
+    .mikawaya-radio-button { min-height:auto!important; }
+    .mikawaya-selling-plan-group-container { margin-bottom: 20px; }
+    .mikawaya-selling-plan-description { margin-left: 5px; margin-top: 5px; }
+    .mikawaya-selling-plan-select { margin-top: 10px; }
+    .mikawaya-product-page-widget-container { width: 100% }
 
- <!-- Mikawaya 商品ページウィジェット ver:3 -->
-  {% if product.selling_plan_groups.size > 0 %}
-    <style>
-      .mikawaya-hidden {
-        display: none
-      }
-      .product__price {
-        display: none
-      }
-      .product-single__price {
-        display: none
-      }
-      .mikawaya-radio-button {
-        min-height:auto!important;
-      }
-      .mikawaya-selling-plan-group-container {
-        margin-bottom: 20px;
-      }
-      .mikawaya-selling-plan-description {
-        margin-left: 5px;
-        margin-top: 5px;
-      }
-      .mikawaya-selling-plan-select{
-        margin-top: 10px;
-      }
-      .mikawaya-product-page-widget-container {
-        width: 100%
-      }
-    </style>
-    
-    <!-- Just for initial use --> 
-    {%- liquid
-      if product.requires_selling_plan or product.selected_selling_plan_allocation
-        assign current_selling_plan_allocation = product.selected_or_first_available_selling_plan_allocation
-      else
-        assign current_selling_plan_allocation = nil
-      endif
-      
-      if product.selling_plan_groups.size > 1 or product.requires_selling_plan == false
-        assign show_fieldset = true
-      else 
-        assign show_fieldset = false
-      endif
-    -%}
-    
-    <div id="mikawaya-product-page-widget-container-v3">
-    </div>
-    
-    <div id="mikawaya-product-page-widget-container" class="mikawaya-hidden mikawaya-product-page-widget-container">
-    {% if show_fieldset %}
-      <fieldset id="mikawaya-fieldset">
-        <legend>
-            購入オプション
-        </legend>
-    {% endif %}
-    
+    /* ここからはテーマ側で定義されている想定の c_ 系クラスを使います。
+       必要に応じてテーマのCSSにスタイルを追加してください。 */
+    /* 例:
+    .c_radio-button { display:block; cursor:pointer; }
+    .c_mikawaya-selling-nomal { /* 通常購入ブロック用 *-/ }
+    .c_mikawaya-selling-nomal__title { /* タイトル *-/ }
+    .c_mikawaya-selling-nomal__price { /* 価格ラッパ *-/ }
+    .c_in-tax { /* （税込）表記 *-/ }
+    .c_mikawaya-selling-plan-subscription { /* サブスクグループ用 *-/ }
+    .c_mikawaya-selling-plan-subscription__title { /* 見出し *-/ }
+    .c_mikawaya-selling-plan-subscription__title--bg { /* 背景SVG枠 *-/ display:inline-block; vertical-align:middle; }
+    .c_price-text { /* 「1カ月分」 *-/ }
+    .c_price { /* インライン価格 *-/ }
+    */
+  </style>
+
+  {%- liquid
+    if product.requires_selling_plan or product.selected_selling_plan_allocation
+      assign current_selling_plan_allocation = product.selected_or_first_available_selling_plan_allocation
+    else
+      assign current_selling_plan_allocation = nil
+    endif
+
+    if product.selling_plan_groups.size > 1 or product.requires_selling_plan == false
+      assign show_fieldset = true
+    else
+      assign show_fieldset = false
+    endif
+  -%}
+
+  <div id="mikawaya-product-page-widget-container-v3"></div>
+
+  <div id="mikawaya-product-page-widget-container" class="mikawaya-hidden mikawaya-product-page-widget-container">
+
     {% unless product.requires_selling_plan == true %}
-      <div
-        class="mikawaya-selling-plan-group-container"
-      >
-        <input 
-          type="radio" 
-          name="purchase_option" 
-          {% if current_selling_plan_allocation == nil %} checked {% endif %}
-          value="one-time"
-          onchange="window.MIKAWAYA.handleSellingPlanGroupChange(event)"
-          class="mikawaya-radio-button"
-          id="one-time-purchase-option"
-        >
-        通常の購入
-        &nbsp;&nbsp;&nbsp;
-        {% for variant in product.variants %}
-          <span 
-            name="one-time-variant-price" 
-            data-variant-id="{{ variant.id }}"
-            {% unless product.selected_or_first_available_variant.id == variant.id %} 
-              class="mikawaya-hidden"
-            {% endunless %}
-            >{{ variant.price | money }}</span>
-        {% endfor %}
-      </div>
-      {% endunless %}
-      
-      {% for variant in product.variants %}
-        {% for selling_plan_allocation in variant.selling_plan_allocations %}
-          <div
-            name="variant-group-allocation"
-            data-variant-id="{{ variant.id }}"  
-            data-group-id="{{ selling_plan_allocation.selling_plan_group_id }}"
-            data-selling-plan-id="{{ selling_plan_allocation.selling_plan.id }}"
-            data-selling-plan-allocation-price='{{ selling_plan_allocation.price | money }}'
-            style="display:hidden"
-          ></div>
-        {% endfor %}
+      <!-- 通常購入ブロック（テーマ用カスタムをマージ） -->
+      <label class="c_radio-button" for="one-time-purchase-option">
+        <div class="mikawaya-selling-plan-group-container c_mikawaya-selling-nomal">
+          <input
+            type="radio"
+            name="purchase_option"
+            {% if current_selling_plan_allocation == nil %} checked {% endif %}
+            value="one-time"
+            onchange="window.MIKAWAYA.handleSellingPlanGroupChange(event)"
+            class="mikawaya-radio-button"
+            id="one-time-purchase-option"
+          >
+          <span class="c_mikawaya-selling-nomal__title">通常の購入</span>
+          <div class="c_mikawaya-selling-nomal__price">
+            {% for variant in product.variants %}
+              <span
+                name="one-time-variant-price"
+                data-variant-id="{{ variant.id }}"
+                {% unless product.selected_or_first_available_variant.id == variant.id %}
+                  class="mikawaya-hidden"
+                {% endunless %}
+              >{{ variant.price | money }}</span><span class="c_in-tax">（税込）</span>
+            {% endfor %}
+          </div>
+        </div>
+      </label>
+    {% endunless %}
+
+    {% for variant in product.variants %}
+      {% for selling_plan_allocation in variant.selling_plan_allocations %}
+        <div
+          name="variant-group-allocation"
+          data-variant-id="{{ variant.id }}"
+          data-group-id="{{ selling_plan_allocation.selling_plan_group_id }}"
+          data-selling-plan-id="{{ selling_plan_allocation.selling_plan.id }}"
+          data-selling-plan-allocation-price="{{ selling_plan_allocation.price | money }}"
+          style="display:none"
+        ></div>
       {% endfor %}
-      
-      
-      <!-- Selling plan groups -->
-      {% for group in product.selling_plan_groups %}
+    {% endfor %}
+
+    <!-- サブスクの Selling plan groups（テーマ用カスタムをマージ） -->
+    {% for group in product.selling_plan_groups %}
+      {%- assign _radio_id = 'c_mikawata-radio-' | append: forloop.index0 -%}
+      <label class="c_radio-button" for="{{ _radio_id }}">
         <div
           name="selling-plan-group-container"
           data-group-id="{{ group.id }}"
-          class="mikawaya-selling-plan-group-container mikawaya-hidden"
+          class="mikawaya-selling-plan-group-container mikawaya-hidden c_mikawaya-selling-plan-subscription"
         >
           <div>
-          <input 
-            type="radio" 
-            value="{{ group.id }}" 
-            name="purchase_option"
-            onchange="window.MIKAWAYA.handleSellingPlanGroupChange(event)"
-            class="mikawaya-radio-button"
-            {% if group.id == current_selling_plan_allocation.selling_plan.group_id %} checked {% endif %}
-            {% if product.requires_selling_plan and current_selling_plan_allocation == nil and forloop.first %} checked {% endif %}
+            <input
+              type="radio"
+              value="{{ group.id }}"
+              name="purchase_option"
+              onchange="window.MIKAWAYA.handleSellingPlanGroupChange(event)"
+              class="mikawaya-radio-button"
+              id="{{ _radio_id }}"
+              {% if group.id == current_selling_plan_allocation.selling_plan.group_id %} checked {% endif %}
+              {% if product.requires_selling_plan and current_selling_plan_allocation == nil and forloop.first %} checked {% endif %}
             >
-          <span>{{ group.name }}&nbsp;&nbsp;&nbsp;<span name="group-inline-price" data-group-id="{{ group.id }}"></span></span>
+            <span class="c_mikawaya-selling-plan-subscription__title">
+              {{ group.name }}
+              <span class="c_mikawaya-selling-plan-subscription__title--bg" aria-hidden="true">
+                <!-- 背景装飾 SVG（テーマ下コードをマージ） -->
+                <svg width="60" height="57" viewBox="0 0 60 57" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <rect width="60" height="57" fill="url(#pattern0)"/>
+                  <defs>
+                    <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+                      <use xlink:href="#image0_683_2605" transform="scale(0.00833333 0.00877193)"/>
+                    </pattern>
+                    <image id="image0_683_2605" width="120" height="114" xlink:href="data:image/png;base64,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"/>
+                  </defs>
+                </svg>
+              </span>
+            </span>
+
+            {% for selling_plan in group.selling_plans %}
+              <p
+                name="selling-plan-description"
+                data-group-id="{{ group.id }}"
+                data-selling-plan-id="{{ selling_plan.id }}"
+                {% if forloop.first %}
+                  class="mikawaya-selling-plan-description"
+                {% else %}
+                  class="mikawaya-selling-plan-description mikawaya-hidden"
+                {% endif %}
+              >{{ selling_plan.description }}</p>
+            {% endfor %}
+
+            <div class="c_price-text">1カ月分</div>
+            <span class="c_price" name="group-inline-price" data-group-id="{{ group.id }}"></span><span class="c_in-tax">（税込）</span>
           </div>
-          <select 
+
+          <select
             name="select-selling-plan"
             data-group-id="{{ group.id }}"
             onchange="window.MIKAWAYA.handleSellingPlanChange(event)"
             class="mikawaya-selling-plan-select"
           >
-            <!-- Individual selling plans -->
             {% for selling_plan in group.selling_plans %}
               <option value="{{ selling_plan.id }}">{{ selling_plan.name }}</option>
             {% endfor %}
           </select>
-          {% for selling_plan in group.selling_plans %}
-            <p 
-              name="selling-plan-description" 
-              data-group-id="{{ group.id }}"
-              data-selling-plan-id="{{ selling_plan.id }}"
-              {% if forloop.first %} 
-                class="mikawaya-selling-plan-description" 
-              {% else %}
-                class="mikawaya-selling-plan-description mikawaya-hidden"
-              {% endif %}
-            >{{ selling_plan.description }}</p>
-          {% endfor %}
         </div>
-      {% endfor %}
-    {% if show_fieldset %}
-      </fieldset>
-    {% endif %}
-    <input 
-      type="hidden" 
-      name="selling_plan" 
-      value="{{ current_selling_plan_allocation.selling_plan.id }}" 
+      </label>
+    {% endfor %}
+
+    <input
+      type="hidden"
+      name="selling_plan"
+      value="{{ current_selling_plan_allocation.selling_plan.id }}"
       id="mikawaya-hidden-selling-plan-id"
     >
-    <div 
-      type="hidden" 
-      id="current-variant-id" 
-      data-variant-id="{{ product.selected_or_first_available_variant.id }}" 
+    <div
+      type="hidden"
+      id="current-variant-id"
+      data-variant-id="{{ product.selected_or_first_available_variant.id }}"
       class="mikawaya-hidden"
-      >
-    </div>
-    </div>
-  {% endif %}
+    ></div>
+  </div>
+{% endif %}
 
-
-  {% if product.selling_plan_groups.size > 0 %}
+{% if product.selling_plan_groups.size > 0 %}
 <script>
-if(Shopify&&Shopify.Checkout&&Shopify.Checkout.hasSellingPlan){Shopify.Checkout.OrderStatus.addContentBox(` <a class="ui-button btn btn--subdued btn--size-small" href="https://${window.location.hostname}/account"> サブスクリプションの管理をする </a> `)}(function(){const _toArray=domCollection=>{return Array.prototype.slice.call(domCollection)};const _sellingPlanInput=document.getElementById("mikawaya-hidden-selling-plan-id");const _setSelectedSellingPlanId=id=>{_sellingPlanInput.value=id;_toArray(document.getElementsByClassName("mikawaya-selling-plan-radio-button")).forEach(el=>{if(el.value===id){el.checked=!0}else{el.checked=!1}})};const _getSelectedSellingPlanGroupId=()=>{return _toArray(document.getElementsByName("purchase_option")).find(el=>el.checked).value};const _getSelectedSellingPlanId=groupId=>{const selectEl=_toArray(document.getElementsByName("select-selling-plan")).find(({dataset})=>dataset.groupId===groupId);return selectEl.value};const handleSellingPlanGroupChange=({target})=>{const groupId=target.value;if(groupId==="one-time"){_setSelectedSellingPlanId("");_renderSellingPlans(groupId)}else{_setSelectedSellingPlanId(_getSelectedSellingPlanId(groupId));_renderSellingPlans(groupId)}};const handleRadioButtonSellingPlanChange=({target})=>{const sellingPlanId=target.value;const{groupId}=target.dataset;_setSelectedSellingPlanId(sellingPlanId);_renderInlinePrices(_getCurrentVariantId());_renderSellingPlanDescription(sellingPlanId,groupId)};const handleSellingPlanChange=({target})=>{const sellingPlanId=target.value;const{groupId}=target.dataset;if(_getSelectedSellingPlanGroupId()===groupId){_setSelectedSellingPlanId(sellingPlanId)} _renderInlinePrices(_getCurrentVariantId());_renderSellingPlanDescription(sellingPlanId,groupId)};const _renderSellingPlans=groupId=>{_toArray(document.getElementsByClassName("mikawaya-selling-plans-container")).forEach(el=>{if(el.dataset.groupId===groupId){el.classList.remove("mikawaya-hidden")}else{el.classList.add("mikawaya-hidden")}})};const _groupVariantAllocation=_toArray(document.getElementsByName("variant-group-allocation")).map(({dataset})=>dataset);const _groupEls=_toArray(document.getElementsByName("selling-plan-group-container"));const _checkGroupInput=groupId=>{_toArray(document.getElementsByName("purchase_option")).find(({value})=>value===groupId).checked=!0};const _handleVariantChange=selectedVariantId=>{const variantSellingPlanGroupIds=[...new Set(_groupVariantAllocation.filter(({variantId})=>variantId==selectedVariantId).map(({groupId})=>groupId))];const oneTimePurchaseEl=document.getElementById("one-time-purchase-option");if(oneTimePurchaseEl){document.getElementById("one-time-purchase-option").checked=!0;_setSelectedSellingPlanId("")} let checkedNew=!1;_groupEls.forEach(groupEl=>{const{dataset}=groupEl;if(variantSellingPlanGroupIds.includes(dataset.groupId)){groupEl.classList.remove("mikawaya-hidden");if(!oneTimePurchaseEl&&!checkedNew){_checkGroupInput(dataset.groupId);_setSelectedSellingPlanId(_getSelectedSellingPlanId(dataset.groupId));checkedNew=!0}}else{groupEl.classList.add("mikawaya-hidden")}});_renderInlinePrices(selectedVariantId)};const _getCurrentVariantId=()=>{const queryParams=new URLSearchParams(location.search);return(queryParams.get("variant")||document.getElementById("current-variant-id").dataset.variantId)};const _listenToVariantChange=()=>{let currentVariantId=_getCurrentVariantId();setInterval(()=>{const splitQueryString=location.search.split("&");const variantKeyIndex=splitQueryString.findIndex(str=>str.includes("variant"));if(variantKeyIndex===-1){return} const queryVariantId=splitQueryString[variantKeyIndex].split("=")[1];if(currentVariantId!==queryVariantId){currentVariantId=queryVariantId;_handleVariantChange(queryVariantId)}},10)};const _renderInlinePrices=variantId=>{_toArray(document.getElementsByName("one-time-variant-price")).forEach(el=>{const{dataset}=el;if(dataset.variantId===variantId){el.classList.remove("mikawaya-hidden")}else{el.classList.add("mikawaya-hidden")}});const inlinePriceEls=_toArray(document.getElementsByName("group-inline-price"));_groupVariantAllocation.filter(dataset=>dataset.variantId===variantId).forEach(dataset=>{const currentSellingPlanId=_getSelectedSellingPlanId(dataset.groupId);if(dataset.sellingPlanId===currentSellingPlanId){const price=dataset.sellingPlanAllocationPrice;inlinePriceEls.find(el=>el.dataset.groupId===dataset.groupId).innerHTML=price}})};const _initGroupsRedner=()=>{const initVariantId=document.getElementById("current-variant-id").dataset.variantId;_handleVariantChange(initVariantId);_renderInlinePrices(initVariantId)};const _renderSellingPlanDescription=(sellingPlanId,groupId)=>{const descriptionEls=_toArray(document.getElementsByName("selling-plan-description"));descriptionEls.find(({dataset})=>dataset.sellingPlanId===sellingPlanId).classList.remove("mikawaya-hidden");descriptionEls.filter(({dataset})=>dataset.sellingPlanId!==sellingPlanId&&dataset.groupId===groupId).forEach(el=>{el.classList.add("mikawaya-hidden")})};const _renderContainer=()=>{document.getElementById("mikawaya-product-page-widget-container").classList.remove("mikawaya-hidden")};if(document.getElementById("mikawaya-product-page-widget-container-v3")){console.log("Hello Mikawaya");_initGroupsRedner();_renderContainer();_listenToVariantChange();window.MIKAWAYA={handleSellingPlanGroupChange,handleSellingPlanChange,handleRadioButtonSellingPlanChange}}})()
-    </script>
-  {% endif %}
+if(Shopify&&Shopify.Checkout&&Shopify.Checkout.hasSellingPlan){
+  Shopify.Checkout.OrderStatus.addContentBox(
+    ` <a class="ui-button btn btn--subdued btn--size-small" href="https://${window.location.hostname}/account"> サブスクリプションの管理をする </a> `
+  )
+}
+(function(){
+  const _toArray = domCollection => { return Array.prototype.slice.call(domCollection) };
+  const _sellingPlanInput = document.getElementById("mikawaya-hidden-selling-plan-id");
+  const _setSelectedSellingPlanId = id => {
+    _sellingPlanInput.value = id;
+    _toArray(document.getElementsByClassName("mikawaya-selling-plan-radio-button")).forEach(el=>{
+      if(el.value===id){ el.checked=!0 } else { el.checked=!1 }
+    })
+  };
+  const _getSelectedSellingPlanGroupId = () => {
+    return _toArray(document.getElementsByName("purchase_option")).find(el=>el.checked).value
+  };
+  const _getSelectedSellingPlanId = groupId => {
+    const selectEl = _toArray(document.getElementsByName("select-selling-plan")).find(({dataset})=>dataset.groupId===groupId);
+    return selectEl.value
+  };
+  const handleSellingPlanGroupChange = ({target}) => {
+    const groupId = target.value;
+    if(groupId==="one-time"){
+      _setSelectedSellingPlanId("");
+      _renderSellingPlans(groupId)
+    }else{
+      _setSelectedSellingPlanId(_getSelectedSellingPlanId(groupId));
+      _renderSellingPlans(groupId)
+    }
+  };
+  const handleRadioButtonSellingPlanChange = ({target}) => {
+    const sellingPlanId = target.value;
+    const {groupId} = target.dataset;
+    _setSelectedSellingPlanId(sellingPlanId);
+    _renderInlinePrices(_getCurrentVariantId());
+    _renderSellingPlanDescription(sellingPlanId, groupId)
+  };
+  const handleSellingPlanChange = ({target}) => {
+    const sellingPlanId = target.value;
+    const {groupId} = target.dataset;
+    if(_getSelectedSellingPlanGroupId()===groupId){ _setSelectedSellingPlanId(sellingPlanId) }
+    _renderInlinePrices(_getCurrentVariantId());
+    _renderSellingPlanDescription(sellingPlanId, groupId)
+  };
+  const _renderSellingPlans = groupId => {
+    _toArray(document.getElementsByClassName("mikawaya-selling-plans-container")).forEach(el=>{
+      if(el.dataset.groupId===groupId){ el.classList.remove("mikawaya-hidden") }
+      else { el.classList.add("mikawaya-hidden") }
+    })
+  };
+  const _groupVariantAllocation = _toArray(document.getElementsByName("variant-group-allocation")).map(({dataset})=>dataset);
+  const _groupEls = _toArray(document.getElementsByName("selling-plan-group-container"));
+  const _checkGroupInput = groupId => {
+    _toArray(document.getElementsByName("purchase_option")).find(({value})=>value===groupId).checked=!0
+  };
+  const _handleVariantChange = selectedVariantId => {
+    const variantSellingPlanGroupIds = [...new Set(_groupVariantAllocation.filter(({variantId})=>variantId==selectedVariantId).map(({groupId})=>groupId))];
+    const oneTimePurchaseEl = document.getElementById("one-time-purchase-option");
+    if(oneTimePurchaseEl){
+      document.getElementById("one-time-purchase-option").checked=!0;
+      _setSelectedSellingPlanId("")
+    }
+    let checkedNew=!1;
+    _groupEls.forEach(groupEl=>{
+      const {dataset} = groupEl;
+      if(variantSellingPlanGroupIds.includes(dataset.groupId)){
+        groupEl.classList.remove("mikawaya-hidden");
+        if(!oneTimePurchaseEl && !checkedNew){
+          _checkGroupInput(dataset.groupId);
+          _setSelectedSellingPlanId(_getSelectedSellingPlanId(dataset.groupId));
+          checkedNew=!0
+        }
+      }else{
+        groupEl.classList.add("mikawaya-hidden")
+      }
+    });
+    _renderInlinePrices(selectedVariantId)
+  };
+  const _getCurrentVariantId = () => {
+    const queryParams = new URLSearchParams(location.search);
+    return (queryParams.get("variant") || document.getElementById("current-variant-id").dataset.variantId)
+  };
+  const _listenToVariantChange = () => {
+    let currentVariantId = _getCurrentVariantId();
+    setInterval(()=>{
+      const splitQueryString = location.search.split("&");
+      const variantKeyIndex = splitQueryString.findIndex(str=>str.includes("variant"));
+      if(variantKeyIndex===-1){ return }
+      const queryVariantId = splitQueryString[variantKeyIndex].split("=")[1];
+      if(currentVariantId!==queryVariantId){
+        currentVariantId=queryVariantId;
+        _handleVariantChange(queryVariantId)
+      }
+    },10)
+  };
+  const _renderInlinePrices = variantId => {
+    _toArray(document.getElementsByName("one-time-variant-price")).forEach(el=>{
+      const {dataset} = el;
+      if(dataset.variantId===variantId){ el.classList.remove("mikawaya-hidden") }
+      else { el.classList.add("mikawaya-hidden") }
+    });
+    const inlinePriceEls = _toArray(document.getElementsByName("group-inline-price"));
+    _groupVariantAllocation.filter(dataset=>dataset.variantId===variantId).forEach(dataset=>{
+      const currentSellingPlanId = _getSelectedSellingPlanId(dataset.groupId);
+      if(dataset.sellingPlanId===currentSellingPlanId){
+        const price = dataset.sellingPlanAllocationPrice;
+        const target = inlinePriceEls.find(el=>el.dataset.groupId===dataset.groupId);
+        if(target){ target.innerHTML = price }
+      }
+    })
+  };
+  const _initGroupsRedner = () => {
+    const initVariantId = document.getElementById("current-variant-id").dataset.variantId;
+    _handleVariantChange(initVariantId);
+    _renderInlinePrices(initVariantId)
+  };
+  const _renderSellingPlanDescription = (sellingPlanId, groupId) => {
+    const descriptionEls = _toArray(document.getElementsByName("selling-plan-description"));
+    const active = descriptionEls.find(({dataset})=>dataset.sellingPlanId===sellingPlanId);
+    if(active){ active.classList.remove("mikawaya-hidden") }
+    descriptionEls
+      .filter(({dataset})=>dataset.sellingPlanId!==sellingPlanId && dataset.groupId===groupId)
+      .forEach(el=>{ el.classList.add("mikawaya-hidden") })
+  };
+  const _renderContainer = () => {
+    document.getElementById("mikawaya-product-page-widget-container").classList.remove("mikawaya-hidden")
+  };
+
+  if(document.getElementById("mikawaya-product-page-widget-container-v3")){
+    console.log("Hello Mikawaya");
+    _initGroupsRedner();
+    _renderContainer();
+    _listenToVariantChange();
+    window.MIKAWAYA = { handleSellingPlanGroupChange, handleSellingPlanChange, handleRadioButtonSellingPlanChange }
+  }
+})();
+</script>
+{% endif %}
 
 
         <input
