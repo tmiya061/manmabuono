@@ -99,8 +99,7 @@
         data-type: 'add-to-cart-form'
       -%}
 
-      {%- comment -%}追記 サブスクリプション{%- endcomment -%}
-      {% if content_for_header contains 'mikawaya' %}
+
  <!-- Mikawaya 商品ページウィジェット ver:3 -->
   {% if product.selling_plan_groups.size > 0 %}
     <style>
@@ -268,7 +267,6 @@ if(Shopify&&Shopify.Checkout&&Shopify.Checkout.hasSellingPlan){Shopify.Checkout.
     </script>
   {% endif %}
 
-{% endif %}
 
         <input
           type="hidden"
