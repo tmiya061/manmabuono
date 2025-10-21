@@ -29,10 +29,18 @@
             "banner-img": "shopify://shop_images/1_4x_b7475289-e015-46c6-ade0-b2d3866e4ce2.png",
             "banner-link": "https://www.youtube.com/watch?v=rXCvWq6IQuQ"
           }
+        },
+        "banner_rWD76K": {
+          "type": "banner",
+          "settings": {
+            "banner-img": "shopify://shop_images/1_1.png",
+            "banner-link": "https://www.furusato-tax.jp/search?q=MANMA%20BUONO&header=1&sst=B"
+          }
         }
       },
       "block_order": [
-        "banner_qfKAYt"
+        "banner_qfKAYt",
+        "banner_rWD76K"
       ],
       "custom_css": [
         ".c_topBanner .swiper-slide {aspect-ratio: unset;}"
