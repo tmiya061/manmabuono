@@ -54,18 +54,18 @@
         <span>お試しセット</span>
       </a>
     </li>
-    <li class="c_collectionCategory__item">
+    {% comment %} <li class="c_collectionCategory__item">
       <a href="/collections/cat-osechi">
         <span>おせち</span>
       </a>
-    </li>
-    {% comment %}
+    </li> {% endcomment %}
+    
       <li class="c_collectionCategory__item">
           <a href="/collections/cat-soba">
           <span>年越しそば</span>
           </a>
       </li>
-    {% endcomment %}
+   
   {% elsif collection.handle contains 'dog' %}
     <li class="c_collectionCategory__item">
       <a href="/collections/dog-all"> 全ての商品 </a>
