@@ -19,7 +19,7 @@
     <h2 class="c_common__title">犬用おすすめ商品</h2>
     <p class="c_common__text">RECOMMEND FOR DOGS</p>
     <div class="c_topProduct__wrap --dog">
-        {% assign collection_handle = 'dog-recommend-set' %}
+        {% assign collection_handle = 'dog_recommend-set' %}
         {% assign collection = collections[collection_handle] %}
         {% for product in collection.products limit:4 %}
             <!-- 商品情報の表示 -->
@@ -39,7 +39,7 @@
     <h2 class="c_common__title">猫おすすめ商品</h2>
     <p class="c_common__text">RECOMMEND FOR CATS</p>
     <div class="c_topProduct__wrap">
-        {% assign collection_handle = 'cat-recommend-set' %}
+        {% assign collection_handle = 'cat_recommend-set' %}
         {% assign collection = collections[collection_handle] %}
         {% for product in collection.products limit:4 %}
             <!-- 商品情報の表示 -->
