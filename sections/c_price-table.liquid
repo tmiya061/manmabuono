@@ -1,0 +1,152 @@
+{% comment %} 価格表セクション {% endcomment %}
+<section class="c_price-table section-{{ section.id }}">
+  {{ 'c_product.min.css' | asset_url | stylesheet_tag }}
+  {%- style -%}
+    .c_price-table .c_product__table {
+      margin-top: 0;
+    }
+    .c_price-table table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .c_price-table thead th {
+      background: #ffeadb;
+      text-align: center;
+      white-space: nowrap;
+      font-weight: 700;
+    }
+    .c_price-table tbody th {
+      background: transparent;
+      text-align: center;
+      font-weight: 400;
+      width: auto;
+    }
+    .c_price-table td,
+    .c_price-table th {
+      vertical-align: middle;
+      text-align: center;
+    }
+    .c_price-table__title {
+      font-weight: 700;
+      margin: 0 0 16px;
+    }
+    .c_price-table__note {
+      color: #6b6b6b;
+      font-size: 12px;
+      margin-top: 10px;
+    }
+    @media screen and (max-width: 750px) {
+      .c_price-table thead th {
+        font-size: 12px;
+        letter-spacing: 0.2px;
+      }
+      .c_price-table td,
+      .c_price-table th {
+        padding: 12px 8px;
+        font-size: 13px;
+      }
+    }
+  {%- endstyle -%}
+  <div class="page-width">
+    {% if section.settings.heading != blank %}
+      <h3 class="c_price-table__title">{{ section.settings.heading }}</h3>
+    {% endif %}
+    <div class="c_product__table">
+      <table>
+        <thead>
+          <tr>
+            <th>数量</th>
+            <th>製造費</th>
+            <th>加工費</th>
+            <th>材料費</th>
+            <th>合計費用</th>
+            <th>1袋あたり単価</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for block in section.blocks %}
+            {% if block.type == 'row' %}
+              <tr {{ block.shopify_attributes }}>
+                <th>{{ block.settings.col1 }}</th>
+                <td>{{ block.settings.col2 }}</td>
+                <td>{{ block.settings.col3 }}</td>
+                <td>{{ block.settings.col4 }}</td>
+                <td>{{ block.settings.col5 }}</td>
+                <td>{{ block.settings.col6 }}</td>
+              </tr>
+            {% endif %}
+          {% endfor %}
+        </tbody>
+      </table>
+      {% if section.settings.note != blank %}
+        <p class="c_price-table__note">{{ section.settings.note }}</p>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "価格表",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "見出し",
+      "default": "価格例（冷凍品）"
+    },
+    {
+      "type": "text",
+      "id": "note",
+      "label": "注釈",
+      "default": ""
+    }
+  ],
+  "blocks": [
+    {
+      "type": "row",
+      "name": "行",
+      "settings": [
+        { "type": "text", "id": "col1", "label": "数量" },
+        { "type": "text", "id": "col2", "label": "製造費" },
+        { "type": "text", "id": "col3", "label": "加工費" },
+        { "type": "text", "id": "col4", "label": "材料費" },
+        { "type": "text", "id": "col5", "label": "合計費用" },
+        { "type": "text", "id": "col6", "label": "1袋あたり単価" }
+      ]
+    }
+  ],
+  "max_blocks": 10,
+  "presets": [
+    {
+      "name": "価格表",
+      "blocks": [
+        {
+          "type": "row",
+          "settings": {
+            "col1": "100袋",
+            "col2": "20,000円",
+            "col3": "13,000円（130円 ×100袋）",
+            "col4": "20,000円（200円 ×100袋）",
+            "col5": "53,000円",
+            "col6": "約530円"
+          }
+        },
+        {
+          "type": "row",
+          "settings": {
+            "col1": "200袋",
+            "col2": "20,000円",
+            "col3": "26,000円（130円 ×200袋）",
+            "col4": "40,000円（200円 ×200袋）",
+            "col5": "86,000円",
+            "col6": "約430円"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

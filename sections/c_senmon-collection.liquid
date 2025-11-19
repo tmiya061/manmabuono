@@ -1,0 +1,334 @@
+{{ 'template-collection.css' | asset_url | stylesheet_tag }}
+{{ 'component-card.css' | asset_url | stylesheet_tag }}
+{{ 'component-price.css' | asset_url | stylesheet_tag }}
+{{ 'c_collectionCat.min.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+
+  .section-{{ section.id }}-padding .c_collectionCategory__title-wrap {
+    margin-bottom: 30px;
+  }
+
+  .section-{{ section.id }}-padding .c_collectionCategory__title {
+    margin-top: 0;
+  }
+{%- endstyle -%}
+
+{%- if collection.handle == 'dog-representative' -%}
+  {%- style -%}
+    [class*='product-grid-padding'] {
+      padding-bottom: 30px !important;
+    }
+    @media screen and (min-width: 750px) {
+      [class*='product-grid-padding'] {
+        padding-bottom: 30px !important;
+      }
+    }
+  {%- endstyle -%}
+{%- endif -%}
+
+{%- liquid
+  assign senmon_collection = collections.senmon
+-%}
+
+{%- if collection.handle == 'dog-representative' and senmon_collection != blank -%}
+  <div class="section-{{ section.id }}-padding gradient color-{{ section.settings.color_scheme }}">
+    {%- unless section.settings.title == blank -%}
+      <div class="c_collectionCategory__title-wrap page-width">
+        <h2 class="c_collectionCategory__title">{{ section.settings.title }}</h2>
+        <svg
+          class="c_collectionCategory__icon"
+          xmlns="http://www.w3.org/2000/svg"
+          width="18"
+          height="18"
+          viewBox="0 0 18 18"
+          fill="none"
+        >
+          <path d="M16 2L2 16" stroke="#FF7B5E" stroke-width="3"/>
+        </svg>
+      </div>
+    {%- endunless -%}
+    <div class="page-width">
+      <div
+        class="product-grid-container{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+        id="SenmonProductGridContainer"
+        {% if settings.animations_reveal_on_scroll %}
+          data-cascade
+        {% endif %}
+      >
+        {%- if senmon_collection.products.size == 0 -%}
+          <div class="collection collection--empty page-width" id="senmon-product-grid" data-id="{{ section.id }}">
+            <div class="title-wrapper center">
+              <h2 class="title title--primary">
+                {{ 'sections.collection_template.empty' | t }}
+              </h2>
+            </div>
+          </div>
+        {%- else -%}
+          <div class="collection page-width">
+            <ul
+              id="senmon-product-grid"
+              data-id="{{ section.id }}"
+              class="
+                grid product-grid grid--{{ section.settings.columns_mobile }}-col-tablet-down
+                grid--{{ section.settings.columns_desktop }}-col-desktop
+              "
+            >
+              {%- for product in senmon_collection.products limit: section.settings.products_to_show -%}
+                {% assign lazy_load = false %}
+                {%- if forloop.index > 2 -%}
+                  {%- assign lazy_load = true -%}
+                {%- endif -%}
+                <li
+                  class="grid__item{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+                  {% if settings.animations_reveal_on_scroll %}
+                    data-cascade
+                    style="--animation-order: {{ forloop.index }};"
+                  {% endif %}
+                >
+                  {% render 'card-product',
+                    card_product: product,
+                    media_aspect_ratio: section.settings.image_ratio,
+                    image_shape: section.settings.image_shape,
+                    show_secondary_image: section.settings.show_secondary_image,
+                    show_vendor: section.settings.show_vendor,
+                    show_rating: section.settings.show_rating,
+                    lazy_load: lazy_load,
+                    show_quick_add: section.settings.enable_quick_add,
+                    section_id: section.id
+                  %}
+                </li>
+              {%- endfor -%}
+            </ul>
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "senmonコレクション",
+  "class": "section",
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "title",
+      "default": "お客様専門ページ一覧",
+      "label": "タイトル"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        {
+          "value": "h2",
+          "label": "小"
+        },
+        {
+          "value": "h1",
+          "label": "中"
+        },
+        {
+          "value": "h0",
+          "label": "大"
+        }
+      ],
+      "default": "h1",
+      "label": "タイトルサイズ"
+    },
+    {
+      "type": "range",
+      "id": "products_to_show",
+      "min": 2,
+      "max": 50,
+      "step": 1,
+      "default": 8,
+      "label": "表示する商品数"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "カラースキーム",
+      "default": "background-1"
+    },
+    {
+      "type": "header",
+      "content": "商品カード"
+    },
+    {
+      "type": "select",
+      "id": "image_ratio",
+      "options": [
+        {
+          "value": "adapt",
+          "label": "画像に合わせる"
+        },
+        {
+          "value": "portrait",
+          "label": "縦長"
+        },
+        {
+          "value": "square",
+          "label": "正方形"
+        }
+      ],
+      "default": "adapt",
+      "label": "画像の比率"
+    },
+    {
+      "type": "select",
+      "id": "image_shape",
+      "options": [
+        {
+          "value": "default",
+          "label": "デフォルト"
+        },
+        {
+          "value": "arch",
+          "label": "アーチ"
+        },
+        {
+          "value": "blob",
+          "label": "ブロブ"
+        },
+        {
+          "value": "chevronleft",
+          "label": "左シェブロン"
+        },
+        {
+          "value": "chevronright",
+          "label": "右シェブロン"
+        },
+        {
+          "value": "diamond",
+          "label": "ダイヤモンド"
+        },
+        {
+          "value": "parallelogram",
+          "label": "平行四辺形"
+        },
+        {
+          "value": "round",
+          "label": "丸"
+        }
+      ],
+      "default": "default",
+      "label": "画像の形状"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_secondary_image",
+      "default": false,
+      "label": "2枚目の画像を表示"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_vendor",
+      "default": false,
+      "label": "ベンダーを表示"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_rating",
+      "default": false,
+      "label": "評価を表示"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_quick_add",
+      "default": false,
+      "label": "クイック追加を有効化"
+    },
+    {
+      "type": "header",
+      "content": "レイアウト"
+    },
+    {
+      "type": "select",
+      "id": "columns_desktop",
+      "default": "4",
+      "label": "デスクトップの列数",
+      "options": [
+        {
+          "value": "1",
+          "label": "1列"
+        },
+        {
+          "value": "2",
+          "label": "2列"
+        },
+        {
+          "value": "3",
+          "label": "3列"
+        },
+        {
+          "value": "4",
+          "label": "4列"
+        },
+        {
+          "value": "5",
+          "label": "5列"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "columns_mobile",
+      "default": "2",
+      "label": "モバイルの列数",
+      "options": [
+        {
+          "value": "1",
+          "label": "1列"
+        },
+        {
+          "value": "2",
+          "label": "2列"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "余白"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "上部の余白",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "下部の余白",
+      "default": 36
+    }
+  ],
+  "presets": [
+    {
+      "name": "senmonコレクション"
+    }
+  ]
+}
+{% endschema %}
