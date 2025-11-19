@@ -23,6 +23,20 @@
   .section-{{ section.id }}-padding .c_collectionCategory__title {
     margin-top: 0;
   }
+
+  .section-{{ section.id }}-padding #senmon-product-grid {
+    display: grid;
+  }
+
+  .section-{{ section.id }}-padding #senmon-product-grid .grid__item {
+    max-width: 100%;
+  }
+
+  @media screen and (max-width: 749px) {
+    .section-{{ section.id }}-padding #senmon-product-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
 {%- endstyle -%}
 
 {%- if collection.handle == 'dog-representative' -%}
