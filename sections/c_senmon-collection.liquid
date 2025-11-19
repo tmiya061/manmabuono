@@ -68,7 +68,7 @@
         {% endif %}
       >
         {%- if senmon_collection.products.size == 0 -%}
-          <div class="collection collection--empty page-width" id="senmon-product-grid" data-id="{{ section.id }}">
+          <div class="collection collection--empty" id="senmon-product-grid" data-id="{{ section.id }}">
             <div class="title-wrapper center">
               <h2 class="title title--primary">
                 {{ 'sections.collection_template.empty' | t }}
@@ -76,7 +76,7 @@
             </div>
           </div>
         {%- else -%}
-          <div class="collection page-width">
+          <div class="collection">
             <ul
               id="senmon-product-grid"
               data-id="{{ section.id }}"
