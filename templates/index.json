@@ -23,6 +23,13 @@
     "c_top_banner_qhyMTD": {
       "type": "c_topBanner",
       "blocks": {
+        "banner_fra6HP": {
+          "type": "banner",
+          "settings": {
+            "banner-img": "shopify://shop_images/bnr_251207.jpg",
+            "banner-link": "shopify://products/管理栄養士が作る犬の手作り京おせち"
+          }
+        },
         "banner_qfKAYt": {
           "type": "banner",
           "settings": {
@@ -46,6 +53,7 @@
         }
       },
       "block_order": [
+        "banner_fra6HP",
         "banner_qfKAYt",
         "banner_rWD76K",
         "banner_qFke8P"
