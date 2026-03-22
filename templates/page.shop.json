@@ -69,19 +69,6 @@
             "btn_label3": ""
           }
         },
-        "shop_kyoto_dymQDz": {
-          "type": "shop_kyoto",
-          "settings": {
-            "kyoto_head": "DOGRUN&CAFE MONT",
-            "kyoto_address": "京都市左京区孫橋町8-4<br>\nTEL 075-205-5151",
-            "link": "https://www.mont-kyoto.com/",
-            "btn_label": "Web Site",
-            "link2": "https://maps.app.goo.gl/5Qto2C8ScymR9Peq6",
-            "btn_label2": "Map",
-            "link3": "",
-            "btn_label3": ""
-          }
-        },
         "shop_kyoto_pHgyhe": {
           "type": "shop_kyoto",
           "settings": {
@@ -173,19 +160,6 @@
             "btn_label3": ""
           }
         },
-        "shop_kyoto_3zDaWL": {
-          "type": "shop_kyoto",
-          "settings": {
-            "kyoto_head": "enjoy care Salon Sunny",
-            "kyoto_address": "京都市右京区橋詰町36 2F<br>TEL:075-600-9224",
-            "link": "https://dog-salon-sunny.jp/",
-            "btn_label": "Web Site",
-            "link2": "https://www.google.com/maps/place/enjoy+care+Salon+Sunny/@34.9846969,135.717509,15.7z/data=!4m15!1m8!3m7!1s0x6001065c08e290c7:0xef8c5d1506e04c98!2z44CSNjE1LTA4MzMg5Lqs6YO95bqc5Lqs6YO95biC5Y-z5Lqs5Yy66KW_5Lqs5qW15qmL6Kmw55S677yT77yWIOOCq-ODqeOCquOCseWWq-iMtumHjuOBsOOCiQ!3b1!8m2!3d34.9843299!4d135.7196888!16s%2Fg%2F12j6pf7f9!3m5!1s0x6001070675c307a1:0xa636cbde25d0de3!8m2!3d34.9843299!4d135.7196888!16s%2Fg%2F11t6ttm__p?entry=ttu&g_ep=EgoyMDI0MTAyNy4wIKXMDSoASAFQAw%3D%3D",
-            "btn_label2": "Map",
-            "link3": "",
-            "btn_label3": ""
-          }
-        },
         "shop_kyoto_crFicj": {
           "type": "shop_kyoto",
           "settings": {
@@ -195,6 +169,19 @@
             "btn_label": "Web Site",
             "link2": "",
             "btn_label2": "",
+            "link3": "",
+            "btn_label3": ""
+          }
+        },
+        "shop_kyoto_dymQDz": {
+          "type": "shop_kyoto",
+          "settings": {
+            "kyoto_head": "DOGRUN&CAFE MONT",
+            "kyoto_address": "京都市左京区孫橋町8-4<br>\nTEL 075-205-5151",
+            "link": "https://www.mont-kyoto.com/",
+            "btn_label": "Web Site",
+            "link2": "https://maps.app.goo.gl/5Qto2C8ScymR9Peq6",
+            "btn_label2": "Map",
             "link3": "",
             "btn_label3": ""
           }
@@ -289,12 +276,37 @@
             "link3": "",
             "btn_label3": ""
           }
+        },
+        "shop_kyoto_baPa8X": {
+          "type": "shop_kyoto",
+          "settings": {
+            "kyoto_head": "サークルどうぶつ病院",
+            "kyoto_address": "京都市下京区植松町725-3 片岡ビル1F<br>\nTEL：075-606-4771",
+            "link": "https://circle-ah.com/",
+            "btn_label": "Web Site",
+            "link2": "https://www.google.com/maps/dir//%E3%82%B5%E3%83%BC%E3%82%AF%E3%83%AB%E3%81%A9%E3%81%86%E3%81%B6%E3%81%A4%E7%97%85%E9%99%A2%E4%BA%94%E6%9D%A1%E3%80%81%E3%80%92600-8028+%E4%BA%AC%E9%83%BD%E5%BA%9C%E4%BA%AC%E9%83%BD%E5%B8%82%E4%B8%8B%E4%BA%AC%E5%8C%BA%E6%A4%8D%E6%9D%BE%E7%94%BA%EF%BC%97%EF%BC%92%EF%BC%95%E2%88%92%EF%BC%93+%E7%89%87%E5%B2%A1%E3%83%93%E3%83%AB+1F/@34.9187119,135.7995072,15z/data=!3m1!4b1!4m8!4m7!1m0!1m5!1m1!1s0x60010968daa14cb7:0xdab5a2f6f65ff0a4!2m2!1d135.7670472!2d34.998076?entry=ttu&g_ep=EgoyMDI2MDMxOC4xIKXMDSoASAFQAw%3D%3D",
+            "btn_label2": "Map",
+            "link3": "",
+            "btn_label3": ""
+          }
+        },
+        "shop_kyoto_LgHFXf": {
+          "type": "shop_kyoto",
+          "settings": {
+            "kyoto_head": "株式会社山本商店　龍栄堂",
+            "kyoto_address": "京都府京都市東山区清水１丁目２６１",
+            "link": "https://www.instagram.com/kyoto.kiyomizu.hiroshi.ryueido/",
+            "btn_label": "Web Site",
+            "link2": "https://www.google.com/maps/dir/34.9259502,135.7973024/%E3%80%92605-0862+%E4%BA%AC%E9%83%BD%E5%BA%9C%E4%BA%AC%E9%83%BD%E5%B8%82%E6%9D%B1%E5%B1%B1%E5%8C%BA%E6%B8%85%E6%B0%B4%EF%BC%91%E4%B8%81%E7%9B%AE%EF%BC%92%EF%BC%96%EF%BC%91/@34.9815682,135.7467974,14z/data=!4m9!4m8!1m1!4e1!1m5!1m1!1s0x600108d18e66769f:0x2e42f31e62285f3e!2m2!1d135.7820718!2d34.9957131?entry=ttu&g_ep=EgoyMDI2MDMxOC4xIKXMDSoASAFQAw%3D%3D",
+            "btn_label2": "Map",
+            "link3": "",
+            "btn_label3": ""
+          }
         }
       },
       "block_order": [
         "shop_kyoto_iBtdAA",
         "shop_kyoto_tNhPLi",
-        "shop_kyoto_dymQDz",
         "shop_kyoto_pHgyhe",
         "shop_kyoto_aDQd3t",
         "shop_kyoto_ATXFkQ",
@@ -302,15 +314,17 @@
         "shop_kyoto_PBVfGm",
         "shop_kyoto_94EHtF",
         "shop_kyoto_jFP3zG",
-        "shop_kyoto_3zDaWL",
         "shop_kyoto_crFicj",
+        "shop_kyoto_dymQDz",
         "shop_kyoto_VXxkdn",
         "shop_kyoto_dxFwVD",
         "shop_kyoto_hMyDaB",
         "shop_kyoto_aEA3wf",
         "shop_kyoto_PyMVyc",
         "shop_kyoto_UNPXBK",
-        "shop_kyoto_Awgkb3"
+        "shop_kyoto_Awgkb3",
+        "shop_kyoto_baPa8X",
+        "shop_kyoto_LgHFXf"
       ],
       "settings": {
         "padding_top": 0,
@@ -428,19 +442,6 @@
             "link3": "",
             "btn_label3": ""
           }
-        },
-        "shop_kyoto_GpDhTJ": {
-          "type": "shop_kyoto",
-          "settings": {
-            "kyoto_head": "能勢のとりこ",
-            "kyoto_address": "大阪府豊能郡能勢町山辺７５１<br>\nTEL:072-703-6815",
-            "link": "https://crystal-flamingo-2h99c2.mystrikingly.com/",
-            "btn_label": "Web Site",
-            "link2": "https://www.google.com/maps/place/%E8%83%BD%E5%8B%A2%E3%81%AE%E3%81%A8%E3%82%8A%E3%81%93/@34.9792645,135.3881797,17z/data=!3m1!4b1!4m6!3m5!1s0x60005bd2006db739:0x5c9f517404e8d447!8m2!3d34.9792601!4d135.3907546!16s%2Fg%2F11kpjgv7jj?entry=ttu&g_ep=EgoyMDI1MDYxNy4wIKXMDSoASAFQAw%3D%3D",
-            "btn_label2": "Map",
-            "link3": "",
-            "btn_label3": ""
-          }
         }
       },
       "block_order": [
@@ -449,8 +450,7 @@
         "shop_kyoto_Tb9mwc",
         "shop_kyoto_UfF8Jb",
         "shop_kyoto_ebUKer",
-        "shop_kyoto_Hyxqh6",
-        "shop_kyoto_GpDhTJ"
+        "shop_kyoto_Hyxqh6"
       ],
       "settings": {
         "padding_top": 0,
