@@ -264,19 +264,6 @@
             "btn_label3": ""
           }
         },
-        "shop_kyoto_Awgkb3": {
-          "type": "shop_kyoto",
-          "settings": {
-            "kyoto_head": "",
-            "kyoto_address": "",
-            "link": "",
-            "btn_label": "",
-            "link2": "",
-            "btn_label2": "",
-            "link3": "",
-            "btn_label3": ""
-          }
-        },
         "shop_kyoto_baPa8X": {
           "type": "shop_kyoto",
           "settings": {
@@ -322,7 +309,6 @@
         "shop_kyoto_aEA3wf",
         "shop_kyoto_PyMVyc",
         "shop_kyoto_UNPXBK",
-        "shop_kyoto_Awgkb3",
         "shop_kyoto_baPa8X",
         "shop_kyoto_LgHFXf"
       ],
@@ -476,19 +462,6 @@
             "btn_label3": ""
           }
         },
-        "shop_kyoto_Y9Tmff": {
-          "type": "shop_kyoto",
-          "settings": {
-            "kyoto_head": "パインズドッグラン",
-            "kyoto_address": "滋賀県蒲生郡竜王町薬師 字砂山1178-694 三井アウトレット滋賀竜王 ベリーガーデン内<br>\nTEL 070-7779-1515",
-            "link": "https://www.instagram.com/pines_dogrun/",
-            "btn_label": "Instagram",
-            "link2": "https://maps.app.goo.gl/ZJonk5vmfCg3spjQ9",
-            "btn_label2": "Map",
-            "link3": "",
-            "btn_label3": ""
-          }
-        },
         "shop_kyoto_ztEVD3": {
           "type": "shop_kyoto",
           "settings": {
@@ -518,7 +491,6 @@
       },
       "block_order": [
         "shop_kyoto_GQtrqc",
-        "shop_kyoto_Y9Tmff",
         "shop_kyoto_ztEVD3",
         "shop_kyoto_iqq6NT"
       ],
