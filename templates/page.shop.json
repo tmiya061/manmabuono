@@ -43,6 +43,19 @@
     "c_shop_main_AYpLwV": {
       "type": "c_shop-main",
       "blocks": {
+        "shop_kyoto_nbWMgn": {
+          "type": "shop_kyoto",
+          "settings": {
+            "kyoto_head": "",
+            "kyoto_address": "",
+            "link": "",
+            "btn_label": "",
+            "link2": "",
+            "btn_label2": "",
+            "link3": "",
+            "btn_label3": ""
+          }
+        },
         "shop_kyoto_iBtdAA": {
           "type": "shop_kyoto",
           "settings": {
@@ -251,19 +264,6 @@
             "btn_label3": ""
           }
         },
-        "shop_kyoto_UNPXBK": {
-          "type": "shop_kyoto",
-          "settings": {
-            "kyoto_head": "ペットサロンアイリー山科店",
-            "kyoto_address": "京都市山科区西野山射庭ノ上町 射場ノ上町24-1ロイヤルハイツ秀1F<br>\nTEL:075-581-2955",
-            "link": "https://www.instagram.com/trimmingsalon_illy/?hl=ja",
-            "btn_label": "Web Site",
-            "link2": "https://www.google.com/maps/place/%E3%83%9A%E3%83%83%E3%83%88%E3%82%B5%E3%83%AD%E3%83%B3ILLY(%E3%82%A2%E3%82%A4%E3%83%AA%E3%83%BC)/@34.9710972,135.7958195,19.54z/data=!4m6!3m5!1s0x600109173694e1d7:0x101bcd4053a8db1d!8m2!3d34.9711105!4d135.7968012!16s%2Fg%2F11h7_snzs8?entry=ttu&g_ep=EgoyMDI1MDYxNy4wIKXMDSoASAFQAw%3D%3D",
-            "btn_label2": "Msp",
-            "link3": "",
-            "btn_label3": ""
-          }
-        },
         "shop_kyoto_baPa8X": {
           "type": "shop_kyoto",
           "settings": {
@@ -292,6 +292,7 @@
         }
       },
       "block_order": [
+        "shop_kyoto_nbWMgn",
         "shop_kyoto_iBtdAA",
         "shop_kyoto_tNhPLi",
         "shop_kyoto_pHgyhe",
@@ -308,7 +309,6 @@
         "shop_kyoto_hMyDaB",
         "shop_kyoto_aEA3wf",
         "shop_kyoto_PyMVyc",
-        "shop_kyoto_UNPXBK",
         "shop_kyoto_baPa8X",
         "shop_kyoto_LgHFXf"
       ],
@@ -502,34 +502,6 @@
         "shop_prefecture": "滋賀県"
       }
     },
-    "c_shop_main_68aNey": {
-      "type": "c_shop-main",
-      "blocks": {
-        "shop_kyoto_wzNmzy": {
-          "type": "shop_kyoto",
-          "settings": {
-            "kyoto_head": "HARENOHI",
-            "kyoto_address": "名古屋市西区貴生町23−3 アートプレイスT2 1F,2F<br>TEL:052-502-0358",
-            "link": "https://www.milucoco.jp/",
-            "btn_label": "Web Site",
-            "link2": "",
-            "btn_label2": "Map",
-            "link3": "",
-            "btn_label3": ""
-          }
-        }
-      },
-      "block_order": [
-        "shop_kyoto_wzNmzy"
-      ],
-      "settings": {
-        "padding_top": 0,
-        "padding_bottom": 0,
-        "padding_top_sp": 0,
-        "padding_bottom_sp": 0,
-        "shop_prefecture": "愛知県"
-      }
-    },
     "c_shop_main_iyVEKp": {
       "type": "c_shop-main",
       "blocks": {
@@ -623,7 +595,6 @@
     "c_shop_main_HbdUxw",
     "c_shop_main_qVN8nQ",
     "c_shop_main_dUzfYK",
-    "c_shop_main_68aNey",
     "c_shop_main_iyVEKp",
     "c_shop_main_69BDzN"
   ]
