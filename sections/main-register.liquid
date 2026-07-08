@@ -135,6 +135,19 @@
         {{ form.errors.messages.password }}.
       </span>
     {%- endif -%}
+    <div class="field field--checkbox">
+      <input type="hidden" name="customer[accepts_marketing]" value="false">
+      <input
+        type="checkbox"
+        name="customer[accepts_marketing]"
+        id="RegisterForm-accepts-marketing"
+        value="true"
+        checked
+      >
+      <label for="RegisterForm-accepts-marketing">
+        {{ 'customer.register.accepts_marketing' | t }}
+      </label>
+    </div>
     <button>
       {{ 'customer.register.submit' | t }}
     </button>

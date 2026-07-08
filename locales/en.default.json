@@ -467,7 +467,8 @@
       "last_name": "Last name",
       "email": "Email",
       "password": "Password",
-      "submit": "Create"
+      "submit": "Create",
+      "accepts_marketing": "Subscribe to our newsletter"
     },
     "reset_password": {
       "title": "Reset account password",

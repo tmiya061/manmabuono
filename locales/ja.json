@@ -441,7 +441,8 @@
       "last_name": "姓",
       "email": "メール",
       "password": "パスワード",
-      "submit": "作成する"
+      "submit": "作成する",
+      "accepts_marketing": "メールマガジンを受け取る"
     },
     "reset_password": {
       "title": "アカウントのパスワードをリセットする",
