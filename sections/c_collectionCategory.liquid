@@ -59,13 +59,13 @@
         <span>おせち</span>
       </a>
     </li> {% endcomment %}
-    
-      <li class="c_collectionCategory__item">
+
+      {% comment %} <li class="c_collectionCategory__item">
           <a href="/collections/cat-soba">
           <span>年越しそば</span>
           </a>
-      </li>
-   
+      </li> {% endcomment %}
+
   {% elsif collection.handle contains 'dog' %}
     <li class="c_collectionCategory__item">
       <a href="/collections/dog-all"> 全ての商品 </a>
@@ -105,17 +105,18 @@
       </a>
       
         </li>
+       {% comment %}
           <li class="c_collectionCategory__item">
             <a href="/collections/dog-osechi">
             <span>おせち</span>
             </a>
-       {% comment %}  </li>
+          </li>
           <li class="c_collectionCategory__item">
             <a href="/collections/dog-soba">
             <span>年越しそば</span>
             </a>
         </li> {% endcomment %}
-     
+
   {% endif %}
 </ul>
 
