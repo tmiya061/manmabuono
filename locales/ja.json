@@ -442,7 +442,7 @@
       "email": "メール",
       "password": "パスワード",
       "submit": "作成する",
-      "accepts_marketing": "メールマガジンを受け取る"
+      "accepts_marketing": "キャンペーンやお知らせを受け取る"
     },
     "reset_password": {
       "title": "アカウントのパスワードをリセットする",
