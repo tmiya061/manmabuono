@@ -20,10 +20,19 @@
     text-align: left;
   }
 
+  /* Remove the pseudo-element border/shadow that .field draws for text inputs */
+  .customer .field--checkbox:before,
+  .customer .field--checkbox:after {
+    content: none;
+    box-shadow: none;
+    border: 0;
+  }
+
   .customer .field--checkbox input[type='checkbox'] {
     width: 1.8rem;
     height: 1.8rem;
     min-height: 0;
+    min-width: 0;
     margin: 0;
     padding: 0;
     flex: 0 0 auto;
