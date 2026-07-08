@@ -45,12 +45,16 @@
     cursor: pointer;
   }
 
-  .customer .field--checkbox label {
+  .customer .field--checkbox label,
+  .customer .field--checkbox input ~ label,
+  .customer .field--checkbox input:not(:placeholder-shown) ~ label {
     position: static;
     margin: 0;
     padding: 0;
     font-size: 1.4rem;
     line-height: 1.4;
+    letter-spacing: normal;
+    pointer-events: auto;
     color: rgb(var(--color-foreground));
     cursor: pointer;
   }
