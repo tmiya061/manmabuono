@@ -1,0 +1,231 @@
+{% comment %}
+  ウェット下部の「スープ・だし」など、指定コレクションを子見出し付きで出すセクション。
+  見出しは c_story__title 系の見た目を自前スタイルで保持（クラス依存しない・オレンジ・24/20px）。
+  カードは標準 card-product を流用（他グリッドと同じ見た目）。
+{% endcomment %}
+
+{{ 'template-collection.css' | asset_url | stylesheet_tag }}
+{{ 'component-card.css' | asset_url | stylesheet_tag }}
+{{ 'component-price.css' | asset_url | stylesheet_tag }}
+{{ 'c_collection.min.css' | asset_url | stylesheet_tag }}
+
+{%- if section.settings.enable_quick_add -%}
+  {{ 'quick-add.css' | asset_url | stylesheet_tag }}
+  <script src="{{ 'quick-add.js' | asset_url }}" defer="defer"></script>
+  <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
+{%- endif -%}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom_sp }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+
+  /* 見出し＝c_story__title系のスタイルを自前で保持（クラス依存しない）。上マージン0 */
+  #shopify-section-{{ section.id }} .c_wetSoup__title {
+    margin: 0 0 25px;
+    color: #ff7b5e;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 140%;
+  }
+
+  @media screen and (max-width: 750px) {
+    #shopify-section-{{ section.id }} .c_wetSoup__title {
+      font-size: 20px;
+      margin-bottom: 15px;
+    }
+  }
+
+  #shopify-section-{{ section.id }} .c_wetSoup__desc {
+    text-align: left;
+    color: #3c3c3c;
+    margin: 0 0 18px;
+    max-width: 640px;
+  }
+{%- endstyle -%}
+
+<div class="section-{{ section.id }}-padding gradient color-background-1">
+  <div class="collection page-width">
+    {%- if section.settings.heading != blank -%}
+      <h2 class="c_wetSoup__title">{{ section.settings.heading | escape }}</h2>
+    {%- endif -%}
+
+    {%- if section.settings.description != blank -%}
+      <div class="c_wetSoup__desc rte">{{ section.settings.description }}</div>
+    {%- endif -%}
+
+    {%- assign soup = section.settings.collection -%}
+    {%- if soup != blank and soup.products.size > 0 -%}
+      <ul
+        class="grid product-grid grid--{{ section.settings.columns_mobile }}-col-tablet-down grid--{{ section.settings.columns_desktop }}-col-desktop"
+        role="list"
+      >
+        {%- for product in soup.products limit: section.settings.products_to_show -%}
+          {%- assign lazy_load = false -%}
+          {%- if forloop.index > 2 -%}
+            {%- assign lazy_load = true -%}
+          {%- endif -%}
+          <li class="grid__item">
+            {% render 'card-product',
+              card_product: product,
+              media_aspect_ratio: section.settings.image_ratio,
+              image_shape: section.settings.image_shape,
+              show_secondary_image: section.settings.show_secondary_image,
+              show_vendor: section.settings.show_vendor,
+              show_rating: section.settings.show_rating,
+              lazy_load: lazy_load,
+              show_quick_add: section.settings.enable_quick_add,
+              section_id: section.id
+            %}
+          </li>
+        {%- endfor -%}
+      </ul>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "ウェット（コレクション＋子見出し）",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "子見出し",
+      "default": "スープ・だし"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "説明文（任意）"
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "表示するコレクション"
+    },
+    {
+      "type": "range",
+      "id": "products_to_show",
+      "min": 2,
+      "max": 25,
+      "step": 1,
+      "label": "表示件数",
+      "default": 12
+    },
+    {
+      "type": "select",
+      "id": "columns_desktop",
+      "label": "PC 列数",
+      "options": [
+        { "value": "2", "label": "2" },
+        { "value": "3", "label": "3" },
+        { "value": "4", "label": "4" },
+        { "value": "5", "label": "5" }
+      ],
+      "default": "4"
+    },
+    {
+      "type": "select",
+      "id": "columns_mobile",
+      "label": "スマホ 列数",
+      "options": [
+        { "value": "1", "label": "1" },
+        { "value": "2", "label": "2" }
+      ],
+      "default": "2"
+    },
+    {
+      "type": "select",
+      "id": "image_ratio",
+      "label": "画像比率",
+      "options": [
+        { "value": "adapt", "label": "adapt" },
+        { "value": "portrait", "label": "portrait" },
+        { "value": "square", "label": "square" }
+      ],
+      "default": "adapt"
+    },
+    {
+      "type": "select",
+      "id": "image_shape",
+      "label": "画像シェイプ",
+      "options": [
+        { "value": "default", "label": "default" },
+        { "value": "round", "label": "round" },
+        { "value": "square", "label": "square" }
+      ],
+      "default": "default"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_secondary_image",
+      "label": "セカンダリ画像",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_vendor",
+      "label": "ベンダー表示",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_rating",
+      "label": "レビュー表示",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_quick_add",
+      "label": "クイック追加",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "上パディング",
+      "default": 28
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "下パディング",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_sp",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "下パディング(スマホ)",
+      "default": 6
+    }
+  ],
+  "presets": [
+    {
+      "name": "ウェット（コレクション＋子見出し）"
+    }
+  ]
+}
+{% endschema %}
