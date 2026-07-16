@@ -1,0 +1,197 @@
+{% comment %}
+  ウェット用メイングリッド：現在のコレクションの商品から、指定タグ（既定=スープ・だし）を
+  持つ商品を除外して表示する。soup を別セクションに切り出すためのもの。
+  カード描画は標準の card-product を流用（既存グリッドと同じ見た目）。
+{% endcomment %}
+
+{{ 'template-collection.css' | asset_url | stylesheet_tag }}
+{{ 'component-card.css' | asset_url | stylesheet_tag }}
+{{ 'component-price.css' | asset_url | stylesheet_tag }}
+{{ 'c_collection.min.css' | asset_url | stylesheet_tag }}
+
+{%- if section.settings.enable_quick_add -%}
+  {{ 'quick-add.css' | asset_url | stylesheet_tag }}
+  <script src="{{ 'quick-add.js' | asset_url }}" defer="defer"></script>
+  <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
+{%- endif -%}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="section-{{ section.id }}-padding gradient color-background-1">
+  <div class="collection page-width">
+    {%- if section.settings.heading != blank -%}
+      <div class="title-wrapper title-wrapper--no-top-margin">
+        <h2 class="title title--primary">{{ section.settings.heading | escape }}</h2>
+      </div>
+    {%- endif -%}
+
+    {%- assign visible_count = 0 -%}
+    {%- for product in collection.products -%}
+      {%- unless product.tags contains section.settings.exclude_tag -%}
+        {%- assign visible_count = visible_count | plus: 1 -%}
+      {%- endunless -%}
+    {%- endfor -%}
+
+    {%- if visible_count == 0 -%}
+      <div class="title-wrapper center">
+        <h2 class="title title--primary">{{ 'sections.collection_template.empty' | t }}</h2>
+      </div>
+    {%- else -%}
+      <ul
+        class="grid product-grid grid--{{ section.settings.columns_mobile }}-col-tablet-down grid--{{ section.settings.columns_desktop }}-col-desktop"
+        role="list"
+      >
+        {%- assign shown = 0 -%}
+        {%- for product in collection.products -%}
+          {%- unless product.tags contains section.settings.exclude_tag -%}
+            {%- assign shown = shown | plus: 1 -%}
+            {%- assign lazy_load = false -%}
+            {%- if shown > 2 -%}
+              {%- assign lazy_load = true -%}
+            {%- endif -%}
+            <li class="grid__item">
+              {% render 'card-product',
+                card_product: product,
+                media_aspect_ratio: section.settings.image_ratio,
+                image_shape: section.settings.image_shape,
+                show_secondary_image: section.settings.show_secondary_image,
+                show_vendor: section.settings.show_vendor,
+                show_rating: section.settings.show_rating,
+                lazy_load: lazy_load,
+                show_quick_add: section.settings.enable_quick_add,
+                section_id: section.id
+              %}
+            </li>
+          {%- endunless -%}
+        {%- endfor -%}
+      </ul>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "ウェット（soup除外グリッド）",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "見出し（任意・空なら非表示）"
+    },
+    {
+      "type": "text",
+      "id": "exclude_tag",
+      "label": "除外するタグ",
+      "default": "スープ・だし",
+      "info": "このタグを持つ商品をこのグリッドから省く（別セクションで出す前提）"
+    },
+    {
+      "type": "select",
+      "id": "columns_desktop",
+      "label": "PC 列数",
+      "options": [
+        { "value": "2", "label": "2" },
+        { "value": "3", "label": "3" },
+        { "value": "4", "label": "4" },
+        { "value": "5", "label": "5" }
+      ],
+      "default": "4"
+    },
+    {
+      "type": "select",
+      "id": "columns_mobile",
+      "label": "スマホ 列数",
+      "options": [
+        { "value": "1", "label": "1" },
+        { "value": "2", "label": "2" }
+      ],
+      "default": "2"
+    },
+    {
+      "type": "select",
+      "id": "image_ratio",
+      "label": "画像比率",
+      "options": [
+        { "value": "adapt", "label": "adapt" },
+        { "value": "portrait", "label": "portrait" },
+        { "value": "square", "label": "square" }
+      ],
+      "default": "adapt"
+    },
+    {
+      "type": "select",
+      "id": "image_shape",
+      "label": "画像シェイプ",
+      "options": [
+        { "value": "default", "label": "default" },
+        { "value": "round", "label": "round" },
+        { "value": "square", "label": "square" }
+      ],
+      "default": "default"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_secondary_image",
+      "label": "セカンダリ画像",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_vendor",
+      "label": "ベンダー表示",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_rating",
+      "label": "レビュー表示",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_quick_add",
+      "label": "クイック追加",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "上パディング",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "下パディング",
+      "default": 28
+    }
+  ],
+  "presets": [
+    {
+      "name": "ウェット（soup除外グリッド）"
+    }
+  ]
+}
+{% endschema %}

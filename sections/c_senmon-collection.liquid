@@ -6,7 +6,7 @@
 {%- style -%}
   .section-{{ section.id }}-padding {
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
-    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom_sp }}px;
   }
 
   @media screen and (min-width: 750px) {
@@ -352,6 +352,16 @@
       "unit": "px",
       "label": "下部の余白",
       "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_sp",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "下部の余白(スマホ)",
+      "default": 27
     }
   ],
   "presets": [
