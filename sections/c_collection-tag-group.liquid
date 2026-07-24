@@ -54,6 +54,15 @@
   }
 {%- endstyle -%}
 
+{%- assign tag = section.settings.include_tag -%}
+{%- assign shown = 0 -%}
+{%- for product in collection.products -%}
+  {%- if tag == blank or product.tags contains tag -%}
+    {%- assign shown = shown | plus: 1 -%}
+  {%- endif -%}
+{%- endfor -%}
+
+{%- if shown > 0 -%}
 <div class="section-{{ section.id }}-padding gradient color-background-1">
   <div class="collection page-width">
     {%- if section.settings.heading != blank -%}
@@ -64,15 +73,6 @@
       <div class="c_catGroup__desc rte">{{ section.settings.description }}</div>
     {%- endif -%}
 
-    {%- assign tag = section.settings.include_tag -%}
-    {%- assign shown = 0 -%}
-    {%- for product in collection.products -%}
-      {%- if tag == blank or product.tags contains tag -%}
-        {%- assign shown = shown | plus: 1 -%}
-      {%- endif -%}
-    {%- endfor -%}
-
-    {%- if shown > 0 -%}
       <ul
         class="grid product-grid grid--{{ section.settings.columns_mobile }}-col-tablet-down grid--{{ section.settings.columns_desktop }}-col-desktop"
         role="list"
@@ -101,9 +101,9 @@
           {%- endif -%}
         {%- endfor -%}
       </ul>
-    {%- endif -%}
   </div>
 </div>
+{%- endif -%}
 
 {% schema %}
 {
