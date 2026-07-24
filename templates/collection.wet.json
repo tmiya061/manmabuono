@@ -18,11 +18,11 @@
         "padding_bottom_sp": 0
       }
     },
-    "wet_main_grid": {
-      "type": "c_wet-nosoup-grid",
+    "cat_premium": {
+      "type": "c_collection-tag-group",
       "settings": {
-        "heading": "",
-        "exclude_tag": "スープ・だし",
+        "heading": "犬と猫のプレミアム料理",
+        "include_tag": "プレミアム料理",
         "columns_desktop": "4",
         "columns_mobile": "2",
         "image_ratio": "adapt",
@@ -31,16 +31,16 @@
         "show_vendor": false,
         "show_rating": false,
         "enable_quick_add": false,
-        "padding_top": 8,
-        "padding_bottom": 28
+        "padding_top": 24,
+        "padding_bottom": 24,
+        "padding_bottom_sp": 12
       }
     },
-    "wet_soup_section": {
-      "type": "c_wet-soup-group",
+    "cat_okazu": {
+      "type": "c_collection-tag-group",
       "settings": {
-        "heading": "スープ・だし",
-        "collection": "soup",
-        "products_to_show": 12,
+        "heading": "おかず",
+        "include_tag": "おかず",
         "columns_desktop": "4",
         "columns_mobile": "2",
         "image_ratio": "adapt",
@@ -49,9 +49,27 @@
         "show_vendor": false,
         "show_rating": false,
         "enable_quick_add": false,
-        "padding_top": 28,
-        "padding_bottom": 60,
-        "padding_bottom_sp": 6
+        "padding_top": 24,
+        "padding_bottom": 24,
+        "padding_bottom_sp": 12
+      }
+    },
+    "cat_soup": {
+      "type": "c_collection-tag-group",
+      "settings": {
+        "heading": "スープ・だし",
+        "include_tag": "スープ・だし",
+        "columns_desktop": "4",
+        "columns_mobile": "2",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "padding_top": 24,
+        "padding_bottom": 24,
+        "padding_bottom_sp": 12
       }
     },
     "senmon-collection": {
@@ -75,5 +93,5 @@
       }
     }
   },
-  "order": ["c_collection_fv_FdhXkH", "c_collection_category_iCPVCF", "wet_main_grid", "wet_soup_section", "senmon-collection"]
+  "order": ["c_collection_fv_FdhXkH", "c_collection_category_iCPVCF", "cat_premium", "cat_okazu", "cat_soup", "senmon-collection"]
 }
