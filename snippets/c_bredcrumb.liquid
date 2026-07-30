@@ -118,12 +118,39 @@
         </svg>
       </span>
       {{ blog.title | link_to: blog.url }}
+      {% comment %} コラムはカテゴリ（article_categoryメタオブジェクトと一致するタグ）を1階層挟む {% endcomment %}
+      {% liquid
+        assign bc_category = blank
+        assign bc_category_tag = blank
+        if blog.handle == 'column'
+          for tag in article.tags
+            assign bc_mo = shop.metaobjects.article_category[tag]
+            if bc_mo
+              assign bc_category = bc_mo
+              assign bc_category_tag = tag
+              break
+            endif
+          endfor
+        endif
+      %}
+      {% if bc_category %}
       <span class="c_breadcrumb__slash">
         <svg xmlns="http://www.w3.org/2000/svg" width="5" height="4" viewBox="0 0 5 4" fill="none">
         <path d="M4.5 1L2.5 3L0.5 1" stroke="#3C3C3C"/>
         </svg>
       </span>
+      <a href="{{ blog.url }}/tagged/{{ bc_category_tag }}">{{ bc_category.name }}</a>
+      {% endif %}
+      <span class="c_breadcrumb__slash">
+        <svg xmlns="http://www.w3.org/2000/svg" width="5" height="4" viewBox="0 0 5 4" fill="none">
+        <path d="M4.5 1L2.5 3L0.5 1" stroke="#3C3C3C"/>
+        </svg>
+      </span>
+      {% if blog.handle == 'column' %}
+      <span>{{ article.title | truncate: 18 }}</span>
+      {% else %}
       <span>{{ article.title }}</span>
+      {% endif %}
     {% else %}
     
     <span class="c_breadcrumb__slash">

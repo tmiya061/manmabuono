@@ -1,0 +1,15 @@
+{% comment %}
+  コラム用の自由タグ（英語スラッグ）を日本語表示名に変換する
+  使い方: {% render 'c_tag-label', tag: tag %}
+  ※カテゴリの日本語名はメタオブジェクト article_category 側で持つ（ここは自由タグ専用）
+{% endcomment %}
+{%- case tag -%}
+  {%- when 'cat' -%}猫
+  {%- when 'dog' -%}犬
+  {%- when 'kitten' -%}子猫
+  {%- when 'puppy' -%}子犬
+  {%- when 'senior' -%}シニア
+  {%- when 'dry' -%}ドライフード
+  {%- when 'wet' -%}ウェットフード
+  {%- else -%}{{ tag }}
+{%- endcase -%}
