@@ -106,7 +106,21 @@
         <path d="M4.5 1L2.5 3L0.5 1" stroke="#3C3C3C"/>
         </svg>
       </span>
-      <span>{{ current_tags | join: " + " }}</span>
+      {% liquid
+        # コラムはカテゴリ・自由タグを日本語表示に変換
+        assign bc_list_label = current_tags | join: ' + '
+        if blog.handle == 'column' and current_tags.size == 1
+          assign bc_list_mo = shop.metaobjects.article_category[current_tags.first]
+          if bc_list_mo
+            assign bc_list_label = bc_list_mo.name.value
+          else
+            capture bc_list_label
+              render 'c_tag-label', tag: current_tags.first
+            endcapture
+          endif
+        endif
+      %}
+      <span>{{ bc_list_label }}</span>
       {% else %}
       <span>{{ blog.title }}</span>
       {% endif %}

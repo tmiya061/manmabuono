@@ -22,14 +22,35 @@
       <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
     {%- endunless -%}
 
+    {%- liquid
+      # コラムのカテゴリページ（/blogs/column/tagged/xx）はタイトル・説明文をカテゴリのものに差し替え、
+      # カテゴリ以外のタグ絞り込み（自由タグ・複数タグ）は重複コンテンツ対策で noindex にする
+      assign column_tag_category = blank
+      assign column_tag_noindex = false
+      if template == 'blog' and blog.handle == 'column' and current_tags
+        if current_tags.size == 1
+          assign column_tag_category = shop.metaobjects.article_category[current_tags.first]
+        endif
+        unless column_tag_category
+          assign column_tag_noindex = true
+        endunless
+      endif
+    -%}
     <title>
+      {%- if column_tag_category -%}{{ column_tag_category.name.value }}｜{% endif -%}
       {{ page_title }}
-      {%- if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif -%}
+      {%- if current_tags and column_tag_category == blank %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif -%}
       {%- if current_page != 1 %} &ndash; Page {{ current_page }}{% endif -%}
       {%- unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}
     </title>
 
-    {% if page_description %}
+    {% if column_tag_noindex %}
+      <meta name="robots" content="noindex, follow">
+    {% endif %}
+
+    {% if column_tag_category and column_tag_category.description.value != blank %}
+      <meta name="description" content="{{ column_tag_category.description.value | escape }}">
+    {% elsif page_description %}
       <meta name="description" content="{{ page_description | escape }}">
     {% endif %}
 

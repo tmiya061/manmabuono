@@ -1,0 +1,11 @@
+{
+  "sections": {
+    "main": {
+      "type": "c_blogList",
+      "settings": {
+        "description": "愛犬・愛猫のごはん選びに役立つ情報を、マンマボーノ編集部がお届けします。"
+      }
+    }
+  },
+  "order": ["main"]
+}
