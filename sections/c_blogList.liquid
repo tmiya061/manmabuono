@@ -28,25 +28,30 @@
 
 <div class="c_blogList">
   <div class="c_blogList__inner">
-    <header class="c_blogList__header">
-      <h1 class="c_blogList__title">
-        <small>{{ section.settings.title_en }}</small>
-        {%- if current_category -%}
-          {{ current_category.name }}
-        {%- elsif current_tag != blank -%}
-          「{% render 'c_tag-label', tag: current_tag %}」の記事
-        {%- elsif current_tags.size > 1 -%}
-          {{ current_tags | join: ' + ' }}
-        {%- else -%}
-          {{ blog.title }}
+    {%- comment -%}
+      全件表示のタイトルはFV（c_underFv）が担当。
+      ここでは絞り込み時のカテゴリ見出しと説明文だけ表示する（h1はFVにあるためh2）
+    {%- endcomment -%}
+    {%- if current_tags -%}
+      <header class="c_blogList__header">
+        <h2 class="c_blogList__title">
+          {%- if current_category -%}
+            {{ current_category.name }}
+          {%- elsif current_tag != blank -%}
+            「{% render 'c_tag-label', tag: current_tag %}」の記事
+          {%- else -%}
+            {{ current_tags | join: ' + ' }}
+          {%- endif -%}
+        </h2>
+        {%- if current_category and current_category.description != blank -%}
+          <p class="c_blogList__desc">{{ current_category.description }}</p>
         {%- endif -%}
-      </h1>
-      {%- if current_category and current_category.description != blank -%}
-        <p class="c_blogList__desc">{{ current_category.description }}</p>
-      {%- elsif current_tags == blank and section.settings.description != blank -%}
+      </header>
+    {%- elsif section.settings.description != blank -%}
+      <header class="c_blogList__header">
         <p class="c_blogList__desc">{{ section.settings.description }}</p>
-      {%- endif -%}
-    </header>
+      </header>
+    {%- endif -%}
 
     {%- assign all_categories = shop.metaobjects.article_category.values -%}
     {%- if all_categories.size > 0 -%}
@@ -138,12 +143,6 @@
 {
   "name": "コラム一覧",
   "settings": [
-    {
-      "type": "text",
-      "id": "title_en",
-      "label": "英字サブタイトル",
-      "default": "COLUMN"
-    },
     {
       "type": "textarea",
       "id": "description",
