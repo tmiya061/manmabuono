@@ -40,7 +40,7 @@
         display: grid;
         grid-template-columns: minmax(0, 1fr) 280px;
         gap: 56px;
-        align-items: start;
+        // align-items は stretch のまま（右カラムを全高にしないと sticky が効かない）
     }
 }
 
@@ -206,6 +206,7 @@
     display: none;
     @include mq(pc) {
         display: block;
+        height: 100%; // sticky の可動域＝本文の全高
     }
 }
 .c_article__side-inner {
