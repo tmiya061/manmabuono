@@ -310,14 +310,17 @@
         background: #faf5ef;
         border-left: 6px solid $base-color;
         border-radius: 0 8px 8px 0;
-        font-size: 20px;
+        font-size: 18px;
         font-weight: 700;
-        letter-spacing: 1.6px;
-        padding: 14px 16px;
+        line-height: 150%;
+        letter-spacing: 1.44px;
+        padding: 10px 14px;
         margin: 48px 0 20px;
         @include mq(pc) {
-            font-size: 24px;
-            padding: 16px 20px;
+            // 1行時に高さ約55pxになるサイズ感（20px×150% + 上下12px）
+            font-size: 20px;
+            letter-spacing: 1.6px;
+            padding: 12px 18px;
             margin: 64px 0 24px;
         }
     }
@@ -325,9 +328,9 @@
     h3 {
         border-bottom: 2px solid #eee9e2;
         position: relative;
-        font-size: 17px;
+        font-size: 16px;
         font-weight: 700;
-        letter-spacing: 1.36px;
+        letter-spacing: 1.28px;
         padding: 0 0 10px 2px;
         margin: 36px 0 16px;
         &::after {
@@ -340,17 +343,17 @@
             background: $base-color;
         }
         @include mq(pc) {
-            font-size: 20px;
+            font-size: 18px;
             margin: 44px 0 18px;
         }
     }
 
     h4 {
-        font-size: 15px;
+        font-size: 14px;
         font-weight: 700;
         margin: 28px 0 12px;
         @include mq(pc) {
-            font-size: 17px;
+            font-size: 16px;
         }
     }
 
