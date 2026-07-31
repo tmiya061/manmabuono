@@ -143,7 +143,7 @@ def main():
         raise RuntimeError(res["userErrors"])
 
     # この記事の余った旧エントリーを削除（商品数を減らした場合）
-    stale = [n for n in gql("""query($q: String) { metaobjects(type: "product_recommendation", first: 100) {
+    stale = [n for n in gql("""query { metaobjects(type: "product_recommendation", first: 100) {
                  nodes { id handle } } }""")["metaobjects"]["nodes"]
              if n["handle"].startswith(prefix) and n["id"] not in gids]
     for n in stale:
