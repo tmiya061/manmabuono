@@ -9,6 +9,7 @@ Shopifyの管理画面・ストアデータは Git で追えない。**書き込
 
 ---
 
+- 2026-07-31 | collection `dog-dry` / `cat-dry` / `dog-wet` / `cat-wet` / `dog-make-6` / `cat-make` / `dog-easy-cook-5` （下位7コレクション） | 商品を並び替え（dog-all/cat-all と同じ原則を適用。犬ウェットは プレミアム料理→中段 に降格、猫はスープ・だしを上位＋魚を先頭） | `scripts/reorder_collection.py --apply` | 復元: `scripts/collection_order/<handle>.backup.json`
 - 2026-07-31 | collection `cat-all` | 商品58件を並び替え（犬の原則＋猫向けに2点変更：スープ・だしをプレミアム料理より上位／ウェットは魚を先頭） | `scripts/reorder_collection.py --apply` | 復元: `scripts/collection_order/cat-all.backup.json`
 - 2026-07-31 | collection `dog-all` | 商品63件を並び替え（主食ドライを最上位・同一商品は容量小→大でまとめ・おやつ/季節ものを下部へ） | `scripts/reorder_collection.py --apply` | 復元: `scripts/collection_order/dog-all.backup.json`
 - 2026-07-31 | blog `column` の記事メタフィールド | 記事下CTA（商品指定）を設定 | `scripts/set_article_cta.py` | 復元手段なし（対象記事の記録も残っていない。ログ運用開始前のため）
