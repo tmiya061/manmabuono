@@ -48,6 +48,7 @@
 ## ドキュメント索引（docs/）
 
 - `admin-changelog.md` — 管理画面（Admin API）の変更ログ（追記必須・上記ルール参照）
+- `subscription-mikawaya.md` — 🔴 **サブスク（三河屋）と `［追加用］` 商品の仕組み・要修正リスト。商品価格を変える前／新商品を出す前に必読**（追加用の価格追随を忘れると会員が定価を払う）
 - `blog-column-architecture.md` — コラムの設計全体
 - `blog-column-setup.md` — 管理画面セットアップ手順・記事の書き方ルール・ライター用HTMLパーツ
 - `products.md` — 全商品カタログ（訴求軸・表現の注意・商品ページ文章不備メモ）

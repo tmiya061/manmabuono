@@ -21,9 +21,11 @@ collection.products をそのまま回すので、ここでの変更がそのま
      →トッピング→手作り素材→おやつ→季節もの→非公開
 
 注意（実際に踏んだ落とし穴）:
-  - 反映確認を curl 既定（HTTP/2）でやらないこと。Shopifyのページキャッシュが
-    プロトコル別に分かれ、HTTP/2 だけ古いHTMLを長時間返し続ける。
-    確認は /collections/<handle>/products.json か curl --http1.1 か実ブラウザで。
+  - 反映確認を curl 既定（HTTP/2）でやらないこと。2026-07-31 の作業では
+    curl --http2 が30分以上ずっと変更前のHTMLを返し続けた（実ブラウザと
+    products.json は即座に新しい並びだった）。原因は未特定だが、
+    確認は /collections/<handle>/products.json か curl --http1.1 で行い、
+    最終確認は必ず実ブラウザで取ること。
 """
 import json
 import os
