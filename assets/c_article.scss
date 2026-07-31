@@ -705,6 +705,96 @@
             font-size: 20px;
         }
     }
+    // ---- 商品カード（2〜3個の指名紹介） ----
+    .c_article__cta-products {
+        display: grid;
+        gap: 12px;
+        text-align: left;
+        @include mq(pc) {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+    }
+
+    .c_prodCard {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        background: #fff;
+        border-radius: 12px;
+        padding: 12px;
+        text-decoration: none;
+        color: $text-color;
+        transition: opacity 0.3s;
+        &:hover {
+            opacity: 0.7;
+        }
+        @include mq(pc) {
+            display: block;
+            padding: 16px;
+        }
+
+        .c_prodCard__img {
+            flex-shrink: 0;
+            width: 84px;
+            aspect-ratio: 1;
+            object-fit: cover;
+            border-radius: 8px;
+            @include mq(pc) {
+                width: 100%;
+                margin-bottom: 12px;
+            }
+        }
+        .c_prodCard__body {
+            display: block;
+            min-width: 0;
+        }
+        .c_prodCard__copy {
+            display: block;
+            color: $base-color;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.44px;
+            margin-bottom: 4px;
+            @include mq(pc) {
+                font-size: 12px;
+            }
+        }
+        .c_prodCard__name {
+            display: block;
+            font-size: 13px;
+            font-weight: 700;
+            line-height: 150%;
+            letter-spacing: 0.52px;
+            @include mq(pc) {
+                font-size: 14px;
+            }
+        }
+        .c_prodCard__price {
+            display: block;
+            font-size: 12px;
+            color: #777;
+            margin-top: 4px;
+        }
+    }
+
+    .c_article__cta-more {
+        display: inline-block;
+        margin-top: 16px;
+        color: $base-color;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 0.52px;
+        text-decoration: none;
+        transition: opacity 0.3s;
+        &:hover {
+            opacity: 0.7;
+        }
+        @include mq(pc) {
+            font-size: 14px;
+        }
+    }
+
     .c_article__cta-card {
         display: flex;
         align-items: center;

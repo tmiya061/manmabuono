@@ -128,23 +128,60 @@
         </div>
       {%- endif -%}
 
-      {%- if cta_collection -%}
+      {%- liquid
+        # おすすめ商品（記事メタフィールド custom.related_products：最大3件）
+        assign rec_products = article.metafields.custom.related_products.value
+      -%}
+      {%- if rec_products != blank or cta_collection -%}
         <div class="c_article__cta">
           <p class="c_article__cta-heading">{{ section.settings.cta_heading }}</p>
-          <a class="c_article__cta-card" href="{{ cta_collection.url }}">
-            {%- if cta_collection.image -%}
-              <img src="{{ cta_collection.image | image_url: width: 220 }}" alt="{{ cta_collection.title | escape }}" width="110" height="110" loading="lazy">
-            {%- elsif cta_collection.products.first.featured_image -%}
-              <img src="{{ cta_collection.products.first.featured_image | image_url: width: 220 }}" alt="{{ cta_collection.title | escape }}" width="110" height="110" loading="lazy">
+
+          {%- if rec_products != blank -%}
+            <div class="c_article__cta-products">
+              {%- for rec_product in rec_products limit: 3 -%}
+                <a class="c_prodCard" href="{{ rec_product.url }}">
+                  {%- if rec_product.featured_image -%}
+                    <img
+                      class="c_prodCard__img"
+                      src="{{ rec_product.featured_image | image_url: width: 400 }}"
+                      alt="{{ rec_product.title | escape }}"
+                      width="400"
+                      height="400"
+                      loading="lazy"
+                    >
+                  {%- endif -%}
+                  <span class="c_prodCard__body">
+                    {%- assign rec_copy = rec_product.metafields.custom.recommend_copy -%}
+                    {%- if rec_copy != blank -%}
+                      <span class="c_prodCard__copy">{{ rec_copy }}</span>
+                    {%- endif -%}
+                    <span class="c_prodCard__name">{{ rec_product.title }}</span>
+                    <span class="c_prodCard__price">{% if rec_product.price_varies %}{{ rec_product.price_min | money }}〜{% else %}{{ rec_product.price | money }}{% endif %}</span>
+                  </span>
+                </a>
+              {%- endfor -%}
+            </div>
+            {%- if cta_collection -%}
+              <a class="c_article__cta-more" href="{{ cta_collection.url }}">{{ cta_collection.title }}をもっと見る &rarr;</a>
             {%- endif -%}
-            <span>
-              <span class="c_article__cta-name">{{ cta_collection.title }}</span>
-              {%- if cta_collection.description != blank -%}
-                <span class="c_article__cta-text">{{ cta_collection.description | strip_html | truncate: 60 }}</span>
+
+          {%- else -%}
+            {%- comment -%} 商品未設定の記事はコレクションカードにフォールバック {%- endcomment -%}
+            <a class="c_article__cta-card" href="{{ cta_collection.url }}">
+              {%- if cta_collection.image -%}
+                <img src="{{ cta_collection.image | image_url: width: 220 }}" alt="{{ cta_collection.title | escape }}" width="110" height="110" loading="lazy">
+              {%- elsif cta_collection.products.first.featured_image -%}
+                <img src="{{ cta_collection.products.first.featured_image | image_url: width: 220 }}" alt="{{ cta_collection.title | escape }}" width="110" height="110" loading="lazy">
               {%- endif -%}
-            </span>
-            <span class="c_article__cta-arrow">&rarr;</span>
-          </a>
+              <span>
+                <span class="c_article__cta-name">{{ cta_collection.title }}</span>
+                {%- if cta_collection.description != blank -%}
+                  <span class="c_article__cta-text">{{ cta_collection.description | strip_html | truncate: 60 }}</span>
+                {%- endif -%}
+              </span>
+              <span class="c_article__cta-arrow">&rarr;</span>
+            </a>
+          {%- endif -%}
         </div>
       {%- endif -%}
 
