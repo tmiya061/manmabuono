@@ -129,36 +129,30 @@
       {%- endif -%}
 
       {%- liquid
-        # おすすめ商品（記事メタフィールド custom.related_products：最大3件）
+        # おすすめ商品
+        # 優先1: custom.recommendations（商品×訴求文セットのメタオブジェクトリスト。記事文脈に合わせた一言が出せる）
+        # 優先2: custom.related_products（商品リストのみ。一言は商品側の recommend_copy）
+        assign rec_pairs = article.metafields.custom.recommendations.value
         assign rec_products = article.metafields.custom.related_products.value
       -%}
-      {%- if rec_products != blank or cta_collection -%}
+      {%- if rec_pairs != blank or rec_products != blank or cta_collection -%}
         <div class="c_article__cta">
           <p class="c_article__cta-heading">{{ section.settings.cta_heading }}</p>
 
-          {%- if rec_products != blank -%}
+          {%- if rec_pairs != blank -%}
+            <div class="c_article__cta-products">
+              {%- for pair in rec_pairs limit: 3 -%}
+                {% render 'c_prod-card', product: pair.product.value, copy: pair.copy.value %}
+              {%- endfor -%}
+            </div>
+            {%- if cta_collection -%}
+              <a class="c_article__cta-more" href="{{ cta_collection.url }}">{{ cta_collection.title }}をもっと見る &rarr;</a>
+            {%- endif -%}
+
+          {%- elsif rec_products != blank -%}
             <div class="c_article__cta-products">
               {%- for rec_product in rec_products limit: 3 -%}
-                <a class="c_prodCard" href="{{ rec_product.url }}">
-                  {%- if rec_product.featured_image -%}
-                    <img
-                      class="c_prodCard__img"
-                      src="{{ rec_product.featured_image | image_url: width: 400 }}"
-                      alt="{{ rec_product.title | escape }}"
-                      width="400"
-                      height="400"
-                      loading="lazy"
-                    >
-                  {%- endif -%}
-                  <span class="c_prodCard__body">
-                    {%- assign rec_copy = rec_product.metafields.custom.recommend_copy -%}
-                    {%- if rec_copy != blank -%}
-                      <span class="c_prodCard__copy">{{ rec_copy }}</span>
-                    {%- endif -%}
-                    <span class="c_prodCard__name">{{ rec_product.title }}</span>
-                    <span class="c_prodCard__price">{% if rec_product.price_varies %}{{ rec_product.price_min | money }}〜{% else %}{{ rec_product.price | money }}{% endif %}</span>
-                  </span>
-                </a>
+                {% render 'c_prod-card', product: rec_product %}
               {%- endfor -%}
             </div>
             {%- if cta_collection -%}
