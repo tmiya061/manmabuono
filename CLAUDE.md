@@ -25,6 +25,16 @@
 - スコープ: products/content/metaobjects(+definitions)/files のread+write
 - 管理画面の設定作業は基本APIでやる（手順書を書くより速い）。書き込み時は内容を報告、削除は事前確認
 
+### 管理画面の変更記録（必須）
+
+管理画面のデータは Git で追えない。**書き込み系の操作は必ず記録を残す。**
+
+1. **戻せるようにする（先）**: 一括・破壊的な書き込みの前に、変更前の状態を JSON で保存する（例: `scripts/collection_order/dog-all.backup.json`）。取れない種類の変更は「復元手段なし」とログに明記する
+2. **記録する（後）**: 作業のひと区切りごとに **docs/admin-changelog.md** の先頭へ1行追記。書き込み系のみ（読み取り・調査は記録しない）
+   `- 2026-07-31 | collection dog-all | 商品63件を並び替え（主食ドライを最上位） | scripts/reorder_collection.py | 復元: scripts/collection_order/dog-all.backup.json`
+3. **粒度**: 一括操作は1行にまとめる。日付 / 対象 / 何を / 手段 / 復元手段 の5つが揃っていればよい。迷ったら短くていいので残す方を選ぶ
+4. **コミット**: changelog はスクリプト・バックアップと同じコミットに入れる。表示に影響しないので西川さん確認は不要（push前のオーナー確認は従来どおり必要）
+
 ## コラム（ブログ）システム
 
 設計の全体像は **docs/blog-column-architecture.md** を必ず参照。要点：
@@ -37,6 +47,7 @@
 
 ## ドキュメント索引（docs/）
 
+- `admin-changelog.md` — 管理画面（Admin API）の変更ログ（追記必須・上記ルール参照）
 - `blog-column-architecture.md` — コラムの設計全体
 - `blog-column-setup.md` — 管理画面セットアップ手順・記事の書き方ルール・ライター用HTMLパーツ
 - `products.md` — 全商品カタログ（訴求軸・表現の注意・商品ページ文章不備メモ）
