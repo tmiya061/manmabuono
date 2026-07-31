@@ -177,14 +177,19 @@
 
       {%- assign all_categories = shop.metaobjects.article_category.values -%}
       {%- if all_categories.size > 0 -%}
-        <nav class="c_article__catnav" aria-label="コラムカテゴリ">
-          <p class="c_article__catnav-heading">カテゴリから探す</p>
-          <ul>
-            {%- for cat in all_categories -%}
-              <li><a href="{{ blog.url }}/tagged/{{ cat.system.handle }}">{{ cat.name }}</a></li>
-            {%- endfor -%}
-          </ul>
-        </nav>
+        {%- capture catnav_items -%}
+          {%- for cat in all_categories -%}
+            {%- comment -%} 記事が1本もないカテゴリは表示しない {%- endcomment -%}
+            {%- unless blog.all_tags contains cat.system.handle %}{% continue %}{% endunless -%}
+            <li><a href="{{ blog.url }}/tagged/{{ cat.system.handle }}">{{ cat.name }}</a></li>
+          {%- endfor -%}
+        {%- endcapture -%}
+        {%- if catnav_items != blank -%}
+          <nav class="c_article__catnav" aria-label="コラムカテゴリ">
+            <p class="c_article__catnav-heading">カテゴリから探す</p>
+            <ul>{{ catnav_items }}</ul>
+          </nav>
+        {%- endif -%}
       {%- endif -%}
     </div>
 

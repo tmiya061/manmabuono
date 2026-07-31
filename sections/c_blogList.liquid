@@ -58,6 +58,8 @@
       <nav class="c_blogList__cats" aria-label="コラムカテゴリ">
         <a href="{{ blog.url }}" {% if current_tags == blank %}class="is-active" aria-current="page"{% endif %}>すべて</a>
         {%- for cat in all_categories -%}
+          {%- comment -%} 記事が1本もないカテゴリは表示しない {%- endcomment -%}
+          {%- unless blog.all_tags contains cat.system.handle %}{% continue %}{% endunless -%}
           <a
             href="{{ blog.url }}/tagged/{{ cat.system.handle }}"
             {% if current_tag == cat.system.handle %}class="is-active" aria-current="page"{% endif %}
