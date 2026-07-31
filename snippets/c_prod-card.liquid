@@ -1,6 +1,6 @@
 {% comment %}
-  記事下CTA用の商品カード
-  使い方: {% render 'c_prod-card', product: product, copy: '食いつき重視の子に' %}
+  記事下CTA用の商品カード（横型・商品名が主役）
+  使い方: {% render 'c_prod-card', product: product, copy: '訴求文' %}
   copy が空のときは商品メタフィールド custom.recommend_copy にフォールバック
 {% endcomment %}
 {%- liquid
@@ -13,19 +13,20 @@
     {%- if product.featured_image -%}
       <img
         class="c_prodCard__img"
-        src="{{ product.featured_image | image_url: width: 400 }}"
+        src="{{ product.featured_image | image_url: width: 300 }}"
         alt="{{ product.title | escape }}"
-        width="400"
-        height="400"
+        width="300"
+        height="300"
         loading="lazy"
       >
     {%- endif -%}
     <span class="c_prodCard__body">
+      <span class="c_prodCard__name">{{ product.title }}</span>
       {%- if copy != blank -%}
         <span class="c_prodCard__copy">{{ copy }}</span>
       {%- endif -%}
-      <span class="c_prodCard__name">{{ product.title }}</span>
       <span class="c_prodCard__price">{% if product.price_varies %}{{ product.price_min | money }}〜{% else %}{{ product.price | money }}{% endif %}</span>
     </span>
+    <span class="c_prodCard__arrow">&rarr;</span>
   </a>
 {%- endif -%}

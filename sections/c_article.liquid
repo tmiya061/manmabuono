@@ -145,9 +145,6 @@
                 {% render 'c_prod-card', product: pair.product.value, copy: pair.copy.value %}
               {%- endfor -%}
             </div>
-            {%- if cta_collection -%}
-              <a class="c_article__cta-more" href="{{ cta_collection.url }}">{{ cta_collection.title }}をもっと見る &rarr;</a>
-            {%- endif -%}
 
           {%- elsif rec_products != blank -%}
             <div class="c_article__cta-products">
@@ -155,9 +152,6 @@
                 {% render 'c_prod-card', product: rec_product %}
               {%- endfor -%}
             </div>
-            {%- if cta_collection -%}
-              <a class="c_article__cta-more" href="{{ cta_collection.url }}">{{ cta_collection.title }}をもっと見る &rarr;</a>
-            {%- endif -%}
 
           {%- else -%}
             {%- comment -%} 商品未設定の記事はコレクションカードにフォールバック {%- endcomment -%}

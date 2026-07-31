@@ -705,14 +705,17 @@
             font-size: 20px;
         }
     }
-    // ---- 商品カード（2〜3個の指名紹介） ----
+    // ---- 商品カード（横型・縦積み・PC中央寄せ） ----
     .c_article__cta-products {
-        display: grid;
+        display: flex;
+        flex-direction: column;
         gap: 12px;
         text-align: left;
         @include mq(pc) {
-            grid-template-columns: repeat(3, 1fr);
-            gap: 16px;
+            width: 600px;
+            max-width: 100%;
+            margin: 0 auto;
+            gap: 14px;
         }
     }
 
@@ -722,7 +725,7 @@
         gap: 14px;
         background: #fff;
         border-radius: 12px;
-        padding: 12px;
+        padding: 12px 14px;
         text-decoration: none;
         color: $text-color;
         transition: opacity 0.3s;
@@ -730,68 +733,62 @@
             opacity: 0.7;
         }
         @include mq(pc) {
-            display: block;
-            padding: 16px;
+            gap: 18px;
+            padding: 16px 20px;
         }
 
         .c_prodCard__img {
             flex-shrink: 0;
-            width: 84px;
+            width: 76px;
             aspect-ratio: 1;
             object-fit: cover;
             border-radius: 8px;
             @include mq(pc) {
-                width: 100%;
-                margin-bottom: 12px;
+                width: 96px;
             }
         }
         .c_prodCard__body {
             display: block;
             min-width: 0;
         }
-        .c_prodCard__copy {
-            display: block;
-            color: $base-color;
-            font-size: 11px;
-            font-weight: 700;
-            letter-spacing: 0.44px;
-            margin-bottom: 4px;
-            @include mq(pc) {
-                font-size: 12px;
-            }
-        }
+        // 商品名が主役
         .c_prodCard__name {
             display: block;
-            font-size: 13px;
+            font-size: 14px;
             font-weight: 700;
             line-height: 150%;
-            letter-spacing: 0.52px;
+            letter-spacing: 0.56px;
             @include mq(pc) {
-                font-size: 14px;
+                font-size: 16px;
+            }
+        }
+        // 訴求文＝「なぜこの記事の読者におすすめか」の補足
+        .c_prodCard__copy {
+            display: block;
+            color: #666;
+            font-size: 12px;
+            line-height: 160%;
+            letter-spacing: 0.48px;
+            margin-top: 4px;
+            @include mq(pc) {
+                font-size: 13px;
             }
         }
         .c_prodCard__price {
             display: block;
+            color: $base-color;
             font-size: 12px;
-            color: #777;
-            margin-top: 4px;
+            font-weight: 700;
+            margin-top: 6px;
+            @include mq(pc) {
+                font-size: 13px;
+            }
         }
-    }
-
-    .c_article__cta-more {
-        display: inline-block;
-        margin-top: 16px;
-        color: $base-color;
-        font-size: 13px;
-        font-weight: 700;
-        letter-spacing: 0.52px;
-        text-decoration: none;
-        transition: opacity 0.3s;
-        &:hover {
-            opacity: 0.7;
-        }
-        @include mq(pc) {
-            font-size: 14px;
+        .c_prodCard__arrow {
+            margin-left: auto;
+            flex-shrink: 0;
+            color: $base-color;
+            font-weight: 700;
         }
     }
 
