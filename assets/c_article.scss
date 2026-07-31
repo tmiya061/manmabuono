@@ -705,27 +705,26 @@
             font-size: 20px;
         }
     }
-    // ---- 商品カード（横型・縦積み・PC中央寄せ） ----
+    // ---- 商品カード（縦型・画像主役） ----
     .c_article__cta-products {
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px 12px;
         text-align: left;
         @include mq(pc) {
-            width: 600px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px 16px;
+            width: 640px;
             max-width: 100%;
             margin: 0 auto;
-            gap: 14px;
         }
     }
 
     .c_prodCard {
-        display: flex;
-        align-items: center;
-        gap: 14px;
+        display: block;
         background: #fff;
         border-radius: 12px;
-        padding: 12px 14px;
+        padding: 10px 10px 14px;
         text-decoration: none;
         color: $text-color;
         transition: opacity 0.3s;
@@ -733,45 +732,38 @@
             opacity: 0.7;
         }
         @include mq(pc) {
-            gap: 18px;
-            padding: 16px 20px;
+            padding: 12px 12px 16px;
         }
 
         .c_prodCard__img {
-            flex-shrink: 0;
-            width: 76px;
+            display: block;
+            width: 100%;
             aspect-ratio: 1;
             object-fit: cover;
             border-radius: 8px;
-            @include mq(pc) {
-                width: 96px;
-            }
-        }
-        .c_prodCard__body {
-            display: block;
-            min-width: 0;
+            margin-bottom: 10px;
         }
         // 商品名が主役
         .c_prodCard__name {
             display: block;
-            font-size: 14px;
+            font-size: 13px;
             font-weight: 700;
             line-height: 150%;
-            letter-spacing: 0.56px;
+            letter-spacing: 0.52px;
             @include mq(pc) {
-                font-size: 16px;
+                font-size: 14px;
             }
         }
-        // 訴求文＝「なぜこの記事の読者におすすめか」の補足
+        // 訴求文（任意。指定した記事だけ表示される）
         .c_prodCard__copy {
             display: block;
             color: #666;
-            font-size: 12px;
+            font-size: 11px;
             line-height: 160%;
-            letter-spacing: 0.48px;
+            letter-spacing: 0.44px;
             margin-top: 4px;
             @include mq(pc) {
-                font-size: 13px;
+                font-size: 12px;
             }
         }
         .c_prodCard__price {
@@ -783,12 +775,6 @@
             @include mq(pc) {
                 font-size: 13px;
             }
-        }
-        .c_prodCard__arrow {
-            margin-left: auto;
-            flex-shrink: 0;
-            color: $base-color;
-            font-weight: 700;
         }
     }
 
