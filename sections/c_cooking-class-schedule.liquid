@@ -57,9 +57,6 @@
       <div class="c_cookingClass__hero">
         <p class="c_cookingClass__hero-label">次回の開催</p>
         <p class="c_cookingClass__hero-date">{{ hero_variant.title }}</p>
-        {%- if hero_details != nil -%}
-          <div class="c_cookingClass__hero-details" {{ hero_details.shopify_attributes }}>{{ hero_details.settings.details }}</div>
-        {%- endif -%}
         <p class="c_cookingClass__hero-meta">
           <span class="c_cookingClass__price">{{ class_product.price | money }}</span>
           <span class="c_cookingClass__badge{% if hero_variant.inventory_management != blank and hero_variant.inventory_quantity <= 3 %} --few{% endif %}">
@@ -70,6 +67,17 @@
             {%- endif -%}
           </span>
         </p>
+        {%- if hero_details != nil -%}
+          <details class="c_cookingClass__toggle --hero" {{ hero_details.shopify_attributes }}>
+            <summary class="c_cookingClass__toggle-summary">
+              詳細をみる
+              <svg class="c_cookingClass__arrow" xmlns="http://www.w3.org/2000/svg" width="10" height="7" viewBox="0 0 10 7" fill="none" aria-hidden="true">
+                <path d="M1 1.25L5 5.75L9 1.25" stroke="currentColor" stroke-width="1.6" fill="none"/>
+              </svg>
+            </summary>
+            <div class="c_cookingClass__toggle-body">{{ hero_details.settings.details }}</div>
+          </details>
+        {%- endif -%}
         {%- unless section.settings.note == blank -%}
           <div class="c_cookingClass__note">{{ section.settings.note }}</div>
         {%- endunless -%}
@@ -128,25 +136,20 @@
                   <button type="button" class="c_cookingClass__btn" disabled>満席</button>
                 {%- endif -%}
               {%- endcapture -%}
-              <li class="c_cookingClass__row{% unless v.available %} --soldout{% endunless %}{% if row_details != nil %} --has-details{% endif %}">
+              <li class="c_cookingClass__row{% unless v.available %} --soldout{% endunless %}">
+                <span class="c_cookingClass__row-date">{{ v.title }}</span>
+                {{ row_meta }}
+                {{ row_button }}
                 {%- if row_details != nil -%}
-                  <details class="c_cookingClass__row-details" {{ row_details.shopify_attributes }}>
-                    <summary class="c_cookingClass__row-summary">
-                      <span class="c_cookingClass__row-date">{{ v.title }}</span>
-                      {{ row_meta }}
-                      <svg class="c_cookingClass__chevron" xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true">
-                        <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="2" fill="none"/>
+                  <details class="c_cookingClass__toggle" {{ row_details.shopify_attributes }}>
+                    <summary class="c_cookingClass__toggle-summary">
+                      詳細をみる
+                      <svg class="c_cookingClass__arrow" xmlns="http://www.w3.org/2000/svg" width="10" height="7" viewBox="0 0 10 7" fill="none" aria-hidden="true">
+                        <path d="M1 1.25L5 5.75L9 1.25" stroke="currentColor" stroke-width="1.6" fill="none"/>
                       </svg>
                     </summary>
-                    <div class="c_cookingClass__row-body">
-                      <div class="c_cookingClass__row-text">{{ row_details.settings.details }}</div>
-                      {{ row_button }}
-                    </div>
+                    <div class="c_cookingClass__toggle-body">{{ row_details.settings.details }}</div>
                   </details>
-                {%- else -%}
-                  <span class="c_cookingClass__row-date">{{ v.title }}</span>
-                  {{ row_meta }}
-                  {{ row_button }}
                 {%- endif -%}
               </li>
             {%- endfor -%}
