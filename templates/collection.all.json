@@ -1,0 +1,218 @@
+{
+  "sections": {
+    "c_collection_fv_FdhXkH": {
+      "type": "c_collectionFv",
+      "settings": {
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_top_sp": 10,
+        "padding_bottom_sp": 32
+      }
+    },
+    "c_collection_category_iCPVCF": {
+      "type": "c_collectionCategory",
+      "settings": {
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_top_sp": 0,
+        "padding_bottom_sp": 0
+      }
+    },
+    "cat_main_dry": {
+      "type": "c_collection-tag-group",
+      "settings": {
+        "heading": "主食（ドライフード）",
+        "include_tag": "主食ドライ",
+        "columns_desktop": "4",
+        "columns_mobile": "2",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "padding_top": 24,
+        "padding_bottom": 24,
+        "padding_bottom_sp": 12
+      }
+    },
+    "cat_trial": {
+      "type": "c_collection-tag-group",
+      "settings": {
+        "heading": "お試しセット",
+        "include_tag": "お試しセット",
+        "columns_desktop": "4",
+        "columns_mobile": "2",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "padding_top": 24,
+        "padding_bottom": 24,
+        "padding_bottom_sp": 12
+      }
+    },
+    "cat_okazu": {
+      "type": "c_collection-tag-group",
+      "settings": {
+        "heading": "おかず",
+        "include_tag": "おかず",
+        "columns_desktop": "4",
+        "columns_mobile": "2",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "padding_top": 24,
+        "padding_bottom": 24,
+        "padding_bottom_sp": 12
+      }
+    },
+    "cat_premium": {
+      "type": "c_collection-tag-group",
+      "settings": {
+        "heading": "犬と猫のプレミアム料理",
+        "include_tag": "犬と猫のプレミアム料理",
+        "columns_desktop": "4",
+        "columns_mobile": "2",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "padding_top": 24,
+        "padding_bottom": 24,
+        "padding_bottom_sp": 12
+      }
+    },
+    "cat_soup": {
+      "type": "c_collection-tag-group",
+      "settings": {
+        "heading": "スープ・だし",
+        "include_tag": "スープ・だし",
+        "columns_desktop": "4",
+        "columns_mobile": "2",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "padding_top": 24,
+        "padding_bottom": 24,
+        "padding_bottom_sp": 12
+      }
+    },
+    "cat_topping": {
+      "type": "c_collection-tag-group",
+      "settings": {
+        "heading": "トッピング・ふりかけ",
+        "include_tag": "トッピング",
+        "columns_desktop": "4",
+        "columns_mobile": "2",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "padding_top": 24,
+        "padding_bottom": 24,
+        "padding_bottom_sp": 12
+      }
+    },
+    "cat_homemade": {
+      "type": "c_collection-tag-group",
+      "settings": {
+        "heading": "手作りごはんの素材",
+        "include_tag": "手作り素材",
+        "columns_desktop": "4",
+        "columns_mobile": "2",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "padding_top": 24,
+        "padding_bottom": 24,
+        "padding_bottom_sp": 12
+      }
+    },
+    "cat_treats": {
+      "type": "c_collection-tag-group",
+      "settings": {
+        "heading": "おやつ",
+        "include_tag": "おやつ",
+        "columns_desktop": "4",
+        "columns_mobile": "2",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "padding_top": 24,
+        "padding_bottom": 24,
+        "padding_bottom_sp": 12
+      }
+    },
+    "cat_seasonal": {
+      "type": "c_collection-tag-group",
+      "settings": {
+        "heading": "季節限定",
+        "include_tag": "季節もの",
+        "columns_desktop": "4",
+        "columns_mobile": "2",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "padding_top": 24,
+        "padding_bottom": 24,
+        "padding_bottom_sp": 12
+      }
+    },
+    "senmon-collection": {
+      "type": "c_senmon-collection",
+      "settings": {
+        "title": "お客様専門ページ一覧",
+        "heading_size": "h1",
+        "products_to_show": 8,
+        "color_scheme": "background-1",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "columns_desktop": "4",
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 60,
+        "padding_bottom_sp": 27
+      }
+    }
+  },
+  "order": [
+    "c_collection_fv_FdhXkH",
+    "c_collection_category_iCPVCF",
+    "cat_main_dry",
+    "cat_trial",
+    "cat_okazu",
+    "cat_premium",
+    "cat_soup",
+    "cat_topping",
+    "cat_homemade",
+    "cat_treats",
+    "cat_seasonal",
+    "senmon-collection"
+  ]
+}

@@ -9,6 +9,8 @@ Shopifyの管理画面・ストアデータは Git で追えない。**書き込
 
 ---
 
+- 2026-08-01 | product 19件 ＋ collection 6本 `main-dry` `trial` `topping` `homemade` `treats` `seasonal` | 全商品ページ（dog-all / cat-all）の小カテゴリ用に中立タイプタグ6種を付与（`主食ドライ`6 / `お試しセット`2 / `トッピング`2 / `手作り素材`3 / `おやつ`4 / `季節もの`2）し、各タグの自動コレクションを作成（MANUAL・handleに dog/cat を含めないのでナビには出ない）。既存の `犬用ドライフード` タグだけだとふりかけが主食に混ざる／お試しが犬猫別タグで共通テンプレから拾えないため中立タグが必要だった | `scripts/setup_all_subcategory.py --apply` | 復元: `scripts/setup_all_subcategory.py --revert`（`scripts/all_subcategory/backup.json`）
+  - ⚠️ 作成した6コレクションも**オンラインストア未公開**（`write_publications` スコープ無し）。表示には影響しない
 - 2026-08-01 | product 8件（そぼろ煮・鹿肉煮込み・ぶりのうま煮・かつおのうま煮 の 単品/×3袋）＋ collection 2本 `okazu` `premium` | 「おかず」タグを8商品に付与し、自動コレクション2本を新規作成（`okazu`＝TAG EQUALS 'おかず' 8件 / `premium`＝TAG EQUALS '犬と猫のプレミアム料理' 3件、いずれも MANUAL・handleに dog/cat を含めないのでナビには出ない）。ウェットページの小カテゴリ表示をスープ・だしと同じ「タグ→コレクション」の形に揃えるため | `scripts/setup_wet_subcategory.py --apply` | 復元: `scripts/setup_wet_subcategory.py --revert`（`scripts/wet_subcategory/backup.json`）
   - ⚠️ 作成した2コレクションは**オンラインストアに未公開**（`/collections/okazu` は404）。APIアプリに `write_publications` スコープが無いため管理画面での公開が必要。ウェットページの表示には影響しない
 - 2026-08-01 | product `［追加用］` 3件（プレミアム料理 親子丼の素 / 鹿肉煮込みハンバーグ / 鰤と大根の炊いたん） | 価格を通常版×0.9 に修正（¥1,210→¥1,089 / ¥1,430→¥1,287 / ¥1,320→¥1,188）。2026-05-11 に複製したまま価格未変更で放置されていた分 | `scripts/check_addon_prices.py --fix` | 復元: `scripts/collection_order/addon_prices.backup.json`
