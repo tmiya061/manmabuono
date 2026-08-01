@@ -1,0 +1,20 @@
+{
+  "note": "check_addon_prices.py --fix の実行前価格",
+  "items": [
+    {
+      "variant_id": "gid://shopify/ProductVariant/43165224763453",
+      "title": "犬と猫のプレミアム料理　京のだし薫る　親子丼の素",
+      "price_before": 1210.0
+    },
+    {
+      "variant_id": "gid://shopify/ProductVariant/43165224796221",
+      "title": "犬と猫のプレミアム料理　京都舞笠置天然鹿肉　煮込みハンバーグ",
+      "price_before": 1430.0
+    },
+    {
+      "variant_id": "gid://shopify/ProductVariant/43165224927293",
+      "title": "犬と猫のプレミアム料理　京都舞鶴港　鰤と大根の炊いたん",
+      "price_before": 1320.0
+    }
+  ]
+}
