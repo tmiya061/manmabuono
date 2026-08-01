@@ -56,9 +56,11 @@
       -%}
       <div class="c_cookingClass__hero">
         <p class="c_cookingClass__hero-label">次回の開催</p>
-        <p class="c_cookingClass__hero-date">{{ hero_variant.title }}</p>
         {%- if hero_details != nil and hero_details.settings.session_title != blank -%}
           <p class="c_cookingClass__hero-title">{{ hero_details.settings.session_title }}</p>
+          <p class="c_cookingClass__hero-date --with-title">{{ hero_variant.title }}</p>
+        {%- else -%}
+          <p class="c_cookingClass__hero-date">{{ hero_variant.title }}</p>
         {%- endif -%}
         <p class="c_cookingClass__hero-meta">
           <span class="c_cookingClass__price">{{ class_product.price | money }}</span>
@@ -141,9 +143,11 @@
               {%- endcapture -%}
               <li class="c_cookingClass__row{% unless v.available %} --soldout{% endunless %}">
                 <div class="c_cookingClass__row-info">
-                  <span class="c_cookingClass__row-date">{{ v.title }}</span>
                   {%- if row_details != nil and row_details.settings.session_title != blank -%}
                     <span class="c_cookingClass__row-title">{{ row_details.settings.session_title }}</span>
+                    <span class="c_cookingClass__row-date --with-title">{{ v.title }}</span>
+                  {%- else -%}
+                    <span class="c_cookingClass__row-date">{{ v.title }}</span>
                   {%- endif -%}
                 </div>
                 {{ row_meta }}
