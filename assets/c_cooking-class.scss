@@ -384,6 +384,34 @@
   letter-spacing: 0.56px;
 }
 
+/* 案内セクション：参加の流れのステップ見出し
+   （c_under__sub-head と同寸・オレンジ左バー無し版。FAQ側はバー有りのまま） */
+
+.c_cookingClass__step-head {
+  color: $text-color;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 140%;
+  letter-spacing: 2.56px;
+  margin-bottom: 14px;
+  @include mq(pc) {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+}
+
+.c_under__head + .c_cookingClass__step-head {
+  margin-top: 24px;
+  @include mq(pc) {
+    margin-top: 30px;
+  }
+}
+
+.c_under__text + .c_cookingClass__step-head {
+  margin-top: 23px;
+}
+
 /* 開催なし */
 
 .c_cookingClass__empty {

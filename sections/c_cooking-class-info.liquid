@@ -1,6 +1,7 @@
 {{ 'c_common.min.css' | asset_url | stylesheet_tag }}
 {{ 'c_under.min.css' | asset_url | stylesheet_tag }}
 {{ 'c_guide.min.css' | asset_url | stylesheet_tag }}
+{{ 'c_cooking-class.min.css' | asset_url | stylesheet_tag }}
 
 {%- style -%}
   #shopify-section-{{ section.id }} {
@@ -26,7 +27,7 @@
       <h3 class="c_under__head">{{ section.settings.flow_title }}</h3>
       {%- for block in section.blocks -%}
         {%- if block.type == 'step' -%}
-          <p class="c_under__sub-head" {{ block.shopify_attributes }}>{{ block.settings.title }}</p>
+          <p class="c_cookingClass__step-head" {{ block.shopify_attributes }}>{{ block.settings.title }}</p>
           <p class="c_under__text">{{ block.settings.text }}</p>
         {%- endif -%}
       {%- endfor -%}
