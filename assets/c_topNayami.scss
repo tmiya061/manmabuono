@@ -42,6 +42,7 @@
     }
 }
 
+// 器＝コンテンツカードの型（c_topVoice__item と同じ #F5F5F5 面＋右下だけ大きい角丸・線なし）
 .c_topNayami__tile {
     box-sizing: border-box;
     display: flex;
@@ -51,26 +52,25 @@
     gap: 10px;
     height: 100%;
     min-height: 118px;
-    padding: 20px 14px;
-    border: 1px solid #D9D9D9;
-    border-radius: 12px;
-    background: #FFF;
+    padding: 24px 18px;
+    border-radius: 0 0 32px 0;
+    background: #F5F5F5;
     color: $text-color;
     text-decoration: none;
     text-align: center;
-    transition: border-color .25s ease, background-color .25s ease;
+    transition: background-color .25s ease;
 
     @include mq(pc) {
-        // リンクがあるタイルだけ押せる見た目にする
+        // リンクがあるタイルだけ押せる見た目にする（タブの is-active と同じ薄橙面）
         @at-root a#{&}:hover {
-            border-color: $base-color;
             background: rgba(255, 123, 94, .07);
         }
     }
     @include mq(sp) {
         min-height: 104px;
-        padding: 16px 10px;
+        padding: 18px 12px;
         gap: 8px;
+        border-radius: 0 0 24px 0;
     }
 }
 
@@ -119,22 +119,19 @@
     }
 }
 
-// なぜこの商品か（作用の説明）。読み物なので左揃え・控えめなグレー
+// なぜこの商品か（作用の説明）。色は本文色・中央揃え（トップページの地の作りに合わせる）
 .c_topNayami__tile-desc {
     align-self: stretch;
-    margin-top: 8px;
-    padding-top: 10px;
-    border-top: 1px solid #EFEFEF;
-    text-align: left;
+    margin-top: 4px;
     font-family: var(--font-jp-family);
-    font-size: 12px;
+    font-size: 13px;
     font-weight: 400;
     line-height: 170%;
     letter-spacing: .3px;
-    color: #6F6F6F;
+    color: $text-color;
     word-break: auto-phrase; // 「ごはん」等が語中で切れないように
     @include mq(sp) {
-        font-size: 11px;
+        font-size: 12px;
         line-height: 165%;
     }
 }
