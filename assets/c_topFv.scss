@@ -32,10 +32,9 @@
             height: 85%;
         }
     }
-    // SPはバナーが画像の下にはみ出すので、その分の高さを確保する
     &.--has-banner {
         @include mq(sp) {
-            padding-bottom: vw-sp(56);
+            padding-bottom: vw-sp(10);
         }
     }
 }
@@ -57,12 +56,15 @@
         right: calc(20px + #{vw(30)});
         bottom: calc(80px + #{vw(30)});
     }
+    // SPは左下が縦書き見出し（.c_topFv-title）に占有されているため重ねられない。
+    // 絶対配置をやめ、FV画像の下に通常フローで置く（犬の顔・見出しのどちらも隠さない）
     @include mq(sp) {
-        width: 32%;
-        left: vw-sp(14);
+        position: relative;
+        left: auto;
         right: auto;
-        // 画像の下端から40px はみ出させる（.--has-banner の padding-bottom 56px ぶんを差し引く）
-        bottom: vw-sp(16);
+        bottom: auto;
+        width: 32%;
+        margin: vw-sp(14) 0 0 vw-sp(14);
         border-radius: vw-sp(8);
         box-shadow: 0 vw-sp(3) vw-sp(10) rgba(0, 0, 0, .18);
     }
