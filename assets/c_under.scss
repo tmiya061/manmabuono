@@ -3,7 +3,7 @@
 .c_underFv-wrap {
     position: relative;
     @include mq(pc) {
-        padding-top: 46px;
+        padding-top: 32px;
     }
     &::after {
         content: '';
@@ -14,7 +14,7 @@
         height: 0;
         border-style: solid;
         border-color: $base-color transparent transparent transparent;
-        border-width: 248px 641px 0px 0px;
+        border-width: 186px 481px 0px 0px;
         @include mq(sp) {
             display: none;
         }
@@ -24,7 +24,7 @@
 .c_underFv {
     width: 100%;
     height: auto;
-    aspect-ratio: 375 / 311;
+    aspect-ratio: 375 / 235; // 画像縮小に合わせて帯も詰める（2026-08-02）
     position: relative;
     @include mq(pc) {
         width: 1100px;
@@ -32,7 +32,7 @@
         margin: auto;
         height: auto;
         padding: 0 50px;
-        aspect-ratio: 1100 / 320;
+        aspect-ratio: 1100 / 215; // 画像193px＋下22px（元は252px＋68px）
     }
     &::after {
         content: '';
@@ -44,7 +44,7 @@
         height: 0;
         border-style: solid;
         border-color: transparent transparent #ff7b5e transparent;
-        border-width: 0px 0px vw-sp(245) vw-sp(248);
+        border-width: 0px 0px vw-sp(180) vw-sp(185);
         @include mq(pc) {
             display: none;
         }
@@ -56,15 +56,15 @@
     z-index: 1;
     top: 0;
     left: 0;
-    width: 84.26666%;
+    width: 84%;
     height: auto;
-    aspect-ratio: 316 / 220;
+    aspect-ratio: 328 / 190; // ⚠️ 元は 316:220。横に広げた分だけ上下が切れる
     @include mq(pc) {
         left: 50px;
-        width: 443px;
+        width: 340px;
         aspect-ratio: 443 / 252;
         @media screen and (max-width: 990px) {
-            width: 350px;
+            width: 280px;
         }
     }
     img {
@@ -283,39 +283,5 @@
     letter-spacing: 0.56px;
     @include mq(pc) {
         font-size: 18px;
-    }
-}
-/*
- * コレクションページだけ、下層FVの帯と画像を小さくする。
- * 目的は「商品をファーストビューに入れる」こと。他の下層ページ（ガイド/思い/店舗/
- * お問い合わせ/プライバシー/コラム一覧）にはその目的が無く、写真のトリミングが
- * 変わる副作用だけが残るため、スコープを .--collection に限定している。
- * 付与元: sections/c_collectionFv.liquid（2026-08-02）
- */
-.c_underFv-wrap.--collection {
-    @include mq(pc) {
-        padding-top: 32px;
-    }
-    &::after {
-        border-width: 186px 481px 0px 0px;
-    }
-    .c_underFv {
-        aspect-ratio: 375 / 250;
-        @include mq(pc) {
-            aspect-ratio: 1100 / 240;
-        }
-        &::after {
-            border-width: 0px 0px vw-sp(190) vw-sp(195);
-        }
-    }
-    .c_underFv__img {
-        width: 84%;
-        aspect-ratio: 328 / 190; // 高さは元の 70%×316:220 と同じ（約190px）
-        @include mq(pc) {
-            width: 340px;
-            @media screen and (max-width: 990px) {
-                width: 280px;
-            }
-        }
     }
 }
