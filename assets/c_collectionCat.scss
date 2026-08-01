@@ -1,33 +1,45 @@
 @import "variables";
 
 
+// 2026-08-01: 3行（約170px）を1行（約48px）に。項目は削らず、横に並べて収める。
+// SPは横スクロールで1行を維持する。
 .c_collectionCategory__wrap {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start; // 商品グリッドの左端に揃える
     gap: 12px;
     @media screen and (max-width: 990px) {
-        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
     }
+    // SPは横スクロールではなく段落ち（全項目が一度に見える）
     @include mq(sp) {
-        grid-template-columns: repeat(1, 1fr);
-        gap: 6px;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        row-gap: 8px;
+        column-gap: 8px;
     }
 }
 
 
 .c_collectionCategory__item {
     list-style: none;
-    width: 100%;
+    flex: 0 0 auto;
     a {
-        width: 100%;
+        white-space: nowrap;
         display: inline-block;
         text-align: center;
         text-decoration: none;
-        padding: 12px;
+        padding: 12px 18px;
         border-radius: 30px;
         border: 1px solid #D5D5D5;
         color: #3c3c3c;
         font-size: 12px;
+        @media screen and (max-width: 1200px) {
+            padding: 11px 13px;
+        }
+        @include mq(sp) {
+            padding: 10px 14px;
+        }
         font-style: normal;
         font-weight: 700;
         line-height: 140%; /* 16.8px */
@@ -36,6 +48,17 @@
         @media(hover: hover) {
             &:hover {
                 background: #D5D5D5;
+            }
+        }
+    }
+    // 今見ているカテゴリを示す（塗りつぶしでひと目で分かるように）
+    &.is-current a {
+        border-color: $base-color;
+        background: $base-color;
+        color: #FFF;
+        @media(hover: hover) {
+            &:hover {
+                background: $base-color;
             }
         }
     }

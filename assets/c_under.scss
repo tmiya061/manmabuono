@@ -3,7 +3,7 @@
 .c_underFv-wrap {
     position: relative;
     @include mq(pc) {
-        padding-top: 46px;
+        padding-top: 32px;
     }
     &::after {
         content: '';
@@ -14,7 +14,7 @@
         height: 0;
         border-style: solid;
         border-color: $base-color transparent transparent transparent;
-        border-width: 248px 641px 0px 0px;
+        border-width: 186px 481px 0px 0px;
         @include mq(sp) {
             display: none;
         }
@@ -22,17 +22,17 @@
 }
 
 .c_underFv {
+    // 高さは中の画像に追従させる（aspect-ratioで別々に決めると、
+    // 幅可変の帯と固定pxの画像が噛み合わず800px前後で画像がはみ出す）
     width: 100%;
     height: auto;
-    aspect-ratio: 375 / 311;
     position: relative;
+    padding-bottom: 56px; // SPは見出しが画像の下へ40pxはみ出すぶんを確保
     @include mq(pc) {
         width: 1100px;
         max-width: 100%;
         margin: auto;
-        height: auto;
-        padding: 0 50px;
-        aspect-ratio: 1100 / 320;
+        padding: 0 50px 22px; // 22px＝画像の下の余白
     }
     &::after {
         content: '';
@@ -44,7 +44,7 @@
         height: 0;
         border-style: solid;
         border-color: transparent transparent #ff7b5e transparent;
-        border-width: 0px 0px vw-sp(245) vw-sp(248);
+        border-width: 0px 0px vw-sp(180) vw-sp(185);
         @include mq(pc) {
             display: none;
         }
@@ -52,19 +52,18 @@
 }
 
 .c_underFv__img {
-    position: absolute;
+    // position:relative（絶対配置ではない）＝この高さがそのまま帯の高さになる。
+    // 見出し(.c_underFv__text)はこの要素を基準に絶対配置している。
+    position: relative;
     z-index: 1;
-    top: 0;
-    left: 0;
-    width: 84.26666%;
+    width: 84%;
     height: auto;
-    aspect-ratio: 316 / 220;
+    aspect-ratio: 328 / 190; // ⚠️ 元は 316:220。横に広げた分だけ上下が切れる
     @include mq(pc) {
-        left: 50px;
-        width: 443px;
+        width: 340px;
         aspect-ratio: 443 / 252;
         @media screen and (max-width: 990px) {
-            width: 350px;
+            width: 280px;
         }
     }
     img {
