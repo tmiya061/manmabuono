@@ -9,6 +9,7 @@ Shopifyの管理画面・ストアデータは Git で追えない。**書き込
 
 ---
 
+- 2026-08-01 | collection `cat-wet` → テンプレート `wet` ／ `dog-all` `cat-all` → テンプレート `all` | 代替テーマテンプレートを割り当て＝**店頭の見た目が変わった**（ウェット2ページが3グループ、全商品2ページが9グループの小カテゴリ表示に）。`dog-wet` は元から `wet` 割当済みで変更なし。反映確認＝4ページとも表示商品数が公開商品数と一致（15/15/31/28） | `scripts/set_collection_template.py --apply` | 復元: `scripts/set_collection_template.py --revert`（`scripts/collection_template/backup.json`）
 - 2026-08-01 | product 19件 ＋ collection 6本 `main-dry` `trial` `topping` `homemade` `treats` `seasonal` | 全商品ページ（dog-all / cat-all）の小カテゴリ用に中立タイプタグ6種を付与（`主食ドライ`6 / `お試しセット`2 / `トッピング`2 / `手作り素材`3 / `おやつ`4 / `季節もの`2）し、各タグの自動コレクションを作成（MANUAL・handleに dog/cat を含めないのでナビには出ない）。既存の `犬用ドライフード` タグだけだとふりかけが主食に混ざる／お試しが犬猫別タグで共通テンプレから拾えないため中立タグが必要だった | `scripts/setup_all_subcategory.py --apply` | 復元: `scripts/setup_all_subcategory.py --revert`（`scripts/all_subcategory/backup.json`）
   - ⚠️ 作成した6コレクションも**オンラインストア未公開**（`write_publications` スコープ無し）。表示には影響しない
 - 2026-08-01 | product 8件（そぼろ煮・鹿肉煮込み・ぶりのうま煮・かつおのうま煮 の 単品/×3袋）＋ collection 2本 `okazu` `premium` | 「おかず」タグを8商品に付与し、自動コレクション2本を新規作成（`okazu`＝TAG EQUALS 'おかず' 8件 / `premium`＝TAG EQUALS '犬と猫のプレミアム料理' 3件、いずれも MANUAL・handleに dog/cat を含めないのでナビには出ない）。ウェットページの小カテゴリ表示をスープ・だしと同じ「タグ→コレクション」の形に揃えるため | `scripts/setup_wet_subcategory.py --apply` | 復元: `scripts/setup_wet_subcategory.py --revert`（`scripts/wet_subcategory/backup.json`）
