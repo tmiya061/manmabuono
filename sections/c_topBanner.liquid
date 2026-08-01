@@ -13,6 +13,13 @@
       padding-bottom: {{ section.settings.padding_bottom_sp }}px;
       }
   }
+
+  {%- comment -%} PCはFV内バナー（c_topFv）が担当するので、このセクションはSPだけに出す {%- endcomment -%}
+  {%- if section.settings.sp_only -%}
+    @media screen and (min-width: 750px) {
+        #shopify-section-{{ section.id }} { display: none; }
+    }
+  {%- endif -%}
 {%- endstyle -%}
 
 {%- assign banner_blocks = section.blocks | where: 'type', 'banner' -%}
@@ -100,6 +107,13 @@
       "type": "checkbox",
       "id": "enable_more_than_four",
       "label": "スライダーを使用（3枚以上で有効）",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "sp_only",
+      "label": "スマホのみ表示",
+      "info": "PCはファーストビュー内のバナーが担当するため、トップではONにしています。",
       "default": false
     },
     {

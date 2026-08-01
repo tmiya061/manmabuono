@@ -32,12 +32,7 @@
             height: 85%;
         }
     }
-    // SPはバナーが画像の下へはみ出すぶんの高さを確保する
-    &.--has-banner {
-        @include mq(sp) {
-            padding-bottom: vw-sp(66);
-        }
-    }
+    // SPはFV内に置かず、下の c_topBanner（スライダー）が担当する
 }
 
 
@@ -49,22 +44,17 @@
     width: vw(207);
     aspect-ratio: 1;
     right: vw(80);
-    bottom: 3vw;
+    bottom: 2vw;
     border-radius: vw(12);
     box-shadow: 0 vw(4) vw(18) rgba(0, 0, 0, .18);
 
     @media screen and (max-width: 1000px) {
         right: calc(20px + #{vw(30)});
-        bottom: calc(80px + 3vw);
+        bottom: calc(80px + 2vw);
     }
-    // SPは左下。犬の口元あたりに上端がくる高さで、下へ少しはみ出させる
+    // SPは非表示。FV直下の c_topBanner（スライダー）に役割を渡す
     @include mq(sp) {
-        width: 32%;
-        left: vw-sp(14);
-        right: auto;
-        bottom: vw-sp(33); // .--has-banner の padding-bottom vw-sp(66) との差ぶん下へはみ出す
-        border-radius: vw-sp(8);
-        box-shadow: 0 vw-sp(3) vw-sp(10) rgba(0, 0, 0, .18);
+        display: none;
     }
 
     .swiper {

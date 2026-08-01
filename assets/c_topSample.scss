@@ -6,7 +6,9 @@
     max-height: 1000px;
   }
   @include mq(sp) {
-    margin-top: -75px;
+    // もともと上のセクションへ食い込ませる負マージンだったが、
+    // 新しい c_topPicks のボタンに重なるため解除（2026-08-01）
+    margin-top: 0;
   }
 }
 
@@ -30,7 +32,7 @@
   padding: 73px 0 81px;
   height: inherit;
   @include mq(sp) {
-    padding: 116px 0 63px;
+    padding: 64px 0 63px; // タイトル上の余白を詰める（2026-08-01）
   }
 }
 

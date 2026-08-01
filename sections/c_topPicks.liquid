@@ -1,0 +1,313 @@
+{% comment %}
+  犬用/猫用の入口 ＋ おすすめ商品を1つにまとめたセクション。
+  旧 c_topFood（入口2枚）と c_topProduct（犬4件＋猫4件の縦積み）の統合版。
+
+  - PC : 犬と猫を左右2カラムで同時に表示（分岐なし＝どちらも不利にならない）
+  - SP : タブ切り替え（縦幅を詰める必要があるのはSPだけのため）
+  両パネルとも常にDOMに出し、CSSで出し分ける（SEO・レイアウト飛び対策）。
+
+  「こんな子におすすめ」の一言は blocks（商品×テキスト）で持たせる。
+  ブロックが無い商品は一言を出さない（＝未設定でも崩れない）。
+{% endcomment %}
+
+{{ 'c_common.min.css' | asset_url | stylesheet_tag }}
+{{ 'c_topPicks.min.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  #shopify-section-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+  @media screen and (max-width: 750px) {
+    #shopify-section-{{ section.id }} {
+      padding-top: {{ section.settings.padding_top_sp }}px;
+      padding-bottom: {{ section.settings.padding_bottom_sp }}px;
+    }
+  }
+{%- endstyle -%}
+
+{%- assign limit = section.settings.product_limit -%}
+{%- assign pets = 'dog,cat' | split: ',' -%}
+
+<div class="c_topPicks page-width">
+  {%- comment -%} タブ（SPのみ表示） {%- endcomment -%}
+  <div class="c_topPicks__tabs" role="tablist">
+    {%- for pet in pets -%}
+      {%- if pet == 'dog' -%}
+        {%- assign label = section.settings.dog_title -%}
+        {%- assign sub = section.settings.dog_sub -%}
+        {%- assign illust = 'dog-illust.png' -%}
+      {%- else -%}
+        {%- assign label = section.settings.cat_title -%}
+        {%- assign sub = section.settings.cat_sub -%}
+        {%- assign illust = 'cat-illust.png' -%}
+      {%- endif -%}
+      <button
+        type="button"
+        class="c_topPicks__tab{% if pet == 'dog' %} is-active{% endif %}"
+        data-pet="{{ pet }}"
+        role="tab"
+        aria-selected="{% if pet == 'dog' %}true{% else %}false{% endif %}"
+        aria-controls="c_topPicks-panel-{{ pet }}"
+      >
+        <img src="{{ illust | file_url }}" alt="" width="128" height="128" loading="lazy">
+        <span class="c_topPicks__tab-title">{{ label }}</span>
+        <span class="c_topPicks__tab-sub">{{ sub }}</span>
+      </button>
+    {%- endfor -%}
+  </div>
+
+  <div class="c_topPicks__panels">
+    {%- for pet in pets -%}
+      {%- if pet == 'dog' -%}
+        {%- assign col = collections[section.settings.dog_collection] -%}
+        {%- assign label = section.settings.dog_title -%}
+        {%- assign sub = section.settings.dog_sub -%}
+        {%- assign link = section.settings.dog_link -%}
+        {%- assign link_label = section.settings.dog_link_label -%}
+        {%- assign pick_title = section.settings.dog_pick_title -%}
+        {%- assign illust = 'dog-illust.png' -%}
+      {%- else -%}
+        {%- assign col = collections[section.settings.cat_collection] -%}
+        {%- assign label = section.settings.cat_title -%}
+        {%- assign sub = section.settings.cat_sub -%}
+        {%- assign link = section.settings.cat_link -%}
+        {%- assign link_label = section.settings.cat_link_label -%}
+        {%- assign pick_title = section.settings.cat_pick_title -%}
+        {%- assign illust = 'cat-illust.png' -%}
+      {%- endif -%}
+
+      <section
+        class="c_topPicks__panel --{{ pet }}{% if pet == 'dog' %} is-active{% endif %}"
+        id="c_topPicks-panel-{{ pet }}"
+        data-pet="{{ pet }}"
+        role="tabpanel"
+      >
+        <div class="c_topPicks__head">
+          <div class="c_topPicks__illust">
+            <img src="{{ illust | file_url }}" alt="" width="128" height="128" loading="lazy">
+          </div>
+          <h2 class="c_topPicks__title">{{ label }}</h2>
+          <p class="c_topPicks__sub">{{ sub }}</p>
+        </div>
+
+        {%- if pick_title != blank -%}
+          <p class="c_topPicks__pickTitle">{{ pick_title }}</p>
+        {%- endif -%}
+
+        {%- if col.products.size > 0 -%}
+          <ul class="c_topPicks__items">
+            {%- for product in col.products limit: limit -%}
+              {%- assign copy = '' -%}
+              {%- for block in section.blocks -%}
+                {%- if block.type == 'copy' and block.settings.product != blank -%}
+                  {%- if block.settings.product.handle == product.handle -%}
+                    {%- assign copy = block.settings.text -%}
+                  {%- endif -%}
+                {%- endif -%}
+              {%- endfor -%}
+              <li class="c_topPicks__item">
+                <a class="c_topPicks__item-link" href="{{ product.url }}">
+                  <img
+                    class="c_topPicks__item-img"
+                    width="1920"
+                    height="1560"
+                    src="{{ product.featured_image | image_url: width: 600 }}"
+                    alt="{{ product.title | escape }}"
+                    loading="lazy"
+                  >
+                  {%- comment -%} 一言の行数でカード高さがズレないよう、器は常に置く {%- endcomment -%}
+                  {%- if section.settings.show_copy -%}
+                    <p class="c_topPicks__item-copyWrap">
+                      {%- if copy != blank -%}<span class="c_topPicks__item-copy">{{ copy }}</span>{%- endif -%}
+                    </p>
+                  {%- endif -%}
+                  <p class="c_topPicks__item-title">{{ product.title }}</p>
+                  <p class="c_topPicks__item-price">
+                    {{ product.price | money }}
+                    <span>(税込)</span>
+                  </p>
+                </a>
+              </li>
+            {%- endfor -%}
+          </ul>
+        {%- endif -%}
+
+        <a href="{{ link }}" class="c_common__btn c_topPicks__btn">{{ link_label }}</a>
+      </section>
+    {%- endfor -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "犬猫おすすめ（タブ）",
+  "settings": [
+    {
+      "type": "range",
+      "id": "product_limit",
+      "min": 2,
+      "max": 6,
+      "step": 2,
+      "label": "表示する商品数（片側あたり）",
+      "info": "2列で並ぶので偶数にしてください。",
+      "default": 4
+    },
+    {
+      "type": "checkbox",
+      "id": "show_copy",
+      "label": "「こんな子におすすめ」の一言を表示する",
+      "info": "文言が固まるまではOFF推奨（西川さん監修待ち）。",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "犬用"
+    },
+    {
+      "type": "text",
+      "id": "dog_title",
+      "label": "見出し",
+      "default": "犬用 ごはん"
+    },
+    {
+      "type": "text",
+      "id": "dog_sub",
+      "label": "英字サブ",
+      "default": "FOR DOGS"
+    },
+    {
+      "type": "text",
+      "id": "dog_collection",
+      "label": "おすすめ商品のコレクション（ハンドル）",
+      "default": "d_recommend-set"
+    },
+    {
+      "type": "text",
+      "id": "dog_pick_title",
+      "label": "おすすめの見出し",
+      "default": "犬用おすすめ商品"
+    },
+    {
+      "type": "url",
+      "id": "dog_link",
+      "label": "一覧ボタンのリンク先"
+    },
+    {
+      "type": "text",
+      "id": "dog_link_label",
+      "label": "一覧ボタンの文言",
+      "default": "犬用商品一覧はこちら"
+    },
+    {
+      "type": "header",
+      "content": "猫用"
+    },
+    {
+      "type": "text",
+      "id": "cat_title",
+      "label": "見出し",
+      "default": "猫用 ごはん"
+    },
+    {
+      "type": "text",
+      "id": "cat_sub",
+      "label": "英字サブ",
+      "default": "FOR CATS"
+    },
+    {
+      "type": "text",
+      "id": "cat_collection",
+      "label": "おすすめ商品のコレクション（ハンドル）",
+      "default": "c_recommend-set"
+    },
+    {
+      "type": "text",
+      "id": "cat_pick_title",
+      "label": "おすすめの見出し",
+      "default": "猫用おすすめ商品"
+    },
+    {
+      "type": "url",
+      "id": "cat_link",
+      "label": "一覧ボタンのリンク先"
+    },
+    {
+      "type": "text",
+      "id": "cat_link_label",
+      "label": "一覧ボタンの文言",
+      "default": "猫用商品一覧はこちら"
+    },
+    {
+      "type": "header",
+      "content": "上下の余白"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "上部の余白（PC）",
+      "default": 70
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "下部の余白（PC）",
+      "default": 70
+    },
+    {
+      "type": "range",
+      "id": "padding_top_sp",
+      "min": 0,
+      "max": 150,
+      "step": 2,
+      "unit": "px",
+      "label": "上部の余白（SP）",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_sp",
+      "min": 0,
+      "max": 150,
+      "step": 2,
+      "unit": "px",
+      "label": "下部の余白（SP）",
+      "default": 56
+    }
+  ],
+  "max_blocks": 8,
+  "blocks": [
+    {
+      "type": "copy",
+      "name": "こんな子におすすめ（商品ごとの一言）",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "対象商品"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "一言",
+          "info": "効能の断定はNG。「〜な子に」「〜をサポート」まで。"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "犬猫おすすめ（タブ）",
+      "category": "カスタムパーツ"
+    }
+  ]
+}
+{% endschema %}

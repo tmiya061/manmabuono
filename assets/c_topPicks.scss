@@ -1,0 +1,243 @@
+@import "variables";
+
+/*
+ * 犬猫おすすめ（タブ）
+ * PC: 犬/猫を左右2カラムで同時表示（タブは出さない）
+ * SP: タブ切り替え（選択されたパネルのみ表示）
+ */
+
+// FV(.c_topFv::after)のグレー帯が下へ95px伸びており、
+// 重ね順を指定しないと犬猫のイラストがその下に隠れる
+.c_topPicks {
+    position: relative;
+    z-index: 1;
+}
+
+.c_topPicks__tabs {
+    display: none; // PCでは出さない
+    @include mq(sp) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 10px;
+        margin-bottom: 28px;
+    }
+}
+
+.c_topPicks__tab {
+    appearance: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    padding: 12px 8px 14px;
+    border: 1px solid #D9D9D9;
+    border-radius: 12px;
+    background: #FFF;
+    color: $text-color;
+    cursor: pointer;
+    transition: border-color .25s ease, background-color .25s ease;
+
+    img {
+        width: 56px;
+        height: auto;
+    }
+    // 非選択でも「押せる」ことが分かる程度にとどめる（グレーアウトしすぎない）
+    &[aria-selected="false"] {
+        opacity: .78;
+    }
+    &.is-active {
+        border-color: $base-color;
+        background: rgba(255, 123, 94, .07);
+        opacity: 1;
+    }
+}
+
+.c_topPicks__tab-title {
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+}
+
+.c_topPicks__tab-sub {
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    color: $base-color;
+}
+
+.c_topPicks__panels {
+    display: grid;
+    grid-template-columns: 1fr 1fr; // PCは犬・猫を横並び
+    column-gap: 56px;
+    @media screen and (max-width: 1100px) {
+        column-gap: 28px;
+    }
+    @include mq(sp) {
+        display: block;
+    }
+}
+
+.c_topPicks__panel {
+    @include mq(sp) {
+        display: none;
+        &.is-active {
+            display: block;
+            animation: topPicksFade .3s ease both;
+        }
+    }
+}
+
+@keyframes topPicksFade {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.c_topPicks__head {
+    text-align: center;
+    margin-bottom: 22px;
+    @include mq(sp) {
+        // SPはタブに犬猫アイコンと見出しが出ているので、パネル側では出さない
+        display: none;
+    }
+}
+
+.c_topPicks__pickTitle {
+    text-align: center;
+    color: $text-color;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 2.4px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #E5E5E5;
+    @include mq(sp) {
+        font-size: 16px;
+        letter-spacing: 1.6px;
+    }
+}
+
+.c_topPicks__illust img {
+    width: 96px;
+    height: auto;
+}
+
+.c_topPicks__title {
+    color: $text-color;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 3.8px;
+    margin-top: 4px;
+}
+
+.c_topPicks__sub {
+    color: $base-color;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 3.9px;
+    margin-bottom: 18px;
+}
+
+.c_topPicks__btn.c_common__btn {
+    width: min(332px, 100%);
+    margin-top: 34px;
+    @include mq(sp) {
+        width: 100%;
+        margin-top: 26px;
+    }
+}
+
+.c_topPicks__items {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); // 2列×2段
+    column-gap: 22px;
+    row-gap: 30px;
+    margin-top: 26px;
+    padding: 0;
+    list-style: none;
+    @media screen and (max-width: 1100px) {
+        column-gap: 14px;
+    }
+    @include mq(sp) {
+        column-gap: 14px;
+        row-gap: 26px;
+    }
+}
+
+.c_topPicks__item-link {
+    display: block;
+    text-decoration: none;
+}
+
+.c_topPicks__item-img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 235 / 200;
+    object-fit: cover;
+}
+
+// 一言が1行でも2行でも、下の商品名の開始位置が揃うように器の高さを固定する
+.c_topPicks__item-copyWrap {
+    margin-top: 12px;
+    min-height: 44px;
+    @include mq(sp) {
+        min-height: 38px;
+    }
+    // 一言を出さない設定のときは器ごと消す
+    &:empty {
+        display: none;
+        margin-top: 0;
+        min-height: 0;
+    }
+}
+
+.c_topPicks__item-copy {
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: 4px;
+    background: rgba(255, 123, 94, .12);
+    color: $base-color;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 150%;
+    letter-spacing: .4px;
+    @include mq(sp) {
+        font-size: 11px;
+        padding: 2px 6px;
+    }
+}
+
+.c_topPicks__item-title {
+    font-family: var(--font-jp-family);
+    color: $text-color;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 160%;
+    letter-spacing: .6px;
+    margin-top: 4px;
+    margin-bottom: 8px;
+    @include mq(sp) {
+        font-size: 12px;
+        line-height: 155%;
+        letter-spacing: .4px;
+    }
+}
+
+.c_topPicks__item-price {
+    color: $text-color;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 170%;
+    letter-spacing: .6px;
+    @include mq(sp) {
+        font-size: 13px;
+    }
+    span {
+        color: #C2C2C2;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: .48px;
+        font-family: var(--font-jp-family);
+        @include mq(sp) {
+            font-size: 10px;
+        }
+    }
+}

@@ -2,6 +2,33 @@
 if ( window.document.body.id === 'top' ) {
 
     document.addEventListener("DOMContentLoaded", function() {
+        // 犬猫おすすめ（タブ）※SPのみタブとして機能。PCは両方表示なので見た目に影響しない
+        var picksTabs = document.querySelectorAll('.c_topPicks__tab');
+        if (picksTabs.length) {
+            var switchPet = function (pet) {
+                document.querySelectorAll('.c_topPicks__tab').forEach(function (t) {
+                    var on = t.dataset.pet === pet;
+                    t.classList.toggle('is-active', on);
+                    t.setAttribute('aria-selected', on ? 'true' : 'false');
+                });
+                document.querySelectorAll('.c_topPicks__panel').forEach(function (p) {
+                    p.classList.toggle('is-active', p.dataset.pet === pet);
+                });
+            };
+            picksTabs.forEach(function (tab) {
+                tab.addEventListener('click', function () {
+                    var pet = tab.dataset.pet;
+                    switchPet(pet);
+                    try { localStorage.setItem('mb_pet', pet); } catch (e) {}
+                });
+            });
+            // 前回選んだ側を復元（猫の飼い主が毎回 犬から始まるのを避ける）
+            try {
+                var saved = localStorage.getItem('mb_pet');
+                if (saved === 'cat' || saved === 'dog') switchPet(saved);
+            } catch (e) {}
+        }
+
         // FV右下のバナー（フェード切替）
         const fvBannerEl = document.querySelector('.swiper.--fvBanner');
         if (fvBannerEl) {
@@ -39,16 +66,17 @@ if ( window.document.body.id === 'top' ) {
             },
             allowTouchMove: true, // スワイプで表示の切り替えを無効に
             breakpoints: { //画面幅による表示枚数と余白の指定
+                //※このスライダーはSP専用（PCはFV内バナーが担当）。1枚を小さくして高さを抑える
                 320: {
-                    slidesPerView: 1,
+                    slidesPerView: 1.8,
                     spaceBetween: 10,
                 },
                 375: {
-                    slidesPerView: 1.8,
-                    spaceBetween: 14,
+                    slidesPerView: 2.2,
+                    spaceBetween: 12,
                 },
                 500: {
-                    slidesPerView: 2.2,
+                    slidesPerView: 2.6,
                     spaceBetween: 14,
                 },
                 750: {
