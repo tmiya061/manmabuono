@@ -9,6 +9,7 @@ Shopifyの管理画面・ストアデータは Git で追えない。**書き込
 
 ---
 
+- 2026-08-02 | product `online-cooking-class` ＋ page `cooking-class` | お料理教室の商品（¥500・バリアント3件＝開催日［仮日程・西川さん確認前］・配送不要・在庫追跡なし・`seo.hidden=1` で検索/サイトマップ非表示・コレクション所属なし）とページ（`/pages/cooking-class`・template=cooking-class・ナビからのリンクなし）を新規作成。Online Store公開はスコープ不足のため REST 2024-01 の `published=true` で実施 | `scripts/setup_cooking_class.py --apply` | 復元: `scripts/setup_cooking_class.py --revert`（`scripts/cooking_class/created.json` のIDを削除）
 - 2026-08-01 | collection `cat-wet` → テンプレート `wet` ／ `dog-all` `cat-all` → テンプレート `all` | 代替テーマテンプレートを割り当て＝**店頭の見た目が変わった**（ウェット2ページが3グループ、全商品2ページが9グループの小カテゴリ表示に）。`dog-wet` は元から `wet` 割当済みで変更なし。反映確認＝4ページとも表示商品数が公開商品数と一致（15/15/31/28） | `scripts/set_collection_template.py --apply` | 復元: `scripts/set_collection_template.py --revert`（`scripts/collection_template/backup.json`）
 - 2026-08-01 | product 19件 ＋ collection 6本 `main-dry` `trial` `topping` `homemade` `treats` `seasonal` | 全商品ページ（dog-all / cat-all）の小カテゴリ用に中立タイプタグ6種を付与（`主食ドライ`6 / `お試しセット`2 / `トッピング`2 / `手作り素材`3 / `おやつ`4 / `季節もの`2）し、各タグの自動コレクションを作成（MANUAL・handleに dog/cat を含めないのでナビには出ない）。既存の `犬用ドライフード` タグだけだとふりかけが主食に混ざる／お試しが犬猫別タグで共通テンプレから拾えないため中立タグが必要だった | `scripts/setup_all_subcategory.py --apply` | 復元: `scripts/setup_all_subcategory.py --revert`（`scripts/all_subcategory/backup.json`）
   - ⚠️ 作成した6コレクションも**オンラインストア未公開**（`write_publications` スコープ無し）。表示には影響しない

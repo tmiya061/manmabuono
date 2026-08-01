@@ -1,0 +1,473 @@
+@import "variables";
+
+/* 開催予定（予約リスト）
+   通常の商品グリッドとは別物。日付を主役に、次回開催をヒーロー化して
+   以降の回は行リストで見せる。強調は余白・面・タイポで作る。 */
+
+.c_cookingClass__hero {
+  max-width: 640px;
+  margin: 36px auto 0;
+  padding: 40px 24px 44px;
+  text-align: center;
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 10px;
+  @include mq(pc) {
+    margin-top: 44px;
+    padding: 56px 48px 60px;
+  }
+}
+
+.c_cookingClass__hero-label {
+  margin: 0 0 18px;
+  color: $base-color;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2.24px;
+  @include mq(pc) {
+    font-size: 15px;
+  }
+}
+
+.c_cookingClass__hero-date {
+  margin: 0;
+  color: $text-color;
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 140%;
+  letter-spacing: 1.5px;
+  @include mq(pc) {
+    font-size: 38px;
+    letter-spacing: 2.28px;
+  }
+
+  &.--with-title {
+    margin-top: 10px;
+    color: $base-color;
+    font-size: 17px;
+    letter-spacing: 1.02px;
+    @include mq(pc) {
+      font-size: 21px;
+      letter-spacing: 1.26px;
+    }
+  }
+}
+
+.c_cookingClass__hero-title {
+  margin: 0;
+  color: $text-color;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 150%;
+  letter-spacing: 1.32px;
+  @include mq(pc) {
+    font-size: 27px;
+    letter-spacing: 1.62px;
+  }
+}
+
+.c_cookingClass__hero-meta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  margin: 18px 0 0;
+}
+
+.c_cookingClass__price {
+  color: $text-color;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.72px;
+  @include mq(pc) {
+    font-size: 20px;
+  }
+}
+
+.c_cookingClass__badge {
+  display: inline-block;
+  padding: 4px 14px;
+  color: $text-color;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.96px;
+  border-radius: 70px;
+  background: #f4f4f4;
+
+  &.--few {
+    color: #fff;
+    background: $base-color;
+  }
+
+  &.--full {
+    color: #9a9a9a;
+    background: #f4f4f4;
+  }
+}
+
+.c_cookingClass__hero-details {
+  margin-top: 14px;
+  color: $text-color;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 180%;
+  letter-spacing: 0.52px;
+  @include mq(pc) {
+    font-size: 14px;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+.c_cookingClass__note {
+  margin-top: 16px;
+  color: $text-color;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 180%;
+  letter-spacing: 0.52px;
+  @include mq(pc) {
+    font-size: 14px;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+.c_cookingClass__form {
+  margin-top: 26px;
+}
+
+.c_cookingClass__btn {
+  display: block;
+  margin: auto;
+  padding: 16px;
+  width: 100%;
+  max-width: 334px;
+  color: #fff;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 149.1%;
+  letter-spacing: 0.56px;
+  border-radius: 70px;
+  border: 1px solid $base-color;
+  background: $base-color;
+  cursor: pointer;
+  transition: all 0.3s;
+
+  &:hover {
+    background: #fff;
+    color: $base-color;
+  }
+
+  &:disabled {
+    color: #9a9a9a;
+    border-color: #e5e5e5;
+    background: #f4f4f4;
+    cursor: default;
+  }
+}
+
+/* 今後の開催（行リスト） */
+
+.c_cookingClass__list {
+  max-width: 640px;
+  margin: 44px auto 0;
+  @include mq(pc) {
+    margin-top: 56px;
+  }
+}
+
+.c_cookingClass__list-title {
+  margin: 0 0 6px;
+  color: $text-color;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 1.28px;
+  @include mq(pc) {
+    font-size: 18px;
+  }
+}
+
+.c_cookingClass__rows {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid #c5c5c5;
+}
+
+.c_cookingClass__row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 16px;
+  padding: 18px 2px;
+  border-bottom: 1px solid #c5c5c5;
+  @include mq(pc) {
+    gap: 12px 24px;
+    padding: 20px 4px;
+  }
+
+  .c_cookingClass__form {
+    margin: 0;
+    margin-left: auto;
+    @include mq(pc) {
+      margin-left: 0;
+    }
+  }
+
+  .c_cookingClass__btn {
+    width: auto;
+    margin: 0;
+    margin-left: auto;
+    padding: 10px 28px;
+    font-size: 13px;
+    @include mq(pc) {
+      margin-left: 0;
+    }
+  }
+
+  &.--soldout {
+    .c_cookingClass__row-date,
+    .c_cookingClass__row-date.--with-title,
+    .c_cookingClass__row-title,
+    .c_cookingClass__row-price {
+      color: #9a9a9a;
+    }
+  }
+}
+
+.c_cookingClass__row-info {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  @include mq(pc) {
+    width: auto;
+    flex: 1;
+  }
+}
+
+.c_cookingClass__row-date {
+  color: $text-color;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 150%;
+  letter-spacing: 0.64px;
+  @include mq(pc) {
+    font-size: 17px;
+  }
+
+  &.--with-title {
+    color: $base-color;
+    font-size: 14px;
+    letter-spacing: 0.56px;
+    @include mq(pc) {
+      font-size: 15px;
+    }
+  }
+}
+
+.c_cookingClass__row-title {
+  color: $text-color;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 150%;
+  letter-spacing: 0.64px;
+  @include mq(pc) {
+    font-size: 17px;
+  }
+}
+
+/* 詳細アコーディオン（「詳細をみる」テキストで開閉） */
+
+.c_cookingClass__toggle {
+  width: 100%;
+
+  &.--hero {
+    margin-top: 14px;
+  }
+}
+
+.c_cookingClass__toggle-summary {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  padding: 12px 16px;
+  border-radius: 6px;
+  background: #f4f4f4;
+  cursor: pointer;
+  list-style: none;
+  color: $text-color;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.78px;
+  transition: opacity 0.3s;
+
+  &::-webkit-details-marker {
+    display: none;
+  }
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+.c_cookingClass__toggle.--hero .c_cookingClass__toggle-summary {
+  justify-content: center;
+}
+
+.c_cookingClass__arrow {
+  flex-shrink: 0;
+  transition: transform 0.3s;
+
+  .c_cookingClass__toggle[open] & {
+    transform: rotate(180deg);
+  }
+}
+
+.c_cookingClass__toggle-body {
+  margin-top: 12px;
+  color: $text-color;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 180%;
+  letter-spacing: 0.52px;
+  text-align: left;
+  @include mq(pc) {
+    font-size: 16px;
+  }
+
+  p {
+    margin: 0 0 8px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  ul {
+    margin: 0 0 8px;
+    padding-left: 20px;
+    list-style: disc;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  li {
+    margin: 0;
+  }
+}
+
+.c_cookingClass__toggle.--hero .c_cookingClass__toggle-body {
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.c_cookingClass__row-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.c_cookingClass__row-price {
+  color: $text-color;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.56px;
+}
+
+/* 案内セクション：全幅の帯＋中身は開催予定と同じ640px幅
+   帯の背景は 白 → 薄グレー の交互（開催予定=白から続く） */
+
+.c_cookingClassInfo__band {
+  padding: 48px 20px;
+  @include mq(pc) {
+    padding: 72px 24px;
+  }
+
+  &.--tint {
+    background: #f8f8f8;
+  }
+}
+
+.c_cookingClassInfo__inner {
+  max-width: 640px;
+  margin: 0 auto;
+
+  /* 見出し（下線付き）とその直後のテキストの間隔。
+     ガイドの「見出し→小見出し」間（24/30px）と同じリズムに揃える */
+  .c_under__head + .c_under__text {
+    margin-top: 24px;
+    @include mq(pc) {
+      margin-top: 30px;
+    }
+  }
+}
+
+/* 案内セクション：参加の流れのステップ見出し
+   （c_under__sub-head と同寸・オレンジ左バー無し版。FAQ側はバー有りのまま） */
+
+.c_cookingClass__step-head {
+  color: $text-color;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 140%;
+  letter-spacing: 2.56px;
+  margin-bottom: 14px;
+  @include mq(pc) {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+}
+
+.c_under__head + .c_cookingClass__step-head {
+  margin-top: 24px;
+  @include mq(pc) {
+    margin-top: 30px;
+  }
+}
+
+.c_under__text + .c_cookingClass__step-head {
+  margin-top: 23px;
+}
+
+/* 開催なし */
+
+.c_cookingClass__empty {
+  max-width: 640px;
+  margin: 36px auto 0;
+  padding: 48px 24px;
+  text-align: center;
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 10px;
+}
+
+.c_cookingClass__empty-title {
+  margin: 0;
+  color: $text-color;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 1.44px;
+}
+
+.c_cookingClass__empty-text {
+  margin-top: 12px;
+  color: $text-color;
+  font-size: 14px;
+  line-height: 180%;
+  letter-spacing: 0.56px;
+
+  p {
+    margin: 0;
+  }
+}

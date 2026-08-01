@@ -1,0 +1,125 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "c_under_fv": {
+      "type": "c_underFv",
+      "settings": {
+        "title_en": "COOKING CLASS",
+        "title_jp": "お料理教室",
+        "img": "shopify://shop_images/guide_fv.png",
+        "img_sp": "shopify://shop_images/guide_fv.png",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_top_sp": 10,
+        "padding_bottom_sp": 0
+      }
+    },
+    "schedule": {
+      "type": "c_cooking-class-schedule",
+      "blocks": {
+        "session_0809": {
+          "type": "session",
+          "settings": {
+            "variant_title": "8月9日（日）10:00〜11:30",
+            "session_title": "夏バテ気味の子に。鶏むね肉と夏野菜のさっぱり煮ごはん",
+            "details": "<ul><li>暑い時期に食欲が落ちがちな子への、香りと食感の工夫</li><li>犬と猫で変える、食材の選び方と切り方</li><li>まとめて作って冷凍保存するコツ</li></ul><p>お申し込み後、食材リストと分量表をメールでお送りします。当日は一緒に作りながら進めます（見るだけのご参加も歓迎です）。</p>"
+          }
+        },
+        "session_0816": {
+          "type": "session",
+          "settings": {
+            "variant_title": "8月16日（日）10:00〜11:30",
+            "session_title": "お水をあまり飲まない子に。かつおだしのスープごはん",
+            "details": "<ul><li>だしの取り方の基本（かつおと昆布の使い分け）</li><li>お水を飲む量が気になる子への、食事からの水分の足し方</li><li>いつものごはんへのかけ方と量の目安</li></ul><p>お手持ちのお鍋とざるがあればご参加いただけます。食材リストは前日までにメールでご案内します。</p>"
+          }
+        },
+        "session_0823": {
+          "type": "session",
+          "settings": {
+            "variant_title": "8月23日（日）10:00〜11:30",
+            "session_title": "シニアの子もやわらか。鹿肉と根菜のコトコト煮込み",
+            "details": "<ul><li>脂肪が少ないお肉を使った、体重が気になる子向けの一皿</li><li>やわらかく仕上げる火加減と煮込み時間</li><li>シニアの子への食べさせ方アレンジ</li></ul><p>圧力鍋がなくても大丈夫です。普通のお鍋での作り方をお見せします。</p>"
+          }
+        }
+      },
+      "block_order": ["session_0809", "session_0816", "session_0823"],
+      "settings": {
+        "title": "開催予定",
+        "product": "online-cooking-class",
+        "note": "<p>オンライン開催（Zoom）／ご自宅からご参加いただけます。<br>お申し込み後、参加用URLをメールでお送りします。</p>",
+        "empty_title": "次回の開催は準備中です",
+        "empty_text": "<p>開催が決まりましたら、こちらのページとLINEでお知らせします。</p>",
+        "padding_top": 32,
+        "padding_bottom": 60,
+        "padding_top_sp": 24,
+        "padding_bottom_sp": 48
+      }
+    },
+    "info": {
+      "type": "c_cooking-class-info",
+      "blocks": {
+        "step1": {
+          "type": "step",
+          "settings": {
+            "title": "1. お申し込み",
+            "text": "参加したい開催日を選んで、そのままサイト上でお申し込みください（参加費500円）。"
+          }
+        },
+        "step2": {
+          "type": "step",
+          "settings": {
+            "title": "2. 当日",
+            "text": "お送りするZoomのURLから、ご自宅のキッチンやリビングでお気軽にご参加ください。"
+          }
+        },
+        "step3": {
+          "type": "step",
+          "settings": {
+            "title": "3. 教室のあとも",
+            "text": "レシピを見ながら、おうちで繰り返し作れます。わからないことは次回の教室でご質問ください。"
+          }
+        },
+        "q1": {
+          "type": "faq",
+          "settings": {
+            "question": "初めてでも参加できますか？",
+            "answer": "はい、初めての方こそ歓迎です。特別な道具は必要ありません。ふだんお使いのキッチン用品でご参加いただけます。"
+          }
+        },
+        "q2": {
+          "type": "faq",
+          "settings": {
+            "question": "参加用のURLはいつ届きますか？",
+            "answer": "【要確認】お申し込み時のメールアドレス宛に、開催前日までにZoomのURLをお送りします。"
+          }
+        },
+        "q3": {
+          "type": "faq",
+          "settings": {
+            "question": "キャンセルはできますか？",
+            "answer": "【要確認：キャンセルポリシー未定】お申し込み後のキャンセル・ご返金については進行中の内容が入ります。"
+          }
+        }
+      },
+      "block_order": ["step1", "step2", "step3", "q1", "q2", "q3"],
+      "settings": {
+        "flow_title": "参加の流れ",
+        "intro_title": "お料理教室とは",
+        "intro_text": "<p>マンマボーノのお料理教室は、犬の管理栄養士・西川が、わんちゃん・猫ちゃんの毎日のごはんづくりをお伝えするオンライン教室です。<br>「手作りごはんに挑戦したいけれど、何から始めればいいかわからない」という方も、身近な食材でできるところから一緒に始めましょう。</p>",
+        "faq_title": "よくある質問",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_top_sp": 0,
+        "padding_bottom_sp": 0
+      }
+    }
+  },
+  "order": ["main", "c_under_fv", "schedule", "info"]
+}
