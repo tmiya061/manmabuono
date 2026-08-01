@@ -32,6 +32,105 @@
             height: 85%;
         }
     }
+    // SPはバナーが画像の下にはみ出すので、その分の高さを確保する
+    &.--has-banner {
+        @include mq(sp) {
+            padding-bottom: vw-sp(56);
+        }
+    }
+}
+
+
+/* FV内バナー（右下・PCはオーバーレイ / SPは犬の顔を避けて下へ逃がす） */
+.c_topFv__banner {
+    position: absolute;
+    z-index: 2;
+    // 一辺 = FV高さの38%。右下inset 30px（.c_topFvのpaddingぶんを足して指定）
+    width: vw(207);
+    aspect-ratio: 1;
+    right: vw(80);
+    bottom: vw(82);
+    border-radius: vw(12);
+    box-shadow: 0 vw(4) vw(18) rgba(0, 0, 0, .18);
+
+    @media screen and (max-width: 1000px) {
+        right: calc(20px + #{vw(30)});
+        bottom: calc(80px + #{vw(30)});
+    }
+    @include mq(sp) {
+        width: 32%;
+        left: vw-sp(14);
+        right: auto;
+        // 画像の下端から40px はみ出させる（.--has-banner の padding-bottom 56px ぶんを差し引く）
+        bottom: vw-sp(16);
+        border-radius: vw-sp(8);
+        box-shadow: 0 vw-sp(3) vw-sp(10) rgba(0, 0, 0, .18);
+    }
+
+    .swiper {
+        width: 100%;
+        height: 100%;
+        border-radius: inherit;
+        overflow: hidden;
+    }
+    .swiper-slide {
+        height: 100%;
+    }
+    a {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+    img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .swiper-pagination.--fvBanner {
+        position: absolute;
+        z-index: 2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: vw(8);
+        left: 0;
+        right: 0;
+        bottom: vw(-22);
+        width: auto;
+        // SPは真下に置くと下の要素とぶつかるので、右横に縦センターで置く
+        @include mq(sp) {
+            left: calc(100% + #{vw-sp(12)});
+            right: auto;
+            bottom: 50%;
+            transform: translateY(50%);
+            flex-direction: column;
+            gap: vw-sp(7);
+        }
+        .swiper-pagination-bullet {
+            width: vw(9);
+            height: vw(9);
+            margin: 0;
+            background: #FFF;
+            border: 1px solid rgba(0, 0, 0, .18);
+            opacity: 1;
+            @include mq(sp) {
+                width: vw-sp(7);
+                height: vw-sp(7);
+            }
+        }
+        .swiper-pagination-bullet-active {
+            background: $base-color;
+            border-color: $base-color;
+        }
+    }
+
+    opacity: 0;
+    animation-name: fvFade;
+    animation-fill-mode: forwards;
+    animation-duration: .5s;
+    animation-delay: 1s;
 }
 
 .c_topFv-title {

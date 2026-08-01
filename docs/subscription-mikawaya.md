@@ -50,6 +50,39 @@
   - → `［追加用］` を非公開（UNLISTED）のままにできるのもこれが理由。店頭には出ないが、アプリに登録されていれば追加画面には出る。
   - → **追加画面の並び順を変えたいならアプリ側で操作する**（Shopify側からは動かせない）。並び替え機能の有無は未確認。
 
+### 3-2. API で確認する方法（2026-08-01 実証）
+
+三河屋は**マイページAPIを公開**している（ストア独自のデザイン変更・機能実装のため）。実体が `/apps/floor-s/api/v1/*`。
+
+- **認証**＝クエリパラメータ `customerId`（`window.ShopifyAnalytics.meta.page.customerId`）＋ `token`（ページ内 `#customerIdHash` の中身）＋ `origin=floor-standard`。アプリのaxios interceptorがこれを自動付与している。
+- **`/shop-settings` だけは認証なしで読める**（実証済み・72項目のショップ設定が返る）。
+- **`/my-page-target-product-variants?offset&limit` が「マイページ追加購入設定」の対象商品リスト**。レスポンスは `{ myPageTargetProductVariants: [{handle, variantId, isParent, sellingPlanGroupId}], pageInfo }`。**顧客ログインが必要**（未認証は401）。
+- 👉 **確認手順**：manmabuono.jp に顧客としてログイン → `/apps/floor-s` を開く → ブラウザのコンソールで下記を実行。
+
+```js
+(async () => {
+  const customerId = window.ShopifyAnalytics?.meta?.page?.customerId;
+  const token = document.getElementById('customerIdHash')?.innerText;
+  const r = await fetch(`/apps/floor-s/api/v1/my-page-target-product-variants?offset=0&limit=250&customerId=${customerId}&token=${token}&origin=floor-standard`);
+  const d = await r.json();
+  console.log('登録件数:', d.myPageTargetProductVariants?.length, d);
+  console.table(d.myPageTargetProductVariants);
+})();
+```
+
+※ Shopify Admin API からは確認できない（`subscriptionContracts` はスコープ外。そもそもこの設定はShopifyのデータではない）。
+
+### 3-3. 🔴 要確認：`addProductDiscount` 設定の存在（2026-08-01 発見）
+
+`/shop-settings` に **`addProductDiscount: false`** という項目がある。ヘルプの「追加する商品を**定価**で販売したい場合」／「追加する商品に**割引**を適用したい場合」の2節に対応する設定と思われる。
+
+- 現在 **false ＝「定価で販売」モード**。だから `［追加用］` を割引後価格で用意する運用になっている（辻褄は合う）。
+- ❓ **もしこれを true にすると追加時にもグループ割引（10%）が自動適用されるなら、`［追加用］` 32件の手動保守そのものが不要になる可能性がある。**
+- サポート回答は2025年時点のもの。**その後に追加された機能かもしれない**ので、三河屋サポートに確認する価値が大きい。
+  - 聞くこと：「`addProductDiscount` を有効にすると、商品追加時にもサブスクリプショングループの割引が適用されますか？ その場合、割引後価格で作成している専用商品（`［追加用］`）は不要になりますか？」
+
+あわせて **`myPageAllowProductsChange: false`**（マイページでの商品変更が無効）も確認したい。`myPageAllowProductEdit` / `ProductVariantEdit` / `ProductRemove` は true なので、意図的な使い分けなのか設定漏れなのか判断がつかない。
+
 ## 4. 現状（2026-07-31 実データ）と **要修正リスト**
 
 Shopify側の基本状態は正常：**`［追加用］` 32件すべて `UNLISTED` かつ `availableForSale: true`**（＝店頭に出さず、追加画面から購入できる状態）。29件は通常版のちょうど90%。

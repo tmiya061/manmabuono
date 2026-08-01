@@ -15,13 +15,37 @@
   }
 {%- endstyle -%}
 
-<div class="c_topFv">
+{%- assign fv_banners = section.blocks | where: 'type', 'banner' -%}
+
+<div class="c_topFv{% if fv_banners.size > 0 %} --has-banner{% endif %}">
   <img class="pc" src="{{ 'fv.webp' | file_url }}" alt="犬と猫の画像" width="1397">
   <img class="sp" src="{{ 'fv_sp.webp' | file_url }}" alt="犬と猫の画像" width="354">
   <h1 class="c_topFv-title">
     <span>{{ section.settings.title1 }}</span><br>
     <span>{{ section.settings.title2 }}</span>
   </h1>
+  {%- if fv_banners.size > 0 -%}
+    <div class="c_topFv__banner">
+      <div class="swiper --fvBanner">
+        <div class="swiper-wrapper">
+          {%- for block in fv_banners -%}
+            <div class="swiper-slide" {{ block.shopify_attributes }}>
+              <a href="{{ block.settings.banner-link }}"{% if block.settings.banner-new-tab %} target="_blank" rel="noopener"{% endif %}>
+                {{
+                  block.settings['banner-img']
+                  | image_url: width: 480, height: 480
+                  | image_tag: alt: block.settings['banner-img'].alt, loading: 'eager'
+                }}
+              </a>
+            </div>
+          {%- endfor -%}
+        </div>
+      </div>
+      {%- if fv_banners.size > 1 -%}
+        <div class="swiper-pagination --fvBanner"></div>
+      {%- endif -%}
+    </div>
+  {%- endif -%}
 {% comment %}   <a class="c_topFv__about-link" href="/pages/about">
     <img src="{{ 'about-link.png' | file_url }}" alt="マンマボーノとは" width="109">
   </a> {% endcomment %}
@@ -86,6 +110,32 @@
       "unit": "px",
       "label": "下部の余白",
       "default": 32
+    }
+  ],
+  "max_blocks": 4,
+  "blocks": [
+    {
+      "type": "banner",
+      "name": "FV内バナー（右下）",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "banner-img",
+          "label": "バナー画像（正方形）",
+          "info": "PCは一辺がFV高さの38%（約200px）で表示されます。文字は3〜5語程度に絞ってください。"
+        },
+        {
+          "type": "url",
+          "id": "banner-link",
+          "label": "バナーのリンク先"
+        },
+        {
+          "type": "checkbox",
+          "id": "banner-new-tab",
+          "label": "別タブで開く",
+          "default": true
+        }
+      ]
     }
   ],
   "presets":[

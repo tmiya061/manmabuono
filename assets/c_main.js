@@ -2,6 +2,24 @@
 if ( window.document.body.id === 'top' ) {
 
     document.addEventListener("DOMContentLoaded", function() {
+        // FV右下のバナー（フェード切替）
+        const fvBannerEl = document.querySelector('.swiper.--fvBanner');
+        if (fvBannerEl) {
+            const fvSlideCount = fvBannerEl.querySelectorAll('.swiper-slide').length;
+            new Swiper('.swiper.--fvBanner', {
+                loop: fvSlideCount > 1, //1枚のときはループさせない
+                autoplay: fvSlideCount > 1 ? { delay: 5000, disableOnInteraction: false } : false,
+                speed: 900,
+                effect: "fade", //小さいのでスライドではなくフェード
+                fadeEffect: { crossFade: true },
+                allowTouchMove: false,
+                pagination: {
+                    el: ".swiper-pagination.--fvBanner",
+                    clickable: true,
+                },
+            });
+        }
+
         const topBanner = new Swiper('.swiper.--topBanner', { //名前を変える
             loop: true, //最後→最初に戻るループ再生を有効に
             autoplay: { 
