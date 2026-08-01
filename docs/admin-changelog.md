@@ -9,6 +9,8 @@ Shopifyの管理画面・ストアデータは Git で追えない。**書き込
 
 ---
 
+- 2026-08-01 | product 8件（そぼろ煮・鹿肉煮込み・ぶりのうま煮・かつおのうま煮 の 単品/×3袋）＋ collection 2本 `okazu` `premium` | 「おかず」タグを8商品に付与し、自動コレクション2本を新規作成（`okazu`＝TAG EQUALS 'おかず' 8件 / `premium`＝TAG EQUALS '犬と猫のプレミアム料理' 3件、いずれも MANUAL・handleに dog/cat を含めないのでナビには出ない）。ウェットページの小カテゴリ表示をスープ・だしと同じ「タグ→コレクション」の形に揃えるため | `scripts/setup_wet_subcategory.py --apply` | 復元: `scripts/setup_wet_subcategory.py --revert`（`scripts/wet_subcategory/backup.json`）
+  - ⚠️ 作成した2コレクションは**オンラインストアに未公開**（`/collections/okazu` は404）。APIアプリに `write_publications` スコープが無いため管理画面での公開が必要。ウェットページの表示には影響しない
 - 2026-08-01 | product `［追加用］` 3件（プレミアム料理 親子丼の素 / 鹿肉煮込みハンバーグ / 鰤と大根の炊いたん） | 価格を通常版×0.9 に修正（¥1,210→¥1,089 / ¥1,430→¥1,287 / ¥1,320→¥1,188）。2026-05-11 に複製したまま価格未変更で放置されていた分 | `scripts/check_addon_prices.py --fix` | 復元: `scripts/collection_order/addon_prices.backup.json`
 - 2026-07-31 | collection `dog-dry` / `cat-dry` / `dog-wet` / `cat-wet` / `dog-make-6` / `cat-make` / `dog-easy-cook-5` （下位7コレクション） | 商品を並び替え（dog-all/cat-all と同じ原則を適用。犬ウェットは プレミアム料理→中段 に降格、猫はスープ・だしを上位＋魚を先頭） | `scripts/reorder_collection.py --apply` | 復元: `scripts/collection_order/<handle>.backup.json`
 - 2026-07-31 | collection `cat-all` | 商品58件を並び替え（犬の原則＋猫向けに2点変更：スープ・だしをプレミアム料理より上位／ウェットは魚を先頭） | `scripts/reorder_collection.py --apply` | 復元: `scripts/collection_order/cat-all.backup.json`

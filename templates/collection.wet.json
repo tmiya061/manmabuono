@@ -22,7 +22,7 @@
       "type": "c_collection-tag-group",
       "settings": {
         "heading": "犬と猫のプレミアム料理",
-        "include_tag": "プレミアム料理",
+        "include_tag": "犬と猫のプレミアム料理",
         "columns_desktop": "4",
         "columns_mobile": "2",
         "image_ratio": "adapt",
