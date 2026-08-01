@@ -108,9 +108,18 @@
     }
 }
 
-.c_topPicks__illust img {
-    width: 96px;
-    height: auto;
+.c_topPicks__illust {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    // 犬猫のイラストは縦横比が違う（犬213×230・猫263×242）ため、height:auto のままだと
+    // 下の見出し・罫線が犬猫で15pxずれる。器の高さを高い方（犬=104px）で固定し下端を揃える
+    height: 104px;
+
+    img {
+        width: 96px;
+        height: auto;
+    }
 }
 
 .c_topPicks__title {
