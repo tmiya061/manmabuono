@@ -1,0 +1,205 @@
+{% comment %}
+  トップ「お悩みから探す」。お悩み別コレクション（nayami_tag_plan）への入口タイル。
+
+  - タイルは blocks で持つ（アイコン画像・文言・リンク）。
+  - リンク未設定でもタイルは表示する（お悩み別コレクションの作成前に
+    見た目だけ先に出せるように）。押せる見た目（ホバー）はリンク有のみ。
+  - アイコン画像も未設定で崩れない（文言だけで成立するレイアウト）。
+  - タイルの器は c_topPicks のタブと同じ型（白面＋枠＋radius12）。
+{% endcomment %}
+
+{{ 'c_common.min.css' | asset_url | stylesheet_tag }}
+{{ 'c_topNayami.min.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  #shopify-section-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+  @media screen and (max-width: 750px) {
+    #shopify-section-{{ section.id }} {
+      padding-top: {{ section.settings.padding_top_sp }}px;
+      padding-bottom: {{ section.settings.padding_bottom_sp }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="c_topNayami page-width">
+  <h2 class="c_common__title">{{ section.settings.title }}</h2>
+  <p class="c_common__text">{{ section.settings.sub }}</p>
+
+  {%- if section.settings.lead != blank -%}
+    <p class="c_topNayami__lead">{{ section.settings.lead }}</p>
+  {%- endif -%}
+
+  <ul class="c_topNayami__tiles">
+    {%- for block in section.blocks -%}
+      <li {{ block.shopify_attributes }}>
+        {%- if block.settings.link != blank -%}
+          <a class="c_topNayami__tile" href="{{ block.settings.link }}">
+        {%- else -%}
+          <div class="c_topNayami__tile">
+        {%- endif -%}
+
+        {%- if block.settings.image != blank -%}
+          <img
+            src="{{ block.settings.image | image_url: width: 160 }}"
+            alt=""
+            width="80"
+            height="80"
+            loading="lazy"
+          >
+        {%- endif -%}
+        <span class="c_topNayami__tile-label">{{ block.settings.label }}</span>
+
+        {%- if block.settings.link != blank -%}
+          </a>
+        {%- else -%}
+          </div>
+        {%- endif -%}
+      </li>
+    {%- endfor -%}
+  </ul>
+
+  {%- if section.settings.button_label != blank and section.settings.button_link != blank -%}
+    <a href="{{ section.settings.button_link }}" class="c_common__btn c_topNayami__btn">
+      {{- section.settings.button_label -}}
+    </a>
+  {%- endif -%}
+</div>
+
+{% schema %}
+{
+  "name": "お悩みから探す",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "見出し",
+      "default": "お悩みから探す"
+    },
+    {
+      "type": "text",
+      "id": "sub",
+      "label": "英字サブ",
+      "default": "CONCERNS"
+    },
+    {
+      "type": "text",
+      "id": "lead",
+      "label": "リード文",
+      "info": "空なら非表示。効能の断定はNG（「〜な子に」まで）。"
+    },
+    {
+      "type": "header",
+      "content": "下部ボタン",
+      "info": "「お悩みから探す」専用ページができたらリンクする。文言とリンク先の両方が入ると表示される。"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "ボタンの文言"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "ボタンのリンク先"
+    },
+    {
+      "type": "header",
+      "content": "上下の余白"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "上部の余白（PC）",
+      "default": 70
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "下部の余白（PC）",
+      "default": 70
+    },
+    {
+      "type": "range",
+      "id": "padding_top_sp",
+      "min": 0,
+      "max": 150,
+      "step": 2,
+      "unit": "px",
+      "label": "上部の余白（SP）",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_sp",
+      "min": 0,
+      "max": 150,
+      "step": 2,
+      "unit": "px",
+      "label": "下部の余白（SP）",
+      "default": 56
+    }
+  ],
+  "max_blocks": 6,
+  "blocks": [
+    {
+      "type": "tile",
+      "name": "お悩みタイル",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "アイコン画像",
+          "info": "未設定でも文言だけで表示される。"
+        },
+        {
+          "type": "text",
+          "id": "label",
+          "label": "お悩みの文言",
+          "info": "効能の断定はNG。「〜が気になる子に」「〜な子に」の形で。"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "リンク先（お悩み別コレクション）",
+          "info": "コレクション作成前は空でよい（タイルは表示される）。"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "お悩みから探す",
+      "category": "カスタムパーツ",
+      "blocks": [
+        {
+          "type": "tile",
+          "settings": { "label": "お水をあまり飲まない子に" }
+        },
+        {
+          "type": "tile",
+          "settings": { "label": "食いつき・食べムラが気になる子に" }
+        },
+        {
+          "type": "tile",
+          "settings": { "label": "シニアの子のやわらかごはん" }
+        },
+        {
+          "type": "tile",
+          "settings": { "label": "お腹が敏感な子に" }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,106 @@
+@import "variables";
+
+/*
+ * お悩みから探す（トップ）
+ * タイルの器は c_topPicks のタブ（白面＋#D9D9D9枠＋radius12）の引用。
+ * ホバーの強調も同セクションの is-active（橙枠＋薄橙面）をそのまま使う。
+ * 見出しは c_common__title / c_common__text（お客様の声と同じ型）。
+ */
+
+.c_topNayami__lead {
+    text-align: center;
+    color: $text-color;
+    font-size: 14px;
+    line-height: 180%;
+    letter-spacing: .56px;
+    margin-top: 14px;
+    @include mq(sp) {
+        font-size: 13px;
+        margin-top: 10px;
+    }
+}
+
+.c_topNayami__tiles {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+    max-width: 1000px;
+    margin: 34px auto 0;
+    padding: 0;
+    list-style: none;
+    @media screen and (max-width: 1100px) {
+        gap: 14px;
+    }
+    @include mq(sp) {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        margin-top: 24px;
+    }
+
+    li {
+        margin: 0;
+    }
+}
+
+.c_topNayami__tile {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    height: 100%;
+    min-height: 118px;
+    padding: 20px 14px;
+    border: 1px solid #D9D9D9;
+    border-radius: 12px;
+    background: #FFF;
+    color: $text-color;
+    text-decoration: none;
+    text-align: center;
+    transition: border-color .25s ease, background-color .25s ease;
+
+    img {
+        width: 60px;
+        height: auto;
+    }
+
+    @include mq(pc) {
+        // リンクがあるタイルだけ押せる見た目にする
+        @at-root a#{&}:hover {
+            border-color: $base-color;
+            background: rgba(255, 123, 94, .07);
+        }
+    }
+    @include mq(sp) {
+        min-height: 104px;
+        padding: 16px 10px;
+        gap: 8px;
+
+        img {
+            width: 48px;
+        }
+    }
+}
+
+.c_topNayami__tile-label {
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 160%;
+    letter-spacing: 1.2px;
+    // 「〜ごはん」の「ん」だけ2行目に落ちる孤立折返しを防ぐ。
+    // auto-phrase＝文節単位の改行（Chrome）、balance＝行長の均衡。非対応ブラウザは従来どおり。
+    word-break: auto-phrase;
+    text-wrap: balance;
+    @include mq(sp) {
+        font-size: 13px;
+        letter-spacing: .6px;
+    }
+}
+
+.c_topNayami__btn.c_common__btn {
+    margin-top: 34px;
+    @include mq(sp) {
+        margin-top: 26px;
+    }
+}

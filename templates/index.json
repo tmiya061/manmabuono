@@ -421,6 +421,49 @@
         "cat_link_label": "猫用商品一覧はこちら",
         "show_copy": false
       }
+    },
+    "c_top_nayami": {
+      "type": "c_topNayami",
+      "blocks": {
+        "nayami_tile_1": {
+          "type": "tile",
+          "settings": {
+            "label": "お水をあまり飲まない子に"
+          }
+        },
+        "nayami_tile_2": {
+          "type": "tile",
+          "settings": {
+            "label": "食いつき・食べムラが気になる子に"
+          }
+        },
+        "nayami_tile_3": {
+          "type": "tile",
+          "settings": {
+            "label": "シニアの子のやわらかごはん"
+          }
+        },
+        "nayami_tile_4": {
+          "type": "tile",
+          "settings": {
+            "label": "お腹が敏感な子に"
+          }
+        }
+      },
+      "block_order": [
+        "nayami_tile_1",
+        "nayami_tile_2",
+        "nayami_tile_3",
+        "nayami_tile_4"
+      ],
+      "settings": {
+        "title": "お悩みから探す",
+        "sub": "CONCERNS",
+        "padding_top": 70,
+        "padding_bottom": 70,
+        "padding_top_sp": 48,
+        "padding_bottom_sp": 56
+      }
     }
   },
   "order": [
@@ -430,6 +473,7 @@
     "c_top_sample_itkDRk",
     "c_top_about_HKAHmz",
     "c_top_voices_cTGqWC",
+    "c_top_nayami",
     "c_top_news_PhkhgL",
     "1707571247d74eef14",
     "c_picture_x6h77q"
