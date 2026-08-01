@@ -49,7 +49,7 @@
       {%- liquid
         assign hero_details = nil
         for block in section.blocks
-          if block.settings.variant_title == hero_variant.title and block.settings.details != blank
+          if block.settings.variant_title == hero_variant.title
             assign hero_details = block
           endif
         endfor
@@ -57,6 +57,9 @@
       <div class="c_cookingClass__hero">
         <p class="c_cookingClass__hero-label">次回の開催</p>
         <p class="c_cookingClass__hero-date">{{ hero_variant.title }}</p>
+        {%- if hero_details != nil and hero_details.settings.session_title != blank -%}
+          <p class="c_cookingClass__hero-title">{{ hero_details.settings.session_title }}</p>
+        {%- endif -%}
         <p class="c_cookingClass__hero-meta">
           <span class="c_cookingClass__price">{{ class_product.price | money }}</span>
           <span class="c_cookingClass__badge{% if hero_variant.inventory_management != blank and hero_variant.inventory_quantity <= 3 %} --few{% endif %}">
@@ -67,7 +70,7 @@
             {%- endif -%}
           </span>
         </p>
-        {%- if hero_details != nil -%}
+        {%- if hero_details != nil and hero_details.settings.details != blank -%}
           <details class="c_cookingClass__toggle --hero" {{ hero_details.shopify_attributes }}>
             <summary class="c_cookingClass__toggle-summary">
               詳細をみる
@@ -106,7 +109,7 @@
               {%- liquid
                 assign row_details = nil
                 for block in section.blocks
-                  if block.settings.variant_title == v.title and block.settings.details != blank
+                  if block.settings.variant_title == v.title
                     assign row_details = block
                   endif
                 endfor
@@ -137,10 +140,15 @@
                 {%- endif -%}
               {%- endcapture -%}
               <li class="c_cookingClass__row{% unless v.available %} --soldout{% endunless %}">
-                <span class="c_cookingClass__row-date">{{ v.title }}</span>
+                <div class="c_cookingClass__row-info">
+                  <span class="c_cookingClass__row-date">{{ v.title }}</span>
+                  {%- if row_details != nil and row_details.settings.session_title != blank -%}
+                    <span class="c_cookingClass__row-title">{{ row_details.settings.session_title }}</span>
+                  {%- endif -%}
+                </div>
                 {{ row_meta }}
                 {{ row_button }}
-                {%- if row_details != nil -%}
+                {%- if row_details != nil and row_details.settings.details != blank -%}
                   <details class="c_cookingClass__toggle" {{ row_details.shopify_attributes }}>
                     <summary class="c_cookingClass__toggle-summary">
                       詳細をみる
@@ -253,12 +261,18 @@
           "type": "text",
           "id": "variant_title",
           "label": "開催日（商品のバリアント名と完全一致で入力）",
-          "info": "例: 8月9日（日）10:00〜11:30。一致した回に詳細が付きます。次回開催はそのまま表示、以降の回はアコーディオンで開閉。"
+          "info": "例: 8月9日（日）10:00〜11:30。一致した回にタイトル・詳細が付きます。"
+        },
+        {
+          "type": "text",
+          "id": "session_title",
+          "label": "タイトル（何の料理か・テーマが伝わる一言）",
+          "info": "常に表示されます。例: 夏バテ気味の子に。鶏むね肉と夏野菜のさっぱり煮ごはん"
         },
         {
           "type": "richtext",
           "id": "details",
-          "label": "この回の内容"
+          "label": "この回の内容（「詳細をみる」で開閉）"
         }
       ]
     }

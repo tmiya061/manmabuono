@@ -42,6 +42,18 @@
   }
 }
 
+.c_cookingClass__hero-title {
+  margin: 12px 0 0;
+  color: $text-color;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 160%;
+  letter-spacing: 0.9px;
+  @include mq(pc) {
+    font-size: 17px;
+  }
+}
+
 .c_cookingClass__hero-meta {
   display: flex;
   justify-content: center;
@@ -209,23 +221,43 @@
 
   &.--soldout {
     .c_cookingClass__row-date,
+    .c_cookingClass__row-title,
     .c_cookingClass__row-price {
       color: #9a9a9a;
     }
   }
 }
 
-.c_cookingClass__row-date {
+.c_cookingClass__row-info {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  @include mq(pc) {
+    width: auto;
+    flex: 1;
+  }
+}
+
+.c_cookingClass__row-date {
   color: $text-color;
   font-size: 16px;
   font-weight: 700;
   line-height: 150%;
   letter-spacing: 0.64px;
   @include mq(pc) {
-    width: auto;
-    flex: 1;
     font-size: 17px;
+  }
+}
+
+.c_cookingClass__row-title {
+  color: $text-color;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 160%;
+  letter-spacing: 0.52px;
+  @include mq(pc) {
+    font-size: 14px;
   }
 }
 
