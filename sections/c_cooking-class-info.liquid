@@ -1,0 +1,178 @@
+{{ 'c_common.min.css' | asset_url | stylesheet_tag }}
+{{ 'c_under.min.css' | asset_url | stylesheet_tag }}
+{{ 'c_guide.min.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  #shopify-section-{{ section.id }} {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+  @media screen and (max-width: 750px) {
+      #shopify-section-{{ section.id }} {
+      padding-top: {{ section.settings.padding_top_sp }}px;
+      padding-bottom: {{ section.settings.padding_bottom_sp }}px;
+      }
+  }
+{%- endstyle -%}
+
+<div class="c_guide page-width">
+  {%- assign has_step = false -%}
+  {%- for block in section.blocks -%}
+    {%- if block.type == 'step' -%}{%- assign has_step = true -%}{%- endif -%}
+  {%- endfor -%}
+
+  {%- if has_step -%}
+    <div class="c_guide__wrap" id="class-flow">
+      <h3 class="c_under__head">{{ section.settings.flow_title }}</h3>
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'step' -%}
+          <p class="c_under__sub-head" {{ block.shopify_attributes }}>{{ block.settings.title }}</p>
+          <p class="c_under__text">{{ block.settings.text }}</p>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  {%- endif -%}
+
+  {%- unless section.settings.intro_text == blank -%}
+    <div class="c_guide__wrap" id="class-about">
+      <h3 class="c_under__head">{{ section.settings.intro_title }}</h3>
+      <div class="c_under__text">{{ section.settings.intro_text }}</div>
+    </div>
+  {%- endunless -%}
+
+  {%- assign has_faq = false -%}
+  {%- for block in section.blocks -%}
+    {%- if block.type == 'faq' -%}{%- assign has_faq = true -%}{%- endif -%}
+  {%- endfor -%}
+
+  {%- if has_faq -%}
+    <div class="c_guide__wrap" id="class-faq">
+      <h3 class="c_under__head">{{ section.settings.faq_title }}</h3>
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'faq' -%}
+          <p class="c_under__sub-head" {{ block.shopify_attributes }}>{{ block.settings.question }}</p>
+          <p class="c_under__text">{{ block.settings.answer }}</p>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  {%- endif -%}
+</div>
+
+{% schema %}
+{
+  "name": "お料理教室 案内",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "flow_title",
+      "default": "参加の流れ",
+      "label": "流れの見出し"
+    },
+    {
+      "type": "text",
+      "id": "intro_title",
+      "default": "お料理教室とは",
+      "label": "紹介の見出し"
+    },
+    {
+      "type": "richtext",
+      "id": "intro_text",
+      "label": "紹介文"
+    },
+    {
+      "type": "text",
+      "id": "faq_title",
+      "default": "よくある質問",
+      "label": "FAQの見出し"
+    },
+    {
+      "type": "header",
+      "content": "余白"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "label": "上余白（PC）",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "label": "下余白（PC）",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "padding_top_sp",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "label": "上余白（SP）",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_sp",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "label": "下余白（SP）",
+      "default": 60
+    }
+  ],
+  "blocks": [
+    {
+      "type": "step",
+      "name": "参加の流れ 1ステップ",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "ステップ名",
+          "default": "1. お申し込み"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "説明"
+        }
+      ]
+    },
+    {
+      "type": "faq",
+      "name": "FAQ項目",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "質問",
+          "default": "ここに質問を入力"
+        },
+        {
+          "type": "textarea",
+          "id": "answer",
+          "label": "回答",
+          "default": "ここに回答を入力"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "お料理教室 案内",
+      "category": "カスタムパーツ"
+    }
+  ]
+}
+{% endschema %}

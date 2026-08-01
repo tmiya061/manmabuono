@@ -72,6 +72,9 @@
             {%- endif -%}
           </span>
         </p>
+        {%- unless section.settings.note == blank -%}
+          <div class="c_cookingClass__note">{{ section.settings.note }}</div>
+        {%- endunless -%}
         {%- if hero_details != nil and hero_details.settings.details != blank -%}
           <details class="c_cookingClass__toggle --hero" {{ hero_details.shopify_attributes }}>
             <summary class="c_cookingClass__toggle-summary">
@@ -83,9 +86,6 @@
             <div class="c_cookingClass__toggle-body">{{ hero_details.settings.details }}</div>
           </details>
         {%- endif -%}
-        {%- unless section.settings.note == blank -%}
-          <div class="c_cookingClass__note">{{ section.settings.note }}</div>
-        {%- endunless -%}
         {%- form 'product', class_product, class: 'c_cookingClass__form' -%}
           <input type="hidden" name="id" value="{{ hero_variant.id }}">
           <input type="hidden" name="quantity" value="1">

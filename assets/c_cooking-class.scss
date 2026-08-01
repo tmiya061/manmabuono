@@ -44,11 +44,11 @@
   &.--with-title {
     margin-top: 10px;
     color: $base-color;
-    font-size: 19px;
-    letter-spacing: 1.14px;
+    font-size: 17px;
+    letter-spacing: 1.02px;
     @include mq(pc) {
-      font-size: 25px;
-      letter-spacing: 1.5px;
+      font-size: 21px;
+      letter-spacing: 1.26px;
     }
   }
 }
@@ -56,13 +56,13 @@
 .c_cookingClass__hero-title {
   margin: 0;
   color: $text-color;
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 700;
   line-height: 150%;
-  letter-spacing: 1.44px;
+  letter-spacing: 1.32px;
   @include mq(pc) {
-    font-size: 32px;
-    letter-spacing: 1.92px;
+    font-size: 27px;
+    letter-spacing: 1.62px;
   }
 }
 
@@ -290,22 +290,24 @@
 
   &.--hero {
     margin-top: 14px;
-    text-align: center;
   }
 }
 
 .c_cookingClass__toggle-summary {
-  display: inline-flex;
+  display: flex;
+  width: 100%;
   align-items: center;
+  justify-content: space-between;
   gap: 6px;
+  padding: 12px 16px;
+  border-radius: 6px;
+  background: #f4f4f4;
   cursor: pointer;
   list-style: none;
   color: $text-color;
   font-size: 13px;
   font-weight: 700;
   letter-spacing: 0.78px;
-  text-decoration: underline;
-  text-underline-offset: 4px;
   transition: opacity 0.3s;
 
   &::-webkit-details-marker {
@@ -313,8 +315,12 @@
   }
 
   &:hover {
-    opacity: 0.6;
+    opacity: 0.7;
   }
+}
+
+.c_cookingClass__toggle.--hero .c_cookingClass__toggle-summary {
+  justify-content: center;
 }
 
 .c_cookingClass__arrow {

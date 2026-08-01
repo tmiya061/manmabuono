@@ -62,97 +62,60 @@
         "padding_bottom_sp": 48
       }
     },
-    "flow": {
-      "type": "multicolumn",
+    "info": {
+      "type": "c_cooking-class-info",
       "blocks": {
         "step1": {
-          "type": "column",
+          "type": "step",
           "settings": {
             "title": "1. お申し込み",
-            "text": "<p>参加したい開催日を選んで、そのままサイト上でお申し込みください（参加費500円）。</p>"
+            "text": "参加したい開催日を選んで、そのままサイト上でお申し込みください（参加費500円）。"
           }
         },
         "step2": {
-          "type": "column",
+          "type": "step",
           "settings": {
             "title": "2. 当日",
-            "text": "<p>お送りするZoomのURLから、ご自宅のキッチンやリビングでお気軽にご参加ください。</p>"
+            "text": "お送りするZoomのURLから、ご自宅のキッチンやリビングでお気軽にご参加ください。"
           }
         },
         "step3": {
-          "type": "column",
+          "type": "step",
           "settings": {
             "title": "3. 教室のあとも",
-            "text": "<p>レシピを見ながら、おうちで繰り返し作れます。わからないことは次回の教室でご質問ください。</p>"
-          }
-        }
-      },
-      "block_order": ["step1", "step2", "step3"],
-      "settings": {
-        "title": "参加の流れ",
-        "heading_size": "h2",
-        "columns_desktop": 3,
-        "column_alignment": "center",
-        "columns_mobile": "1",
-        "button_label": ""
-      }
-    },
-    "intro": {
-      "type": "rich-text",
-      "blocks": {
-        "heading": {
-          "type": "heading",
-          "settings": {
-            "heading": "お料理教室とは",
-            "heading_size": "h2"
+            "text": "レシピを見ながら、おうちで繰り返し作れます。わからないことは次回の教室でご質問ください。"
           }
         },
-        "text": {
-          "type": "text",
-          "settings": {
-            "text": "<p>マンマボーノのお料理教室は、犬の管理栄養士・西川が、わんちゃん・猫ちゃんの毎日のごはんづくりをお伝えするオンライン教室です。<br>「手作りごはんに挑戦したいけれど、何から始めればいいかわからない」という方も、身近な食材でできるところから一緒に始めましょう。</p>"
-          }
-        }
-      },
-      "block_order": ["heading", "text"],
-      "settings": {
-        "desktop_content_position": "center",
-        "content_alignment": "center"
-      }
-    },
-    "faq": {
-      "type": "collapsible-content",
-      "blocks": {
         "q1": {
-          "type": "collapsible_row",
+          "type": "faq",
           "settings": {
-            "heading": "初めてでも参加できますか？",
-            "row_content": "<p>はい、初めての方こそ歓迎です。特別な道具は必要ありません。ふだんお使いのキッチン用品でご参加いただけます。</p>"
+            "question": "初めてでも参加できますか？",
+            "answer": "はい、初めての方こそ歓迎です。特別な道具は必要ありません。ふだんお使いのキッチン用品でご参加いただけます。"
           }
         },
         "q2": {
-          "type": "collapsible_row",
+          "type": "faq",
           "settings": {
-            "heading": "参加用のURLはいつ届きますか？",
-            "row_content": "<p>【要確認】お申し込み時のメールアドレス宛に、開催前日までにZoomのURLをお送りします。</p>"
+            "question": "参加用のURLはいつ届きますか？",
+            "answer": "【要確認】お申し込み時のメールアドレス宛に、開催前日までにZoomのURLをお送りします。"
           }
         },
         "q3": {
-          "type": "collapsible_row",
+          "type": "faq",
           "settings": {
-            "heading": "キャンセルはできますか？",
-            "row_content": "<p>【要確認：キャンセルポリシー未定】お申し込み後のキャンセル・ご返金については進行中の内容が入ります。</p>"
+            "question": "キャンセルはできますか？",
+            "answer": "【要確認：キャンセルポリシー未定】お申し込み後のキャンセル・ご返金については進行中の内容が入ります。"
           }
         }
       },
-      "block_order": ["q1", "q2", "q3"],
+      "block_order": ["step1", "step2", "step3", "q1", "q2", "q3"],
       "settings": {
-        "caption": "",
-        "heading": "よくある質問",
-        "heading_size": "h2",
-        "layout": "none"
+        "flow_title": "参加の流れ",
+        "intro_title": "お料理教室とは",
+        "intro_text": "<p>マンマボーノのお料理教室は、犬の管理栄養士・西川が、わんちゃん・猫ちゃんの毎日のごはんづくりをお伝えするオンライン教室です。<br>「手作りごはんに挑戦したいけれど、何から始めればいいかわからない」という方も、身近な食材でできるところから一緒に始めましょう。</p>",
+        "faq_title": "よくある質問"
       }
     }
   },
-  "order": ["main", "c_under_fv", "schedule", "flow", "intro", "faq"]
+  "order": ["main", "c_under_fv", "schedule", "info"]
 }
