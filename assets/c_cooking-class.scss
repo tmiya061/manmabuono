@@ -384,6 +384,25 @@
   letter-spacing: 0.56px;
 }
 
+/* 案内セクション：全幅の帯＋中身は開催予定と同じ640px幅
+   帯の背景は 白 → 薄グレー の交互（開催予定=白から続く） */
+
+.c_cookingClassInfo__band {
+  padding: 48px 20px;
+  @include mq(pc) {
+    padding: 72px 24px;
+  }
+
+  &.--tint {
+    background: #f8f8f8;
+  }
+}
+
+.c_cookingClassInfo__inner {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
 /* 案内セクション：参加の流れのステップ見出し
    （c_under__sub-head と同寸・オレンジ左バー無し版。FAQ側はバー有りのまま） */
 

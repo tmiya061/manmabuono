@@ -16,28 +16,32 @@
   }
 {%- endstyle -%}
 
-<div class="c_guide page-width">
+<div class="c_cookingClassInfo">
   {%- assign has_step = false -%}
   {%- for block in section.blocks -%}
     {%- if block.type == 'step' -%}{%- assign has_step = true -%}{%- endif -%}
   {%- endfor -%}
 
   {%- if has_step -%}
-    <div class="c_guide__wrap" id="class-flow">
-      <h3 class="c_under__head">{{ section.settings.flow_title }}</h3>
-      {%- for block in section.blocks -%}
-        {%- if block.type == 'step' -%}
-          <p class="c_cookingClass__step-head" {{ block.shopify_attributes }}>{{ block.settings.title }}</p>
-          <p class="c_under__text">{{ block.settings.text }}</p>
-        {%- endif -%}
-      {%- endfor -%}
+    <div class="c_cookingClassInfo__band --tint" id="class-flow">
+      <div class="c_cookingClassInfo__inner">
+        <h3 class="c_under__head">{{ section.settings.flow_title }}</h3>
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'step' -%}
+            <p class="c_cookingClass__step-head" {{ block.shopify_attributes }}>{{ block.settings.title }}</p>
+            <p class="c_under__text">{{ block.settings.text }}</p>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
     </div>
   {%- endif -%}
 
   {%- unless section.settings.intro_text == blank -%}
-    <div class="c_guide__wrap" id="class-about">
-      <h3 class="c_under__head">{{ section.settings.intro_title }}</h3>
-      <div class="c_under__text">{{ section.settings.intro_text }}</div>
+    <div class="c_cookingClassInfo__band" id="class-about">
+      <div class="c_cookingClassInfo__inner">
+        <h3 class="c_under__head">{{ section.settings.intro_title }}</h3>
+        <div class="c_under__text">{{ section.settings.intro_text }}</div>
+      </div>
     </div>
   {%- endunless -%}
 
@@ -47,14 +51,16 @@
   {%- endfor -%}
 
   {%- if has_faq -%}
-    <div class="c_guide__wrap" id="class-faq">
-      <h3 class="c_under__head">{{ section.settings.faq_title }}</h3>
-      {%- for block in section.blocks -%}
-        {%- if block.type == 'faq' -%}
-          <p class="c_under__sub-head" {{ block.shopify_attributes }}>{{ block.settings.question }}</p>
-          <p class="c_under__text">{{ block.settings.answer }}</p>
-        {%- endif -%}
-      {%- endfor -%}
+    <div class="c_cookingClassInfo__band --tint" id="class-faq">
+      <div class="c_cookingClassInfo__inner">
+        <h3 class="c_under__head">{{ section.settings.faq_title }}</h3>
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'faq' -%}
+            <p class="c_under__sub-head" {{ block.shopify_attributes }}>{{ block.settings.question }}</p>
+            <p class="c_under__text">{{ block.settings.answer }}</p>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
     </div>
   {%- endif -%}
 </div>
