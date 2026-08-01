@@ -428,25 +428,29 @@
         "nayami_tile_1": {
           "type": "tile",
           "settings": {
-            "label": "お水をあまり飲まない子に"
+            "label": "お水をあまり飲まない子に",
+            "product": "京の一番だし"
           }
         },
         "nayami_tile_2": {
           "type": "tile",
           "settings": {
-            "label": "食いつき・食べムラが気になる子に"
+            "label": "食いつき・食べムラが気になる子に",
+            "product": "広島呉-ちりめんじゃこのふりかけ"
           }
         },
         "nayami_tile_3": {
           "type": "tile",
           "settings": {
-            "label": "シニアの子のやわらかごはん"
+            "label": "シニアの子のやわらかごはん",
+            "product": "京都舞鶴港-鰤と大根の炊いたん"
           }
         },
         "nayami_tile_4": {
           "type": "tile",
           "settings": {
-            "label": "お腹が敏感な子に"
+            "label": "お腹が敏感な子に",
+            "product": "チキンボーンブロス"
           }
         }
       },

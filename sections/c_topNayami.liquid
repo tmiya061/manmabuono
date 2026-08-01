@@ -34,15 +34,23 @@
 
   <ul class="c_topNayami__tiles">
     {%- for block in section.blocks -%}
+      {%- liquid
+        # リンク先の優先順位：①お悩み別コレクション（作成後に設定）②代表商品ページ③リンクなし
+        assign tile_url = block.settings.link
+        if tile_url == blank and block.settings.product != blank
+          assign tile_url = block.settings.product.url
+        endif
+      -%}
       <li {{ block.shopify_attributes }}>
-        {%- if block.settings.link != blank -%}
-          <a class="c_topNayami__tile" href="{{ block.settings.link }}">
+        {%- if tile_url != blank -%}
+          <a class="c_topNayami__tile" href="{{ tile_url }}">
         {%- else -%}
           <div class="c_topNayami__tile">
         {%- endif -%}
 
         {%- if block.settings.image != blank -%}
           <img
+            class="c_topNayami__tile-icon"
             src="{{ block.settings.image | image_url: width: 160 }}"
             alt=""
             width="80"
@@ -52,7 +60,22 @@
         {%- endif -%}
         <span class="c_topNayami__tile-label">{{ block.settings.label }}</span>
 
-        {%- if block.settings.link != blank -%}
+        {%- if block.settings.product != blank -%}
+          {%- comment -%} 代表商品＝「このお悩みにはこういう商品」のさわり（1点だけ） {%- endcomment -%}
+          <span class="c_topNayami__tile-product">
+            <img
+              class="c_topNayami__tile-productImg"
+              src="{{ block.settings.product.featured_image | image_url: width: 400 }}"
+              alt="{{ block.settings.product.title | escape }}"
+              width="200"
+              height="170"
+              loading="lazy"
+            >
+            <span class="c_topNayami__tile-productName">{{ block.settings.product.title }}</span>
+          </span>
+        {%- endif -%}
+
+        {%- if tile_url != blank -%}
           </a>
         {%- else -%}
           </div>
@@ -169,10 +192,16 @@
           "info": "効能の断定はNG。「〜が気になる子に」「〜な子に」の形で。"
         },
         {
+          "type": "product",
+          "id": "product",
+          "label": "代表商品（さわり・1点）",
+          "info": "このお悩みの主役商品を1つ。未設定なら文言だけのタイルになる。"
+        },
+        {
           "type": "url",
           "id": "link",
           "label": "リンク先（お悩み別コレクション）",
-          "info": "コレクション作成前は空でよい（タイルは表示される）。"
+          "info": "コレクション作成前は空でよい。空の間は代表商品のページへリンクする。"
         }
       ]
     }
