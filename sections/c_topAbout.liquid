@@ -38,9 +38,16 @@
             <p class="c_topAbout__text">
                 {{ section.settings.about_text }}
             </p>
-            {% comment %} <a href="/pages/about" class="c_common__btn c_topAbout__btn">
-                さらに詳しいこだわりはこちら
-            </a> {% endcomment %}
+            {%- comment -%}
+              昔 /pages/about 向けで作られコメントアウトされていたボタンを 2026-08-02 に復活。
+              当時のリンク先 /pages/about は404（未作成）だったのが眠っていた理由と推測。
+              現存する /pages/story（マンマボーノの思い）へ向け、文言・リンクは設定化。
+            {%- endcomment -%}
+            {%- if section.settings.btn_label != blank and section.settings.btn_link != blank -%}
+              <a href="{{ section.settings.btn_link }}" class="c_common__btn c_topAbout__btn">
+                {{- section.settings.btn_label -}}
+              </a>
+            {%- endif -%}
         </div>
     </div>
 </div>
@@ -60,6 +67,18 @@
     "id": "about_text_side",
     "label": "左側の縦書きテキスト",
     "default": "テキストが入ります。"
+    },
+    {
+      "type": "text",
+      "id": "btn_label",
+      "label": "ボタンの文言",
+      "default": "マンマボーノの思いはこちら"
+    },
+    {
+      "type": "url",
+      "id": "btn_link",
+      "label": "ボタンのリンク先",
+      "info": "文言とリンクの両方が入ると表示される。"
     },
     {
       "type": "header",
