@@ -1,0 +1,209 @@
+{{ 'c_collectionCat.min.css' | asset_url | stylesheet_tag }}
+{{ 'c_cooking-class.min.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  #shopify-section-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+
+  @media screen and (max-width: 750px) {
+    #shopify-section-{{ section.id }} {
+      padding-top: {{ section.settings.padding_top_sp }}px;
+      padding-bottom: {{ section.settings.padding_bottom_sp }}px;
+    }
+  }
+{%- endstyle -%}
+
+{%- liquid
+  assign class_product = section.settings.product
+  assign hero_variant = nil
+  if class_product != blank
+    for v in class_product.variants
+      if v.available and hero_variant == nil
+        assign hero_variant = v
+      endif
+    endfor
+  endif
+-%}
+
+<div class="c_cookingClass">
+  <div class="page-width">
+    {%- unless section.settings.title == blank -%}
+      <div class="c_collectionCategory__title-wrap">
+        <h2 class="c_collectionCategory__title">{{ section.settings.title }}</h2>
+        <svg
+          class="c_collectionCategory__icon"
+          xmlns="http://www.w3.org/2000/svg"
+          width="18"
+          height="18"
+          viewBox="0 0 18 18"
+          fill="none"
+        >
+          <path d="M16 2L2 16" stroke="#FF7B5E" stroke-width="3"/>
+        </svg>
+      </div>
+    {%- endunless -%}
+
+    {%- if hero_variant != nil -%}
+      <div class="c_cookingClass__hero">
+        <p class="c_cookingClass__hero-label">次回の開催</p>
+        <p class="c_cookingClass__hero-date">{{ hero_variant.title }}</p>
+        <p class="c_cookingClass__hero-meta">
+          <span class="c_cookingClass__price">{{ class_product.price | money }}</span>
+          <span class="c_cookingClass__badge{% if hero_variant.inventory_management != blank and hero_variant.inventory_quantity <= 3 %} --few{% endif %}">
+            {%- if hero_variant.inventory_management != blank and hero_variant.inventory_quantity <= 3 -%}
+              残りわずか
+            {%- else -%}
+              受付中
+            {%- endif -%}
+          </span>
+        </p>
+        {%- unless section.settings.note == blank -%}
+          <div class="c_cookingClass__note">{{ section.settings.note }}</div>
+        {%- endunless -%}
+        {%- form 'product', class_product, class: 'c_cookingClass__form' -%}
+          <input type="hidden" name="id" value="{{ hero_variant.id }}">
+          <input type="hidden" name="quantity" value="1">
+          <button type="submit" class="c_cookingClass__btn --primary">この回に申し込む</button>
+        {%- endform -%}
+      </div>
+
+      {%- liquid
+        assign rest_count = 0
+        for v in class_product.variants
+          unless v.id == hero_variant.id
+            assign rest_count = rest_count | plus: 1
+          endunless
+        endfor
+      -%}
+
+      {%- if rest_count > 0 -%}
+        <div class="c_cookingClass__list">
+          <p class="c_cookingClass__list-title">今後の開催</p>
+          <ul class="c_cookingClass__rows">
+            {%- for v in class_product.variants -%}
+              {%- if v.id == hero_variant.id -%}{%- continue -%}{%- endif -%}
+              <li class="c_cookingClass__row{% unless v.available %} --soldout{% endunless %}">
+                <span class="c_cookingClass__row-date">{{ v.title }}</span>
+                <span class="c_cookingClass__row-meta">
+                  <span class="c_cookingClass__row-price">{{ class_product.price | money }}</span>
+                  {%- if v.available -%}
+                    {%- if v.inventory_management != blank and v.inventory_quantity <= 3 -%}
+                      <span class="c_cookingClass__badge --few">残りわずか</span>
+                    {%- else -%}
+                      <span class="c_cookingClass__badge">受付中</span>
+                    {%- endif -%}
+                  {%- else -%}
+                    <span class="c_cookingClass__badge --full">満席</span>
+                  {%- endif -%}
+                </span>
+                {%- if v.available -%}
+                  {%- form 'product', class_product, class: 'c_cookingClass__form' -%}
+                    <input type="hidden" name="id" value="{{ v.id }}">
+                    <input type="hidden" name="quantity" value="1">
+                    <button type="submit" class="c_cookingClass__btn">申し込む</button>
+                  {%- endform -%}
+                {%- else -%}
+                  <button type="button" class="c_cookingClass__btn" disabled>満席</button>
+                {%- endif -%}
+              </li>
+            {%- endfor -%}
+          </ul>
+        </div>
+      {%- endif -%}
+    {%- else -%}
+      <div class="c_cookingClass__empty">
+        <p class="c_cookingClass__empty-title">{{ section.settings.empty_title }}</p>
+        {%- unless section.settings.empty_text == blank -%}
+          <div class="c_cookingClass__empty-text">{{ section.settings.empty_text }}</div>
+        {%- endunless -%}
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "お料理教室 開催予定",
+  "class": "section",
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "title",
+      "default": "開催予定",
+      "label": "タイトル"
+    },
+    {
+      "type": "product",
+      "id": "product",
+      "label": "教室の商品（開催日をバリアントで持つ）"
+    },
+    {
+      "type": "richtext",
+      "id": "note",
+      "label": "開催メモ（オンライン/Zoom案内など）"
+    },
+    {
+      "type": "text",
+      "id": "empty_title",
+      "default": "次回の開催は準備中です",
+      "label": "開催なし時のタイトル"
+    },
+    {
+      "type": "richtext",
+      "id": "empty_text",
+      "label": "開催なし時の案内文"
+    },
+    {
+      "type": "header",
+      "content": "余白"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "label": "上余白（PC）",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "label": "下余白（PC）",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_top_sp",
+      "min": 0,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "label": "上余白（SP）",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_sp",
+      "min": 0,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "label": "下余白（SP）",
+      "default": 48
+    }
+  ],
+  "presets": [
+    {
+      "name": "お料理教室 開催予定"
+    }
+  ]
+}
+{% endschema %}
