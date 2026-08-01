@@ -75,6 +75,11 @@
           </span>
         {%- endif -%}
 
+        {%- if block.settings.desc != blank -%}
+          {%- comment -%} なぜこの商品か（原材料・製法の事実ベース。断定表現は書かない） {%- endcomment -%}
+          <span class="c_topNayami__tile-desc">{{ block.settings.desc }}</span>
+        {%- endif -%}
+
         {%- if tile_url != blank -%}
           </a>
         {%- else -%}
@@ -196,6 +201,12 @@
           "id": "product",
           "label": "代表商品（さわり・1点）",
           "info": "このお悩みの主役商品を1つ。未設定なら文言だけのタイルになる。"
+        },
+        {
+          "type": "textarea",
+          "id": "desc",
+          "label": "なぜこの商品か（作用の説明）",
+          "info": "原材料・製法の事実で書く。「解決する・改善する・治る」等の断定はNG（薬機法）。"
         },
         {
           "type": "url",
