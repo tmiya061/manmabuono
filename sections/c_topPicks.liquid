@@ -60,6 +60,7 @@
   <div class="c_topPicks__panels">
     {%- for pet in pets -%}
       {%- if pet == 'dog' -%}
+        {%- assign picked = section.settings.dog_products -%}
         {%- assign col = collections[section.settings.dog_collection] -%}
         {%- assign label = section.settings.dog_title -%}
         {%- assign sub = section.settings.dog_sub -%}
@@ -68,6 +69,7 @@
         {%- assign pick_title = section.settings.dog_pick_title -%}
         {%- assign illust = 'dog-illust.png' -%}
       {%- else -%}
+        {%- assign picked = section.settings.cat_products -%}
         {%- assign col = collections[section.settings.cat_collection] -%}
         {%- assign label = section.settings.cat_title -%}
         {%- assign sub = section.settings.cat_sub -%}
@@ -75,6 +77,16 @@
         {%- assign link_label = section.settings.cat_link_label -%}
         {%- assign pick_title = section.settings.cat_pick_title -%}
         {%- assign illust = 'cat-illust.png' -%}
+      {%- endif -%}
+      {%- comment -%}
+        商品の決め方：直接指定（product_list）があればそれを優先、無ければ従来どおり
+        コレクションの先頭から。直接指定ならコレクション（＝本番の現行トップと共有の
+        データ）を触らずに顔ぶれを組める。
+      {%- endcomment -%}
+      {%- if picked.count > 0 -%}
+        {%- assign items = picked -%}
+      {%- else -%}
+        {%- assign items = col.products -%}
       {%- endif -%}
 
       <section
@@ -95,9 +107,9 @@
           <p class="c_topPicks__pickTitle">{{ pick_title }}</p>
         {%- endif -%}
 
-        {%- if col.products.size > 0 -%}
+        {%- if items.size > 0 or items.count > 0 -%}
           <ul class="c_topPicks__items">
-            {%- for product in col.products limit: limit -%}
+            {%- for product in items limit: limit -%}
               {%- assign copy = '' -%}
               {%- for block in section.blocks -%}
                 {%- if block.type == 'copy' and block.settings.product != blank -%}
@@ -177,6 +189,13 @@
       "default": "FOR DOGS"
     },
     {
+      "type": "product_list",
+      "id": "dog_products",
+      "label": "おすすめ商品（直接指定）",
+      "limit": 6,
+      "info": "指定した順に表示。空なら下のコレクションの先頭から出す。"
+    },
+    {
       "type": "text",
       "id": "dog_collection",
       "label": "おすすめ商品のコレクション（ハンドル）",
@@ -214,6 +233,13 @@
       "id": "cat_sub",
       "label": "英字サブ",
       "default": "FOR CATS"
+    },
+    {
+      "type": "product_list",
+      "id": "cat_products",
+      "label": "おすすめ商品（直接指定）",
+      "limit": 6,
+      "info": "指定した順に表示。空なら下のコレクションの先頭から出す。"
     },
     {
       "type": "text",

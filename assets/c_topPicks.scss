@@ -214,6 +214,7 @@
     font-weight: 400;
     line-height: 160%;
     letter-spacing: .6px;
+    word-break: auto-phrase; // 「ハンバーグ」等が語中で切れないように（非対応ブラウザは従来どおり）
     margin-top: 4px;
     margin-bottom: 8px;
     @include mq(sp) {
