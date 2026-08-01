@@ -32,9 +32,10 @@
             height: 85%;
         }
     }
+    // SPはバナーが画像の下へはみ出すぶんの高さを確保する
     &.--has-banner {
         @include mq(sp) {
-            padding-bottom: vw-sp(10);
+            padding-bottom: vw-sp(66);
         }
     }
 }
@@ -48,23 +49,20 @@
     width: vw(207);
     aspect-ratio: 1;
     right: vw(80);
-    bottom: vw(82);
+    bottom: 3vw;
     border-radius: vw(12);
     box-shadow: 0 vw(4) vw(18) rgba(0, 0, 0, .18);
 
     @media screen and (max-width: 1000px) {
         right: calc(20px + #{vw(30)});
-        bottom: calc(80px + #{vw(30)});
+        bottom: calc(80px + 3vw);
     }
-    // SPは左下が縦書き見出し（.c_topFv-title）に占有されているため重ねられない。
-    // 絶対配置をやめ、FV画像の下に通常フローで置く（犬の顔・見出しのどちらも隠さない）
+    // SPは左下。犬の口元あたりに上端がくる高さで、下へ少しはみ出させる
     @include mq(sp) {
-        position: relative;
-        left: auto;
-        right: auto;
-        bottom: auto;
         width: 32%;
-        margin: vw-sp(14) 0 0 vw-sp(14);
+        left: vw-sp(14);
+        right: auto;
+        bottom: vw-sp(33); // .--has-banner の padding-bottom vw-sp(66) との差ぶん下へはみ出す
         border-radius: vw-sp(8);
         box-shadow: 0 vw-sp(3) vw-sp(10) rgba(0, 0, 0, .18);
     }
@@ -90,6 +88,8 @@
         object-fit: cover;
     }
 
+    // ⚠️ c_topBanner.min.css に .swiper-pagination-bullets{bottom:14px !important} が
+    //    あるため、!important で上書きしないとバナーの内側に入り込む
     .swiper-pagination.--fvBanner {
         position: absolute;
         z-index: 2;
@@ -99,15 +99,11 @@
         gap: vw(8);
         left: 0;
         right: 0;
-        bottom: vw(-22);
+        top: auto !important;
+        bottom: vw(-24) !important;
         width: auto;
-        // SPは真下に置くと下の要素とぶつかるので、右横に縦センターで置く
         @include mq(sp) {
-            left: calc(100% + #{vw-sp(12)});
-            right: auto;
-            bottom: 50%;
-            transform: translateY(50%);
-            flex-direction: column;
+            bottom: vw-sp(-22) !important;
             gap: vw-sp(7);
         }
         .swiper-pagination-bullet {
@@ -170,6 +166,8 @@
     @include mq(sp) {
         left: vw-sp(12);
         top: vw-sp(100);
+        // 親の bottom 指定が効いたままだと上下で引っ張られて見出しが下がるため解除する
+        bottom: auto;
         span {
             padding: vw-sp(6) vw-sp(4);
             font-size: vw-sp(18);

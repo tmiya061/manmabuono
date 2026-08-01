@@ -11,6 +11,37 @@
   "sections": {
     "c_top_fv_VDwRay": {
       "type": "c_topFv",
+      "blocks": {
+        "fv_banner_youtube": {
+          "type": "banner",
+          "settings": {
+            "banner-img": "shopify://shop_images/1_4x_b7475289-e015-46c6-ade0-b2d3866e4ce2.png",
+            "banner-link": "https://www.youtube.com/watch?v=rXCvWq6IQuQ",
+            "banner-new-tab": true
+          }
+        },
+        "fv_banner_furusato": {
+          "type": "banner",
+          "settings": {
+            "banner-img": "shopify://shop_images/1_1.png",
+            "banner-link": "https://www.furusato-tax.jp/search?q=MANMA%20BUONO&header=1&sst=B",
+            "banner-new-tab": true
+          }
+        },
+        "fv_banner_daiko": {
+          "type": "banner",
+          "settings": {
+            "banner-img": "shopify://shop_images/e6333084dea68e77170eebc2d9c6593a.jpg",
+            "banner-link": "shopify://products/食事代行サービス",
+            "banner-new-tab": false
+          }
+        }
+      },
+      "block_order": [
+        "fv_banner_youtube",
+        "fv_banner_furusato",
+        "fv_banner_daiko"
+      ],
       "settings": {
         "title1": "健康寿命を延ばす",
         "title2": "ペットのごはんのお手伝い",
@@ -18,48 +49,6 @@
         "padding_bottom": 0,
         "padding_top_sp": 24,
         "padding_bottom_sp": 40
-      }
-    },
-    "c_top_banner_qhyMTD": {
-      "type": "c_topBanner",
-      "blocks": {
-        "banner_qfKAYt": {
-          "type": "banner",
-          "settings": {
-            "banner-img": "shopify://shop_images/1_4x_b7475289-e015-46c6-ade0-b2d3866e4ce2.png",
-            "banner-link": "https://www.youtube.com/watch?v=rXCvWq6IQuQ"
-          }
-        },
-        "banner_rWD76K": {
-          "type": "banner",
-          "settings": {
-            "banner-img": "shopify://shop_images/1_1.png",
-            "banner-link": "https://www.furusato-tax.jp/search?q=MANMA%20BUONO&header=1&sst=B"
-          }
-        },
-        "banner_qFke8P": {
-          "type": "banner",
-          "settings": {
-            "banner-img": "shopify://shop_images/e6333084dea68e77170eebc2d9c6593a.jpg",
-            "banner-link": "shopify://products/食事代行サービス"
-          }
-        }
-      },
-      "block_order": [
-        "banner_qfKAYt",
-        "banner_rWD76K",
-        "banner_qFke8P"
-      ],
-      "custom_css": [
-        ".c_topBanner .swiper-slide {aspect-ratio: unset;}"
-      ],
-      "settings": {
-        "enable_more_than_four": true,
-        "title": "見出し",
-        "padding_top": 42,
-        "padding_bottom": 32,
-        "padding_top_sp": 0,
-        "padding_bottom_sp": 60
       }
     },
     "c_top_food_Wkhkza": {
@@ -337,7 +326,6 @@
   },
   "order": [
     "c_top_fv_VDwRay",
-    "c_top_banner_qhyMTD",
     "c_top_food_Wkhkza",
     "c_top_sample_itkDRk",
     "c_top_product_K8kaQt",
