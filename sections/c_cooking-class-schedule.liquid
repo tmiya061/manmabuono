@@ -46,9 +46,20 @@
     {%- endunless -%}
 
     {%- if hero_variant != nil -%}
+      {%- liquid
+        assign hero_details = nil
+        for block in section.blocks
+          if block.settings.variant_title == hero_variant.title and block.settings.details != blank
+            assign hero_details = block
+          endif
+        endfor
+      -%}
       <div class="c_cookingClass__hero">
         <p class="c_cookingClass__hero-label">次回の開催</p>
         <p class="c_cookingClass__hero-date">{{ hero_variant.title }}</p>
+        {%- if hero_details != nil -%}
+          <div class="c_cookingClass__hero-details" {{ hero_details.shopify_attributes }}>{{ hero_details.settings.details }}</div>
+        {%- endif -%}
         <p class="c_cookingClass__hero-meta">
           <span class="c_cookingClass__price">{{ class_product.price | money }}</span>
           <span class="c_cookingClass__badge{% if hero_variant.inventory_management != blank and hero_variant.inventory_quantity <= 3 %} --few{% endif %}">
@@ -84,8 +95,15 @@
           <ul class="c_cookingClass__rows">
             {%- for v in class_product.variants -%}
               {%- if v.id == hero_variant.id -%}{%- continue -%}{%- endif -%}
-              <li class="c_cookingClass__row{% unless v.available %} --soldout{% endunless %}">
-                <span class="c_cookingClass__row-date">{{ v.title }}</span>
+              {%- liquid
+                assign row_details = nil
+                for block in section.blocks
+                  if block.settings.variant_title == v.title and block.settings.details != blank
+                    assign row_details = block
+                  endif
+                endfor
+              -%}
+              {%- capture row_meta -%}
                 <span class="c_cookingClass__row-meta">
                   <span class="c_cookingClass__row-price">{{ class_product.price | money }}</span>
                   {%- if v.available -%}
@@ -98,6 +116,8 @@
                     <span class="c_cookingClass__badge --full">満席</span>
                   {%- endif -%}
                 </span>
+              {%- endcapture -%}
+              {%- capture row_button -%}
                 {%- if v.available -%}
                   {%- form 'product', class_product, class: 'c_cookingClass__form' -%}
                     <input type="hidden" name="id" value="{{ v.id }}">
@@ -106,6 +126,27 @@
                   {%- endform -%}
                 {%- else -%}
                   <button type="button" class="c_cookingClass__btn" disabled>満席</button>
+                {%- endif -%}
+              {%- endcapture -%}
+              <li class="c_cookingClass__row{% unless v.available %} --soldout{% endunless %}{% if row_details != nil %} --has-details{% endif %}">
+                {%- if row_details != nil -%}
+                  <details class="c_cookingClass__row-details" {{ row_details.shopify_attributes }}>
+                    <summary class="c_cookingClass__row-summary">
+                      <span class="c_cookingClass__row-date">{{ v.title }}</span>
+                      {{ row_meta }}
+                      <svg class="c_cookingClass__chevron" xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true">
+                        <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="2" fill="none"/>
+                      </svg>
+                    </summary>
+                    <div class="c_cookingClass__row-body">
+                      <div class="c_cookingClass__row-text">{{ row_details.settings.details }}</div>
+                      {{ row_button }}
+                    </div>
+                  </details>
+                {%- else -%}
+                  <span class="c_cookingClass__row-date">{{ v.title }}</span>
+                  {{ row_meta }}
+                  {{ row_button }}
                 {%- endif -%}
               </li>
             {%- endfor -%}
@@ -200,6 +241,26 @@
       "default": 48
     }
   ],
+  "blocks": [
+    {
+      "type": "session",
+      "name": "開催回の詳細",
+      "settings": [
+        {
+          "type": "text",
+          "id": "variant_title",
+          "label": "開催日（商品のバリアント名と完全一致で入力）",
+          "info": "例: 8月9日（日）10:00〜11:30。一致した回に詳細が付きます。次回開催はそのまま表示、以降の回はアコーディオンで開閉。"
+        },
+        {
+          "type": "richtext",
+          "id": "details",
+          "label": "この回の内容"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 20,
   "presets": [
     {
       "name": "お料理教室 開催予定"

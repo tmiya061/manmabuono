@@ -23,6 +23,23 @@
     },
     "schedule": {
       "type": "c_cooking-class-schedule",
+      "blocks": {
+        "session_0809": {
+          "type": "session",
+          "settings": {
+            "variant_title": "8月9日（日）10:00〜11:30",
+            "details": "<p>【仮】この回のメニュー：鶏むね肉と夏野菜のさっぱりごはん。使う食材と分量は、お申し込み後にメールでお送りします。</p>"
+          }
+        },
+        "session_0816": {
+          "type": "session",
+          "settings": {
+            "variant_title": "8月16日（日）10:00〜11:30",
+            "details": "<p>【仮】この回のメニュー：かつおだしのスープごはん。だしの取り方から一緒にやります。</p>"
+          }
+        }
+      },
+      "block_order": ["session_0809", "session_0816"],
       "settings": {
         "title": "開催予定",
         "product": "online-cooking-class",
