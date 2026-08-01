@@ -22,6 +22,9 @@
     background: #f5f5f5;
     &-active {
       background: $base-color;
+      .c_topVoices__title {
+        color: #fff;
+      }
       .c_topVoices__text {
         color: #fff;
       }
@@ -71,6 +74,20 @@
     @include mq(sp) {
       margin-top: 20px;
       width: 100%;
+    }
+  }
+
+  .c_topVoices__title {
+    font-family: var(--font-jp-family);
+    color: $base-color;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%;
+    letter-spacing: 0.8px;
+    margin-bottom: 12px;
+    @include mq(sp) {
+      font-size: 18px;
     }
   }
 

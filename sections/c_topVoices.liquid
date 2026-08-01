@@ -39,6 +39,9 @@
                     {% endif %}
                   </div>
                   <div class="c_topVoices__text-wrap">
+                    {% if block.settings.voices_title != blank %}
+                      <h3 class="c_topVoices__title">{{ block.settings.voices_title }}</h3>
+                    {% endif %}
                     <p class="c_topVoices__text">
                       {{ block.settings.voices_text }}
                     </p>
@@ -141,6 +144,11 @@
           "type": "image_picker",
           "id": "voices_image",
           "label": "画像"
+        },
+        {
+          "type": "text",
+          "id": "voices_title",
+          "label": "見出し"
         },
         {
           "type": "textarea",
