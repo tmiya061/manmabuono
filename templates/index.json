@@ -218,9 +218,9 @@
       ],
       "settings": {
         "padding_top": 94,
-        "padding_bottom": 110,
+        "padding_bottom": 50,
         "padding_top_sp": 57,
-        "padding_bottom_sp": 63
+        "padding_bottom_sp": 32
       }
     },
     "c_top_news_PhkhgL": {
@@ -228,9 +228,9 @@
       "settings": {
         "title": "見出し",
         "padding_top": 0,
-        "padding_bottom": 0,
+        "padding_bottom": 60,
         "padding_top_sp": 0,
-        "padding_bottom_sp": 0
+        "padding_bottom_sp": 36
       }
     },
     "1707571247d74eef14": {
