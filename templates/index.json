@@ -448,57 +448,6 @@
           "京の一番だし"
         ]
       }
-    },
-    "c_top_nayami": {
-      "type": "c_topNayami",
-      "blocks": {
-        "nayami_tile_1": {
-          "type": "tile",
-          "settings": {
-            "label": "お水をあまり飲まない子に",
-            "product": "京の一番だし",
-            "desc": "昆布・鰹節・椎茸のだしの香りが「飲みたい」を誘う。いつものごはんにかけるだけで、食事から水分がとれる。"
-          }
-        },
-        "nayami_tile_2": {
-          "type": "tile",
-          "settings": {
-            "label": "食いつき・食べムラが気になる子に",
-            "product": "広島呉-ちりめんじゃこのふりかけ",
-            "desc": "無加塩の釜揚げじゃこをひとふり。磯の香りが立って、いつものごはんの風味が変わる。"
-          }
-        },
-        "nayami_tile_3": {
-          "type": "tile",
-          "settings": {
-            "label": "シニアの子のやわらかごはん",
-            "product": "京都舞鶴港-鰤と大根の炊いたん",
-            "desc": "焼いて臭みをとった鰤を、一番だしでやわらかく炊き合わせ。噛む力が弱ってきた子にも食べやすい。"
-          }
-        },
-        "nayami_tile_4": {
-          "type": "tile",
-          "settings": {
-            "label": "お腹が敏感な子に",
-            "product": "チキンボーンブロス",
-            "desc": "鶏がらと丸鶏をじっくり炊いただけのシンプルなスープ。水分と栄養をやさしく補える。"
-          }
-        }
-      },
-      "block_order": [
-        "nayami_tile_1",
-        "nayami_tile_2",
-        "nayami_tile_3",
-        "nayami_tile_4"
-      ],
-      "settings": {
-        "title": "お悩みから探す",
-        "sub": "CONCERNS",
-        "padding_top": 70,
-        "padding_bottom": 70,
-        "padding_top_sp": 48,
-        "padding_bottom_sp": 56
-      }
     }
   },
   "order": [
@@ -506,7 +455,6 @@
     "c_top_banner_qhyMTD",
     "c_top_picks",
     "c_top_sample_itkDRk",
-    "c_top_nayami",
     "c_top_voices_cTGqWC",
     "c_top_about_HKAHmz",
     "c_top_news_PhkhgL",
