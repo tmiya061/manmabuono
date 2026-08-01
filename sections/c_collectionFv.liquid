@@ -14,7 +14,8 @@
         }
     }
 {%- endstyle -%}
-<div class="c_underFv-wrap">
+{%- comment -%}--collection＝この下層FVだけ帯と画像を小さくする（assets/c_under.scss）{%- endcomment -%}
+<div class="c_underFv-wrap --collection">
     <div class="c_underFv">
         <div class="c_underFv__img">
             {% if collection.handle contains 'cat' %}
