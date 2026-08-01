@@ -6,13 +6,6 @@
  * SP: タブ切り替え（選択されたパネルのみ表示）
  */
 
-// FV(.c_topFv::after)のグレー帯が下へ95px伸びており、
-// 重ね順を指定しないと犬猫のイラストがその下に隠れる
-.c_topPicks {
-    position: relative;
-    z-index: 1;
-}
-
 .c_topPicks__tabs {
     display: none; // PCでは出さない
     @include mq(sp) {
