@@ -52,6 +52,17 @@
       margin-bottom: 15px;
     }
   }
+
+  {%- if section.settings.columns_mobile == '2' -%}
+    /* template-collection.css の「1商品だけなら全幅」ルールを打ち消し、2列サイズで左詰めにする */
+    @media screen and (max-width: 749px) {
+      #shopify-section-{{ section.id }} .grid__item:only-child {
+        flex: 0 0 auto;
+        width: calc(50% - var(--grid-mobile-horizontal-spacing) / 2);
+        max-width: calc(50% - var(--grid-mobile-horizontal-spacing) / 2);
+      }
+    }
+  {%- endif -%}
 {%- endstyle -%}
 
 <div class="section-{{ section.id }}-padding gradient color-background-1">
