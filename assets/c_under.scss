@@ -3,7 +3,7 @@
 .c_underFv-wrap {
     position: relative;
     @include mq(pc) {
-        padding-top: 46px;
+        padding-top: 32px;
     }
     &::after {
         content: '';
@@ -14,7 +14,7 @@
         height: 0;
         border-style: solid;
         border-color: $base-color transparent transparent transparent;
-        border-width: 248px 641px 0px 0px;
+        border-width: 186px 481px 0px 0px;
         @include mq(sp) {
             display: none;
         }
@@ -24,7 +24,7 @@
 .c_underFv {
     width: 100%;
     height: auto;
-    aspect-ratio: 375 / 311;
+    aspect-ratio: 375 / 250; // 2026-08-02: SPも帯を低くする
     position: relative;
     @include mq(pc) {
         width: 1100px;
@@ -32,7 +32,7 @@
         margin: auto;
         height: auto;
         padding: 0 50px;
-        aspect-ratio: 1100 / 320;
+        aspect-ratio: 1100 / 240; // 2026-08-02: 帯を低くして商品を上げる
     }
     &::after {
         content: '';
@@ -44,7 +44,7 @@
         height: 0;
         border-style: solid;
         border-color: transparent transparent #ff7b5e transparent;
-        border-width: 0px 0px vw-sp(245) vw-sp(248);
+        border-width: 0px 0px vw-sp(190) vw-sp(195);
         @include mq(pc) {
             display: none;
         }
@@ -56,15 +56,15 @@
     z-index: 1;
     top: 0;
     left: 0;
-    width: 84.26666%;
+    width: 84%;
     height: auto;
-    aspect-ratio: 316 / 220;
+    aspect-ratio: 328 / 190; // 幅84%でも高さは 70%×316:220 と同じ（約190px）に揃えた比率
     @include mq(pc) {
         left: 50px;
-        width: 443px;
+        width: 340px;
         aspect-ratio: 443 / 252;
         @media screen and (max-width: 990px) {
-            width: 350px;
+            width: 280px;
         }
     }
     img {
