@@ -1,0 +1,205 @@
+{{ 'c_common.min.css' | asset_url | stylesheet_tag }}
+{{ 'c_blogList.min.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  #shopify-section-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+
+  @media screen and (max-width: 750px) {
+    #shopify-section-{{ section.id }} {
+      padding-top: {{ section.settings.padding_top_sp }}px;
+      padding-bottom: {{ section.settings.padding_bottom_sp }}px;
+    }
+  }
+{%- endstyle -%}
+
+{%- liquid
+  # ---- 現在のタグ状態を判定 ----
+  # current_category: タグ絞り込み中で、そのタグがカテゴリ（article_categoryメタオブジェクト）の場合
+  assign current_tag = blank
+  assign current_category = blank
+  if current_tags.size == 1
+    assign current_tag = current_tags.first
+    assign current_category = shop.metaobjects.article_category[current_tag]
+  endif
+-%}
+
+<div class="c_blogList">
+  <div class="c_blogList__inner">
+    {%- comment -%}
+      全件表示のタイトルはFV（c_underFv）が担当。
+      ここでは絞り込み時のカテゴリ見出しと説明文だけ表示する（h1はFVにあるためh2）
+    {%- endcomment -%}
+    {%- if current_tags -%}
+      <header class="c_blogList__header">
+        <h2 class="c_blogList__title">
+          {%- if current_category -%}
+            {{ current_category.name }}
+          {%- elsif current_tag != blank -%}
+            「{% render 'c_tag-label', tag: current_tag %}」の記事
+          {%- else -%}
+            {{ current_tags | join: ' + ' }}
+          {%- endif -%}
+        </h2>
+        {%- if current_category and current_category.description != blank -%}
+          <p class="c_blogList__desc">{{ current_category.description }}</p>
+        {%- endif -%}
+      </header>
+    {%- elsif section.settings.description != blank -%}
+      <header class="c_blogList__header">
+        <p class="c_blogList__desc">{{ section.settings.description }}</p>
+      </header>
+    {%- endif -%}
+
+    {%- assign all_categories = shop.metaobjects.article_category.values -%}
+    {%- if all_categories.size > 0 -%}
+      <nav class="c_blogList__cats" aria-label="コラムカテゴリ">
+        <a href="{{ blog.url }}" {% if current_tags == blank %}class="is-active" aria-current="page"{% endif %}>すべて</a>
+        {%- for cat in all_categories -%}
+          {%- comment -%} 記事が1本もないカテゴリは表示しない {%- endcomment -%}
+          {%- unless blog.all_tags contains cat.system.handle %}{% continue %}{% endunless -%}
+          <a
+            href="{{ blog.url }}/tagged/{{ cat.system.handle }}"
+            {% if current_tag == cat.system.handle %}class="is-active" aria-current="page"{% endif %}
+          >{{ cat.name }}</a>
+        {%- endfor -%}
+      </nav>
+    {%- endif -%}
+
+    {%- paginate blog.articles by 12 -%}
+      {%- if blog.articles.size > 0 -%}
+        <div class="c_blogList__grid">
+          {%- for article in blog.articles -%}
+            {%- liquid
+              # 記事のカテゴリ（最初に一致したもの）
+              assign card_category = blank
+              for tag in article.tags
+                assign card_mo = shop.metaobjects.article_category[tag]
+                if card_mo
+                  assign card_category = card_mo
+                  break
+                endif
+              endfor
+            -%}
+            <a class="c_blogCard" href="{{ article.url }}">
+              <div class="c_blogCard__thumb">
+                {%- if article.image -%}
+                  <img
+                    srcset="{{ article.image | image_url: width: 400 }} 400w, {{ article.image | image_url: width: 600 }} 600w"
+                    sizes="(min-width: 750px) 340px, calc(100vw - 40px)"
+                    src="{{ article.image | image_url: width: 600 }}"
+                    alt="{{ article.image.alt | default: article.title | escape }}"
+                    width="600"
+                    height="375"
+                    loading="lazy"
+                  >
+                {%- else -%}
+                  <span class="c_blogCard__noimg">NO IMAGE</span>
+                {%- endif -%}
+                {%- if card_category -%}
+                  <span class="c_blogCard__cat">{{ card_category.name }}</span>
+                {%- endif -%}
+              </div>
+              <span class="c_blogCard__date">{{ article.published_at | date: '%Y.%m.%d' }}</span>
+              <p class="c_blogCard__title">{{ article.title }}</p>
+              {%- if article.excerpt != blank -%}
+                <p class="c_blogCard__excerpt">{{ article.excerpt | strip_html | truncate: 60 }}</p>
+              {%- endif -%}
+            </a>
+          {%- endfor -%}
+        </div>
+
+        {%- if paginate.pages > 1 -%}
+          {% render 'pagination', paginate: paginate %}
+        {%- endif -%}
+      {%- else -%}
+        <div class="c_blogList__empty">
+          <p>該当する記事がまだありません。</p>
+          {%- if current_tags != blank -%}
+            <p><a href="{{ blog.url }}">すべての記事を見る</a></p>
+          {%- endif -%}
+        </div>
+      {%- endif -%}
+    {%- endpaginate -%}
+  </div>
+</div>
+
+{%- comment -%} 構造化データ：パンくず {%- endcomment -%}
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "TOP", "item": {{ request.origin | json }} },
+      { "@type": "ListItem", "position": 2, "name": {{ blog.title | json }}, "item": {{ request.origin | append: blog.url | json }} }
+      {%- if current_category -%}
+        ,{ "@type": "ListItem", "position": 3, "name": {{ current_category.name.value | json }}, "item": {{ request.origin | append: blog.url | append: '/tagged/' | append: current_tag | json }} }
+      {%- endif -%}
+    ]
+  }
+</script>
+
+{% schema %}
+{
+  "name": "コラム一覧",
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "説明文（全件表示のときだけ表示。カテゴリページではカテゴリの説明文が出る）"
+    },
+    {
+      "type": "header",
+      "content": "上下の余白"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "上部の余白（PC）",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "下部の余白（PC）",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_top_sp",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "上部の余白（SP）",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_sp",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "下部の余白（SP）",
+      "default": 56
+    }
+  ],
+  "presets": [
+    {
+      "name": "コラム一覧",
+      "category": "カスタムパーツ"
+    }
+  ]
+}
+{% endschema %}

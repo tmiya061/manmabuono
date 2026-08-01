@@ -1,0 +1,24 @@
+{% comment %}
+  記事下CTA用の商品カード（縦型・画像主役）
+  使い方: {% render 'c_prod-card', product: product, copy: '訴求文' %}
+  copy は任意。指定があるときだけ商品名の下に表示する
+{% endcomment %}
+{%- if product != blank -%}
+  <a class="c_prodCard" href="{{ product.url }}">
+    {%- if product.featured_image -%}
+      <img
+        class="c_prodCard__img"
+        src="{{ product.featured_image | image_url: width: 600 }}"
+        alt="{{ product.title | escape }}"
+        width="600"
+        height="600"
+        loading="lazy"
+      >
+    {%- endif -%}
+    <span class="c_prodCard__name">{{ product.title }}</span>
+    {%- if copy != blank -%}
+      <span class="c_prodCard__copy">{{ copy }}</span>
+    {%- endif -%}
+    <span class="c_prodCard__price">{% if product.price_varies %}{{ product.price_min | money }}〜{% else %}{{ product.price | money }}{% endif %}</span>
+  </a>
+{%- endif -%}

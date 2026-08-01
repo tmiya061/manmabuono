@@ -1,0 +1,40 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "fv": {
+      "type": "c_underFv",
+      "settings": {
+        "title_en": "COLUMN",
+        "title_jp": "コラム",
+        "img": "shopify://shop_images/column_fv_pc_2.jpg",
+        "img_sp": "shopify://shop_images/column_fv_sp_2.jpg",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_top_sp": 10,
+        "padding_bottom_sp": 0
+      }
+    },
+    "main": {
+      "type": "c_blogList",
+      "settings": {
+        "description": "愛犬・愛猫のごはん選びに役立つ情報を、マンマボーノ編集部がお届けします。",
+        "padding_top": 48,
+        "padding_bottom": 80,
+        "padding_top_sp": 32,
+        "padding_bottom_sp": 56
+      }
+    }
+  },
+  "order": [
+    "fv",
+    "main"
+  ]
+}

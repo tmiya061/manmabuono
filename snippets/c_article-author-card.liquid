@@ -1,0 +1,37 @@
+{% comment %}
+  著者・監修者カード
+  使い方: {% render 'c_article-author-card', person: author_mo, label: '執筆者', fallback_name: '編集部' %}
+  person: メタオブジェクト article_author（nil 可。nil の場合 fallback_name があれば名前のみ表示）
+{% endcomment %}
+{%- liquid
+  assign p_name = person.name.value
+  assign p_title = person.role_title.value
+  assign p_qual = person.qualification.value
+  assign p_bio = person.bio.value
+  assign p_photo = person.photo.value
+  unless p_name
+    assign p_name = fallback_name
+  endunless
+-%}
+{%- if p_name != blank -%}
+  <div class="c_articleAuthor">
+    {%- if p_photo -%}
+      <div class="c_articleAuthor__photo">
+        <img src="{{ p_photo | image_url: width: 160 }}" alt="{{ p_name | escape }}" width="80" height="80" loading="lazy">
+      </div>
+    {%- endif -%}
+    <div class="c_articleAuthor__body">
+      <span class="c_articleAuthor__label">{{ label | default: '執筆者' }}</span>
+      <p class="c_articleAuthor__name">
+        {{ p_name }}
+        {%- if p_title != blank %} <small>{{ p_title }}</small>{% endif -%}
+      </p>
+      {%- if p_qual != blank -%}
+        <p class="c_articleAuthor__qual">{{ p_qual }}</p>
+      {%- endif -%}
+      {%- if p_bio != blank -%}
+        <p class="c_articleAuthor__bio">{{ p_bio | newline_to_br }}</p>
+      {%- endif -%}
+    </div>
+  </div>
+{%- endif -%}
