@@ -1,0 +1,882 @@
+# 仕様テーブル抽出プレビュー（24商品）
+
+> `python3 scripts/set_product_table.py` により生成。--apply 前に目視確認する。
+
+---
+
+## ダブルだし猫のごはん チキン 150g
+`ダブルだし猫のごはん-チキン-150g`
+
+### → テーブルへ移す
+
+**原材料名**
+```
+鶏肉、玄米、大麦、鰹節、まぐろ節、米たんぱく、エンドウ豆たんぱく、ビール酵母、ラード、酵母エキス、甜菜繊維、米油、黒米、赤米、イヌリン（水溶性食物繊維）、発酵調味液、わかめ、昆布、ハト麦、あわ、きび、ひえ、大根葉、ごぼう、にんじん、キャベツ、セレン酵母、白菜、高菜、パセリ、青じそ、タウリン、ミネラル類（卵殻未焼成カルシウム、塩化ナトリウム、塩化カリウム、グルコン酸亜鉛、ピロリン酸第二鉄、グルコン酸銅）、ビタミン類（ビタミンA、ビタミンD、ビタミンE、ビタミンB₁、ビタミンB₂、ビタミンB₁₂、パントテン酸カルシウム、葉酸、塩化コリン）、酸化防止剤（ローズマリー抽出物、ミックストコフェロール）
+```
+**賞味期限**
+```
+１年
+```
+**与え方**
+```
+〈成猫期から中高齢期まで〉下記1日あたりの給与量目安を参考に、体質や体重、運動量、便の状態などを観察しながら適宜量を加減し、1日２～４回に分けて与えてください。
+●適正給与量には個体差があります。体重変化等を観察しながら給与量を加減してください。●特にシニア猫や避妊・去勢後は太りやすい傾向にありますので、愛猫のコンディションに合わせて給与量を調整してください。●他のフードからの切り替えは、従来のフードに本商品1割くらいを混ぜることからはじめ、徐々に本商品の量を増やしてください。完全に切り替えるまで2週間ほどかけることをおすすめします。●新鮮な水をいつでも飲めるようにしてください。
+```
+**保存方法**
+```
+高温多湿、直射日光を避けて常温で保管してください。開封後はチャックで密閉の上、早めに使い切ってください。
+```
+**栄養成分**
+```
+たんぱく質 ３１．８％以上 脂質 １２．３％以上 粗繊維 ２．０％以下 灰分 ５．８％以下 水分 10.0％以下 代謝エネルギー（ME） ３６３kcal/100g
+```
+
+### → 本文に残す
+
+```
+香料・着色料・合成酸化防止剤無添加 ダブルだし猫のごはん （総合栄養食）九州産銘柄鶏とかつお節とまぐろ節のダブルの魚だし風味の総合栄養食です。契約農家さんが丹精込めてつくった８種の雑穀は栄養たっぷり。そこに、国内産野菜や甜菜繊維やイヌリンを配合して、腸内環境の健康維持と毛玉の排出をサポートします。食物アレルギーに配慮した小麦グルテンフリーで、更にオイルコーティング処理はせず自然な味わいです。遺伝子組み換えの作物を使用しておりません。
+【無添加のこだわり】香料、着色料、合成酸化防止剤（BHA、BHT、エトキシキン）は使用していません。
+内容量 150ｇ
+⟦IMG:https://cdn.shopify.com/s/files/1/0589/6591/7757/files/teuxws7M.webp?v=1710860973⟧
+【総合栄養食（メンテナンス）】この商品は、ペットフード公正取引協議会の定める分析試験の結果、総合栄養食の基準を満たすことが証明されています。
+```
+
+---
+
+## ダブルだし猫のごはん チキン 800g
+`ダブルだし猫のごはん-チキン-800g`
+
+### → テーブルへ移す
+
+**原材料名**
+```
+鶏肉、玄米、大麦、鰹節、まぐろ節、米たんぱく、エンドウ豆たんぱく、ビール酵母、ラード、酵母エキス、甜菜繊維、米油、黒米、赤米、イヌリン（水溶性食物繊維）、発酵調味液、わかめ、昆布、ハト麦、あわ、きび、ひえ、大根葉、ごぼう、にんじん、キャベツ、セレン酵母、白菜、高菜、パセリ、青じそ、タウリン、ミネラル類（卵殻未焼成カルシウム、塩化ナトリウム、塩化カリウム、グルコン酸亜鉛、ピロリン酸第二鉄、グルコン酸銅）、ビタミン類（ビタミンA、ビタミンD、ビタミンE、ビタミンB₁、ビタミンB₂、ビタミンB₁₂、パントテン酸カルシウム、葉酸、塩化コリン）、酸化防止剤（ローズマリー抽出物、ミックストコフェロール）
+```
+**賞味期限**
+```
+１年
+```
+**与え方**
+```
+〈成猫期から中高齢期まで〉下記1日あたりの給与量目安を参考に、体質や体重、運動量、便の状態などを観察しながら適宜量を加減し、1日２～４回に分けて与えてください。
+●適正給与量には個体差があります。体重変化等を観察しながら給与量を加減してください。●特にシニア猫や避妊・去勢後は太りやすい傾向にありますので、愛猫のコンディションに合わせて給与量を調整してください。●他のフードからの切り替えは、従来のフードに本商品1割くらいを混ぜることからはじめ、徐々に本商品の量を増やしてください。完全に切り替えるまで2週間ほどかけることをおすすめします。●新鮮な水をいつでも飲めるようにしてください。
+```
+**保存方法**
+```
+高温多湿、直射日光を避けて常温で保管してください。開封後はチャックで密閉の上、早めに使い切ってください。
+```
+**栄養成分**
+```
+たんぱく質 ３１．８％以上 脂質 １２．３％以上 粗繊維 ２．０％以下 灰分 ５．８％以下 水分 10.0％以下 代謝エネルギー（ME） ３６３kcal/100g
+```
+
+### → 本文に残す
+
+```
+香料・着色料・合成酸化防止剤無添加 ダブルだし猫のごはん （総合栄養食）九州産銘柄鶏とかつお節とまぐろ節のダブルの魚だし風味の総合栄養食です。契約農家さんが丹精込めてつくった８種の雑穀は栄養たっぷり。そこに、国内産野菜や甜菜繊維やイヌリンを配合して、腸内環境の健康維持と毛玉の排出をサポートします。食物アレルギーに配慮した小麦グルテンフリーで、更にオイルコーティング処理はせず自然な味わいです。遺伝子組み換えの作物を使用しておりません。
+【無添加のこだわり】香料、着色料、合成酸化防止剤（BHA、BHT、エトキシキン）は使用していません。
+内容量 ８００ｇ
+⟦IMG:https://cdn.shopify.com/s/files/1/0589/6591/7757/files/teuxws7M.webp?v=1710860973⟧
+【総合栄養食（メンテナンス）】この商品は、ペットフード公正取引協議会の定める分析試験の結果、総合栄養食の基準を満たすことが証明されています。
+```
+
+---
+
+## 無塩 鹿児島枕崎 かつお削り節 20g
+`無塩-鹿児島枕崎-おつお削り節`
+
+### → テーブルへ移す
+
+**原材料名**
+```
+かつおのふし
+```
+**賞味期限**
+```
+1年
+```
+**与え方**
+```
+犬と猫の年齢や体重などから適宜量を加減し、1日１～２ｇに分けてお与えください。
+```
+**保存方法**
+```
+直射日光を避けて常温で保管してください。開封後は冷蔵庫で保管し、お早めにお与えください。
+```
+**ご注意**
+```
+原料には個体差があるため、色合い・形状などにバラツキがあります。
+```
+**栄養成分**
+```
+たんぱく質 76.2％以上 脂質 2.1％以上 粗繊維 0.1％以下 灰分 3.1％以下 水分 18.6％以下 エネルギー 28.5ｋcal/10g
+```
+
+### → 本文に残す
+
+```
+食品添加物無添加 栄養補完食 犬と猫のふりかけ 減塩鹿児島枕崎産かつお削り節マンマボーノのかつお削り節は、塩分量が０．１％と減塩です。かつおを釣り上げた際に、鮮度を落とさないように冷凍するのですが、この際勢いのある冷風を当てかつおに付いている塩水も吹き飛ばします。もちろん加工の段階でも塩を使わない為、この減塩での削り節が完成しました。フードに直接ふりかけることで食いつき抜群です。また、お茶碗に一つまみの鰹節とお湯を少々入れ3～5分ほど置くとかつおのだしが取れます。このだしをドライフードにかけてもおいしくなります。
+```
+
+---
+
+## 広島呉 ちりめんじゃこのふりかけ 35g
+`広島呉-ちりめんじゃこのふりかけ`
+
+### → テーブルへ移す
+
+**原材料名**
+```
+かたくちいわし
+```
+**賞味期限**
+```
+1年
+```
+**与え方**
+```
+犬と猫の年齢や体重などから適宜量を加減し、１度にスプーン半分くらいに分けて総合栄養食と一緒にお与えください。
+```
+**保存方法**
+```
+直射日光を避けて常温で保管してください。開封後は冷蔵庫で保管し、お早めにお与えください。
+```
+**ご注意**
+```
+原料には個体差があるため、色合い・形状などにバラツキがあります。
+```
+**栄養成分**
+```
+たんぱく質 64.6％以上 脂質 6.3％以上 粗繊維 0.0％以下 灰分 13.4％以下 水分 15.7％以下 エネルギー104kcal/35g
+```
+
+### → 本文に残す
+
+```
+塩無添加 栄養補完食 犬と猫のふりかけ 広島呉 ちりめんじゃこのふりかけ おじゃこは、広島港呉湾で水揚げされた新鮮な、ちりめんじゃこです。皆さんが日頃食べるおじゃこは、塩分を含んだお湯で釜揚げします。ご存じの方も多いと思いますが、わんちゃんには塩分が多いと腎臓や心臓に負担がかかります。要は、人間用のちりめんじゃこはわんちゃん、猫ちゃんにとって、塩分過多になるので与えることはできないのです。 そこで、マンマボーノでは無加塩のお湯で釜揚げして塩分を最小限にして乾燥させた、ちりめんじゃこを作ってもらいました。ちりめんじゃこには、わんちゃんの体で生成できないミネラルや骨や筋肉の生成に欠かせないカルシュウムが豊富に含まれています。 ちりめんじゃこのふりかけをいつものごはんに少し振りかけると香りで食事に興味の無い子も喜んで食べてくれます。
+```
+
+---
+
+## チキンボーンブロス　100g×2袋
+`チキンボーンブロス`
+
+### → テーブルへ移す
+
+**原材料名**
+```
+鶏骨、鶏肉
+```
+**賞味期限**
+```
+1年
+```
+**与え方**
+```
+犬と猫の年齢や体重などから適宜量を加減し、１袋１～６回に分けて総合栄養食と一緒にお与えください。
+```
+**保存方法**
+```
+直射日光を避けて常温で保管してください。開封後は冷蔵庫で保管し、お早めにお与えください。
+```
+**ご注意**
+```
+電子レンジで温める場合は必ず他の容器に移し替えてください。本品を温めた場合、人肌程度に冷ましてからお与え下さい。原料には個体差があるため、色合い・形状などにバラツキがあります。
+```
+**栄養成分**
+```
+たんぱく質 2.1％以上 脂質 7.0％以上 粗繊維 0.0％以下 灰分 0.2％以下 水分 90.7％以下 エネルギー111kcal/100g
+```
+
+### → 本文に残す
+
+```
+食品添加物無添加 栄養補完食 犬と猫のおわん チキンボーンブロスチキンボーンブロスは鶏がら、親丸鶏だけで長時間炊いたスープです。鶏コラーゲンが豊富に含まれ、関節の老化を防ぐなどわんちゃん、猫ちゃんの健康に欠かせません。わんちゃん、猫ちゃんの健康維持のためにも食事で摂れる水分はとても大事です。
+```
+
+---
+
+## チキンボーンブロス 100g×5袋
+`チキンボーンブロス5袋`
+
+### → テーブルへ移す
+
+**原材料名**
+```
+鶏骨、鶏肉
+```
+**賞味期限**
+```
+1年
+```
+**与え方**
+```
+犬と猫の年齢や体重などから適宜量を加減し、１袋２～６回に分けて総合栄養食と一緒にお与えください。
+```
+**保存方法**
+```
+直射日光を避けて常温で保管してください。開封後は冷蔵庫で保管し、お早めにお与えください。
+```
+**ご注意**
+```
+電子レンジで温める場合は必ず他の容器に移し替えてください。本品を温めた場合、人肌程度に冷ましてからお与え下さい。原料には個体差があるため、色合い・形状などにバラツキがあります。
+```
+**栄養成分**
+```
+たんぱく質 2.1％以上 脂質 7.0％以上 粗繊維 0.0％以下 灰分 0.2％以下 水分 90.7％以下 エネルギー 111ｋcal/100g
+```
+
+### → 本文に残す
+
+```
+食品添加物無添加 栄養補完食 犬と猫のスープ チキンボーンブロスチキンボーンブロスは鶏がら、親丸鶏だけで長時間炊いたスープです。鶏コラーゲンが豊富に含まれ、関節の老化を防ぐなどわんちゃん、猫ちゃんの健康に欠かせません。わんちゃん、猫ちゃんの健康維持のためにも食事で摂れる水分はとても大事です。
+```
+
+---
+
+## 京の一番だし 100g×2袋
+`京の一番だし`
+
+### → テーブルへ移す
+
+**原材料名**
+```
+鰹節、昆布、椎茸
+```
+**賞味期限**
+```
+1年
+```
+**与え方**
+```
+犬と猫の年齢や体重などから適量を加減し、１袋１～６回に分けて総合栄養食と一緒にお与えください。
+```
+**保存方法**
+```
+屋外日光を避けて常温で保管してください。開封後は冷蔵庫で保管し、お早めにお与え下さい。
+```
+**ご注意**
+```
+電子レンジで温める場合は必ず他の容器に移してください。原材料には個体差があるため、色合い・形状などにバラツキがあります。
+```
+**栄養成分**
+```
+たんぱく質 2.5％以上 脂質 0.1％以上 粗繊維 0.4％以下 灰分 0.5％以下 水分 95.1％以下 エネルギー 14kcal/100g
+```
+
+### → 本文に残す
+
+```
+食品添加物無添加 栄養補完食 犬と猫のスープ 京の一番だし京の一番だしは京都の軟水に昆布、鰹節、乾燥椎茸で丁寧に作りました。思わず飼い主さんも食べたくなる香り。一番だしは、すぎ食べを確保、ダイエットにも期待できます。わんちゃん、猫ちゃんの健康維持のためにも食事で摂れる水分はとても大事です。
+```
+
+---
+
+## 京の一番だし 100g×5袋
+`京の一番だし5袋`
+
+### → テーブルへ移す
+
+**原材料名**
+```
+鰹節、昆布、椎茸
+```
+**賞味期限**
+```
+1年
+```
+**与え方**
+```
+犬と猫の年齢や体重などから適宜量を加減し、１袋２～６回に分けて総合栄養食と一緒にお与えください。方法日光を避けて常温で保管してください。開封後は冷蔵庫で保管し、お早めにお与えください。
+```
+**ご注意**
+```
+電子レンジで温める場合は必ず他の容器に移してください。た場合、人肌程度に冷ましてからお与え下さい。 原料には個体差があるため、色合い・形状などにバラツキがあります。
+```
+**栄養成分**
+```
+たんぱく質 2.5 ％以上 脂質 粗繊維 0.1％以上 灰分 0.4％以下 水分 95.1％以下 エネルギー 14ｋcal/100g
+```
+
+### → 本文に残す
+
+```
+食品添加物無添加 栄養補完食 犬と猫のおわん 京の一番だし京の一番だしは京都の軟水に昆布、鰹節、乾燥椎茸で丁寧に作りました。思わず飼い主さんも食べたくなる香り。一番だしは食べすぎを確保、ダイエットにも期待できます。 また、一番だしには疲労回復効果があります。 わんちゃん、猫ちゃんの健康維持のためにもでれる水分はとても大事です
+```
+
+---
+
+## 京都笠置 鹿肉と無農薬野菜の煮込み 70g
+`京都笠置-鹿肉と無農薬野菜の煮込み`
+
+### → テーブルへ移す
+
+**原材料名**
+```
+鹿肉、大根、さつま芋、鶏だし、本葛澱粉
+```
+**賞味期限**
+```
+1年
+```
+**与え方**
+```
+犬と猫の年齢や体重などから適宜量を加減し、１袋１～６回に分けて総合栄養食と一緒にお与えください。
+```
+**保存方法**
+```
+直射日光を避けて常温で保管してください。開封後は冷蔵庫で保管し、お早めにお与えください。
+```
+**ご注意**
+```
+電子レンジで温める場合は必ず他の容器に移し替えてください。本品を温めた場合、人肌程度に冷ましてからお与え下さい。原料には個体差があるため、色合い・形状などにバラツキがあります。
+```
+**栄養成分**
+```
+たんぱく質 14.2％以上 脂質 1.3％以上 粗繊維 1.1％以下 灰分 0.9％以下 水分 79.3％以下 エネルギー59kcal/70g
+```
+
+### → 本文に残す
+
+```
+食品添加物無添加 栄養補完食 犬と猫のおかず 京都笠置 鹿肉と無農薬野菜の煮込み
+京都笠置の鹿肉を使った無農薬野菜の煮込み。お出汁はチキンボーンブロスを使った温まる商品です。
+冬は体温を上げるごはんがわんちゃんには大切です。人間も同じですが、体温を1℃上げると免疫力が格段にアップします。
+足裏が冷たくなる時期に、是非体が温まる鹿肉と無農薬野菜の煮込みをわんちゃん、猫ちゃんに与えてください。
+```
+
+---
+
+## 京都笠置 鹿肉と無農薬野菜の煮込み 70g×3袋
+`京都笠置-鹿肉と無農薬野菜の煮込み3袋`
+
+### → テーブルへ移す
+
+**原材料名**
+```
+鹿肉、大根、さつま芋、鶏だし、本葛澱粉
+```
+**賞味期限**
+```
+1年
+```
+**与え方**
+```
+犬と猫の年齢や体重などから適宜量を加減し、１袋１～６回に分けて総合栄養食と一緒にお与えください。
+```
+**保存方法**
+```
+直射日光を避けて常温で保管してください。開封後は冷蔵庫で保管し、お早めにお与えください。
+```
+**ご注意**
+```
+電子レンジで温める場合は必ず他の容器に移し替えてください。本品を温めた場合、人肌程度に冷ましてからお与え下さい。原料には個体差があるため、色合い・形状などにバラツキがあります。
+```
+**栄養成分**
+```
+たんぱく質 14.2％以上 脂質 1.3％以上 粗繊維 1.1％以下 灰分 0.9％以下 水分 79.3％以下 エネルギー59kcal/70g
+```
+
+### → 本文に残す
+
+```
+食品添加物無添加 栄養補完食 犬と猫のおかず 京都笠置 鹿肉と無農薬野菜の煮込み 京都笠置の鹿肉を使った無農薬野菜の煮込み。お出汁はチキンボーンブロスを使った温まる商品です。 冬は体温を上げるごはんがわんちゃんには大切です。人間も同じですが、体温を1℃上げると免疫力が格段にアップします。 足裏が冷たくなる時期に、是非体が温まる鹿肉と無農薬野菜の煮込みをわんちゃん、猫ちゃんに与えてください。
+```
+
+---
+
+## 京都舞鶴 ぶりのうま煮 120g
+`舞鶴-ぶりのうま煮1袋`
+
+### → テーブルへ移す
+
+**原材料名**
+```
+ぶり、削り節（かつお）、本葛澱粉、昆布、椎茸
+```
+**賞味期限**
+```
+1年
+```
+**与え方**
+```
+犬と猫の年齢や体重などから適宜量を加減し、１袋１～６回に分けて総合栄養食と一緒にお与えください。
+```
+**保存方法**
+```
+直射日光を避けて常温で保管してください。開封後は冷蔵庫で保管し、お早めにお与えください。
+```
+**ご注意**
+```
+電子レンジで温める場合は必ず他の容器に移し替えてください。本品を温めた場合、人肌程度に冷ましてからお与え下さい。原料には個体差があるため、色合い・形状などにバラツキがあります。
+```
+**栄養成分**
+```
+たんぱく質 21.0％以上 脂肪 0.3％以上 粗繊維 0.5％以下 灰分 1.2％以下 水分 79.6％以下 エネルギー 91ｋcal/100g
+```
+
+### → 本文に残す
+
+```
+食品添加物無添加 栄養補完食 犬と猫のおかず 京都舞鶴 ぶりのうま煮 京都府庁の水産課の方からご紹介を受け、舞鶴の京都府漁業協働組合様に仕入れの相談に行きました。そこで、あまり知られてないかも知れませんが、ぶりの旨味の強いものが獲れると聞きました。そんなご縁から、ぶりを仕入れさせてもらいました。 まず、熱湯で油抜きをしてほぐします。それを食べたのですが、驚くほどの美味しさ‼️その後、京の一番だしでうま煮にしました♪手前味噌ですが、うまうまです^_^ ぶりは青魚の中でもDHAとEPAが豊富で、血液をサラサラにする作用や認知症予防などのエビデンスがあります。また、ぶりにはビタミンEも含まれているので脂肪の酸化を抑える作用もあります。 良質な脂肪も摂れて、わんちゃん、猫ちゃんのお肌や毛並みにもとても良いぶりです。
+```
+
+---
+
+## 京都舞鶴 ぶりのうま煮 120g×3袋
+`舞鶴-ぶりのうま煮3袋`
+
+### → テーブルへ移す
+
+**賞味期限**
+```
+製造より1年間
+```
+**与え方**
+```
+犬と猫の年齢や体重などから量を加減し、１袋２～６回に分けて総合栄養食と一緒にお与えください。
+```
+**保存方法**
+```
+一度日光を避けて常温で保管してください。
+```
+**ご注意**
+```
+電子レンジで温める場合は必ず他の容器に移してください。本品を温めた場合、人肌程度に冷ましてからお与え下さい。 原料には個体形状差があるため、色合い・などにバラツキがあります。
+```
+**栄養成分**
+```
+たんぱく質 21.0％以上 脂肪 0.3％以上 粗繊維 0.5％以下 灰分 1.2％以下 水分 79.6％以下 エネルギー 91ｋcal/100g
+```
+
+### → 本文に残す
+
+```
+食品添加物無添加 犬と猫のおばんざい 京都舞鶴のぶりのうま煮120g×3袋入り京都府庁水産課の方からご紹介を受け、舞鶴の京都府漁業協同組合様に仕入れの相談に行きました。 では、あまり知られていませんが、ブリの旨味の強いものが獲れると聞きました。
+一番だしでうま煮にしました♪手前味噌ですが、うまうまです^_^ぶりは青魚の中でもDHAとEPAが豊富で、血液をサラサラにする作用や認知症予防などのエビデンスがあります。また、ぶりにはビタミンEも含まれているので脂肪の酸化を抑える作用もあります。ぶり、削り節（かつお）、本葛澱粉、昆布、椎茸
+```
+
+---
+
+## 鹿児島枕崎 かつおのうま煮 120g
+`枕崎-かつおのうま煮1袋`
+
+### → テーブルへ移す
+
+**原材料名**
+```
+鰹、削り節（かつお）、本葛澱粉、昆布、椎茸
+```
+**賞味期限**
+```
+1年
+```
+**与え方**
+```
+犬と猫の年齢や体重などから適宜量を加減し、１袋１～６回に分けて総合栄養食と一緒にお与えください。を避けて常温で保管してください。し、お早めにお与え下さい。電子レンジで温める場合は必ず他の容器に移してください。本品を温めた場合、人肌程度に冷ましてからお与え下さい。ため、色合い・などにバラツキが
+```
+**栄養成分**
+```
+たんぱく質 17.6％以上 脂質 0.4％以上 粗繊維 0.4％以下 灰分 1.1％以下 水分 79.7％以下 エネルギー 81kcal/ 100g
+```
+
+### → 本文に残す
+
+```
+食品添加物無添加 栄養補完食 犬と猫のおかず 鹿児島枕崎かつおのうま煮太平洋の沖合や遠く赤道以南の南太平洋の漁場で、釣り上げられたかつおをさばき、一度茹でて京都一番だしで少し炊き温めるといい香り。 かつおにはビタミンB12が豊富に含まれています。また、かつおの血合わせには血中性脂肪を正常に認めるEPAや脳や神経の発達に注意なDHAが豊富に含まれています疲労を回復させたりする効果のあるバリンという必須アミノ酸も含まれており、わんちゃんや猫ちゃんが元気になる源です。
+```
+
+---
+
+## 鹿児島枕崎 かつおのうま煮 120g×3袋
+`枕崎-かつおのうま煮3袋`
+
+### → テーブルへ移す
+
+**原材料名**
+```
+鰹、削り節（かつお）、本葛澱粉、昆布、椎茸
+```
+**賞味期限**
+```
+製造より1年
+```
+**与え方**
+```
+犬と猫の年齢や体重などから適宜量を適量、１袋２～６回に分けて総合栄養食と一緒にお与えください。常温で保管してください。開封後は冷蔵庫で保管し、お早めにお与えください。電子レンジで温める場合は必ず他の容器に移してください。本品を温めた場合、人肌程度に冷ましてからお与え下さい。 原材料には個体形状差があるため、色合い・などにバラツキが
+```
+**栄養成分**
+```
+たんぱく質 17.6％以上 脂肪 0.4％以上 粗繊維 0.4％以下 灰分 1.1％以下 水分 79.4％以下 エネルギー 81ｋcal/ 100g
+```
+
+### → 本文に残す
+
+```
+食品添加物無添加 犬と猫のおばんざい 枕崎産かつおのうま煮 120g×3袋入り太平洋の沖合や遠く赤道以南の南太平洋の漁場で、釣り上げられたかつおをさばき、一度茹でて京都一番だしまた、かつおの血合わせには血中性脂肪を正常に定めるEPAや脳や神経の発達に重点を置いたDHAが豊富に含まれています。疲労を回復させたりする効果のあるバリンという必須アミノ酸も含まれてますおまいり、わんちゃん、猫ちゃん元気になる源です。
+```
+
+---
+
+## 鳥取大山　がいな鶏のそぼろ煮 120g
+`地鶏のそぼろ煮1袋`
+
+### → テーブルへ移す
+
+**原材料名**
+```
+鶏肉、鶏だし、本葛澱粉
+```
+**賞味期限**
+```
+1年間
+```
+**与え方**
+```
+犬と猫の年齢や体重などから選択量を適量、１袋１～６回に分けて総合栄養食と一緒にお与えください。
+```
+**保存方法**
+```
+屋外日光を避けて常温で保管し本品を温めた場合、人の肌の冷え具合に改めてからお与え下さい。 個体差があるため、色合い・形状などにバラツキがあります。
+```
+**栄養成分**
+```
+たんぱく質15.4 ％以上脂質 6.0％以上 粗繊維 0.0 ％以下 灰分 0.7％以下 水分 77.4％以下 エネルギー 122kcal/100g
+```
+
+### → 本文に残す
+
+```
+食品添加物無添加 栄養補完食 犬と猫のおばんざいがいな鶏のそぼろ煮おかずがいな鶏は、大山の雪解け水のみ平で特別なご飯を食べて手塩をかけて育てられています。味に安心そんなグルメも唸るような食材を、食べやすいようにミンチにしました。これを、京都の老舗の贅沢な衛生食品工場チキンでボーンブロスで炊いていますおかずは、無添加で優しい味ですチキンですボーンブロスには、コラーゲンがたっぷりでお肌や関節の健康維持のためにも食事で摂れる水分はとても大切です。
+```
+
+---
+
+## 鳥取大山　がいな鶏のそぼろ煮 120g×3袋
+`地鶏のそぼろ煮3袋`
+
+### → テーブルへ移す
+
+**原材料名**
+```
+鶏肉、鶏だし、本葛澱粉
+```
+**賞味期限**
+```
+1年
+```
+**与え方**
+```
+犬と猫の年齢や体重などから適宜量を加減し、１袋２～６回に分けて総合栄養食と一緒にお与えください。開封後は冷蔵庫で保管し、お早めにお与えください。て冷凍させることもおすすめです。
+```
+**ご注意**
+```
+電子レンジで温める場合は必ず他の容器に移し本品を温めた場合、人の肌度に徹底的に冷たからお与え下さい。あるため、色合い・形状などにバラツキがあります。
+```
+**栄養成分**
+```
+たんぱく質 14.6％以上 脂質 5.8％ 粗繊維 0.1 ％以上 灰分0.3％以下 水分 79.7％エネルギー122ｋcal/100g以下
+```
+
+### → 本文に残す
+
+```
+食品添加物無添加 栄養補完食 犬と猫のおばんざいがいな鶏のそぼろ煮おかずがいな鶏は、大山の雪解け水と特別なご飯を食べて手塩をかけて育てられています。味に安心そんなグルメも唸るような食材を、食べやすいようにミンチにしました。
+⟦IMG:https://cdn.shopify.com/s/files/1/0589/6591/7757/files/img07.shop-pro.png?v=1710862576⟧
+これらを、京都の老舗の衛生的な食品工場でチキンボーンブロスで炊いたおかずは、無添加で優しい味です。 チキンボーンブロスには、コラーゲンがたっぷりでお肌や関節の健康維持のためにも食事で摂れる水分はとても大切です。
+```
+
+---
+
+## だし薫る犬のごはん フィッシュ 150g
+`だし薫る犬のごはん-フィッシュ-150g`
+
+### → テーブルへ移す
+
+**原材料名**
+```
+魚肉（カツオ、タラ）、大麦、玄米、大麦ぬか、鰹節、ビール酵母、米油、卵黄粉末、黒米、赤米、イヌリン（水溶性食物繊維）、コラーゲンペプチド、発酵調味液、玄米麹、はと麦、あわ、きび、ひえ、フラクトオリゴ糖、大根葉、昆布、ごぼう、にんじん、乳酸菌、DHA含有精製魚油粉末、キャベツ、ブロッコリー、かぼちゃ、紫いも、さつまいも、あかもく、わかめ、セレン酵母、白菜、高菜、パセリ、青じそ、タウリン、ミネラル類（卵殻未焼成カルシウム、塩化カリウム、グルコン酸亜鉛、ピロン酸第二鉄、グルコン酸銅）、ビタミン類（ビタミンA、ビタミンD、ビタミンE、ビタミンB₂、ビタミンB₁₂、パントテン酸カルシウム）、酸化防止剤（ローズマリー抽出物、ミックストコフェロール）
+```
+**賞味期限**
+```
+１年
+```
+**与え方**
+```
+〈成長期の子犬から成犬まで〉下記1日あたりの給与量目安を参考に、体質や体重、運動量、便の状態などを観察しながら適宜量を加減し、1日～
+●適正給与量には個体差があります。体重変化等を観察しながら給与量を加減してください。●特にシニア犬や避妊・去勢後は太りやすい傾向にありますので、愛犬のバランスに合わせて給与量を調整してください。 ●他のフードからの切り替えは、従来のフードに本商品1割くらいを混ぜることからはじめ、徐々に本商品の量を増やしてください。完全にしばらくまで2週間ほどかけることをおすすめします。●新鮮な水でいつでも飲めるようにしてください。
+```
+**保存方法**
+```
+高温多湿、直射日光を避けて常温で保管してください。
+```
+**栄養成分**
+```
+たんぱく質 18.1％以上 脂質 6.4％以上 粗繊維 1.1％以下灰分4.4％以下 水分 10.0％以下 代謝エネルギー（ME） 342kcal/100g カルシウム0.76％ リン 0.61％ ナトリウム 0.14％ マグネシウム0.13％
+```
+
+### → 本文に残す
+
+```
+香料・着色料・合成酸化防止剤 無添加 だし薫る犬のごはん フィッシュ（総合栄養食）鹿児島県産のかつおと北海道産のたらを主原料とした犬用の総合栄養食です。 ローアレルゲン素材の魚と栄養豊富な国内産の野菜を12種類、海藻を3種類配合し食物アレルギーに配慮した小麦グルテンフリーで、さらにオイルコーティング処理はせず自然な味です。また乳酸菌を配合することで、腸内環境の健康を維持します。
+【無添加のこだわり】香料、着色料、合成酸化防止剤（BHA、BHT、エトキシキン）は使用していません。
+内容量 150ｇ
+⟦IMG:https://cdn.shopify.com/s/files/1/0589/6591/7757/files/pdWlo6XDpbel5bXrscLK_cuh.webp?v=1710860893⟧
+【総合栄養食（オールステージ）】この商品は、ペットフード公正取引協議会の決断分析試験の結果、総合栄養食の基準を満たすことが証明されています。
+```
+
+---
+
+## だし薫る犬のごはん フィッシュ 800g
+`だし薫る犬のごはん-フィッシュ-800g`
+
+### → テーブルへ移す
+
+**原材料名**
+```
+魚肉（カツオ、タラ）、大麦、玄米、大麦ぬか、鰹節、ビール酵母、米油、卵黄粉末、黒米、赤米、イヌリン（水溶性食物繊維）、コラーゲンペプチド、発酵調味液、玄米麹、はと麦、あわ、きび、ひえ、フラクトオリゴ糖、大根葉、昆布、ごぼう、にんじん、乳酸菌、DHA含有精製魚油粉末、キャベツ、ブロッコリー、かぼちゃ、紫いも、さつまいも、あかもく、わかめ、セレン酵母、白菜、高菜、パセリ、青じそ、タウリン、ミネラル類（卵殻未焼成カルシウム、塩化カリウム、グルコン酸亜鉛、ピロリン酸第二鉄、グルコン酸銅）、ビタミン類（ビタミンA、ビタミンD、ビタミンE、ビタミンB₂、ビタミンB₁₂、パントテン酸カルシウム）、酸化防止剤（ローズマリー抽出物、ミックストコフェロール）
+```
+**賞味期限**
+```
+１年
+```
+**与え方**
+```
+〈成長期の子犬から成犬まで〉下記1日あたりの給与量目安を参考に、体質や体重、運動量、便の状態などを観察しながら適宜量を加減し、1日２～４回に分けて与えてください。
+●適正給与量には個体差があります。体重変化等を観察しながら給与量を加減して下さい。●特にシニア犬や避妊・去勢後は太りやすい傾向にありますので、愛犬のコンディションに合わせて給与量を調整してください。●他のフードからの切り替えは、従来のフードに本商品1割くらいを混ぜることからはじめ、徐々に本商品の量を増やしてください。完全に切り替えるまで2週間ほどかけることをおすすめします。●新鮮な水をいつでも飲めるようにしてください。
+```
+**保存方法**
+```
+高温多湿、直射日光を避けて常温で保管してください。開封後はチャックで密閉の上、早めに使い切ってください。
+```
+**栄養成分**
+```
+たんぱく質 18.1％以上 脂質 6.4％以上 粗繊維 1.1％以下 灰分 4.4％以下 水分 10.0％以下 代謝エネルギー（ME） 342kcal/100g カルシウム0.76％ リン 0.61％ ナトリウム 0.14％ マグネシウム 0.13％
+```
+
+### → 本文に残す
+
+```
+香料・着色料・合成酸化防止剤無添加 だし薫る犬のごはん フィッシュ （総合栄養食）鹿児島県産のかつおと北海道産のたらを主原料とした犬用総合栄養食です。低アレルゲン素材の魚と栄養豊富な国内産の野菜を12種類、海藻を3種類配合しています。食物アレルギーに配慮した小麦グルテンフリーで、更にオイルコーティング処理はせず自然な味わいです。遺伝子組み換えの作物を使用しておりません。また乳酸菌を配合する事で、腸内環境の健康を維持します。
+【無添加のこだわり】香料、着色料、合成酸化防止剤（BHA、BHT、エトキシキン）は使用していません。
+内容量 800ｇ
+⟦IMG:https://cdn.shopify.com/s/files/1/0589/6591/7757/files/pdWlo6XDpbel5bXrscLK_cuh.webp?v=1710860893⟧
+【総合栄養食（オールステージ）】この商品は、ペットフード公正取引協議会の定める分析試験の結果、総合栄養食の基準を満たすことが証明されています。
+```
+
+---
+
+## だし薫る犬のごはん チキン 150g
+`だし薫る犬のごはん-チキン-150g`
+
+### → テーブルへ移す
+
+**原材料名**
+```
+鶏肉、大麦、玄米、鰹節、大麦ぬか、ビール酵母、米油、卵黄粉末、黒米、赤米、イヌリン（水溶性食物繊維）、コラーゲンペプチド、発酵調味料、玄米麹、はと麦、あわ、きび、ひえ、フラクトオリゴ糖、大根葉、昆布、ごぼう、人参、乳酸菌、DHA含有精製魚油粉末、キャベツ、ブロッコリー、かぼちゃ、紫芋、さつま芋、あかもく、わかめ、セレン酵母、白菜、高菜、パセリ、青じそ、タウリン、L-トレオニン、ミネラル類（リン酸三）カルシウ）ム、塩化ナトリウム、塩化カリウム、グルコン酸亜鉛、ピロリ酸第二鉄、グルコン酸銅）、ビタミン類（ビタミンA、ビタミンD、ビタミンE、ビタミンB2、ビタミンB12、パントテン酸カルシウム酸化防止剤）（ローズ）マリー物質抽出、トコーヒーロール）
+```
+**賞味期限**
+```
+１年
+```
+**与え方**
+```
+〈成長期の子犬から成犬まで〉
+下記1日あたりの給与量の目安を参考に、体質や体重、運動量、便の状態などを観察しながら適度に量をし、1日２～３回に分けて与えてください。
+●適正給与量には個体差があります。体重変化等を観察しながら給与量を加減して●特にシニア犬や避妊・去勢後は太りやすい傾向にありますので、愛犬の
+バランスに合わせて給与量を調整してください。 ●他のフードからの切り替えは、従来のフードに本商品1割ある程度
+を混ぜることからはじめ、徐々に本商品の量を増やしてください。完全にしばらくまで2週間ほどかけることをおすすめします。
+●新鮮な水はいつでも飲めるようにしてください。
+```
+**保存方法**
+```
+高温多湿、直射日光を避けて常温で保管してください。開封後はチャックで密閉の上、お早めにお使いください。
+```
+**栄養成分**
+```
+たんぱく質 20.6％以上 脂質 10.7％以上 粗繊維 0.8％以下 灰分6.4％以下水分10.0％以下 代謝エネルギー（ME） 357kcal/100g カルシウム1.31％ リン1.1％ ナトリウム0.33％ マグネシウム0.13％
+```
+
+### → 本文に残す
+
+```
+香料・着色料・合成酸化防止剤 無添加だし薫る犬のごはん （総合栄養食）
+九州産銘柄鶏と国内産８種の雑穀米をベースにした総合栄養食です。そこに、国内産野菜１２種類と海藻３種類も配合。 食物アレルギーに配慮した小麦グルテンフリーで、さらにオイルコーティング処理はしなくても自然な味わいです。遺伝子組み換えの作物を使用しておりません。また乳酸菌を配合する事で、腸内環境の健康を維持します。
+⟦IMG:https://cdn.shopify.com/s/files/1/0589/6591/7757/files/MB-D-01w.png?v=1710860704⟧
+【無添加のこだわり】
+香料、着色料、合成酸化防止剤（BHA、BHT、エトキシキン）は使用していません。
+内容量 １５０ｇ
+⟦IMG:https://cdn.shopify.com/s/files/1/0589/6591/7757/files/MB-DC_15w.png?v=1710860730⟧
+【総合栄養食（オールステージ）】
+この商品は、ペットフード公正取引協議会の決断分析試験の結果、総合栄養食の基準を満たすことが証明されています。
+```
+
+---
+
+## だし薫る犬のごはん チキン 800g
+`だし薫る犬のごはん-チキン`
+
+### → テーブルへ移す
+
+**原材料名**
+```
+鶏肉、大麦、玄米、鰹節、大麦ぬか、ビール酵母、米油、卵黄粉末、黒米、赤米、イヌリン（水溶性食物繊維）、コラーゲンペプチド、発酵調味料、玄米麹、はと麦、あわ、きび、ひえ、フラクトオリゴ糖、大根葉、昆布、ごぼう、人参、乳酸菌、DHA含精製魚油粉末、キャベツ、ブロッコリー、かぼちゃ、紫芋、さつま芋、あかもく、わかめ、セレン酵母、白菜、高菜、パセリ、青じそ、タウリン、L-トレオニン、ミネラル類（リン酸三カルシウム、塩化ナトリウム、塩化カリウム、グルコン酸亜鉛、ピロリン酸第二鉄、グルコン酸銅）、ビタミン類（ビタミンA、ビタミンD、ビタミンE、ビタミンB2、ビタミンB12、パントテン酸カルシウム）酸化防止剤（ローズマリー抽出物、ミックストコフェロール）
+```
+**賞味期限**
+```
+１年
+```
+**与え方**
+```
+〈成長期の子犬から成犬まで〉下記1日あたりの給与量目安を参考に、体質や体重、運動量、便の状態などを観察しながら適宜量を加減し、1日２～３回に分けて与えてください。
+●適正給与量には個体差があります。体重変化等を観察しながら給与量を加減して下さい。●特にシニア犬や避妊・去勢後は太りやすい傾向にありますので、愛犬のコンディションに合わせて給与量を調整してください。●他のフードからの切り替えは、従来のフードに本商品1割くらいを混ぜることからはじめ、徐々に本商品の量を増やしてください。完全に切り替えるまで2週間ほどかけることをおすすめします。●新鮮な水をいつでも飲めるようにしてください。
+```
+**保存方法**
+```
+高温多湿、直射日光を避けて常温で保管してください。開封後はチャックで密閉の上、早めに使い切ってください。
+```
+**栄養成分**
+```
+たんぱく質 20.6％以上 脂質 10.7％以上 粗繊維 0.8％以下 灰分 6.4％以下 水分 10.0％以下 代謝エネルギー（ME） 357kcal/100g カルシウム1.31％ リン 1.1％ ナトリウム 0.33％ マグネシウム 0.13％
+```
+
+### → 本文に残す
+
+```
+香料・着色料・合成酸化防止剤無添加 だし薫る犬のごはん （総合栄養食）九州産銘柄鶏と国内産の８種の雑穀米をベースにした 総合栄養食です。契約農家さんが丹精込めてつくった雑穀は栄養たっぷり。そこに、国内産野菜１２種類と海藻３種類も配合。食物アレルギーに配慮した小麦グルテンフリーで、更にオイルコーティング処理はせず自然な味わいです。遺伝子組み換えの作物を使用しておりません。また乳酸菌を配合する事で、腸内環境の健康を維持します。
+⟦IMG:https://cdn.shopify.com/s/files/1/0589/6591/7757/files/MB-D-01w.png?v=1710860704⟧
+【無添加のこだわり】香料、着色料、合成酸化防止剤（BHA、BHT、エトキシキン）は使用していません。
+内容量 ８００ｇ
+⟦IMG:https://cdn.shopify.com/s/files/1/0589/6591/7757/files/MB-DC_15w.png?v=1710860730⟧
+【総合栄養食（オールステージ）】この商品は、ペットフード公正取引協議会の定める分析試験の結果、総合栄養食の基準を満たすことが証明されています。
+```
+
+---
+
+## 犬と猫のおやつ　長野信州　熟成黒毛和牛 30g
+`長野信州-熟成黒毛和牛`
+
+### → テーブルへ移す
+
+**原材料名**
+```
+牛肉
+```
+**賞味期限**
+```
+1年間
+```
+**保存方法**
+```
+屋外日光を避けて常温で保管してください。開封後はお早めにお与え下さい。
+```
+**栄養成分**
+```
+たんぱく質23.0 ％以上 脂質 19.2％以上 粗繊維 0.0 ％以下 灰分 1.3％以下 水分 54.8％以下 エネルギー 77kcal/30g
+```
+
+### → 本文に残す
+
+```
+長野県信州で生育されている信州プレミアム牛を使用したマンマボーノのおやつです。
+信州プレミアム牛肉は、長野県が独自に定めた基準を満たした黒毛和種のみが認定され、脂肪交雑（サシ）の等級と、オレイン酸含有率の両方が基準を超えているため、風味や口溶けが他とは別格です。
+マンマボーノではドライエイジング加工した、水分量の多いおやつに仕上げました。ジャーキーなどの水分量の少ない乾燥肉とは違い、からだにやさしいおやつです。ご褒美やしつけのトリーツとしてご使用ください。
+⟦IMG:data:image/png;base64,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⟧
+```
+
+---
+
+## 犬と猫のおやつ　京都笠置　熟成鹿肉 30g
+`犬と猫のおやつ-京都笠置-熟成鹿肉`
+
+### → テーブルへ移す
+
+**原材料名**
+```
+鹿肉
+```
+**賞味期限**
+```
+1年間
+```
+**保存方法**
+```
+屋外日光を避けて常温で保管してください。開封後はお早めにお与え下さい。
+```
+**栄養成分**
+```
+たんぱく質29.6 ％以上 脂質 4.6％以上 粗繊維 0.0 ％以下 灰分 1.8％以下 水分 61.8％以下 エネルギー 42kcal/30g
+```
+
+### → 本文に残す
+
+```
+京都府相楽郡笠置で捕獲された天然の鹿肉を使用したマンマボーノのおやつです。
+鹿肉は低カロリーで高タンパク、鉄分も豊富でヘルシーな食材です。また、しっかりとした血抜き処理がされているので臭みが少なく、クセが少ないジビエです。赤身の部分が多く、あっさりとした味わいが特徴で、肉質は繊細で柔らかです。
+マンマボーノではドライエイジング加工した、水分量の多いおやつに仕上げました。ジャーキーなどの水分量の少ない乾燥肉とは違い、からだにやさしいおやつです。ご褒美やしつけのトリーツとしてご使用ください。
+```
+
+---
+
+## 犬と猫のおやつ　京都舞鶴　熟成鰤　30ｇ
+`犬と猫のおやつ-京都舞鶴-熟成鰤-30ｇ`
+
+### → テーブルへ移す
+
+**原材料名**
+```
+鰤
+```
+**賞味期限**
+```
+1年間
+```
+**保存方法**
+```
+屋外日光を避けて常温で保管してください。開封後はお早めにお与え下さい。
+```
+**栄養成分**
+```
+たんぱく質26.3％以上 脂質20.3％以上 粗繊維0.0％以下 灰分1.3％以下 水分51.7％以下 エネルギー78kcal/30g
+```
+
+### → 本文に残す
+
+```
+京都舞鶴港で水揚げされた鰤を使ったマンマボーノのおやつです。
+ぶりは栄養価が非常に高い魚で、タンパク質、DHA、EPA、ビタミンB群、ビタミンDなど、健康維持や美容に役立つ成分が豊富です。特に、血液をサラサラにするEPAや脳の働きに関わるDHAは、生活習慣病の予防や認知症予防にも効果が期待できます。
+マンマボーノではドライエイジング加工した、水分量の多いおやつに仕上げました。ジャーキーなど水分量の少ない乾燥肉とは違い、からだに優しいおやつです。ご褒美やしつけのトリーツとしてご利用ください。
+```
+
+---
+
+## 犬と猫のおやつ　鳥取大山　熟成がいな鶏　30ｇ
+`犬と猫のおやつ-鳥取大山-熟成がいな鶏-30ｇ`
+
+### → テーブルへ移す
+
+**原材料名**
+```
+鶏肉
+```
+**賞味期限**
+```
+1年間
+```
+**保存方法**
+```
+屋外日光を避けて常温で保管してください。開封後はお早めにお与え下さい。
+```
+**栄養成分**
+```
+たんぱく質30.0％以上 脂質2.3％以上 粗繊維0.0％以下 灰分1.3％以下 水分62.9％以下 エネルギー40kcal/30g
+```
+
+### → 本文に残す
+
+```
+鳥取大山で長期飼育された、がいな鶏を使ったマンマボーノのおやつです。
+鶏肉は、高タンパク質、ビタミンB群、ミネラルなどが豊富に含まれています。また、筋肉の健康維持や体力の増強に役立つタンパク質、糖質代謝に関わるビタミンB1、抗酸化作用を持つビタミンEなどを摂取できるため、健康的な食生活に役立ちます。
+マンマボーノではドライエイジング加工した、水分量の多いおやつに仕上げました。ジャーキーなど水分量の少ない乾燥肉とは違い、からだに優しいおやつです。ご褒美やしつけのトリーツとしてご使用ください。
+```
+
