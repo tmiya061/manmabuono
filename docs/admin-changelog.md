@@ -9,6 +9,8 @@ Shopifyの管理画面・ストアデータは Git で追えない。**書き込
 
 ---
 
+- 2026-08-02 | 商品6件（ドライ主食）| 仕様テーブル「与え方」の行中●の前に改行を挿入（●箇条書きが1段落に潰れて表示されていた） | インラインスクリプト（productUpdate） | 復元: scripts/product_table/linebreaks.backup.json
+
 - 2026-08-02 | 商品24件 | 本文を「型」（見出し/こんな子におすすめ/無添加ブロック）で再構成。効能断定表現は表現ルールに沿い言い換え | scripts/set_product_story.py --apply | 復元: scripts/product_story/backup.json（--revert）。前後全文: docs/product-copy-history.md
 
 - 2026-08-02 | 商品24件 | 本文から仕様情報（原材料/賞味期限/与え方/保存方法/ご注意/栄養成分）を metafield custom.product_table1〜6 へ移し、本文を読み物部分だけに整理（チキン150gの内容量800g誤記も150gに修正） | scripts/set_product_table.py --apply | 復元: scripts/product_table/backup.json（--revert）
