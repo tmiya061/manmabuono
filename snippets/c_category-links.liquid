@@ -1,6 +1,6 @@
 {% comment %}
   カテゴリ導線の「並び順の唯一の定義」。
-  ヘッダー（PCメガメニュー / SPドロワー）と商品一覧ページで共用する。
+  ヘッダー（PCメガメニュー / SPドロワー）・フッター・商品一覧ページで共用する。
   以前は同じソート処理が各ファイルにコピペされていて、直し漏れが起きやすかった。
 
   並び順（2026-08-02 オーナー確定）:
@@ -15,8 +15,9 @@
 
   受け取り:
     pet     : 'dog' | 'cat'
-    variant : 'icon'  … <a> + 丸矢印svg（ヘッダー：メガメニュー / ドロワー）
-              'chips' … <li class="c_colNav__item …">（商品一覧の上部チップ / サイドバー）
+    variant : 'icon'   … <a> + 丸矢印svg（ヘッダー：メガメニュー / ドロワー）
+              'chips'  … <li class="c_colNav__item …">（商品一覧の上部チップ / サイドバー）
+              'footer' … <li><a>（フッターの商品一覧・svgなし）
     item_class : variant が 'chips' のときの li クラス
 {% endcomment %}
 
@@ -71,6 +72,12 @@
     {%- if variant == 'chips' -%}
       <li class="{{ item_class }}{% if is_current %} is-current{% endif %}">
         <a href="{{ url }}"{% if is_current %} aria-current="page"{% endif %}>
+          <span>{{ label }}</span>
+        </a>
+      </li>
+    {%- elsif variant == 'footer' -%}
+      <li>
+        <a href="{{ url }}">
           <span>{{ label }}</span>
         </a>
       </li>
