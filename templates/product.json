@@ -74,6 +74,10 @@
         "padding_bottom": 12
       }
     },
+    "c_recommend": {
+      "type": "c_product-recommend",
+      "settings": {}
+    },
     "related-products": {
       "type": "related-products",
       "disabled": true,
@@ -97,6 +101,7 @@
   },
   "order": [
     "main",
+    "c_recommend",
     "related-products"
   ]
 }
