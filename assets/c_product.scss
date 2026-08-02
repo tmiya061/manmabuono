@@ -519,3 +519,141 @@ table:not([class]) td, table:not([class]) th {
   width: 100% !important;
   white-space: unset !important;
 }
+
+/* ==================================================
+    商品ストーリー（本文の情報設計）v2
+    引用元＝ペトコトフーズの商品説明パート（見出しは黒・色はアクセント最小限・
+    薄い面と余白で区切る）。トークンはマンマボーノに置換（#FF7B5E / radius 7px）。
+    強調の序列は 余白 > 面 > タイポ。左の色棒・囲み線は使わない。
+===================================================*/
+
+/* 本文はゆったり（ペトコト引用：line-height 200%） */
+.c_product__description .rte p {
+    color: #3C3C3C;
+    line-height: 200%;
+}
+
+/* キャッチ見出し（この商品は何か・1ページ1回・黒） */
+.c_product__description .rte h3 {
+    color: #3C3C3C;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 160%;
+    letter-spacing: 0.88px;
+    margin: 0 0 14px;
+    @media screen and (max-width: 750px) {
+        font-size: 19px;
+        letter-spacing: 0.76px;
+    }
+}
+
+/* 特徴の小見出し（機能ごと・黒・余白で区切る） */
+.c_product__description .rte h4 {
+    color: #3C3C3C;
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 160%;
+    letter-spacing: 0.68px;
+    margin: 44px 0 4px;
+    @media screen and (max-width: 750px) {
+        font-size: 15px;
+        margin: 36px 0 2px;
+    }
+}
+.c_product__description .rte h4 + p {
+    margin-top: 0;
+}
+
+/* アクセント太字（1ページ1箇所まで・ここぞの一言に） */
+.c_prodStory__em {
+    color: #F55E3D;
+    font-weight: 700;
+}
+
+/* こんな子におすすめ（面で見せるチェックリスト・ペトコト引用） */
+.c_product__description .rte .c_prodStory__fit {
+    background: #FFF4EC;
+    border-radius: 7px;
+    padding: 24px 28px;
+    margin: 36px 0;
+    @media screen and (max-width: 750px) {
+        padding: 20px;
+        margin: 28px 0;
+    }
+}
+.c_product__description .rte .c_prodStory__fit-title {
+    color: #3C3C3C;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    margin: 0 0 12px;
+}
+.c_product__description .rte .c_prodStory__fit ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 24px;
+    margin: 0;
+    padding: 0;
+    @media screen and (max-width: 750px) {
+        grid-template-columns: 1fr;
+    }
+}
+.c_product__description .rte .c_prodStory__fit li {
+    position: relative;
+    padding-left: 26px;
+    color: #3C3C3C;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 170%;
+    @media screen and (max-width: 750px) {
+        font-size: 14px;
+    }
+}
+.c_product__description .rte .c_prodStory__fit li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #FF7B5E;
+    font-weight: 700;
+}
+
+/* 無添加のこだわり（面で見せるブロック・見出しは黒） */
+.c_prodStory__policy {
+    background: #FFF4EC;
+    border-radius: 7px;
+    padding: 22px 28px;
+    margin: 36px 0;
+    @media screen and (max-width: 750px) {
+        padding: 18px 20px;
+        margin: 28px 0;
+    }
+}
+.c_product__description .rte .c_prodStory__policy-title {
+    color: #3C3C3C;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    margin: 0 0 6px;
+}
+.c_product__description .rte .c_prodStory__policy p:not(.c_prodStory__policy-title) {
+    font-size: 14px;
+    line-height: 190%;
+    margin: 0;
+}
+
+/* 内容量などのメタ情報 */
+.c_product__description .rte .c_prodStory__meta {
+    font-size: 14px;
+    color: #3C3C3C;
+    margin: 24px 0 8px;
+}
+
+/* 公正取引協議会などの証明文（法定表示トーン・小さくグレー） */
+.c_product__description .rte .c_prodStory__cert {
+    font-size: 12px;
+    color: #8A8A8A;
+    line-height: 170%;
+    margin: 24px 0 0;
+}
