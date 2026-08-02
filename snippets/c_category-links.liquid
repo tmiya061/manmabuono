@@ -1,0 +1,87 @@
+{% comment %}
+  カテゴリ導線の「並び順の唯一の定義」。
+  ヘッダー（PCメガメニュー / SPドロワー）と商品一覧ページで共用する。
+  以前は同じソート処理が各ファイルにコピペされていて、直し漏れが起きやすかった。
+
+  並び順（2026-08-02 オーナー確定）:
+    ドライフード → ウェットフード → おやつ → お試しセット
+    → 自分で作る手作りごはん → お食事代行サービス
+  コレクション名のソート順では意図した並びにならないため、nav_items に handle を
+  直接列挙して制御する。カテゴリを増やしたらここに追記する
+  （書き忘れても消えないよう、列挙外のものは末尾に自動で出る）。
+  __trial__ だけはコレクションではなく商品ページ（/products/xxx-trial-set）への導線。
+
+  ※「全ての商品」は呼び出し側ごとにマークアップが違うため、各ファイルに残してある。
+
+  受け取り:
+    pet     : 'dog' | 'cat'
+    variant : 'icon'  … <a> + 丸矢印svg（ヘッダー：メガメニュー / ドロワー）
+              'chips' … <li class="c_colNav__item …">（商品一覧の上部チップ / サイドバー）
+    item_class : variant が 'chips' のときの li クラス
+{% endcomment %}
+
+{%- liquid
+  assign pet = pet | default: 'dog'
+  assign variant = variant | default: 'icon'
+
+  if pet == 'cat'
+    assign nav_items = 'cat-dry,cat-wet,cat-easy-cook,__trial__,cat-make' | split: ','
+  else
+    assign nav_items = 'dog-dry,dog-wet,dog-easy-cook-5,__trial__,dog-make-6,dog-representative' | split: ','
+  endif
+
+  # 列挙に書き忘れたカテゴリの保険。列挙済み・全商品・お試し・季節もの（おせち/そば）は除く。
+  # ※ liquidタグ内は1行1タグ。条件は改行せず1行に書くこと（改行すると or が不明なタグ扱いになる）
+  assign listed = nav_items | join: ',' | prepend: ',' | append: ','
+  assign extra = ''
+  for col in collections
+    assign needle = col.handle | prepend: ',' | append: ','
+    if col.handle contains pet
+      unless listed contains needle or col.handle contains 'all' or col.handle contains 'trial' or col.handle contains 'osechi' or col.handle contains 'soba'
+        assign extra = extra | append: ',' | append: col.handle
+      endunless
+    endif
+  endfor
+  assign all_items = nav_items | join: ',' | append: extra | split: ','
+-%}
+
+{%- for item in all_items -%}
+  {%- liquid
+    assign url = ''
+    assign label = ''
+    if item == '__trial__'
+      assign url = '/products/' | append: pet | append: '-trial-set'
+      assign label = 'お試しセット'
+    else
+      assign col = collections[item]
+      if col.title != blank
+        assign url = '/collections/' | append: col.handle
+        assign label = col.title | split: '-' | last | strip
+      endif
+    endif
+
+    assign current_url = '/collections/' | append: collection.handle
+    assign is_current = false
+    if collection.handle != blank and url == current_url
+      assign is_current = true
+    endif
+  -%}
+
+  {%- if url != blank -%}
+    {%- if variant == 'chips' -%}
+      <li class="{{ item_class }}{% if is_current %} is-current{% endif %}">
+        <a href="{{ url }}"{% if is_current %} aria-current="page"{% endif %}>
+          <span>{{ label }}</span>
+        </a>
+      </li>
+    {%- else -%}
+      <a href="{{ url }}"{% if is_current %} aria-current="page"{% endif %}>
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="9" r="8.5" fill="white" stroke="#3C3C3C"/>
+          <path d="M7.19995 5.39999L10.8 9.00001L7.19995 12.6" stroke="#3C3C3C"/>
+        </svg>
+        <span>{{ label }}</span>
+      </a>
+    {%- endif -%}
+  {%- endif -%}
+{%- endfor -%}

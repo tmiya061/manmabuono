@@ -9,6 +9,8 @@
   ⚠️ 元コードでは猫ページの「全ての商品」が /collections/dog-all を指していた（犬に飛ぶ不具合）。
      切り出しの際に cat-all へ修正した（2026-08-01）。
 
+  並び順の定義は snippets/c_category-links.liquid に集約（ヘッダーと共用・2026-08-02）。
+
   受け取り: variant
 {% endcomment %}
 
@@ -19,48 +21,20 @@
   else
     assign pet = 'dog'
   endif
-  assign sorted_collections = collections | sort: 'title' | reverse
   assign all_handle = pet | append: '-all'
+
+  assign item_class = 'c_colNav__item'
+  if variant == 'chips'
+    assign item_class = 'c_colNav__item c_collectionCategory__item'
+  endif
 -%}
 
 <ul class="c_colNav c_colNav--{{ variant }}{% if variant == 'chips' %} c_collectionCategory__wrap page-width{% endif %}">
-  <li class="c_colNav__item{% if variant == 'chips' %} c_collectionCategory__item{% endif %}{% if collection.handle == all_handle %} is-current{% endif %}">
+  <li class="{{ item_class }}{% if collection.handle == all_handle %} is-current{% endif %}">
     <a href="/collections/{{ all_handle }}"{% if collection.handle == all_handle %} aria-current="page"{% endif %}>
       <span>全ての商品</span>
     </a>
   </li>
 
-  {%- for col in sorted_collections -%}
-    {%- if col.handle contains pet -%}
-      {%- unless col.handle contains 'all'
-        or col.handle contains 'make'
-        or col.handle contains 'trial'
-        or col.handle contains 'osechi'
-        or col.handle contains 'soba'
-      -%}
-        <li class="c_colNav__item{% if variant == 'chips' %} c_collectionCategory__item{% endif %}{% if col.handle == collection.handle %} is-current{% endif %}">
-          <a href="/collections/{{ col.handle }}"{% if col.handle == collection.handle %} aria-current="page"{% endif %}>
-            <span>{{ col.title | split: '-' | last }}</span>
-          </a>
-        </li>
-      {%- endunless -%}
-    {%- endif -%}
-  {%- endfor -%}
-
-  {%- comment -%} 手作りごはん（-make）は上のループから除外しているので最後に置く {%- endcomment -%}
-  {%- for col in sorted_collections -%}
-    {%- if col.handle contains pet and col.handle contains 'make' -%}
-      <li class="c_colNav__item{% if variant == 'chips' %} c_collectionCategory__item{% endif %}{% if col.handle == collection.handle %} is-current{% endif %}">
-        <a href="/collections/{{ col.handle }}"{% if col.handle == collection.handle %} aria-current="page"{% endif %}>
-          <span>{{ col.title | split: '-' | last }}</span>
-        </a>
-      </li>
-    {%- endif -%}
-  {%- endfor -%}
-
-  <li class="c_colNav__item{% if variant == 'chips' %} c_collectionCategory__item{% endif %}">
-    <a href="/products/{{ pet }}-trial-set">
-      <span>お試しセット</span>
-    </a>
-  </li>
+  {% render 'c_category-links', pet: pet, variant: 'chips', item_class: item_class %}
 </ul>
