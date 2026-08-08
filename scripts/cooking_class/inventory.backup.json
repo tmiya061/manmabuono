@@ -1,0 +1,101 @@
+{
+  "id": "gid://shopify/Product/7947787436093",
+  "title": "オンライン料理教室",
+  "variants": {
+    "nodes": [
+      {
+        "id": "gid://shopify/ProductVariant/43416109187133",
+        "title": "8月9日（日）10:00〜11:30",
+        "price": "500",
+        "inventoryQuantity": 5,
+        "inventoryPolicy": "DENY",
+        "inventoryItem": {
+          "id": "gid://shopify/InventoryItem/45497530777661",
+          "tracked": true,
+          "inventoryLevels": {
+            "nodes": [
+              {
+                "id": "gid://shopify/InventoryLevel/99357917245?inventory_item_id=45497530777661",
+                "location": {
+                  "id": "gid://shopify/Location/65023967293"
+                },
+                "quantities": [
+                  {
+                    "name": "available",
+                    "quantity": 5
+                  },
+                  {
+                    "name": "on_hand",
+                    "quantity": 5
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "gid://shopify/ProductVariant/43416110596157",
+        "title": "8月16日（日）10:00〜11:30",
+        "price": "500",
+        "inventoryQuantity": 0,
+        "inventoryPolicy": "DENY",
+        "inventoryItem": {
+          "id": "gid://shopify/InventoryItem/45497532186685",
+          "tracked": false,
+          "inventoryLevels": {
+            "nodes": [
+              {
+                "id": "gid://shopify/InventoryLevel/99357917245?inventory_item_id=45497532186685",
+                "location": {
+                  "id": "gid://shopify/Location/65023967293"
+                },
+                "quantities": [
+                  {
+                    "name": "available",
+                    "quantity": 0
+                  },
+                  {
+                    "name": "on_hand",
+                    "quantity": 0
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "gid://shopify/ProductVariant/43416110628925",
+        "title": "8月23日（日）10:00〜11:30",
+        "price": "500",
+        "inventoryQuantity": 0,
+        "inventoryPolicy": "DENY",
+        "inventoryItem": {
+          "id": "gid://shopify/InventoryItem/45497532219453",
+          "tracked": false,
+          "inventoryLevels": {
+            "nodes": [
+              {
+                "id": "gid://shopify/InventoryLevel/99357917245?inventory_item_id=45497532219453",
+                "location": {
+                  "id": "gid://shopify/Location/65023967293"
+                },
+                "quantities": [
+                  {
+                    "name": "available",
+                    "quantity": 0
+                  },
+                  {
+                    "name": "on_hand",
+                    "quantity": 0
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      }
+    ]
+  }
+}
