@@ -117,6 +117,8 @@
           {%- if item.handle == product.handle -%}
             {%- continue -%}
           {%- endif -%}
+          {%- capture c_size_hidden -%}{%- render 'c_size-links', target_product: item, mode: 'hidden' -%}{%- endcapture -%}
+          {%- if c_size_hidden contains 'hide' -%}{%- continue -%}{%- endif -%}
           {%- if shown >= limit -%}
             {%- break -%}
           {%- endif -%}
@@ -131,7 +133,8 @@
               show_rating: false,
               lazy_load: true,
               show_quick_add: section.settings.enable_quick_add,
-              section_id: section.id
+              section_id: section.id,
+              trim_size_title: true
             %}
           </li>
         {%- endfor -%}

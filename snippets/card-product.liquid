@@ -115,7 +115,11 @@
                 class="full-unstyled-link"
                 aria-labelledby="StandardCardNoMediaLink-{{ section_id }}-{{ card_product.id }} NoMediaStandardBadge-{{ section_id }}-{{ card_product.id }}"
               >
-                {{ card_product.title | escape }}
+                {%- if trim_size_title -%}
+                  {%- render 'c_size-links', target_product: card_product, mode: 'title' -%}
+                {%- else -%}
+                  {{ card_product.title | escape }}
+                {%- endif -%}
               </a>
             </h3>
           </div>
@@ -152,7 +156,11 @@
               class="full-unstyled-link"
               aria-labelledby="CardLink-{{ section_id }}-{{ card_product.id }} Badge-{{ section_id }}-{{ card_product.id }}"
             >
-              {{ card_product.title | escape }}
+              {%- if trim_size_title -%}
+                {%- render 'c_size-links', target_product: card_product, mode: 'title' -%}
+              {%- else -%}
+                {{ card_product.title | escape }}
+              {%- endif -%}
             </a>
           </h3>
           <div class="card-information">
@@ -199,6 +207,7 @@
               </p>
             {%- endif -%}
 
+            {% render 'c_size-links', target_product: card_product, mode: 'card' %}
             {% render 'price', product: card_product, price_class: '', show_compare_at_price: true %}
             {%- if card_product.quantity_price_breaks_configured? -%}
               <div class="card__information-volume-pricing-note">

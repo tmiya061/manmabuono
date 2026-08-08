@@ -90,6 +90,8 @@
       >
         {%- assign i = 0 -%}
         {%- for product in collection.products -%}
+          {%- capture c_size_hidden -%}{%- render 'c_size-links', target_product: product, mode: 'hidden' -%}{%- endcapture -%}
+          {%- if c_size_hidden contains 'hide' -%}{%- continue -%}{%- endif -%}
           {%- if tag == blank or product.tags contains tag -%}
             {%- assign i = i | plus: 1 -%}
             {%- assign lazy_load = false -%}
@@ -106,7 +108,8 @@
                 show_rating: section.settings.show_rating,
                 lazy_load: lazy_load,
                 show_quick_add: section.settings.enable_quick_add,
-                section_id: section.id
+                section_id: section.id,
+                trim_size_title: true
               %}
             </li>
           {%- endif -%}

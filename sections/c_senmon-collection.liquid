@@ -115,6 +115,8 @@
               "
             >
               {%- for product in senmon_collection.products limit: section.settings.products_to_show -%}
+                {%- capture c_size_hidden -%}{%- render 'c_size-links', target_product: product, mode: 'hidden' -%}{%- endcapture -%}
+                {%- if c_size_hidden contains 'hide' -%}{%- continue -%}{%- endif -%}
                 {% assign lazy_load = false %}
                 {%- if forloop.index > 2 -%}
                   {%- assign lazy_load = true -%}
@@ -135,7 +137,8 @@
                     show_rating: section.settings.show_rating,
                     lazy_load: lazy_load,
                     show_quick_add: section.settings.enable_quick_add,
-                    section_id: section.id
+                    section_id: section.id,
+                    trim_size_title: true
                   %}
                 </li>
               {%- endfor -%}

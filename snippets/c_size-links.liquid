@@ -1,0 +1,88 @@
+{%- comment -%}
+  サイズ・入数違いで別商品として登録されているものを相互リンクする（リンクボタン方式）
+  背景: バリアント統合はサブスク既存契約が取り残されるため見送り
+        → .company/projects/clients/manmabuono/progress.md ③（2026-08-03 決定）
+
+  引数:
+    target_product: 対象の product オブジェクト
+    mode:
+      'buttons' = 商品ページ用のサイズ切替ボタン
+      'card'    = 一覧カード用の内容量表記（テキストのみ・リンクなし）
+      'title'   = 一覧カード用の表示タイトル（末尾のサイズ表記を除いたもの）
+      'hidden'  = 一覧で非表示にする商品なら「hide」を出力（captureで受けて判定する）
+
+  対象10グループ・20商品。グループは ; 区切り、グループ内は , 区切り、
+  各要素は「内容量ラベル|商品handle」。
+  ★グループの1つ目＝一覧に出す代表（小サイズ）。2つ目以降は一覧で非表示。
+  handleやタイトルの内容量表記を変えた場合はここも更新すること。
+{%- endcomment -%}
+{%- liquid
+  assign size_groups = '150g|だし薫る犬のごはん-チキン-150g,800g|だし薫る犬のごはん-チキン;150g|だし薫る犬のごはん-フィッシュ-150g,800g|だし薫る犬のごはん-フィッシュ-800g;150g|ダブルだし猫のごはん-チキン-150g,800g|ダブルだし猫のごはん-チキン-800g;100g×2袋|チキンボーンブロス,100g×5袋|チキンボーンブロス5袋;100g×2袋|京の一番だし,100g×5袋|京の一番だし5袋;70g|京都笠置-鹿肉と無農薬野菜の煮込み,70g×3袋|京都笠置-鹿肉と無農薬野菜の煮込み3袋;120g|舞鶴-ぶりのうま煮1袋,120g×3袋|舞鶴-ぶりのうま煮3袋;120g|枕崎-かつおのうま煮1袋,120g×3袋|枕崎-かつおのうま煮3袋;120g|地鶏のそぼろ煮1袋,120g×3袋|地鶏のそぼろ煮3袋;120g|無農薬野菜の炊いたん1袋,120g×3袋|無農薬野菜の炊いたん3袋' | split: ';'
+
+  assign found_group = ''
+  assign found_label = ''
+  assign found_index = -1
+  for group in size_groups
+    assign group_items = group | split: ','
+    for item in group_items
+      assign parts = item | split: '|'
+      if parts[1] == target_product.handle
+        assign found_group = group
+        assign found_label = parts[0]
+        assign found_index = forloop.index0
+        break
+      endif
+    endfor
+    if found_group != ''
+      break
+    endif
+  endfor
+-%}
+{%- if mode == 'title' -%}
+  {%- if found_group != '' -%}
+    {{- target_product.title | remove: found_label | strip | escape -}}
+  {%- else -%}
+    {{- target_product.title | escape -}}
+  {%- endif -%}
+{%- elsif mode == 'hidden' -%}
+  {%- if found_index > 0 -%}hide{%- endif -%}
+{%- elsif found_group != '' -%}
+  {%- assign group_items = found_group | split: ',' -%}
+  {%- if mode == 'card' -%}
+    {%- capture size_labels -%}
+      {%- for item in group_items -%}
+        {%- assign parts = item | split: '|' -%}
+        {{- parts[0] -}}
+        {%- unless forloop.last %} / {% endunless -%}
+      {%- endfor -%}
+    {%- endcapture -%}
+    <div class="c_size-note">内容量：{{ size_labels | strip }}</div>
+  {%- else -%}
+    <div class="c_size-links">
+      <span class="c_size-links__label">内容量</span>
+      <ul class="c_size-links__list" role="list">
+        {%- for item in group_items -%}
+          {%- assign parts = item | split: '|' -%}
+          {%- if parts[1] == target_product.handle -%}
+            <li>
+              <span class="c_size-links__item is-current" aria-current="page">
+                {{ parts[0] }}
+                <span class="c_size-links__price">{{ target_product.price | money }}</span>
+              </span>
+            </li>
+          {%- else -%}
+            {%- assign sibling = all_products[parts[1]] -%}
+            {%- unless sibling == empty -%}
+              <li>
+                <a class="c_size-links__item" href="{{ sibling.url }}">
+                  {{ parts[0] }}
+                  <span class="c_size-links__price">{{ sibling.price | money }}</span>
+                </a>
+              </li>
+            {%- endunless -%}
+          {%- endif -%}
+        {%- endfor -%}
+      </ul>
+    </div>
+  {%- endif -%}
+{%- endif -%}

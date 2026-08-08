@@ -657,3 +657,53 @@ table:not([class]) td, table:not([class]) th {
     line-height: 170%;
     margin: 24px 0 0;
 }
+
+/* ==================================================
+    サイズ切替リンク（内容量違いの別商品へ・c_size-links.liquid）
+===================================================*/
+.c_size-links {
+    margin: 14px 0 4px;
+
+    &__label {
+        display: block;
+        font-size: 13px;
+        color: $text-color;
+        margin-bottom: 6px;
+    }
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+    &__item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2px;
+        min-width: 100px;
+        padding: 8px 16px;
+        border: 1px solid rgba(60, 60, 60, .3);
+        border-radius: 6px;
+        font-size: 14px;
+        line-height: 1.4;
+        color: $text-color;
+        text-decoration: none;
+        background: $white;
+        transition: border-color .2s;
+
+        &:hover {
+            border-color: $base-color;
+        }
+        &.is-current {
+            border: 2px solid $base-color;
+            font-weight: 700;
+        }
+    }
+    &__price {
+        font-size: 12px;
+        opacity: .65;
+    }
+}
