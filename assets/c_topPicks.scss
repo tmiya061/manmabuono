@@ -244,3 +244,10 @@
         }
     }
 }
+
+/* 内容量が2種類ある商品の表記（c_size-links.liquid・一覧と同じパターン） */
+.c_topPicks__item .c_size-note {
+    font-size: 11px;
+    color: rgba(60, 60, 60, .65);
+    margin: 2px 0 4px;
+}

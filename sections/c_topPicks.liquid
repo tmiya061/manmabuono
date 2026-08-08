@@ -134,7 +134,8 @@
                       {%- if copy != blank -%}<span class="c_topPicks__item-copy">{{ copy }}</span>{%- endif -%}
                     </p>
                   {%- endif -%}
-                  <p class="c_topPicks__item-title">{{ product.title }}</p>
+                  <p class="c_topPicks__item-title">{%- render 'c_size-links', target_product: product, mode: 'title' -%}</p>
+                  {%- render 'c_size-links', target_product: product, mode: 'card' -%}
                   <p class="c_topPicks__item-price">
                     {{ product.price | money }}
                     <span>(税込)</span>

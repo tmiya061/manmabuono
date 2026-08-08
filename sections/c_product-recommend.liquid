@@ -4,11 +4,13 @@
   ブランドの中心思想＝「ドライ主食＋ウェットおかず」を導線として実装する。
   Dawn標準の related-products（Shopifyのレコメンドアルゴリズム）ではなく、
   商品のカテゴリから提案先を決める編集型：
-    ・主食（dog-dry / cat-dry）      → ウェットおかず（{pet}-wet）
-    ・おかず・スープ（{pet}-wet）     → 毎日のごはん（{pet}-dry）
-    ・おやつ／その他                  → おすすめ商品（d_recommend-set / c_recommend-set）
-  見出し文言はテーマエディタで変更できる。表示順は各コレクションの並び順に従う
-  （＝顔ぶれを変えたい時は管理画面でコレクションを並び替える）。
+    ・主食（dog-dry / cat-dry）      → ウェットおかず（{pet}-wet 全体・プレミアム料理含む）からランダム
+    ・おかず・スープ（{pet}-wet）     → 毎日のごはん（{pet}-dry）※コレクション並び順
+    ・おやつ／その他                  → 同じ犬猫の全商品（{pet}-all）からランダム
+  見出し文言はテーマエディタで変更できる。ランダムはJSシャッフル
+  （候補を多めに描画→JSで並び替え→CSSで先頭 limit 件のみ表示。
+  Liquidに乱数が無く、サーバー側はページキャッシュで固定されるため）。
+  ［追加用］商品は常に除外。
 
   カードはコレクションページと同じ card-product を同じ設定で使い、見た目を揃える。
 {% endcomment %}
@@ -44,7 +46,7 @@
     text-align: left;
     color: #3c3c3c;
     margin: -10px 0 18px;
-    max-width: 640px;
+    max-width: 100%;
     font-size: 14px;
     line-height: 180%;
   }
@@ -54,6 +56,11 @@
       font-size: 20px;
       margin-bottom: 15px;
     }
+  }
+
+  /* ランダム表示用：多めに描画した候補のうち先頭 limit 件だけ見せる */
+  #c_prodRecommend-grid-{{ section.id }} > li:nth-child(n + {{ section.settings.product_limit | plus: 1 }}) {
+    display: none;
   }
 {%- endstyle -%}
 
@@ -80,22 +87,29 @@
       assign source_handle = pet | append: '-wet'
       assign heading = section.settings.heading_dry
       assign desc = section.settings.desc_dry
+      assign randomize = true
     when 'wet'
       assign source_handle = pet | append: '-dry'
       assign heading = section.settings.heading_wet
       assign desc = section.settings.desc_wet
+      assign randomize = false
     else
-      if pet == 'dog'
-        assign source_handle = 'd_recommend-set'
-      else
-        assign source_handle = 'c_recommend-set'
-      endif
+      assign source_handle = pet | append: '-all'
       assign heading = section.settings.heading_other
       assign desc = ''
+      assign randomize = true
   endcase
 
   assign source = collections[source_handle]
   assign limit = section.settings.product_limit
+
+  # ランダム表示の仕組み：Liquidに乱数が無いため、候補を多めに描画して
+  # JSでシャッフル→CSS(nth-child)で先頭 limit 件だけ表示する。
+  # 画像は loading=lazy なので非表示分のダウンロードは発生しない。
+  assign render_cap = limit
+  if randomize
+    assign render_cap = 20
+  endif
 -%}
 
 {%- if source.products.size > 0 -%}
@@ -109,6 +123,7 @@
       {%- endif -%}
 
       <ul
+        id="c_prodRecommend-grid-{{ section.id }}"
         class="grid product-grid grid--{{ section.settings.columns_mobile }}-col-tablet-down grid--{{ section.settings.columns_desktop }}-col-desktop"
         role="list"
       >
@@ -117,9 +132,12 @@
           {%- if item.handle == product.handle -%}
             {%- continue -%}
           {%- endif -%}
+          {%- if item.handle contains '追加用' -%}
+            {%- continue -%}
+          {%- endif -%}
           {%- capture c_size_hidden -%}{%- render 'c_size-links', target_product: item, mode: 'hidden' -%}{%- endcapture -%}
           {%- if c_size_hidden contains 'hide' -%}{%- continue -%}{%- endif -%}
-          {%- if shown >= limit -%}
+          {%- if shown >= render_cap -%}
             {%- break -%}
           {%- endif -%}
           {%- assign shown = shown | plus: 1 -%}
@@ -139,6 +157,20 @@
           </li>
         {%- endfor -%}
       </ul>
+      {%- if randomize -%}
+        <script>
+          (function () {
+            var ul = document.getElementById('c_prodRecommend-grid-{{ section.id }}');
+            if (!ul || ul.children.length < 2) return;
+            var lis = Array.prototype.slice.call(ul.children);
+            for (var i = lis.length - 1; i > 0; i--) {
+              var j = Math.floor(Math.random() * (i + 1));
+              var t = lis[i]; lis[i] = lis[j]; lis[j] = t;
+            }
+            for (var k = 0; k < lis.length; k++) ul.appendChild(lis[k]);
+          })();
+        </script>
+      {%- endif -%}
     </div>
   </div>
 {%- endif -%}
