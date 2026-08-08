@@ -110,22 +110,36 @@
         {%- if items.size > 0 or items.count > 0 -%}
           <ul class="c_topPicks__items">
             {%- for product in items limit: limit -%}
+              {%- comment -%}
+                サイズ違いグループの商品は、どちらのサイズが指定されていても
+                一覧と同じ「代表（小サイズ）」に正規化して表示・リンクする。
+                内容量表記だけ付けてリンク先が大サイズのまま、という食い違いを防ぐ。
+              {%- endcomment -%}
+              {%- assign display_product = product -%}
+              {%- capture rep_handle -%}{%- render 'c_size-links', target_product: product, mode: 'rep-handle' -%}{%- endcapture -%}
+              {%- assign rep_handle = rep_handle | strip -%}
+              {%- if rep_handle != blank and rep_handle != product.handle -%}
+                {%- assign rep_product = all_products[rep_handle] -%}
+                {%- unless rep_product == empty -%}
+                  {%- assign display_product = rep_product -%}
+                {%- endunless -%}
+              {%- endif -%}
               {%- assign copy = '' -%}
               {%- for block in section.blocks -%}
                 {%- if block.type == 'copy' and block.settings.product != blank -%}
-                  {%- if block.settings.product.handle == product.handle -%}
+                  {%- if block.settings.product.handle == product.handle or block.settings.product.handle == display_product.handle -%}
                     {%- assign copy = block.settings.text -%}
                   {%- endif -%}
                 {%- endif -%}
               {%- endfor -%}
               <li class="c_topPicks__item">
-                <a class="c_topPicks__item-link" href="{{ product.url }}">
+                <a class="c_topPicks__item-link" href="{{ display_product.url }}">
                   <img
                     class="c_topPicks__item-img"
                     width="1920"
                     height="1560"
-                    src="{{ product.featured_image | image_url: width: 600 }}"
-                    alt="{{ product.title | escape }}"
+                    src="{{ display_product.featured_image | image_url: width: 600 }}"
+                    alt="{{ display_product.title | escape }}"
                     loading="lazy"
                   >
                   {%- comment -%} 一言の行数でカード高さがズレないよう、器は常に置く {%- endcomment -%}
@@ -134,10 +148,10 @@
                       {%- if copy != blank -%}<span class="c_topPicks__item-copy">{{ copy }}</span>{%- endif -%}
                     </p>
                   {%- endif -%}
-                  <p class="c_topPicks__item-title">{%- render 'c_size-links', target_product: product, mode: 'title' -%}</p>
-                  {%- render 'c_size-links', target_product: product, mode: 'card' -%}
+                  <p class="c_topPicks__item-title">{%- render 'c_size-links', target_product: display_product, mode: 'title' -%}</p>
+                  {%- render 'c_size-links', target_product: display_product, mode: 'card' -%}
                   <p class="c_topPicks__item-price">
-                    {{ product.price | money }}
+                    {{ display_product.price | money }}
                     <span>(税込)</span>
                   </p>
                 </a>

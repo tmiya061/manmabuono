@@ -10,6 +10,7 @@
       'card'    = 一覧カード用の内容量表記（テキストのみ・リンクなし）
       'title'   = 一覧カード用の表示タイトル（末尾のサイズ表記を除いたもの）
       'hidden'  = 一覧で非表示にする商品なら「hide」を出力（captureで受けて判定する）
+      'rep-handle' = グループの代表（小サイズ）のhandleを出力（グループ外なら空。captureで受ける）
 
   対象10グループ・20商品。グループは ; 区切り、グループ内は , 区切り、
   各要素は「内容量ラベル|商品handle」。
@@ -46,6 +47,12 @@
   {%- endif -%}
 {%- elsif mode == 'hidden' -%}
   {%- if found_index > 0 -%}hide{%- endif -%}
+{%- elsif mode == 'rep-handle' -%}
+  {%- if found_group != '' -%}
+    {%- assign group_items = found_group | split: ',' -%}
+    {%- assign rep_parts = group_items[0] | split: '|' -%}
+    {{- rep_parts[1] -}}
+  {%- endif -%}
 {%- elsif found_group != '' -%}
   {%- assign group_items = found_group | split: ',' -%}
   {%- if mode == 'card' -%}
