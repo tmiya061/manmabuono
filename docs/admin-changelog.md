@@ -9,6 +9,8 @@ Shopifyの管理画面・ストアデータは Git で追えない。**書き込
 
 ---
 
+- 2026-08-08 | 商品 online-cooking-class | タグ「一覧非表示」を追加（テーマ側で商品一覧グリッドから除外するため） | tagsAdd（GraphQL） | 復元: タグを外す
+- 2026-08-08 | コレクション | handle「all」のスマートコレクションを作成→自動allの上書きが効かず同日削除（現存しない） | REST smart_collections | 復元手段なし（不要）
 - 2026-08-08 | 商品24件 | 本文から「こんな子におすすめ」ブロック（c_prodStory__fit）を削除 | scripts/remove_prodstory_fit.py --apply | 復元: scripts/product_story/fit_removal_backup.json
 
 - 2026-08-02 | 商品6件（ドライ主食）| 仕様テーブル「与え方」の行中●の前に改行を挿入（●箇条書きが1段落に潰れて表示されていた） | インラインスクリプト（productUpdate） | 復元: scripts/product_table/linebreaks.backup.json

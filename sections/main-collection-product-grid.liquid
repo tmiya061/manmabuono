@@ -144,6 +144,7 @@
               "
             >
               {%- for product in collection.products -%}
+                {%- if product.tags contains '一覧非表示' -%}{%- continue -%}{%- endif -%}
                 {%- capture c_size_hidden -%}{%- render 'c_size-links', target_product: product, mode: 'hidden' -%}{%- endcapture -%}
                 {%- if c_size_hidden contains 'hide' -%}{%- continue -%}{%- endif -%}
                 {% assign lazy_load = false %}
