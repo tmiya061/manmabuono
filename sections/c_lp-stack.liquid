@@ -1,0 +1,352 @@
+{% comment %}
+  画像積み上げ型LP（2026-08-10 追加）
+
+  ■ 何のためのものか
+  通販D2Cの定番であるスマホ1カラムのLP。ペトコト（shop.petokoto.com/lp?u=…）の骨格を
+  引用して作った。あちらは全58スライスの .webp を縦に積んだだけの構造で、
+  実テキストはFAQのみ。HTMLに移植できる「デザイン」は無いので、
+  **再現したのは骨格と仕掛け**（390px1カラム／固定背景の切替／CV3回反復／モーダル／FAQ）。
+
+  ■ 使い方（1セクションずつマンマボーノに差し替えていく前提）
+  ブロックを縦に並べる。1ブロック＝LPの1スライス。
+  画像がまだ無いブロックは placeholder のまま置いておくと、
+  「ここに何の画像が・何pxで要るか」が画面に出る。用意できたものから image に差し替える。
+
+  ■ 寸法の決まり
+  カラム幅は既定390px（＝スマホ実機幅）。画像は**その2倍＝幅780pxで書き出す**（Retina用）。
+  高さは自由。780px以外を入れても表示は崩れないが、線が甘くなる。
+
+  ■ 背景レイヤー
+  ブロックに「背景番号」を持たせると、そのブロックが画面に入った時に
+  固定背景がその番号に切り替わる（assets/c_lp-stack.js）。背景を使わないなら空でよい。
+{% endcomment %}
+
+{{ 'c_lp.min.css' | asset_url | stylesheet_tag }}
+{{ 'c_lpStack.min.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'c_lp.js' | asset_url }}" defer></script>
+<script src="{{ 'c_lp-stack.js' | asset_url }}" defer></script>
+
+{%- style -%}
+  #shopify-section-{{ section.id }} .c_lpStack__col {
+    max-width: {{ section.settings.column_width }}px;
+  }
+{%- endstyle -%}
+
+{%- liquid
+  assign bg1 = section.settings.bg_1
+  assign bg2 = section.settings.bg_2
+  assign bg3 = section.settings.bg_3
+  assign has_bg = false
+  if bg1 != blank or bg2 != blank or bg3 != blank
+    assign has_bg = true
+  endif
+-%}
+
+{%- if has_bg -%}
+  {%- comment -%}
+    固定背景。position:fixed の全画面レイヤーを重ねておき、
+    表示するものだけ opacity を上げる（切り替えを transition で繋ぐため display は使わない）。
+  {%- endcomment -%}
+  <div class="c_lpStack__bg" aria-hidden="true">
+    {%- for i in (1..3) -%}
+      {%- liquid
+        case i
+          when 1
+            assign bg = bg1
+          when 2
+            assign bg = bg2
+          when 3
+            assign bg = bg3
+        endcase
+      -%}
+      {%- if bg != blank -%}
+        <div
+          class="c_lpStack__bgItem{% if i == 1 %} is-active{% endif %}"
+          data-lp-bg="{{ i }}"
+          style="background-image: url({{ bg | image_url: width: 1600 }});"
+        ></div>
+      {%- endif -%}
+    {%- endfor -%}
+  </div>
+{%- endif -%}
+
+<div class="c_lpStack{% if section.settings.shadow %} --shadow{% endif %}">
+  <div class="c_lpStack__col">
+    {%- for block in section.blocks -%}
+      {%- liquid
+        assign bg_no = block.settings.bg_no | default: ''
+        assign anchor = ''
+        if bg_no != blank
+          assign anchor = bg_no
+        endif
+      -%}
+
+      {%- case block.type -%}
+        {%- when 'image' -%}
+          {%- comment -%} LPの1スライス。リンクを付けるとその画像全体がCTAになる {%- endcomment -%}
+          <div
+            class="c_lpStack__slice"
+            {% if anchor != blank %}data-lp-bg-trigger="{{ anchor }}"{% endif %}
+            {{ block.shopify_attributes }}
+          >
+            {%- if block.settings.img != blank -%}
+              {%- capture img_tag -%}
+                {{
+                  block.settings.img
+                  | image_url: width: 780
+                  | image_tag:
+                    alt: block.settings.alt,
+                    loading: 'lazy',
+                    class: 'c_lpStack__img',
+                    sizes: '(min-width: 390px) 390px, 100vw'
+                }}
+              {%- endcapture -%}
+
+              {%- if block.settings.link != blank -%}
+                <a
+                  href="{{ block.settings.link }}"
+                  data-lp-cta="{{ block.settings.cta_position | default: 'image' }}"
+                  data-lp-id="{{ section.settings.lp_id }}"
+                >{{ img_tag }}</a>
+              {%- else -%}
+                {{ img_tag }}
+              {%- endif -%}
+            {%- else -%}
+              {%- comment -%} 画像未設定。何がここに要るかを画面に出す（作業の抜けを可視化する） {%- endcomment -%}
+              <div class="c_lpStack__placeholder" style="aspect-ratio: 780 / {{ block.settings.ph_height | default: 800 }};">
+                <p class="c_lpStack__phLabel">{{ block.settings.ph_label | default: '（画像未設定）' }}</p>
+                <p class="c_lpStack__phSize">推奨 780 × {{ block.settings.ph_height | default: 800 }} px</p>
+              </div>
+            {%- endif -%}
+          </div>
+
+        {%- when 'cv' -%}
+          {%- comment -%}
+            CVブロック。引用元は「購入ボタン／LINEで相談／返金保証（モーダル）」の3点セットを
+            LP中に3回繰り返していた。反復そのものが効いている作りなので、
+            ブロックとして何度でも置けるようにしてある。position で押された位置を測り分ける。
+          {%- endcomment -%}
+          <div
+            class="c_lpStack__cv"
+            {% if anchor != blank %}data-lp-bg-trigger="{{ anchor }}"{% endif %}
+            {{ block.shopify_attributes }}
+          >
+            {%- if block.settings.head_img != blank -%}
+              {{
+                block.settings.head_img
+                | image_url: width: 780
+                | image_tag: alt: '', loading: 'lazy', class: 'c_lpStack__img'
+              }}
+            {%- endif -%}
+
+            <div class="c_lpStack__cvBody">
+              {% render 'c_lp-cta-button',
+                url: block.settings.cta_url,
+                label: block.settings.cta_label,
+                note: block.settings.cta_note,
+                position: block.settings.position,
+                lp_id: section.settings.lp_id
+              %}
+
+              {%- unless block.settings.sub_label == blank or block.settings.sub_url == blank -%}
+                <a
+                  class="c_lpStack__cvSub"
+                  href="{{ block.settings.sub_url }}"
+                  data-lp-cta="{{ block.settings.position }}-sub"
+                  data-lp-id="{{ section.settings.lp_id }}"
+                >{{ block.settings.sub_label }}</a>
+              {%- endunless -%}
+
+              {%- unless block.settings.modal_label == blank or block.settings.modal_text == blank -%}
+                {%- comment -%}
+                  返金保証などの「押すと開く補足」。<details> で作る＝JSなしで動き、
+                  閉じている間は中身が読み上げ・検索の邪魔をしない。
+                {%- endcomment -%}
+                <details class="c_lpStack__modal">
+                  <summary class="c_lpStack__modalBtn">{{ block.settings.modal_label }}</summary>
+                  <div class="c_lpStack__modalBody">{{ block.settings.modal_text }}</div>
+                </details>
+              {%- endunless -%}
+            </div>
+          </div>
+
+        {%- when 'faq' -%}
+          {%- comment -%}
+            FAQ。引用元でも**ここだけは画像でなく実テキスト**だった。
+            理由は察しがつく：検索に拾わせたい／量が多く更新が要る／読み上げが要る。
+            なのでこちらも実テキストで作る。
+          {%- endcomment -%}
+          <div class="c_lpStack__faqItem" {{ block.shopify_attributes }}>
+            <details class="c_lpStack__faq">
+              <summary class="c_lpStack__faqQ">
+                <span class="c_lpStack__faqMark">Q</span>
+                <span class="c_lpStack__faqText">{{ block.settings.q }}</span>
+              </summary>
+              <div class="c_lpStack__faqA">
+                <span class="c_lpStack__faqMark --a">A</span>
+                <div class="c_lpStack__faqText">{{ block.settings.a }}</div>
+              </div>
+            </details>
+          </div>
+
+        {%- when 'heading' -%}
+          {%- comment -%}
+            見出しだけのブロック。画像スライスに置き換える前の「仮の骨」として使うほか、
+            FAQのように実テキストで持ちたいパートの見出しにも使う。
+          {%- endcomment -%}
+          <div class="c_lpStack__heading" {{ block.shopify_attributes }}>
+            <p class="c_lpStack__headingText">{{ block.settings.text }}</p>
+          </div>
+
+        {%- when 'spacer' -%}
+          <div class="c_lpStack__spacer" style="height: {{ block.settings.height }}px;" {{ block.shopify_attributes }}></div>
+      {%- endcase -%}
+    {%- endfor -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "LP: 画像積み上げ",
+  "tag": "section",
+  "max_blocks": 50,
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "スマホ1カラムの通販型LP。ブロックを縦に並べると、そのままLPになります。画像は幅780pxで書き出してください（表示は390px＝2倍解像度）。"
+    },
+    {
+      "type": "text",
+      "id": "lp_id",
+      "label": "LP識別子（計測用）",
+      "default": "lp"
+    },
+    {
+      "type": "range",
+      "id": "column_width",
+      "label": "カラム幅",
+      "min": 320,
+      "max": 480,
+      "step": 10,
+      "unit": "px",
+      "default": 390,
+      "info": "PCでもこの幅で表示されます（通販LPの定番）。画像はこの2倍の幅で用意"
+    },
+    {
+      "type": "checkbox",
+      "id": "shadow",
+      "label": "カラムに影を付ける",
+      "default": true,
+      "info": "PCで見たとき、背景から浮いて見えるようにする"
+    },
+    { "type": "header", "content": "固定背景（PCの余白に敷く／任意）" },
+    {
+      "type": "paragraph",
+      "content": "ブロックの「背景番号」で、スクロールに合わせて切り替わります。空なら背景なし。"
+    },
+    { "type": "image_picker", "id": "bg_1", "label": "背景 1" },
+    { "type": "image_picker", "id": "bg_2", "label": "背景 2" },
+    { "type": "image_picker", "id": "bg_3", "label": "背景 3" }
+  ],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "画像スライス",
+      "settings": [
+        { "type": "image_picker", "id": "img", "label": "画像（幅780pxで書き出す）" },
+        { "type": "text", "id": "alt", "label": "代替テキスト", "info": "画像に書いてある文言を入れる。検索と読み上げのために必要" },
+        { "type": "url", "id": "link", "label": "リンク先（任意）", "info": "入れると画像全体がボタンになります" },
+        {
+          "type": "text",
+          "id": "cta_position",
+          "label": "計測ラベル（リンクを付けた場合）",
+          "default": "image"
+        },
+        { "type": "header", "content": "画像がまだ無いとき" },
+        { "type": "text", "id": "ph_label", "label": "ここに入る内容のメモ", "info": "例: KV（悩み提示＋商品）" },
+        { "type": "number", "id": "ph_height", "label": "想定の高さ（px・780px幅のとき）" },
+        {
+          "type": "select",
+          "id": "bg_no",
+          "label": "背景番号",
+          "options": [
+            { "value": "", "label": "変えない" },
+            { "value": "1", "label": "背景 1" },
+            { "value": "2", "label": "背景 2" },
+            { "value": "3", "label": "背景 3" }
+          ],
+          "default": ""
+        }
+      ]
+    },
+    {
+      "type": "cv",
+      "name": "CV（購入ボタン）",
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "LP中に2〜3回置くのが定番です。位置ごとにクリックを測り分けます。"
+        },
+        { "type": "image_picker", "id": "head_img", "label": "ボタン上の画像（オファー提示など・任意）" },
+        {
+          "type": "select",
+          "id": "position",
+          "label": "位置（計測ラベル）",
+          "options": [
+            { "value": "cv1", "label": "1回目" },
+            { "value": "cv2", "label": "2回目" },
+            { "value": "cv3", "label": "3回目" },
+            { "value": "bottom", "label": "最後" }
+          ],
+          "default": "cv1"
+        },
+        { "type": "text", "id": "cta_label", "label": "ボタンの文言", "default": "定期便をはじめる" },
+        { "type": "url", "id": "cta_url", "label": "ボタンの行き先" },
+        { "type": "text", "id": "cta_note", "label": "ボタン下の補足（任意）" },
+        { "type": "header", "content": "サブ導線（任意）" },
+        { "type": "text", "id": "sub_label", "label": "サブリンクの文言", "info": "例: LINEで相談する" },
+        { "type": "url", "id": "sub_url", "label": "サブリンクの行き先" },
+        { "type": "header", "content": "押すと開く補足（任意）" },
+        { "type": "text", "id": "modal_label", "label": "見出し", "info": "例: 返品・解約について" },
+        { "type": "richtext", "id": "modal_text", "label": "本文" },
+        {
+          "type": "select",
+          "id": "bg_no",
+          "label": "背景番号",
+          "options": [
+            { "value": "", "label": "変えない" },
+            { "value": "1", "label": "背景 1" },
+            { "value": "2", "label": "背景 2" },
+            { "value": "3", "label": "背景 3" }
+          ],
+          "default": ""
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "name": "見出し（実テキスト）",
+      "settings": [{ "type": "text", "id": "text", "label": "見出し" }]
+    },
+    {
+      "type": "faq",
+      "name": "FAQ（1問1ブロック）",
+      "settings": [
+        { "type": "text", "id": "q", "label": "質問" },
+        { "type": "richtext", "id": "a", "label": "回答" }
+      ]
+    },
+    {
+      "type": "spacer",
+      "name": "余白",
+      "settings": [
+        { "type": "range", "id": "height", "label": "高さ", "min": 0, "max": 120, "step": 4, "unit": "px", "default": 24 }
+      ]
+    }
+  ],
+  "enabled_on": {
+    "templates": ["page"]
+  },
+  "presets": [{ "name": "LP: 画像積み上げ" }]
+}
+{% endschema %}

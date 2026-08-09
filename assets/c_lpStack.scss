@@ -1,0 +1,273 @@
+@import "variables";
+
+/* 画像積み上げ型LP（sections/c_lp-stack.liquid）2026-08-10
+   骨格の引用元＝ペトコト shop.petokoto.com/lp?u=…（frozen_trial系）。
+   あちらの実装で効いている点だけを写している：
+     - .sections { max-width:390px; margin:auto; box-shadow } ＝ PCでもスマホ幅の1カラム
+     - 背景は position:fixed の全画面レイヤーで、スクロールに合わせて入れ替え
+     - スライス画像は幅780px（表示390pxの2倍）
+   色・書体・角丸はマンマボーノの既存トークンに寄せてある（引用するのは骨格だけ）。 */
+
+$lp-tint: #FFF4EC;
+$lp-line: #EDE7E3;
+
+/* 固定背景 ------------------------------------------------------------- */
+.c_lpStack__bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    /* スマホは1カラムで画面が埋まり背景が見えないので、描画コストを払わない */
+    display: none;
+    @include mq(pc) {
+        display: block;
+    }
+}
+
+.c_lpStack__bgItem {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+    &.is-active {
+        opacity: 1;
+    }
+}
+
+/* 本体カラム ----------------------------------------------------------- */
+.c_lpStack__col {
+    /* max-width は section 側のインラインstyleで入る（テーマエディタで変えられるように） */
+    margin-left: auto;
+    margin-right: auto;
+    background: $white;
+    color: $text-color;
+}
+
+.c_lpStack.--shadow .c_lpStack__col {
+    @include mq(pc) {
+        box-shadow: 0 4px 52px 0 rgba(0, 0, 0, 0.25);
+    }
+}
+
+/* 画像スライス --------------------------------------------------------- */
+/* スライスは隙間なく詰める。img は inline なので下に余白が出る＝block にする */
+.c_lpStack__img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.c_lpStack__slice {
+    a {
+        display: block;
+    }
+}
+
+/* 画像未設定のプレースホルダ。
+   「何が・何pxで要るか」を画面に出す。作業の抜けが目で分かるようにするため。 */
+.c_lpStack__placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 24px;
+    background: repeating-linear-gradient(
+        -45deg,
+        $lp-tint,
+        $lp-tint 12px,
+        #fff 12px,
+        #fff 24px
+    );
+    border: 1px dashed rgba(255, 123, 94, 0.5);
+    text-align: center;
+}
+
+.c_lpStack__phLabel {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 160%;
+    letter-spacing: 0.6px;
+}
+
+.c_lpStack__phSize {
+    margin: 0;
+    font-size: 11px;
+    letter-spacing: 0.4px;
+    color: $base-color;
+}
+
+/* CVブロック ----------------------------------------------------------- */
+.c_lpStack__cvBody {
+    padding: 20px 20px 28px;
+}
+
+.c_lpStack__cv {
+    .c_lpCta {
+        margin-top: 0;
+    }
+}
+
+.c_lpStack__cvSub {
+    display: block;
+    margin-top: 14px;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-align: center;
+    color: $text-color;
+    text-decoration: underline;
+}
+
+/* 押すと開く補足（返金保証など）。<details> なのでJS不要 */
+.c_lpStack__modal {
+    margin-top: 16px;
+    border: 1px solid $lp-line;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.c_lpStack__modalBtn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 16px;
+    background: $lp-tint;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    list-style: none;
+    &::-webkit-details-marker {
+        display: none;
+    }
+    /* 開閉の向きが変わる小さい山記号 */
+    &::after {
+        content: "";
+        flex: none;
+        width: 8px;
+        height: 8px;
+        margin-left: 12px;
+        border-right: 2px solid $base-color;
+        border-bottom: 2px solid $base-color;
+        transform: rotate(45deg) translate(-2px, -2px);
+        transition: transform 0.2s ease;
+    }
+}
+
+.c_lpStack__modal[open] .c_lpStack__modalBtn::after {
+    transform: rotate(-135deg) translate(-2px, -2px);
+}
+
+.c_lpStack__modalBody {
+    padding: 14px 16px;
+    font-size: 13px;
+    line-height: 185%;
+    letter-spacing: 0.5px;
+    p {
+        margin: 0;
+        + p {
+            margin-top: 1em;
+        }
+    }
+}
+
+/* 見出し（実テキスト） -------------------------------------------------- */
+.c_lpStack__heading {
+    padding: 32px 20px 12px;
+}
+
+.c_lpStack__headingText {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 158%;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+/* FAQ ------------------------------------------------------------------ */
+/* 引用元でもここだけは画像でなく実テキストだった（検索・更新・読み上げのため）。
+   こちらも実テキストで作る。 */
+.c_lpStack__faqItem {
+    padding: 0 20px;
+    + .c_lpStack__faqItem {
+        margin-top: 10px;
+    }
+    &:last-of-type {
+        padding-bottom: 28px;
+    }
+}
+
+.c_lpStack__faq {
+    border: 1px solid $lp-line;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.c_lpStack__faqQ {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 14px 16px;
+    background: $lp-tint;
+    cursor: pointer;
+    list-style: none;
+    &::-webkit-details-marker {
+        display: none;
+    }
+}
+
+.c_lpStack__faqA {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 14px 16px;
+}
+
+.c_lpStack__faqMark {
+    flex: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: $base-color;
+    color: $white;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1;
+    &.--a {
+        background: $text-color;
+    }
+}
+
+.c_lpStack__faqText {
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 180%;
+    letter-spacing: 0.5px;
+    p {
+        margin: 0;
+        + p {
+            margin-top: 1em;
+        }
+    }
+}
+
+.c_lpStack__faqA .c_lpStack__faqText {
+    font-weight: 400;
+}
+
+.c_lpStack__spacer {
+    width: 100%;
+}

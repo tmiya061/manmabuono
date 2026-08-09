@@ -14,75 +14,512 @@
         "note": "京都の無添加ペットフード"
       }
     },
-    "lp_fv": {
-      "type": "c_lp-fv",
+    "lp_stack": {
+      "type": "c_lp-stack",
       "blocks": {
-        "point_1": {
-          "type": "point",
+        "img_kv": {
+          "type": "image",
           "settings": {
-            "text": "ドライとウェットを、その子のサイズに合わせた分量でお届け"
+            "alt": "",
+            "link": "",
+            "ph_label": "KV：悩みの提示＋商品＋オファー（1枚で完結させる）",
+            "ph_height": 2070,
+            "bg_no": ""
           }
         },
-        "point_2": {
-          "type": "point",
+        "img_improvement": {
+          "type": "image",
           "settings": {
-            "text": "献立を考えなくていい。届いたその日から与え方どおりに"
+            "alt": "",
+            "link": "",
+            "ph_label": "実績の帯：数字ひとつ（例 満足度◯%）",
+            "ph_height": 378,
+            "bg_no": ""
           }
         },
-        "point_3": {
-          "type": "point",
+        "cv_1": {
+          "type": "cv",
           "settings": {
-            "text": "回数の縛りなし。合わなければいつでも解約できます"
+            "position": "cv1",
+            "cta_label": "セット定期便をはじめる",
+            "cta_url": "",
+            "cta_note": "いつでも解約できます",
+            "sub_label": "LINEで相談する",
+            "sub_url": "",
+            "modal_label": "返品・解約について",
+            "modal_text": "<p>＜要・西川さん確認＞返品条件・解約方法をここに書く。引用元は「全額返金保証」をモーダルで出していた。</p>",
+            "bg_no": "1"
+          }
+        },
+        "img_card1": {
+          "type": "image",
+          "settings": {
+            "alt": "",
+            "link": "",
+            "ph_label": "決済手段のロゴ帯（安心材料）",
+            "ph_height": 328,
+            "bg_no": ""
+          }
+        },
+        "img_shop_name": {
+          "type": "image",
+          "settings": {
+            "alt": "",
+            "link": "",
+            "ph_label": "メディア掲載・取扱店の権威付け",
+            "ph_height": 864,
+            "bg_no": ""
+          }
+        },
+        "img_worries": {
+          "type": "image",
+          "settings": {
+            "alt": "",
+            "link": "",
+            "ph_label": "悩みの言語化（あるある3〜4点）",
+            "ph_height": 746,
+            "bg_no": ""
+          }
+        },
+        "img_health": {
+          "type": "image",
+          "settings": {
+            "alt": "",
+            "link": "",
+            "ph_label": "なぜその悩みが起きるか＝課題の説明",
+            "ph_height": 2154,
+            "bg_no": ""
+          }
+        },
+        "img_beef": {
+          "type": "image",
+          "settings": {
+            "alt": "",
+            "link": "",
+            "ph_label": "食材・原材料の見せ場",
+            "ph_height": 2180,
+            "bg_no": ""
+          }
+        },
+        "img_sign": {
+          "type": "image",
+          "settings": {
+            "alt": "",
+            "link": "",
+            "ph_label": "監修者／代表の顔と署名（E-E-A-T）",
+            "ph_height": 1968,
+            "bg_no": ""
+          }
+        },
+        "img_voices": {
+          "type": "image",
+          "settings": {
+            "alt": "",
+            "link": "",
+            "ph_label": "お客様の声（引用元ではここが最長＝最大の説得材料）",
+            "ph_height": 3912,
+            "bg_no": ""
+          }
+        },
+        "img_reason": {
+          "type": "image",
+          "settings": {
+            "alt": "",
+            "link": "",
+            "ph_label": "選ばれる理由のまとめ",
+            "ph_height": 1712,
+            "bg_no": ""
+          }
+        },
+        "img_increasing": {
+          "type": "image",
+          "settings": {
+            "alt": "",
+            "link": "",
+            "ph_label": "市場・利用者が増えている話（社会的証明）",
+            "ph_height": 5003,
+            "bg_no": ""
+          }
+        },
+        "img_health_2": {
+          "type": "image",
+          "settings": {
+            "alt": "",
+            "link": "",
+            "ph_label": "健康の話 その2",
+            "ph_height": 1790,
+            "bg_no": ""
+          }
+        },
+        "img_development": {
+          "type": "image",
+          "settings": {
+            "alt": "",
+            "link": "",
+            "ph_label": "開発ストーリー",
+            "ph_height": 5000,
+            "bg_no": ""
+          }
+        },
+        "img_liver": {
+          "type": "image",
+          "settings": {
+            "alt": "",
+            "link": "",
+            "ph_label": "特定の悩み訴求（臓器・症状別）",
+            "ph_height": 1118,
+            "bg_no": ""
+          }
+        },
+        "cv_2": {
+          "type": "cv",
+          "settings": {
+            "position": "cv2",
+            "cta_label": "セット定期便をはじめる",
+            "cta_url": "",
+            "cta_note": "いつでも解約できます",
+            "sub_label": "LINEで相談する",
+            "sub_url": "",
+            "modal_label": "返品・解約について",
+            "modal_text": "<p>＜要・西川さん確認＞返品条件・解約方法をここに書く。引用元は「全額返金保証」をモーダルで出していた。</p>",
+            "bg_no": "2"
+          }
+        },
+        "img_card2": {
+          "type": "image",
+          "settings": {
+            "alt": "",
+            "link": "",
+            "ph_label": "決済手段のロゴ帯",
+            "ph_height": 328,
+            "bg_no": ""
+          }
+        },
+        "img_about": {
+          "type": "image",
+          "settings": {
+            "alt": "",
+            "link": "",
+            "ph_label": "ブランド紹介・思い",
+            "ph_height": 4354,
+            "bg_no": ""
+          }
+        },
+        "img_manufacturing": {
+          "type": "image",
+          "settings": {
+            "alt": "",
+            "link": "",
+            "ph_label": "製造・品質管理",
+            "ph_height": 4030,
+            "bg_no": ""
+          }
+        },
+        "img_kodawari_title": {
+          "type": "image",
+          "settings": {
+            "alt": "",
+            "link": "",
+            "ph_label": "「こだわり」見出し",
+            "ph_height": 546,
+            "bg_no": ""
+          }
+        },
+        "img_kodawari_1": {
+          "type": "image",
+          "settings": {
+            "alt": "",
+            "link": "",
+            "ph_label": "こだわり①",
+            "ph_height": 5000,
+            "bg_no": ""
+          }
+        },
+        "img_kodawari_2": {
+          "type": "image",
+          "settings": {
+            "alt": "",
+            "link": "",
+            "ph_label": "こだわり②",
+            "ph_height": 1210,
+            "bg_no": ""
+          }
+        },
+        "img_kodawari_3": {
+          "type": "image",
+          "settings": {
+            "alt": "",
+            "link": "",
+            "ph_label": "こだわり③",
+            "ph_height": 1620,
+            "bg_no": ""
+          }
+        },
+        "cv_3": {
+          "type": "cv",
+          "settings": {
+            "position": "cv3",
+            "cta_label": "セット定期便をはじめる",
+            "cta_url": "",
+            "cta_note": "いつでも解約できます",
+            "sub_label": "LINEで相談する",
+            "sub_url": "",
+            "modal_label": "返品・解約について",
+            "modal_text": "<p>＜要・西川さん確認＞返品条件・解約方法をここに書く。引用元は「全額返金保証」をモーダルで出していた。</p>",
+            "bg_no": "3"
+          }
+        },
+        "img_card3": {
+          "type": "image",
+          "settings": {
+            "alt": "",
+            "link": "",
+            "ph_label": "決済手段のロゴ帯",
+            "ph_height": 328,
+            "bg_no": ""
+          }
+        },
+        "img_subsc_head": {
+          "type": "image",
+          "settings": {
+            "alt": "",
+            "link": "",
+            "ph_label": "定期便の説明・見出し",
+            "ph_height": 1218,
+            "bg_no": ""
+          }
+        },
+        "img_subsc_body": {
+          "type": "image",
+          "settings": {
+            "alt": "",
+            "link": "",
+            "ph_label": "定期便の中身（プラン・価格・頻度）",
+            "ph_height": 4356,
+            "bg_no": ""
+          }
+        },
+        "img_menu_title": {
+          "type": "image",
+          "settings": {
+            "alt": "",
+            "link": "",
+            "ph_label": "「メニュー」見出し",
+            "ph_height": 1010,
+            "bg_no": ""
+          }
+        },
+        "img_menu_1": {
+          "type": "image",
+          "settings": {
+            "alt": "",
+            "link": "",
+            "ph_label": "商品①（押すと詳細が開く）",
+            "ph_height": 1092,
+            "bg_no": ""
+          }
+        },
+        "img_menu_2": {
+          "type": "image",
+          "settings": {
+            "alt": "",
+            "link": "",
+            "ph_label": "商品②",
+            "ph_height": 1092,
+            "bg_no": ""
+          }
+        },
+        "img_menu_3": {
+          "type": "image",
+          "settings": {
+            "alt": "",
+            "link": "",
+            "ph_label": "商品③",
+            "ph_height": 1092,
+            "bg_no": ""
+          }
+        },
+        "img_menu_4": {
+          "type": "image",
+          "settings": {
+            "alt": "",
+            "link": "",
+            "ph_label": "商品④",
+            "ph_height": 1092,
+            "bg_no": ""
+          }
+        },
+        "img_menu_5": {
+          "type": "image",
+          "settings": {
+            "alt": "",
+            "link": "",
+            "ph_label": "商品⑤",
+            "ph_height": 1092,
+            "bg_no": ""
+          }
+        },
+        "img_howto": {
+          "type": "image",
+          "settings": {
+            "alt": "",
+            "link": "",
+            "ph_label": "与え方（使い方）",
+            "ph_height": 1248,
+            "bg_no": ""
+          }
+        },
+        "img_roomtemp": {
+          "type": "image",
+          "settings": {
+            "alt": "",
+            "link": "",
+            "ph_label": "保存方法",
+            "ph_height": 2054,
+            "bg_no": ""
+          }
+        },
+        "img_amount": {
+          "type": "image",
+          "settings": {
+            "alt": "",
+            "link": "",
+            "ph_label": "給与量の目安",
+            "ph_height": 794,
+            "bg_no": ""
+          }
+        },
+        "img_combined": {
+          "type": "image",
+          "settings": {
+            "alt": "",
+            "link": "",
+            "ph_label": "併用のしかた（今のフードと混ぜる）",
+            "ph_height": 980,
+            "bg_no": ""
+          }
+        },
+        "img_reason2": {
+          "type": "image",
+          "settings": {
+            "alt": "",
+            "link": "",
+            "ph_label": "もう一度・選ばれる理由（押すと詳細）",
+            "ph_height": 3142,
+            "bg_no": ""
+          }
+        },
+        "faq_head": {
+          "type": "heading",
+          "settings": {
+            "text": "よくあるご質問"
+          }
+        },
+        "faq_1": {
+          "type": "faq",
+          "settings": {
+            "q": "全犬種・全年齢に対応していますか？",
+            "a": "<p>＜要・西川さん確認＞</p>"
+          }
+        },
+        "faq_2": {
+          "type": "faq",
+          "settings": {
+            "q": "今あげているフードに混ぜても大丈夫ですか？",
+            "a": "<p>＜要・西川さん確認＞</p>"
+          }
+        },
+        "faq_3": {
+          "type": "faq",
+          "settings": {
+            "q": "どのサイズを選べばいいか分かりません",
+            "a": "<p>＜要・西川さん確認＞</p>"
+          }
+        },
+        "faq_4": {
+          "type": "faq",
+          "settings": {
+            "q": "保存はどうすればいいですか？",
+            "a": "<p>＜要・西川さん確認＞</p>"
+          }
+        },
+        "faq_5": {
+          "type": "faq",
+          "settings": {
+            "q": "解約や、お届け間隔の変更はできますか？",
+            "a": "<p>＜要・西川さん確認＞</p>"
+          }
+        },
+        "faq_6": {
+          "type": "faq",
+          "settings": {
+            "q": "猫にもあげられますか？",
+            "a": "<p>＜要・西川さん確認＞</p>"
+          }
+        },
+        "img_types": {
+          "type": "image",
+          "settings": {
+            "alt": "",
+            "link": "",
+            "ph_label": "ラインナップ一覧（最後の一押し）",
+            "ph_height": 2580,
+            "bg_no": "3"
           }
         }
       },
-      "block_order": ["point_1", "point_2", "point_3"],
+      "block_order": [
+        "img_kv",
+        "img_improvement",
+        "cv_1",
+        "img_card1",
+        "img_shop_name",
+        "img_worries",
+        "img_health",
+        "img_beef",
+        "img_sign",
+        "img_voices",
+        "img_reason",
+        "img_increasing",
+        "img_health_2",
+        "img_development",
+        "img_liver",
+        "cv_2",
+        "img_card2",
+        "img_about",
+        "img_manufacturing",
+        "img_kodawari_title",
+        "img_kodawari_1",
+        "img_kodawari_2",
+        "img_kodawari_3",
+        "cv_3",
+        "img_card3",
+        "img_subsc_head",
+        "img_subsc_body",
+        "img_menu_title",
+        "img_menu_1",
+        "img_menu_2",
+        "img_menu_3",
+        "img_menu_4",
+        "img_menu_5",
+        "img_howto",
+        "img_roomtemp",
+        "img_amount",
+        "img_combined",
+        "img_reason2",
+        "faq_head",
+        "faq_1",
+        "faq_2",
+        "faq_3",
+        "faq_4",
+        "faq_5",
+        "faq_6",
+        "img_types"
+      ],
       "settings": {
         "lp_id": "set-teiki",
-        "eyebrow": "ドライ×ウェット セット定期便",
-        "heading": "＜要・西川さん確認＞見出しはここ（検索語と噛み合わせる）",
-        "lead": "<p>＜要・西川さん確認＞リード文。サイズ帯・給餌量・おまかせ構成・価格が決まり次第ここを差し替える（設計シート §2 の①〜⑥に対応）。</p>",
-        "cta_label": "セット定期便をはじめる",
-        "cta_url": "",
-        "cta_note": "いつでも解約できます",
-        "padding_top": 40,
-        "padding_bottom": 56,
-        "padding_top_sp": 24,
-        "padding_bottom_sp": 32
-      }
-    },
-    "lp_cta_middle": {
-      "type": "c_lp-cta",
-      "settings": {
-        "lp_id": "set-teiki",
-        "style": "block",
-        "position": "middle",
-        "tint": true,
-        "heading": "＜要・西川さん確認＞中盤CTAの見出し",
-        "cta_label": "セット定期便をはじめる",
-        "cta_url": "",
-        "cta_note": "",
-        "padding_top": 48,
-        "padding_bottom": 48,
-        "padding_top_sp": 32,
-        "padding_bottom_sp": 32
-      }
-    },
-    "lp_cta_bottom": {
-      "type": "c_lp-cta",
-      "settings": {
-        "lp_id": "set-teiki",
-        "style": "block",
-        "position": "bottom",
-        "tint": false,
-        "heading": "＜要・西川さん確認＞最後のひと押し",
-        "cta_label": "セット定期便をはじめる",
-        "cta_url": "",
-        "cta_note": "いつでも解約できます",
-        "padding_top": 48,
-        "padding_bottom": 24,
-        "padding_top_sp": 32,
-        "padding_bottom_sp": 16
+        "column_width": 390,
+        "shadow": true
       }
     },
     "lp_sticky": {
@@ -108,9 +545,7 @@
   "order": [
     "main",
     "lp_header",
-    "lp_fv",
-    "lp_cta_middle",
-    "lp_cta_bottom",
+    "lp_stack",
     "lp_sticky",
     "lp_footer"
   ]
