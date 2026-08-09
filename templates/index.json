@@ -56,6 +56,8 @@
       "settings": {
         "title": "マンマボーノから<br>\nお試しセットが登場！",
         "text": "愛するペットのために特別に選ばれた、<br>栄養豊富で健康的なお試しセットです。",
+        "price_emphasis": "box",
+        "saving_box_bg": "coral",
         "sample-img1": "shopify://shop_images/l.jpg",
         "sample-img2": "shopify://shop_images/k1.jpg",
         "padding_top": 0,

@@ -1,0 +1,102 @@
+@import "variables";
+
+/* ==================================================
+    お試しセットの価格表示（snippets/c_trial-price.liquid）
+
+    「単品合計からいくら下がったか」を最初に読ませる。
+    上段＝打ち消した単品合計（小さく・淡く）、下段＝OFF率＋実売価格（大きく）。
+    OFF率は商品カードの効能ラベル（c_prodLabel）と同じ
+    「角丸なしのブランドカラー地に白文字」で、売り場の中で言語を揃える。
+===================================================*/
+.c_trialPrice {
+    margin-bottom: 13px;
+    text-align: center;
+}
+
+/* PCはバッジを金額の左に。
+   SPのカラムは実測 約124px しかなく、バッジ+価格+(税込) を横一列にすると
+   約155px 必要で必ずはみ出すので、SPだけ縦積みにしてバッジを金額の上へ。 */
+.c_trialPrice__now {
+    margin: 0;
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    column-gap: 8px;
+    font-weight: 700;
+
+    @include mq(sp) {
+        flex-direction: column;
+        align-items: center;
+        row-gap: 5px;
+        column-gap: 0;
+    }
+}
+
+/* 価格と(税込)は常に同じ行に置きたいので、まとめて1つの箱にする。
+   これがあるおかげでSPの縦積み時にバッジだけを order で下へ回せる。 */
+.c_trialPrice__value {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    column-gap: 8px;
+
+    @include mq(sp) {
+        column-gap: 6px;
+    }
+}
+
+.c_trialPrice__off {
+    /* PCは baseline 揃えの行なので、バッジだけは字面の中央に置く */
+    align-self: center;
+    flex-shrink: 0;
+    padding: 3px 6px 4px;
+    background: $base-color;
+    color: $white;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: 0.02em;
+
+    @include mq(sp) {
+        padding: 2px 5px 3px;
+        font-size: 11px;
+    }
+}
+
+.c_trialPrice__amount {
+    font-size: 24px;
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+
+    @include mq(sp) {
+        font-size: 20px;
+    }
+}
+
+.c_trialPrice__tax {
+    color: #c2c2c2;
+    font-size: 13px;
+    font-weight: 700;
+    /* 幅が足りないと「税/込」で割れるので折らない */
+    white-space: nowrap;
+
+    @include mq(sp) {
+        font-size: 11px;
+    }
+}
+
+/* パターン1：単品との差額を1行足す */
+.c_trialPrice__save {
+    margin: 5px 0 0;
+    color: $base-color;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.4;
+    letter-spacing: 0.02em;
+
+    @include mq(sp) {
+        /* バッジとの間隔を .c_trialPrice__now の row-gap に合わせる */
+        margin-top: 5px;
+        font-size: 12px;
+    }
+}

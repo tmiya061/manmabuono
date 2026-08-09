@@ -80,6 +80,133 @@
   }
 }
 
+/* パターン2：リード文の下に置く「お得さ」のまとめボックス。
+   背景は写真なので、地の付け方を4種から選べるようにしている（--outline / --white / --coral / --dark）。
+   文字色・打ち消し線・バッジの配色は地に合わせて各モディファイアで上書きする。 */
+.c_topSample__saving {
+  width: fit-content;
+  max-width: calc(100% - 40px);
+  margin: 24px auto 0;
+  padding: 16px 32px 18px;
+  text-align: center;
+  @include mq(sp) {
+    margin-top: 20px;
+    padding: 14px 20px 16px;
+    max-width: calc(100% - 40px);
+  }
+}
+
+/* 地を塗らず罫線だけ（従来） */
+.c_topSample__saving--outline {
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  color: #fff;
+}
+
+/* 白地。いちばん読みやすいが、下の白いカードと2枚続きになる */
+.c_topSample__saving--white {
+  background: #fff;
+  color: $text-color;
+  .c_topSample__saving-lead {
+    color: #6b6b6b;
+  }
+  .c_topSample__saving-tax {
+    color: #a8a8a8;
+  }
+}
+
+/* ブランドカラー地。いちばん強いが、下のOFFバッジと色が重なる */
+.c_topSample__saving--coral {
+  background: $base-color;
+  color: $white;
+  /* 地がコーラルなのでバッジは白抜きに反転させる */
+  .c_topSample__saving-note {
+    background: $white;
+    color: $base-color;
+  }
+}
+
+/* 写真になじむ暗い地。白文字のまま可読性だけ上げたいとき */
+.c_topSample__saving--dark {
+  background: rgba(48, 48, 48, 0.78);
+  color: $white;
+}
+
+.c_topSample__saving-lead {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  @include mq(sp) {
+    font-size: 12px;
+  }
+}
+
+/* 「単品なら◯◯円」→「実際は◯◯円」を左から右へ一息で読ませる行 */
+.c_topSample__saving-main {
+  margin: 6px 0 0;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  column-gap: 12px;
+  font-weight: 700;
+  line-height: 1.2;
+  white-space: nowrap;
+  @include mq(sp) {
+    column-gap: 9px;
+  }
+}
+
+.c_topSample__saving-was {
+  font-size: 18px;
+  letter-spacing: 0.02em;
+  /* 地の色が変わっても馴染むよう、文字色は地に対する透過で作る */
+  opacity: 0.75;
+  text-decoration: line-through;
+  text-decoration-thickness: 1px;
+  @include mq(sp) {
+    font-size: 15px;
+  }
+}
+
+.c_topSample__saving-amount {
+  font-size: 34px;
+  letter-spacing: 0.02em;
+  @include mq(sp) {
+    font-size: 28px;
+  }
+}
+
+.c_topSample__saving-tax {
+  margin-left: 6px;
+  font-size: 13px;
+  @include mq(sp) {
+    font-size: 11px;
+  }
+}
+
+.c_topSample__saving-note {
+  display: inline-block;
+  margin: 10px 0 0;
+  padding: 4px 12px 5px;
+  background: #ff7b5e;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  span {
+    margin: 0 2px;
+    opacity: 0.6;
+  }
+  @include mq(sp) {
+    margin-top: 9px;
+    padding: 4px 10px 5px;
+    font-size: 12px;
+  }
+}
+
 .c_topSample__wrap {
   width: calc(100% - 100px);
   margin: auto;

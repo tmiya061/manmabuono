@@ -1,0 +1,54 @@
+{% comment %}
+  お試しセットの価格表示（単品合計からの値引きを見せる）
+
+  使い方: {% render 'c_trial-price', handle: 'dog-trial-set', show_save: true %}
+  - show_save: true で「1,540円おトク」の1行を価格の下に足す（パターン1）
+
+  値は商品データから引く（ハードコードしない）。
+  - 割引前 = 商品の「比較価格（compare_at_price）」
+  - 割引後 = 商品の価格
+  管理画面で価格を変えれば表示も追随するので、値引き率がズレない。
+
+  カード側は「◯%OFF」と実売価格だけに絞っている（2026-08-09）。
+  打ち消しの単品合計（¥4,840）はセクション側のボックス（c_topSample__saving）で
+  一度言っているので、ここで繰り返さない。
+
+  ⚠️ %OFF の根拠：比較対象の ¥4,840 は「セットの過去の販売価格」ではなく
+     「セット内容を単品で買ったときの合計」。実際に5商品の定価合計と一致する
+     （990+990+1100+1100+660=4840・2026-08-09 実測）。
+     金額を出す側（ボックス）では必ず「単品で買うと」と明示すること。
+     「通常価格」「定価」と書くとセット自体をその値段で売っていたことになり実態と食い違う。
+
+  ⚠️ 比較価格が未設定・価格以下の商品では、割引の表示は出さず価格だけ出す。
+{% endcomment %}
+
+{{ 'c_trialPrice.min.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign trial = all_products[handle]
+  assign now_price = trial.price
+  assign was_price = trial.compare_at_price
+  assign show_off = false
+
+  if was_price > now_price
+    assign show_off = true
+    # 端数は切り捨て（Liquidの整数除算）＝実際より大きく見せない
+    assign off_percent = was_price | minus: now_price | times: 100 | divided_by: was_price
+    assign save_amount = was_price | minus: now_price
+  endif
+-%}
+
+<div class="c_trialPrice">
+  <p class="c_trialPrice__now">
+    {%- if show_off -%}
+      <span class="c_trialPrice__off">{{ off_percent }}%OFF</span>
+    {%- endif -%}
+    <span class="c_trialPrice__value">
+      <span class="c_trialPrice__amount">{{ now_price | money }}</span>
+      <span class="c_trialPrice__tax">(税込)</span>
+    </span>
+  </p>
+  {%- if show_off and show_save -%}
+    <p class="c_trialPrice__save">{{ save_amount | money }}おトク</p>
+  {%- endif -%}
+</div>

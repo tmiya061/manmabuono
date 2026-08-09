@@ -1,6 +1,34 @@
 {{ 'c_common.min.css' | asset_url | stylesheet_tag }}
 {{ 'c_topSample.min.css' | asset_url | stylesheet_tag }}
 
+{%- comment -%}
+  お得さの見せ方（price_emphasis）
+    line … 各カードの価格の下に「◯◯円おトク」を1行足す（パターン1）
+    box  … リード文の下にまとめのボックスを置く（パターン2）
+    none … 価格と%OFFバッジだけ
+
+  ボックスは犬・猫を1つの文にまとめるので、両方の価格が同じときだけ出す。
+  片方だけ値段が変わったときに嘘の金額を出さないためのガード。
+{%- endcomment -%}
+{%- liquid
+  assign dog_trial = all_products['dog-trial-set']
+  assign cat_trial = all_products['cat-trial-set']
+  assign box_ok = false
+
+  if dog_trial.compare_at_price > dog_trial.price and dog_trial.price == cat_trial.price and dog_trial.compare_at_price == cat_trial.compare_at_price
+    assign box_ok = true
+    assign trial_now = dog_trial.price
+    assign trial_was = dog_trial.compare_at_price
+    assign trial_save = trial_was | minus: trial_now
+    assign trial_off = trial_save | times: 100 | divided_by: trial_was
+  endif
+
+  assign show_save = false
+  if section.settings.price_emphasis == 'line'
+    assign show_save = true
+  endif
+-%}
+
 {%- style -%}
   #shopify-section-{{ section.id }} {
       padding-top: {{ section.settings.padding_top }}px;
@@ -35,6 +63,21 @@
       </svg>
     </h2>
     <p class="c_topSample__text">{{ section.settings.text }}</p>
+
+    {%- if section.settings.price_emphasis == 'box' and box_ok -%}
+      <div class="c_topSample__saving c_topSample__saving--{{ section.settings.saving_box_bg | default: 'white' }}">
+        <p class="c_topSample__saving-lead">セットの中身を単品で買うと</p>
+        <p class="c_topSample__saving-main">
+          <s class="c_topSample__saving-was">{{ trial_was | money }}</s>
+          <span class="c_topSample__saving-amount">{{ trial_now | money }}</span>
+          <span class="c_topSample__saving-tax">(税込)</span>
+        </p>
+        <p class="c_topSample__saving-note">
+          {{ trial_save | money }}おトク<span>／</span>{{ trial_off }}%OFF
+        </p>
+      </div>
+    {%- endif -%}
+
     <div class="c_topSample__wrap">
       <div class="c_topSample__item">
         <p class="c_topSample__item-head">
@@ -46,7 +89,7 @@
           {% assign img_url = section.settings['sample-img1'] | img_url: '458x356' %}
           <img src="{{ img_url }}" alt="{{ section.settings.sample-img1.alt }}" width="229" height="178" loading="lazy">
         </div>
-        <p class="c_topSample__item-price">¥3,300 <span>(税込)</span></p>
+        {% render 'c_trial-price', handle: 'dog-trial-set', show_save: show_save %}
 
         <a href="/products/dog-trial-set" class="c_topSample__item-btn">詳細</a>
       </div>
@@ -65,7 +108,7 @@
           {% assign img_url = section.settings['sample-img2'] | img_url: '458x356' %}
           <img src="{{ img_url }}" alt="{{ section.settings.sample-img2.alt }}" width="229" height="178" loading="lazy">
         </div>
-        <p class="c_topSample__item-price">¥3,300 <span>(税込)</span></p>
+        {% render 'c_trial-price', handle: 'cat-trial-set', show_save: show_save %}
 
         <a href="/products/cat-trial-set" class="c_topSample__item-btn">詳細</a>
       </div>
@@ -88,6 +131,30 @@
       "id": "text",
       "label": "テキスト",
       "default": "テキスト"
+    },
+    {
+      "type": "select",
+      "id": "price_emphasis",
+      "label": "お得さの見せ方",
+      "info": "金額は商品の「比較価格」から自動計算します。ハードコードしていません。",
+      "options": [
+        { "value": "none", "label": "価格と%OFFバッジだけ" },
+        { "value": "line", "label": "パターン1：カードに「◯◯円おトク」を1行足す" },
+        { "value": "box", "label": "パターン2：リード文の下にまとめのボックスを置く" }
+      ],
+      "default": "line"
+    },
+    {
+      "type": "select",
+      "id": "saving_box_bg",
+      "label": "ボックスの地（パターン2のときだけ効く）",
+      "options": [
+        { "value": "white", "label": "白地" },
+        { "value": "coral", "label": "ブランドカラー地" },
+        { "value": "dark", "label": "暗い地（写真になじむ）" },
+        { "value": "outline", "label": "地なし・白い罫線だけ" }
+      ],
+      "default": "coral"
     },
     {
       "type": "image_picker",
