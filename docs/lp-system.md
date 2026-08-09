@@ -198,6 +198,18 @@ https://manmabuono.jp/pages/set-teiki?utm_source=google&utm_medium=cpc&utm_campa
 
 ---
 
+## 5-2. 公開中のLP
+
+| URL | 状態 | 備考 |
+|---|---|---|
+| https://manmabuono.jp/pages/set-teiki | **公開中**（2026-08-10〜） | 中身はプレースホルダ。西川さんに骨組みを見てもらうため公開した |
+
+- **noindex が付いている**（`layout/theme.liquid` の `lp_noindex`）ので検索には載らない。
+  ただし**URLを知っていれば誰でも見られる**。サイト内からのリンクは張っていない
+- 完成して広告を回す段になっても noindex のままでよい（広告の着地は検索を経由しない）
+
+---
+
 ## 6. 1本目（セット定期便）の状態
 
 `templates/page.lp-set-teiki.json` は**枠だけ**作ってある（ペトコト型・46ブロック）。
