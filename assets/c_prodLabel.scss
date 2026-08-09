@@ -1,0 +1,38 @@
+@import "variables";
+
+/* ==================================================
+    商品カードの効能ラベル（snippets/c_prod-label.liquid）
+
+    写真の真上に敷く帯（幅100%・中央揃え）。
+    面の色はマンマボーノのブランドカラー（$base-color）に白文字。
+    角丸なし・罫線も影もなし。
+
+    ⚠️ 絶対配置にしない理由（2026-08-09）
+    Dawn のカードは .card__inner に .ratio で高さを作り、その中の
+    .card__media / .media を position:absolute で敷き詰めて縦横比を保つ。
+    そのため card__inner の中に置いたラベルは、通常フローにしても
+    絶対配置の写真に上から覆われる（＝必ず写真に被る）。
+    写真を隠さず「上に積む」には card__inner の外＝カードの通常フローに置くしかない。
+===================================================*/
+.c_prodLabel {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    /* 下だけ1px多い＝日本語の字面が上寄りに見えるのを補正 */
+    padding: 5px 9px 6px;
+    background: $base-color;
+    color: $white;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    @include mq(sp) {
+        padding: 4px 7px 5px;
+        font-size: 11px;
+    }
+}

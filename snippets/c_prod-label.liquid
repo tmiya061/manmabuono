@@ -1,0 +1,127 @@
+{% comment %}
+  商品カードの写真の上に置く「効能ラベル」（その商品が誰の・どんなときのごはんかを1つ）
+
+  使い方: {% render 'c_prod-label', product: card_product %}
+  - label を渡すとその文字列を優先して表示する（呼び出し側で上書きしたいとき）
+
+  文言の出どころ（優先順）:
+    1. 引数 label
+    2. 商品メタフィールド custom.card_label ← 将来ここへ移す想定
+    3. 下の暫定マップ（handle → ラベル）
+
+  ⚠️ 2026-08-08 時点では管理画面にメタフィールドを作っていないため、実質3の暫定マップで動く。
+     西川さん確認が取れたら、マップの内容をそのまま custom.card_label に入れて
+     マップ側を削る（表示ロジックは変えなくて済む）。
+
+  書き方＝効能軸（2026-08-08 オーナー確定）
+     「誰向けか（お悩み軸）」ではなく「この商品が何をしてくれるか」を書く。
+     型は【成分・素材・製法】＋【もたらすはたらき】。
+     ❌ 毛づやが気になる子に（＝お悩み軸）   ✅ DHA・EPAで毛づやケア（＝効能軸）
+
+  ⚠️ 表現ルール（CLAUDE.md・nayami_tag_plan.md §0）
+     ただし効能の断定（治る・予防できる・効く）は書かない。フードは医薬品ではない。
+     はたらきは「ケア」「補う」「〜しやすく」「サポート」までで止める。
+     ❌ DHA・EPAで毛づやが良くなる   ✅ DHA・EPAで毛づやケア
+
+  ⚠️ 根拠が西川さん未確認のもの（nayami_tag_plan.md §6）
+     「毛づやが気になる子に」（ぶりのうま煮・熟成鰤＝DHA/EPA・ビタミンE）
+     「食材を選びたい子に」（鹿肉2品＝珍しいタンパク源としての訴求可否）
+     → 本番反映前に確認を取る。ダメなら文言を差し替える。
+{% endcomment %}
+
+{{ 'c_prodLabel.min.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign prod_label = label
+
+  if prod_label == blank
+    assign prod_label = product.metafields.custom.card_label
+  endif
+
+  if prod_label == blank
+    case product.handle
+      # -- 主食（総合栄養食・ドライ）
+      when 'だし薫る犬のごはん-チキン-150g', 'だし薫る犬のごはん-チキン'
+        assign prod_label = 'だしの香りで食欲を'
+      when 'だし薫る犬のごはん-フィッシュ-150g', 'だし薫る犬のごはん-フィッシュ-800g'
+        # 低アレルゲン素材（鹿児島かつお＋北海道たら）・DHA
+        assign prod_label = '魚のたんぱくとDHA'
+      when 'ダブルだし猫のごはん-チキン-150g', 'ダブルだし猫のごはん-チキン-800g'
+        # 甜菜繊維・イヌリン（毛玉の排出サポートは商品ページに既記載）
+        assign prod_label = '食物繊維で毛玉ケア'
+
+      # -- おかず（栄養補完食・ウェット）
+      when '地鶏のそぼろ煮1袋', '地鶏のそぼろ煮3袋'
+        assign prod_label = 'ブロス炊きでコラーゲン'
+      when '舞鶴-ぶりのうま煮1袋', '舞鶴-ぶりのうま煮3袋'
+        # DHA・EPA・ビタミンE ⚠️根拠は西川さん未確認
+        assign prod_label = 'DHA・EPAで毛づやケア'
+      when '枕崎-かつおのうま煮1袋', '枕崎-かつおのうま煮3袋'
+        # 低脂質0.4%
+        assign prod_label = '脂質ひかえめのおかず'
+      when '京都笠置-鹿肉と無農薬野菜の煮込み', '京都笠置-鹿肉と無農薬野菜の煮込み3袋'
+        # 天然鹿肉＝珍しいタンパク源・低脂質 ⚠️根拠は西川さん未確認
+        assign prod_label = '天然鹿肉で低脂質'
+
+      # -- プレミアム料理
+      when '犬と猫のプレミアム料理-京のだし薫る-親子丼の素'
+        assign prod_label = '卵でとじる特別な一皿'
+      when '犬と猫のプレミアム料理-京都舞笠置天然鹿肉-煮込みハンバーグ'
+        assign prod_label = '鹿肉100%のごちそう'
+      when '京都舞鶴港-鰤と大根の炊いたん'
+        # 一番だしで炊いたやわらかい仕上がり
+        assign prod_label = 'やわらか炊きで食べやすく'
+
+      # -- スープ・だし
+      when '京の一番だし', '京の一番だし5袋'
+        # ブランドの中心思想＝食事から摂る水分
+        assign prod_label = 'かけて飲んで水分補給'
+      when 'チキンボーンブロス', 'チキンボーンブロス5袋'
+        assign prod_label = '丸鶏のコラーゲンを補う'
+
+      # -- ふりかけ・トッピング
+      when '無塩-鹿児島枕崎-おつお削り節'
+        assign prod_label = 'かつおの香りで食欲を'
+      when '広島呉-ちりめんじゃこのふりかけ'
+        assign prod_label = 'カルシウムを手軽に'
+
+      # -- おやつ（ドライエイジング）
+      when '長野信州-熟成黒毛和牛'
+        assign prod_label = '熟成和牛のごほうび'
+      when '犬と猫のおやつ-京都笠置-熟成鹿肉'
+        # 42kcal・低脂肪高たんぱく・鉄分
+        assign prod_label = '低カロリーで鉄分補給'
+      when '犬と猫のおやつ-京都舞鶴-熟成鰤-30ｇ'
+        # ⚠️毛づや訴求にする場合はぶりのうま煮と同じ確認が必要
+        assign prod_label = 'おやつでDHA・EPAを'
+      when '犬と猫のおやつ-鳥取大山-熟成がいな鶏-30ｇ'
+        # 高たんぱく30%・低脂質2.3%・40kcal
+        assign prod_label = '高たんぱくで低脂質'
+
+      # -- 手作りごはん素材
+      when '国内産-吉野本葛'
+        # とろみ＝物理的な性質なので言い切ってよい
+        assign prod_label = 'とろみで飲み込みやすく'
+      when '旬の無農薬野菜セット-送料込み'
+        assign prod_label = '無農薬野菜で手作りを'
+      when 'チキンボーンブロス2袋-旬の無農薬野菜セット-送料込み'
+        assign prod_label = 'ブロスと野菜のセット'
+
+      # -- セット・サービス
+      when 'dog-trial-set', 'cat-trial-set'
+        assign prod_label = '主食とおかずを試す'
+      when '食事代行サービス'
+        assign prod_label = '栄養士が献立を設計'
+
+      # -- 季節もの
+      when '京都笠置産-鹿肉の年越しそば'
+        assign prod_label = '年末の特別な一杯'
+      when '管理栄養士が作る犬の手作り京おせち'
+        assign prod_label = '7種の犬用おせち'
+    endcase
+  endif
+-%}
+
+{%- if prod_label != blank -%}
+  <span class="c_prodLabel">{{ prod_label }}</span>
+{%- endif -%}

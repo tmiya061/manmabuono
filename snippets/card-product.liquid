@@ -48,6 +48,12 @@
       "
       style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;"
     >
+      {%- comment -%}
+        写真の一言ラベル（その商品の一番の売り・1つだけ）。
+        card__inner の中ではなく外＝通常フローに置く。card__inner は .ratio で高さを作り
+        その中の .card__media / .media は position:absolute なので、中に入れると必ず写真に被る。
+      {%- endcomment -%}
+      {% render 'c_prod-label', product: card_product %}
       <div
         class="card__inner {% if settings.card_style == 'standard' %}color-{{ settings.card_color_scheme }} gradient{% endif %}{% if card_product.featured_media or settings.card_style == 'standard' %} ratio{% endif %}"
         style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;"
