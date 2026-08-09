@@ -25,7 +25,9 @@
     background: $base-color;
     color: $white;
     font-size: 12px;
-    font-weight: 500;
+    // 400で固定する。500のフェイスを読み込んだ（theme.liquid）ので、
+    // 500のままだと実際に太くなってしまう。ラベルは面と色だけで既に十分強い。
+    font-weight: 400;
     line-height: 1;
     letter-spacing: 0.04em;
     white-space: nowrap;

@@ -76,10 +76,14 @@
       assign body_font_bold = settings.type_body_font | font_modify: 'weight', 'bold'
       assign body_font_italic = settings.type_body_font | font_modify: 'style', 'italic'
       assign body_font_bold_italic = body_font_bold | font_modify: 'style', 'italic'
+      # 400と700の差が大きく、その中間が欲しい場面がある（一覧の商品名・カードのラベル等）。
+      # Zen Kaku Gothic New は 300/400/500/700/900 を持つが 600 は無い。
+      assign body_font_medium = settings.type_body_font | font_modify: 'weight', '500'
     %}
 
     {% style %}
       {{ settings.type_body_font | font_face: font_display: 'swap' }}
+      {{ body_font_medium | font_face: font_display: 'swap' }}
       {{ body_font_bold | font_face: font_display: 'swap' }}
       {{ body_font_italic | font_face: font_display: 'swap' }}
       {{ body_font_bold_italic | font_face: font_display: 'swap' }}
