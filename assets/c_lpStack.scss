@@ -105,6 +105,31 @@ $lp-line: #EDE7E3;
     color: $base-color;
 }
 
+/* CTAの行き先が未設定のときの箱。ボタンの形を保ったまま「まだ繋がっていない」と分かるようにする。
+   押せる見た目にすると、未接続のまま本番に出たときに気づけない。 */
+.c_lpStack__ctaPh {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    min-height: 60px;
+    max-width: 420px;
+    margin: 0 auto;
+    padding: 12px 20px;
+    border: 1px dashed rgba(255, 123, 94, 0.6);
+    border-radius: 999px;
+    background: $lp-tint;
+    text-align: center;
+}
+
+.c_lpStack__ctaPhLabel {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+}
+
 /* CVブロック ----------------------------------------------------------- */
 .c_lpStack__cvBody {
     padding: 20px 20px 28px;
@@ -202,7 +227,11 @@ $lp-line: #EDE7E3;
     + .c_lpStack__faqItem {
         margin-top: 10px;
     }
-    &:last-of-type {
+    /* 最後のFAQの下に余白を入れる。
+       :last-of-type は「親の最後の div」を指すので、FAQの後ろに画像スライスが続く
+       この構造では1つも一致せず、最後のQ&Aが次のブロックに接触する（実機で確認）。
+       「次がFAQでないもの」を狙って当てる。 */
+    &:not(:has(+ .c_lpStack__faqItem)) {
         padding-bottom: 28px;
     }
 }

@@ -26,16 +26,22 @@
 {%- endstyle -%}
 
 {%- if section.settings.style == 'sticky' -%}
-  <div class="c_lpSticky" data-lp-sticky>
-    <div class="c_lpSticky__inner">
-      {% render 'c_lp-cta-button',
-        url: section.settings.cta_url,
-        label: section.settings.cta_label,
-        position: 'sticky',
-        lp_id: section.settings.lp_id
-      %}
+  {%- comment -%}
+    行き先が未設定のときは帯ごと出さない。
+    ボタンだけが消えて空の帯が画面下に貼り付き続けるため（実機で確認）。
+  {%- endcomment -%}
+  {%- if section.settings.cta_url != blank -%}
+    <div class="c_lpSticky" data-lp-sticky>
+      <div class="c_lpSticky__inner">
+        {% render 'c_lp-cta-button',
+          url: section.settings.cta_url,
+          label: section.settings.cta_label,
+          position: 'sticky',
+          lp_id: section.settings.lp_id
+        %}
+      </div>
     </div>
-  </div>
+  {%- endif -%}
 {%- else -%}
   <section class="c_lpCtaBlock{% if section.settings.tint %} --tint{% endif %}">
     <div class="c_lpCtaBlock__inner page-width">

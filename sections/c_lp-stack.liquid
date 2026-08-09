@@ -140,13 +140,25 @@
             {%- endif -%}
 
             <div class="c_lpStack__cvBody">
-              {% render 'c_lp-cta-button',
-                url: block.settings.cta_url,
-                label: block.settings.cta_label,
-                note: block.settings.cta_note,
-                position: block.settings.position,
-                lp_id: section.settings.lp_id
-              %}
+              {%- if block.settings.cta_url != blank -%}
+                {% render 'c_lp-cta-button',
+                  url: block.settings.cta_url,
+                  label: block.settings.cta_label,
+                  note: block.settings.cta_note,
+                  position: block.settings.position,
+                  lp_id: section.settings.lp_id
+                %}
+              {%- else -%}
+                {%- comment -%}
+                  行き先未設定。押せないボタンを本番に出すわけにいかないので <a> は作らず、
+                  画像スライスと同じく「ここに何が入るか」を見せる箱にしておく。
+                  行き先を入れた瞬間に本物のボタンに変わる。
+                {%- endcomment -%}
+                <div class="c_lpStack__ctaPh">
+                  <p class="c_lpStack__ctaPhLabel">{{ block.settings.cta_label | default: '（ボタン文言未設定）' }}</p>
+                  <p class="c_lpStack__phSize">リンク先が未設定です</p>
+                </div>
+              {%- endif -%}
 
               {%- unless block.settings.sub_label == blank or block.settings.sub_url == blank -%}
                 <a
