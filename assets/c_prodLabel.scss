@@ -5,7 +5,7 @@
 
     写真の真上に敷く帯（幅100%・中央揃え）。
     面の色はマンマボーノのブランドカラー（$base-color）に白文字。
-    角丸なし・罫線も影もなし。
+    角丸は上の2隅だけ（下は写真と接するので落とす）。罫線も影もなし。
 
     ⚠️ 絶対配置にしない理由（2026-08-09）
     Dawn のカードは .card__inner に .ratio で高さを作り、その中の
@@ -19,8 +19,9 @@
     width: 100%;
     box-sizing: border-box;
     text-align: center;
+    border-radius: 4px 4px 0 0;
     /* 下だけ1px多い＝日本語の字面が上寄りに見えるのを補正 */
-    padding: 5px 9px 6px;
+    padding: 7px 9px 8px;
     background: $base-color;
     color: $white;
     font-size: 12px;
@@ -32,7 +33,7 @@
     text-overflow: ellipsis;
 
     @include mq(sp) {
-        padding: 4px 7px 5px;
+        padding: 6px 7px 7px;
         font-size: 11px;
     }
 }

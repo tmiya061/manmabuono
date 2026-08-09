@@ -134,6 +134,8 @@
               {%- endfor -%}
               <li class="c_topPicks__item">
                 <a class="c_topPicks__item-link" href="{{ display_product.url }}">
+                  {%- comment -%}写真の上の効能ラベル。商品一覧のカードと同じ部品を使う{%- endcomment -%}
+                  {% render 'c_prod-label', product: display_product %}
                   <img
                     class="c_topPicks__item-img"
                     width="1920"
