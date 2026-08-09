@@ -210,18 +210,17 @@
 .c_topPicks__item-title {
     font-family: var(--font-jp-family);
     color: $text-color;
-    font-size: 15px;
-    // 一覧カード（.card__heading）と揃えて 500。写真の上のラベルと釣り合わせる（2026-08-09）
+    // 一覧カード（.card__heading）と数値を揃える（2026-08-09）
+    font-size: 14px;
     font-weight: 500;
     line-height: 160%;
-    letter-spacing: .6px;
+    letter-spacing: .56px;
     word-break: auto-phrase; // 「ハンバーグ」等が語中で切れないように（非対応ブラウザは従来どおり）
     margin-top: 4px;
     margin-bottom: 8px;
     @include mq(sp) {
-        font-size: 12px;
-        line-height: 155%;
-        letter-spacing: .4px;
+        font-size: 13px;
+        letter-spacing: .52px;
     }
 }
 

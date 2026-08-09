@@ -40,18 +40,22 @@
         padding: 14px 0;
     }
 
+    /* 商品名。値は下の .card__heading と必ず揃える（2026-08-09 に統一）
+       ここは #product-grid を含むID付きセレクタなので、下の共通指定より強い。
+       ドライ・おやつ等の標準テンプレートだけこちらが当たっていて、
+       ウェット等の代替テンプレートと見た目が割れていた。 */
     .full-unstyled-link {
         color: #3C3C3C;
-        font-size: 16px;
+        font-size: 14px;
         font-style: normal;
-        font-weight: 400;
-        line-height: 160%; /* 25.6px */
-        letter-spacing: 0.64px;
+        font-weight: 500;
+        line-height: 160%;
+        letter-spacing: 0.56px;
         margin-bottom: 14px;
         @include mq(sp) {
             font-size: 13px;
             font-style: normal;
-            font-weight: 400;
+            font-weight: 500;
             line-height: 160%; /* 20.8px */
             letter-spacing: 0.52px;
             margin-bottom: 14px;
@@ -117,11 +121,27 @@
 /* ==================================================
     一覧カードの商品名（2026-08-09）
 
-    テーマ既定では h3 = --font-heading-weight = 400。
     写真の上のコーラルのラベルが強いので、商品名を一段だけ持ち上げて釣り合わせる。
     700 まで上げると全部が強くなるため、間の 500 を使う。
     ※500のフェイスは layout/theme.liquid で読み込んでいる（無いと400に落ちる）。
+
+    ⚠️ コレクションはテンプレートが2系統ある。
+      ・標準（#product-grid あり）… ドライ・おやつ 等
+      ・代替（#product-grid なし）… ウェット(collection.wet.json)・dog-all 等
+    後者には上の #product-grid スコープの指定が当たらず、テーマ既定の h3
+    （--font-heading-weight = 400・1.8rem）のままだった＝両者で見た目が割れる。
+    ここで h3 とその中のリンクの両方に効かせて、どちらの系統でも同じにする。
+    上の .full-unstyled-link と値を必ず一致させること。
 ===================================================*/
-.card__heading {
+.card__heading,
+.card__heading .full-unstyled-link {
+    font-size: 14px;
     font-weight: 500;
+    line-height: 160%;
+    letter-spacing: 0.56px;
+
+    @include mq(sp) {
+        font-size: 13px;
+        letter-spacing: 0.52px;
+    }
 }
