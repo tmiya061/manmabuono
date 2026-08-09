@@ -40,6 +40,16 @@
           assign column_tag_noindex = true
         endif
       endif
+
+      # 広告用LP（page.lp-◯◯）は noindex にする。理由は2つ：
+      #   1. 制作途中のLPが検索に載ってしまうと、未完成の状態が人目に触れる
+      #   2. 完成後も、画像だけで組むLPは検索に載せる価値が無く、
+      #      商品ページ・コラムと訴求が重複して自然検索の足を引っ張る
+      # 広告の着地は検索結果を経由しないので、noindex にしても集客には一切影響しない。
+      assign lp_noindex = false
+      if template.suffix contains 'lp-'
+        assign lp_noindex = true
+      endif
     -%}
     <title>
       {%- if column_category_name != '' -%}{{ column_category_name }}｜{%- endif -%}
@@ -49,7 +59,7 @@
       {%- unless page_title contains shop.name %}｜{{ shop.name }}{% endunless -%}
     </title>
 
-    {% if column_tag_noindex %}
+    {% if column_tag_noindex or lp_noindex %}
       <meta name="robots" content="noindex, follow">
     {% endif %}
 
