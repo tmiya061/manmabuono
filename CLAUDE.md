@@ -48,6 +48,7 @@
 ## ドキュメント索引（docs/）
 
 - `admin-changelog.md` — 管理画面（Admin API）の変更ログ（追記必須・上記ルール参照）
+- `lp-system.md` — 🔴 **広告用LPの土台**（`page.lp-◯◯` テンプレート／LPモードでヘッダー・フッターを消す仕組み／CTAの計測／UTM規約）。**広告を出す前に §4「出稿前に必要なもの」を必ず読む**（GA4権限・Google広告コンバージョン・Meta Pixel が全部未導入）
 - `cooking-class-zoom-email.md` — お料理教室：注文確認メールへのZoom案内差し込み（スニペット＋設定手順。Zoomは定期ミーティング＝同一URL運用）。ページ設計の全体は `.company/projects/clients/manmabuono/cooking_class_page.md`
 - `subscription-mikawaya.md` — 🔴 **サブスク（三河屋）と `［追加用］` 商品の仕組み・要修正リスト。商品価格を変える前／新商品を出す前に必読**（追加用の価格追随を忘れると会員が定価を払う）
 - `blog-column-architecture.md` — コラムの設計全体

@@ -1,0 +1,50 @@
+{% comment %}
+  LP専用のミニフッター（2026-08-09 追加）。
+
+  🔴 ここは「削っていいパーツ」ではない。
+  Google広告・Meta広告の審査は、販売者情報・特定商取引法に基づく表記・プライバシーポリシー・
+  問い合わせ先へ「ランディングページから辿れること」を見る。出口を絞るLPでも、この4つは残す。
+
+  特商法は独立ページが無く /pages/guide#guide-law（ご利用ガイド内）に置かれている。
+  リンク先を変える時は、ここと sections/footer.liquid・snippets/header-drawer.liquid の3箇所。
+{% endcomment %}
+
+{{ 'c_lp.min.css' | asset_url | stylesheet_tag }}
+
+<footer class="c_lpFooter">
+  <div class="c_lpFooter__inner">
+    <ul class="c_lpFooter__links">
+      <li><a href="/pages/guide#guide-law">特定商取引法に基づく表記</a></li>
+      <li><a href="/pages/privacy">プライバシーポリシー</a></li>
+      <li><a href="/pages/guide#guide-return">返品について</a></li>
+      <li><a href="/pages/contact">お問い合わせ</a></li>
+    </ul>
+
+    {%- unless section.settings.company == blank -%}
+      <p class="c_lpFooter__company">{{ section.settings.company }}</p>
+    {%- endunless -%}
+
+    <p class="c_lpFooter__copy">&copy; {{ 'now' | date: '%Y' }} {{ shop.name }}</p>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "LP: フッター",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "広告審査で必要な4リンク（特商法・プライバシー・返品・問い合わせ）は固定で出ます。消さないでください。"
+    },
+    {
+      "type": "text",
+      "id": "company",
+      "label": "販売者名（任意）",
+      "info": "例: 株式会社◯◯／京都市◯◯区…"
+    }
+  ],
+  "enabled_on": {
+    "templates": ["page"]
+  }
+}
+{% endschema %}

@@ -9,6 +9,7 @@ Shopifyの管理画面・ストアデータは Git で追えない。**書き込
 
 ---
 
+- 2026-08-09 | ページ set-teiki（ドライ×ウェット セット定期便 LP・準備中） | **非公開**で新規作成。テンプレート `page.lp-set-teiki` を割り当て（広告用LPの器。中身は西川さん確認待ちのプレースホルダ） | pageCreate（GraphQL） | 復元: ページを削除（gid://shopify/Page/107051450429）。非公開なので店頭には出ていない
 - 2026-08-09 | 商品メタフィールド定義 custom.card_label | 「商品カードのラベル」を新規作成（商品・単一行テキスト・16文字上限・ピン留め） | metafieldDefinitionCreate（GraphQL） | 復元: 定義を削除（gid://shopify/MetafieldDefinition/130898526269）。削除すると下記35件の値も消える
 - 2026-08-09 | 商品35件 | custom.card_label に効能ラベルの文言を投入（コード内の暫定マップから移行。以後は管理画面で編集する） | scripts/set_card_labels.py --apply | 復元: scripts/card_label/card_label.backup.json（投入前は全件 null＝未設定）
 - 2026-08-08 | 商品 online-cooking-class | タグ「一覧非表示」を追加（テーマ側で商品一覧グリッドから除外するため） | tagsAdd（GraphQL） | 復元: タグを外す

@@ -340,10 +340,32 @@
       {%- render 'cart-drawer' -%}
     {%- endif -%}
 
-    {% sections 'header-group' %}
+    {%- comment -%}
+      LPモード（2026-08-09 追加）。
+      テンプレートのサフィックスが lp- で始まるページ（例: page.lp-set-teiki.json）は、
+      広告の受け皿として「出口をCTA1本に絞る」ためグローバルヘッダー・フッター・
+      パンくずを出さない。ヘッダー/フッターはテンプレJSON側で c_lp-header /
+      c_lp-footer を並べる（LPごとにCTA文言を変えられるようにするため静的sectionにしない）。
 
-    <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
-      {% render 'c_bredcrumb' %}
+      サフィックスが無い＝従来のページは今までどおり header-group / footer-group。
+      既存ページの挙動は一切変えていない。
+    {%- endcomment -%}
+    {%- liquid
+      assign is_lp = false
+      assign tpl_suffix = template.suffix | default: ''
+      if tpl_suffix contains 'lp-'
+        assign is_lp = true
+      endif
+    -%}
+
+    {%- unless is_lp -%}
+      {% sections 'header-group' %}
+    {%- endunless -%}
+
+    <main id="MainContent" class="content-for-layout focus-none{% if is_lp %} c_lp-main{% endif %}" role="main" tabindex="-1">
+      {%- unless is_lp -%}
+        {% render 'c_bredcrumb' %}
+      {%- endunless -%}
 
       {{ content_for_layout }}
 
@@ -353,7 +375,9 @@
       <img src="{{ 'about-link.png' | file_url }}" alt="マンマボーノとは" width="109">
     </a> {% endcomment %}
 
-    {% sections 'footer-group' %}
+    {%- unless is_lp -%}
+      {% sections 'footer-group' %}
+    {%- endunless -%}
 
     <ul hidden>
       <li id="a11y-refresh-page-message">{{ 'accessibility.refresh_page' | t }}</li>

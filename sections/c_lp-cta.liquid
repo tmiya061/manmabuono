@@ -1,0 +1,116 @@
+{% comment %}
+  LPの再CTA（2026-08-09 追加）。
+
+  LPは「読み進めて気持ちが動いた所」ごとにボタンが要る。位置を変えて複数回置く前提の部品。
+  position（fv / middle / bottom / sticky）で計測を分けるので、どの位置が効いているかが後で分かる。
+
+  「追従バー」をONにすると、FVを過ぎたあと画面下に固定のCTAが出る（assets/c_lp.js）。
+  追従バーはページに1つだけ置くこと。複数置くと重なる。
+{% endcomment %}
+
+{{ 'c_lp.min.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'c_lp.js' | asset_url }}" defer></script>
+
+{%- style -%}
+  #shopify-section-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+
+  @media screen and (max-width: 750px) {
+    #shopify-section-{{ section.id }} {
+      padding-top: {{ section.settings.padding_top_sp }}px;
+      padding-bottom: {{ section.settings.padding_bottom_sp }}px;
+    }
+  }
+{%- endstyle -%}
+
+{%- if section.settings.style == 'sticky' -%}
+  <div class="c_lpSticky" data-lp-sticky>
+    <div class="c_lpSticky__inner">
+      {% render 'c_lp-cta-button',
+        url: section.settings.cta_url,
+        label: section.settings.cta_label,
+        position: 'sticky',
+        lp_id: section.settings.lp_id
+      %}
+    </div>
+  </div>
+{%- else -%}
+  <section class="c_lpCtaBlock{% if section.settings.tint %} --tint{% endif %}">
+    <div class="c_lpCtaBlock__inner page-width">
+      {%- unless section.settings.heading == blank -%}
+        <p class="c_lpCtaBlock__head">{{ section.settings.heading }}</p>
+      {%- endunless -%}
+
+      {%- unless section.settings.lead == blank -%}
+        <div class="c_lpCtaBlock__lead">{{ section.settings.lead }}</div>
+      {%- endunless -%}
+
+      {% render 'c_lp-cta-button',
+        url: section.settings.cta_url,
+        label: section.settings.cta_label,
+        note: section.settings.cta_note,
+        position: section.settings.position,
+        lp_id: section.settings.lp_id
+      %}
+    </div>
+  </section>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "LP: CTA",
+  "settings": [
+    {
+      "type": "text",
+      "id": "lp_id",
+      "label": "LP識別子（計測用）",
+      "info": "ファーストビューと同じ値にしてください",
+      "default": "lp"
+    },
+    {
+      "type": "select",
+      "id": "style",
+      "label": "見せ方",
+      "options": [
+        { "value": "block", "label": "本文中のCTAブロック" },
+        { "value": "sticky", "label": "画面下の追従バー（ページに1つだけ）" }
+      ],
+      "default": "block"
+    },
+    {
+      "type": "select",
+      "id": "position",
+      "label": "位置（計測用のラベル）",
+      "info": "どの位置のボタンが押されたかを後で分けて見るための名前",
+      "options": [
+        { "value": "middle", "label": "中盤" },
+        { "value": "bottom", "label": "最後" }
+      ],
+      "default": "middle"
+    },
+    { "type": "checkbox", "id": "tint", "label": "薄い面を敷く", "default": true },
+    { "type": "header", "content": "文言" },
+    { "type": "text", "id": "heading", "label": "見出し（任意）" },
+    { "type": "richtext", "id": "lead", "label": "リード文（任意）" },
+    {
+      "type": "text",
+      "id": "cta_label",
+      "label": "ボタンの文言",
+      "default": "定期便をはじめる"
+    },
+    { "type": "url", "id": "cta_url", "label": "ボタンの行き先" },
+    { "type": "text", "id": "cta_note", "label": "ボタン下の補足（任意）" },
+    { "type": "header", "content": "余白" },
+    { "type": "range", "id": "padding_top", "label": "上（PC）", "min": 0, "max": 120, "step": 2, "unit": "px", "default": 48 },
+    { "type": "range", "id": "padding_bottom", "label": "下（PC）", "min": 0, "max": 120, "step": 2, "unit": "px", "default": 48 },
+    { "type": "range", "id": "padding_top_sp", "label": "上（スマホ）", "min": 0, "max": 120, "step": 2, "unit": "px", "default": 32 },
+    { "type": "range", "id": "padding_bottom_sp", "label": "下（スマホ）", "min": 0, "max": 120, "step": 2, "unit": "px", "default": 32 }
+  ],
+  "enabled_on": {
+    "templates": ["page"]
+  },
+  "presets": [{ "name": "LP: CTA" }]
+}
+{% endschema %}

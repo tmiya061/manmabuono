@@ -1,0 +1,49 @@
+{% comment %}
+  LPのCTAボタン（2026-08-09 追加）。
+
+  LPは「同じ行き先のボタンをページ内で何回も出す」のが基本形なので、
+  見た目と計測用の属性を1箇所に集約する。呼び出し側は文言と位置だけ渡す。
+
+  data-lp-cta / data-lp-id は assets/c_lp.js が拾って dataLayer に流す。
+  GTM（GTM-KJXQSLRX）側で「lp_cta_click」をGA4イベントに繋げば、
+  どの位置のボタンが押されているか＝LP内のクリック率が測れる。
+  ※ GTM側の設定はまだ入れていない（GA4の権限待ち）。仕込みだけ先に置いてある。
+
+  使い方:
+    {% render 'c_lp-cta-button',
+       url: section.settings.cta_url,
+       label: section.settings.cta_label,
+       note: section.settings.cta_note,
+       position: 'fv',
+       lp_id: section.settings.lp_id %}
+
+  引数:
+    url      … 行き先。空なら何も出力しない（未設定のLPで空ボタンを出さないため）
+    label    … ボタンの文言
+    note     … ボタンの下に置く小さい補足（送料・解約条件など。任意）
+    position … 計測用の位置名（fv / middle / bottom / sticky など）
+    lp_id    … 計測用のLP識別子（set-teiki など）
+{% endcomment %}
+
+{%- liquid
+  assign cta_url = url | default: ''
+  assign cta_label = label | default: ''
+  assign cta_position = position | default: 'unknown'
+  assign cta_lp_id = lp_id | default: 'unknown'
+-%}
+
+{%- if cta_url != blank and cta_label != blank -%}
+  <div class="c_lpCta">
+    <a
+      class="c_lpCta__btn"
+      href="{{ cta_url }}"
+      data-lp-cta="{{ cta_position }}"
+      data-lp-id="{{ cta_lp_id }}"
+    >
+      <span class="c_lpCta__label">{{ cta_label }}</span>
+    </a>
+    {%- unless note == blank -%}
+      <p class="c_lpCta__note">{{ note }}</p>
+    {%- endunless -%}
+  </div>
+{%- endif -%}

@@ -1,0 +1,53 @@
+{% comment %}
+  LP専用のミニヘッダー（2026-08-09 追加）。
+
+  通常のグローバルヘッダー（検索・カート・ドロワーメニュー）は、広告で連れてきた人にとっては
+  「離脱の入口」でしかないので、LPではロゴだけに絞る。右側のボタンは任意（入れる場合もCTAと同じ行き先）。
+
+  ロゴはリンクにしない。トップへ帰す導線をヘッダーに置くと、LPを読み切る前に離脱するため。
+  ※ ヘッダー・フッターの非表示は layout/theme.liquid の LPモード分岐（template.suffix が lp-）で行う。
+{% endcomment %}
+
+{{ 'c_lp.min.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'c_lp.js' | asset_url }}" defer></script>
+
+<header class="c_lpHeader">
+  <div class="c_lpHeader__inner">
+    <div class="c_lpHeader__logo">
+      {%- if settings.logo != blank -%}
+        {{
+          settings.logo
+          | image_url: width: 320
+          | image_tag: alt: shop.name, loading: 'eager', class: 'c_lpHeader__logoImg'
+        }}
+      {%- else -%}
+        <span class="c_lpHeader__logoText">{{ shop.name }}</span>
+      {%- endif -%}
+    </div>
+
+    {%- unless section.settings.note == blank -%}
+      <p class="c_lpHeader__note">{{ section.settings.note }}</p>
+    {%- endunless -%}
+  </div>
+</header>
+
+{% schema %}
+{
+  "name": "LP: ヘッダー",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "LPテンプレート（page.lp-◯◯）の一番上に置きます。通常のヘッダーは自動的に非表示になります。"
+    },
+    {
+      "type": "text",
+      "id": "note",
+      "label": "ロゴの右に出す一言（任意）",
+      "info": "例: 京都の無添加ペットフード ／ 空にすると出ません"
+    }
+  ],
+  "enabled_on": {
+    "templates": ["page"]
+  }
+}
+{% endschema %}

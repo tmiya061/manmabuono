@@ -1,0 +1,117 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "lp_header": {
+      "type": "c_lp-header",
+      "settings": {
+        "note": "京都の無添加ペットフード"
+      }
+    },
+    "lp_fv": {
+      "type": "c_lp-fv",
+      "blocks": {
+        "point_1": {
+          "type": "point",
+          "settings": {
+            "text": "ドライとウェットを、その子のサイズに合わせた分量でお届け"
+          }
+        },
+        "point_2": {
+          "type": "point",
+          "settings": {
+            "text": "献立を考えなくていい。届いたその日から与え方どおりに"
+          }
+        },
+        "point_3": {
+          "type": "point",
+          "settings": {
+            "text": "回数の縛りなし。合わなければいつでも解約できます"
+          }
+        }
+      },
+      "block_order": ["point_1", "point_2", "point_3"],
+      "settings": {
+        "lp_id": "set-teiki",
+        "eyebrow": "ドライ×ウェット セット定期便",
+        "heading": "＜要・西川さん確認＞見出しはここ（検索語と噛み合わせる）",
+        "lead": "<p>＜要・西川さん確認＞リード文。サイズ帯・給餌量・おまかせ構成・価格が決まり次第ここを差し替える（設計シート §2 の①〜⑥に対応）。</p>",
+        "cta_label": "セット定期便をはじめる",
+        "cta_url": "",
+        "cta_note": "いつでも解約できます",
+        "padding_top": 40,
+        "padding_bottom": 56,
+        "padding_top_sp": 24,
+        "padding_bottom_sp": 32
+      }
+    },
+    "lp_cta_middle": {
+      "type": "c_lp-cta",
+      "settings": {
+        "lp_id": "set-teiki",
+        "style": "block",
+        "position": "middle",
+        "tint": true,
+        "heading": "＜要・西川さん確認＞中盤CTAの見出し",
+        "cta_label": "セット定期便をはじめる",
+        "cta_url": "",
+        "cta_note": "",
+        "padding_top": 48,
+        "padding_bottom": 48,
+        "padding_top_sp": 32,
+        "padding_bottom_sp": 32
+      }
+    },
+    "lp_cta_bottom": {
+      "type": "c_lp-cta",
+      "settings": {
+        "lp_id": "set-teiki",
+        "style": "block",
+        "position": "bottom",
+        "tint": false,
+        "heading": "＜要・西川さん確認＞最後のひと押し",
+        "cta_label": "セット定期便をはじめる",
+        "cta_url": "",
+        "cta_note": "いつでも解約できます",
+        "padding_top": 48,
+        "padding_bottom": 24,
+        "padding_top_sp": 32,
+        "padding_bottom_sp": 16
+      }
+    },
+    "lp_sticky": {
+      "type": "c_lp-cta",
+      "settings": {
+        "lp_id": "set-teiki",
+        "style": "sticky",
+        "cta_label": "セット定期便をはじめる",
+        "cta_url": "",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_top_sp": 0,
+        "padding_bottom_sp": 0
+      }
+    },
+    "lp_footer": {
+      "type": "c_lp-footer",
+      "settings": {
+        "company": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "lp_header",
+    "lp_fv",
+    "lp_cta_middle",
+    "lp_cta_bottom",
+    "lp_sticky",
+    "lp_footer"
+  ]
+}

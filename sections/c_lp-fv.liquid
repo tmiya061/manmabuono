@@ -1,0 +1,148 @@
+{% comment %}
+  LPのファーストビュー（2026-08-09 追加）。
+
+  リスティング（検索連動）で来る人が最初に確かめるのは「探していたものがこのページにあるか」なので、
+  見出しは飾りではなく **検索語と噛み合う一文** を入れる枠として置いている（メッセージマッチ）。
+  広告グループごとに見出しだけ差し替えられるよう、見出し・サブ・CTAはすべて設定値にしてある。
+
+  トンマナは商品ページ・商品一覧LPから引用（見出しは黒／アクセント #FF7B5E は最小限／面は #FFF4EC）。
+  data-lp-fv は追従CTAバーの表示判定に使う（assets/c_lp.js）。
+{% endcomment %}
+
+{{ 'c_common.min.css' | asset_url | stylesheet_tag }}
+{{ 'c_lp.min.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'c_lp.js' | asset_url }}" defer></script>
+
+{%- style -%}
+  #shopify-section-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+
+  @media screen and (max-width: 750px) {
+    #shopify-section-{{ section.id }} {
+      padding-top: {{ section.settings.padding_top_sp }}px;
+      padding-bottom: {{ section.settings.padding_bottom_sp }}px;
+    }
+  }
+{%- endstyle -%}
+
+<section class="c_lpFv" data-lp-fv>
+  <div class="c_lpFv__inner page-width">
+    <div class="c_lpFv__body">
+      {%- unless section.settings.eyebrow == blank -%}
+        <p class="c_lpFv__eyebrow">{{ section.settings.eyebrow }}</p>
+      {%- endunless -%}
+
+      <h1 class="c_lpFv__head">{{ section.settings.heading }}</h1>
+
+      {%- unless section.settings.lead == blank -%}
+        <div class="c_lpFv__lead">{{ section.settings.lead }}</div>
+      {%- endunless -%}
+
+      {%- assign points = section.blocks | where: 'type', 'point' -%}
+      {%- if points.size > 0 -%}
+        <ul class="c_lpFv__points">
+          {%- for block in points -%}
+            <li class="c_lpFv__point" {{ block.shopify_attributes }}>{{ block.settings.text }}</li>
+          {%- endfor -%}
+        </ul>
+      {%- endif -%}
+
+      {% render 'c_lp-cta-button',
+        url: section.settings.cta_url,
+        label: section.settings.cta_label,
+        note: section.settings.cta_note,
+        position: 'fv',
+        lp_id: section.settings.lp_id
+      %}
+    </div>
+
+    {%- if section.settings.img != blank or section.settings.img_sp != blank -%}
+      <div class="c_lpFv__media">
+        {%- if section.settings.img != blank -%}
+          {{
+            section.settings.img
+            | image_url: width: 1200
+            | image_tag: alt: section.settings.img.alt, loading: 'eager', class: 'c_lpFv__img pc'
+          }}
+        {%- endif -%}
+        {%- if section.settings.img_sp != blank -%}
+          {{
+            section.settings.img_sp
+            | image_url: width: 750
+            | image_tag: alt: section.settings.img_sp.alt, loading: 'eager', class: 'c_lpFv__img sp'
+          }}
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "LP: ファーストビュー",
+  "settings": [
+    {
+      "type": "text",
+      "id": "lp_id",
+      "label": "LP識別子（計測用）",
+      "info": "半角英数。例: set-teiki ／ CTAクリックの計測でこの名前が使われます",
+      "default": "lp"
+    },
+    { "type": "header", "content": "文言" },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "見出しの上の小さい一行（任意）",
+      "info": "例: 京都の無添加ペットフード"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "見出し（検索語と噛み合わせる）",
+      "default": "見出しを入れてください"
+    },
+    { "type": "richtext", "id": "lead", "label": "リード文" },
+    { "type": "header", "content": "CTA" },
+    {
+      "type": "text",
+      "id": "cta_label",
+      "label": "ボタンの文言",
+      "default": "定期便をはじめる"
+    },
+    {
+      "type": "url",
+      "id": "cta_url",
+      "label": "ボタンの行き先",
+      "info": "空にするとボタンは出ません"
+    },
+    {
+      "type": "text",
+      "id": "cta_note",
+      "label": "ボタン下の補足（任意）",
+      "info": "例: いつでも解約できます／送料込み"
+    },
+    { "type": "header", "content": "画像" },
+    { "type": "image_picker", "id": "img", "label": "画像（PC）" },
+    { "type": "image_picker", "id": "img_sp", "label": "画像（スマホ）" },
+    { "type": "header", "content": "余白" },
+    { "type": "range", "id": "padding_top", "label": "上（PC）", "min": 0, "max": 120, "step": 2, "unit": "px", "default": 40 },
+    { "type": "range", "id": "padding_bottom", "label": "下（PC）", "min": 0, "max": 120, "step": 2, "unit": "px", "default": 56 },
+    { "type": "range", "id": "padding_top_sp", "label": "上（スマホ）", "min": 0, "max": 120, "step": 2, "unit": "px", "default": 24 },
+    { "type": "range", "id": "padding_bottom_sp", "label": "下（スマホ）", "min": 0, "max": 120, "step": 2, "unit": "px", "default": 32 }
+  ],
+  "blocks": [
+    {
+      "type": "point",
+      "name": "要点（3つまでが目安）",
+      "limit": 4,
+      "settings": [{ "type": "text", "id": "text", "label": "テキスト" }]
+    }
+  ],
+  "enabled_on": {
+    "templates": ["page"]
+  },
+  "presets": [{ "name": "LP: ファーストビュー" }]
+}
+{% endschema %}

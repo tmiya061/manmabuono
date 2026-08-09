@@ -1,0 +1,316 @@
+@import "variables";
+
+/* LP共通スタイル（2026-08-09 追加）
+   sections/c_lp-*.liquid と snippets/c_lp-cta-button.liquid で使う。
+
+   トンマナは商品ページ・商品一覧LPから引用する：
+   見出しは黒（$text-color）、アクセント（$base-color）はCTAだけに使う、面は #FFF4EC。
+   角丸要素の左に色棒は置かない（強調は 余白 > 面 > タイポ > バッジ の順で作る）。 */
+
+$lp-tint: #FFF4EC;
+$lp-line: #EDE7E3;
+
+/* LPモードのmain。グローバルヘッダーが無い分の上余白をここで持つ */
+.c_lp-main {
+    color: $text-color;
+}
+
+/* ヘッダー ------------------------------------------------------------- */
+.c_lpHeader {
+    border-bottom: 1px solid $lp-line;
+    background: $white;
+}
+
+.c_lpHeader__inner {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 12px 20px;
+    @include mq(pc) {
+        padding: 16px 24px;
+    }
+}
+
+.c_lpHeader__logoImg {
+    display: block;
+    width: auto;
+    height: 32px;
+    @include mq(pc) {
+        height: 40px;
+    }
+}
+
+.c_lpHeader__logoText {
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+}
+
+.c_lpHeader__note {
+    margin: 0;
+    font-size: 11px;
+    line-height: 150%;
+    letter-spacing: 0.4px;
+    @include mq(pc) {
+        font-size: 13px;
+    }
+}
+
+/* ファーストビュー ----------------------------------------------------- */
+.c_lpFv__inner {
+    max-width: 1040px;
+    margin: 0 auto;
+    @include mq(pc) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        gap: 40px;
+    }
+}
+
+.c_lpFv__eyebrow {
+    margin: 0 0 10px;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 1.2px;
+    color: $base-color;
+    @include mq(pc) {
+        font-size: 13px;
+    }
+}
+
+/* 検索語と噛み合わせる一文。LPで一番大きい文字はここだけにする */
+.c_lpFv__head {
+    margin: 0;
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 152%;
+    letter-spacing: 1px;
+    @include mq(pc) {
+        font-size: 36px;
+        line-height: 148%;
+        letter-spacing: 1.4px;
+    }
+}
+
+.c_lpFv__lead {
+    margin-top: 16px;
+    font-size: 14px;
+    line-height: 195%;
+    letter-spacing: 0.7px;
+    @include mq(pc) {
+        font-size: 15px;
+        line-height: 200%;
+    }
+    p {
+        margin: 0;
+        + p {
+            margin-top: 1em;
+        }
+    }
+}
+
+/* 要点。チェック記号は擬似要素で置く（リスト記号だと行頭が揃わない） */
+.c_lpFv__points {
+    margin: 20px 0 0;
+    padding: 16px 18px;
+    list-style: none;
+    background: $lp-tint;
+    border-radius: 8px;
+}
+
+.c_lpFv__point {
+    position: relative;
+    padding-left: 24px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 170%;
+    letter-spacing: 0.6px;
+    + .c_lpFv__point {
+        margin-top: 8px;
+    }
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0.55em;
+        left: 4px;
+        width: 10px;
+        height: 6px;
+        border-left: 2px solid $base-color;
+        border-bottom: 2px solid $base-color;
+        transform: rotate(-45deg);
+    }
+}
+
+.c_lpFv__media {
+    margin-top: 28px;
+    @include mq(pc) {
+        margin-top: 0;
+    }
+}
+
+.c_lpFv__img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* CTAボタン ------------------------------------------------------------ */
+.c_lpCta {
+    margin-top: 28px;
+}
+
+.c_lpCta__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 420px;
+    min-height: 60px;
+    margin: 0 auto;
+    padding: 14px 24px;
+    border-radius: 999px;
+    background: $base-color;
+    color: $white;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-align: center;
+    text-decoration: none;
+    box-shadow: 0 6px 16px rgba(255, 123, 94, 0.28);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    @include mq(pc) {
+        min-height: 64px;
+        font-size: 17px;
+    }
+    &:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 8px 20px rgba(255, 123, 94, 0.34);
+        color: $white;
+        text-decoration: none;
+    }
+}
+
+.c_lpCta__note {
+    margin: 10px 0 0;
+    font-size: 12px;
+    line-height: 165%;
+    letter-spacing: 0.5px;
+    text-align: center;
+}
+
+/* 本文中のCTAブロック --------------------------------------------------- */
+.c_lpCtaBlock {
+    &.--tint {
+        background: $lp-tint;
+    }
+}
+
+.c_lpCtaBlock__inner {
+    max-width: 760px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.c_lpCtaBlock__head {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 158%;
+    letter-spacing: 1px;
+    @include mq(pc) {
+        font-size: 26px;
+    }
+}
+
+.c_lpCtaBlock__lead {
+    margin-top: 12px;
+    font-size: 14px;
+    line-height: 195%;
+    letter-spacing: 0.7px;
+    p {
+        margin: 0;
+        + p {
+            margin-top: 1em;
+        }
+    }
+}
+
+/* 追従バー -------------------------------------------------------------- */
+/* 最初から出すとFVを隠すので、FVを通り過ぎてから is-shown が付く（assets/c_lp.js）。 */
+.c_lpSticky {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 20;
+    padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+    background: rgba(255, 255, 255, 0.96);
+    border-top: 1px solid $lp-line;
+    transform: translateY(110%);
+    transition: transform 0.25s ease;
+    &.is-shown {
+        transform: translateY(0);
+    }
+}
+
+.c_lpSticky__inner {
+    max-width: 560px;
+    margin: 0 auto;
+    .c_lpCta {
+        margin-top: 0;
+    }
+    .c_lpCta__btn {
+        min-height: 52px;
+        font-size: 15px;
+    }
+}
+
+/* フッター -------------------------------------------------------------- */
+.c_lpFooter {
+    margin-top: 40px;
+    padding: 28px 20px calc(32px + env(safe-area-inset-bottom));
+    background: $lp-tint;
+    /* 追従バーに隠れる分を確保する */
+    padding-bottom: calc(96px + env(safe-area-inset-bottom));
+    @include mq(pc) {
+        padding-bottom: 40px;
+    }
+}
+
+.c_lpFooter__inner {
+    max-width: 760px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.c_lpFooter__links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px 20px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    a {
+        font-size: 12px;
+        line-height: 160%;
+        letter-spacing: 0.5px;
+        color: $text-color;
+        text-decoration: underline;
+        @include mq(pc) {
+            font-size: 13px;
+        }
+    }
+}
+
+.c_lpFooter__company,
+.c_lpFooter__copy {
+    margin: 14px 0 0;
+    font-size: 11px;
+    line-height: 165%;
+    letter-spacing: 0.4px;
+}
