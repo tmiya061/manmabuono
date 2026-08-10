@@ -1,3 +1,6 @@
 .env
 .DS_Store
 __pycache__/
+
+# 構成検討用モック（他社LPの画像を外部参照している。本番テーマへ出さない）
+templates/page.lp-ref-petokoto.json

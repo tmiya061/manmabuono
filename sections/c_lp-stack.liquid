@@ -89,17 +89,38 @@
             {% if anchor != blank %}data-lp-bg-trigger="{{ anchor }}"{% endif %}
             {{ block.shopify_attributes }}
           >
-            {%- if block.settings.img != blank -%}
+            {%- if block.settings.img != blank or block.settings.img_url != blank -%}
               {%- capture img_tag -%}
-                {{
-                  block.settings.img
-                  | image_url: width: 780
-                  | image_tag:
-                    alt: block.settings.alt,
-                    loading: 'lazy',
-                    class: 'c_lpStack__img',
-                    sizes: '(min-width: 390px) 390px, 100vw'
-                }}
+                {%- if block.settings.img != blank -%}
+                  {{
+                    block.settings.img
+                    | image_url: width: 780
+                    | image_tag:
+                      alt: block.settings.alt,
+                      loading: 'lazy',
+                      class: 'c_lpStack__img',
+                      sizes: '(min-width: 390px) 390px, 100vw'
+                  }}
+                {%- else -%}
+                  {%- comment -%}
+                    外部URLの画像。Shopifyにアップせず参照だけしたいとき用（構成検討・モック）。
+                    ⚠️ 本番のLPでこれを使わないこと。他社ドメインの画像を本番で読むことになるうえ、
+                    先方の都合で消えたり差し替わったりする。本番は必ず image_picker（Shopifyのファイル）で。
+                  {%- endcomment -%}
+                  {%- comment -%}
+                    width/height は必須。外部URLだと読み込むまで高さが分からず、
+                    このLPは1枚2,000px級なので、無いとスクロール位置が飛ぶ（CLS）。
+                    高さは「画像がまだ無いとき」の想定値をそのまま使う。
+                  {%- endcomment -%}
+                  <img
+                    class="c_lpStack__img"
+                    src="{{ block.settings.img_url }}"
+                    alt="{{ block.settings.alt | escape }}"
+                    width="780"
+                    height="{{ block.settings.ph_height | default: 800 }}"
+                    loading="lazy"
+                  >
+                {%- endif -%}
               {%- endcapture -%}
 
               {%- if block.settings.link != blank -%}
@@ -137,6 +158,16 @@
                 | image_url: width: 780
                 | image_tag: alt: '', loading: 'lazy', class: 'c_lpStack__img'
               }}
+            {%- elsif block.settings.head_img_url != blank -%}
+              {%- comment -%} 外部URL（構成検討用）。本番では上の画像を使うこと {%- endcomment -%}
+              <img
+                class="c_lpStack__img"
+                src="{{ block.settings.head_img_url }}"
+                alt=""
+                width="780"
+                height="{{ block.settings.head_img_height | default: 2680 }}"
+                loading="lazy"
+              >
             {%- endif -%}
 
             <div class="c_lpStack__cvBody">
@@ -266,6 +297,12 @@
       "name": "画像スライス",
       "settings": [
         { "type": "image_picker", "id": "img", "label": "画像（幅780pxで書き出す）" },
+        {
+          "type": "text",
+          "id": "img_url",
+          "label": "画像URL（構成検討用・本番では使わない）",
+          "info": "上が空のときだけ使われます。他社ドメインの画像を本番で読むことになるので、本番は必ず上の画像で"
+        },
         { "type": "text", "id": "alt", "label": "代替テキスト", "info": "画像に書いてある文言を入れる。検索と読み上げのために必要" },
         { "type": "url", "id": "link", "label": "リンク先（任意）", "info": "入れると画像全体がボタンになります" },
         {
@@ -300,6 +337,12 @@
           "content": "LP中に2〜3回置くのが定番です。位置ごとにクリックを測り分けます。"
         },
         { "type": "image_picker", "id": "head_img", "label": "ボタン上の画像（オファー提示など・任意）" },
+        {
+          "type": "text",
+          "id": "head_img_url",
+          "label": "その画像のURL（構成検討用・本番では使わない）",
+          "info": "上が空のときだけ使われます"
+        },
         {
           "type": "select",
           "id": "position",
