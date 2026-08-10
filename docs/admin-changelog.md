@@ -9,6 +9,8 @@ Shopifyの管理画面・ストアデータは Git で追えない。**書き込
 
 ---
 
+- 2026-08-10 | product 30件のメタフィールド `custom.product_table6`（栄養成分） | 商品詳細の仕様テーブル「栄養成分」に**読点を付与**（項目の切れ目がスペースだけで、どこまでが1項目か読めなかった）。あわせて項目内の空白を正規化（`0.1％ 以下`→`0.1％以下` / `kcal/ 100g`→`kcal/100g` / ラベルと値の間は半角スペース1つ）し、**単位の全角k `ｋcal`→`kcal` を統一**（7商品で混在）。数値・項目名（脂質/脂肪）は一切変更なし。オーナー指示 | `scripts/set_nutrition_punctuation.py --apply` | 復元: `scripts/set_nutrition_punctuation.py --revert`（`scripts/nutrition/backup.json`）
+  - ⚠️ **読点を入れて可視化された値そのものの破綻は未対応（西川さん確認待ち）**：①`京の一番だし5袋` は脂質の値が抜けて以降が1つずつズレ（単品版が正なら 脂質0.1/粗繊維0.4/灰分0.5）②`地鶏のそぼろ煮3袋` は1袋と数値が食い違い（15.4→14.6・6.0→5.8）＋以上/以下が逆＋末尾に「以下」が流れている ③`枕崎-かつおのうま煮` の1袋/3袋が「脂質 vs 脂肪」「水分 79.7 vs 79.4」で不一致 ④`ダブルだし猫のごはん` だけ数値が全角（３１．８％）
 - 2026-08-10 | ページ set-teiki | **非公開 → 公開**に変更（西川さんに骨組みを見てもらうため。中身はプレースホルダのまま） | pageUpdate（GraphQL） | 復元: `isPublished: false` に戻す。変更前の状態は /tmp/page_set_teiki_before.json ＝ `{isPublished:false, publishedAt:null}`。**テーマ側で noindex を付けてあるので検索には載らない**が、URLを知っていれば誰でも見られる状態
 - 2026-08-09 | ページ set-teiki（ドライ×ウェット セット定期便 LP・準備中） | **非公開**で新規作成。テンプレート `page.lp-set-teiki` を割り当て（広告用LPの器。中身は西川さん確認待ちのプレースホルダ） | pageCreate（GraphQL） | 復元: ページを削除（gid://shopify/Page/107051450429）。非公開なので店頭には出ていない
 - 2026-08-09 | 商品メタフィールド定義 custom.card_label | 「商品カードのラベル」を新規作成（商品・単一行テキスト・16文字上限・ピン留め） | metafieldDefinitionCreate（GraphQL） | 復元: 定義を削除（gid://shopify/MetafieldDefinition/130898526269）。削除すると下記35件の値も消える
