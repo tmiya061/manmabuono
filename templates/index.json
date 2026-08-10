@@ -51,6 +51,136 @@
         "padding_bottom_sp": 40
       }
     },
+    "c_top_banner_qhyMTD": {
+      "type": "c_topBanner",
+      "blocks": {
+        "banner_qfKAYt": {
+          "type": "banner",
+          "settings": {
+            "banner-img": "shopify://shop_images/1_4x_b7475289-e015-46c6-ade0-b2d3866e4ce2.png",
+            "banner-link": "https://www.youtube.com/watch?v=rXCvWq6IQuQ"
+          }
+        },
+        "banner_rWD76K": {
+          "type": "banner",
+          "settings": {
+            "banner-img": "shopify://shop_images/1_1.png",
+            "banner-link": "https://www.furusato-tax.jp/search?q=MANMA%20BUONO&header=1&sst=B"
+          }
+        },
+        "banner_qFke8P": {
+          "type": "banner",
+          "settings": {
+            "banner-img": "shopify://shop_images/e6333084dea68e77170eebc2d9c6593a.jpg",
+            "banner-link": "shopify://products/食事代行サービス"
+          }
+        }
+      },
+      "block_order": [
+        "banner_qfKAYt",
+        "banner_rWD76K",
+        "banner_qFke8P"
+      ],
+      "custom_css": [
+        ".c_topBanner .swiper-slide {aspect-ratio: unset;}"
+      ],
+      "settings": {
+        "enable_more_than_four": true,
+        "sp_only": true,
+        "title": "見出し",
+        "padding_top": 42,
+        "padding_bottom": 32,
+        "padding_top_sp": 0,
+        "padding_bottom_sp": 40
+      }
+    },
+    "c_top_picks": {
+      "type": "c_topPicks",
+      "blocks": {
+        "copy_dog_1": {
+          "type": "copy",
+          "settings": {
+            "product": "だし薫る犬のごはん-チキン",
+            "text": "食べムラが気になる子に"
+          }
+        },
+        "copy_dog_2": {
+          "type": "copy",
+          "settings": {
+            "product": "だし薫る犬のごはん-フィッシュ-800g",
+            "text": "チキン以外を選びたい子に"
+          }
+        },
+        "copy_dog_3": {
+          "type": "copy",
+          "settings": {
+            "product": "地鶏のそぼろ煮3袋",
+            "text": "水分もいっしょに摂りたい子に"
+          }
+        },
+        "copy_cat_1": {
+          "type": "copy",
+          "settings": {
+            "product": "ダブルだし猫のごはん-チキン-800g",
+            "text": "だしの香りで食が進む子に"
+          }
+        },
+        "copy_cat_2": {
+          "type": "copy",
+          "settings": {
+            "product": "枕崎-かつおのうま煮3袋",
+            "text": "お水をあまり飲まない子に"
+          }
+        },
+        "copy_cat_3": {
+          "type": "copy",
+          "settings": {
+            "product": "舞鶴-ぶりのうま煮3袋",
+            "text": "魚が好きな子に"
+          }
+        }
+      },
+      "block_order": [
+        "copy_dog_1",
+        "copy_dog_2",
+        "copy_dog_3",
+        "copy_cat_1",
+        "copy_cat_2",
+        "copy_cat_3"
+      ],
+      "settings": {
+        "product_limit": 4,
+        "show_copy": false,
+        "dog_title": "犬用 ごはん",
+        "dog_sub": "FOR DOGS",
+        "dog_products": [
+          "だし薫る犬のごはん-チキン",
+          "地鶏のそぼろ煮3袋",
+          "犬と猫のプレミアム料理-京都舞笠置天然鹿肉-煮込みハンバーグ",
+          "チキンボーンブロス"
+        ],
+        "dog_collection": "d_recommend-set",
+        "dog_pick_title": "犬用おすすめ商品",
+        "dog_link": "shopify://collections/dog-all",
+        "dog_link_label": "犬用商品一覧はこちら",
+        "cat_title": "猫用 ごはん",
+        "cat_sub": "FOR CATS",
+        "cat_products": [
+          "ダブルだし猫のごはん-チキン-800g",
+          "枕崎-かつおのうま煮3袋",
+          "京都舞鶴港-鰤と大根の炊いたん",
+          "京の一番だし"
+        ],
+        "cat_collection": "c_recommend-set",
+        "cat_pick_title": "猫用おすすめ商品",
+        "cat_link": "shopify://collections/cat-all",
+        "cat_link_label": "猫用商品一覧はこちら",
+        "padding_top": 40,
+        "padding_bottom": 70,
+        "padding_top_sp": 20,
+        "padding_bottom_sp": 40
+      }
+    },
     "c_top_sample_itkDRk": {
       "type": "c_topSample",
       "settings": {
@@ -66,22 +196,18 @@
         "padding_bottom_sp": 0
       }
     },
-    "c_top_about_HKAHmz": {
-      "type": "c_topAbout",
-      "settings": {
-        "about_text": "皆さんの愛犬の健康のために必要な要素は、大きく3つ。それはごはんと運動、生育環境におけるストレスを回避することです。このバランスが保たれていることで健康寿命が延びます。マンマボーノでは、ドライフードとウェットフードの良さを引き出した、健康寿命を延ばすごはんのお手伝いをいたします。",
-        "about_text_side": "<span>健康寿命</span>を伸ばす<br>\nごはんのお手伝いを<br>\nいたします",
-        "padding_top": 0,
-        "padding_bottom": 0,
-        "padding_top_sp": 0,
-        "padding_bottom_sp": 0,
-        "btn_label": "マンマボーノの思いはこちら",
-        "btn_link": "/pages/story"
-      }
-    },
     "c_top_voices_cTGqWC": {
       "type": "c_topVoices",
       "blocks": {
+        "voices_npRJg6": {
+          "type": "voices",
+          "settings": {
+            "voices_image": "shopify://shop_images/pt07.jpg",
+            "voices_title": "ごはんを変えて2ヶ月、涙やけがほとんど無くなった",
+            "voices_text": "涙焼けが酷く数時間毎に涙を拭いて朝昼晩と毎日病院から貰った目薬を指していましたが効果は得られず… マンマボーノさんのご飯に変えて1ヶ月経った頃から涙が少なくなり、2ヶ月目には涙焼けがほとんど無くなりました！ そして、ご飯を変えてから体調が悪くなったことも1度もありません。 これからもずっとお世話になりたいと思います！",
+            "voices_name": "ロズちゃん"
+          }
+        },
         "voices_EWc9qX": {
           "type": "voices",
           "settings": {
@@ -107,15 +233,6 @@
             "voices_title": "悩みの違う5頭まとめて、食事から体づくり",
             "voices_text": "我が家の５シーズー達はアレルギー、少食、涙やけなどそれぞれに悩みが。健康な身体を作るにはやはり食事で腸内環境を整えていく必要があると思い、そんなフードを探していた時に、その願いを叶えてくれるフードに出会えました！ 作り手の愛情とこだわりがぎっしり詰まったフードで、しかも味も絶品です！",
             "voices_name": "紅蘭(こうらん)ちゃん"
-          }
-        },
-        "voices_npRJg6": {
-          "type": "voices",
-          "settings": {
-            "voices_image": "shopify://shop_images/pt07.jpg",
-            "voices_title": "ごはんを変えて2ヶ月、涙やけがほとんど無くなった",
-            "voices_text": "涙焼けが酷く数時間毎に涙を拭いて朝昼晩と毎日病院から貰った目薬を指していましたが効果は得られず… マンマボーノさんのご飯に変えて1ヶ月経った頃から涙が少なくなり、2ヶ月目には涙焼けがほとんど無くなりました！ そして、ご飯を変えてから体調が悪くなったことも1度もありません。 これからもずっとお世話になりたいと思います！",
-            "voices_name": "ロズちゃん"
           }
         },
         "voices_9qptiA": {
@@ -204,10 +321,10 @@
         }
       },
       "block_order": [
+        "voices_npRJg6",
         "voices_EWc9qX",
         "voices_xU4GMA",
         "voices_rrqMga",
-        "voices_npRJg6",
         "voices_9qptiA",
         "voices_qib9yd",
         "voices_azkQNN",
@@ -225,14 +342,17 @@
         "padding_bottom_sp": 32
       }
     },
-    "c_top_news_PhkhgL": {
-      "type": "c_topNews",
+    "c_top_about_HKAHmz": {
+      "type": "c_topAbout",
       "settings": {
-        "title": "見出し",
+        "about_text": "皆さんの愛犬の健康のために必要な要素は、大きく3つ。それはごはんと運動、生育環境におけるストレスを回避することです。このバランスが保たれていることで健康寿命が延びます。マンマボーノでは、ドライフードとウェットフードの良さを引き出した、健康寿命を延ばすごはんのお手伝いをいたします。",
+        "about_text_side": "<span>健康寿命</span>を伸ばす<br>\nごはんのお手伝いを<br>\nいたします",
+        "btn_label": "マンマボーノの思いはこちら",
+        "btn_link": "/pages/story",
         "padding_top": 0,
-        "padding_bottom": 60,
+        "padding_bottom": 0,
         "padding_top_sp": 0,
-        "padding_bottom_sp": 36
+        "padding_bottom_sp": 0
       }
     },
     "1707571247d74eef14": {
@@ -266,6 +386,16 @@
         "padding_bottom": 120,
         "padding_top_sp": 67,
         "padding_bottom_sp": 78
+      }
+    },
+    "c_top_news_PhkhgL": {
+      "type": "c_topNews",
+      "settings": {
+        "title": "見出し",
+        "padding_top": 0,
+        "padding_bottom": 60,
+        "padding_top_sp": 0,
+        "padding_bottom_sp": 36
       }
     },
     "c_picture_x6h77q": {
@@ -319,136 +449,6 @@
         "padding_bottom": 120,
         "padding_top_sp": 0,
         "padding_bottom_sp": 80
-      }
-    },
-    "c_top_banner_qhyMTD": {
-      "type": "c_topBanner",
-      "blocks": {
-        "banner_qfKAYt": {
-          "type": "banner",
-          "settings": {
-            "banner-img": "shopify://shop_images/1_4x_b7475289-e015-46c6-ade0-b2d3866e4ce2.png",
-            "banner-link": "https://www.youtube.com/watch?v=rXCvWq6IQuQ"
-          }
-        },
-        "banner_rWD76K": {
-          "type": "banner",
-          "settings": {
-            "banner-img": "shopify://shop_images/1_1.png",
-            "banner-link": "https://www.furusato-tax.jp/search?q=MANMA%20BUONO&header=1&sst=B"
-          }
-        },
-        "banner_qFke8P": {
-          "type": "banner",
-          "settings": {
-            "banner-img": "shopify://shop_images/e6333084dea68e77170eebc2d9c6593a.jpg",
-            "banner-link": "shopify://products/食事代行サービス"
-          }
-        }
-      },
-      "block_order": [
-        "banner_qfKAYt",
-        "banner_rWD76K",
-        "banner_qFke8P"
-      ],
-      "custom_css": [
-        ".c_topBanner .swiper-slide {aspect-ratio: unset;}"
-      ],
-      "settings": {
-        "enable_more_than_four": true,
-        "title": "見出し",
-        "padding_top": 42,
-        "padding_bottom": 32,
-        "padding_top_sp": 0,
-        "padding_bottom_sp": 40,
-        "sp_only": true
-      }
-    },
-    "c_top_picks": {
-      "type": "c_topPicks",
-      "blocks": {
-        "copy_dog_1": {
-          "type": "copy",
-          "settings": {
-            "product": "だし薫る犬のごはん-チキン",
-            "text": "食べムラが気になる子に"
-          }
-        },
-        "copy_dog_2": {
-          "type": "copy",
-          "settings": {
-            "product": "だし薫る犬のごはん-フィッシュ-800g",
-            "text": "チキン以外を選びたい子に"
-          }
-        },
-        "copy_dog_3": {
-          "type": "copy",
-          "settings": {
-            "product": "地鶏のそぼろ煮3袋",
-            "text": "水分もいっしょに摂りたい子に"
-          }
-        },
-        "copy_cat_1": {
-          "type": "copy",
-          "settings": {
-            "product": "ダブルだし猫のごはん-チキン-800g",
-            "text": "だしの香りで食が進む子に"
-          }
-        },
-        "copy_cat_2": {
-          "type": "copy",
-          "settings": {
-            "product": "枕崎-かつおのうま煮3袋",
-            "text": "お水をあまり飲まない子に"
-          }
-        },
-        "copy_cat_3": {
-          "type": "copy",
-          "settings": {
-            "product": "舞鶴-ぶりのうま煮3袋",
-            "text": "魚が好きな子に"
-          }
-        }
-      },
-      "block_order": [
-        "copy_dog_1",
-        "copy_dog_2",
-        "copy_dog_3",
-        "copy_cat_1",
-        "copy_cat_2",
-        "copy_cat_3"
-      ],
-      "settings": {
-        "product_limit": 4,
-        "dog_title": "犬用 ごはん",
-        "dog_sub": "FOR DOGS",
-        "dog_collection": "d_recommend-set",
-        "dog_link": "shopify://collections/dog-all",
-        "cat_title": "猫用 ごはん",
-        "cat_sub": "FOR CATS",
-        "cat_collection": "c_recommend-set",
-        "cat_link": "shopify://collections/cat-all",
-        "padding_top": 40,
-        "padding_bottom": 70,
-        "padding_top_sp": 20,
-        "padding_bottom_sp": 40,
-        "dog_pick_title": "犬用おすすめ商品",
-        "dog_link_label": "犬用商品一覧はこちら",
-        "cat_pick_title": "猫用おすすめ商品",
-        "cat_link_label": "猫用商品一覧はこちら",
-        "show_copy": false,
-        "dog_products": [
-          "だし薫る犬のごはん-チキン",
-          "地鶏のそぼろ煮3袋",
-          "犬と猫のプレミアム料理-京都舞笠置天然鹿肉-煮込みハンバーグ",
-          "チキンボーンブロス"
-        ],
-        "cat_products": [
-          "ダブルだし猫のごはん-チキン-800g",
-          "枕崎-かつおのうま煮3袋",
-          "京都舞鶴港-鰤と大根の炊いたん",
-          "京の一番だし"
-        ]
       }
     }
   },
