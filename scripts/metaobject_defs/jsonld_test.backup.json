@@ -1,0 +1,71 @@
+{
+  "nishikawa": {
+    "metaobjectByHandle": {
+      "id": "gid://shopify/Metaobject/172483510333",
+      "fields": [
+        {
+          "key": "name",
+          "value": "西川友保"
+        },
+        {
+          "key": "role_title",
+          "value": "マンマボーノ代表"
+        },
+        {
+          "key": "photo",
+          "value": null
+        },
+        {
+          "key": "qualification",
+          "value": "犬の管理栄養士 / 犬の腸活管理アドバイザー / 犬猫アレルギー管理アドバイザー"
+        },
+        {
+          "key": "bio",
+          "value": null
+        },
+        {
+          "key": "profile_url",
+          "value": null
+        },
+        {
+          "key": "same_as",
+          "value": null
+        }
+      ]
+    }
+  },
+  "article": {
+    "article": {
+      "id": "gid://shopify/Article/564304838717",
+      "handle": "test-article",
+      "metafields": {
+        "edges": [
+          {
+            "node": {
+              "namespace": "custom",
+              "key": "related_collection",
+              "value": "gid://shopify/Collection/279798579261",
+              "type": "collection_reference"
+            }
+          },
+          {
+            "node": {
+              "namespace": "custom",
+              "key": "author",
+              "value": "gid://shopify/Metaobject/172483510333",
+              "type": "metaobject_reference"
+            }
+          },
+          {
+            "node": {
+              "namespace": "custom",
+              "key": "recommendations",
+              "value": "[\"gid://shopify/Metaobject/172507168829\",\"gid://shopify/Metaobject/172507201597\",\"gid://shopify/Metaobject/172507234365\"]",
+              "type": "list.metaobject_reference"
+            }
+          }
+        ]
+      }
+    }
+  }
+}

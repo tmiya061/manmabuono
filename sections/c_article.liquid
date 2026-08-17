@@ -310,8 +310,8 @@
     "mainEntityOfPage": { "@type": "WebPage", "@id": {{ request.origin | append: article.url | json }} },
     {% if article.image %}"image": [{{ og_image | json }}],{% endif %}
     {% if category %}"articleSection": {{ category.name.value | json }},{% endif %}
-    "author": { "@type": "Person", "name": {{ author_name | json }}{% if author_mo.role_title.value %}, "jobTitle": {{ author_mo.role_title.value | json }}{% endif %}{% if author_mo.qualification.value %}, "description": {{ author_mo.qualification.value | json }}{% endif %} },
-    {% if supervisor_mo %}"reviewedBy": { "@type": "Person", "name": {{ supervisor_mo.name.value | json }}{% if supervisor_mo.role_title.value %}, "jobTitle": {{ supervisor_mo.role_title.value | json }}{% endif %} },{% endif %}
+    "author": {% render 'c_article-person-jsonld', person: author_mo, fallback_name: author_name %},
+    {% if supervisor_mo %}"reviewedBy": {% render 'c_article-person-jsonld', person: supervisor_mo %},{% endif %}
     "publisher": { "@type": "Organization", "name": {{ shop.name | json }}, "url": {{ request.origin | json }} }
   }
 </script>

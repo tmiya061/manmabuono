@@ -1,0 +1,69 @@
+{
+  "metaobjectDefinitionByType": {
+    "id": "gid://shopify/MetaobjectDefinition/11262722109",
+    "type": "article_author",
+    "name": "記事著者",
+    "displayNameKey": "name",
+    "access": {
+      "storefront": "PUBLIC_READ",
+      "admin": "PUBLIC_READ_WRITE"
+    },
+    "fieldDefinitions": [
+      {
+        "key": "name",
+        "name": "名前",
+        "description": "",
+        "required": false,
+        "type": {
+          "name": "single_line_text_field"
+        },
+        "validations": []
+      },
+      {
+        "key": "role_title",
+        "name": "肩書き",
+        "description": "",
+        "required": false,
+        "type": {
+          "name": "single_line_text_field"
+        },
+        "validations": []
+      },
+      {
+        "key": "photo",
+        "name": "顔写真",
+        "description": "",
+        "required": false,
+        "type": {
+          "name": "file_reference"
+        },
+        "validations": [
+          {
+            "name": "file_type_options",
+            "value": "[\"Image\"]"
+          }
+        ]
+      },
+      {
+        "key": "qualification",
+        "name": "保有資格",
+        "description": "",
+        "required": false,
+        "type": {
+          "name": "single_line_text_field"
+        },
+        "validations": []
+      },
+      {
+        "key": "bio",
+        "name": "プロフィール",
+        "description": "",
+        "required": false,
+        "type": {
+          "name": "multi_line_text_field"
+        },
+        "validations": []
+      }
+    ]
+  }
+}

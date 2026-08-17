@@ -1,0 +1,22 @@
+{%- comment -%}
+  構造化データ（JSON-LD）用の Person オブジェクトを1つ出力する。
+  使い方: {% render 'c_article-person-jsonld', person: author_mo, fallback_name: author_name %}
+
+  person:        メタオブジェクト article_author（nil 可。nil なら fallback_name で名前だけ出す）
+  fallback_name: person が無いときの名前（任意）
+
+  出力: { "@type": "Person", "name": "…", "jobTitle": "…", "description": "…", "url": "…", "sameAs": […] }
+  ※ 前後にカンマは付けないので、呼び出し側で付けること
+  ※ 出力は1行に収めている（改行を挟むと JSON-LD が読みにくくなるため）。編集時も改行を入れないこと
+  ※ profile_url / same_as は E-E-A-T 用。`url` ではなく `profile_url` をキーにしているのは、
+     メタオブジェクトのドロップが持つ組み込みプロパティと衝突させないため
+  ※ 判定は `!= blank` で統一する。`.size > 0` は値が nil のとき Liquid が比較エラーを出す
+{%- endcomment -%}
+{%- liquid
+  assign p_name = person.name.value | default: fallback_name
+  assign p_title = person.role_title.value
+  assign p_qual = person.qualification.value
+  assign p_url = person.profile_url.value
+  assign p_same = person.same_as.value
+-%}
+{ "@type": "Person", "name": {{ p_name | json }}{% if p_title != blank %}, "jobTitle": {{ p_title | json }}{% endif %}{% if p_qual != blank %}, "description": {{ p_qual | json }}{% endif %}{% if p_url != blank %}, "url": {{ p_url | json }}{% endif %}{% if p_same != blank %}, "sameAs": {{ p_same | json }}{% endif %} }
