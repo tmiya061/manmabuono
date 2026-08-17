@@ -42,6 +42,8 @@
 - `/blogs/column` 一覧=c_blogList、記事=c_article。カテゴリ=記事タグ×メタオブジェクト article_category（ハンドル=スラッグ、7種: choose/trouble/feeding/health/storage/basics/homemade）
 - 自由タグ: cat/dog/kitten/puppy/senior/dry/wet（日本語名は snippets/c_tag-label.liquid）
 - 著者・監修者: メタオブジェクト article_author を記事メタフィールド custom.author / custom.supervisor から参照
+  - **著者ページ**: article_author に `onlineStore` capability を付けてあるので、エントリーを1件足すと `/pages/author/{ハンドル}` が自動で生える（`templates/metaobject/article_author.json` ＋ `sections/c_author.liquid`）。**固定ページは作らない**。`bio` が空のあいだは theme.liquid が noindex を付ける
+  - 未設定記事のフォールバック「マンマボーノ編集部」は **c_article のセクション設定 `default_author` の文字列**であって editorial-team エントリーではない（名前だけ出る。写真・資格・bio は出ない）
 - **記事下CTA**: 記事完成後にオーナーから商品指定を受けて `python3 scripts/set_article_cta.py <記事handle> "<商品handle>[::一言]" ...` で反映（一言は任意・基本なし）
 - SEO: カテゴリ以外のタグ絞り込みはnoindex、カテゴリ頁はtitle/description差し替え（theme.liquid）
 

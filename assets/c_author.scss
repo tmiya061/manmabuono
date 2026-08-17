@@ -1,0 +1,133 @@
+@import "variables";
+
+// 著者プロフィールページ（/pages/author/{ハンドル}）
+// 記事下の著者カード（.c_articleAuthor）と同じデータを、ページ用に大きく組み直したもの。
+// カードを流用しなかったのは、ページの主役が本人になるため写真と氏名の比重を上げたいから。
+
+.c_author {
+    max-width: 760px;
+    margin-left: auto;
+    margin-right: auto;
+    color: $text-color;
+}
+
+.c_author__label {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    line-height: 1;
+    color: #fff;
+    background: $text-color;
+    border-radius: 999px;
+    padding: 5px 12px;
+    margin-bottom: 20px;
+    @include mq(pc) {
+        font-size: 11px;
+    }
+}
+
+.c_author__head {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    @include mq(pc) {
+        gap: 32px;
+    }
+}
+
+.c_author__photo {
+    flex-shrink: 0;
+    width: 96px;
+    @include mq(pc) {
+        width: 160px;
+    }
+    img {
+        width: 100%;
+        aspect-ratio: 1;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+}
+
+.c_author__headBody {
+    flex: 1;
+    min-width: 0;
+}
+
+.c_author__role {
+    font-size: 12px;
+    line-height: 1.6;
+    color: #888;
+    margin-bottom: 4px;
+    @include mq(pc) {
+        font-size: 14px;
+    }
+}
+
+.c_author__name {
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.4;
+    margin: 0;
+    @include mq(pc) {
+        font-size: 30px;
+    }
+}
+
+.c_author__qual {
+    font-size: 12px;
+    line-height: 1.7;
+    color: #666;
+    margin-top: 8px;
+    @include mq(pc) {
+        font-size: 13px;
+        margin-top: 10px;
+    }
+}
+
+.c_author__bio {
+    font-size: 14px;
+    line-height: 2;
+    margin-top: 28px;
+    padding-top: 28px;
+    border-top: 1px solid #eae7e2;
+    @include mq(pc) {
+        font-size: 15px;
+        margin-top: 40px;
+        padding-top: 40px;
+    }
+}
+
+.c_author__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1;
+    color: $text-color;
+    text-decoration: none;
+    border: 1px solid $text-color;
+    border-radius: 999px;
+    padding: 14px 24px;
+    margin-top: 32px;
+    transition: color .2s, background-color .2s, border-color .2s;
+    @include mq(pc) {
+        font-size: 14px;
+        margin-top: 40px;
+    }
+    &::after {
+        content: '';
+        width: 6px;
+        height: 6px;
+        border-top: 1px solid currentColor;
+        border-right: 1px solid currentColor;
+        transform: rotate(45deg);
+    }
+    &:hover {
+        color: #fff;
+        background: $base-color;
+        border-color: $base-color;
+    }
+}

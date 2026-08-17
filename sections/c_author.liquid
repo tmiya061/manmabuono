@@ -1,0 +1,154 @@
+{{ 'c_common.min.css' | asset_url | stylesheet_tag }}
+{{ 'c_author.min.css' | asset_url | stylesheet_tag }}
+
+{%- comment -%}
+  著者プロフィールページ（メタオブジェクト article_author のページ）
+
+  URL は /pages/author/{ハンドル}。メタオブジェクトの onlineStore capability を
+  有効にしてあるので、管理画面で著者エントリーを1件追加すれば、このテンプレートで
+  ページが自動的に生える。著者ごとに固定ページを作る必要はない。
+
+  表示内容は記事下の著者カード（c_article-author-card）と同じデータを参照しているので、
+  管理画面の1箇所を直せば記事側とこのページの両方に反映される（二重管理にしない）。
+{%- endcomment -%}
+
+{%- liquid
+  assign p_name = metaobject.name.value
+  assign p_title = metaobject.role_title.value
+  assign p_qual = metaobject.qualification.value
+  assign p_bio = metaobject.bio.value
+  assign p_photo = metaobject.photo.value
+-%}
+
+{%- style -%}
+  #shopify-section-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+
+  @media screen and (max-width: 750px) {
+    #shopify-section-{{ section.id }} {
+      padding-top: {{ section.settings.padding_top_sp }}px;
+      padding-bottom: {{ section.settings.padding_bottom_sp }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="c_author page-width">
+  {%- if section.settings.label != blank -%}
+    <p class="c_author__label">{{ section.settings.label }}</p>
+  {%- endif -%}
+
+  <div class="c_author__head">
+    {%- if p_photo -%}
+      <div class="c_author__photo">
+        <img
+          src="{{ p_photo | image_url: width: 320 }}"
+          alt="{{ p_name | escape }}"
+          width="160"
+          height="160"
+          loading="eager">
+      </div>
+    {%- endif -%}
+
+    <div class="c_author__headBody">
+      {%- if p_title != blank -%}
+        <p class="c_author__role">{{ p_title }}</p>
+      {%- endif -%}
+      <h1 class="c_author__name">{{ p_name }}</h1>
+      {%- if p_qual != blank -%}
+        <p class="c_author__qual">{{ p_qual }}</p>
+      {%- endif -%}
+    </div>
+  </div>
+
+  {%- if p_bio != blank -%}
+    <div class="c_author__bio">{{ p_bio | newline_to_br }}</div>
+  {%- endif -%}
+
+  {%- if section.settings.link_url != blank and section.settings.link_label != blank -%}
+    <a class="c_author__link" href="{{ section.settings.link_url }}">{{ section.settings.link_label }}</a>
+  {%- endif -%}
+</div>
+
+{%- comment -%}
+  構造化データ。Person 部分は記事側（author / reviewedBy）と同じ部品を使うので、
+  項目を足すときは c_article-person-jsonld.liquid だけを直せば両方に反映される。
+{%- endcomment -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  "url": {{ canonical_url | json }},
+  "mainEntity": {% render 'c_article-person-jsonld', person: metaobject %}
+}
+</script>
+
+{% schema %}
+{
+  "name": "著者プロフィール",
+  "settings": [
+    {
+      "type": "text",
+      "id": "label",
+      "label": "見出しラベル",
+      "default": "執筆者"
+    },
+    {
+      "type": "text",
+      "id": "link_label",
+      "label": "リンクのテキスト",
+      "default": "マンマボーノの思い"
+    },
+    {
+      "type": "url",
+      "id": "link_url",
+      "label": "リンク先"
+    },
+    {
+      "type": "header",
+      "content": "余白"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "上余白（PC）",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "下余白（PC）",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "default": 120
+    },
+    {
+      "type": "range",
+      "id": "padding_top_sp",
+      "label": "上余白（SP）",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_sp",
+      "label": "下余白（SP）",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 64
+    }
+  ]
+}
+{% endschema %}

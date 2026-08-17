@@ -1,0 +1,19 @@
+{
+  "sections": {
+    "c_author": {
+      "type": "c_author",
+      "settings": {
+        "label": "執筆者",
+        "link_label": "マンマボーノの思い",
+        "link_url": "shopify://pages/story",
+        "padding_top": 80,
+        "padding_bottom": 120,
+        "padding_top_sp": 40,
+        "padding_bottom_sp": 64
+      }
+    }
+  },
+  "order": [
+    "c_author"
+  ]
+}

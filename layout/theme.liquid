@@ -50,6 +50,14 @@
       if template.suffix contains 'lp-'
         assign lp_noindex = true
       endif
+
+      # 著者ページ（/pages/author/◯◯）は、プロフィール文が入るまで noindex にする。
+      # メタオブジェクトを1件追加した時点でURLが生えてしまうため、氏名と肩書きだけの
+      # 中身の薄いページが検索に載るのを防ぐ。bio を入れれば自動的に index に戻る。
+      assign author_noindex = false
+      if metaobject.system.type == 'article_author' and metaobject.bio.value == blank
+        assign author_noindex = true
+      endif
     -%}
     <title>
       {%- if column_category_name != '' -%}{{ column_category_name }}｜{%- endif -%}
@@ -59,7 +67,7 @@
       {%- unless page_title contains shop.name %}｜{{ shop.name }}{% endunless -%}
     </title>
 
-    {% if column_tag_noindex or lp_noindex %}
+    {% if column_tag_noindex or lp_noindex or author_noindex %}
       <meta name="robots" content="noindex, follow">
     {% endif %}
 
