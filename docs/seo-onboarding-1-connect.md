@@ -1,40 +1,43 @@
-# STEP1｜Claude Code と Shopify を繋ぐ（垣谷さん向け）
+# STEP1 ｜ Claude Code と Shopify を繋ぐ（垣谷さん向け）
 
-**この1枚をそのまま Claude Code に読ませてください。**
+**この 1 枚をそのまま Claude Code に読ませてください。**
 
 > 例：「このファイルの手順どおりに、Shopify Admin API との接続をセットアップして。
 > 疎通確認（読み取りのみ）まで通ったら止めて。書き込み系は実行しないで。」
 
-**このSTEPのゴール＝疎通確認が通ること。記事はまだ1本も書きません。**
+**この STEP のゴール＝疎通確認が通ること。記事はまだ 1 本も書きません。**
 記事の書き方・注意事項は、接続が終わったら STEP2 をお渡しします。
 
 担当：宮川（環境構築・テーマ側の実装）／詰まったらこちらへ。
 
 ---
 
-## 前提（30秒で読めます）
+## 前提（30 秒で読めます）
 
 - 書くのは `/blogs/column` のコラム記事です。記事は**管理画面側のデータ**で、サイトの見た目（テーマ）とは**別レイヤー**です
-- 🔴 **テーマのリポジトリは clone しないでください。`shopify theme pull` も不要です。**
+- 🔴 **テーマのリポジトリは clone しないでください。**`shopify theme pull` **も不要です。**
   テーマは Git で管理されていて、main への push が即・本番反映される構成になっています。記事の投稿にテーマは一切関係ありません
-- SEOのテンプレート実装（構造化データ・パンくず・noindex・目次の自動生成）は**すでに入っています**。自分で実装しないでください
+- SEO のテンプレート実装（構造化データ・パンくず・noindex・目次の自動生成）は**すでに入っています**。自分で実装しないでください
 
 ## 1. アプリと認証
 
 `claude-seo` という専用アプリを、マンマボーノのストアにインストール済みです。
-クライアントID / シークレットは別途安全な経路でお渡しします。
+クライアント ID / シークレットは別途安全な経路でお渡しします。
 
-> 2026年1月から Shopify の「管理画面で作るカスタムアプリ」が廃止され、`shpat_` で始まる静的トークンは発行されません。
-> 現行は **client credentials grant** で、24時間有効のトークンを毎回発行する方式です。
+> 2026 年 1 月から Shopify の「管理画面で作るカスタムアプリ」が廃止され、`shpat_` で始まる静的トークンは発行されません。
+> 現行は **client credentials grant** で、24 時間有効のトークンを毎回発行する方式です。
 
 ### `.env` を作る
 
-作業ディレクトリの直下に `.env` を作り、**`.gitignore` に `.env` を必ず追加**してください。
+作業ディレクトリの直下に `.env` を作り、`.gitignore` **に** `.env` **を必ず追加**してください。
+
+クライアント ID / シークレットは Dev Dashboard の `claude-seo` → 「設定」から確認できます。
+[https://dev.shopify.com/dashboard/103630706/apps/411441954817/settings](https://dev.shopify.com/dashboard/103630706/apps/411441954817/settings)
 
 ```
 SHOPIFY_STORE_DOMAIN=007a21-4.myshopify.com
-SHOPIFY_CLIENT_ID=（お渡ししたもの）
-SHOPIFY_CLIENT_SECRET=（お渡ししたもの）
+SHOPIFY_CLIENT_ID=
+SHOPIFY_CLIENT_SECRET=
 ```
 
 ### 🔴 シークレットの扱い（ここだけは今やってください）
@@ -93,7 +96,7 @@ def gql(query, variables=None):
     return out["data"]
 ```
 
-REST ではなく **GraphQL Admin API（`2026-07`）** を使ってください。Shopify は GraphQL に一本化する方向です。
+REST ではなく **GraphQL Admin API（**`2026-07`**）** を使ってください。Shopify は GraphQL に一本化する方向です。
 
 ## 3. 疎通確認（🔴 読み取りのみ。書き込みは試さない）
 
@@ -103,7 +106,7 @@ print(gql('{ shop { name myshopifyDomain } }'))
 print(gql('{ currentAppInstallation { accessScopes { handle } } }'))
 ```
 
-2つ目で以下の9個が出れば**接続完了**です。
+2 つ目で以下の 9 個が出れば**接続完了**です。
 
 ```
 read_content, write_content, read_files, write_files,
