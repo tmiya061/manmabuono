@@ -6,7 +6,7 @@
 | アプリ | 使う人 | write | 用途 |
 |---|---|---|---|
 | `claude-admin` | 宮川 | 商品・在庫・記事・ファイル・メタオブジェクト（定義含む） | 管理画面作業全般 |
-| `claude-seo` | SEO担当（外部） | **記事とファイルのみ** | コラム記事の作成・更新 |
+| `claude-seo` | 垣谷さん（SEO・業務委託） | **記事とファイルのみ** | コラム記事の作成・更新 |
 
 `claude-seo` は 2026-08-17 に作成（→ [admin-changelog.md](admin-changelog.md)）。
 
@@ -52,28 +52,27 @@ POST https://{store}.myshopify.com/admin/oauth/access_token
 実装の見本は `scripts/shopifyql.py` の `load_env()` / `get_token()` / `gql()`。
 `claude-admin` も `claude-seo` も**まったく同じコードで動く**（`.env` の中身が違うだけ）。API バージョンは `2026-07`。
 
-## SEO担当への引き継ぎ
+## 垣谷さんへの引き継ぎ（2段階で渡す）
 
-渡すもの：
+**1枚にまとめない。**接続前に記事のタグ規則まで読ませても優先順位がぼやけるので、STEP を分けて順に渡す。
 
-1. `claude-seo` の **クライアントID / シークレット**（Dev Dashboard → claude-seo → 設定）
-   - **チャット・メール本文に平文で貼らない。** シークレットは無期限なので、漏れたら Dev Dashboard で「ローテーション」
-2. `scripts/shopifyql.py` の認証まわり30行（`load_env` / `get_token` / `gql`）
-3. `.env` は各自で作る（git 管理外）
-   ```
-   SHOPIFY_STORE_DOMAIN=007a21-4.myshopify.com
-   SHOPIFY_CLIENT_ID=...
-   SHOPIFY_CLIENT_SECRET=...
-   ```
-4. [blog-column-setup.md](blog-column-setup.md) の「記事の書き方ルール」
+### STEP1 → [seo-onboarding-1-connect.md](seo-onboarding-1-connect.md)
 
-伝えておくこと：
+いま渡すもの。**ゴールは疎通確認が通ることだけ**（記事は1本も書かせない）。
 
-- **記事は下書きで作る → 管理画面で確認 → 公開。** いきなり公開しない
-- **既存記事を更新する前に、現在の本文を JSON で退避する。** 記事にバージョン履歴は無く、上書きしたら戻せない
-- 書き込み系をやったら [admin-changelog.md](admin-changelog.md) に1行残す
-- テーマ（サイトの見た目・SEOのテンプレ実装）は触らない。必要なら宮川に言う
-- 記事の **抜粋（excerpt）は必ず書く**（meta description に使われる）
+- 一緒に渡す：`claude-seo` の **クライアントID / シークレット**（Dev Dashboard → claude-seo → 設定）
+  - **チャット・メール本文に平文で貼らない。** シークレットは無期限なので、漏れたら Dev Dashboard で「ローテーション」
+- 認証コード（`load_env` / `get_token` / `gql`）は STEP1 に直接載せてある。`scripts/shopifyql.py` と同じもの
+
+STEP1 に**残した注意は3つだけ**。セットアップの瞬間にしか効かないもの：
+
+1. シークレットの扱い（`.env` / `.gitignore` / チャットに貼らない）— 後から言っても手遅れ
+2. 疎通確認は読み取りのみ。繋がった勢いで書き込みを試させない
+3. テーマのリポジトリは clone しない（「Shopifyと連携」で `shopify theme pull` に行く動線を先に潰す）
+
+### STEP2 → [seo-onboarding-2-rules.md](seo-onboarding-2-rules.md)
+
+**「疎通確認まで通りました」の連絡を受けてから**渡す。権限の範囲、記事を出す流れ（下書き→確認→公開／更新前の退避／changelog）、記事の書き方ルール、テーマ側の実装済みリスト、やらないでほしいこと。
 
 ## 権限を止めたいとき
 
