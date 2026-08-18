@@ -11,7 +11,7 @@
 
 例（訴求文なし2つ＋ありを1つ）:
   python3 scripts/set_article_cta.py neko-wetfood-tabenai \
-    "無塩-鹿児島枕崎-おつお削り節" \
+    "無塩-鹿児島枕崎-かつお削り節" \
     "cat-trial-set::偏食の猫ちゃんの「食べるもの探し」がまとめてできます"
 
 仕様:
