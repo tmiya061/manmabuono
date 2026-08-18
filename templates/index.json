@@ -44,7 +44,7 @@
       ],
       "settings": {
         "title1": "健康寿命を延ばす",
-        "title2": "ペットのごはんのお手伝い",
+        "title2": "犬と猫のごはんのお手伝い",
         "padding_top": 0,
         "padding_bottom": 0,
         "padding_top_sp": 24,
@@ -185,7 +185,7 @@
       "type": "c_topSample",
       "settings": {
         "title": "マンマボーノから<br>\nお試しセットが登場！",
-        "text": "愛するペットのために特別に選ばれた、<br>栄養豊富で健康的なお試しセットです。",
+        "text": "愛する犬と猫のために特別に選ばれた、<br>栄養豊富で健康的なお試しセットです。",
         "price_emphasis": "box",
         "saving_box_bg": "coral",
         "sample-img1": "shopify://shop_images/l.jpg",
