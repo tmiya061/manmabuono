@@ -24,13 +24,19 @@
                 <img class="pc" src="{{ 'collection_dog_pc.png' | file_url }}" alt="犬と猫の写真" width="1200">
                 <img class="sp" src="{{ 'collection_dog.png' | file_url }}" alt="犬と猫の写真" width="316">
             {% endif %}
+            {%- comment -%}
+                ここは全コレクション共通の飾り。見出しタグにすると28ページのh1が
+                すべて「FOR DOG」になり、ページ固有の語が見出しから消える。
+                h1はコレクション名（c_collectionCategory 側）に持たせるため、
+                ここは div にしている。クラスはそのままなので見た目は変わらない。
+            {%- endcomment -%}
             <div class="c_underFv__text">
                 {% if collection.handle contains 'cat' %}
-                    <h1 class="c_underFv__title--en">FOR CAT</h1>
-                    <h2 class="c_underFv__title--jp">猫用ごはん</h2>
+                    <div class="c_underFv__title--en">FOR CAT</div>
+                    <div class="c_underFv__title--jp">猫用ごはん</div>
                 {% else %}
-                    <h1 class="c_underFv__title--en">FOR DOG</h1>
-                    <h2 class="c_underFv__title--jp">犬用ごはん</h2>
+                    <div class="c_underFv__title--en">FOR DOG</div>
+                    <div class="c_underFv__title--jp">犬用ごはん</div>
                 {% endif %}
             </div>
         </div>

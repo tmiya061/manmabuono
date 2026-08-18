@@ -19,7 +19,8 @@
 {% render 'c_collection-nav', variant: 'chips' %}
 
 <div class="c_collectionCategory__title-wrap page-width">
-  <h2 class="c_collectionCategory__title">{{ collection.title | split: '-' | last }}</h2>
+  {%- comment -%} ページ固有の語を持つのはここだけなので、コレクションページのh1はこれ {%- endcomment -%}
+  <h1 class="c_collectionCategory__title">{{ collection.title | split: '-' | last }}</h1>
   <svg
     class="c_collectionCategory__icon"
     xmlns="http://www.w3.org/2000/svg"
