@@ -43,7 +43,7 @@ JSは `c_article.liquid` 内にインライン（目次生成・スクロール�
 
 | タイプ | フィールド | 用途 |
 |---|---|---|
-| `article_author` | name / role_title / photo / qualification / bio | 著者・監修者。エントリー例: `editorial-team`（マンマボーノ編集部）、西川さん（3資格持ち） |
+| `article_author` | name / name_kana / role_title / photo / qualification / bio（短文）/ long_bio（著者ページ用リッチテキスト）/ profile_url / same_as | 著者・監修者。エントリー例: `editorial-team`（マンマボーノ編集部）、西川さん（3資格持ち） |
 | `article_category` | name / description | カテゴリ。**エントリーのハンドル＝カテゴリスラッグ＝記事に付けるタグ** |
 | `product_recommendation` | product（商品参照）/ copy（1行・任意） | 記事下CTA。**記事ごとにAPIで自動生成**（手動登録しない） |
 
