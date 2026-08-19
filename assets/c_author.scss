@@ -21,9 +21,10 @@
     background: $text-color;
     border-radius: 999px;
     padding: 5px 12px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     @include mq(pc) {
         font-size: 11px;
+        margin-bottom: 12px;
     }
 }
 
@@ -66,6 +67,10 @@
 }
 
 .c_author__name {
+    // c_common の h1（中央揃え・nowrap・字間4.8px）を打ち消して左揃えにする
+    text-align: left;
+    white-space: normal;
+    letter-spacing: 1px;
     font-size: 22px;
     font-weight: 700;
     line-height: 1.4;

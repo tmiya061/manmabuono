@@ -631,6 +631,13 @@
             border-radius: 50%;
         }
     }
+    // ラベル（執筆者／監修者）は氏名の左に並べる
+    .c_articleAuthor__head {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 4px 10px;
+    }
     .c_articleAuthor__label {
         display: inline-block;
         font-size: 10px;
@@ -641,7 +648,6 @@
         background: $text-color;
         border-radius: 999px;
         padding: 4px 10px;
-        margin-bottom: 6px;
         @include mq(pc) {
             font-size: 11px;
         }

@@ -21,11 +21,13 @@
       </div>
     {%- endif -%}
     <div class="c_articleAuthor__body">
-      <span class="c_articleAuthor__label">{{ label | default: '執筆者' }}</span>
-      <p class="c_articleAuthor__name">
-        {{ p_name }}
-        {%- if p_title != blank %} <small>{{ p_title }}</small>{% endif -%}
-      </p>
+      <div class="c_articleAuthor__head">
+        <span class="c_articleAuthor__label">{{ label | default: '執筆者' }}</span>
+        <p class="c_articleAuthor__name">
+          {{ p_name }}
+          {%- if p_title != blank %} <small>{{ p_title }}</small>{% endif -%}
+        </p>
+      </div>
       {%- if p_qual != blank -%}
         <p class="c_articleAuthor__qual">{{ p_qual }}</p>
       {%- endif -%}

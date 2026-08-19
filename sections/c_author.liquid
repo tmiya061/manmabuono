@@ -42,10 +42,6 @@
 {%- endstyle -%}
 
 <div class="c_author page-width">
-  {%- if section.settings.label != blank -%}
-    <p class="c_author__label">{{ section.settings.label }}</p>
-  {%- endif -%}
-
   <div class="c_author__head">
     {%- if p_photo -%}
       <div class="c_author__photo">
@@ -59,6 +55,9 @@
     {%- endif -%}
 
     <div class="c_author__headBody">
+      {%- if section.settings.label != blank -%}
+        <p class="c_author__label">{{ section.settings.label }}</p>
+      {%- endif -%}
       {%- if p_title != blank -%}
         <p class="c_author__role">{{ p_title }}</p>
       {%- endif -%}
