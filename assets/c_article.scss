@@ -687,6 +687,32 @@
             font-size: 13px;
         }
     }
+    // 著者ページへのリンク（右下・テキストリンク）
+    .c_articleAuthor__more {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 6px;
+        font-size: 12px;
+        font-weight: 700;
+        color: $text-color;
+        text-decoration: none;
+        margin-top: 10px;
+        @include mq(pc) {
+            font-size: 13px;
+        }
+        &::after {
+            content: '';
+            width: 5px;
+            height: 5px;
+            border-top: 1px solid currentColor;
+            border-right: 1px solid currentColor;
+            transform: rotate(45deg);
+        }
+        &:hover {
+            color: $base-color;
+        }
+    }
 }
 
 // -----------------------------

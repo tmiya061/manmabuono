@@ -9,6 +9,11 @@
   assign p_qual = person.qualification.value
   assign p_bio = person.bio.value
   assign p_photo = person.photo.value
+  # 著者ページへのリンク。onlineStore が生成する実URL（system.url）を優先し、無ければ profile_url
+  assign p_link = person.system.url
+  if p_link == blank
+    assign p_link = person.profile_url.value
+  endif
   unless p_name
     assign p_name = fallback_name
   endunless
@@ -33,6 +38,9 @@
       {%- endif -%}
       {%- if p_bio != blank -%}
         <p class="c_articleAuthor__bio">{{ p_bio | newline_to_br }}</p>
+      {%- endif -%}
+      {%- if p_link != blank -%}
+        <a class="c_articleAuthor__more" href="{{ p_link }}">プロフィールを見る</a>
       {%- endif -%}
     </div>
   </div>
