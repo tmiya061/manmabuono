@@ -1,0 +1,194 @@
+{
+  "metaobjectDefinitionByType": {
+    "id": "gid://shopify/MetaobjectDefinition/11262722109",
+    "name": "記事著者",
+    "capabilities": {
+      "renderable": {
+        "enabled": true,
+        "data": {
+          "metaTitleKey": "name",
+          "metaDescriptionKey": "bio"
+        }
+      },
+      "onlineStore": {
+        "enabled": true,
+        "data": {
+          "urlHandle": "author",
+          "canCreateRedirects": true
+        }
+      }
+    },
+    "fieldDefinitions": [
+      {
+        "key": "name",
+        "name": "名前",
+        "type": {
+          "name": "single_line_text_field"
+        },
+        "required": false,
+        "validations": []
+      },
+      {
+        "key": "role_title",
+        "name": "肩書き",
+        "type": {
+          "name": "single_line_text_field"
+        },
+        "required": false,
+        "validations": []
+      },
+      {
+        "key": "photo",
+        "name": "顔写真",
+        "type": {
+          "name": "file_reference"
+        },
+        "required": false,
+        "validations": [
+          {
+            "name": "file_type_options",
+            "value": "[\"Image\"]"
+          }
+        ]
+      },
+      {
+        "key": "qualification",
+        "name": "保有資格",
+        "type": {
+          "name": "single_line_text_field"
+        },
+        "required": false,
+        "validations": []
+      },
+      {
+        "key": "bio",
+        "name": "プロフィール",
+        "type": {
+          "name": "multi_line_text_field"
+        },
+        "required": false,
+        "validations": []
+      },
+      {
+        "key": "profile_url",
+        "name": "プロフィールページURL",
+        "type": {
+          "name": "url"
+        },
+        "required": false,
+        "validations": []
+      },
+      {
+        "key": "same_as",
+        "name": "SNS・外部プロフィール",
+        "type": {
+          "name": "list.url"
+        },
+        "required": false,
+        "validations": []
+      }
+    ]
+  },
+  "metaobjects": {
+    "nodes": [
+      {
+        "id": "gid://shopify/Metaobject/172422856765",
+        "handle": "editorial-team",
+        "displayName": "マンマボーノ編集部",
+        "fields": [
+          {
+            "key": "name",
+            "type": "single_line_text_field",
+            "value": "マンマボーノ編集部",
+            "reference": null
+          },
+          {
+            "key": "role_title",
+            "type": "single_line_text_field",
+            "value": null,
+            "reference": null
+          },
+          {
+            "key": "photo",
+            "type": "file_reference",
+            "value": null,
+            "reference": null
+          },
+          {
+            "key": "qualification",
+            "type": "single_line_text_field",
+            "value": null,
+            "reference": null
+          },
+          {
+            "key": "bio",
+            "type": "multi_line_text_field",
+            "value": null,
+            "reference": null
+          },
+          {
+            "key": "profile_url",
+            "type": "url",
+            "value": null,
+            "reference": null
+          },
+          {
+            "key": "same_as",
+            "type": "list.url",
+            "value": null,
+            "reference": null
+          }
+        ]
+      },
+      {
+        "id": "gid://shopify/Metaobject/172483510333",
+        "handle": "nishikawa",
+        "displayName": "西川友保",
+        "fields": [
+          {
+            "key": "name",
+            "type": "single_line_text_field",
+            "value": "西川友保",
+            "reference": null
+          },
+          {
+            "key": "role_title",
+            "type": "single_line_text_field",
+            "value": "マンマボーノ代表",
+            "reference": null
+          },
+          {
+            "key": "photo",
+            "type": "file_reference",
+            "value": null,
+            "reference": null
+          },
+          {
+            "key": "qualification",
+            "type": "single_line_text_field",
+            "value": "犬の管理栄養士 / 犬の腸活管理アドバイザー / 犬猫アレルギー管理アドバイザー",
+            "reference": null
+          },
+          {
+            "key": "bio",
+            "type": "multi_line_text_field",
+            "value": null,
+            "reference": null
+          },
+          {
+            "key": "profile_url",
+            "type": "url",
+            "value": null,
+            "reference": null
+          },
+          {
+            "key": "same_as",
+            "type": "list.url",
+            "value": "[]",
+            "reference": null
+          }
+        ]
+      }
+    ]
+  }
+}

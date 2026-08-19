@@ -75,6 +75,19 @@
     }
 }
 
+.c_author__kana {
+    display: block;
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 1.4;
+    color: #888;
+    margin-top: 4px;
+    @include mq(pc) {
+        font-size: 13px;
+        margin-top: 6px;
+    }
+}
+
 .c_author__qual {
     font-size: 12px;
     line-height: 1.7;
@@ -96,6 +109,38 @@
         font-size: 15px;
         margin-top: 40px;
         padding-top: 40px;
+    }
+}
+
+// long_bio（リッチテキスト）。見出し（h2）＋段落の組み合わせを想定。
+// metafield_tag が <div class="metafield-rich_text_field"> でくるむので、その中を当てる。
+.c_author__bio--rich {
+    h2 {
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 1.6;
+        margin: 40px 0 12px;
+        @include mq(pc) {
+            font-size: 19px;
+            margin: 56px 0 16px;
+        }
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+    p {
+        margin: 0 0 1.2em;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    a {
+        color: $text-color;
+        text-decoration: underline;
+        text-underline-offset: 3px;
+        &:hover {
+            color: $base-color;
+        }
     }
 }
 
