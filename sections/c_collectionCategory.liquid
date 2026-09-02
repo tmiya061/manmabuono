@@ -19,8 +19,13 @@
 {% render 'c_collection-nav', variant: 'chips' %}
 
 <div class="c_collectionCategory__title-wrap page-width">
-  {%- comment -%} ページ固有の語を持つのはここだけなので、コレクションページのh1はこれ {%- endcomment -%}
-  <h1 class="c_collectionCategory__title">{{ collection.title | split: '-' | last }}</h1>
+  {%- comment -%}
+    ページ固有の語を持つのはここだけなので、コレクションページのh1はこれ。
+    主要10コレクションは 2026-09-02 に「犬用のドライフード」型へ改名済みで '-' を含まないため、
+    そのままの名前が出る（西川さん指定の文言）。'-' 付きで残る少数（お試し・おせち・そば・お食事代行）
+    だけ従来どおり後半を出す。
+  {%- endcomment -%}
+  <h1 class="c_collectionCategory__title">{{ collection.title | split: '-' | last | strip }}</h1>
   <svg
     class="c_collectionCategory__icon"
     xmlns="http://www.w3.org/2000/svg"

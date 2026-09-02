@@ -172,14 +172,18 @@ def build_edits(p, spec):
     return edits, notes
 
 
-def to_input(pid, edits):
-    inp = {"id": pid}
+def to_input(p, edits):
+    # ⚠ Shopify の SEOInput は「渡した項目だけ更新」ではなく seo 全体を置き換える。
+    #   description だけ送ると title が null に消える（2026-08-19 の実行でお試しセット2件の
+    #   seo.title が実際に消えた。2026-09-02 に判明・再設定）。必ず現在の title を併せて送る。
+    inp = {"id": p["id"]}
     if "title" in edits:
         inp["title"] = edits["title"]
     if "descriptionHtml" in edits:
         inp["descriptionHtml"] = edits["descriptionHtml"]
     if "seo.description" in edits:
-        inp["seo"] = {"description": edits["seo.description"]}
+        inp["seo"] = {"title": (p["seo"] or {}).get("title"),
+                      "description": edits["seo.description"]}
     return inp
 
 
@@ -189,8 +193,8 @@ def do_revert():
     saved = json.load(open(BACKUP))
     for pid, s in saved.items():
         inp = {"id": pid, "title": s["title"], "descriptionHtml": s["descriptionHtml"]}
-        if s["seo"] and s["seo"].get("description") is not None:
-            inp["seo"] = {"description": s["seo"]["description"]}
+        if s["seo"]:
+            inp["seo"] = {"title": s["seo"].get("title"), "description": s["seo"].get("description")}
         d = gql(UPDATE, {"input": inp})["productUpdate"]
         print(f"{'NG' if d['userErrors'] else 'OK'} 復元 {s['handle']} {d['userErrors'] or ''}")
 
@@ -260,7 +264,7 @@ def main():
     print(f"\n変更前を退避: {BACKUP}（今回 {added} 件追加 / 累計 {len(saved)} 件）")
 
     for p, edits in todo:
-        d = gql(UPDATE, {"input": to_input(p["id"], edits)})["productUpdate"]
+        d = gql(UPDATE, {"input": to_input(p, edits)})["productUpdate"]
         if d["userErrors"]:
             print(f"NG {p['handle']}: {d['userErrors']}")
         else:

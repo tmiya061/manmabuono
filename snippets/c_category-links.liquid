@@ -57,7 +57,14 @@
       assign col = collections[item]
       if col.title != blank
         assign url = '/collections/' | append: col.handle
+        comment
+          ナビは犬用/猫用の見出しの下に並ぶので、コレクション名から犬猫の接頭辞を落として短い語だけ出す。
+          2026-09-02 に主要コレクション名を「犬用 - ドライフード」→「犬用のドライフード」型へ改名した
+          （西川さん指示・h1をそのまま自然な文言にするため）。改名済み＝「犬用の◯◯」「犬用 ◯◯」、
+          未改名（お試し・おせち・そば・お食事代行）＝「犬用 - ◯◯」。両方の形を受ける。
+        endcomment
         assign label = col.title | split: '-' | last | strip
+        assign label = label | remove_first: '犬用の' | remove_first: '猫用の' | remove_first: '犬用' | remove_first: '猫用' | strip
       endif
     endif
 
