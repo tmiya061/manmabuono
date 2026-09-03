@@ -1,0 +1,42 @@
+{
+  "gid://shopify/Collection/279779409981": {
+    "handle": "dog-all",
+    "title": "犬用ごはん - 全ての商品"
+  },
+  "gid://shopify/Collection/279799038013": {
+    "handle": "cat-all",
+    "title": "猫用ごはん - 全ての商品"
+  },
+  "gid://shopify/Collection/279779213373": {
+    "handle": "dog-dry",
+    "title": "犬用 - ドライフード"
+  },
+  "gid://shopify/Collection/279799070781": {
+    "handle": "cat-dry",
+    "title": "猫用 - ドライフード"
+  },
+  "gid://shopify/Collection/279798579261": {
+    "handle": "dog-wet",
+    "title": "犬用 - ウェットフード"
+  },
+  "gid://shopify/Collection/279799103549": {
+    "handle": "cat-wet",
+    "title": "猫用 - ウェットフード"
+  },
+  "gid://shopify/Collection/279798612029": {
+    "handle": "dog-make-6",
+    "title": "犬用 - 自分で作る手作りごはん"
+  },
+  "gid://shopify/Collection/279799136317": {
+    "handle": "cat-make",
+    "title": "猫用 - 自分で作る手作りごはん"
+  },
+  "gid://shopify/Collection/285150806077": {
+    "handle": "dog-easy-cook-5",
+    "title": "犬用 - おやつ"
+  },
+  "gid://shopify/Collection/285187309629": {
+    "handle": "cat-easy-cook",
+    "title": "猫用 - おやつ"
+  }
+}
