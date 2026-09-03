@@ -146,6 +146,16 @@ python3 scripts/lp_report.py /pages/set-teiki --since -30d --daily
 
 utm_source別・utm_campaign別のセッションとCVRが出る。ストア全体との比較も一緒に出る。
 
+### できる：同梱物のQRが何回読まれて何%買ったか（Shopifyだけで読める）
+
+```bash
+python3 scripts/qr_report.py --since -90d --daily
+```
+
+QR別（`utm_content`）・刷り物別（`utm_campaign`）のセッションとCVR。UTM規約は §5-2。
+**GA4にも同じUTMが自動で入る**（GTMが7/5から稼働中）ので、権限が下りたら同じ数字を向こうでも読める。
+つまり「ShopifyかGA4か」を選ぶ必要はなく、**UTMを付けておけば両方に貯まる**。
+
 ### できる（仕込み済み・GTM設定待ち）：LP内のどのボタンが押されたか
 
 CTAボタンには以下が入っている（`snippets/c_lp-cta-button.liquid` ＋ `assets/c_lp.js`）。
@@ -194,7 +204,41 @@ https://manmabuono.jp/pages/set-teiki?utm_source=google&utm_medium=cpc&utm_campa
 ```
 
 - **`utm_campaign` はLPごとに1つ**。同じLPに複数キャンペーンを当てると、どのLPが効いたか分からなくなる
-- 京都駅の同梱チラシQRも同じ規約で（`utm_medium=qr`）。広告と同じ土俵で比較できる
+- 同梱物のQRも同じ規約で（`utm_medium=qr`）。広告と同じ土俵で比較できる → §5-2
+
+### 5-2. 同梱物のQR（2026-09-03 統一）
+
+刷り物に載せるQRは**全部この4つ組**にした。これ以外を刷らない。
+レポートは `python3 scripts/qr_report.py --since -90d`。
+
+| QR | 刷ってある場所 | 遷移先 |
+|---|---|---|
+| 表紙のクーポン | `leaflet_b6_v17.html:629` | `https://manmabuono.jp/?utm_source=leaflet&utm_medium=qr&utm_campaign=leaflet-b6&utm_content=cover-coupon` |
+| 裏面のストア | `leaflet_b6_v17.html:574` | 同上 `utm_content=back-store` |
+| 裏面の料理教室 | `leaflet_b6_v17.html:582` | `/pages/cooking-class?…&utm_content=back-class` |
+| 独立クーポンカード | `coupon_card_v7.html:229` ＋ `ai/tools_coupon/coupon_src.html:215` | 同上 `utm_campaign=coupon-card&utm_content=card-back` |
+
+（刷り物の実体は `/Users/miyagawatakurou/Documents/manmabuono/京都駅同梱リーフレット/`）
+
+- `utm_source` は紙からの流入を**全部 `leaflet` に寄せる**。「紙 vs 広告 vs SNS」を1行で比べたいため。
+  どのQRかは `utm_content` で割る（＝「クーポンQRが何回読まれたか」＝ `cover-coupon`）
+- 配布チャネルを分けて刷り分けるなら `utm_source` を `leaflet-kyoto` / `leaflet-vet` のように分岐させる。
+  刷り分けないうちは分けない（空のディメンションが増えるだけなので）
+- **`utm_medium=insert` は廃止。** 規約は最初から `qr` だったのに刷り物側が `insert` になっていて、
+  さらに `utm_campaign` が欠けたQRが2つあった（＝レポートで direct と見分けがつかない）。2026-09-03 に揃えた
+
+### 5-3. 割引リンクにUTMを足しても消えない（2026-09-03 実測）
+
+`/discount/<CODE>?redirect=/` は**302で転送先にクエリをそのまま引き継ぐ**ので、
+「クーポン自動適用」と「UTM計測」は両立する。コード手入力を省けるぶんCVRに効く。
+
+```
+$ curl -sI "https://manmabuono.jp/discount/TESTCODE123?redirect=/&utm_source=leaflet&utm_medium=qr&utm_campaign=leaflet-b6"
+HTTP/2 302
+location: https://manmabuono.jp/?utm_source=leaflet&utm_medium=qr&utm_campaign=leaflet-b6
+```
+
+→ 割引コードが管理画面で発行されたら、QRの遷移先をこの形に差し替える（刷る前に）。
 
 ---
 
