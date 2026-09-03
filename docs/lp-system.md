@@ -215,7 +215,7 @@ https://manmabuono.jp/pages/set-teiki?utm_source=google&utm_medium=cpc&utm_campa
 |---|---|---|
 | 表紙のクーポン | `leaflet_b6_v17.html:629` | `https://manmabuono.jp/?utm_source=leaflet&utm_medium=qr&utm_campaign=leaflet-b6&utm_content=cover-coupon` |
 | 裏面のストア | `leaflet_b6_v17.html:574` | 同上 `utm_content=back-store` |
-| 裏面の料理教室 | `leaflet_b6_v17.html:582` | `/pages/cooking-class?…&utm_content=back-class` |
+| 裏面の料理教室 | `leaflet_b6_v17.html:582` | `/pages/cooking-class?utm_source=leaflet&utm_medium=qr&utm_content=back-class`（**campaignなし**・下記） |
 | 独立クーポンカード | `coupon_card_v7.html:229` ＋ `ai/tools_coupon/coupon_src.html:215` | 同上 `utm_campaign=coupon-card&utm_content=card-back` |
 
 （刷り物の実体は `/Users/miyagawatakurou/Documents/manmabuono/京都駅同梱リーフレット/`）
@@ -226,6 +226,25 @@ https://manmabuono.jp/pages/set-teiki?utm_source=google&utm_medium=cpc&utm_campa
   刷り分けないうちは分けない（空のディメンションが増えるだけなので）
 - **`utm_medium=insert` は廃止。** 規約は最初から `qr` だったのに刷り物側が `insert` になっていて、
   さらに `utm_campaign` が欠けたQRが2つあった（＝レポートで direct と見分けがつかない）。2026-09-03 に揃えた
+
+#### 🔴 料理教室QRだけ `utm_campaign` を付けない理由（URL長 → QRの目の細かさ）
+
+**URLを長くするとQRのモジュール（1マス）が小さくなり、印刷で読めなくなる。** ここは計測の都合だけで決められない。
+
+| QR | URL長 | QRバージョン | 実寸 | 1モジュール |
+|---|---|---|---|---|
+| 表紙クーポン | 104字 | 5（39マス） | 14.82mm | **0.380mm** ✅ |
+| 裏面ストア | 102字 | 5（39マス） | 10.58mm | **0.271mm** ✅ |
+| 裏面料理教室（campaign付き） | 121字 | **6（43マス）** | 10.58mm | **0.246mm** 🔴 |
+| 裏面料理教室（campaignなし） | 97字 | 5（39マス） | 10.58mm | **0.271mm** ✅ |
+
+料理教室QRは `/pages/cooking-class` というパスのぶん元から長く、`utm_campaign=leaflet-b6`（24字）を足すと
+**バージョンが5→6に上がって1マスが 0.271mm → 0.246mm に縮む**＝**今の印刷物より悪化する**。
+実寸10.58mmの枠は動かせないので、**料理教室QRだけ campaign を外す**。
+どの刷り物のQRかは `utm_source=leaflet` ＋ `landing_page_path=/pages/cooking-class` で一意に分かるので実害はない。
+
+> 📌 **URLを1文字足すたびにQRは細かくなる。** UTMを増やす前に必ずこの表で影響を確認すること。
+> 確認は `python3 -c "import segno; q=segno.make('<URL>',error='L'); print(q.version, q.symbol_size(border=1)[0])"`。
 
 ### 5-3. 割引リンクにUTMを足しても消えない（2026-09-03 実測）
 
