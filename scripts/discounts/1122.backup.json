@@ -1,0 +1,44 @@
+{
+  "id": "gid://shopify/DiscountCodeNode/1820848586813",
+  "codeDiscount": {
+    "__typename": "DiscountCodeBasic",
+    "title": "1122",
+    "status": "ACTIVE",
+    "summary": "20% off one-time purchase products • One use per customer",
+    "startsAt": "2026-07-12T01:25:50Z",
+    "endsAt": null,
+    "usageLimit": null,
+    "appliesOncePerCustomer": true,
+    "asyncUsageCount": 0,
+    "recurringCycleLimit": 1,
+    "codes": {
+      "nodes": [
+        {
+          "code": "1122"
+        }
+      ]
+    },
+    "customerSelection": {
+      "__typename": "DiscountCustomerAll",
+      "allCustomers": true
+    },
+    "customerGets": {
+      "appliesOnOneTimePurchase": true,
+      "appliesOnSubscription": false,
+      "value": {
+        "__typename": "DiscountPercentage",
+        "percentage": 0.2
+      },
+      "items": {
+        "__typename": "AllDiscountItems",
+        "allItems": true
+      }
+    },
+    "minimumRequirement": null,
+    "combinesWith": {
+      "orderDiscounts": false,
+      "productDiscounts": false,
+      "shippingDiscounts": false
+    }
+  }
+}
