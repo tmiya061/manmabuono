@@ -1,0 +1,11 @@
+{
+  "sections": {
+    "main": {
+      "type": "c_food-consultation",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main"
+  ]
+}
