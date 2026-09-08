@@ -1,0 +1,14 @@
+{% assign has_food_consultation = false %}
+{% for line in subtotal_line_items %}
+  {% if line.product.id == 8004568088637 or line.product.handle == 'food-consultation' %}
+    {% assign has_food_consultation = true %}
+    {% break %}
+  {% endif %}
+{% endfor %}
+{% if has_food_consultation %}
+  <h3>フードのご相談の流れ</h3>
+  <p>フードのご相談をお申し込みいただき、ありがとうございます。</p>
+  <p>担当者からご登録のメールアドレスへ、ご相談の日時のご案内を別途お送りします。届いたメールに、ご都合のよい日時とご相談内容をご返信ください。</p>
+  <p>日時が決まりましたらZoom URLをお送りいたしますので、Zoomにてご相談をお受けし、回答いたします。</p>
+  <p>※このメールの時点では、ご相談日時はまだ確定していません。担当者からのご案内をお待ちください。<br>※フードのご相談はオンラインのサービスです。配送物はありません。</p>
+{% endif %}
