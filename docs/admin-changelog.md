@@ -9,6 +9,7 @@ Shopifyの管理画面・ストアデータは Git で追えない。**書き込
 
 ---
 
+- 2026-09-08 | product `cat-trial-set` | 本文の内容量欄の旧商品名を修正「**だし薫る**猫のごはん150g×２袋」→「**ダブルだし猫のごはん チキン** 150g×２袋」（猫用ドライの正式名。犬用の「だし薫る犬のごはん」から流用したままだった）。袋数（×２袋）は変更なし。西川さん指摘（LINE）→オーナー指示。※`seo.description` の「ダブルだし猫のごはん150g×2袋」は名称が正しいので据え置き（「チキン」は無いが誤りではない） | Admin GraphQL `productUpdate`（descriptionHtml のみ・インライン） | 復元: `scripts/product_story/cat_trial_set_name.backup.json`（変更前の本文全文）
 - 2026-09-03 | ディスカウント `1122` | **対象の顧客を「すべてのお客様」→ 顧客セグメント「購入していないお客様」（`number_of_orders = 0`・Shopify既定・`gid://shopify/Segment/412226748477`）に変更＝初回注文限定にした**。券面の「初回ご注文に限り有効」に合わせるため。会員登録必須（`customerAccounts=REQUIRED`）のストアなので、登録直後の顧客もセグメントに入る（テスト顧客で登録→1分以内にセグメント入りを確認）。1回買うと自動で対象外。オーナー指示 | `discountCodeBasicUpdate`（customerSelection のみ） | 復元: `customerSelection: {all: true}` に戻す
 - 2026-09-03 | customer `test-20260903-161746@example.com` / `test-20260903-161830@example.com`（タグ `test-account`・`Customer/9464844124221` / `9464844615741`） | `scripts/test_customer.py` の動作確認で**テスト顧客を2件作成→即削除**（注文なし・チェックアウトも開いていない）。1件目は作成直後の検索ラグで `delete` が見つけられず ID 指定で削除 → スクリプトに再試行と `--id` を追加 | `scripts/test_customer.py create/delete` | 復元: 不要（削除済み）
 - 2026-09-03 | customer `coupon-test-20260903@example.com`（タグ `test-account`・`Customer/9464779079741`） | クーポンの動作テスト用に**テスト顧客を作成→アカウント有効化→チェックアウトでコード検証→削除（同日中に完了）**。結果＝登録直後の顧客で `1122` が通り対象商品 ¥3,960→¥3,168（−20%）／`dog-trial-set` では適用されず ¥3,300 のまま。注文は作っていない（チェックアウト離脱が1件残る可能性あり） | `customerCreate` → `customerGenerateAccountActivationUrl` → ブラウザ → `customerDelete` | 復元: 不要（削除済み）
