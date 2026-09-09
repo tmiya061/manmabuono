@@ -2,12 +2,42 @@
 {{ 'c_footer.min.css' | asset_url | stylesheet_tag }}
 
 {%- style -%}
+    .c_footerUp__consult {
+        display: table;
+        align-items: center;
+        justify-content: center;
+        width: auto;
+        max-width: 100%;
+        min-height: 44px;
+        box-sizing: border-box;
+        margin: 28px 0 0 20px;
+        padding: 12px 0;
+        border: 0;
+        border-radius: 0;
+        background: transparent;
+        color: #fff;
+        font-family: var(--font-body-family);
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1.5;
+        text-align: center;
+        text-decoration: underline;
+        text-underline-offset: 6px;
+        text-decoration-color: rgba(255, 255, 255, .6);
+        transition: opacity .3s;
+    }
+    .c_footerUp__consult::after { content: '→'; display: inline-block; margin-left: 12px; }
+    @media (hover: hover) {
+        .c_footerUp__consult:hover { opacity: .7; }
+    }
+    .c_footerUp__consult:focus-visible { outline: 2px solid #3c3c3c; outline-offset: 4px; }
     #shopify-section-{{ section.id }} {
         padding-top: {{ section.settings.padding_top }}px;
         padding-bottom: {{ section.settings.padding_bottom }}px;
     }
 
     @media screen and (max-width: 750px) {
+        .c_footerUp__consult { margin-left: 0; }
         #shopify-section-{{ section.id }} {
         padding-top: {{ section.settings.padding_top_sp }}px;
         padding-bottom: {{ section.settings.padding_bottom_sp }}px;
@@ -52,6 +82,7 @@
                 </ul>
             </div>
         </div>
+        <a href="/products/food-consultation" class="c_footerUp__consult">フードのご相談はこちら</a>
     </div>
 </div>
 
