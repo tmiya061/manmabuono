@@ -69,7 +69,9 @@ open("backup/article_xxx.json", "w").write(json.dumps(before, ensure_ascii=False
   `choose` / `trouble` / `feeding` / `health` / `storage` / `basics` / `homemade`
 - **自由タグ**は複数OK：`cat` `dog` `kitten` `puppy` `senior` `dry` `wet`
 - 🔴 **タグは必ず半角英字。**日本語タグは URL が文字化けします
-- 🔴 **抜粋（excerpt）は必ず書く**（80字前後）。一覧カードと **meta description** に使われます
+- 🔴 **抜粋（excerpt）は必ず書く**（80字前後）。一覧カードと **meta description** に使われます（SEO説明文 `global.description_tag` は入れなくてOK。入れた記事だけそちらが優先されます）
+- **よくある質問**：h2 を「よくある質問」にして、その下に h3（質問）→ 段落（回答）の順で書くだけ。テーマ側が自動で開閉式にし、FAQPage の構造化データも出します。※この章の後ろに別の内容を置くときは、必ず次の h2 で区切る（区切らないと最後の回答に含まれます）
+- **表**：普通の `<table>` でOK。4列以上の表はスマホで自動的に横スワイプになります
 - **アイキャッチ**：16:9 推奨・横1200px以上
 - **見出しは H2 → H3 の順**（目次が H2/H3 から自動生成されます）
 - **著者・監修者**：記事メタフィールド `custom.author` / `custom.supervisor` にメタオブジェクト `article_author` を紐付け。未設定だと「マンマボーノ編集部」表示になります。**著者そのものの登録・編集は管理画面での手作業**です → STEP3（`seo-onboarding-3-author.md`）

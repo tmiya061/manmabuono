@@ -429,6 +429,203 @@
         }
     }
 
+    // 表の横スクロール枠（c_article.liquid が出力時に table を包む）
+    // 4列以上の表はスマホで列が潰れるので最低幅を持たせ、枠の中で横にスワイプさせる。
+    // 案内（手のアイコン）は ScrollHint（assets/c_scroll-hint.*）が出す。
+    .ca-tableWrap {
+        margin: 1.6em 0;
+        overflow-x: auto;
+        overflow-y: hidden; // overflow-x:auto にすると縦も auto になり、縦スクロールバーが出るため
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: thin;
+        scrollbar-color: #e0b9ab transparent;
+        &::-webkit-scrollbar {
+            height: 6px;
+        }
+        &::-webkit-scrollbar-track {
+            background: #f4f2ef;
+            border-radius: 999px;
+        }
+        &::-webkit-scrollbar-thumb {
+            background: #e0b9ab;
+            border-radius: 999px;
+        }
+        table {
+            margin: 0;
+        }
+        @include mq(sp) {
+            table:has(tr > :nth-child(4)) {
+                min-width: 520px;
+            }
+            table:has(tr > :nth-child(5)) {
+                min-width: 640px;
+            }
+            table:has(tr > :nth-child(6)) {
+                min-width: 760px;
+            }
+        }
+        // 記事本文の行間・字間を継承すると文言が折り返して箱が表からはみ出すので打ち消す
+        .scroll-hint-icon {
+            top: calc(50% - 47px);
+            left: calc(50% - 66px);
+            width: 132px;
+            padding: 22px 8px 10px; // 上の余白を詰めるとアイコンの矢印が箱の上端で切れる
+            border-radius: 12px;
+            background: rgba(60, 60, 60, 0.78);
+            line-height: 1.4;
+            letter-spacing: 0;
+        }
+        .scroll-hint-text {
+            margin-top: 4px;
+            font-size: 11px;
+            line-height: 1.4;
+            letter-spacing: 0;
+            white-space: nowrap;
+        }
+    }
+
+    // よくある質問（開閉式）
+    // c_article.liquid が h2「よくある質問」配下の h3＋回答を details に組み替えて出力する。
+    .ca-faq {
+        display: grid;
+        gap: 10px;
+        margin: 1.8em 0;
+        @include mq(pc) {
+            gap: 12px;
+        }
+    }
+    .ca-faq__item {
+        border: 1px solid #e3e0db;
+        border-radius: 12px;
+        background: #fff;
+        transition: border-color 0.3s, box-shadow 0.3s;
+        &.is-open,
+        &[open] {
+            border-color: #ffc9bb;
+            box-shadow: 0 6px 20px -12px rgba(255, 123, 94, 0.55);
+        }
+    }
+    .ca-faq__q {
+        list-style: none;
+        cursor: pointer;
+        display: grid;
+        grid-template-columns: auto minmax(0, 1fr) auto;
+        align-items: center;
+        gap: 12px;
+        padding: 14px 14px;
+        border-radius: 12px;
+        -webkit-tap-highlight-color: transparent;
+        transition: background 0.3s;
+        @include mq(pc) {
+            gap: 14px;
+            padding: 18px 20px;
+        }
+        &::-webkit-details-marker {
+            display: none;
+        }
+        &::before {
+            content: "Q";
+            display: grid;
+            place-items: center;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: $base-color;
+            color: #fff;
+            font-size: 14px;
+            font-weight: 700;
+            line-height: 1;
+            letter-spacing: 0;
+        }
+        &:hover {
+            background: #fff8f5;
+        }
+        &:focus-visible {
+            outline: 2px solid $base-color;
+            outline-offset: 2px;
+        }
+        // 記事の h3 の飾り（下線・余白）を打ち消す
+        h3 {
+            border: 0;
+            margin: 0;
+            padding: 0;
+            font-size: 15px;
+            line-height: 160%;
+            letter-spacing: 0.6px;
+            @include mq(pc) {
+                font-size: 16px;
+                margin: 0;
+            }
+            &::after {
+                display: none;
+            }
+        }
+    }
+    // ＋ → − に変わるアイコン
+    .ca-faq__icon {
+        position: relative;
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        background: #faf5ef;
+        transition: background 0.3s, transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 12px;
+            height: 2px;
+            border-radius: 2px;
+            background: $base-color;
+            transform: translate(-50%, -50%);
+            transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), background 0.3s;
+        }
+        &::after {
+            transform: translate(-50%, -50%) rotate(90deg);
+        }
+    }
+    .ca-faq__item.is-open .ca-faq__icon,
+    .ca-faq__item[open]:not(.is-open) .ca-faq__icon {
+        background: $base-color;
+        transform: rotate(180deg);
+        &::before,
+        &::after {
+            background: #fff;
+        }
+        &::after {
+            transform: translate(-50%, -50%) rotate(0deg);
+        }
+    }
+    .ca-faq__a-inner {
+        margin: 0 14px;
+        padding: 14px 0 16px;
+        border-top: 1px dashed #e3e0db;
+        font-size: 0.95em;
+        @include mq(pc) {
+            margin: 0 20px;
+            padding: 16px 0 20px;
+        }
+        > :last-child {
+            margin-bottom: 0;
+        }
+    }
+    // 開くときに回答を少し下から浮かせる
+    .ca-faq__item.is-open .ca-faq__a-inner {
+        animation: ca-faq-rise 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+    }
+    @media (prefers-reduced-motion: reduce) {
+        .ca-faq__icon,
+        .ca-faq__icon::before,
+        .ca-faq__icon::after {
+            transition: none;
+        }
+        .ca-faq__item.is-open .ca-faq__a-inner {
+            animation: none;
+        }
+    }
+
     hr {
         border: none;
         border-top: 1px dashed #d8d4cd;
@@ -966,5 +1163,14 @@
         @include mq(pc) {
             font-size: 13px;
         }
+    }
+}
+
+@keyframes ca-faq-rise {
+    from {
+        transform: translateY(8px);
+    }
+    to {
+        transform: translateY(0);
     }
 }

@@ -117,9 +117,10 @@ python3 scripts/set_article_cta.py <記事handle> "<商品handle>" "<商品handl
 | カテゴリページのtitle | 「カテゴリ名｜コラム – ストア名」に差し替え（theme.liquid） |
 | カテゴリページのdescription | article_categoryのdescriptionに差し替え |
 | **noindex** | コラムの**カテゴリ以外のタグ絞り込み**（自由タグ・複数タグ）は `noindex, follow`（重複コンテンツ対策。columnブログ限定） |
-| 構造化データ | 記事：Article＋BreadcrumbList。著者に資格（description）、監修者はreviewedBy |
+| 構造化データ | 記事：Article＋BreadcrumbList。著者に資格（description）、監修者はreviewedBy。h2「よくある質問」の章がある記事は FAQPage も出力（h3＝質問／次のh3までの中身＝回答。c_article.liquid が出力時に開閉式へ組み替える） |
 | パンくず | TOP > コラム > カテゴリ > 記事（縦書き・c_bredcrumb。columnのみカテゴリ階層あり） |
-| 記事のmeta description | Shopify標準（記事の抜粋≒excerptが使われる）→ **抜粋は必ず書く** |
+| 記事のmeta description | **抜粋（excerpt）を使う**（theme.liquid / meta-tags で分岐）。SEO説明文 `global.description_tag` を入れた記事だけそちらが優先 → **抜粋は必ず書く**。※Shopify標準の `page_description` は抜粋を見ず、空だと本文冒頭（約320字）になる（2026-09-18 に垣谷さんの指摘で判明・修正） |
+| 記事内の表 | 出力時に `.ca-tableWrap` で包む。スマホでは4列以上の表に最低幅を持たせて枠内を横スワイプ＋ScrollHint（`assets/c_scroll-hint.*`・MIT・v1.2.8 を同梱）で案内 |
 
 ## 8. API連携（Shopify Admin API）
 

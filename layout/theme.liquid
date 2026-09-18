@@ -71,8 +71,14 @@
       <meta name="robots" content="noindex, follow">
     {% endif %}
 
+    {%- comment -%}
+      記事：SEO説明文（global.description_tag）が空なら「抜粋」を使う。
+      Shopify標準の page_description は抜粋を見ず、空だと本文冒頭（約320字）になるため。
+    {%- endcomment -%}
     {% if column_category_description != '' %}
       <meta name="description" content="{{ column_category_description | escape }}">
+    {% elsif request.page_type == 'article' and article.metafields.global.description_tag == blank and article.excerpt != blank %}
+      <meta name="description" content="{{ article.excerpt | strip_html | strip_newlines | strip | escape }}">
     {% elsif page_description %}
       <meta name="description" content="{{ page_description | escape }}">
     {% endif %}

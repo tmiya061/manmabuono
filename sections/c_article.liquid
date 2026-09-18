@@ -102,8 +102,66 @@
         <div data-c-toc></div>
       </details>
 
+      {%- comment -%}
+        本文の後処理（記事HTMLはそのまま・出力時にだけ変換する）
+        1. 表 → 横スクロール用の枠 .ca-tableWrap で包む（列が多い表をスマホで潰さない）
+        2. h2「よくある質問」の章 → 配下の h3＝質問／次の h3 までの中身＝回答 として
+           開閉式（details）に組み替え、同じ内容を FAQPage の構造化データにも出す
+           ※ h3 は summary の中に残すので、目次にも今までどおり出る
+      {%- endcomment -%}
+      {%- liquid
+        assign c_content = article.content | replace: '<table', '<div class="ca-tableWrap js-scrollable"><table' | replace: '</table>', '</table></div>'
+        assign c_has_table = false
+        if article.content contains '<table'
+          assign c_has_table = true
+        endif
+        assign c_faq_jsonld = ''
+        assign c_faq_done = false
+        assign c_h2_chunks = c_content | prepend: '<!--c_article-->' | split: '<h2'
+      -%}
+      {%- capture c_content_out -%}
+        {%- for h2_chunk in c_h2_chunks -%}
+          {%- if forloop.first -%}{{ h2_chunk }}{%- continue -%}{%- endif -%}
+          {%- liquid
+            assign h2_text = h2_chunk | split: '</h2>' | first | prepend: '<h2' | strip_html | strip
+            assign is_faq = false
+            if c_faq_done == false
+              if h2_text contains 'よくある質問' or h2_text contains 'よくあるご質問' or h2_text contains 'FAQ'
+                assign is_faq = true
+              endif
+            endif
+            assign h3_chunks = h2_chunk | split: '<h3'
+            if h3_chunks.size < 2
+              assign is_faq = false
+            endif
+          -%}
+          {%- unless is_faq -%}<h2{{ h2_chunk }}{%- continue -%}{%- endunless -%}
+          {%- assign c_faq_done = true -%}
+          {%- for h3_chunk in h3_chunks -%}
+            {%- if forloop.first -%}<h2{{ h3_chunk }}<div class="ca-faq" data-c-faq>{%- continue -%}{%- endif -%}
+            {%- liquid
+              assign q_raw = h3_chunk | split: '</h3>' | first
+              assign q_text = q_raw | prepend: '<h3' | strip_html | strip
+              assign a_html = h3_chunk | remove_first: q_raw | remove_first: '</h3>'
+              assign a_text = a_html | strip_html | strip_newlines | strip
+              if c_faq_jsonld != ''
+                assign c_faq_jsonld = c_faq_jsonld | append: ','
+              endif
+              assign q_json = q_text | json
+              assign a_json = a_text | json
+              assign c_faq_jsonld = c_faq_jsonld | append: '{"@type":"Question","name":' | append: q_json | append: ',"acceptedAnswer":{"@type":"Answer","text":' | append: a_json | append: '}}'
+            -%}
+            <details class="ca-faq__item">
+              <summary class="ca-faq__q"><h3{{ q_raw }}</h3><span class="ca-faq__icon" aria-hidden="true"></span></summary>
+              <div class="ca-faq__a"><div class="ca-faq__a-inner">{{ a_html }}</div></div>
+            </details>
+          {%- endfor -%}
+          </div>
+        {%- endfor -%}
+      {%- endcapture -%}
+
       <div class="c_article__content">
-        {{ article.content }}
+        {{ c_content_out }}
       </div>
 
       {%- if section.settings.show_share -%}
@@ -230,6 +288,10 @@
   </div>
 </article>
 
+{%- if c_has_table -%}
+  {{ 'c_scroll-hint.css' | asset_url | stylesheet_tag }}
+  <script src="{{ 'c_scroll-hint.min.js' | asset_url }}"></script>
+{%- endif -%}
 <script>
   (() => {
     const content = document.querySelector('.c_article__content');
@@ -271,6 +333,56 @@
       headings.forEach((h) => observer.observe(h));
     }
 
+    // ---- FAQ 開閉（details を高さアニメーション付きで開閉する） ----
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    content.querySelectorAll('[data-c-faq] details').forEach((item) => {
+      const summary = item.querySelector('summary');
+      const panel = item.querySelector('.ca-faq__a');
+      if (!summary || !panel) return;
+      let anim = null;
+      const run = (open) => {
+        if (anim) anim.cancel();
+        const from = panel.offsetHeight;
+        if (open) item.open = true;
+        item.classList.toggle('is-open', open);
+        const to = open ? panel.scrollHeight : 0;
+        anim = panel.animate(
+          { height: [from + 'px', to + 'px'], opacity: open ? [0, 1] : [1, 0] },
+          { duration: open ? 360 : 260, easing: 'cubic-bezier(0.22, 1, 0.36, 1)' }
+        );
+        panel.style.overflow = 'hidden';
+        anim.onfinish = () => {
+          if (!open) item.open = false;
+          panel.style.overflow = '';
+          anim = null;
+        };
+      };
+      summary.addEventListener('click', (e) => {
+        if (reduceMotion || !panel.animate) return; // 標準の開閉に任せる
+        e.preventDefault();
+        run(!item.classList.contains('is-open'));
+      });
+      item.addEventListener('toggle', () => item.classList.toggle('is-open', item.open));
+    });
+    // 目次などから質問へ飛んだときは、その質問を開いておく
+    const openFaqByHash = () => {
+      if (location.hash.length < 2) return;
+      const target = document.getElementById(location.hash.slice(1));
+      const item = target && target.closest('[data-c-faq] details');
+      if (item && !item.open) { item.open = true; item.classList.add('is-open'); }
+    };
+    window.addEventListener('hashchange', openFaqByHash);
+    openFaqByHash();
+
+    // ---- 表の横スクロール案内（ScrollHint） ----
+    if (window.ScrollHint && content.querySelector('.js-scrollable')) {
+      new ScrollHint('.c_article__content .js-scrollable', {
+        suggestiveShadow: true,
+        remainingTime: 5000,
+        i18n: { scrollable: 'スクロールできます' }
+      });
+    }
+
     // ---- 読了プログレスバー ----
     const bar = document.querySelector('.c_article__progress-bar');
     if (bar) {
@@ -305,6 +417,7 @@
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": {{ article.title | json }},
+    {% if article.excerpt != blank %}"description": {{ article.excerpt | strip_html | strip_newlines | strip | json }},{% endif %}
     "datePublished": {{ article.published_at | date: '%Y-%m-%dT%H:%M:%S%z' | json }},
     "dateModified": {{ article.updated_at | date: '%Y-%m-%dT%H:%M:%S%z' | json }},
     "mainEntityOfPage": { "@type": "WebPage", "@id": {{ request.origin | append: article.url | json }} },
@@ -331,6 +444,12 @@
     ]
   }
 </script>
+
+{%- if c_faq_jsonld != '' -%}
+  <script type="application/ld+json">
+    { "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{{ c_faq_jsonld }}] }
+  </script>
+{%- endif -%}
 
 {% schema %}
 {
