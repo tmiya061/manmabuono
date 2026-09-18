@@ -57,6 +57,8 @@
 <div class="c_bredcrumb__wrapper" 
   {% if template contains 'product' %} style="display: none;"{% endif %}
   {% if template contains 'cart' %} style="display: none;"{% endif %}
+  {% comment %} 記事ページ（コラム・お知らせ）では出さない。本文の右に縦書きが重なって読みにくいため（2026-09-18） {% endcomment %}
+  {% if template contains 'article' %} style="display: none;"{% endif %}
   >
   <nav class="c_breadcrumb" role="navigation" aria-label="breadcrumbs">
     <a href="/" title="Home">TOP</a>
