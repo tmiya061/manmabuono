@@ -388,6 +388,10 @@
         "padding_bottom_sp": 78
       }
     },
+    "c_top_column": {
+      "type": "c_topColumn",
+      "settings": {}
+    },
     "c_top_news_PhkhgL": {
       "type": "c_topNews",
       "settings": {
@@ -459,6 +463,7 @@
     "c_top_sample_itkDRk",
     "c_top_voices_cTGqWC",
     "c_top_about_HKAHmz",
+    "c_top_column",
     "1707571247d74eef14",
     "c_top_news_PhkhgL",
     "c_picture_x6h77q"

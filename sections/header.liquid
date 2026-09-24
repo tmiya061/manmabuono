@@ -65,6 +65,11 @@
     flex-wrap: wrap;
   }
 
+  /* Keep the seven desktop links on one row above the drawer breakpoint. */
+  @media screen and (min-width: 990px) and (max-width: 1200px) {
+    .header__inline-menu .c_header__item { margin-right: 8px; }
+  }
+
   summary.list-menu__item {
     padding-right: 2.7rem;
   }

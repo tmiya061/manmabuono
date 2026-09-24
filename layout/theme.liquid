@@ -68,7 +68,9 @@
     </title>
 
     {% if column_tag_noindex or lp_noindex or author_noindex %}
-      <meta name="robots" content="noindex, follow">
+      <meta name="robots" content="noindex, follow, max-image-preview:large">
+    {% else %}
+      <meta name="robots" content="max-image-preview:large">
     {% endif %}
 
     {%- comment -%}

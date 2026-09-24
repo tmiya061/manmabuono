@@ -100,6 +100,9 @@
       <a href="/pages/shop">取り扱い店舗一覧</a>
     </li>
     <li class="c_header__item">
+      <a href="/blogs/column"{% if request.path == '/blogs/column' %} aria-current="page"{% endif %}>コラム</a>
+    </li>
+    <li class="c_header__item">
       <a href="/pages/guide">ご利用ガイド</a>
     </li>
     <!-- {%- for link in section.settings.menu.links -%}

@@ -1,0 +1,64 @@
+{%- assign column_blog = blogs['column'] -%}
+{%- if column_blog.articles_count > 0 -%}
+{{ 'c_common.min.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  #shopify-section-{{ section.id }} { padding: 80px 0 0; }
+  .c_topColumn__heading { margin-bottom: 32px; }
+  .c_topColumn__grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; margin: 0 0 36px; padding: 0; list-style: none; }
+  .c_topColumn__grid > li:only-child { grid-column: 2; }
+  .c_topColumn__card { display: block; color: #3c3c3c; text-decoration: none; }
+  .c_topColumn__card:hover .c_topColumn__title { text-decoration: underline; text-underline-offset: 4px; }
+  .c_topColumn__card:focus-visible { outline: 2px solid #3c3c3c; outline-offset: 6px; border-radius: 12px; }
+  .c_topColumn__image { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 12px; background: #f4f2ef; }
+  .c_topColumn__placeholder { display: flex; align-items: center; justify-content: center; color: #666; font-size: 1.6rem; }
+  .c_topColumn__date { display: block; margin-top: 14px; font-size: 1.4rem; line-height: 1.5; color: #666; }
+  .c_topColumn__title { margin: 6px 0 0; font-size: 1.8rem; font-weight: 700; line-height: 1.7; white-space: normal; overflow-wrap: anywhere; }
+  @media screen and (max-width: 989px) {
+    .c_topColumn__grid { gap: 20px; }
+    .c_topColumn__title { font-size: 1.6rem; }
+  }
+  @media screen and (max-width: 749px) {
+    #shopify-section-{{ section.id }} { padding-top: 48px; }
+    .c_topColumn__heading { margin-bottom: 24px; }
+    .c_topColumn__grid { grid-template-columns: 1fr; gap: 28px; margin-bottom: 28px; }
+    .c_topColumn__grid > li:only-child { grid-column: auto; }
+  }
+{%- endstyle -%}
+
+  <section class="c_topColumn page-width" aria-labelledby="ColumnHeading-{{ section.id }}">
+    <header class="c_topColumn__heading">
+      <h2 id="ColumnHeading-{{ section.id }}" class="c_common__title">コラム</h2>
+      <p class="c_common__text">COLUMN</p>
+    </header>
+    <ul class="c_topColumn__grid" role="list">
+      {%- for article in column_blog.articles limit: 3 -%}
+        <li>
+          <a class="c_topColumn__card" href="{{ article.url }}">
+            {%- if article.image -%}
+              <img class="c_topColumn__image"
+                src="{{ article.image | image_url: width: 720 }}"
+                srcset="{{ article.image | image_url: width: 400 }} 400w, {{ article.image | image_url: width: 720 }} 720w, {{ article.image | image_url: width: 1200 }} 1200w"
+                sizes="(min-width: 1200px) 360px, (min-width: 750px) 30vw, calc(100vw - 40px)"
+                width="{{ article.image.width }}" height="{{ article.image.height }}"
+                alt="{{ article.image.alt | default: article.title | escape }}" loading="lazy">
+            {%- else -%}
+              <span class="c_topColumn__image c_topColumn__placeholder" aria-hidden="true">MANMA BUONO</span>
+            {%- endif -%}
+            <time class="c_topColumn__date" datetime="{{ article.published_at | date: '%Y-%m-%d' }}">{{ article.published_at | date: '%Y.%m.%d' }}</time>
+            <h3 class="c_topColumn__title">{{ article.title | escape }}</h3>
+          </a>
+        </li>
+      {%- endfor -%}
+    </ul>
+    <a class="c_common__btn" href="{{ column_blog.url }}">コラム一覧はこちら</a>
+  </section>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "トップ：最新コラム",
+  "settings": [],
+  "presets": [{ "name": "トップ：最新コラム" }]
+}
+{% endschema %}
