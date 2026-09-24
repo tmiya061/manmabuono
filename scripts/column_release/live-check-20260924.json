@@ -1,0 +1,15 @@
+{
+  "home": {
+    "image26": true,
+    "large": true,
+    "column_section": true,
+    "column_before_guide": true,
+    "instagram_after_column": "checked separately"
+  },
+  "article": {
+    "image26": true,
+    "large": true,
+    "column_section": false,
+    "column_before_guide": true
+  }
+}

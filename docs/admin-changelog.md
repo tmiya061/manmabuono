@@ -9,6 +9,7 @@ Shopifyの管理画面・ストアデータは Git で追えない。**書き込
 
 ---
 
+- 2026-09-24 | article dog-homemade-recipe | 採用アイキャッチ26（1200×675、白ラベル＋コーラル帯）を設定 | scripts/column_release/set_article_image.py --apply（articleUpdate） | 復元: scripts/column_release/article-before-20260924.json。変更前image=nullのため管理画面で記事アイキャッチを解除
 - 2026-09-08 | 通知テンプレート `注文の確認`（設定 → 通知 → お客様への通知） | 本文の `<p>{{ email_body }}</p>` 直後に「フードのご相談の流れ」ブロックを挿入（相談商品 id=8004568088637 または handle=`food-consultation` を含む注文でのみ表示。通常商品だけの注文には出ない）。保存前後の本文をSHA-256で照合：保存前 `aa8ea19c…`＝バックアップと一致／保存後 `217955238c…`＝再読込後も一致。通常商品のサンプル注文でプレビューし、案内文が出ないこと・Liquidエラーが無いことを確認済み | ブラウザー操作（管理画面のコードエディター。通知テンプレートはAPI非対応） | 復元: `docs/notification-backups/order-confirmation-before-consultation-20260908.liquid` の全文を貼り戻す
 - 2026-09-08 | theme（非公開） | 確認用テーマ「【確認用】consult-link（フードのご相談メニュー）」#141464600637 を作成（ブランチ `feature/consult-link`＝グローバルメニューに「フードのご相談」追加。西川さん確認用プレビュー。※page.json の shop_tokyo アプリブロック1件だけ push 不可＝既存問題） | `shopify theme push --unpublished` | 復元: 管理画面でテーマ削除
 - 2026-09-08 | product `food-consultation`（新規） | 「管理栄養士に犬と猫のフードに関するご相談」¥500 を作成（ACTIVE・配送不要・在庫追跡なし・タグ無し・コレクション所属なし・`seo.hidden=1` で検索/サイトマップ非表示。導線（メニュー/トップ）未公開のため URL 直打ちのみ）。Online Store 公開は REST 2024-01 `published=true`。本文は西川さん確認前の下書き | `scripts/setup_consult_product.py --apply` | 復元: `scripts/setup_consult_product.py --revert`（`scripts/consult/created.json`）。導線公開時は `--unhide`
