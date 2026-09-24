@@ -1,0 +1,11 @@
+{
+  "id": "gid://shopify/Product/8004568088637",
+  "handle": "food-consultation",
+  "hidden": {
+    "id": "gid://shopify/Metafield/159032019845181",
+    "namespace": "seo",
+    "key": "hidden",
+    "type": "number_integer",
+    "value": "1"
+  }
+}

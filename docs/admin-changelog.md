@@ -9,6 +9,7 @@ Shopifyの管理画面・ストアデータは Git で追えない。**書き込
 
 ---
 
+- 2026-09-24 | product food-consultation | オーナー指定でseo.hidden=1を解除。本番HTMLでnoindexなし・max-image-preview:large維持を確認。他の検索除外は変更なし | scripts/consult/unhide_food_consultation.py --apply | 復元: scripts/consult/noindex-before-20260924.json の型・値で同商品にseo.hiddenを再設定
 - 2026-09-24 | article dog-homemade-recipe | 採用アイキャッチ26（1200×675、白ラベル＋コーラル帯）を設定 | scripts/column_release/set_article_image.py --apply（articleUpdate） | 復元: scripts/column_release/article-before-20260924.json。変更前image=nullのため管理画面で記事アイキャッチを解除
 - 2026-09-08 | 通知テンプレート `注文の確認`（設定 → 通知 → お客様への通知） | 本文の `<p>{{ email_body }}</p>` 直後に「フードのご相談の流れ」ブロックを挿入（相談商品 id=8004568088637 または handle=`food-consultation` を含む注文でのみ表示。通常商品だけの注文には出ない）。保存前後の本文をSHA-256で照合：保存前 `aa8ea19c…`＝バックアップと一致／保存後 `217955238c…`＝再読込後も一致。通常商品のサンプル注文でプレビューし、案内文が出ないこと・Liquidエラーが無いことを確認済み | ブラウザー操作（管理画面のコードエディター。通知テンプレートはAPI非対応） | 復元: `docs/notification-backups/order-confirmation-before-consultation-20260908.liquid` の全文を貼り戻す
 - 2026-09-08 | theme（非公開） | 確認用テーマ「【確認用】consult-link（フードのご相談メニュー）」#141464600637 を作成（ブランチ `feature/consult-link`＝グローバルメニューに「フードのご相談」追加。西川さん確認用プレビュー。※page.json の shop_tokyo アプリブロック1件だけ push 不可＝既存問題） | `shopify theme push --unpublished` | 復元: 管理画面でテーマ削除
