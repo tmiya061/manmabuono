@@ -422,7 +422,7 @@
     "dateModified": {{ article.updated_at | date: '%Y-%m-%dT%H:%M:%S%z' | json }},
     "mainEntityOfPage": { "@type": "WebPage", "@id": {{ request.origin | append: article.url | json }} },
     {% if article.image %}"image": [{{ og_image | json }}],{% endif %}
-    {% if category %}"articleSection": {{ category.name.value | json }},{% endif %}
+    {% if category != blank %}"articleSection": {{ category.name.value | json }},{% endif %}
     "author": {% render 'c_article-person-jsonld', person: author_mo, fallback_name: author_name %},
     {% if supervisor_mo %}"reviewedBy": {% render 'c_article-person-jsonld', person: supervisor_mo %},{% endif %}
     "publisher": { "@type": "Organization", "name": {{ shop.name | json }}, "url": {{ request.origin | json }} }
@@ -435,7 +435,7 @@
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "TOP", "item": {{ request.origin | json }} },
       { "@type": "ListItem", "position": 2, "name": {{ blog.title | json }}, "item": {{ request.origin | append: blog.url | json }} }
-      {%- if category -%}
+      {%- if category != blank -%}
         ,{ "@type": "ListItem", "position": 3, "name": {{ category.name.value | json }}, "item": {{ request.origin | append: blog.url | append: '/tagged/' | append: category_tag | json }} }
         ,{ "@type": "ListItem", "position": 4, "name": {{ article.title | json }}, "item": {{ request.origin | append: article.url | json }} }
       {%- else -%}

@@ -134,7 +134,7 @@
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "TOP", "item": {{ request.origin | json }} },
       { "@type": "ListItem", "position": 2, "name": {{ blog.title | json }}, "item": {{ request.origin | append: blog.url | json }} }
-      {%- if current_category -%}
+      {%- if current_category != blank -%}
         ,{ "@type": "ListItem", "position": 3, "name": {{ current_category.name.value | json }}, "item": {{ request.origin | append: blog.url | append: '/tagged/' | append: current_tag | json }} }
       {%- endif -%}
     ]
