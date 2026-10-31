@@ -16,7 +16,7 @@
 
 {%- liquid
   assign variant = variant | default: 'chips'
-  if collection.handle contains 'cat'
+  if collection.handle contains 'cat' or collection.handle == 'c-soba'
     assign pet = 'cat'
   else
     assign pet = 'dog'

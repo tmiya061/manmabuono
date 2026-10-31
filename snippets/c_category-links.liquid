@@ -43,8 +43,8 @@
       endunless
     endif
   endfor
-  # 季節商品はヘッダー（PC/SP）に表示。実在する現行コレクションへリンクする。
-  if variant == 'icon'
+  # 季節商品はヘッダーと商品一覧（PC/SP）に表示する。
+  if variant == 'icon' or variant == 'chips'
     if pet == 'cat'
       assign extra = extra | append: ',c-soba'
     else
