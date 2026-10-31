@@ -1,3 +1,4 @@
+- 2026-10-31 | 年越しそば7503940091965 | 通常配送97645から冷凍商品配送97646へ移動。既存送料1210円・グループ合計1万円以上無料を適用 | Advanced Shipping Rules管理画面 | 復元: scripts/seasonal_2027/records/soba-cold-before.json（通常配送へReassign）
 - 2026-10-31 | product 7727212691517（おせち2027）・7503940091965（年越しそば） | 西川さん回答の原材料・賞味期限／消費期限・保存方法・発送注記・栄養成分を custom.product_table1/2/4/5/6 へ設定（そばは 1/2/4/6）。与え方（table3）は調理方法が未確認のため空のまま | scripts/seasonal_2027/set_spec_tables.py --apply | 復元: metafieldsDelete で同キーを削除（変更前は未設定・scripts/seasonal_2027/records/spec-before.json）
 - 2026-10-31 | product 7503940091965（年越しそば） | 12/26発送予定・配送希望日にかかわらない旨を本文とカート用shipping_noticeへ追加 | scripts/seasonal_2027/soba_shipping.py | 復元: scripts/seasonal_2027/records/soba-shipping-before.json
 - 2026-10-31 | product 8088491229245（非公開下書き） | 未確定の仕様6項目を空欄化し表を非表示 | Admin API metafieldsDelete | 復元: verify/20261031_seasonal/before.jsonの同商品metafields

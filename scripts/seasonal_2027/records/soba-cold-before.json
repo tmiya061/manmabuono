@@ -1,0 +1,17 @@
+{
+  "productId": "7503940091965",
+  "variantId": "41736467185725",
+  "previousGroup": {
+    "id": "97645",
+    "name": "通常配送"
+  },
+  "targetGroup": {
+    "id": "97646",
+    "name": "冷凍商品配送",
+    "rateId": "1213732",
+    "rateJPY": 1210,
+    "freeThresholdGroupSubtotalJPY": 10000
+  },
+  "restore": "Advanced Shipping Rulesで同商品を通常配送97645へReassign。共有料金は変更しない。",
+  "source": "2026-10-31 管理画面読み取り"
+}
