@@ -24,7 +24,7 @@
           "type": "banner",
           "settings": {
             "banner-img": "shopify://shop_images/1_1.png",
-            "banner-link": "https://www.furusato-tax.jp/search?q=MANMA%20BUONO&header=1&sst=B",
+            "banner-link": "https://search.rakuten.co.jp/search/event/%E3%83%9E%E3%83%B3%E3%83%9E%E3%83%9C%E3%83%BC%E3%83%8E/?ev=40",
             "banner-new-tab": true
           }
         },
@@ -74,7 +74,7 @@
           "type": "banner",
           "settings": {
             "banner-img": "shopify://shop_images/1_1.png",
-            "banner-link": "https://www.furusato-tax.jp/search?q=MANMA%20BUONO&header=1&sst=B"
+            "banner-link": "https://search.rakuten.co.jp/search/event/%E3%83%9E%E3%83%B3%E3%83%9E%E3%83%9C%E3%83%BC%E3%83%8E/?ev=40"
           }
         },
         "banner_qFke8P": {
