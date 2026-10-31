@@ -1,0 +1,45 @@
+{
+  "id": "gid://shopify/Product/7503940091965",
+  "title": "京都笠置産 鹿肉の年越しそば",
+  "descriptionHtml": "<p><span style=\"vertical-align: inherit;\"><span style=\"vertical-align: inherit;\"><span style=\"vertical-align: inherit;\"><span style=\"vertical-align: inherit;\"><span style=\"vertical-align: inherit;\"><span style=\"vertical-align: inherit;\"><span style=\"vertical-align: inherit;\"><span style=\"vertical-align: inherit;\">京都笠置の天然ジビエ鹿肉をミンチにしてジャーキーにしました。一番だしと十割そばにトッピングしてください。今年一年を振り返りつつ、来年も良い一年になりますようにと願いを込めて。</span></span></span></span></span></span></span></span></p>\n<p><span style=\"vertical-align: inherit;\"><span style=\"vertical-align: inherit;\"><span style=\"vertical-align: inherit;\"><span style=\"vertical-align: inherit;\"><span style=\"vertical-align: inherit;\"><span style=\"vertical-align: inherit;\"><span style=\"vertical-align: inherit;\"><span style=\"vertical-align: inherit;\">年越しそば調理法：①一番だしに鹿肉を入れる②十割そばをお湯で3分茹でる。③火を止めて2分放置④そばをザルに開ける⑤①のだしにそばを入れ、人肌に冷めてからお与えください。</span></span></span></span></span></span></span></span></p><p><strong>年越しそばは2026年12月26日発送予定です。カートで選択した配送希望日にかかわらず、この日程での発送となります。</strong></p>",
+  "metafields": {
+    "nodes": [
+      {
+        "id": "gid://shopify/Metafield/158243933847613",
+        "key": "card_label",
+        "type": "single_line_text_field",
+        "value": "年末の特別な一杯"
+      },
+      {
+        "id": "gid://shopify/Metafield/160713625436221",
+        "key": "shipping_notice",
+        "type": "multi_line_text_field",
+        "value": "年越しそばは2026年12月26日発送予定です。カートで選択した配送希望日にかかわらず、この日程での発送となります。"
+      },
+      {
+        "id": "gid://shopify/Metafield/160715649613885",
+        "key": "product_table1",
+        "type": "multi_line_text_field",
+        "value": "蕎麦、鹿肉、かつお節、昆布、椎茸"
+      },
+      {
+        "id": "gid://shopify/Metafield/160715649646653",
+        "key": "product_table2",
+        "type": "multi_line_text_field",
+        "value": "解凍せずに冷凍保存で2027年1月30日まで\n消費期限：解凍後に冷蔵保存で2日間"
+      },
+      {
+        "id": "gid://shopify/Metafield/160715649679421",
+        "key": "product_table4",
+        "type": "multi_line_text_field",
+        "value": "-18℃以下で保存してください"
+      },
+      {
+        "id": "gid://shopify/Metafield/160715649712189",
+        "key": "product_table6",
+        "type": "multi_line_text_field",
+        "value": "たんぱく質 6.0％以上、脂肪 0.5％以上、粗繊維 1.0％以下、灰分 1.0％以下、水分 80.0％以下、エネルギー 140kcal/100g"
+      }
+    ]
+  }
+}

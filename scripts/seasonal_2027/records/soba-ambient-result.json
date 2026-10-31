@@ -1,0 +1,23 @@
+{
+  "productUpdate": {
+    "productUpdate": {
+      "product": {
+        "id": "gid://shopify/Product/7503940091965"
+      },
+      "userErrors": []
+    }
+  },
+  "metafieldsDelete": {
+    "metafieldsDelete": {
+      "deletedMetafields": [
+        {
+          "key": "product_table2"
+        },
+        {
+          "key": "product_table4"
+        }
+      ],
+      "userErrors": []
+    }
+  }
+}
