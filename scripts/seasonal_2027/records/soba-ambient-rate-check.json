@@ -1,0 +1,33 @@
+{
+  "shipping_rates": [
+    {
+      "name": "通常配送",
+      "presentment_name": "通常配送",
+      "code": "flat-rate",
+      "price": "880",
+      "markup": "0",
+      "source": "Advanced Shipping Rules",
+      "delivery_date": null,
+      "delivery_range": [],
+      "delivery_days": [],
+      "compare_price": null,
+      "phone_required": false,
+      "currency": "JPY",
+      "carrier_identifier": "1db2e5576ce75de8b6f398fd04fe123e",
+      "delivery_category": null,
+      "using_merchant_account": null,
+      "carrier_service_id": 60900737085,
+      "description": null,
+      "additional_data": null,
+      "incoterm": null,
+      "api_client_id": 1239690,
+      "requested_fulfillment_service_id": null,
+      "shipment_options": null,
+      "charge_items": null,
+      "has_restrictions": null,
+      "rating_classification": null,
+      "accepts_instructions": false,
+      "metafields": null
+    }
+  ]
+}
