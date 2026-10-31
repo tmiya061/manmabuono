@@ -1,0 +1,13 @@
+{
+  "product": {
+    "id": "gid://shopify/Product/7503940091965",
+    "title": "京都笠置産 鹿肉の年越しそば",
+    "handle": "京都笠置産-鹿肉の年越しそば",
+    "descriptionHtml": "<p><span style=\"vertical-align: inherit;\"><span style=\"vertical-align: inherit;\"><span style=\"vertical-align: inherit;\"><span style=\"vertical-align: inherit;\"><span style=\"vertical-align: inherit;\"><span style=\"vertical-align: inherit;\"><span style=\"vertical-align: inherit;\"><span style=\"vertical-align: inherit;\">京都笠置の天然ジビエ鹿肉をミンチにしてジャーキーにしました。一番だしと十割そばにトッピングしてください。今年一年を振り返りつつ、来年も良い一年になりますようにと願いを込めて。</span></span></span></span></span></span></span></span></p>\n<p><span style=\"vertical-align: inherit;\"><span style=\"vertical-align: inherit;\"><span style=\"vertical-align: inherit;\"><span style=\"vertical-align: inherit;\"><span style=\"vertical-align: inherit;\"><span style=\"vertical-align: inherit;\"><span style=\"vertical-align: inherit;\"><span style=\"vertical-align: inherit;\">年越しそば調理法：①一番だしに鹿肉を入れる②十割そばをお湯で3分茹でる。③火を止めて2分放置④そばをザルに開ける⑤①のだしにそばを入れ、人肌に冷めてからお与えください。</span></span></span></span></span></span></span></span></p><p><strong>年越しそばは2026年12月26日発送予定です。カートで選択した配送希望日にかかわらず、この日程での発送となります。</strong></p>",
+    "metafield": {
+      "id": "gid://shopify/Metafield/160713625436221",
+      "type": "multi_line_text_field",
+      "value": "年越しそばは2026年12月26日発送予定です。カートで選択した配送希望日にかかわらず、この日程での発送となります。"
+    }
+  }
+}

@@ -1,3 +1,4 @@
+- 2026-10-31 | product 7503940091965（年越しそば） | 12/26発送予定・配送希望日にかかわらない旨を本文とカート用shipping_noticeへ追加 | scripts/seasonal_2027/soba_shipping.py | 復元: scripts/seasonal_2027/records/soba-shipping-before.json
 - 2026-10-31 | product 8088491229245（非公開下書き） | 未確定の仕様6項目を空欄化し表を非表示 | Admin API metafieldsDelete | 復元: verify/20261031_seasonal/before.jsonの同商品metafields
 - 2026-10-31 | files gid://shopify/MediaImage/28564076986429 | 2027おせちバナーを登録（公開準備） | scripts/upload_file.py | 復元: 既存ファイル未変更、追加IDはverify/20261031_seasonal/banner-upload.json
 - 2026-10-31 | 2027おせち画像6枚＋バナー | 画像代替テキストを商品名・料理名へ整備 | Admin API fileUpdate | 復元: verify/20261031_seasonal/before.jsonとbanner-upload.json
