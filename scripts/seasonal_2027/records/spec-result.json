@@ -1,0 +1,61 @@
+{
+  "metafieldsSet": {
+    "metafields": [
+      {
+        "id": "gid://shopify/Metafield/160715649450045",
+        "ownerType": "PRODUCT",
+        "key": "product_table1",
+        "value": "鹿肉の年越しそば：蕎麦、鹿肉、かつお節、昆布、椎茸\n鹿肉の煮込みハンバーグ：鹿肉、トマト、しめじ、鹿ボーンブロス\n真鯛のアクアパッツァ：鯛、トマト、じゃがいも、えのき、オリーブ油、吉野本葛、チキンボーンブロス\nがいな鶏の親子丼：鶏肉、卵、じゃがいも、人参、しいたけ、三つ葉、本葛、かつお節、昆布、椎茸\nサーモンクリームシチュー：サーモン、豆乳（有機大豆）、小松菜、人参、マッシュルーム、チーズ、本葛、鹿ボーンブロス"
+      },
+      {
+        "id": "gid://shopify/Metafield/160715649482813",
+        "ownerType": "PRODUCT",
+        "key": "product_table2",
+        "value": "解凍せずに冷凍保存で2027年1月30日まで\n消費期限：解凍後に冷蔵保存で2日間"
+      },
+      {
+        "id": "gid://shopify/Metafield/160715649515581",
+        "ownerType": "PRODUCT",
+        "key": "product_table4",
+        "value": "-18℃以下で保存してください"
+      },
+      {
+        "id": "gid://shopify/Metafield/160715649548349",
+        "ownerType": "PRODUCT",
+        "key": "product_table5",
+        "value": "注文確認後、2026年12月26日に発送予定です。冷凍発送。"
+      },
+      {
+        "id": "gid://shopify/Metafield/160715649581117",
+        "ownerType": "PRODUCT",
+        "key": "product_table6",
+        "value": "鹿肉の年越しそば：たんぱく質 6.0％以上、脂肪 0.5％以上、粗繊維 1.0％以下、灰分 1.0％以下、水分 80.0％以下、エネルギー 140kcal/100g\n鹿肉の煮込みハンバーグ：たんぱく質 9.5％以上、脂肪 0.5％以上、粗繊維 1.0％以下、灰分 1.0％以下、水分 86.5％以下、エネルギー 51kcal/100g\n真鯛のアクアパッツァ：たんぱく質 6.6％以上、脂肪 2.7％以上、粗繊維 0.6％以下、灰分 0.7％以下、水分 86.2％以下、エネルギー 57kcal/100g\nがいな鶏の親子丼：たんぱく質 6.0％以上、脂肪 4.5％以上、粗繊維 0.5％以下、灰分 1.0％以下、水分 87.5％以下、エネルギー 102kcal/100g\nサーモンクリームシチュー：たんぱく質 7.0％以上、脂肪 5.0％以上、粗繊維 0.5％以下、灰分 1.0％以下、水分 85.5％以下、エネルギー 84kcal/100g"
+      },
+      {
+        "id": "gid://shopify/Metafield/160715649613885",
+        "ownerType": "PRODUCT",
+        "key": "product_table1",
+        "value": "蕎麦、鹿肉、かつお節、昆布、椎茸"
+      },
+      {
+        "id": "gid://shopify/Metafield/160715649646653",
+        "ownerType": "PRODUCT",
+        "key": "product_table2",
+        "value": "解凍せずに冷凍保存で2027年1月30日まで\n消費期限：解凍後に冷蔵保存で2日間"
+      },
+      {
+        "id": "gid://shopify/Metafield/160715649679421",
+        "ownerType": "PRODUCT",
+        "key": "product_table4",
+        "value": "-18℃以下で保存してください"
+      },
+      {
+        "id": "gid://shopify/Metafield/160715649712189",
+        "ownerType": "PRODUCT",
+        "key": "product_table6",
+        "value": "たんぱく質 6.0％以上、脂肪 0.5％以上、粗繊維 1.0％以下、灰分 1.0％以下、水分 80.0％以下、エネルギー 140kcal/100g"
+      }
+    ],
+    "userErrors": []
+  }
+}
