@@ -1,0 +1,599 @@
+{
+  "products": {
+    "nodes": [
+      {
+        "id": "gid://shopify/Product/7503940091965",
+        "title": "京都笠置産 鹿肉の年越しそば",
+        "handle": "京都笠置産-鹿肉の年越しそば",
+        "status": "ACTIVE",
+        "descriptionHtml": "<p><span style=\"vertical-align: inherit;\"><span style=\"vertical-align: inherit;\"><span style=\"vertical-align: inherit;\"><span style=\"vertical-align: inherit;\"><span style=\"vertical-align: inherit;\"><span style=\"vertical-align: inherit;\"><span style=\"vertical-align: inherit;\"><span style=\"vertical-align: inherit;\">京都笠置の天然ジビエ鹿肉をミンチにしてジャーキーにしました。一番だしと十割そばにトッピングしてください。今年一年を振り返りつつ、来年も良い一年になりますようにと願いを込めて。</span></span></span></span></span></span></span></span></p>\n<p><span style=\"vertical-align: inherit;\"><span style=\"vertical-align: inherit;\"><span style=\"vertical-align: inherit;\"><span style=\"vertical-align: inherit;\"><span style=\"vertical-align: inherit;\"><span style=\"vertical-align: inherit;\"><span style=\"vertical-align: inherit;\"><span style=\"vertical-align: inherit;\">年越しそば調理法：①一番だしに鹿肉を入れる②十割そばをお湯で3分茹でる。③火を止めて2分放置④そばをザルに開ける⑤①のだしにそばを入れ、人肌に冷めてからお与えください。</span></span></span></span></span></span></span></span></p>",
+        "templateSuffix": "",
+        "tags": [
+          "季節もの",
+          "犬用全商品",
+          "猫用全商品"
+        ],
+        "seo": {
+          "title": "犬の年越しそば 京都笠置産 鹿肉のジャーキー入り 年末限定",
+          "description": "愛犬と一緒に年を越すための、犬用の年越しそば。京都笠置の天然鹿肉をミンチにしてジャーキーにし、京の一番だしと十割そばに合わせます。人肌に冷ましてから与える調理手順つき。年末シーズン限定のごちそうです。"
+        },
+        "metafields": {
+          "nodes": [
+            {
+              "id": "gid://shopify/Metafield/158055848771645",
+              "namespace": "global",
+              "key": "title_tag",
+              "type": "string",
+              "value": "犬の年越しそば 京都笠置産 鹿肉のジャーキー入り 年末限定"
+            },
+            {
+              "id": "gid://shopify/Metafield/158055848804413",
+              "namespace": "global",
+              "key": "description_tag",
+              "type": "string",
+              "value": "愛犬と一緒に年を越すための、犬用の年越しそば。京都笠置の天然鹿肉をミンチにしてジャーキーにし、京の一番だしと十割そばに合わせます。人肌に冷ましてから与える調理手順つき。年末シーズン限定のごちそうです。"
+            },
+            {
+              "id": "gid://shopify/Metafield/158243933847613",
+              "namespace": "custom",
+              "key": "card_label",
+              "type": "single_line_text_field",
+              "value": "年末の特別な一杯"
+            }
+          ]
+        },
+        "media": {
+          "nodes": [
+            {
+              "id": "gid://shopify/MediaImage/25080291262525",
+              "alt": "",
+              "image": {
+                "url": "https://cdn.shopify.com/s/files/1/0589/6591/7757/files/62e08d982e02147a0f4ff7a442f50796_fcd21b06-4765-441a-adb2-03f92106e93a.jpg?v=1728279696"
+              }
+            }
+          ]
+        },
+        "variants": {
+          "nodes": [
+            {
+              "id": "gid://shopify/ProductVariant/41736467185725",
+              "price": "1320",
+              "inventoryQuantity": -5,
+              "inventoryPolicy": "DENY",
+              "inventoryItem": {
+                "id": "gid://shopify/InventoryItem/43824093429821",
+                "tracked": true
+              }
+            }
+          ]
+        },
+        "collections": {
+          "nodes": [
+            {
+              "id": "gid://shopify/Collection/279779409981",
+              "handle": "dog-all",
+              "title": "犬用の全ての商品"
+            },
+            {
+              "id": "gid://shopify/Collection/279799038013",
+              "handle": "cat-all",
+              "title": "猫用の全ての商品"
+            },
+            {
+              "id": "gid://shopify/Collection/285576396861",
+              "handle": "soba",
+              "title": "犬用 - 年越しそば"
+            },
+            {
+              "id": "gid://shopify/Collection/285576429629",
+              "handle": "c-soba",
+              "title": "猫用 - 年越しそば"
+            },
+            {
+              "id": "gid://shopify/Collection/299410260029",
+              "handle": "seasonal",
+              "title": "季節限定"
+            },
+            {
+              "id": "gid://shopify/Collection/300273205309",
+              "handle": "coupon-eligible",
+              "title": "クーポン対象商品"
+            }
+          ]
+        }
+      },
+      {
+        "id": "gid://shopify/Product/7727212691517",
+        "title": "管理栄養士が作る犬の手作り京おせち",
+        "handle": "管理栄養士が作る犬の手作り京おせち",
+        "status": "ACTIVE",
+        "descriptionHtml": "<p><meta charset=\"UTF-8\"><span>京都マンマボーノが作る犬の京おせちは、31日から3日まで楽しんでいただけるように1食づつ個別冷凍しております。</span><br><br><span>31日の鹿肉の年越しそばからスタートし、<meta charset=\"UTF-8\">ハンバーグやお魚のポアレなどわんちゃんが大喜びしてくれるメニューをご用意いたしました。</span><br><span>今年1年もわんちゃんの健康と幸せを願って、丁寧に仕上げました。</span><br><span>年越しそば以外は、調理は電子レンジで3分加熱するだけで簡単手間なしのおせちです。</span><br><br><span>内容　鹿肉の年越しそば・【おやつ】めでたい・黒毛和牛のハンバーグ・サーモンクリームシチュー・がいな鶏の親子丼・黒鯛のアクアパッツァ・鹿肉のパスタ７種各１袋</span><br></p>",
+        "templateSuffix": "",
+        "tags": [
+          "季節もの",
+          "犬用全商品"
+        ],
+        "seo": {
+          "title": "犬用おせち 管理栄養士が作る手作り京おせち 7種・個別冷凍",
+          "description": "12月31日から1月3日まで楽しめる、犬用の手作り京おせち。京都の管理栄養士が、鹿肉の年越しそば、黒毛和牛のハンバーグ、黒鯛のアクアパッツァなど7種を1食ずつ個別冷凍でお届けします。年越しそば以外は電子レンジで3分。年末年始限定。"
+        },
+        "metafields": {
+          "nodes": [
+            {
+              "id": "gid://shopify/Metafield/152712843952189",
+              "namespace": "custom",
+              "key": "product_table2",
+              "type": "multi_line_text_field",
+              "value": "解凍せずに冷凍保存で2月20日まで"
+            },
+            {
+              "id": "gid://shopify/Metafield/152712843984957",
+              "namespace": "custom",
+              "key": "product_table4",
+              "type": "multi_line_text_field",
+              "value": "-18℃以下で保存してください"
+            },
+            {
+              "id": "gid://shopify/Metafield/152712844017725",
+              "namespace": "custom",
+              "key": "product_table5",
+              "type": "multi_line_text_field",
+              "value": "注文確認後2025年12月26日に発送いたします。冷凍発送。"
+            },
+            {
+              "id": "gid://shopify/Metafield/152712858075197",
+              "namespace": "custom",
+              "key": "product_table1",
+              "type": "multi_line_text_field",
+              "value": "鹿肉の年越しそば：蕎麦、鹿肉、かつお節、昆布、椎茸・めでたい：米粉、紫芋、無調整豆乳、蜂蜜、米油、ベーキングパウダー・黒毛和牛のハンバーグ：牛肉、じゃがいも、トマト、ブロッコリー・サーモンクリームシチュー：サーモン、豆乳、小松菜、人参、マッシュルーム、チーズ、吉野本葛、鹿がら、鹿肉・がいな鶏の親子丼：鶏肉、卵、じゃがいも、人参、しいたけ、三つ葉、かつお節、昆布、椎茸・黒鯛のアクアパッツァ：黒鯛、トマト、じゃがいも、えのき、オリーブ油、吉野本葛、鶏ガラ、親鳥・鹿肉のパスタ：鹿肉、トマト、小麦粉、パプリカ、小松菜、オリーブ油、吉野本葛、鶏ガラ、親鳥"
+            },
+            {
+              "id": "gid://shopify/Metafield/152713169895485",
+              "namespace": "custom",
+              "key": "product_table3",
+              "type": "multi_line_text_field",
+              "value": "年越しそば以外は、調理は電子レンジで3分加熱するだけで簡単手間なしのおせちです。"
+            },
+            {
+              "id": "gid://shopify/Metafield/158055848902717",
+              "namespace": "global",
+              "key": "title_tag",
+              "type": "string",
+              "value": "犬用おせち 管理栄養士が作る手作り京おせち 7種・個別冷凍"
+            },
+            {
+              "id": "gid://shopify/Metafield/158055848935485",
+              "namespace": "global",
+              "key": "description_tag",
+              "type": "string",
+              "value": "12月31日から1月3日まで楽しめる、犬用の手作り京おせち。京都の管理栄養士が、鹿肉の年越しそば、黒毛和牛のハンバーグ、黒鯛のアクアパッツァなど7種を1食ずつ個別冷凍でお届けします。年越しそば以外は電子レンジで3分。年末年始限定。"
+            },
+            {
+              "id": "gid://shopify/Metafield/158243933880381",
+              "namespace": "custom",
+              "key": "card_label",
+              "type": "single_line_text_field",
+              "value": "7種の犬用おせち"
+            }
+          ]
+        },
+        "media": {
+          "nodes": [
+            {
+              "id": "gid://shopify/MediaImage/26710918561853",
+              "alt": "",
+              "image": {
+                "url": "https://cdn.shopify.com/s/files/1/0589/6591/7757/files/1d513c732155ca9748c2955767722797_55f85404-23ed-4153-8539-370028bec2d6.jpg?v=1761636847"
+              }
+            },
+            {
+              "id": "gid://shopify/MediaImage/26710918692925",
+              "alt": "",
+              "image": {
+                "url": "https://cdn.shopify.com/s/files/1/0589/6591/7757/files/6b1734a6af673f432bfd108d4de1ab94.jpg?v=1761636847"
+              }
+            },
+            {
+              "id": "gid://shopify/MediaImage/26709372076093",
+              "alt": "",
+              "image": {
+                "url": "https://cdn.shopify.com/s/files/1/0589/6591/7757/files/Maskgroup-3_60f7199f-91e7-41fe-92b6-3ab9a75db821.jpg?v=1761636847"
+              }
+            },
+            {
+              "id": "gid://shopify/MediaImage/26709372010557",
+              "alt": "",
+              "image": {
+                "url": "https://cdn.shopify.com/s/files/1/0589/6591/7757/files/Maskgroup-1_06ecb775-ca4f-4290-9434-4ff743bc8abf.jpg?v=1761636847"
+              }
+            },
+            {
+              "id": "gid://shopify/MediaImage/26709372043325",
+              "alt": "",
+              "image": {
+                "url": "https://cdn.shopify.com/s/files/1/0589/6591/7757/files/Maskgroup-2_781af77c-0c4d-4f9a-8749-dcbe7b36b329.jpg?v=1761636847"
+              }
+            },
+            {
+              "id": "gid://shopify/MediaImage/26709372174397",
+              "alt": "",
+              "image": {
+                "url": "https://cdn.shopify.com/s/files/1/0589/6591/7757/files/Maskgroup-6_5c4330a6-81f2-4a15-aaae-a2a78a2dadf9.jpg?v=1761636847"
+              }
+            },
+            {
+              "id": "gid://shopify/MediaImage/26709372141629",
+              "alt": "",
+              "image": {
+                "url": "https://cdn.shopify.com/s/files/1/0589/6591/7757/files/Maskgroup-5_4f25daf3-1846-4973-a446-b34998211649.jpg?v=1761636847"
+              }
+            },
+            {
+              "id": "gid://shopify/MediaImage/26709372207165",
+              "alt": "",
+              "image": {
+                "url": "https://cdn.shopify.com/s/files/1/0589/6591/7757/files/Maskgroup_8c1b09f7-76b2-4136-9f6e-7bbe3b817518.jpg?v=1761636847"
+              }
+            }
+          ]
+        },
+        "variants": {
+          "nodes": [
+            {
+              "id": "gid://shopify/ProductVariant/42666506190909",
+              "price": "9900",
+              "inventoryQuantity": -4,
+              "inventoryPolicy": "DENY",
+              "inventoryItem": {
+                "id": "gid://shopify/InventoryItem/44741103124541",
+                "tracked": true
+              }
+            }
+          ]
+        },
+        "collections": {
+          "nodes": [
+            {
+              "id": "gid://shopify/Collection/279779409981",
+              "handle": "dog-all",
+              "title": "犬用の全ての商品"
+            },
+            {
+              "id": "gid://shopify/Collection/285576331325",
+              "handle": "osechi",
+              "title": "犬用 - おせち"
+            },
+            {
+              "id": "gid://shopify/Collection/299410260029",
+              "handle": "seasonal",
+              "title": "季節限定"
+            },
+            {
+              "id": "gid://shopify/Collection/300273205309",
+              "handle": "coupon-eligible",
+              "title": "クーポン対象商品"
+            }
+          ]
+        }
+      },
+      {
+        "id": "gid://shopify/Product/8088491229245",
+        "title": "【2027年】管理栄養士が作る犬の手作り京おせち",
+        "handle": "osechi-2027-review",
+        "status": "DRAFT",
+        "descriptionHtml": "<p>京都マンマボーノが手作りする、犬の手作り京おせち。愛犬と迎える2027年のお正月に、素材の良さにこだわった5品のごちそうをお届けします。</p>\n<p>鹿肉の年越しそばから始まり、鹿肉の煮込みハンバーグや真鯛のアクアパッツァなど、年末年始の特別な食卓にふさわしいメニューを揃えました。</p>\n<p>1食ずつ個包装・冷凍でお届け。管理栄養士監修のレシピで、愛犬と過ごすごちそうの時間をお楽しみください。</p>\n<h3>セット内容（5品）</h3>\n<ul>\n<li>鹿肉の年越しそば</li>\n<li>鹿肉の煮込みハンバーグ</li>\n<li>真鯛のアクアパッツァ</li>\n<li>がいな鶏の親子丼</li>\n<li>サーモンクリームシチュー</li>\n</ul>\n<p>商品代 6,600円（税込）＋送料 1,100円（税込）。1セットの合計 7,700円（税込）。</p>\n<p>2026年11月1日販売開始予定。</p>",
+        "templateSuffix": "",
+        "tags": [
+          "季節もの",
+          "犬用全商品"
+        ],
+        "seo": {
+          "title": "犬用おせち2027｜管理栄養士が作る手作り京おせち5品｜マンマボーノ",
+          "description": "愛犬と迎える2027年のお正月に。京都マンマボーノが手作りする犬用京おせち5品。鹿肉の年越しそば、鹿肉の煮込みハンバーグ、真鯛のアクアパッツァなどを個包装・冷凍でお届け。"
+        },
+        "metafields": {
+          "nodes": [
+            {
+              "id": "gid://shopify/Metafield/160541478715453",
+              "namespace": "custom",
+              "key": "product_table1",
+              "type": "multi_line_text_field",
+              "value": "【公開前確認】各品の原材料・内容量は確認中です。"
+            },
+            {
+              "id": "gid://shopify/Metafield/160541478748221",
+              "namespace": "custom",
+              "key": "product_table2",
+              "type": "multi_line_text_field",
+              "value": "【公開前確認】今年の賞味期限は確認中です。"
+            },
+            {
+              "id": "gid://shopify/Metafield/160541478780989",
+              "namespace": "custom",
+              "key": "product_table3",
+              "type": "multi_line_text_field",
+              "value": "1食ずつ個包装・冷凍でお届けします。\n【公開前確認】電子レンジの出力・加熱方法・年越しそばの調理方法は確認中です。"
+            },
+            {
+              "id": "gid://shopify/Metafield/160541478813757",
+              "namespace": "custom",
+              "key": "product_table4",
+              "type": "multi_line_text_field",
+              "value": "冷凍保存。\n【公開前確認】保存温度は確認中です。"
+            },
+            {
+              "id": "gid://shopify/Metafield/160541478846525",
+              "namespace": "custom",
+              "key": "product_table5",
+              "type": "multi_line_text_field",
+              "value": "【公開前確認】発送日・受付締切・販売数量・送料条件は確認中です。"
+            },
+            {
+              "id": "gid://shopify/Metafield/160541478879293",
+              "namespace": "custom",
+              "key": "product_table6",
+              "type": "multi_line_text_field",
+              "value": "【公開前確認】今年の栄養成分値は確認中です。"
+            },
+            {
+              "id": "gid://shopify/Metafield/160541478912061",
+              "namespace": "custom",
+              "key": "card_label",
+              "type": "single_line_text_field",
+              "value": "5品の犬用おせち"
+            },
+            {
+              "id": "gid://shopify/Metafield/160541478944829",
+              "namespace": "seo",
+              "key": "hidden",
+              "type": "number_integer",
+              "value": "1"
+            },
+            {
+              "id": "gid://shopify/Metafield/160541478977597",
+              "namespace": "global",
+              "key": "title_tag",
+              "type": "string",
+              "value": "犬用おせち2027｜管理栄養士が作る手作り京おせち5品｜マンマボーノ"
+            },
+            {
+              "id": "gid://shopify/Metafield/160541479010365",
+              "namespace": "global",
+              "key": "description_tag",
+              "type": "string",
+              "value": "愛犬と迎える2027年のお正月に。京都マンマボーノが手作りする犬用京おせち5品。鹿肉の年越しそば、鹿肉の煮込みハンバーグ、真鯛のアクアパッツァなどを個包装・冷凍でお届け。"
+            }
+          ]
+        },
+        "media": {
+          "nodes": [
+            {
+              "id": "gid://shopify/MediaImage/28432279404605",
+              "alt": "",
+              "image": {
+                "url": "https://cdn.shopify.com/s/files/1/0589/6591/7757/files/product-main-v2.png?v=1793000788"
+              }
+            },
+            {
+              "id": "gid://shopify/MediaImage/28432210100285",
+              "alt": "鹿肉の年越しそば",
+              "image": {
+                "url": "https://cdn.shopify.com/s/files/1/0589/6591/7757/files/soba-original.jpg?v=1792996253"
+              }
+            },
+            {
+              "id": "gid://shopify/MediaImage/27366197067837",
+              "alt": "",
+              "image": {
+                "url": "https://cdn.shopify.com/s/files/1/0589/6591/7757/files/hanbarg.webp?v=1778478478"
+              }
+            },
+            {
+              "id": "gid://shopify/MediaImage/28432210165821",
+              "alt": "真鯛のアクアパッツァ（共有資料と同じ写真の既存高解像度版・確認用）",
+              "image": {
+                "url": "https://cdn.shopify.com/s/files/1/0589/6591/7757/files/fish-original.jpg?v=1792996253"
+              }
+            },
+            {
+              "id": "gid://shopify/MediaImage/28432210198589",
+              "alt": "がいな鶏の親子丼",
+              "image": {
+                "url": "https://cdn.shopify.com/s/files/1/0589/6591/7757/files/rice-original.jpg?v=1792996253"
+              }
+            },
+            {
+              "id": "gid://shopify/MediaImage/28432210231357",
+              "alt": "サーモンクリームシチュー",
+              "image": {
+                "url": "https://cdn.shopify.com/s/files/1/0589/6591/7757/files/stew-original.jpg?v=1792996253"
+              }
+            }
+          ]
+        },
+        "variants": {
+          "nodes": [
+            {
+              "id": "gid://shopify/ProductVariant/43884984795197",
+              "price": "6600",
+              "inventoryQuantity": 0,
+              "inventoryPolicy": "DENY",
+              "inventoryItem": {
+                "id": "gid://shopify/InventoryItem/45972509655101",
+                "tracked": true
+              }
+            }
+          ]
+        },
+        "collections": {
+          "nodes": [
+            {
+              "id": "gid://shopify/Collection/279779409981",
+              "handle": "dog-all",
+              "title": "犬用の全ての商品"
+            },
+            {
+              "id": "gid://shopify/Collection/299410260029",
+              "handle": "seasonal",
+              "title": "季節限定"
+            },
+            {
+              "id": "gid://shopify/Collection/300273205309",
+              "handle": "coupon-eligible",
+              "title": "クーポン対象商品"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "collections": {
+    "nodes": [
+      {
+        "id": "gid://shopify/Collection/279779213373",
+        "handle": "dog-dry",
+        "title": "犬用のドライフード"
+      },
+      {
+        "id": "gid://shopify/Collection/279779409981",
+        "handle": "dog-all",
+        "title": "犬用の全ての商品"
+      },
+      {
+        "id": "gid://shopify/Collection/279798579261",
+        "handle": "dog-wet",
+        "title": "犬用のウェットフード"
+      },
+      {
+        "id": "gid://shopify/Collection/279798612029",
+        "handle": "dog-make-6",
+        "title": "犬用 自分で作る手作りごはん"
+      },
+      {
+        "id": "gid://shopify/Collection/279799038013",
+        "handle": "cat-all",
+        "title": "猫用の全ての商品"
+      },
+      {
+        "id": "gid://shopify/Collection/279799070781",
+        "handle": "cat-dry",
+        "title": "猫用のドライフード"
+      },
+      {
+        "id": "gid://shopify/Collection/279799103549",
+        "handle": "cat-wet",
+        "title": "猫用のウェットフード"
+      },
+      {
+        "id": "gid://shopify/Collection/279799136317",
+        "handle": "cat-make",
+        "title": "猫用 自分で作る手作りごはん"
+      },
+      {
+        "id": "gid://shopify/Collection/280149590077",
+        "handle": "cat-trial",
+        "title": "猫用 - お試しセット"
+      },
+      {
+        "id": "gid://shopify/Collection/280595791933",
+        "handle": "d_recommend-set",
+        "title": "犬用おすすめ商品"
+      },
+      {
+        "id": "gid://shopify/Collection/280595824701",
+        "handle": "c_recommend-set",
+        "title": "猫用おすすめ商品"
+      },
+      {
+        "id": "gid://shopify/Collection/285150806077",
+        "handle": "dog-easy-cook-5",
+        "title": "犬用のおやつ"
+      },
+      {
+        "id": "gid://shopify/Collection/285187309629",
+        "handle": "cat-easy-cook",
+        "title": "猫用のおやつ"
+      },
+      {
+        "id": "gid://shopify/Collection/285576331325",
+        "handle": "osechi",
+        "title": "犬用 - おせち"
+      },
+      {
+        "id": "gid://shopify/Collection/285576364093",
+        "handle": "c-osechi",
+        "title": "猫用 - おせち"
+      },
+      {
+        "id": "gid://shopify/Collection/285576396861",
+        "handle": "soba",
+        "title": "犬用 - 年越しそば"
+      },
+      {
+        "id": "gid://shopify/Collection/285576429629",
+        "handle": "c-soba",
+        "title": "猫用 - 年越しそば"
+      },
+      {
+        "id": "gid://shopify/Collection/293062967357",
+        "handle": "dog-representative",
+        "title": "犬用 - お食事代行サービス"
+      },
+      {
+        "id": "gid://shopify/Collection/293270618173",
+        "handle": "senmon",
+        "title": "食事代行サービス - 専門ページ"
+      },
+      {
+        "id": "gid://shopify/Collection/298964779069",
+        "handle": "soup",
+        "title": "スープ・だし"
+      },
+      {
+        "id": "gid://shopify/Collection/299409637437",
+        "handle": "okazu",
+        "title": "おかず"
+      },
+      {
+        "id": "gid://shopify/Collection/299409670205",
+        "handle": "premium",
+        "title": "犬と猫のプレミアム料理"
+      },
+      {
+        "id": "gid://shopify/Collection/299410096189",
+        "handle": "main-dry",
+        "title": "主食（ドライフード）"
+      },
+      {
+        "id": "gid://shopify/Collection/299410128957",
+        "handle": "trial",
+        "title": "お試しセット"
+      },
+      {
+        "id": "gid://shopify/Collection/299410161725",
+        "handle": "topping",
+        "title": "トッピング・ふりかけ"
+      },
+      {
+        "id": "gid://shopify/Collection/299410194493",
+        "handle": "homemade",
+        "title": "手作りごはんの素材"
+      },
+      {
+        "id": "gid://shopify/Collection/299410227261",
+        "handle": "treats",
+        "title": "おやつ"
+      },
+      {
+        "id": "gid://shopify/Collection/299410260029",
+        "handle": "seasonal",
+        "title": "季節限定"
+      },
+      {
+        "id": "gid://shopify/Collection/300273205309",
+        "handle": "coupon-eligible",
+        "title": "クーポン対象商品"
+      }
+    ]
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "productVariantsBulkUpdate": {
+    "productVariants": [
+      {
+        "id": "gid://shopify/ProductVariant/42666506190909",
+        "price": "6600",
+        "inventoryPolicy": "CONTINUE"
+      }
+    ],
+    "userErrors": []
+  }
+}

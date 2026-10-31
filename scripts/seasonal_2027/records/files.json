@@ -1,0 +1,20 @@
+{
+  "files": {
+    "nodes": [
+      {
+        "id": "gid://shopify/MediaImage/23854810103869",
+        "alt": "",
+        "image": {
+          "url": "https://cdn.shopify.com/s/files/1/0589/6591/7757/files/banner-sample.png?v=1707462242"
+        }
+      },
+      {
+        "id": "gid://shopify/MediaImage/28432210100285",
+        "alt": "鹿肉の年越しそば",
+        "image": {
+          "url": "https://cdn.shopify.com/s/files/1/0589/6591/7757/files/soba-original.jpg?v=1792996253"
+        }
+      }
+    ]
+  }
+}

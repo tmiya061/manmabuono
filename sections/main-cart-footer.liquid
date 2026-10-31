@@ -38,6 +38,13 @@
       {%- endif -%}
 
       <div class="cart__blocks">
+        {%- for item in cart.items -%}
+          {%- if item.product.metafields.custom.shipping_notice != blank -%}
+            <div class="rte" role="note">
+              <p><strong>{{ item.product.title | escape }}</strong><br>{{ item.product.metafields.custom.shipping_notice | escape | newline_to_br }}</p>
+            </div>
+          {%- endif -%}
+        {%- endfor -%}
         {% for block in section.blocks %}
           {%- case block.type -%}
             {%- when '@app' -%}

@@ -1,0 +1,192 @@
+{
+  "product": {
+    "id": "gid://shopify/Product/7727212691517",
+    "title": "【2027年】管理栄養士が作る犬の手作り京おせち",
+    "descriptionHtml": "<p>京都マンマボーノが手作りする、犬の手作り京おせち。愛犬と迎える2027年のお正月に、素材の良さにこだわった5品のごちそうをお届けします。</p>\n<p>鹿肉の年越しそばから始まり、鹿肉の煮込みハンバーグや真鯛のアクアパッツァなど、年末年始の特別な食卓にふさわしいメニューを揃えました。</p>\n<p>1食ずつ個包装・冷凍でお届け。管理栄養士監修のレシピで、愛犬と過ごすごちそうの時間をお楽しみください。</p>\n<h3>セット内容（5品）</h3>\n<ul>\n<li>鹿肉の年越しそば</li>\n<li>鹿肉の煮込みハンバーグ</li>\n<li>真鯛のアクアパッツァ</li>\n<li>がいな鶏の親子丼</li>\n<li>サーモンクリームシチュー</li>\n</ul>\n<p>商品代 6,600円（税込）＋送料 1,100円（税込）。1セットの合計 7,700円（税込）。</p>\n<p><strong>おせちは2026年12月26日発送予定です。カートで選択した配送希望日にかかわらず、この日程での発送となります。</strong></p>",
+    "seo": {
+      "title": "犬用おせち2027｜管理栄養士が作る手作り京おせち5品｜マンマボーノ",
+      "description": "愛犬と迎える2027年のお正月に。京都マンマボーノが手作りする犬用京おせち5品。鹿肉の年越しそば、鹿肉の煮込みハンバーグ、真鯛のアクアパッツァなどを個包装・冷凍でお届け。"
+    },
+    "metafields": [
+      {
+        "namespace": "custom",
+        "key": "card_label",
+        "type": "single_line_text_field",
+        "value": "5品の犬用おせち"
+      },
+      {
+        "namespace": "custom",
+        "key": "shipping_notice",
+        "type": "multi_line_text_field",
+        "value": "おせちは2026年12月26日発送予定です。カートで選択した配送希望日にかかわらず、この日程での発送となります。"
+      }
+    ]
+  },
+  "clear_tables": [
+    {
+      "ownerId": "gid://shopify/Product/7727212691517",
+      "namespace": "custom",
+      "key": "product_table1"
+    },
+    {
+      "ownerId": "gid://shopify/Product/7727212691517",
+      "namespace": "custom",
+      "key": "product_table2"
+    },
+    {
+      "ownerId": "gid://shopify/Product/7727212691517",
+      "namespace": "custom",
+      "key": "product_table3"
+    },
+    {
+      "ownerId": "gid://shopify/Product/7727212691517",
+      "namespace": "custom",
+      "key": "product_table4"
+    },
+    {
+      "ownerId": "gid://shopify/Product/7727212691517",
+      "namespace": "custom",
+      "key": "product_table5"
+    },
+    {
+      "ownerId": "gid://shopify/Product/7727212691517",
+      "namespace": "custom",
+      "key": "product_table6"
+    }
+  ],
+  "images_add": [
+    {
+      "id": "gid://shopify/MediaImage/28432279404605",
+      "referencesToAdd": [
+        "gid://shopify/Product/7727212691517"
+      ]
+    },
+    {
+      "id": "gid://shopify/MediaImage/28432210100285",
+      "referencesToAdd": [
+        "gid://shopify/Product/7727212691517"
+      ]
+    },
+    {
+      "id": "gid://shopify/MediaImage/27366197067837",
+      "referencesToAdd": [
+        "gid://shopify/Product/7727212691517"
+      ]
+    },
+    {
+      "id": "gid://shopify/MediaImage/28432210165821",
+      "referencesToAdd": [
+        "gid://shopify/Product/7727212691517"
+      ]
+    },
+    {
+      "id": "gid://shopify/MediaImage/28432210198589",
+      "referencesToAdd": [
+        "gid://shopify/Product/7727212691517"
+      ]
+    },
+    {
+      "id": "gid://shopify/MediaImage/28432210231357",
+      "referencesToAdd": [
+        "gid://shopify/Product/7727212691517"
+      ]
+    }
+  ],
+  "images_detach": [
+    {
+      "id": "gid://shopify/MediaImage/26710918561853",
+      "referencesToRemove": [
+        "gid://shopify/Product/7727212691517"
+      ]
+    },
+    {
+      "id": "gid://shopify/MediaImage/26710918692925",
+      "referencesToRemove": [
+        "gid://shopify/Product/7727212691517"
+      ]
+    },
+    {
+      "id": "gid://shopify/MediaImage/26709372076093",
+      "referencesToRemove": [
+        "gid://shopify/Product/7727212691517"
+      ]
+    },
+    {
+      "id": "gid://shopify/MediaImage/26709372010557",
+      "referencesToRemove": [
+        "gid://shopify/Product/7727212691517"
+      ]
+    },
+    {
+      "id": "gid://shopify/MediaImage/26709372043325",
+      "referencesToRemove": [
+        "gid://shopify/Product/7727212691517"
+      ]
+    },
+    {
+      "id": "gid://shopify/MediaImage/26709372174397",
+      "referencesToRemove": [
+        "gid://shopify/Product/7727212691517"
+      ]
+    },
+    {
+      "id": "gid://shopify/MediaImage/26709372141629",
+      "referencesToRemove": [
+        "gid://shopify/Product/7727212691517"
+      ]
+    },
+    {
+      "id": "gid://shopify/MediaImage/26709372207165",
+      "referencesToRemove": [
+        "gid://shopify/Product/7727212691517"
+      ]
+    }
+  ],
+  "images_order": [
+    {
+      "id": "gid://shopify/MediaImage/28432279404605",
+      "newPosition": "0"
+    },
+    {
+      "id": "gid://shopify/MediaImage/28432210100285",
+      "newPosition": "1"
+    },
+    {
+      "id": "gid://shopify/MediaImage/27366197067837",
+      "newPosition": "2"
+    },
+    {
+      "id": "gid://shopify/MediaImage/28432210165821",
+      "newPosition": "3"
+    },
+    {
+      "id": "gid://shopify/MediaImage/28432210198589",
+      "newPosition": "4"
+    },
+    {
+      "id": "gid://shopify/MediaImage/28432210231357",
+      "newPosition": "5"
+    }
+  ],
+  "variants": [
+    {
+      "productId": "gid://shopify/Product/7727212691517",
+      "variants": [
+        {
+          "id": "gid://shopify/ProductVariant/42666506190909",
+          "price": "6600",
+          "inventoryPolicy": "CONTINUE"
+        }
+      ]
+    },
+    {
+      "productId": "gid://shopify/Product/7503940091965",
+      "variants": [
+        {
+          "id": "gid://shopify/ProductVariant/41736467185725",
+          "inventoryPolicy": "CONTINUE"
+        }
+      ]
+    }
+  ]
+}

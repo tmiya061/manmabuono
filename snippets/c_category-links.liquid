@@ -43,6 +43,14 @@
       endunless
     endif
   endfor
+  # 季節商品はヘッダー（PC/SP）に表示。実在する現行コレクションへリンクする。
+  if variant == 'icon'
+    if pet == 'cat'
+      assign extra = extra | append: ',c-soba'
+    else
+      assign extra = extra | append: ',osechi,soba'
+    endif
+  endif
   assign all_items = nav_items | join: ',' | append: extra | split: ','
 -%}
 

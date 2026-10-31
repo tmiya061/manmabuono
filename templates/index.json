@@ -35,9 +35,18 @@
             "banner-link": "shopify://products/食事代行サービス",
             "banner-new-tab": false
           }
+        },
+        "banner_osechi_2027": {
+          "type": "banner",
+          "settings": {
+            "banner-img": "shopify://shop_images/banner.png",
+            "banner-link": "shopify://products/管理栄養士が作る犬の手作り京おせち",
+            "banner-new-tab": false
+          }
         }
       },
       "block_order": [
+        "banner_osechi_2027",
         "fv_banner_youtube",
         "fv_banner_furusato",
         "fv_banner_daiko"
@@ -74,9 +83,17 @@
             "banner-img": "shopify://shop_images/e6333084dea68e77170eebc2d9c6593a.jpg",
             "banner-link": "shopify://products/食事代行サービス"
           }
+        },
+        "banner_osechi_2027": {
+          "type": "banner",
+          "settings": {
+            "banner-img": "shopify://shop_images/banner.png",
+            "banner-link": "shopify://products/管理栄養士が作る犬の手作り京おせち"
+          }
         }
       },
       "block_order": [
+        "banner_osechi_2027",
         "banner_qfKAYt",
         "banner_rWD76K",
         "banner_qFke8P"

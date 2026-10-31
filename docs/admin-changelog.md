@@ -1,3 +1,14 @@
+- 2026-10-31 | product 8088491229245（非公開下書き） | 未確定の仕様6項目を空欄化し表を非表示 | Admin API metafieldsDelete | 復元: verify/20261031_seasonal/before.jsonの同商品metafields
+- 2026-10-31 | files gid://shopify/MediaImage/28564076986429 | 2027おせちバナーを登録（公開準備） | scripts/upload_file.py | 復元: 既存ファイル未変更、追加IDはverify/20261031_seasonal/banner-upload.json
+- 2026-10-31 | 2027おせち画像6枚＋バナー | 画像代替テキストを商品名・料理名へ整備 | Admin API fileUpdate | 復元: verify/20261031_seasonal/before.jsonとbanner-upload.json
+- 2026-10-31 | 季節商品（おせち7727212691517／そば7503940091965） | 年越しそば1320円を維持し受付上限なしへ | scripts/seasonal_2027/publish.py | 復元: verify/20261031_seasonal/before.json。実行結果production-variant-1.json
+- 2026-10-31 | 季節商品（おせち7727212691517／そば7503940091965） | おせち6600円・両商品を受付上限なしに設定 | scripts/seasonal_2027/publish.py | 復元: verify/20261031_seasonal/before.json。実行結果production-variant-0.json
+- 2026-10-31 | 季節商品（おせち7727212691517／そば7503940091965） | 主画像と個別5品を指定順に整列 | scripts/seasonal_2027/publish.py | 復元: verify/20261031_seasonal/before.json。実行結果production-images-order.json
+- 2026-10-31 | 季節商品（おせち7727212691517／そば7503940091965） | 旧画像8枚を商品から関連解除（ファイルは保持） | scripts/seasonal_2027/publish.py | 復元: verify/20261031_seasonal/before.json。実行結果production-images-detach.json
+- 2026-10-31 | 季節商品（おせち7727212691517／そば7503940091965） | 採用済み画像6枚を既存おせちへ関連付け | scripts/seasonal_2027/publish.py | 復元: verify/20261031_seasonal/before.json。実行結果production-images-add.json
+- 2026-10-31 | 季節商品（おせち7727212691517／そば7503940091965） | 未確定の仕様6項目を空欄化（旧年の原材料・発送日等を非表示） | scripts/seasonal_2027/publish.py | 復元: verify/20261031_seasonal/before.json。実行結果production-tables.json
+- 2026-10-31 | 季節商品（おせち7727212691517／そば7503940091965） | おせちを2027年5品へ更新・12/26発送予定を本文とカート用メタフィールドへ設定 | scripts/seasonal_2027/publish.py | 復元: verify/20261031_seasonal/before.json。実行結果production-product.json
+- 2026-10-31 | deliveryProfile 93093560381（既存おせち7727212691517のみ） | 国内固定送料1100円の専用プロファイルを作成。共用の冷凍送料1210円を変更せず分離 | Shopify管理画面 | 復元: 商品を一般82160910397へ戻す。verify/20261031_seasonal/shipping-before.json
 # 管理画面（Shopify Admin）変更ログ
 
 Shopifyの管理画面・ストアデータは Git で追えない。**書き込み系の操作をここに1行ずつ残す**（ルール＝[../CLAUDE.md](../CLAUDE.md) 「管理画面の変更記録」）。
