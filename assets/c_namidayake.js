@@ -2,7 +2,7 @@
 (() => {
   const root = document.querySelector('[data-namidayake-preview]');
   if (!root) return;
-  const state = { flavor: 'chicken', size: null };
+  const state = { flavor: 'chicken', size: null, quantity: 1 };
   const flavorLabel = () => state.flavor === 'chicken' ? 'チキン' : 'フィッシュ';
   const catalog = {"fish-150": {"handle": "だし薫る犬のごはん-フィッシュ-150g", "id": 41086962794557, "plan": 1789984829, "price": 89100, "regular": 99000, "available": true}, "fish-800": {"handle": "だし薫る犬のごはん-フィッシュ-800g", "id": 41086962827325, "plan": 1789984829, "price": 356400, "regular": 396000, "available": true}, "chicken-150": {"handle": "だし薫る犬のごはん-チキン-150g", "id": 41086962860093, "plan": 1789984829, "price": 89100, "regular": 99000, "available": true}, "chicken-800": {"handle": "だし薫る犬のごはん-チキン", "id": 41086962892861, "plan": 1789984829, "price": 356400, "regular": 396000, "available": true}};
   const money = value => (value / 100).toLocaleString('ja-JP');
@@ -29,7 +29,7 @@
         button.setAttribute('aria-pressed', String(selected));
         button.querySelector('[data-name="選択丸"] img').src = selected ? selectedRing : emptyRing;
       });
-      offer.querySelector('[data-selection-label]').textContent = state.flavor && state.size ? `${flavorLabel()}／${state.size}gを選択中` : `${flavorLabel()}／容量を選択してください`;
+      offer.querySelector('[data-selection-label]').textContent = state.flavor && state.size ? `${flavorLabel()}／${state.size}gを選択中・${state.quantity}袋` : `${flavorLabel()}／容量を選択してください`;
       // The Figma badge and selection point move with the selected capacity.
       const delta = state.size === '150' ? -112 / 3.9 : 0;
       ['[data-selected-badge]', '[data-selected-dot]'].forEach(selector => {
@@ -40,11 +40,33 @@
   }
   const dialog = document.querySelector('[data-preview-dialog]');
   let pickerMode = false;
+  function renderQuantity() {
+    const subtotal = state.size ? catalog[`${state.flavor}-${state.size}`].price * state.quantity : null;
+    const shipping = subtotal === null ? null : subtotal >= 500000 ? 0 : 88000;
+    document.querySelectorAll('[data-total-reveal]').forEach(el => {
+      const visible = subtotal !== null;
+      el.classList.toggle('is-visible', visible);
+      el.setAttribute('aria-hidden', String(!visible));
+    });
+    document.querySelectorAll('[data-qty]').forEach(el => { el.textContent = state.quantity; });
+    document.querySelectorAll('[data-minus]').forEach(el => { el.disabled = checkoutBusy || state.quantity === 1; });
+    document.querySelectorAll('[data-plus]').forEach(el => { el.disabled = checkoutBusy || state.quantity === 99; });
+    document.querySelectorAll('[data-subtotal]').forEach(el => { el.textContent = subtotal === null ? '—' : money(subtotal)+'円'; });
+    document.querySelectorAll('[data-shipping]').forEach(el => { el.textContent = shipping === null ? '—' : shipping === 0 ? '無料' : money(shipping)+'円'; });
+    document.querySelectorAll('[data-total]').forEach(el => { el.textContent = subtotal === null ? '—' : money(subtotal+shipping)+'円'; });
+    document.querySelectorAll('[data-quantity-note]').forEach(el => { el.textContent = `毎月${state.quantity}袋お届け`; });
+  }
+  document.querySelectorAll('[data-minus],[data-plus]').forEach(button => button.addEventListener('click', () => {
+    if (checkoutBusy) return;
+    state.quantity = Math.max(1, Math.min(99, state.quantity + (button.hasAttribute('data-plus') ? 1 : -1)));
+    render(); renderPicker();
+  }));
   function renderPicker() {
-    dialog.querySelectorAll('[name="lp-modal-size"]').forEach(input => { const item = catalog[`${state.flavor}-${input.value}`]; const label = input.closest('label'); label.querySelector('[data-modal-regular]').textContent = '通常 ' + money(item.regular) + '円'; label.querySelector('[data-modal-price]').innerHTML = money(item.price) + '<small>円</small>';  });
+    renderQuantity();
+    dialog.querySelectorAll('[name="lp-modal-size"]').forEach(input => { const item = catalog[`${state.flavor}-${input.value}`]; const label = input.closest('label'); label.querySelector('[data-modal-regular]').textContent = money(item.regular) + '円'; label.querySelector('[data-modal-price]').innerHTML = money(item.price) + '<small>円</small>';  });
     dialog.querySelectorAll('[name="lp-modal-flavor"]').forEach(input => { input.checked = input.value === state.flavor; });
     dialog.querySelectorAll('[name="lp-modal-size"]').forEach(input => { input.checked = input.value === state.size; });
-    dialog.querySelector('[data-preview-summary]').textContent = state.flavor && state.size ? `だし薫る犬のごはん ${flavorLabel()} ${state.size}g` : '商品を選択してください';
+    dialog.querySelector('[data-preview-summary]').textContent = state.flavor && state.size ? `だし薫る犬のごはん ${flavorLabel()} ${state.size}g × ${state.quantity}袋` : '商品を選択してください';
   }
   dialog.querySelector('[data-modal-picker]').addEventListener('change', event => {
     if (event.target.name === 'lp-modal-flavor') state.flavor = event.target.value;
@@ -53,13 +75,14 @@
     render(); renderPicker();
   });
   root.addEventListener('click' , event => {
+    if (checkoutBusy) return;
     const flavor = event.target.closest('[data-flavor]');
     const size = event.target.closest('[data-size]');
-    if (flavor) { state.flavor = flavor.dataset.flavor; render(); }
-    if (size) { state.size = size.dataset.size; render(); }
+    if (flavor) { state.flavor = flavor.dataset.flavor; render(); renderPicker(); }
+    if (size) { state.size = size.dataset.size; render(); renderPicker(); }
     if (event.target.closest('[data-preview-checkout]')) {
       const button = event.target.closest('[data-preview-checkout]');
-      proceedToCheckout(button, false);
+      openProductModal();
     }
   });
   let closeTimer;
@@ -102,6 +125,8 @@
       return;
     }
     checkoutBusy = true;
+    const quantity = state.quantity;
+    renderQuantity();
     const originalHtml = button.innerHTML;
     button.disabled = true; button.setAttribute('aria-busy','true');
     if (fromModal) button.textContent = '購入手続きへ進んでいます';
@@ -116,12 +141,20 @@
       const cartResponse = await fetch(`${routeRoot}cart.js`,{credentials:'same-origin',cache:'no-store'});
       if (!cartResponse.ok) throw new Error('カートを確認できませんでした。再度お試しください。');
       const cart = await cartResponse.json();
-      const alreadyAdded = cart.items.some(line => line.variant_id === item.id && line.selling_plan_allocation?.selling_plan?.id === item.plan && line.properties?._lp_source === 'namidayake');
-      if (!alreadyAdded) {
-        const response = await fetch(`${routeRoot}cart/add.js`, {method:'POST',credentials:'same-origin',headers:{'Content-Type':'application/json'},body:JSON.stringify({items:[{id:item.id,quantity:1,selling_plan:item.plan,properties:{_lp_source:'namidayake'}}]})});
+      const existingLine = cart.items.find(line => line.variant_id === item.id && line.selling_plan_allocation?.selling_plan?.id === item.plan && line.properties?._lp_source === 'namidayake');
+      if (existingLine && existingLine.quantity !== quantity) {
+        const response = await fetch(`${routeRoot}cart/change.js`, {method:'POST',credentials:'same-origin',headers:{'Content-Type':'application/json'},body:JSON.stringify({id:existingLine.key,quantity})});
+        const result = await response.json();
+        if (!response.ok) throw new Error(result.description || '数量を変更できませんでした。');
+        const updated = result.items?.find(line => line.key === existingLine.key);
+        if (updated?.quantity !== quantity || updated?.selling_plan_allocation?.selling_plan?.id !== item.plan) throw new Error('選択した数量を確保できませんでした。数量を減らしてお試しください。');
+      }
+      if (!existingLine) {
+        const response = await fetch(`${routeRoot}cart/add.js`, {method:'POST',credentials:'same-origin',headers:{'Content-Type':'application/json'},body:JSON.stringify({items:[{id:item.id,quantity,selling_plan:item.plan,properties:{_lp_source:'namidayake'}}]})});
         const result = await response.json();
         if (!response.ok) throw new Error(result.description || 'カートに追加できませんでした。再度お試しください。');
         const added = result.items?.[0];
+        if (added?.quantity !== quantity) throw new Error('選択した数量を確保できませんでした。数量を減らしてお試しください。');
         if (added?.selling_plan_allocation?.selling_plan?.id !== item.plan) throw new Error('定期購入を確認できませんでした。カートをご確認ください。');
       }
       window.location.assign(`${routeRoot}checkout`);
@@ -132,6 +165,7 @@
     } finally {
       checkoutBusy = false; button.disabled = false; button.removeAttribute('aria-busy'); button.innerHTML = originalHtml;
       dialog.querySelectorAll('input').forEach(input => { input.disabled = false; });
+      renderQuantity();
     }
   }
   dialog.querySelector('[data-preview-proceed]').addEventListener('click', event => proceedToCheckout(event.currentTarget));
@@ -213,8 +247,7 @@
     stickyCta.setAttribute('aria-hidden', String(!visible));
     stickyCta.inert = !visible;
   }
-  stickyCta.querySelector('button').addEventListener('click', event => {
-    event.preventDefault();
+  function openProductModal() {
     pickerMode = true;
     dialog.querySelector('[data-modal-picker]').hidden = false;
     dialog.querySelector('[data-preview-title]').textContent = '商品を選択してください';
@@ -222,11 +255,12 @@
     dialog.querySelector('[data-preview-close]').hidden = false;
     dialog.querySelector('[data-preview-notice]').hidden = true;
     renderPicker();
-    dialog.showModal();
-  });
+    if (!dialog.open) dialog.showModal();
+  }
+  stickyCta.querySelector('button').addEventListener('click', openProductModal);
   window.addEventListener('scroll', updateStickyCta, {passive:true});
   window.addEventListener('resize', updateStickyCta);
   if (typeof ResizeObserver !== 'undefined') new ResizeObserver(updateStickyCta).observe(root);
   updateStickyCta();
-  render();
+  render(); renderQuantity();
 })();
