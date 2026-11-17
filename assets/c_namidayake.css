@@ -44,7 +44,7 @@
 /* Outside the container-query root so fixed positioning stays viewport-relative. */
 .c_namidayake__sticky-cta {position:fixed;z-index:40;left:50%;bottom:0;transform:translate(-50%,12px);width:min(100%,390px);box-sizing:border-box;padding:12px 18px calc(14px + env(safe-area-inset-bottom,0px));background:linear-gradient(transparent,#fff5ef 25%);opacity:0;visibility:hidden;pointer-events:none;transition:opacity .28s ease,transform .28s ease,visibility .28s;}
 .c_namidayake__sticky-cta.is-visible {opacity:1;visibility:visible;pointer-events:auto;transform:translate(-50%,0);}
-.c_namidayake__sticky-cta button {width:100%;border:0;cursor:pointer;box-sizing:border-box;display:flex;align-items:center;justify-content:center;gap:12px;min-height:56px;padding:12px 16px;border-radius:99px;background:#ed2926;box-shadow:0 4px 0 #bc201e,0 7px 18px #493b3524;color:#fff;text-decoration:none;font:700 16px/1.5 "Noto Sans JP",sans-serif;}
+.c_namidayake__sticky-cta button {width:100%;border:0;cursor:pointer;box-sizing:border-box;display:flex;align-items:center;justify-content:center;gap:12px;min-height:56px;padding:12px 16px;border-radius:99px;background:#ff8068;box-shadow:0 4px 0 #d96350,0 7px 18px #493b3524;color:#fff;text-decoration:none;font:700 16px/1.5 "Noto Sans JP",sans-serif;}
 .c_namidayake__sticky-cta button:focus-visible {outline:3px solid #206984;outline-offset:4px;}
 .c_namidayake__sticky-cta svg {width:28px;height:28px;flex:none;}
 @media(prefers-reduced-motion:reduce){.c_namidayake__sticky-cta{transition:none;}}
@@ -91,7 +91,7 @@
 .c_namidayake__dialog .regular {font-size:11px;text-decoration:line-through;color:#746b67;display:block;}
 .c_namidayake__dialog .foot {padding:16px 24px 24px;background:white;}
 .c_namidayake__dialog .selection {margin-bottom:12px;font-size:12px;color:#a14d3d;font-weight:700;}
-.c_namidayake__dialog .pay {width:100%;min-height:52px;background:#ed2926;box-shadow:0 3px 0 #bc201e;font-weight:900;font-size:16px;}
+.c_namidayake__dialog .pay {width:100%;min-height:52px;background:#ff8068;box-shadow:0 3px 0 #d96350;font-weight:900;font-size:16px;}
 .c_namidayake__dialog .terms {margin-top:16px;font-size:10px;line-height:1.8;color:#746b67;}
 .c_namidayake__dialog .message {margin-top:12px;}
 .c_namidayake__dialog .close {position:absolute;z-index:2;right:8px;top:8px;border-radius:50%;background:white;color:#493b35;width:44px;height:44px;padding:0;font-size:28px;line-height:1;}
@@ -105,6 +105,12 @@
 @keyframes manma-modal-out {from{opacity:1}to{opacity:0}}
 @media(prefers-reduced-motion:reduce){.c_namidayake__dialog[open],.c_namidayake__dialog[open]::backdrop {animation:none;}}
 
+.c_namidayake [data-preview-checkout] {background-color:#ff8068!important;box-shadow:0 .769231cqw 0 #d96350!important;}
+.c_namidayake [data-size] [data-name="選択丸"] {top:50%!important;transform:translateY(-50%);width:4.615385cqw;height:4.615385cqw;border:2px solid #c8c5c2;border-radius:50%;}
+.c_namidayake [data-size] [data-name="選択丸"] img {display:none;}
+.c_namidayake [data-size][aria-pressed="true"] [data-name="選択丸"] {border-color:#ff8068;}
+.c_namidayake [data-size][aria-pressed="true"] [data-name="選択丸"]::after {content:"";position:absolute;inset:3px;border-radius:50%;background:#ff8068;}
+.c_namidayake [data-selected-dot] {display:none!important;}
 .c_namidayake__checkout-notice {padding:12px 24px;margin:0;background:#fff0ec;color:#a14d3d;font-size:14px;}
 .c_namidayake .c_namidayake__s744cd8a2c{background-color:#fffdf9;position:relative;width:100%;height:100%}
 .c_namidayake .c_namidayake__s82c105b5e{position:absolute;height:23.076923cqw;left:0;top:0;width:100.000000cqw}
