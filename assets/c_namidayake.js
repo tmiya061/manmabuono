@@ -104,7 +104,7 @@
     checkoutBusy = true;
     const originalHtml = button.innerHTML;
     button.disabled = true; button.setAttribute('aria-busy','true');
-    if (fromModal) button.textContent = '確認しています…';
+    if (fromModal) button.textContent = '購入手続きへ進んでいます';
     dialog.querySelectorAll('input').forEach(input => { input.disabled = true; });
     try {
       const key = `${state.flavor}-${state.size}`;

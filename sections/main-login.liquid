@@ -12,6 +12,17 @@
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
   }
+
+  .customer.login .c_login-submit {
+    background:#ff8068;border-color:#ff8068;color:#fff;
+    max-width:100%;font-weight:700;
+  }
+  .customer.login .c_login-submit:hover {background:#e9705a;border-color:#e9705a;}
+  .customer.login a.c_login-register-button {
+    display:flex;width:320px;max-width:100%;min-height:48px;
+    margin:8px auto 0;text-decoration:none;border:1px solid #3c3c3c;
+    border-radius:40px;background:transparent;color:#3c3c3c;padding:0 3rem;box-sizing:border-box;
+  }
 {%- endstyle -%}
 
 <div class="customer login section-{{ section.id }}-padding">
@@ -137,11 +148,11 @@
         </a>
       {%- endif -%}
 
-      <button>
+      <button class="c_login-submit">
         {{ 'customer.login_page.sign_in' | t }}
       </button>
 
-      <a href="{{ routes.account_register_url }}">
+      <a class="button c_login-register-button" href="{{ routes.account_register_url }}">
         {{ 'customer.login_page.create_account' | t }}
       </a>
     {%- endform -%}
