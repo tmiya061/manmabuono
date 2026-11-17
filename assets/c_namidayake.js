@@ -193,10 +193,10 @@
     faqBusy = true;
     try {
       while (true) {
-        const current = faqs.find(item => item.open) || null;
-        if (current === desiredFaq) break;
-        if (current) await animateFaq(current, false);
-        else if (desiredFaq) await animateFaq(desiredFaq, true);
+        const target = desiredFaq;
+        const changing = faqs.filter(item => item.open !== (item === target));
+        if (!changing.length) break;
+        await Promise.all(changing.map(item => animateFaq(item, item === target)));
       }
     } finally { faqBusy = false; }
   }
