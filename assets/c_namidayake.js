@@ -86,16 +86,38 @@
     }
   });
   let closeTimer;
+  let scrollLock = null;
+  function lockBackgroundScroll() {
+    if (scrollLock) return;
+    const body = document.body;
+    const keys = ['position','top','left','width','overflow'];
+    scrollLock = {x:window.scrollX,y:window.scrollY,styles:keys.map(key => [key,body.style[key]])};
+    Object.assign(body.style,{position:'fixed',top:`-${scrollLock.y}px`,left:`-${scrollLock.x}px`,width:'100%',overflow:'hidden'});
+  }
+  function unlockBackgroundScroll() {
+    if (!scrollLock) return;
+    const saved = scrollLock; scrollLock = null;
+    saved.styles.forEach(([key,value]) => { document.body.style[key] = value; });
+    const html = document.documentElement;
+    const behavior = html.style.scrollBehavior;
+    html.style.scrollBehavior = 'auto';
+    window.scrollTo(saved.x,saved.y);
+    html.style.scrollBehavior = behavior;
+  }
   function closeModal() {
-    if (!dialog.open || dialog.classList.contains('is-closing')) return;
+    if (checkoutBusy || !dialog.open || dialog.classList.contains('is-closing')) return;
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) { dialog.close(); return; }
     dialog.classList.add('is-closing');
     closeTimer = window.setTimeout(() => { dialog.close(); dialog.classList.remove('is-closing'); }, 180);
   }
   dialog.querySelector('[data-preview-close]').addEventListener('click', closeModal);
   dialog.addEventListener('cancel', event => { event.preventDefault(); closeModal(); });
-  dialog.addEventListener('close', () => { window.clearTimeout(closeTimer); dialog.classList.remove('is-closing'); });
+  dialog.addEventListener('close', () => { window.clearTimeout(closeTimer); dialog.classList.remove('is-closing'); unlockBackgroundScroll(); });
   let checkoutBusy = false;
+  let resetCheckoutUi = null;
+  window.addEventListener('pageshow', event => {
+    if (event.persisted && resetCheckoutUi) resetCheckoutUi();
+  });
   const routeRoot = window.Shopify?.routes?.root || '/';
   async function refreshProduct(key) {
     const item = catalog[key];
@@ -129,7 +151,17 @@
     renderQuantity();
     const originalHtml = button.innerHTML;
     button.disabled = true; button.setAttribute('aria-busy','true');
-    if (fromModal) button.textContent = '購入手続きへ進んでいます';
+    if (fromModal) button.innerHTML = '決済に進む <span class="c_namidayake__checkout-spinner" aria-hidden="true"></span>';
+    button.setAttribute('aria-label','購入手続きへ進んでいます');
+    dialog.querySelector('[data-preview-close]').disabled = true;
+    let navigating = false;
+    resetCheckoutUi = () => {
+      checkoutBusy = false; button.disabled = false; button.removeAttribute('aria-busy'); button.removeAttribute('aria-label'); button.innerHTML = originalHtml;
+      dialog.querySelectorAll('input').forEach(input => { input.disabled = false; });
+      dialog.querySelector('[data-preview-close]').disabled = false;
+      resetCheckoutUi = null;
+      renderQuantity();
+    };
     dialog.querySelectorAll('input').forEach(input => { input.disabled = true; });
     try {
       const key = `${state.flavor}-${state.size}`;
@@ -158,14 +190,13 @@
         if (added?.selling_plan_allocation?.selling_plan?.id !== item.plan) throw new Error('定期購入を確認できませんでした。カートをご確認ください。');
       }
       window.location.assign(`${routeRoot}checkout`);
+      navigating = true;
     } catch (error) {
       notice.textContent = error.message || '処理に失敗しました。再度お試しください。';
       notice.hidden = false;
       if (!fromModal) notice.scrollIntoView?.({block:'nearest',behavior:'smooth'});
     } finally {
-      checkoutBusy = false; button.disabled = false; button.removeAttribute('aria-busy'); button.innerHTML = originalHtml;
-      dialog.querySelectorAll('input').forEach(input => { input.disabled = false; });
-      renderQuantity();
+      if (!navigating) resetCheckoutUi();
     }
   }
   dialog.querySelector('[data-preview-proceed]').addEventListener('click', event => proceedToCheckout(event.currentTarget));
@@ -255,7 +286,7 @@
     dialog.querySelector('[data-preview-close]').hidden = false;
     dialog.querySelector('[data-preview-notice]').hidden = true;
     renderPicker();
-    if (!dialog.open) dialog.showModal();
+    if (!dialog.open) { lockBackgroundScroll(); dialog.showModal(); }
   }
   stickyCta.querySelector('button').addEventListener('click', openProductModal);
   window.addEventListener('scroll', updateStickyCta, {passive:true});

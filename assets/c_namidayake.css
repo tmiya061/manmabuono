@@ -126,6 +126,13 @@
 
 
 .c_namidayake [hidden] {display:none!important;}
+.c_namidayake__dialog .capacity-card,.c_namidayake__dialog .capacity-card input { -webkit-tap-highlight-color:transparent; }
+.c_namidayake__dialog .capacity-card input {appearance:none;-webkit-appearance:none;border:0;border-radius:inherit;background:transparent;}
+.c_namidayake__dialog-panel {overscroll-behavior:contain;-webkit-overflow-scrolling:touch;}
+.c_namidayake__dialog .pay {display:flex;align-items:center;justify-content:center;gap:10px;}
+.c_namidayake__checkout-spinner {display:inline-block;width:18px;height:18px;border:2px solid #ffffff70;border-top-color:#fff;border-radius:50%;animation:manma-checkout-spin .7s linear infinite;flex-shrink:0;}
+@keyframes manma-checkout-spin {to{transform:rotate(360deg)}}
+@media(prefers-reduced-motion:reduce){.c_namidayake__checkout-spinner{animation:none;}}
 .c_namidayake__dialog .capacity-cards {display:grid;gap:12px;container-type:inline-size;}
 .c_namidayake__dialog .capacity-card {position:relative;display:block;width:100%;height:27.932961cqw;border:0;border-radius:5.027933cqw;background:#fff;box-shadow:inset 0 0 0 1px #ddd;cursor:pointer;}
 .c_namidayake__dialog .capacity-card:has(input:checked) {box-shadow:inset 0 0 0 2px #ff8068;background:#fff0ec;}
