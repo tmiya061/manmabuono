@@ -41,7 +41,7 @@
   const dialog = document.querySelector('[data-preview-dialog]');
   let pickerMode = false;
   function renderPicker() {
-    dialog.querySelectorAll('[name="lp-modal-size"]').forEach(input => { input.closest('label').querySelector('small').textContent = '定期価格 ' + money(catalog[`${state.flavor}-${input.value}`].price) + '円'; });
+    dialog.querySelectorAll('[name="lp-modal-size"]').forEach(input => { const item = catalog[`${state.flavor}-${input.value}`]; const label = input.closest('label'); label.querySelector('[data-modal-regular]').textContent = '通常 ' + money(item.regular) + '円'; label.querySelector('[data-modal-price]').innerHTML = money(item.price) + '<small>円</small>';  });
     dialog.querySelectorAll('[name="lp-modal-flavor"]').forEach(input => { input.checked = input.value === state.flavor; });
     dialog.querySelectorAll('[name="lp-modal-size"]').forEach(input => { input.checked = input.value === state.size; });
     dialog.querySelector('[data-preview-summary]').textContent = state.flavor && state.size ? `だし薫る犬のごはん ${flavorLabel()} ${state.size}g` : '商品を選択してください';
@@ -62,7 +62,16 @@
       proceedToCheckout(button, false);
     }
   });
-  dialog.querySelector('[data-preview-close]').addEventListener('click', () => dialog.close());
+  let closeTimer;
+  function closeModal() {
+    if (!dialog.open || dialog.classList.contains('is-closing')) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) { dialog.close(); return; }
+    dialog.classList.add('is-closing');
+    closeTimer = window.setTimeout(() => { dialog.close(); dialog.classList.remove('is-closing'); }, 180);
+  }
+  dialog.querySelector('[data-preview-close]').addEventListener('click', closeModal);
+  dialog.addEventListener('cancel', event => { event.preventDefault(); closeModal(); });
+  dialog.addEventListener('close', () => { window.clearTimeout(closeTimer); dialog.classList.remove('is-closing'); });
   let checkoutBusy = false;
   const routeRoot = window.Shopify?.routes?.root || '/';
   async function refreshProduct(key) {

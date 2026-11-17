@@ -67,6 +67,44 @@
 .c_namidayake__dialog button {padding:10px 24px;background:#ff8068;color:white;border:0;border-radius:30px;cursor:pointer;}
 .c_namidayake__dialog .c_namidayake__dialog-close {position:absolute;right:8px;top:8px;display:grid;place-items:center;width:44px;height:44px;padding:0;background:transparent;color:#493b35;font-size:28px;line-height:1;}
 .c_namidayake__dialog-actions [data-preview-proceed] {width:100%;}
+.c_namidayake__dialog {width:min(calc(100vw - 32px),358px);padding:0;border-radius:20px;max-height:calc(100dvh - 32px);font-size:14px;line-height:1.7;box-shadow:0 16px 60px #493b3533;}
+.c_namidayake__dialog * {box-sizing:border-box;}
+.c_namidayake__dialog p {margin:0;}
+.c_namidayake__dialog .ribbon {background:#ff8068;color:white;text-align:center;font-size:13px;font-weight:700;padding:10px 48px;}
+.c_namidayake__dialog .head {padding:24px 24px 12px;}
+.c_namidayake__dialog .eyebrow {color:#a14d3d;font-size:12px;font-weight:700;letter-spacing:.08em;margin:0 0 8px;}
+.c_namidayake__dialog h2 {font-size:22px;line-height:1.5;margin:0 26px 8px 0;}
+.c_namidayake__dialog .caption {font-size:11px;color:#746b67;}
+.c_namidayake__dialog .body {padding:0 24px;}
+.c_namidayake__dialog fieldset {margin:16px 0;}
+.c_namidayake__dialog .flavors,.c_namidayake__dialog .sizes {display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.c_namidayake__dialog .option {display:flex;position:relative;flex-direction:column;align-items:flex-start;gap:8px;padding:12px;border:1px solid #f0d8cf;border-radius:12px;cursor:pointer;}
+.c_namidayake__dialog .option:has(input:checked) {border:2px solid #ff8068;padding:11px;background:#fff0ec;}
+.c_namidayake__dialog input {accent-color:#ff8068;width:16px;height:16px;margin:0;position:absolute;top:12px;right:12px;}
+.c_namidayake__dialog .pack-options .option {align-items:center;padding:12px 8px;text-align:center;}
+.c_namidayake__dialog .pack-options .option:has(input:checked) {padding:11px 7px;}
+.c_namidayake__dialog .pack-options input {top:10px;left:10px;right:auto;}
+.c_namidayake__dialog img {height:112px;max-width:100%;width:110px;object-fit:contain;}
+.c_namidayake__dialog .size {font-size:22px;font-weight:900;}
+.c_namidayake__dialog .price {font-size:26px;line-height:1.2;color:#ed2926;font-weight:900;}
+.c_namidayake__dialog .price small {font-size:13px;}
+.c_namidayake__dialog .regular {font-size:11px;text-decoration:line-through;color:#746b67;display:block;}
+.c_namidayake__dialog .foot {padding:16px 24px 24px;background:white;}
+.c_namidayake__dialog .selection {margin-bottom:12px;font-size:12px;color:#a14d3d;font-weight:700;}
+.c_namidayake__dialog .pay {width:100%;min-height:52px;background:#ed2926;box-shadow:0 3px 0 #bc201e;font-weight:900;font-size:16px;}
+.c_namidayake__dialog .terms {margin-top:16px;font-size:10px;line-height:1.8;color:#746b67;}
+.c_namidayake__dialog .message {margin-top:12px;}
+.c_namidayake__dialog .close {position:absolute;z-index:2;right:8px;top:8px;border-radius:50%;background:white;color:#493b35;width:44px;height:44px;padding:0;font-size:28px;line-height:1;}
+.c_namidayake__dialog {padding-top:52px;background:transparent;box-shadow:none;border-radius:0;overflow:visible;max-height:calc(100dvh - 32px);}
+.c_namidayake__dialog-panel {background:white;border-radius:20px;overflow:auto;max-height:calc(100dvh - 84px);box-shadow:0 16px 60px #493b3533;}
+.c_namidayake__dialog .close {right:0;top:0;}
+.c_namidayake__dialog .ribbon {padding:10px 24px;}
+.c_namidayake__dialog[open],.c_namidayake__dialog[open]::backdrop {animation:manma-modal-in .22s ease-out both;}
+.c_namidayake__dialog.is-closing,.c_namidayake__dialog.is-closing::backdrop {animation:manma-modal-out .18s ease-in both;}
+@keyframes manma-modal-in {from{opacity:0}to{opacity:1}}
+@keyframes manma-modal-out {from{opacity:1}to{opacity:0}}
+@media(prefers-reduced-motion:reduce){.c_namidayake__dialog[open],.c_namidayake__dialog[open]::backdrop {animation:none;}}
+
 .c_namidayake__checkout-notice {padding:12px 24px;margin:0;background:#fff0ec;color:#a14d3d;font-size:14px;}
 .c_namidayake .c_namidayake__s744cd8a2c{background-color:#fffdf9;position:relative;width:100%;height:100%}
 .c_namidayake .c_namidayake__s82c105b5e{position:absolute;height:23.076923cqw;left:0;top:0;width:100.000000cqw}
