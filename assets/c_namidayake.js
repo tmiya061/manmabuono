@@ -84,7 +84,7 @@
     if (!state.flavor || !state.size) {
       notice.textContent = '容量を選択してください'; notice.hidden = false;
       if (fromModal) dialog.querySelector('[name="lp-modal-size"]').focus();
-      else offer.querySelector('[data-size]').focus();
+      else { offer.querySelector('[data-selection-label]').textContent = '容量を選択してください'; offer.querySelector('[data-size]').focus(); }
       return;
     }
     if (root.dataset.commerce !== 'true') {
@@ -119,6 +119,7 @@
     } catch (error) {
       notice.textContent = error.message || '処理に失敗しました。再度お試しください。';
       notice.hidden = false;
+      if (!fromModal) notice.scrollIntoView?.({block:'nearest',behavior:'smooth'});
     } finally {
       checkoutBusy = false; button.disabled = false; button.removeAttribute('aria-busy'); button.innerHTML = originalHtml;
       dialog.querySelectorAll('input').forEach(input => { input.disabled = false; });
