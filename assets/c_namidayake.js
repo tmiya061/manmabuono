@@ -58,18 +58,10 @@
     if (flavor) { state.flavor = flavor.dataset.flavor; render(); }
     if (size) { state.size = size.dataset.size; render(); }
     if (event.target.closest('[data-preview-checkout]')) {
-      pickerMode = false;
-      dialog.querySelector('[data-modal-picker]').hidden = true;
-      const selected = Boolean(state.flavor && state.size);
-      dialog.querySelector('[data-preview-title]').textContent = selected ? '選択内容の確認' : '商品を選択してください';
-      dialog.querySelector('[data-preview-summary]').textContent = selected ? `だし薫る犬のごはん ${flavorLabel()} ${state.size}g` : '商品を選択してください';
-      dialog.querySelector('[data-preview-actions]').hidden = !selected;
-      dialog.querySelector('[data-preview-close]').hidden = selected;
-      dialog.querySelector('[data-preview-notice]').hidden = true;
-      dialog.showModal();
+      const button = event.target.closest('[data-preview-checkout]');
+      proceedToCheckout(button, false);
     }
   });
-  dialog.querySelector('[data-preview-other]').addEventListener('click', () => dialog.close());
   dialog.querySelector('[data-preview-close]').addEventListener('click', () => dialog.close());
   let checkoutBusy = false;
   const routeRoot = window.Shopify?.routes?.root || '/';
@@ -84,22 +76,26 @@
     Object.assign(item,{price:allocation.price,regular:variant.price,available:variant.available});
     return item;
   }
-  dialog.querySelector('[data-preview-proceed]').addEventListener('click', async () => {
+  async function proceedToCheckout(button, fromModal = true) {
+    const offer = button.closest('[data-offer]');
+    const notice = fromModal ? dialog.querySelector('[data-preview-notice]') : root.querySelector(`[data-checkout-notice="${offer.dataset.section}"]`);
+    notice.hidden = true;
     if (checkoutBusy) return;
     if (!state.flavor || !state.size) {
-      dialog.querySelector('[data-preview-summary]').textContent = '商品を選択してください';
-      if (pickerMode) dialog.querySelector(`[name="lp-modal-${!state.flavor ? 'flavor' : 'size'}"]`).focus();
+      notice.textContent = '容量を選択してください'; notice.hidden = false;
+      if (fromModal) dialog.querySelector('[name="lp-modal-size"]').focus();
+      else offer.querySelector('[data-size]').focus();
       return;
     }
-    const notice = dialog.querySelector('[data-preview-notice]');
     if (root.dataset.commerce !== 'true') {
       notice.textContent = 'ローカルプレビューでは決済へ進めません。公開ページでご利用ください。';
       notice.hidden = false;
       return;
     }
     checkoutBusy = true;
-    const button = dialog.querySelector('[data-preview-proceed]');
-    button.disabled = true; button.textContent = '確認しています…';
+    const originalHtml = button.innerHTML;
+    button.disabled = true; button.setAttribute('aria-busy','true');
+    if (fromModal) button.textContent = '確認しています…';
     dialog.querySelectorAll('input').forEach(input => { input.disabled = true; });
     try {
       const key = `${state.flavor}-${state.size}`;
@@ -124,10 +120,11 @@
       notice.textContent = error.message || '処理に失敗しました。再度お試しください。';
       notice.hidden = false;
     } finally {
-      checkoutBusy = false; button.disabled = false; button.textContent = '決済に進む';
+      checkoutBusy = false; button.disabled = false; button.removeAttribute('aria-busy'); button.innerHTML = originalHtml;
       dialog.querySelectorAll('input').forEach(input => { input.disabled = false; });
     }
-  });
+  }
+  dialog.querySelector('[data-preview-proceed]').addEventListener('click', event => proceedToCheckout(event.currentTarget));
   if (root.dataset.commerce === 'true') {
     Promise.allSettled(Object.keys(catalog).map(refreshProduct)).then(() => { render(); renderPicker(); });
   }
@@ -212,7 +209,7 @@
     dialog.querySelector('[data-modal-picker]').hidden = false;
     dialog.querySelector('[data-preview-title]').textContent = '商品を選択してください';
     dialog.querySelector('[data-preview-actions]').hidden = false;
-    dialog.querySelector('[data-preview-close]').hidden = true;
+    dialog.querySelector('[data-preview-close]').hidden = false;
     dialog.querySelector('[data-preview-notice]').hidden = true;
     renderPicker();
     dialog.showModal();
