@@ -69,6 +69,19 @@
             "btn_label3": ""
           }
         },
+        "shop_kyoto_d3VUDG": {
+          "type": "shop_kyoto",
+          "settings": {
+            "kyoto_head": "PLUSTA Gift京都幹線中央改札内",
+            "kyoto_address": "京都市下京区東塩小路高倉町8-3<br>\t\n2F新幹線改札構内エリア<br>\nTEL：\t050-1724-5346",
+            "link": "https://www.asty-kyoto.co.jp/asty_kyoto/store/406/",
+            "btn_label": "Web Site",
+            "link2": "",
+            "btn_label2": "",
+            "link3": "",
+            "btn_label3": ""
+          }
+        },
         "shop_kyoto_tNhPLi": {
           "type": "shop_kyoto",
           "settings": {
@@ -281,6 +294,7 @@
       "block_order": [
         "shop_kyoto_nbWMgn",
         "shop_kyoto_iBtdAA",
+        "shop_kyoto_d3VUDG",
         "shop_kyoto_tNhPLi",
         "shop_kyoto_pHgyhe",
         "shop_kyoto_aDQd3t",
