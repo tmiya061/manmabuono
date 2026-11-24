@@ -31,7 +31,7 @@
           {% endif %}
 
         </div>
-        <div class="food-consultation__description rte">{{ consultation_intro }}</div>
+        <div class="food-consultation__description rte">{{ consultation_intro | replace: 'サービスです。ご相談', 'サービスです。<br>ご相談' }}</div>
         <p class="food-consultation__note">次のチェックアウト画面で、お申し込み内容とお支払い方法をご確認ください。<br>お申し込み後、ご登録のメールアドレスへ日程をご案内します。</p>
     </div>
     <div class="food-consultation__details rte">
@@ -69,6 +69,7 @@
     body:has(.food-consultation) .c_underFv__title--en { font-size: 32px; letter-spacing: 2.56px; }
     .food-consultation { padding-top: 32px; padding-bottom: 60px; }
     .food-consultation__hero { padding: 28px 20px; }
+    .food-consultation__description br { display: none; }
     .food-consultation__description,
     .food-consultation p.food-consultation__note { width: 100%; text-align: left; }
     .food-consultation__booking { width: 100%; max-width: 400px; margin: auto; }
