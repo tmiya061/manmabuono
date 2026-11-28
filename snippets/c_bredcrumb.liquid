@@ -87,7 +87,7 @@
       </span>
       <span>{{ current_tags | join: " + " }}</span>
       {% else %}
-      {% if collection.handle contains 'cat' %}
+      {% if collection.handle contains 'cat' or collection.handle == 'c-soba' %}
         <span>猫用ごはん</span>
       {% else %}
         <span>犬用ごはん</span>
